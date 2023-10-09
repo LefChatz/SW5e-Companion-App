@@ -1,4 +1,4 @@
-package com.example.swtrial2.currentlyuseless
+package com.example.swtrial2.currentlyunused
 
 import android.os.Bundle
 import android.view.View

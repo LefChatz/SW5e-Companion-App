@@ -215,7 +215,7 @@
             android:label="@string/title_activity_classes"
             android:theme="@style/BlackStatusBar" />
         <activity
-            android:name=".currentlyuseless.Spell1Activity"
+            android:name=".currentlyunused.Spell1Activity"
             android:exported="false" />
         <activity
             android:name=".ForceCastingActivity"
@@ -224,7 +224,7 @@
             android:theme="@style/BlackStatusBar"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".currentlyuseless.MainActivity"
+            android:name=".currentlyunused.MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.Swtrial2.NoActionBar" />
@@ -829,7 +829,7 @@
             android:name=".spells.Affect_mind"
             android:exported="false" />
         <activity
-            android:name=".currentlyuseless.SearchableActivity"
+            android:name=".currentlyunused.SearchableActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />

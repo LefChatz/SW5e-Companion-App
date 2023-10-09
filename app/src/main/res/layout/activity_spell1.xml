@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".currentlyuseless.Spell1Activity"
+    tools:context=".currentlyunused.Spell1Activity"
     android:background="@drawable/neutralbg2"
     style="Theme.Swtrial2.NoActionBar"
     tools:viewBindingIgnore="true"

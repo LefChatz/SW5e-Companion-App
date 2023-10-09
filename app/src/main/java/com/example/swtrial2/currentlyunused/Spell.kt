@@ -1,4 +1,4 @@
-package com.example.swtrial2.currentlyuseless
+package com.example.swtrial2.currentlyunused
 
 data class Spell(
     var spellname: String="Empty",

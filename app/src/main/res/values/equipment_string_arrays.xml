@@ -892,7 +892,7 @@
         <item name="Expansion">PHB</item>
     </string-array>
     <string-array name="heavy_bowcaster">
-        <item name="Title">heavy_bowcaster</item>
+        <item name="Title">heavy bowcaster</item>
         <item name="Attributes">Martial Blaster</item>
         <item name="CostAndWeight">1750 cr"  "15 lb</item>
         <item name="Damage">1d12 energy</item>
@@ -1403,7 +1403,7 @@
     </string-array>
     <!--Life support-->
     <string-array name="emergency_shelter">
-        <item name="Title">emergency_shelter</item>
+        <item name="Title">emergency shelter</item>
         <item name="Attributes">Life support</item>
         <item name="CostAndWeight">600 cr" "15 lb</item>
         <item name="Damage/AC"> </item>

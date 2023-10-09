@@ -1,4 +1,4 @@
-package com.example.swtrial2.currentlyuseless
+package com.example.swtrial2.currentlyunused
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

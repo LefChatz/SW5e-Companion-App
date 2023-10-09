@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.swtrial2.currentlyuseless.ScrollingFragment2"
+        android:name="com.example.swtrial2.currentlyunused.ScrollingFragment2"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/ScrollingFragment"
-        android:name="com.example.swtrial2.currentlyuseless.ScrollingFragment"
+        android:name="com.example.swtrial2.currentlyunused.ScrollingFragment"
         android:label="ScrollingFragment"
         tools:layout="@layout/fragment_scrolling">
 
