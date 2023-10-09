@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--ForceCasting-->
+    <string-array name="bigspellnames">
+        <item>improved battle meditation</item>
+        <item>improved dark side tendrils</item>
+        <item>improved force barrier</item>
+        <item>improved force camouflage</item>
+        <item>improved force immunity</item>
+        <item>improved force scream</item>
+        <item>improved saber throw</item>
+        <item>master battle meditation</item>
+        <item>master force immunity</item>
+        <item></item>
+    </string-array>
+    <string-array name="levels">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>empty</item>
+    </string-array>
+    <string-array name="spelllist">
+        <item>empty</item>
+        <item>affect mind</item>
+        <item>affliction</item>
+        <item>animate weapon</item>
+        <item>armor of abeloth</item>
+        <item>aura of purity</item>
+        <item>aura of vigor</item>
+        <item>battle insight</item>
+        <item>battle meditation</item>
+        <item>battle precognition</item>
+        <item>beacon of hope</item>
+        <item>beast trick</item>
+        <item>bestow curse</item>
+        <item>breath control</item>
+        <item>burst</item>
+        <item>burst of speed</item>
+        <item>call lightning</item>
+        <item>calm emotions</item>
+        <item>choke</item>
+        <item>cloud mind</item>
+        <item>coerce mind</item>
+        <item>comprehend speech</item>
+        <item>control pain</item>
+        <item>convulsion</item>
+        <item>crush</item>
+        <item>curse</item>
+        <item>danger sense</item>
+        <item>dark aura</item>
+        <item>dark shear</item>
+        <item>dark side tendrils</item>
+        <item>darkness</item>
+        <item>death field</item>
+        <item>denounce</item>
+        <item>destroy droid</item>
+        <item>disable droid</item>
+        <item>disperse force</item>
+        <item>dominate beast</item>
+        <item>dominate mind</item>
+        <item>dominate monster</item>
+        <item>drain life</item>
+        <item>drain vitality</item>
+        <item>dun moch</item>
+        <item>earthquake</item>
+        <item>enfeeble</item>
+        <item>eruption</item>
+        <item>fear</item>
+        <item>feedback</item>
+        <item>force barrier</item>
+        <item>force blind deafen</item>
+        <item>force blinding</item>
+        <item>force blur</item>
+        <item>force body</item>
+        <item>force breach</item>
+        <item>force camouflage</item>
+        <item>force chain lightning</item>
+        <item>force concealment</item>
+        <item>force confusion</item>
+        <item>force disarm</item>
+        <item>force enlightenment</item>
+        <item>force focus</item>
+        <item>force imbuement</item>
+        <item>force immunity</item>
+        <item>force jump</item>
+        <item>force leap</item>
+        <item>force lightning</item>
+        <item>force lightning cone</item>
+        <item>force link</item>
+        <item>force mask</item>
+        <item>force meld</item>
+        <item>force mend</item>
+        <item>force project</item>
+        <item>force propel</item>
+        <item>force push pull</item>
+        <item>force reflect</item>
+        <item>force repulse</item>
+        <item>force scream</item>
+        <item>force shunt</item>
+        <item>force sight</item>
+        <item>force storm</item>
+        <item>force suppression</item>
+        <item>force technique</item>
+        <item>force throw</item>
+        <item>force trance</item>
+        <item>force vision</item>
+        <item>force weapon</item>
+        <item>force whisper</item>
+        <item>freedom of movement</item>
+        <item>give life</item>
+        <item>grasping vine</item>
+        <item>greater feedback</item>
+        <item>greater heal</item>
+        <item>greater saber throw</item>
+        <item>guidance</item>
+        <item>hallucination</item>
+        <item>heal</item>
+        <item>heroism</item>
+        <item>hex</item>
+        <item>horror</item>
+        <item>hysteria</item>
+        <item>improved battle meditation</item>
+        <item>improved dark side tendrils</item>
+        <item>improved feedback</item>
+        <item>improved force barrier</item>
+        <item>improved force camouflage</item>
+        <item>improved force immunity</item>
+        <item>improved force scream</item>
+        <item>improved heal</item>
+        <item>improved phasestrike</item>
+        <item>improved phasewalk</item>
+        <item>improved restoration</item>
+        <item>improved revitalize</item>
+        <item>improved saber throw</item>
+        <item>insanity</item>
+        <item>kill</item>
+        <item>knight speed</item>
+        <item>lightning charge</item>
+        <item>locate creature</item>
+        <item>locate object</item>
+        <item>maddening darkness</item>
+        <item>malacia</item>
+        <item>mass animation</item>
+        <item>mass coerce mind</item>
+        <item>mass hysteria</item>
+        <item>mass malacia</item>
+        <item>master battle meditation</item>
+        <item>master feedback</item>
+        <item>master force barrier</item>
+        <item>master force immunity</item>
+        <item>master force scream</item>
+        <item>master heal</item>
+        <item>master malacia</item>
+        <item>master revitalize</item>
+        <item>master saber throw</item>
+        <item>master speed</item>
+        <item>mind blank</item>
+        <item>mind prison</item>
+        <item>mind spike</item>
+        <item>mind trap</item>
+        <item>mind trick</item>
+        <item>morichro</item>
+        <item>necrotic charge</item>
+        <item>necrotic touch</item>
+        <item>phasestrike</item>
+        <item>phasewalk</item>
+        <item>plague</item>
+        <item>plant surge</item>
+        <item>precognition</item>
+        <item>project</item>
+        <item>psychic charge</item>
+        <item>psychometry</item>
+        <item>rage</item>
+        <item>rebuke</item>
+        <item>remove curse</item>
+        <item>rescue</item>
+        <item>resistance</item>
+        <item>restoration</item>
+        <item>revitalize</item>
+        <item>ruin</item>
+        <item>saber reflect</item>
+        <item>saber throw</item>
+        <item>saber ward</item>
+        <item>sanctuary</item>
+        <item>sap vitality</item>
+        <item>scourge</item>
+        <item>seethe</item>
+        <item>sense emotion</item>
+        <item>sense force</item>
+        <item>sever force</item>
+        <item>shadow sight</item>
+        <item>share life</item>
+        <item>shock</item>
+        <item>shocking shield</item>
+        <item>shroud of darkness</item>
+        <item>siphon life</item>
+        <item>skill empowerment</item>
+        <item>slow</item>
+        <item>slow descent</item>
+        <item>sonic charge</item>
+        <item>sound trick</item>
+        <item>spare the dying</item>
+        <item>spirit blade</item>
+        <item>stasis</item>
+        <item>stasis field</item>
+        <item>stun</item>
+        <item>stun droid</item>
+        <item>sustained lightning</item>
+        <item>telekinesis</item>
+        <item>telekinetic burst</item>
+        <item>telekinetic shield</item>
+        <item>telekinetic storm</item>
+        <item>telekinetic wave</item>
+        <item>telemetry</item>
+        <item>tremor</item>
+        <item>true sight</item>
+        <item>turbulence</item>
+        <item>valor</item>
+        <item>wall of light</item>
+        <item>whirlwind</item>
+        <item>will of the force</item>
+        <item>wound</item>
+        <item>wrack</item>
+        <item>empty</item>
+    </string-array>
+    <string-array name="leveledspelllist">
+        <item>empty</item>
+        <item>0</item>
+        <item>affect mind</item>
+        <item>battle insight</item>
+        <item>burst</item>
+        <item>denounce</item>
+        <item>enfeeble</item>
+        <item>feedback</item>
+        <item>force disarm</item>
+        <item>force imbuement</item>
+        <item>force leap</item>
+        <item>force push pull</item>
+        <item>force shunt</item>
+        <item>force technique</item>
+        <item>force whisper</item>
+        <item>give life</item>
+        <item>guidance</item>
+        <item>lightning charge</item>
+        <item>mind trick</item>
+        <item>necrotic charge</item>
+        <item>necrotic touch</item>
+        <item>psychic charge</item>
+        <item>rebuke</item>
+        <item>resistance</item>
+        <item>saber reflect</item>
+        <item>saber throw</item>
+        <item>saber ward</item>
+        <item>seethe</item>
+        <item>shock</item>
+        <item>slow</item>
+        <item>sonic charge</item>
+        <item>sound trick</item>
+        <item>spare the dying</item>
+        <item>spirit blade</item>
+        <item>turbulence</item>
+        <item>1</item>
+        <item>armor of abeloth</item>
+        <item>battle precognition</item>
+        <item>beast trick</item>
+        <item>breath control</item>
+        <item>burst of speed</item>
+        <item>cloud mind</item>
+        <item>comprehend speech</item>
+        <item>curse</item>
+        <item>dark side tendrils</item>
+        <item>disperse force</item>
+        <item>dun moch</item>
+        <item>fear</item>
+        <item>force blinding</item>
+        <item>force body</item>
+        <item>force focus</item>
+        <item>force jump</item>
+        <item>force mask</item>
+        <item>force propel</item>
+        <item>force reflect</item>
+        <item>heal</item>
+        <item>heroism</item>
+        <item>hex</item>
+        <item>improved feedback</item>
+        <item>malacia</item>
+        <item>phasestrike</item>
+        <item>project</item>
+        <item>sanctuary</item>
+        <item>sap vitality</item>
+        <item>sense emotion</item>
+        <item>sense force</item>
+        <item>shadow sight</item>
+        <item>slow descent</item>
+        <item>sustained lightning</item>
+        <item>telemetry</item>
+        <item>tremor</item>
+        <item>valor</item>
+        <item>wound</item>
+        <item>2</item>
+        <item>affliction</item>
+        <item>animate weapon</item>
+        <item>battle meditation</item>
+        <item>calm emotions</item>
+        <item>coerce mind</item>
+        <item>danger sense</item>
+        <item>dark shear</item>
+        <item>darkness</item>
+        <item>drain vitality</item>
+        <item>force barrier</item>
+        <item>force blind deafen</item>
+        <item>force blur</item>
+        <item>force camouflage</item>
+        <item>force concealment</item>
+        <item>force confusion</item>
+        <item>force enlightenment</item>
+        <item>force sight</item>
+        <item>force throw</item>
+        <item>force vision</item>
+        <item>hallucination</item>
+        <item>improved saber throw</item>
+        <item>locate object</item>
+        <item>mind spike</item>
+        <item>phasewalk</item>
+        <item>rescue</item>
+        <item>restoration</item>
+        <item>stun</item>
+        <item>stun droid</item>
+        <item>3</item>
+        <item>aura of vigor</item>
+        <item>beacon of hope</item>
+        <item>bestow curse</item>
+        <item>call lightning</item>
+        <item>choke</item>
+        <item>convulsion</item>
+        <item>dark aura</item>
+        <item>force lightning</item>
+        <item>force repulse</item>
+        <item>force scream</item>
+        <item>force suppression</item>
+        <item>force trance</item>
+        <item>force weapon</item>
+        <item>horror</item>
+        <item>improved dark side tendrils</item>
+        <item>knight speed</item>
+        <item>mass malacia</item>
+        <item>morichro</item>
+        <item>plague</item>
+        <item>plant surge</item>
+        <item>psychometry</item>
+        <item>remove curse</item>
+        <item>sever force</item>
+        <item>share life</item>
+        <item>telekinetic shield</item>
+        <item>telekinetic storm</item>
+        <item>4</item>
+        <item>aura of purity</item>
+        <item>disable droid</item>
+        <item>dominate beast</item>
+        <item>drain life</item>
+        <item>force immunity</item>
+        <item>freedom of movement</item>
+        <item>grasping vine</item>
+        <item>hysteria</item>
+        <item>improved force camouflage</item>
+        <item>locate creature</item>
+        <item>mind trap</item>
+        <item>shocking shield</item>
+        <item>shroud of darkness</item>
+        <item>5</item>
+        <item>control pain</item>
+        <item>dominate mind</item>
+        <item>force breach</item>
+        <item>greater feedback</item>
+        <item>force meld</item>
+        <item>greater saber throw</item>
+        <item>improved battle meditation</item>
+        <item>improved force barrier</item>
+        <item>improved force scream</item>
+        <item>improved heal</item>
+        <item>improved phasestrike</item>
+        <item>improved phasewalk</item>
+        <item>improved restoration</item>
+        <item>insanity</item>
+        <item>mass animation</item>
+        <item>revitalize</item>
+        <item>siphon life</item>
+        <item>skill empowerment</item>
+        <item>stasis</item>
+        <item>telekinesis</item>
+        <item>6</item>
+        <item>crush</item>
+        <item>eruption</item>
+        <item>force chain lightning</item>
+        <item>greater heal</item>
+        <item>improved force immunity</item>
+        <item>mass coerce mind</item>
+        <item>master malacia</item>
+        <item>mind prison</item>
+        <item>rage</item>
+        <item>scourge</item>
+        <item>telekinetic burst</item>
+        <item>true sight</item>
+        <item>wall of light</item>
+        <item>wrack</item>
+        <item>7</item>
+        <item>destroy droid</item>
+        <item>force lightning cone</item>
+        <item>force mend</item>
+        <item>force project</item>
+        <item>improved revitalize</item>
+        <item>master saber throw</item>
+        <item>master speed</item>
+        <item>ruin</item>
+        <item>whirlwind</item>
+        <item>8</item>
+        <item>death field</item>
+        <item>dominate monster</item>
+        <item>earthquake</item>
+        <item>force link</item>
+        <item>maddening darkness</item>
+        <item>master force barrier</item>
+        <item>master force immunity</item>
+        <item>master force scream</item>
+        <item>mind blank</item>
+        <item>stasis field</item>
+        <item>telekinetic wave</item>
+        <item>9</item>
+        <item>force storm</item>
+        <item>kill</item>
+        <item>mass hysteria</item>
+        <item>master battle meditation</item>
+        <item>master feedback</item>
+        <item>master heal</item>
+        <item>master revitalize</item>
+        <item>precognition</item>
+        <item>will of the force</item>
+        <item>empty</item>
+    </string-array>
+    <string-array name="leveledspelllistrev">
+        <item>empty</item>
+        <item>9</item>
+        <item>force storm</item>
+        <item>kill</item>
+        <item>mass hysteria</item>
+        <item>master battle meditation</item>
+        <item>master feedback</item>
+        <item>master heal</item>
+        <item>master revitalize</item>
+        <item>precognition</item>
+        <item>will of the force</item>
+        <item>8</item>
+        <item>death field</item>
+        <item>dominate monster</item>
+        <item>earthquake</item>
+        <item>force link</item>
+        <item>maddening darkness</item>
+        <item>master force barrier</item>
+        <item>master force immunity</item>
+        <item>master force scream</item>
+        <item>mind blank</item>
+        <item>stasis field</item>
+        <item>telekinetic wave</item>
+        <item>7</item>
+        <item>destroy droid</item>
+        <item>force lightning cone</item>
+        <item>force mend</item>
+        <item>force project</item>
+        <item>improved revitalize</item>
+        <item>master saber throw</item>
+        <item>master speed</item>
+        <item>ruin</item>
+        <item>whirlwind</item>
+        <item>6</item>
+        <item>crush</item>
+        <item>eruption</item>
+        <item>force chain lightning</item>
+        <item>greater heal</item>
+        <item>improved force immunity</item>
+        <item>mass coerce mind</item>
+        <item>master malacia</item>
+        <item>mind prison</item>
+        <item>rage</item>
+        <item>scourge</item>
+        <item>telekinetic burst</item>
+        <item>true sight</item>
+        <item>wall of light</item>
+        <item>wrack</item>
+        <item>5</item>
+        <item>control pain</item>
+        <item>dominate mind</item>
+        <item>force breach</item>
+        <item>greater feedback</item>
+        <item>force meld</item>
+        <item>greater saber throw</item>
+        <item>improved battle meditation</item>
+        <item>improved force barrier</item>
+        <item>improved force scream</item>
+        <item>improved heal</item>
+        <item>improved phasestrike</item>
+        <item>improved phasewalk</item>
+        <item>improved restoration</item>
+        <item>insanity</item>
+        <item>mass animation</item>
+        <item>revitalize</item>
+        <item>siphon life</item>
+        <item>skill empowerment</item>
+        <item>stasis</item>
+        <item>telekinesis</item>
+        <item>4</item>
+        <item>aura of purity</item>
+        <item>disable droid</item>
+        <item>dominate beast</item>
+        <item>drain life</item>
+        <item>force immunity</item>
+        <item>freedom of movement</item>
+        <item>grasping vine</item>
+        <item>hysteria</item>
+        <item>improved force camouflage</item>
+        <item>locate creature</item>
+        <item>mind trap</item>
+        <item>shocking shield</item>
+        <item>shroud of darkness</item>
+        <item>3</item>
+        <item>aura of vigor</item>
+        <item>beacon of hope</item>
+        <item>bestow curse</item>
+        <item>call lightning</item>
+        <item>choke</item>
+        <item>convulsion</item>
+        <item>dark aura</item>
+        <item>force lightning</item>
+        <item>force repulse</item>
+        <item>force scream</item>
+        <item>force suppression</item>
+        <item>force trance</item>
+        <item>force weapon</item>
+        <item>horror</item>
+        <item>improved dark side tendrils</item>
+        <item>knight speed</item>
+        <item>mass malacia</item>
+        <item>morichro</item>
+        <item>plague</item>
+        <item>plant surge</item>
+        <item>psychometry</item>
+        <item>remove curse</item>
+        <item>sever force</item>
+        <item>share life</item>
+        <item>telekinetic shield</item>
+        <item>telekinetic storm</item>
+        <item>2</item>
+        <item>affliction</item>
+        <item>animate weapon</item>
+        <item>battle meditation</item>
+        <item>calm emotions</item>
+        <item>coerce mind</item>
+        <item>danger sense</item>
+        <item>dark shear</item>
+        <item>darkness</item>
+        <item>drain vitality</item>
+        <item>force barrier</item>
+        <item>force blind deafen</item>
+        <item>force blur</item>
+        <item>force camouflage</item>
+        <item>force concealment</item>
+        <item>force confusion</item>
+        <item>force enlightenment</item>
+        <item>force sight</item>
+        <item>force throw</item>
+        <item>force vision</item>
+        <item>hallucination</item>
+        <item>improved saber throw</item>
+        <item>locate object</item>
+        <item>mind spike</item>
+        <item>phasewalk</item>
+        <item>rescue</item>
+        <item>restoration</item>
+        <item>stun</item>
+        <item>stun droid</item>
+        <item>1</item>
+        <item>armor of abeloth</item>
+        <item>battle precognition</item>
+        <item>beast trick</item>
+        <item>breath control</item>
+        <item>burst of speed</item>
+        <item>cloud mind</item>
+        <item>comprehend speech</item>
+        <item>curse</item>
+        <item>dark side tendrils</item>
+        <item>disperse force</item>
+        <item>dun moch</item>
+        <item>fear</item>
+        <item>force blinding</item>
+        <item>force body</item>
+        <item>force focus</item>
+        <item>force jump</item>
+        <item>force mask</item>
+        <item>force propel</item>
+        <item>force reflect</item>
+        <item>heal</item>
+        <item>heroism</item>
+        <item>hex</item>
+        <item>improved feedback</item>
+        <item>malacia</item>
+        <item>phasestrike</item>
+        <item>project</item>
+        <item>sanctuary</item>
+        <item>sap vitality</item>
+        <item>sense emotion</item>
+        <item>sense force</item>
+        <item>shadow sight</item>
+        <item>slow descent</item>
+        <item>sustained lightning</item>
+        <item>telemetry</item>
+        <item>tremor</item>
+        <item>valor</item>
+        <item>wound</item>
+        <item>0</item>
+        <item>affect mind</item>
+        <item>battle insight</item>
+        <item>burst</item>
+        <item>denounce</item>
+        <item>enfeeble</item>
+        <item>feedback</item>
+        <item>force disarm</item>
+        <item>force imbuement</item>
+        <item>force leap</item>
+        <item>force push pull</item>
+        <item>force shunt</item>
+        <item>force technique</item>
+        <item>force whisper</item>
+        <item>give life</item>
+        <item>guidance</item>
+        <item>lightning charge</item>
+        <item>mind trick</item>
+        <item>necrotic charge</item>
+        <item>necrotic touch</item>
+        <item>psychic charge</item>
+        <item>rebuke</item>
+        <item>resistance</item>
+        <item>saber reflect</item>
+        <item>saber throw</item>
+        <item>saber ward</item>
+        <item>seethe</item>
+        <item>shock</item>
+        <item>slow</item>
+        <item>sonic charge</item>
+        <item>sound trick</item>
+        <item>spare the dying</item>
+        <item>spirit blade</item>
+        <item>turbulence</item>
+        <item>empty</item>
+    </string-array>
+    <string-array name="darkspells">
+        <item>denounce</item>
+        <item>enfeeble</item>
+        <item>feedback</item>
+        <item>lightning charge</item>
+        <item>necrotic charge</item>
+        <item>necrotic touch</item>
+        <item>psychic charge</item>
+        <item>seethe</item>
+        <item>shock</item>
+        <item>slow</item>
+        <item>armor of abeloth</item>
+        <item>curse</item>
+        <item>dark side tendrils</item>
+        <item>dun moch</item>
+        <item>fear</item>
+        <item>hex</item>
+        <item>improved feedback</item>
+        <item>sap vitality</item>
+        <item>sustained lightning</item>
+        <item>wound</item>
+        <item>affliction</item>
+        <item>dark shear</item>
+        <item>darkness</item>
+        <item>drain vitality</item>
+        <item>hallucination</item>
+        <item>mind spike</item>
+        <item>bestow curse</item>
+        <item>choke</item>
+        <item>dark aura</item>
+        <item>force lightning</item>
+        <item>force scream</item>
+        <item>horror</item>
+        <item>improved dark side tendrils</item>
+        <item>plague</item>
+        <item>dominate beast</item>
+        <item>drain life</item>
+        <item>hysteria</item>
+        <item>shocking shield</item>
+        <item>shroud of darkness</item>
+        <item>dominate mind</item>
+        <item>greater feedback</item>
+        <item>improved force scream</item>
+        <item>insanity</item>
+        <item>siphon life</item>
+        <item>crush</item>
+        <item>force chain lightning</item>
+        <item>mind prison</item>
+        <item>rage</item>
+        <item>scourge</item>
+        <item>wrack</item>
+        <item>force lightning cone</item>
+        <item>ruin</item>
+        <item>death field</item>
+        <item>dominate monster</item>
+        <item>maddening darkness</item>
+        <item>master force scream</item>
+        <item>force storm</item>
+        <item>kill</item>
+        <item>mass hysteria</item>
+        <item>master feedback</item>
+
+    </string-array>
+    <string-array name="lightspells">
+        <item>aura of purity</item>
+        <item>aura of vigor</item>
+        <item>beacon of hope</item>
+        <item>beast trick</item>
+        <item>call lightning</item>
+        <item>calm emotions</item>
+        <item>cloud mind</item>
+        <item>destroy droid</item>
+        <item>disable droid</item>
+        <item>force barrier</item>
+        <item>force blind deafen</item>
+        <item>force blinding</item>
+        <item>force enlightenment</item>
+        <item>force focus</item>
+        <item>force mend</item>
+        <item>force technique</item>
+        <item>force trance</item>
+        <item>give life</item>
+        <item>grasping vine</item>
+        <item>greater heal</item>
+        <item>guidance</item>
+        <item>heal</item>
+        <item>heroism</item>
+        <item>improved force barrier</item>
+        <item>improved heal</item>
+        <item>improved restoration</item>
+        <item>improved revitalize</item>
+        <item>master force barrier</item>
+        <item>master heal</item>
+        <item>master revitalize</item>
+        <item>morichro</item>
+        <item>plant surge</item>
+        <item>project</item>
+        <item>rebuke</item>
+        <item>remove curse</item>
+        <item>restoration</item>
+        <item>revitalize</item>
+        <item>sanctuary</item>
+        <item>share life</item>
+        <item>skill empowerment</item>
+        <item>spare the dying</item>
+        <item>stasis</item>
+        <item>stasis field</item>
+        <item>stun</item>
+        <item>stun droid</item>
+        <item>telekinetic storm</item>
+        <item>telekinetic wave</item>
+        <item>turbulence</item>
+        <item>valor</item>
+        <item>wall of light</item>
+        <item>whirlwind</item>
+        <item>will of the force</item>
+
+    </string-array>
+
+</resources>

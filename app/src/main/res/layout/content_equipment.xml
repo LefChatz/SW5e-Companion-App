@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contentequipmentcl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="50sp"
+    android:paddingBottom="25sp"
+    tools:context=".EquipmentActivity"
+    tools:showIn="@layout/activity_equipment">
+
+    <com.example.swtrial2.widget.EquipmentButton
+        android:id="@+id/weapons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:background="@drawable/equipmentweaponstasa3"
+        app:layout_constraintBottom_toTopOf="@+id/armourandshields"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:text="@string/weapons"
+        android:onClick="openequipment"
+        />
+
+    <com.example.swtrial2.widget.EquipmentButton
+        android:id="@+id/armourandshields"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:text="@string/armour"
+        app:background="@drawable/equipmentarmortasa"
+        app:layout_constraintBottom_toTopOf="@+id/advgear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weapons"
+        app:layout_constraintVertical_bias="0.5"
+        android:onClick="openequipment"
+        />
+
+    <com.example.swtrial2.widget.EquipmentButton
+        android:id="@+id/advgear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:text="@string/adventuring_gear"
+        app:background="@drawable/equipmentadvgeartasa2"
+        app:layout_constraintBottom_toTopOf="@+id/all"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/armourandshields"
+        app:layout_constraintVertical_bias="0.5"
+        android:onClick="openequipment"
+        />
+
+    <com.example.swtrial2.widget.EquipmentButton
+        android:id="@+id/all"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:text="@string/all_list"
+        app:background="@drawable/equipmentalltasa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/advgear"
+        app:layout_constraintVertical_bias="0.5"
+        android:onClick="openequipment"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

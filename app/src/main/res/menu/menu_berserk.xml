@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <item android:title="@string/info" />
+    <item android:title="@string/base" />
+    <item android:title="@string/tables" />
+    <item android:title="@string/instincts" />
+    <item android:title="@string/ballistic_approach" />
+    <item android:title="@string/cyclone_approach" />
+    <item android:title="@string/juggernaut_approach" />
+    <item android:title="@string/marauder_approach" />
+</menu>

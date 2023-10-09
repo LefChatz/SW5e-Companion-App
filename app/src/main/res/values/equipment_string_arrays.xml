@@ -1,0 +1,1802 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Lists-->
+    <string-array name="bigequipmentnames"></string-array>
+    <string-array name="equipmentlist">
+        <item>assault_armour</item>
+        <item>assault_cannon</item>
+        <item>battle_armour</item>
+        <item>beam_rifle</item>
+        <item>blaster_carbine</item>
+        <item>blaster_pistol</item>
+        <item>blaster_rifle</item>
+        <item>bowcaster</item>
+        <item>carbine_rifle</item>
+        <item>chakram</item>
+        <item>combat_suit</item>
+        <item>composite_armour</item>
+        <item>cycler_rifle</item>
+        <item>doubleblade</item>
+        <item>doublesaber</item>
+        <item>doubleshoto</item>
+        <item>doublesword</item>
+        <item>fiber_armour</item>
+        <item>great_saber</item>
+        <item>heavy_blaster_rifle</item>
+        <item>heavy_bowcaster</item>
+        <item>heavy_carbine</item>
+        <item>heavy_exoskeleton</item>
+        <item>heavy_physical_shield</item>
+        <item>heavy_pistol</item>
+        <item>heavy_repeater</item>
+        <item>heavy_shield_generator</item>
+        <item>heavy_shotgun</item>
+        <item>heavy_slugpistol</item>
+        <item>hidden_blade</item>
+        <item>hold_out</item>
+        <item>hunting_rifle</item>
+        <item>ion_cannon</item>
+        <item>ion_carbine</item>
+        <item>ion_pistol</item>
+        <item>ion_rifle</item>
+        <item>lightaxe</item>
+        <item>lightblade</item>
+        <item>lightclub</item>
+        <item>lightdagger</item>
+        <item>lightfoil</item>
+        <item>lightsaber</item>
+        <item>lightstaff</item>
+        <item>light_physical_shield</item>
+        <item>light_pistol</item>
+        <item>light_repeater</item>
+        <item>light_shield_generator</item>
+        <item>light_slugpistol</item>
+        <item>martial_lightsaber</item>
+        <item>medium_physical_shield</item>
+        <item>medium_shield_generator</item>
+        <item>mesh_armour</item>
+        <item>net</item>
+        <item>pikesaber</item>
+        <item>repeating_blaster</item>
+        <item>rotary_cannon</item>
+        <item>scattergun</item>
+        <item>saberwhip</item>
+        <item>shotgun</item>
+        <item>shotosaber</item>
+        <item>slugpistol</item>
+        <item>slugthrower</item>
+        <item>splitsaber</item>
+        <item>splitshoto</item>
+        <item>sniper_rifle</item>
+        <item>subrepeater</item>
+        <item>techaxe</item>
+        <item>techblade</item>
+        <item>techstaff</item>
+        <item>vibroaxe</item>
+        <item>vibroblade</item>
+        <item>vibrodagger</item>
+        <item>vibrodart</item>
+        <item>vibroknuckler</item>
+        <item>vibromace</item>
+        <item>vibropike</item>
+        <item>vibrorapier</item>
+        <item>vibrospear</item>
+        <item>vibrostaff</item>
+        <item>vibrosword</item>
+        <item>vibrowhip</item>
+        <item>weave_armour</item>
+        <item>wristblaster</item>
+        <item>wrist_launcher</item>
+        <item>bandolier</item>
+        <item>tripod</item>
+        <item>tracker_utility_vest</item>
+        <item>stealth_field_generator</item>
+        <item>rocket_boots</item>
+        <item>remote_detonator</item>
+        <item>jetpack</item>
+        <item>friction_grip_gear</item>
+        <item>bipod</item>
+        <item>tent</item>
+        <item>shovel</item>
+        <item>restraining_bolt</item>
+        <item>ram_portable</item>
+        <item>mirror</item>
+        <item>mess_kit</item>
+        <item>macrobinoculars</item>
+        <item>hydrospanner</item>
+        <item>homing_beacon</item>
+        <item>heat_generator</item>
+        <item>grappling_hook</item>
+        <item>glowrod</item>
+        <item>fusion_cutter</item>
+        <item>field_rations</item>
+        <item>fibercord_cable</item>
+        <item>chronometer</item>
+        <item>binders</item>
+        <item>blanket</item>
+        <item>bedroll</item>
+        <item>pouch</item>
+        <item>pitcher</item>
+        <item>chest</item>
+        <item>crate</item>
+        <item>canteen</item>
+        <item>bottle</item>
+        <item>backpack</item>
+        <item>traumakit</item>
+        <item>repair_kit</item>
+        <item>poison</item>
+        <item>medpac</item>
+        <item>emergency_battery</item>
+        <item>antitoxkit</item>
+        <item>respirator</item>
+        <item>emergency_shelter</item>
+        <item>thermal_detonator</item>
+        <item>mine_incendiary</item>
+        <item>mine_gas</item>
+        <item>mine_fragmentation</item>
+        <item>grenade_plasma</item>
+        <item>grenade_ion</item>
+        <item>grenade_gas</item>
+        <item>grenade_fragmentation</item>
+        <item>wristpad</item>
+        <item>stylus_pen</item>
+        <item>holorecorder</item>
+        <item>holocron</item>
+        <item>datapad</item>
+        <item>datacron</item>
+        <item>datacard</item>
+        <item>code_cylinder</item>
+        <item>pocket_scrambler</item>
+        <item>holotrace_device</item>
+        <item>holocomm</item>
+        <item>commlink_hands_free</item>
+        <item>commlink</item>
+        <item>comm_jammer</item>
+        <item>slug_cartridge</item>
+        <item>projector_canister_incendiary</item>
+        <item>projector_canister_cryo</item>
+        <item>power_cell</item>
+        <item>missile_fragmentation</item>
+        <item>dart</item>
+    </string-array>
+    <string-array name="sorted1equipmentlist" />
+    <string-array name="sorted1equipmentlistrev" />
+    <string-array name="filter1equipments" />
+    <string-array name="fitler2equipments" />
+    <string-array name="equipment_weapons">
+        <item>wristblaster</item>
+        <item>wrist_launcher</item>
+        <item>net</item>
+        <item>pikesaber</item>
+        <item>repeating_blaster</item>
+        <item>rotary_cannon</item>
+        <item>scattergun</item>
+        <item>saberwhip</item>
+        <item>shotgun</item>
+        <item>shotosaber</item>
+        <item>slugthrower</item>
+        <item>slugpistol</item>
+        <item>splitsaber</item>
+        <item>splitshoto</item>
+        <item>sniper_rifle</item>
+        <item>subrepeater</item>
+        <item>techaxe</item>
+        <item>techblade</item>
+        <item>techstaff</item>
+        <item>vibroaxe</item>
+        <item>vibroblade</item>
+        <item>vibrodagger</item>
+        <item>vibrodart</item>
+        <item>vibroknuckler</item>
+        <item>vibromace</item>
+        <item>vibropike</item>
+        <item>vibrorapier</item>
+        <item>vibrospear</item>
+        <item>vibrostaff</item>
+        <item>vibrosword</item>
+        <item>vibrowhip</item>
+        <item>light_slugpistol</item>
+        <item>martial_lightsaber</item>
+        <item>light_pistol</item>
+        <item>light_repeater</item>
+        <item>heavy_shotgun</item>
+        <item>heavy_slugpistol</item>
+        <item>hidden_blade</item>
+        <item>hold_out</item>
+        <item>hunting_rifle</item>
+        <item>ion_cannon</item>
+        <item>ion_carbine</item>
+        <item>ion_pistol</item>
+        <item>ion_rifle</item>
+        <item>lightaxe</item>
+        <item>lightblade</item>
+        <item>lightclub</item>
+        <item>lightdagger</item>
+        <item>lightfoil</item>
+        <item>lightsaber</item>
+        <item>lightstaff</item>
+        <item>heavy_pistol</item>
+        <item>heavy_repeater</item>
+        <item>great_saber</item>
+        <item>heavy_blaster_rifle</item>
+        <item>heavy_bowcaster</item>
+        <item>heavy_carbine</item>
+        <item>cycler_rifle</item>
+        <item>doubleblade</item>
+        <item>doublesaber</item>
+        <item>doubleshoto</item>
+        <item>doublesword</item>
+        <item>beam_rifle</item>
+        <item>blaster_carbine</item>
+        <item>blaster_pistol</item>
+        <item>blaster_rifle</item>
+        <item>bowcaster</item>
+        <item>carbine_rifle</item>
+        <item>chakram</item>
+        <item>assault_cannon</item>
+    </string-array>
+    <string-array name="equipment_armours">
+        <item>combat_suit</item>
+        <item>fiber_armour</item>
+        <item>mesh_armour</item>
+        <item>weave_armour</item>
+        <item>composite_armour</item>
+        <item>battle_armour</item>
+        <item>assault_armour</item>
+        <item>heavy_exoskeleton</item>
+        <item>light_physical_shield</item>
+        <item>medium_physical_shield</item>
+        <item>heavy_physical_shield</item>
+        <item>light_shield_generator</item>
+        <item>medium_shield_generator</item>
+        <item>heavy_shield_generator</item>
+    </string-array>
+    <string-array name="equipment_advgear">
+        <item>bandolier</item>
+        <item>tripod</item>
+        <item>tracker_utility_vest</item>
+        <item>stealth_field_generator</item>
+        <item>rocket_boots</item>
+        <item>remote_detonator</item>
+        <item>jetpack</item>
+        <item>friction_grip_gear</item>
+        <item>bipod</item>
+        <item>tent</item>
+        <item>shovel</item>
+        <item>restraining_bolt</item>
+        <item>ram_portable</item>
+        <item>mirror</item>
+        <item>mess_kit</item>
+        <item>macrobinoculars</item>
+        <item>hydrospanner</item>
+        <item>homing_beacon</item>
+        <item>heat_generator</item>
+        <item>grappling_hook</item>
+        <item>glowrod</item>
+        <item>fusion_cutter</item>
+        <item>field_rations</item>
+        <item>fibercord_cable</item>
+        <item>chronometer</item>
+        <item>binders</item>
+        <item>blanket</item>
+        <item>bedroll</item>
+        <item>pouch</item>
+        <item>pitcher</item>
+        <item>chest</item>
+        <item>crate</item>
+        <item>canteen</item>
+        <item>bottle</item>
+        <item>backpack</item>
+        <item>traumakit</item>
+        <item>repair_kit</item>
+        <item>poison</item>
+        <item>medpac</item>
+        <item>emergency_battery</item>
+        <item>antitoxkit</item>
+        <item>respirator</item>
+        <item>emergency_shelter</item>
+        <item>thermal_detonator</item>
+        <item>mine_incendiary</item>
+        <item>mine_gas</item>
+        <item>mine_fragmentation</item>
+        <item>grenade_plasma</item>
+        <item>grenade_ion</item>
+        <item>grenade_gas</item>
+        <item>grenade_fragmentation</item>
+        <item>wristpad</item>
+        <item>stylus_pen</item>
+        <item>holorecorder</item>
+        <item>holocron</item>
+        <item>datapad</item>
+        <item>datacron</item>
+        <item>datacard</item>
+        <item>code_cylinder</item>
+        <item>pocket_scrambler</item>
+        <item>holotrace_device</item>
+        <item>holocomm</item>
+        <item>commlink_hands_free</item>
+        <item>commlink</item>
+        <item>comm_jammer</item>
+        <item>slug_cartridge</item>
+        <item>projector_canister_incendiary</item>
+        <item>projector_canister_cryo</item>
+        <item>power_cell</item>
+        <item>missile_fragmentation</item>
+        <item>dart</item>
+    </string-array>
+    <string-array name="weapon_properties">
+        <item>auto</item>
+        <item>Weapons with this property can only fire in burst, penetrating, or rapid modes. If the weapon has any combination of burst, penetrating, and rapid modes, you choose which mode to use. You can only use one mode at a time.</item>
+        <item>burst</item>
+        <item>When you would make a ranged weapon attack with a weapon with this property, you can instead spray a 10- foot-cube area within range with shots, consuming ammunition equal to the burst number. Each creature in the area must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon) or take the weapon\'s normal damage. Before you use this property, you can declare one creature that would be affected by it. If the creature fails its save, in addition to the weapon\'s normal damage, it is subjected to any additional effects that would occur on a hit. If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw.</item>
+        <item>dexterity</item>
+        <item>A weapon with this property requires more skill to control. While wielding it, you have disadvantage on attack rolls unless you meet the Dexterity requirement.</item>
+        <item>disguised</item>
+        <item>You have advantage on Charisma (Deception) checks made to hide the nature of a weapon with this property.</item>
+        <item>double</item>
+        <item>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with Double-Weapon Fighting. See the rules for Double-Weapon Fighting in chapter 9.</item>
+        <item>finesse</item>
+        <item>When making an attack with a weapon with this property, you use your choice of your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls.</item>
+        <item>fixed</item>
+        <item>A weapon with this property does not fill the hand, but you can\'t use the weapon while the hand is full. Additionally, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of this weapon.</item>
+        <item>heavy</item>
+        <item>When you hit with an attack roll using Strength with a weapon with this property, you deal additional damage equal to half your Strength modifier (minimum of +1).</item>
+        <item>hidden</item>
+        <item>You have advantage on Dexterity (Sleight of Hand) checks made to conceal a weapon with this property</item>
+        <item>interlocking</item>
+        <item>While wielding a weapon with the interlocking property, you can use your object interaction to detach the weapon into two separate weapons or reattach into a single weapon. While separated, each weapon has the same damage, damage type, combined value and weight, and properties (except for the double property) as the single weapon.</item>
+        <item>light</item>
+        <item>A weapon with this property is small and easy to handle, making it ideal for use when engaging in Double- or Two-Weapon Fighting. See the rules for Double- and Two-Weapon Fighting in chapter 9.</item>
+        <item>luminous</item>
+        <item>A weapon with this property sheds dim light in a 5-foot radius while activated. Additionally, Dexterity (Stealth) checks made while the weapon is activated have disadvantage.</item>
+        <item>penetrating</item>
+        <item>When you would make a ranged weapon attack with a weapon with this property, you can instead attempt to penetrate and hit a creature behind the target, consuming ammunition equal to the penetrating number. Make an attack roll against the initial target. If the attack hits, there is a creature within 15 feet of that creature and directly behind it, and the original attack roll would hit the second creature, it also takes normal weapon damage. Alternatively, you can use this property to fire at a creature through partial cover. When you do so, you reduce the target\'s cover by one step (from three-quarters to half or half to onequarter), rather than targeting a second creature.</item>
+        <item>power_cell</item>
+        <item>Weapons with this property are fueled by power cells, which must be loaded in order to fire the weapon. A power cell fuels a number of attacks equal to the weapon\'s reload number.</item>
+        <item>range</item>
+        <item>A weapon that can be used to make a ranged attack has this property. The range lists two numbers. The first is the weapon\'s normal range in feet, and the second indicates the weapon\'s long range. When attacking a target beyond normal range, you have disadvantage on the attack roll. You can\'t attack a target beyond the weapon\'s long range.</item>
+        <item>rapid</item>
+        <item>When you would make a ranged weapon attack with a weapon with this property, you can instead unload on a single target, consuming ammunition equal to the rapid number. The target must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon). On a failed save, roll the weapon\'s damage dice twice and add them together, adding relevant modifiers as normal and subjecting the target to any additional effects that would occur on a hit. If you would have advantage on your attack roll, the creature instead has disadvantage on their saving throw, and if you would have disadvantage on your attack roll, the creature instead has advantage on their saving throw.</item>
+        <item>reach</item>
+        <item>A weapon with this property adds 5 feet to your reach with it.</item>
+        <item>reload</item>
+        <item>A number of shots equal to the reload number can be made with a weapon with this property. A character must then reload it using an action or a bonus action (their choice). You must have one free hand to reload.</item>
+        <item>returning</item>
+        <item>When you throw a weapon with this property, it automatically returns to your hand after the attack is complete, whether you hit or miss.</item>
+        <item>slug_cartridge</item>
+        <item>Weapons with this property fire slug cartridges, which must be loaded in order to fire the weapon.</item>
+        <item>special</item>
+        <item>A weapon with this property has unusual rules governing its use, explained in the weapon\'s description.</item>
+        <item>strength</item>
+        <item>A weapon with this property has a heavy kickback. While wielding it, you have disadvantage on attack rolls unless you meet the Strength requirement. If the weapon has the burst, penetrating, or rapid property, you must meet the Strength requirement to use this feature. If the weapon lacks the two-handed property, you can wield the weapon in two hands to temporarily reduce the strength number by one step (from 19 to 17, 17 to 15, 15 to 13, or 13 to 11). If this would reduce the strength number below 11, you ignore it entirely.</item>
+        <item>thrown</item>
+        <item>Weapons with this property can be thrown to make a ranged attack. If the weapon would normally be used to make melee weapon attacks, you use the same ability modifier for that attack roll and damage roll that you would use for a melee attack with the weapon.</item>
+        <item>two_handed</item>
+        <item>A weapon with this property requires two hands to use.</item>
+        <item>versatile</item>
+        <item>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.</item>
+    </string-array>
+    <string-array name="armour_properties">
+        <item>bulky</item>
+        <item>While wearing armour with this property, you have disadvantage on Dexterity (Stealth) checks that rely on sound.</item>
+        <item>obtrusive</item>
+        <item>While wielding a shield with this property, you have disadvantage on Dexterity (Stealth) checks that rely on sight.</item>
+        <item>strength</item>
+        <item>While wearing armour or wielding a shield with this property, your speed is reduced by 10 unless your Strength score meets or exceeds the strength number.</item>
+    </string-array>
+    <!--Equipment-->
+    <!--Weapons-->
+    <string-array name="lightblade">
+        <item name="Title">Lightblade</item>
+        <item name="Attributes">Simple Lightweapon</item>
+        <item name="CostAndWeight">375 cr"  "1,5 lb</item>
+        <item name="Damage">1d6 energy</item>
+        <item name="Properties">Finesse, hidden, luminous</item>
+        <item name="Text">A Jedi\'s weapon</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="lightsaber">
+        <item name="Title">Lightsaber</item>
+        <item name="Attributes">Simple Lightweapon</item>
+        <item name="CostAndWeight">450 cr"  "2,25 lb</item>
+        <item name="Damage">1d6 energy</item>
+        <item name="Properties">Hidden, luminous, versatile (2d4)</item>
+        <item name="Text">A Jedi\'s weapon</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="lightclub">
+        <item name="Title">Lightclub</item>
+        <item name="Attributes">Simple Lightweapon</item>
+        <item name="CostAndWeight">1300 cr"  "3,75 lb</item>
+        <item name="Damage">1d10 energy</item>
+        <item name="Properties">Dexterity 11, heavy, luminous, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="lightdagger">
+        <item name="Title">Lightdagger</item>
+        <item name="Attributes">Simple Lightweapon</item>
+        <item name="CostAndWeight">425 cr"  "1 lb</item>
+        <item name="Damage">1d4 energy</item>
+        <item name="Properties">Finesse, hidden, light, luminous, thrown (range 20/60)</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="lightstaff">
+        <item name="Title">Lightstaff</item>
+        <item name="Attributes">Simple Lightweapon</item>
+        <item name="CostAndWeight">1275 cr"  "4,25 lb</item>
+        <item name="Damage">2d4 energy</item>
+        <item name="Properties">Dexterity 11, luminous, reach, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="doublesaber">
+        <item name="Title">Doublesaber</item>
+        <item name="Attributes">Martial Lightweapon</item>
+        <item name="CostAndWeight">725 cr"  "2,25 lb</item>
+        <item name="Damage">1d8 energy</item>
+        <item name="Properties">Double (1d8 energy), finesse, luminous</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="doubleshoto">
+        <item name="Title">Doubleshoto</item>
+        <item name="Attributes">Martial Lightweapon</item>
+        <item name="CostAndWeight">700 cr"  "1,75 lb</item>
+        <item name="Damage">1d6 energy</item>
+        <item name="Properties">Double (1d6 energy), finesse, light, luminous</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="great_saber">
+        <item name="Title">Great-Saber</item>
+        <item name="Attributes">Martial Lightweapon</item>
+        <item name="CostAndWeight">1,725 cr"  "3,25 lb</item>
+        <item name="Damage">2d6 energy</item>
+        <item name="Properties">Dexterity 11, luminous, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="lightaxe">
+        <item name="Title">Lightaxe</item>
+        <item name="Attributes">Martial Lightweapon</item>
+        <item name="CostAndWeight">1,550 cr"  "3,75 lb</item>
+        <item name="Damage">1d12 energy</item>
+        <item name="Properties">Dexterity 11, heavy, luminous, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="lightfoil">
+        <item name="Title">Lightfoil</item>
+        <item name="Attributes">Martial Lightweapon</item>
+        <item name="CostAndWeight">475 cr"  "1,5 lb</item>
+        <item name="Damage">1d8 energy</item>
+        <item name="Properties">Finesse, hidden, luminous</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="martial_lightsaber">
+        <item name="Title">Martial Lightsaber</item>
+        <item name="Attributes">Martial Lightweapon</item>
+        <item name="CostAndWeight">550 cr"  "2,25 lb</item>
+        <item name="Damage">1d8 energy</item>
+        <item name="Properties">Hidden, luminous, versatile (1d10)</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="pikesaber">
+        <item name="Title">Pikesaber</item>
+        <item name="Attributes">Martial Lightweapon</item>
+        <item name="CostAndWeight">1,675 cr"  "5,25 lb</item>
+        <item name="Damage">1d10 energy</item>
+        <item name="Properties">Dexterity 11, luminous, reach, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="saberwhip">
+        <item name="Title">Saberwhip</item>
+        <item name="Attributes">Martial Lightweapon</item>
+        <item name="CostAndWeight">750 cr"  "3,5 lb</item>
+        <item name="Damage">1d4 energy</item>
+        <item name="Properties">Finesse, hidden, luminous, reach</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="shotosaber">
+        <item name="Title">Shotosaber</item>
+        <item name="Attributes">Martial Lightweapon</item>
+        <item name="CostAndWeight">450 cr"  "1 lb</item>
+        <item name="Damage">1d6 energy</item>
+        <item name="Properties">Finesse, hidden, light, luminous</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="splitsaber">
+        <item name="Title">Splitsaber</item>
+        <item name="Attributes">Martial Lightweapon</item>
+        <item name="CostAndWeight">1,500 cr"  "3 lb</item>
+        <item name="Damage">2d4 energy</item>
+        <item name="Properties">Double (2d4 energy), interlocking, luminous</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="splitshoto">
+        <item name="Title">Splitshoto</item>
+        <item name="Attributes">Martial Lightweapon</item>
+        <item name="CostAndWeight">1,150 cr"  "2 lb</item>
+        <item name="Damage">1d8 energy</item>
+        <item name="Properties">Double (1d8 energy), interlocking, light, luminous</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="techaxe">
+        <item name="Title">Techaxe</item>
+        <item name="Attributes">Simple Vibroweapon</item>
+        <item name="CostAndWeight">75 cr"  "1 lb</item>
+        <item name="Damage">1d6 kinetic</item>
+        <item name="Properties">Light, thrown (range 25/75)</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="vibrodagger">
+        <item name="Title">vibrodagger</item>
+        <item name="Attributes">Simple Vibroweapon</item>
+        <item name="CostAndWeight">50 cr"  "0,5 lb</item>
+        <item name="Damage">1d4 kinetic</item>
+        <item name="Properties">Finesse, light, thrown (range 20/60)</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="vibrodart">
+        <item name="Title">vibrodart</item>
+        <item name="Attributes">Simple Vibroweapon</item>
+        <item name="CostAndWeight">5 cr"  "0,5 lb</item>
+        <item name="Damage">1d4 kinetic</item>
+        <item name="Properties">Finesse, special, thrown (range 20/60)</item>
+        <item name="Text">Due to their diminutive size, vibrodarts make ineffective melee weapons. Melee attack rolls made with them are made at disadvantage.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="vibroknuckler">
+        <item name="Title">vibroknuckler</item>
+        <item name="Attributes">Simple Vibroweapon</item>
+        <item name="CostAndWeight">75 cr"  "1,25 lb</item>
+        <item name="Damage">1d6 kinetic</item>
+        <item name="Properties">Hidden, light</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="vibromace">
+        <item name="Title">vibromace</item>
+        <item name="Attributes">Simple Vibroweapon</item>
+        <item name="CostAndWeight">700 cr"  "7 lb</item>
+        <item name="Damage">1d10 kinetic</item>
+        <item name="Properties">Dexterity 11, heavy, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="vibrospear">
+        <item name="Title">vibrospear</item>
+        <item name="Attributes">Simple Vibroweapon</item>
+        <item name="CostAndWeight">125 cr"  "4 lb</item>
+        <item name="Damage">1d6 kinetic</item>
+        <item name="Properties">Thrown (range 25/75), versatile (2d4)</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="vibrostaff">
+        <item name="Title">vibrostaff</item>
+        <item name="Attributes">Simple Vibroweapon</item>
+        <item name="CostAndWeight">100 cr"  "4 lb</item>
+        <item name="Damage">1d6 kinetic</item>
+        <item name="Properties">Versatile (2d4)</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="chakram">
+        <item name="Title">Chakram</item>
+        <item name="Attributes">Martial Vibroweapon</item>
+        <item name="CostAndWeight">175 cr"  "3 lb</item>
+        <item name="Damage">1d6 kinetic</item>
+        <item name="Properties">Finesse, returning, thrown (range 30/90)</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="doubleblade">
+        <item name="Title">Doubleblade</item>
+        <item name="Attributes">Martial Vibroweapon</item>
+        <item name="CostAndWeight">400 cr"  "3,5 lb</item>
+        <item name="Damage">1d6 kinetic</item>
+        <item name="Properties">Double (1d6 kinetic), finesse, light</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="doublesword">
+        <item name="Title">Doublesword</item>
+        <item name="Attributes">Martial Vibroweapon</item>
+        <item name="CostAndWeight">450 cr"  "5,5 lb</item>
+        <item name="Damage">1d8 kinetic</item>
+        <item name="Properties">Double (1d8 kinetic), finesse</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="hidden_blade">
+        <item name="Title">hidden Blade</item>
+        <item name="Attributes">Martial Vibroweapon</item>
+        <item name="CostAndWeight">75 cr"  "1 lb</item>
+        <item name="Damage">1d4 kinetic</item>
+        <item name="Properties">Finesse, fixed, hidden, light</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="net">
+        <item name="Title">Net</item>
+        <item name="Attributes">Martial Vibroweapon</item>
+        <item name="CostAndWeight">300 cr"  "3 lb</item>
+        <item name="Damage">—</item>
+        <item name="Properties">Light, finesse, special, thrown (range 15)</item>
+        <item name="Text">A Large or smaller creature hit by a net is restrained until it is freed. A net has no effect on formless or Huge or larger creatures. A creature can use its action to make a DC 13 Strength check, freeing itself or another creature within its reach on a success. The net has an AC of 10, 5 hit points, and immunity to all damage not dealt by melee weapons. Destroying the net frees the creature without harming it and immediately ends the net\'s effects. While a creature is restrained by a net, you can make no further attacks with it.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="techblade">
+        <item name="Title">Techblade</item>
+        <item name="Attributes">Martial Vibroweapon</item>
+        <item name="CostAndWeight">100 cr"  "1,5 lb</item>
+        <item name="Damage">1d6 kinetic</item>
+        <item name="Properties">Finesse, light</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="techstaff">
+        <item name="Title">Techstaff</item>
+        <item name="Attributes">Martial Vibroweapon</item>
+        <item name="CostAndWeight">650 cr"  "5,25 lb</item>
+        <item name="Damage">2d4 kinetic</item>
+        <item name="Properties">Dexterity 11, double (2d4 kinetic), light</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="vibroaxe">
+        <item name="Title">vibroaxe</item>
+        <item name="Attributes">Martial Vibroweapon</item>
+        <item name="CostAndWeight">950 cr"  "9,25 lb</item>
+        <item name="Damage">1d12 kinetic</item>
+        <item name="Properties">Dexterity 11, heavy, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="vibroblade">
+        <item name="Title">vibroblade</item>
+        <item name="Attributes">Martial Vibroweapon</item>
+        <item name="CostAndWeight">200 cr"  "5 lb</item>
+        <item name="Damage">1d8 kinetic</item>
+        <item name="Properties">Versatile (1d10)</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="vibropike">
+        <item name="Title">vibropike</item>
+        <item name="Attributes">Martial Vibroweapon</item>
+        <item name="CostAndWeight">950 cr"  "9,25 lb</item>
+        <item name="Damage">1d10 kinetic</item>
+        <item name="Properties">Dexterity 11, reach, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="vibrorapier">
+        <item name="Title">vibrorapier</item>
+        <item name="Attributes">Martial Vibroweapon</item>
+        <item name="CostAndWeight">150 cr"  "3,5 lb</item>
+        <item name="Damage">1d8 kinetic</item>
+        <item name="Properties">Finesse</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="vibrosword">
+        <item name="Title">vibrosword</item>
+        <item name="Attributes">Martial Vibroweapon</item>
+        <item name="CostAndWeight">1,150 cr"  "9,25 lb</item>
+        <item name="Damage">2d6 kinetic</item>
+        <item name="Properties">Dexterity 11, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="vibrowhip">
+        <item name="Title">vibrowhip</item>
+        <item name="Attributes">Martial Vibroweapon</item>
+        <item name="CostAndWeight">275 cr"  "3,5 lb</item>
+        <item name="Damage">1d4 kinetic</item>
+        <item name="Properties">Finesse, reach</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+
+    <string-array name="blaster_carbine">
+        <item name="Title">Blaster Carbine</item>
+        <item name="Attributes">Simple Blaster</item>
+        <item name="CostAndWeight">425 cr"  "5,5 lb</item>
+        <item name="Damage">1d6 energy</item>
+        <item name="Properties">Power cell (range 70/280), reload 16, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="blaster_pistol">
+        <item name="Title">Blaster Pistol</item>
+        <item name="Attributes">Simple Blaster</item>
+        <item name="CostAndWeight">175 cr"  "2,5 lb</item>
+        <item name="Damage">1d6 energy</item>
+        <item name="Properties">Power cell (range 70/280), reload 16, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="bowcaster">
+        <item name="Title">bowcaster</item>
+        <item name="Attributes">Simple Blaster</item>
+        <item name="CostAndWeight">1150 cr"  "11 lb</item>
+        <item name="Damage">1d10 energy</item>
+        <item name="Properties">Burst 4, power cell (range 50/200), reload 4, strength 13, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="hold_out">
+        <item name="Title">Hold-out</item>
+        <item name="Attributes">Simple Blaster</item>
+        <item name="CostAndWeight">225 cr"  "0,5 lb</item>
+        <item name="Damage">1d4 energy</item>
+        <item name="Properties">Hidden, light, power cell (range 30/120), reload 8</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="ion_carbine">
+        <item name="Title">ion Carbine</item>
+        <item name="Attributes">Simple Blaster</item>
+        <item name="CostAndWeight">600 cr"  "6 lb</item>
+        <item name="Damage">1d6 ion</item>
+        <item name="Properties">Power cell (range 60/240), reload 12, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="ion_pistol">
+        <item name="Title">ion Pistol</item>
+        <item name="Attributes">Simple Blaster</item>
+        <item name="CostAndWeight">250 cr"  "5,5 lb</item>
+        <item name="Damage">1d3 ion</item>
+        <item name="Properties">Power cell (range 40/160), reload 16</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="light_pistol">
+        <item name="Title">light Pistol</item>
+        <item name="Attributes">Simple Blaster</item>
+        <item name="CostAndWeight">250 cr"  "0,5 lb</item>
+        <item name="Damage">1d4 energy</item>
+        <item name="Properties">Light, power cell (range 40/160), reload 8</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="light_repeater">
+        <item name="Title">light repeater</item>
+        <item name="Attributes">Simple Blaster</item>
+        <item name="CostAndWeight">625 cr"  "6 lb</item>
+        <item name="Damage">1d6 energy</item>
+        <item name="Properties">Auto, power cell (range 50/200), rapid 5, reload 20, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="light_slugpistol">
+        <item name="Title">light Slugpistol</item>
+        <item name="Attributes">Simple Blaster</item>
+        <item name="CostAndWeight">250 cr"  "1 lb</item>
+        <item name="Damage">1d4 kinetic</item>
+        <item name="Properties">Light, reload 8, slug cartridge (range 35/140)</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="scattergun">
+        <item name="Title">Scattergun</item>
+        <item name="Attributes">Simple Blaster</item>
+        <item name="CostAndWeight">625 cr"  "2 lb</item>
+        <item name="Damage">1d6 kinetic</item>
+        <item name="Properties">Burst 2, reload 8, slug cartridge (range 30/120), strength 11</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="shotgun">
+        <item name="Title">Shotgun</item>
+        <item name="Attributes">Simple Blaster</item>
+        <item name="CostAndWeight">725 cr"  "6,5 lb</item>
+        <item name="Damage">2d4 kinetic</item>
+        <item name="Properties">Burst 2, reload 4, slug cartridge (range 30/120), strength 11, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="slugpistol">
+        <item name="Title">Slugpistol</item>
+        <item name="Attributes">Simple Blaster</item>
+        <item name="CostAndWeight">325 cr"  "3 lb</item>
+        <item name="Damage">1d6 kinetic</item>
+        <item name="Properties">Power cell (range 70/280), reload 16, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="wristblaster">
+        <item name="Title">Wristblaster</item>
+        <item name="Attributes">Simple Blaster</item>
+        <item name="CostAndWeight">200 cr"  "0,5 lb</item>
+        <item name="Damage">1d4 energy</item>
+        <item name="Properties">Disguised, fixed, light, power cell (range 30/120), reload 8</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="wrist_launcher">
+        <item name="Title">Wrist Launcher</item>
+        <item name="Attributes">Simple Blaster</item>
+        <item name="CostAndWeight">400 cr"  "2 lb</item>
+        <item name="Damage">—</item>
+        <item name="Properties">Fixed, reload 1, special (range 30/120)</item>
+        <item name="Text">Rather than traditional power cells, the wrist launcher fires specialized projectiles in the form of darts, small missiles, or specialized canisters.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="assault_cannon">
+        <item name="Title">Assault Cannon</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">1,550 cr"  "15 lb</item>
+        <item name="Damage">1d12 energy</item>
+        <item name="Properties">Burst 4, power cell (range 90/360), reload 4, strength 15, two-handed </item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="beam_rifle">
+        <item name="Title">Beam Rifle</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">1,850 cr"  "16 lb</item>
+        <item name="Damage">2d6 energy</item>
+        <item name="Properties">Penetrating 2, power cell (range 150/600), reload 2, strength 15, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="blaster_rifle">
+        <item name="Title">Blaster Rifle</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">525 cr"  "7,5 lb</item>
+        <item name="Damage">1d8 energy</item>
+        <item name="Properties">Power cell (range 105/420), reload 12, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="carbine_rifle">
+        <item name="Title">Carbine Rifle</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">925 cr"  "8,5 lb</item>
+        <item name="Damage">1d8 energy</item>
+        <item name="Properties">Auto, power cell (range 90/360), rapid 3, reload 12, strength 11, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="cycler_rifle">
+        <item name="Title">Cycler Rifle</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">825 cr"  "7,5 lb</item>
+        <item name="Damage">1d8 kinetic</item>
+        <item name="Properties">Rapid 2, reload 8, slug cartridge (range 90/360), strength 11, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="heavy_blaster_rifle">
+        <item name="Title">heavy Blaster Rifle</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">1025 cr"  "10 lb</item>
+        <item name="Damage">2d4 energy</item>
+        <item name="Properties">Power cell (range 100/400), rapid 2, reload 8, strength 13, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="heavy_bowcaster">
+        <item name="Title">heavy_bowcaster</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">1750 cr"  "15 lb</item>
+        <item name="Damage">1d12 energy</item>
+        <item name="Properties">Burst 2, power cell (range 90/360), reload 4, strength 17, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="heavy_carbine">
+        <item name="Title">heavy Carbine</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">775 cr"  "7,5 lb</item>
+        <item name="Damage">1d8 energy</item>
+        <item name="Properties">Power cell (range 60/240), rapid 4, reload 16, strength 11, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="heavy_pistol">
+        <item name="Title">heavy Pistol</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">300 cr"  "4 lb</item>
+        <item name="Damage">1d8 energy</item>
+        <item name="Properties">Power cell (range 45/180), reload 16</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="heavy_repeater">
+        <item name="Title">heavy Repeater</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">1,225 cr"  "11 lb</item>
+        <item name="Damage">2d4 energy</item>
+        <item name="Properties">Auto, burst 4, power cell (range 80/320), rapid 4, reload 8, strength 13, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="heavy_shotgun">
+        <item name="Title">heavy Shotgun</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">1,125 cr"  "9,5 lb</item>
+        <item name="Damage">2d4 kinetic</item>
+        <item name="Properties">Burst 2, reload 8, slug cartridge (range 60/240), strength 13, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="heavy_slugpistol">
+        <item name="Title">heavy Slugpistol</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">375 cr"  "3,5 lb</item>
+        <item name="Damage">1d8 kinetic</item>
+        <item name="Properties">Rapid 8, reload 12, slug cartridge (range 30/120)</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="hunting_rifle">
+        <item name="Title">Hunting Rifle</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">1000 cr"  "11 lb</item>
+        <item name="Damage">1d10 kinetic</item>
+        <item name="Properties">Reload 4, slug cartridge (range 125/500), strength 11, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="ion_cannon">
+        <item name="Title">ion Cannon</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">3,800 cr"  "16,5 lb</item>
+        <item name="Damage">1d10 ion</item>
+        <item name="Properties">Auto, burst 4, power cell (range 90/360), reload 4, strength 15, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="ion_rifle">
+        <item name="Title">ion Rifle</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">1,150 cr"  "8 lb</item>
+        <item name="Damage">1d6 ion</item>
+        <item name="Properties">Power cell (range 80/320), reload 8, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="repeating_blaster">
+        <item name="Title">Repeating Blaster</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">1,025 cr"  "9 lb</item>
+        <item name="Damage">1d8 energy</item>
+        <item name="Properties">Auto, burst 4, power cell (range 75/300), rapid 4, reload 8, strength 11, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="rotary_cannon">
+        <item name="Title">Rotary Cannon</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">1,500 cr"  "12,5 lb</item>
+        <item name="Damage">1d10 energy</item>
+        <item name="Properties">Auto, power cell (range 75/300), rapid 2, reload 8, strength 13, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="slugthrower">
+        <item name="Title">Slugthrower</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">525 cr"  "7,5 lb</item>
+        <item name="Damage">1d8 kinetic</item>
+        <item name="Properties">Reload 12, slug cartridge (range 105/420), two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="sniper_rifle">
+        <item name="Title">Sniper Rifle</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">1,300 cr"  "13,5 lb</item>
+        <item name="Damage">1d12 energy</item>
+        <item name="Properties">Power cell (range 150/600), reload 2, strength 13, two-handed</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="subrepeater">
+        <item name="Title">Subrepeater</item>
+        <item name="Attributes">Martial Blaster</item>
+        <item name="CostAndWeight">625 cr"  "4 lb</item>
+        <item name="Damage">1d6 energy</item>
+        <item name="Properties">Auto, rapid 4, light, power cell (range 30/120), reload 16, strength 11</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <!--Armours and Shields-->
+    <string-array name="combat_suit">
+        <item name="Title">Combat Suit</item>
+        <item name="Attributes">Light Armour</item>
+        <item name="CostAndWeight">100 cr" "10 lb</item>
+        <item name="AC">AC: 11+Dex</item>
+        <item name="Properties">—</item>
+        <item name="Text">Combat suits are seen all over the galaxy, and can be found for sale by almost any merchant who dealt in weapons and armour. Many such suits are used by military organizations, such as the Galactic Republic\'s military, as well as by mercenaries, criminals, bounty hunters and even some Jedi.\n"   " The suit itself offers decent protection from most types of attacks while maintaining maximum flexibility and minimum weight. However this armour is only recommended for light skirmishes.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="fiber_armour">
+        <item name="Title">Fiber Armour</item>
+        <item name="Attributes">Light Armour</item>
+        <item name="CostAndWeight">450 cr" "13 lb</item>
+        <item name="AC">AC: 12+Dex</item>
+        <item name="Properties">—</item>
+        <item name="Text">Fiber armour is a type of armour that offers more protection than the lighter combat suit. Fiber armour is heavier overall than combat suits, and not quite as flexible, but many consider the trade-offs worthwhile. It is a good source of defense from physical attacks and light blaster fire.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="mesh_armour">
+        <item name="Title">Mesh Armour</item>
+        <item name="Attributes">Medium Armour</item>
+        <item name="CostAndWeight">500 cr" "20 lb</item>
+        <item name="AC">AC: 13+Dex(max +2)</item>
+        <item name="Properties">—</item>
+        <item name="Text">Providing solid protection for a minimal cost, mesh armour is considered excellent protection for entrenched troops or guards. However, this protection comes at a cost of mobility, limiting its uses by rapidly advancing infantry. Still, it provides more mobility than battle armour.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="weave_armour">
+        <item name="Title">Weave Armour</item>
+        <item name="Attributes">Medium Armour</item>
+        <item name="CostAndWeight">1000 cr" "25 lb</item>
+        <item name="AC">AC: 14+Dex(max +2)</item>
+        <item name="Properties">—</item>
+        <item name="Text">Weave armour was constructed from a mesh of metal or composite plates and a padded jumpsuit. Variants of the armour included less plates and more padding for a lighter, though less protective armour, and heavier plating with molded pieces to fit the wearer. Though the armour was available unmodified, most users personalized their armour.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="composite_armour">
+        <item name="Title">Composite Armour</item>
+        <item name="Attributes">Medium Armour</item>
+        <item name="CostAndWeight">2,500 cr" "45 lb</item>
+        <item name="AC">AC: 15+Dex(max +2)</item>
+        <item name="Properties">Bulky</item>
+        <item name="Text">Composite armour is a type of armoured suit that offers a good balance of mobility and protection against most types of weapons. The micro-hydraulics of this type of powered armour provide the operator with protection, but are more bulky than mesh or weave armours. This type of armour is rarely seen outside of professional mercenaries\' and soldiers\' use.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="battle_armour">
+        <item name="Title">Battle Armour</item>
+        <item name="Attributes">Heavy Armour</item>
+        <item name="CostAndWeight">750 cr" "55 lb</item>
+        <item name="AC">AC: 16</item>
+        <item name="Properties">Bulky, Strength 13</item>
+        <item name="Text">Battle armour is an armour that reduced weight, but restricts movement. The armour is commonly used by mercenaries, bounty hunters, soldiers, and civilians that live in dangerous areas.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="assault_armour">
+        <item name="Title">Assault Armour</item>
+        <item name="Attributes">Heavy Armour</item>
+        <item name="CostAndWeight">2,000 cr" "60 lb</item>
+        <item name="AC">AC: 17</item>
+        <item name="Properties">Bulky, Strength 15</item>
+        <item name="Text">Assault armour improved on battle armour, with the benefit of micro-hydraulics that boost the efficacy of the operator. It offers better protection, but increased weight.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="heavy_exoskeleton">
+        <item name="Title">Heavy exoskeleton</item>
+        <item name="Attributes">Heavy Armour</item>
+        <item name="CostAndWeight">9,000 cr" "65 lb</item>
+        <item name="AC">AC: 18</item>
+        <item name="Properties">Bulky, Strength 17</item>
+        <item name="Text">Heavy exoskeletons are virtually the heaviest armour acquirable during the Galactic War. It is ideal for extreme combat situations that involved direct damage and also offers a very good level of protection in sacrifice of dexterity. Some consider it claustrophobic but that was the trade-off for safety.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="light_physical_shield">
+        <item name="Title">Light Physical Shield</item>
+        <item name="Attributes">Light Shield</item>
+        <item name="CostAndWeight">50 cr" "6 lb</item>
+        <item name="AC">AC: +1</item>
+        <item name="Properties">—</item>
+        <item name="Text">A light shield is generally affixed to the forearm. While a light shield does not fill the hand, you gain no benefit from it while the hand is full. You gain no benefit from a light shield while wielding a weapon with the heavy property.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="medium_physical_shield">
+        <item name="Title">Medium Physical Shield</item>
+        <item name="Attributes">Medium Shield</item>
+        <item name="CostAndWeight">150 cr" "18 lb</item>
+        <item name="AC">AC: +2</item>
+        <item name="Properties">Strength 13</item>
+        <item name="Text">A medium shield is a common defensive technology that protects the user from blaster fire, the elements, or other hazards. Medium shields are used in conjunction with any one-handed weapon.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="heavy_physical_shield">
+        <item name="Title">Heavy Physical Shield</item>
+        <item name="Attributes">Heavy Shield</item>
+        <item name="CostAndWeight">500 cr" "36 lb</item>
+        <item name="AC">AC: +3</item>
+        <item name="Properties">Obtrusive, Strength 15</item>
+        <item name="Text">Heavy shields are much larger and more cumbersome, but they offer more protection than their smaller counterparts. Their unwieldy size, however, requires the use of a one-handed weapon with the light property in the other hand.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="light_shield_generator">
+        <item name="Title">Light Shield Generator</item>
+        <item name="Attributes">Light Shield</item>
+        <item name="CostAndWeight">125 cr" "2 lb</item>
+        <item name="AC">AC: +1</item>
+        <item name="Properties">—</item>
+        <item name="Text">A light shield is generally affixed to the forearm. While a light shield does not fill the hand, you gain no benefit from it while the hand is full. You gain no benefit from a light shield while wielding a weapon with the heavy property.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="medium_shield_generator">
+        <item name="Title">Medium Shield Generator</item>
+        <item name="Attributes">Medium Shield</item>
+        <item name="CostAndWeight">375 cr" "6 lb</item>
+        <item name="AC">AC: +2</item>
+        <item name="Properties">—</item>
+        <item name="Text">A medium shield is a common defensive technology that protects the user from blaster fire, the elements, or other hazards. Medium shields are used in conjunction with any one-handed weapon.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    -<string-array name="heavy_shield_generator">
+        <item name="Title">Heavy Shield Generator</item>
+        <item name="Attributes">Heavy Shield</item>
+        <item name="CostAndWeight">500 cr" "12 lb</item>
+        <item name="AC">AC: +3</item>
+        <item name="Properties">—</item>
+        <item name="Text">Heavy shields are much larger and more cumbersome, but they offer more protection than their smaller counterparts. Their unwieldy size, however, requires the use of a one-handed weapon with the light property in the other hand.</item>
+        <item name="Expansion">PHB</item> 
+    </string-array>
+
+    <!--Adventuring Gear-->
+    <!--Ammunition-->
+    <string-array name="dart">
+        <item name="Title">Dart</item>
+        <item name="Attributes">Ammunition</item>
+        <item name="CostAndWeight">50 cr" "— lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">This wrist launcher ammunition deals 1d6 kinetic damage on a hit.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="missile_fragmentation">
+        <item name="Title">missile, fragmentation</item>
+        <item name="Attributes">Ammunition</item>
+        <item name="CostAndWeight">100 cr" "0.5 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">This wrist launcher ammunition deals 1d6 kinetic damage on a hit. Additionally, hit or miss, the missile then explodes. The target and each creature within 5 feet must make a DC 14 Dexterity saving throw, taking 1d10 kinetic damage on a failed save or half as much on a successful one.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="power_cell">
+        <item name="Title">Dart</item>
+        <item name="Attributes">Ammunition</item>
+        <item name="CostAndWeight">10 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Power cells fuel blaster weapons that deal energy or ion damage. Additionally, power cells are used to energize certain tools.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="projector_canister_cryo">
+        <item name="Title">projector canister, cryo</item>
+        <item name="Attributes">Ammunition</item>
+        <item name="CostAndWeight">350 cr" "2 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">When triggered, this wrist launcher ammunition produces a beam of carbonite energy in a line 15 feet long and 5 feet wide or a 15-foot cone. A single fuel canister holds enough fuel for three attacks in a line or a single attack in a cone. Each creature must make a DC 14 Constitution saving throw. On a failed save, a creature takes 1d4 cold damage and gains 1 slowed level until the end of your next turn. On a successful save, a creature takes half damage and isn\'t slowed. If this damage reduces a creature to 0 hit points, that creature is frozen in carbonite for 1 hour. If you lack proficiency in the wrist launcher, you must roll the damage dice twice and take the lesser total.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="projector_canister_incendiary">
+        <item name="Title">projector canister, incendiary</item>
+        <item name="Attributes">Ammunition</item>
+        <item name="CostAndWeight">325 cr" "2 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">When triggered, this wrist launcher ammunition produces a burst of flame in a line 15 feet long and 5 feet wide or a 15-foot cone. A single fuel canister holds enough fuel for three attacks in a line or a single attack in a cone. Each creature must make a DC 14 Dexterity saving throw, taking 1d8 fire damage or half as much on a successful one. The fire spreads around corners. It ignites flammable objects in the area that aren\'t being worn or carried. If you lack proficiency in the wrist launcher, you must roll the damage dice twice and take the lesser total.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="slug_cartridge">
+        <item name="Title">slug cartridge</item>
+        <item name="Attributes">Ammunition</item>
+        <item name="CostAndWeight">2 cr" "— lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Slug cartridges are ammunition for blaster weapons that deal kinetic damage. When you reload a weapon that uses cartridges, you can reload any number of cartridges up to the weapon\'s reload number as a part of the same action.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <!--Communications-->
+    <string-array name="comm_jammer">
+        <item name="Title">comm jammer</item>
+        <item name="Attributes">Communications</item>
+        <item name="CostAndWeight">450 cr" "3 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A device used to scramble and block transmissions from Communications devices in a 300 foot radius. The device can be activated or deactivated as an action. Any creature sending incoming or outgoing Communications within range must succeed on a DC 15 Intelligence (Technology) check. On a failure, their Communications are jammed until the comm jammer is deactivated or they move out of its range. The comm jammer lasts for 1 hour and can be recharged by connecting to a power source or by replacing the power cell.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="commlink">
+        <item name="Title">commlink</item>
+        <item name="Attributes">Communications</item>
+        <item name="CostAndWeight">50 cr" "0.5 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">commlinks are simple handheld communication devices, fitted with microphones and receivers. Basic, personal commlinks have a range of up to 30 miles, but are reduced in dense, urban areas or areas of high level interference. The commlink lasts for 10 hours and can be recharged by connecting to a power source or by replacing the power cell.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="commlink_hands_free">
+        <item name="Title">commlink hands-free</item>
+        <item name="Attributes">Communications</item>
+        <item name="CostAndWeight">200 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A hands-free commlink functions as a commlink, but can be installed in a helmet or worn independently, such as on your head or ear.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="holocomm">
+        <item name="Title">holocomm</item>
+        <item name="Attributes">Communications</item>
+        <item name="CostAndWeight">300 cr" "2 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A holocomm is a Communications unit that utilizes the HoloNet. It enables users to send and receive messages through holographic-based transmission networks.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="holotrace_device">
+        <item name="Title">holotrace device</item>
+        <item name="Attributes">Communications</item>
+        <item name="CostAndWeight">1000 cr" "5 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A holotrace device is a wrist-worn gadget that can be used to trace a holographic transmission back to its source.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="pocket_scrambler">
+        <item name="Title">pocket scrambler</item>
+        <item name="Attributes">Communications</item>
+        <item name="CostAndWeight">800 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A pocket scrambler is a simple add-on to any commlink that automatically encodes any messages sent out. The transmitted message can only be read by a device equipped with a matched scrambler.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <!--Data recording and storage-->
+    <string-array name="code_cylinder">
+        <item name="Title">code cylinder</item>
+        <item name="Attributes">Data recording and storage</item>
+        <item name="CostAndWeight">20 cr" "0.5 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Code cylinders are security devices in the shape of short cylinders that contain coded information about their bearers and grant them access to secure areas.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="datacard">
+        <item name="Title">datacard</item>
+        <item name="Attributes">Data recording and storage</item>
+        <item name="CostAndWeight">5 cr" "— lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A datacard or data disk is a flat, hand-held device used in conjunction with a datapad to store information.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="datacron">
+        <item name="Title">datacron</item>
+        <item name="Attributes">Data recording and storage</item>
+        <item name="CostAndWeight">1000 cr" "2 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A datacron is a type of holocron that can be accessed by non-Force-sensitives and are mainly used to store encrypted data. They are complete with an interactive projection to access the information.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="datapad">
+        <item name="Title">datapad</item>
+        <item name="Attributes">Data recording and storage</item>
+        <item name="CostAndWeight">100 cr" "0.5 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A datapad is a small electronic device used for the input, storage and displaying of information. It features a holoprojective surface for 3D viewing.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="holocron">
+        <item name="Title">holocron</item>
+        <item name="Attributes">Data recording and storage</item>
+        <item name="CostAndWeight">1000 cr" "2 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Holocrons are information-storage devices used by force wielders that contain ancient lessons or valuable information in holographic form. They appear as palmsized, glowing polyhedrons of crystalline material and hardware, and can only be activated and used through the power of the Force.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="holorecorder">
+        <item name="Title">holorecorder</item>
+        <item name="Attributes">Data recording and storage</item>
+        <item name="CostAndWeight">100 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A holorecorder is a device used to record and project holograms. Some droid models are equipped with internal holorecorders.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="stylus_pen">
+        <item name="Title">stylus pen</item>
+        <item name="Attributes">Data recording and storage</item>
+        <item name="CostAndWeight">10 cr" "0.5 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A stylus pen is designed to write on both solid surfaces and touch screen interfaces.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="wristpad">
+        <item name="Title">wristpad</item>
+        <item name="Attributes">Data recording and storage</item>
+        <item name="CostAndWeight">600 cr" "2 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A wristpad is a harness with an integrated datapad and holoprojector interface that fits on the forearm and includes self-charging battery packs.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="grenade_fragmentation">
+        <item name="Title">grenade, fragmentation</item>
+        <item name="Attributes">Explosive</item>
+        <item name="CostAndWeight">100 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Dexterity saving throw. A creature takes 2d10 kinetic damage on a failed save, or half as much as on a successful one.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="grenade_gas">
+        <item name="Title">grenade, gas</item>
+        <item name="Attributes">Explosive</item>
+        <item name="CostAndWeight">300 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. The grenade explodes, filling the air in a 10-foot-radius sphere with yellow-green fog for 1 minute. The fog spreads around corners, and its area is heavily obscured. It lasts for 1 minute or until a wind of at least 10 miles per hour disperses it.\n"   " When a creature enters the fog or starts its turn there, it creature must make a DC 14 Constitution saving throw. The creature takes 2d6 poison damage on a failed save, or half as much damage on a successful one. Additionally, on a failed save, the creature is poisoned while it is in the cloud. Droids, constructs and humanoids wearing appropriate protective equipment are unaffected.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="grenade_ion">
+        <item name="Title">grenade, ion</item>
+        <item name="Attributes">Explosive</item>
+        <item name="CostAndWeight">250 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Dexterity saving throw. A creature takes 2d6 ion damage on a failed save, or half as much as on a successful one. Any electronics within the blast radius are disabled until rebooted.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="grenade_plasma">
+        <item name="Title">grenade, plasma</item>
+        <item name="Attributes">Explosive</item>
+        <item name="CostAndWeight">125 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Grenades can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 10 feet must make a DC 14 Dexterity saving throw. A creature takes 2d10 energy damage on a failed save, or half as much as on a successful one.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="mine_fragmentation">
+        <item name="Title">mine, fragmentation</item>
+        <item name="Attributes">Explosive</item>
+        <item name="CostAndWeight">200 cr" "2 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Mines can be set to detonate when a creature comes within up to 15 feet of it or paired with a remote detonator. As an action, you can prime and set a mine on a surface you can reach, which arms at the start of your next turn. When detonated, each creature within 15 feet of it must make a DC 14 Dexterity saving throw. A creature takes 2d10 kinetic damage on a failed save, or half as much as on a successful one.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="mine_gas">
+        <item name="Title">mine, gas</item>
+        <item name="Attributes">Explosive</item>
+        <item name="CostAndWeight">625 cr" "2 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Mines can be set to detonate when a creature comes within up to 15 feet of it or paired with a remote detonator. As an action, you can prime and set a mine on a surface you can reach, which arms at the start of your next turn. When detonated, the mine fills the air in a 15-foot-radius sphere with yellow-green fog for 1 minute. The fog spreads around corners, and its area is heavily obscured. It lasts for 1 minute or until a wind of at least 10 miles per hour disperses it. When a creature enters the fog or starts its turn there, it creature must make a DC 14 Constitution saving throw. The creature takes 2d6 poison damage on a failed save, or half as much damage on a successful one. Additionally, on a failed save, the creature is poisoned while it is in the cloud. Droids, constructs and humanoids wearing appropriate protective equipment are unaffected.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="mine_incendiary">
+        <item name="Title">mine, incendiary</item>
+        <item name="Attributes">Explosive</item>
+        <item name="CostAndWeight">550 cr" "2 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Mines can be set to detonate when a creature comes within up to 15 feet of it or paired with a remote detonator. As an action, you can prime and set a mine on a surface you can reach, which arms at the start of your next turn. When detonated, the mine sets the ground in a 15-foot radius ablaze for 1 minute. The fire ignites any flammable objects in the area that aren\'t being worn or carried.\n"   " When a creature enters the fire or starts its turn there, it creature must make a DC 14 Dexterity saving throw. The creature takes 2d8 fire damage on a failed save, or half as much damage on a successful one.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="thermal_detonator">
+        <item name="Title">thermal detonator</item>
+        <item name="Attributes">Explosive</item>
+        <item name="CostAndWeight">2000 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Thermal detonators are unique in that can only be turned off by whoever turned them on. They can be set to detonate on impact or with a timer that causes them to explode on initiative count 20 (losing all initiative ties). As an action, you can prime and throw a grenade at a point you can see within 30 feet + your Strength modifier x 5. Each creature within 20 feet must make a DC 14 Dexterity saving throw. A creature takes 2d6 fire and 2d10 kinetic damage on a failed save, or half as much as on a successful one. Additionally, on a failed save, the creature is knocked prone.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <!--Life support-->
+    <string-array name="emergency_shelter">
+        <item name="Title">emergency_shelter</item>
+        <item name="Attributes">Life support</item>
+        <item name="CostAndWeight">600 cr" "15 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">This shelter comes packed in a 2-foot-long tube. When activated, the shelter deploys, expanding to full size in 1 minute. The shelter is 8 feet long, 8 feet wide, and 6 feet tall, and can house up to six Medium creatures. The shelter includes spikes that automatically mount to the ground, provided they can find purchase. The shelter comes with an integrated power generator, faint glowing lights in the interior which provide dim light, and creatures in the shelter are protected from the elements, including hot and cold climates, as described in chapter 5 of the Dungeon Master\'s Guide. The shelters power generator lasts for seven days, after which it stops providing light. The shelter can be collapsed and restored over the course of 10 minutes.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="respirator">
+        <item name="Title">respirator</item>
+        <item name="Attributes">Life support</item>
+        <item name="CostAndWeight">200 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A respirator, or breath mask, is a portable device that includes 1 hour\'s worth of oxygen. The respirator is designed to function in all environments.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <!--Medical supplies-->
+    <string-array name="antitoxkit">
+        <item name="Title">antitoxkit</item>
+        <item name="Attributes">Medical supply</item>
+        <item name="CostAndWeight">600 cr" "4 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">An antitoxkit contained a variety of wide-spectrum antidote hypospray injectors that were designed to neutralize all known poisons. A kit has five charges. As an action, you can administer a charge of the kit to cure a target of one poison affecting them or to give them advantage on saving throws against poison for 1 hour. It confers no benefit to droids or constructs.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="emergency_battery">
+        <item name="title">emergency battery</item>
+        <item name="Attributes">Medical supply</item>
+        <item name="CostAndWeight">70 cr" "5 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">All non-expendable droids need recharging as they are used. The battery has ten uses. As an action, you can expend one use of the battery to stabilize a droid that has 0 hit points, without needing to make an Intelligence (Technology) check.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="medpac">
+        <item name="Title">medpac</item>
+        <item name="Attributes">Medical supply</item>
+        <item name="CostAndWeight">300 cr" "0.5 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A medpac is a quick-acting syringe filled with a concentrated dose of kolto. As an action, you can use this medpac to restore hit points to a beast or humanoid within 5 feet. The creature rolls one die equal to the size of their Hit Die and regains hit points equal to the amount rolled + their Constitution modifier (minimum of one hit point). If the creature has Hit Dice of different sizes, use whichever Hit Die size they have the most of.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="poison">
+        <item name="Title">poison</item>
+        <item name="Attributes">Medical supply</item>
+        <item name="CostAndWeight">125 cr" "0.5 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">As an action, you can use the poison in this vial to coat one vibroweapon, one slug cartridge, or one wrist launcher dart. A creature hit by the poisoned weapon must make a DC 14 Constitution saving throw, taking 2d4 poison damage on a failed save or half as much on a successful one. Once applied, the poison retains potency for 1 minute before drying.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="repair_kit">
+        <item name="Title">repair kit</item>
+        <item name="Attributes">Medical supply</item>
+        <item name="CostAndWeight">725 cr" "3 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A repair kit included the basic tools needed to repair a droid or construct after being damaged in combat. The kit has three uses. As an action, you can expend one use of the kit to restore hit points to a droid or construct within 5 feet. The creature rolls one die equal to the size of their Hit Die and regains hit points equal to the amount rolled + their Constitution modifier (minimum of one hit point). If the creature has Hit Dice of different sizes, use whichever Hit Die size they have the most of. </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="traumakit">
+        <item name="Title">traumakit</item>
+        <item name="Attributes">Medical supply</item>
+        <item name="CostAndWeight">50 cr" "3 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A common traumakit is stocked with essentials for the treatment of wounds. A traumakit has five uses. As an action, you can expend a use of the kit to stabilize a creature that has 0 hit points, without needing to make a Wisdom (Medicine) check.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="backpack">
+        <item name="Title">backpack</item>
+        <item name="Attributes">Storage</item>
+        <item name="CostAndWeight">50 cr" "5 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A backpack stores 30 lb, not exceeding 1 cubic foot.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="bottle">
+        <item name="Title">bottle</item>
+        <item name="Attributes">Storage</item>
+        <item name="CostAndWeight">20 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A bottle stores 1 and ½ pints of liquid.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="canteen">
+        <item name="Title">canteen</item>
+        <item name="Attributes">Storage</item>
+        <item name="CostAndWeight">10 cr" "3 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A canteen stores 4 pints of liquid.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="crate">
+        <item name="Title">crate</item>
+        <item name="Attributes">Storage</item>
+        <item name="CostAndWeight">20 cr" "70 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A crate stores 40 gallons of liquid or 4 cubic feet of solid.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="chest">
+        <item name="Title">chest</item>
+        <item name="Attributes">Storage</item>
+        <item name="CostAndWeight">50 cr" "25 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A chest stores 300 lb., not exceeding 12 cubic feet.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="pitcher">
+        <item name="Title">pitcher</item>
+        <item name="Attributes">Storage</item>
+        <item name="CostAndWeight">8 cr" "2 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A pitcher stores 1 gallon of liquid.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="pouch">
+        <item name="Title">pouch</item>
+        <item name="Attributes">Storage</item>
+        <item name="CostAndWeight">5 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A pouch stores 6.00 lb., not exceeding ⅕ cubic foot.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <!--Utilities-->
+    <string-array name="bedroll">
+        <item name="Title">bedroll</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">10 cr" "7 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="blanket">
+        <item name="Title">blanket</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">5 cr" "3 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="binders">
+        <item name="Title">binders</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">50 cr" "6 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Binders can be used to restrain a Small or Medium creature with appropriate appendages. Applying binders takes an action, and the target must make a DC 14 Strength or Dexterity saving throw (the target chooses the ability to use). A hostile creature makes this save with advantage. Breaking the binders requires a DC 20 Strength check. Escaping them requires a DC 20 Dexterity check. A set of binders comes with one key. Without the key, unlocking the binders requires a DC 15 security kit to force open. Binders have an AC of 10 and 15 hit points. Destroying the binders frees the creature without harming it.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="chronometer">
+        <item name="Title">chronometer</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">100 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A chronometer is a device that measures and keeps linear time.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="fibercord_cable">
+        <item name="Title">fibercord cable,50ft(rolled)</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">20 cr" "2 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="field_rations">
+        <item name="Title">field rations (one day\'s)</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">5 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Ration packs consist of dry foods suitable for extended travel, and are used when other food is scarce. Each pack is divided into portions and can provide enough food for one person per day.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="fusion_cutter">
+        <item name="Title">fusion cutter</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">25 cr" "2 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A fusion cutter is a handheld cutting tool popular among technicians. It can cut through almost any reinforced material, given enough time. The internal power cell supplies an hour\'s worth of continuous operation.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="glowrod">
+        <item name="Title">glowrod</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">10 cr" "2 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Glowrods create a beam of light illuminating the area around you in bright light for a 20-foot radius and dim light for an additional 20 feet. The glowrod lasts for 10 hours and can be recharged by connecting to a power source or by replacing the power cell.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="grappling_hook">
+        <item name="Title">grappling hook</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">50 cr" "4 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A grappling hook allows a user to climb or ascend large objects. It can be mounted to a blaster, belt, or elsewhere. It has a 50-foot length.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="heat_generator">
+        <item name="Title">heat generator</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">400 cr" "4 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Heat generators are special devices typically worn on belts that function as a portable, personal heat supply. Activating or deactivating the generator requires a bonus action and, while active, you are adapted to cold climates, as described in chapter 5 of the Dungeon Master\'s Guide. The generator lasts for 10 minutes and can be recharged by a power source or replacing the power cell.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="homing_beacon">
+        <item name="Title">homing beacon</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">450 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A homing beacon is a device used to track starships or any other entity being transported. Homing beacons transmit using non-mass HoloNet transceivers able to be tracked through hyperspace. Homing beacons are small enough that they can easily be hidden inside a ship, or tucked into some crevice on its exterior.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="hydrospanner">
+        <item name="Title">hydrospanner</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">10 cr" "2 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="macrobinoculars">
+        <item name="Title">macrobinoculars</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">750 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Macrobinoculars are handheld viewing devices that allow users to observe distant objects. Some models are able to see into space from the surface of a planet.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="mess_kit">
+        <item name="Title">mess kit</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">20 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">This box contains a cup and simple cutlery. The box clamps together, and one side can be used as a cooking pan and the other as a plate or shallow bowl.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="mirror">
+        <item name="Title">mirror</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">50 cr" "0.5 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="ram_portable">
+        <item name="Title">ram, portable</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">40 cr" "35 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">You can use a portable ram to break down doors. When doing so, you gain a +4 bonus on the Strength check. One other character can help you use the ram, giving you advantage on this check.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="restraining_bolt">
+        <item name="Title">restraining bolt</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">350 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Restraining bolts are small, cylindrical devices that can be affixed to a droid in order to limit its functions and enforce its obedience. When inserted, a restraining bolt restricts the droid from any movement its master does not desire, and also forced it to respond to signals produced by a hand-held control unit.\n"   " Installing a restraining bolt takes 1 minute. The droid must make a DC 14 Constitution saving throw. A hostile droid makes this save with advantage. On a successful save, the restraining bolt overloads and is rendered useless. On a failed save, the restraining bolt is correctly installed, and the control unit can be used to actively control the droid. While the control unit is inactive, the droid can act freely but it can not attempt to remove the restraining bolt.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="shovel">
+        <item name="Title">shovel</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">7 cr" "5 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="tent">
+        <item name="Title">tent, two-person</item>
+        <item name="Attributes">utility</item>
+        <item name="CostAndWeight">20 cr" "5 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text"> </item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <!--Weapon and Armour accessories-->
+    <string-array name="bandolier">
+        <item name="Title">bandolier</item>
+        <item name="Attributes">Armour accessory</item>
+        <item name="CostAndWeight">100 cr" "2 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A bandolier is worn across the chest. It has 12 pockets that can each hold a single item that weighs less than 2.00 lb, such as a vibrodagger, a fragmentation grenade, or a power cell. Once per turn, drawing an item from a bandolier does not require your object interaction.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="bipod">
+        <item name="Title">bipod</item>
+        <item name="Attributes">Weapon accessory</item>
+        <item name="CostAndWeight">200 cr" "2 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A bipod is a device mounted to a two-handed blaster that lacks the fixed property to offer increased stability while prone. As an action, you can deploy or collapse the bipod. While deployed, you ignore the Strength requirement on the attached blaster with the strength property while you are prone, and your speed is reduced to 0. Additionally, while deployed and prone, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of the weapon.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="friction_grip_gear">
+        <item name="Title">friction-grip gear</item>
+        <item name="Attributes">Armour accessory</item>
+        <item name="CostAndWeight">2000 cr" "12 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A special set of gloves and boots that allow the wearer to stick to and climb surfaces. While wearing these items, you gain the ability to move along vertical surfaces and ceilings while leaving your hands free. You also gain a climbing speed equal your walking speed.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="jetpack">
+        <item name="Title">jetpack</item>
+        <item name="Attributes">Armour accessory</item>
+        <item name="CostAndWeight">4500 cr" "20 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Jetpacks are personal aerial transportation devices that allow the operator to fly into and through the air with great mobility. Activating or deactivating the jetpack requires a bonus action and, while active, you have a flying speed of 30 feet. The jetpack last for 1 minute per power cell (to a maximum of 10 minutes) and can be recharged by a power source or replacing the power cells.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="remote_detonator">
+        <item name="Title">remote detonator</item>
+        <item name="Attributes">Weapon accessory</item>
+        <item name="CostAndWeight">150 cr" "1 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A small handhold device with a single button, used to activate explosives. Over the course of 1 minute, you can pair the detonator with up to two mines within 10 feet. As an action, you can remotely detonate all of the paired mines. You must be within 30 feet of the mines to detonate them.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="rocket_boots">
+        <item name="Title">rocket boots</item>
+        <item name="Attributes">Armour accessory</item>
+        <item name="CostAndWeight">2500 cr" "3 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Rocket boots are a form of rocket propulsion system affixed to a pair of boots instead of being worn on the back like a standard jetpack. Activating or deactivating the boots requires a bonus action and, while active, you have a flying speed of 25 feet. The rocket boots last for 1 minute and can be recharged by a power source or replacing the power cells.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="stealth_field_generator">
+        <item name="Title">stealth field generator</item>
+        <item name="Attributes">Armour accessory</item>
+        <item name="CostAndWeight">8000 cr" "3 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">Stealth field generators are special devices typically worn on belts that function as a portable, personal cloaking device. Activating or deactivating the generator requires a bonus action and, while active, you have advantage on Dexterity (Stealth) ability checks that rely on sight. The generator lasts for 1 minute and can be recharged by a power source or replacing the power cell. This effect ends early if you make an attack or cast a force or tech power.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="tracker_utility_vest">
+        <item name="Title">tracker utility vest</item>
+        <item name="Attributes">Armour accessory</item>
+        <item name="CostAndWeight">150 cr" "3 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A utility vest is a sleeveless item of clothing that includes several evenly-distributed pockets, popular among hunters, smugglers, and adventurers. The vest is made of leathery, hide material to resist rips, corrosion and water. The wearer can carry up to 10 light items (up to 1.00 lb each) without increasing their total encumbrance.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+    <string-array name="tripod">
+        <item name="Title">tripod</item>
+        <item name="Attributes">Weapon accessory</item>
+        <item name="CostAndWeight">450 cr" "16 lb</item>
+        <item name="Damage/AC"> </item>
+        <item name="Properties">—</item>
+        <item name="Text">A tripod is a device mounted to a two-handed blaster that lacks the fixed property to offer increased stability. Over the course of 1 minute, you can deploy or collapse the tripod. While deployed, you ignore the Strength requirement on the attached blaster with the strength property, and your speed is reduced to 0. Additionally, while deployed, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of the weapon.</item>
+        <item name="Expansion">PHB</item>
+    </string-array>
+
+
+    <string-array name="eqerror404">
+        <item name="Title">Equipment not found</item>
+        <item name="Attributes"> </item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,1775 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scouttablehscroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingVertical="20dp">
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#55FFD700"
+        android:padding="10dp"
+        >
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/the_scout"
+                android:textSize="22sp"
+                android:fontFamily="@font/starjedi"
+                android:textColor="@color/gold"
+                android:layout_span="9"
+                android:paddingVertical="5dp"
+                />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:baselineAligned="false">
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:text="@string/level"
+                android:textStyle="bold"
+                android:textColor="@color/gold" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:text="@string/profficiencybonus"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/gold" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/features"
+                android:textStyle="bold"
+                android:textColor="@color/gold" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ranger_quarry"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tech_powers_known"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tech_points"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:text="@string/max_power_level"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/routines_known"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/routine_radius"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#50FFD700"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plus2"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ranger's Quarry, Pathfinder"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d4"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="—"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="—"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="—"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:text="—"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:text="—"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plus2"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Techcasting, Fighting Style"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d4"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1st"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="—"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="—"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#50FFD700"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plus2"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scout Routine, Scout Technique"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d4"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1st"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 ft"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plus2"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ability Score Improvement"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d4"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1st"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 ft"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#50FFD700"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+3"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Extra Attack"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d6"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2nd"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 ft"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+3"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expertise"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d6"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2nd"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 ft"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#50FFD700"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+3"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Technique feature"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d6"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2nd"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 ft"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+3"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ability Score Improvement"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d6"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2nd"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 ft"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#50FFD700"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+4"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="—"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d8"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3rd"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15 ft"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+4"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Commando"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d8"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="13"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3rd"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15 ft"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#50FFD700"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+4"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Technique feature"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d8"
+                android:textAlignment="center"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3rd"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15 ft"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+4"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ability Score Improvement"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d8"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3rd"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15 ft"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#50FFD700"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="13"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+5"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="—"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d10"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="16"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="13"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4th"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15 ft"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+5"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expertise, Combat Tech"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d10"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="17"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4th"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15 ft"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#50FFD700"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+5"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Technique feature"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d10"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4th"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15 ft"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="16"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+5"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ability Score Improvement"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d10"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="16"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4th"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15 ft"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#50FFD700"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="17"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+6"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="—"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d12"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="17"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5th"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30 ft"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+6"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Supreme Awareness"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d12"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="21"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5th"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30 ft"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#50FFD700"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+6"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ability Score Improvement"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d12"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:text="22"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5th"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30 ft"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+6"
+                android:textColor="@color/gold"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Foe Slayer"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d12"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:id="@+id/textView43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5th"
+                android:textAlignment="center"
+                android:textColor="@color/gold"
+                />
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/gold" />
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30 ft"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:textColor="@color/gold" />
+        </TableRow>
+    </TableLayout>
+
+
+</HorizontalScrollView>

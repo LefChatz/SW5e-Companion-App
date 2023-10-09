@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/sw5elogotasawork"
+        android:label="@string/title_activity_SW5ECompanionApp"
+        android:roundIcon="@mipmap/sw5elogotasawork_round"
+        android:supportsRtl="true"
+        android:theme="@style/BlackStatusBar"
+        tools:targetApi="31">
+        <activity
+            android:name=".EquipmentDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SW5ECompanionApp"
+            android:exported="true"
+            android:theme="@style/BlackStatusBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".equipment.equipmentadapterstuff.EquipmentDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".equipment.AllActivity"
+            android:exported="false" />
+        <activity
+            android:name=".equipment.AdvGearActivity"
+            android:exported="false" />
+        <activity
+            android:name=".equipment.ArmourActivity"
+            android:exported="false" />
+        <activity
+            android:name=".equipment.WeaponsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EquipmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".species.BithActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.BothanActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.CatharActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.CereanActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.ChissActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.DevaronianActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.DroidClass1Activity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.DroidClass2Activity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.DroidClass3Activity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.DroidClass4Activity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.DroidClass5Activity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.DurosActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.EwokActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.GamorreanActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.GunganActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.HumanActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.IthorianActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.JawaActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.KelDorActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.MonCalamariActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.NautolanActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.RodianActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.SithPurebloodActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.TogrutaActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.TrandoshanActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.TuskenActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.TwilekActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.WeequayActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.WookieActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".species.ZabrakActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".classes.ScoutActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".classes.ScholarActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".classes.OperativeActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".classes.MonkActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".classes.GuardianActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".classes.EngineerActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".classes.SentinelActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".classes.FighterActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".classes.ConsularActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".classes.BerserkerActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".SpeciesActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".ClassesActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:exported="false"
+            android:label="@string/title_activity_classes"
+            android:theme="@style/BlackStatusBar" />
+        <activity
+            android:name=".currentlyuseless.Spell1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ForceCastingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:theme="@style/BlackStatusBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".currentlyuseless.MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.Swtrial2.NoActionBar" />
+        <activity
+            android:name=".spells.Remove_curse"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Improved_revitalize"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Wrack"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Wound"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Will_of_the_force"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Whirlwind"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Wall_of_light"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Valor"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Turbulence"
+            android:exported="false" />
+        <activity
+            android:name=".spells.True_sight"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Tremor"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Telemetry"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Telekinetic_wave"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Telekinetic_storm"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Telekinetic_shield"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Telekinetic_burst"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Telekinesis"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Sustained_lightning"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Stun_droid"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Stun"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Stasis_field"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Stasis"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Spirit_blade"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Spare_the_dying"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Sound_trick"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Sonic_charge"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Slow_descent"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Slow"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Skill_empowerment"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Siphon_life"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Shroud_of_darkness"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Shocking_shield"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Shock"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Share_life"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Shadow_sight"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Sever_force"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Sense_force"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Sense_emotion"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Seethe"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Scourge"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Sap_vitality"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Sanctuary"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Saber_ward"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Saber_throw"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Saber_reflect"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Ruin"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Revitalize"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Restoration"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Resistance"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Rescue"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Rebuke"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Rage"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Psychometry"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Psychic_charge"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Project"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Precognition"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Plant_surge"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Plague"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Phasewalk"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Phasestrike"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Necrotic_touch"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Necrotic_charge"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Morichro"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Mind_trick"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Mind_trap"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Mind_spike"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Mind_prison"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Mind_blank"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Master_speed"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Master_saber_throw"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Master_revitalize"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Master_malacia"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Master_heal"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Master_force_scream"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Master_force_immunity"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Master_force_barrier"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Master_feedback"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Master_battle_meditation"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Mass_malacia"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Mass_hysteria"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Mass_coerce_mind"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Mass_animation"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Malacia"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Maddening_darkness"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Locate_object"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Locate_creature"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Lightning_charge"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Knight_speed"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Kill"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Insanity"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Improved_saber_throw"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Improved_restoration"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Improved_phasewalk"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Improved_phasestrike"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Improved_heal"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Improved_force_scream"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Improved_force_immunity"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Improved_force_camouflage"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Improved_force_barrier"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Improved_feedback"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Improved_dark_side_tendrils"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Improved_battle_meditation"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Hysteria"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Horror"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Hex"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Heroism"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Heal"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Hallucination"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Guidance"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Greater_saber_throw"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Greater_heal"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Greater_feedback"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Grasping_vine"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Give_life"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Freedom_of_movement"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_whisper"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_weapon"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_vision"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_trance"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_throw"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_technique"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_suppression"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_storm"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_sight"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_shunt"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_scream"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_repulse"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_reflect"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_push_pull"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_propel"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_project"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_mend"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_meld"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_mask"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_link"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_lightning_cone"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_lightning"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_leap"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_jump"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_immunity"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_imbuement"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_focus"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_enlightenment"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_disarm"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_confusion"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_concealment"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_chain_lightning"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_camouflage"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_breach"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_body"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_blur"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_blinding"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_blind_deafen"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Force_barrier"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Feedback"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Fear"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Eruption"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Enfeeble"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Earthquake"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Dun_moch"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Drain_vitality"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Drain_life"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Dominate_monster"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Dominate_mind"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Dominate_beast"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Disperse_force"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Disable_droid"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Destroy_droid"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Denounce"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Death_field"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Darkness"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Dark_side_tendrils"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Dark_shear"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Dark_aura"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Danger_sense"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Curse"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Crush"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Convulsion"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Control_pain"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Comprehend_speech"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Coerce_mind"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Cloud_mind"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Choke"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Calm_emotions"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Call_lightning"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Burst_of_speed"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Burst"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Breath_control"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Bestow_curse"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Beast_trick"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Beacon_of_hope"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Battle_precognition"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Battle_meditation"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Battle_insight"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Aura_of_vigor"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Aura_of_purity"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Armor_of_abeloth"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Animate_weapon"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Affliction"
+            android:exported="false" />
+        <activity
+            android:name=".spells.Affect_mind"
+            android:exported="false" />
+        <activity
+            android:name=".currentlyuseless.SearchableActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

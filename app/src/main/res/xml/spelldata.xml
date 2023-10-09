@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<spelllistdata xmlns:android="http://schemas.android.com/apk/res/android">
+    <spell>
+        <spellname>"affect mind"</spellname>
+        <castingtime>"1 Action</castingtime>
+        <side>"Universal"</side>
+        <activityname>"Affect_mind"</activityname>
+        <level>"0"</level>
+        <concentration>"true"</concentration>
+        <prerequisite>"false"</prerequisite>
+    </spell>
+</spelllistdata>

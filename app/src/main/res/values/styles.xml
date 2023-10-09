@@ -1,0 +1,15 @@
+<resources>
+    <style name="SearchViewGold" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColor">@color/gold</item>
+        <item name="android:editTextColor">@color/gold</item>
+        <item name="android:textColorHint">#70D4AF37</item>
+    </style>
+    <style name="BlackStatusBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/gold</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/gold</item>
+        <item name="android:colorPrimaryDark">@color/black</item>
+        <item name="android:colorPrimary">@color/gold</item>
+        <item name="actionModeSplitBackground">@color/gold</item>
+    </style>
+</resources>

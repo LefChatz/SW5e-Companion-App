@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="20dp">
+
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#55FFD700"
+        android:padding="10dp">
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Classes"
+                android:fontFamily="@font/starjedi"
+                android:layout_span="4"
+                android:textSize="17sp"
+                android:textColor="@color/gold"
+                android:textStyle="bold"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="bottom"
+            android:baselineAligned="false">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Class"
+                android:textColor="@color/gold"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textColor="@color/gold"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView54"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hit_die"
+                android:textColor="@color/gold"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:paddingEnd="25dp"/>
+
+            <TextView
+                android:id="@+id/textView56"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/primary_ability"
+                android:textColor="@color/gold"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textView60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/saving_throw_proficiencies"
+                android:textColor="@color/gold"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#50FFD700"
+            android:paddingVertical="5dp">
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Berserker"
+                android:textColor="@color/gold"
+                android:paddingEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Melee combatant who utilizes rage to increase prowess"
+                android:textColor="@color/gold"
+                android:textSize="17sp"
+                />
+
+            <TextView
+                android:id="@+id/textView59"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d12"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView70"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Strength"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Strength &amp; Constitution"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:paddingVertical="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Consular"
+                android:textColor="@color/gold" />
+
+            <TextView
+                android:id="@+id/textView45"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Force-wielder who focuses on utilizing force powers"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView61"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d6"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView71"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wisdom"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wisdom &amp; Charisma"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="5dp"
+            android:background="#50FFD700">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Engineer"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView46"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tech caster who enhances items to benefit allies"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView62"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d8"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView72"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Intelligence"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Constitution &amp; Intelligence"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+        </TableRow>
+
+        <TableRow
+            android:paddingVertical="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fighter"
+                android:textColor="@color/gold" />
+
+            <TextView
+                android:id="@+id/textView47"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Versatile combatant who excels at both range and in melee"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView63"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d10"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView73"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Strength"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Strength &amp; Constitution"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+        </TableRow>
+
+        <TableRow
+            android:paddingVertical="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#50FFD700">
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guardian"
+                android:textColor="@color/gold" />
+
+            <TextView
+                android:id="@+id/textView48"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Force-wielder specializing in melee combat"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView64"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d10"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView74"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Strength"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Constitution &amp; Charisma"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+        </TableRow>
+
+        <TableRow
+            android:paddingVertical="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monk"
+                android:textColor="@color/gold" />
+
+            <TextView
+                android:id="@+id/textView49"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unarmed combatant who uses focus to fuel abilities"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView65"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d8"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dexterity"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Strength &amp; Dexterity"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+        </TableRow>
+
+        <TableRow
+            android:paddingVertical="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#50FFD700">
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Operative"
+                android:textColor="@color/gold" />
+
+            <TextView
+                android:id="@+id/textView50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Controller who focuses on stealth and techniques"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView66"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d8"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView79"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dexterity"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dexterity &amp; Intelligence"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:paddingVertical="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scholar"
+                android:textColor="@color/gold" />
+
+            <TextView
+                android:id="@+id/textView51"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Academic who uses wits and allies to control the battlefield"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView67"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d8"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView80"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Intelligence"
+                android:paddingEnd="20dp"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Intelligence &amp; Dexterity"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+        </TableRow>
+
+        <TableRow
+            android:paddingVertical="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#50FFD700">
+
+            <TextView
+                android:textSize="17sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scout"
+                android:textColor="@color/gold" />
+
+            <TextView
+                android:id="@+id/textView52"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Versatile combatant who blends tech powers with weapons"
+                android:textColor="@color/gold"
+                android:textSize="17sp"
+                android:paddingEnd="30dp"
+                />
+
+            <TextView
+                android:id="@+id/textView68"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d10"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView81"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dexterity"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Strength &amp; Dexterity"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingVertical="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sentinel"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView53"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Force-wielder who blends melee combat with the Force"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView69"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d8"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textView82"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dexterity"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dexterity &amp; Charisma"
+                android:textColor="@color/gold"
+                android:textSize="17sp" />
+
+        </TableRow>
+
+    </TableLayout>
+
+
+</HorizontalScrollView>

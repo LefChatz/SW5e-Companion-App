@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Swtrial2" parent="Theme.MaterialComponents.DayNight.NoActionBar"></style>
+
+    <style name="Theme.Swtrial2.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Swtrial2.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark" >
+        <item name="colorPrimary">@color/gold</item>
+        <item name="colorPrimaryDark">@color/gold</item>
+        <item name="colorAccent">@color/gold</item>
+        <item name="android:colorPrimaryDark">@color/gold</item>
+        <item name="android:colorPrimary">@color/gold</item>
+        <item name="actionModeSplitBackground">@color/gold</item>
+    </style>
+
+    <style name="Theme.Swtrial2.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
+</resources>

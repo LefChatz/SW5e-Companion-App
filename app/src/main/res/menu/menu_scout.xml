@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/info" />
+    <item android:title="@string/base" />
+    <item android:title="@string/table" />
+    <item android:title="@string/scout_routines" />
+    <item android:title="@string/bulwark_technique" />
+    <item android:title="@string/hunter_technique" />
+    <item android:title="@string/slayer_technique" />
+    <item android:title="@string/stalker_technique" />
+</menu>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/info" />
+    <item android:title="@string/base" />
+    <item android:title="@string/table" />
+    <item android:title="@string/guardian_auras" />
+    <item android:title="@string/makashi_form" />
+    <item android:title="@string/niman_form" />
+    <item android:title="@string/shien_djem_so_form" />
+    <item android:title="@string/soresu_form" />
+</menu>

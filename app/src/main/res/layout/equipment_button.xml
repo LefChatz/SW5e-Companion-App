@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/relayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70sp"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/table_equipmenttext"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="5dp"
+        android:layout_toStartOf="@+id/equipment_fav"
+        android:fontFamily="@font/starjedi"
+        android:letterSpacing="0.1"
+        android:textAlignment="viewStart"
+        android:textColor="@color/gold"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="14dp"
+        android:autoSizeMaxTextSize="26dp"
+        android:autoSizeStepGranularity="1dp"
+        tools:text="name stuff" />
+
+    <TextView
+        android:id="@+id/table_equipmenttext2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/table_equipmenttext"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/gold"
+        tools:text="Details" />
+
+    <ImageButton
+        android:id="@+id/equipment_fav"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/favouritegold" />
+</RelativeLayout>

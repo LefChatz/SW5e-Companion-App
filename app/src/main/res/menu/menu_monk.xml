@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/info" />
+    <item android:title="@string/base" />
+    <item android:title="@string/table" />
+    <item android:title="@string/monastic_vows" />
+    <item android:title="@string/crimson_order" />
+    <item android:title="@string/echani_order" />
+    <item android:title="@string/matukai_order" />
+    <item android:title="@string/nightsister_order" />
+</menu>
