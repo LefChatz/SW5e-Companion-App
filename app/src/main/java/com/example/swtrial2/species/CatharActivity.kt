@@ -115,6 +115,7 @@ class CatharActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
     fun returntomain(view: View?) {
         finish()
     }
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         returntomain(null)
         super.onBackPressed()

@@ -28,7 +28,7 @@
     </string-array>
     <string-array name="spelllist">
         <item>empty</item>
-        <item>affect mind</item>
+        <item>affect_mind</item>
         <item>affliction</item>
         <item>animate weapon</item>
         <item>armor of abeloth</item>
@@ -775,6 +775,14 @@
         <item>whirlwind</item>
         <item>will of the force</item>
 
+    </string-array>
+    <string-array name="affect_mind">
+        <item name="name"><b><font color="#D4af37">Affect Mind\n</font></b></item>
+        <item name="casting_Time">Action</item>
+        <item name="side">Universal</item>
+        <item name="level">At-will</item>
+        <item name="details_Text"><font size="18"><font face="sans-serif">At-will universal power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 30 feet\n<b>Duration:</b>Concentration, up to 1 minute\n\n"    "Choose a target within range that isn\'t hostile toward you. The target must make a Wisdom saving throw. On a failed save you have advantage on all Charisma checks directed at that target.On a successful save, the creature does not realize that you tried to use the Force to influence its mood,but it becomes immune to this power for one day. This power has no effect on droids or constructs.</font></font></item>
+        <item name="button"><b><font color="#D4af37"><font size="22">Affect Mind\n</font></font></b>At-will Universal</item>
     </string-array>
 
 </resources>

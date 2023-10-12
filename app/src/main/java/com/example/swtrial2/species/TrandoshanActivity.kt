@@ -115,6 +115,7 @@ class TrandoshanActivity : AppCompatActivity() , GestureDetector.OnGestureListen
     fun returntomain(view: View?) {
         finish()
     }
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         returntomain(null)
         super.onBackPressed()

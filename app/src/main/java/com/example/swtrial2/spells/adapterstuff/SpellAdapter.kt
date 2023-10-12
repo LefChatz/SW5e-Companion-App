@@ -1,5 +1,6 @@
 package com.example.swtrial2.spells.adapterstuff
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -74,7 +75,7 @@ class SpellAdapter(private val mycontext: Context,private val dataset: MutableLi
         when(viewHolder.itemViewType){
             2->{}
             3->{setlevel(viewHolder as LeveledDividerHolder,dataset[position].toInt())}
-            else->{spelltest(viewHolder as SpellHolder,dataset[position])}
+            else->{spell(viewHolder as SpellHolder,dataset[position])}
         }
 
 
@@ -88,7 +89,7 @@ class SpellAdapter(private val mycontext: Context,private val dataset: MutableLi
     }
     override fun getItemCount() = dataset.size
 
-    fun updatefav(name: String,spellbutton: View){
+    private fun updatefav(name: String, spellbutton: View){
         if(name !in favlist){
             favlist.add(name)
             spellbutton.background=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegoldtrue)
@@ -731,17 +732,39 @@ class SpellAdapter(private val mycontext: Context,private val dataset: MutableLi
             else -> {textchange(view,"Unknown Spell","","",name)
             }
         }
-
-
-
-
-
-
-
-
-
     }
-
+    @SuppressLint("DiscouragedApi")
+    fun spell(view: SpellHolder, name: String){
+        val identifiq=mycontext.resources.getIdentifier(name,"array",mycontext.packageName)
+        if(identifiq!=0){
+            val templist = mycontext.resources.getTextArray(identifiq)
+            view.spelltext.text = templist[5]
+            view.spelltext.typeface = mycontext.resources.getFont(R.font.starjedi)
+            view.castingtime.text= templist[1]
+            view.relout.setOnClickListener{
+                mycontext.startActivity(Intent(mycontext, SpellDetailsActivity::class.java).putExtra(
+                    SpellDetailsActivity.Spell_Name,name))
+            }
+            view.imbutton.setOnClickListener {
+                updatefav(name,view.imbutton)
+            }
+            if(name in favlist){
+                view.imbutton.background=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegoldtrue)
+            }
+            else{
+                view.imbutton.background=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegold)
+            }
+        }
+        else{
+            view.spelltext.text=mycontext.getString(R.string.eqerror404)
+            view.spelltext.typeface = mycontext.resources.getFont(R.font.starjedi)
+            view.spelltext.textSize=21F
+            view.imbutton.background=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegold)
+            view.imbutton.setOnClickListener {}
+            view.relout.setOnClickListener{}
+            view.castingtime.text =""
+        }
+    }
     private fun setlevel(view: LeveledDividerHolder, lvl: Int){
         when(lvl){
             0->{view.lvldividertextview.text=mycontext.getText(R.string.at_will)}

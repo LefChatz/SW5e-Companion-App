@@ -115,6 +115,7 @@ class DroidClass3Activity : AppCompatActivity() , GestureDetector.OnGestureListe
     fun returntomain(view: View?) {
         finish()
     }
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         returntomain(null)
         super.onBackPressed()

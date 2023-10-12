@@ -72,6 +72,7 @@ class EquipmentAdapter(private val mycontext: Context, private val dataset: Muta
     }
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         when(viewHolder.itemViewType){
+            1->{}
             2->{}
             3->{setlevel(viewHolder as LeveledDividerHolder,dataset[position].toInt())}
             else->{equipment(viewHolder as EquipmentHolder,dataset[position])}
@@ -108,7 +109,7 @@ class EquipmentAdapter(private val mycontext: Context, private val dataset: Muta
     private fun equipment(view: EquipmentHolder, name: String){
         val identifiq=mycontext.resources.getIdentifier(name,"array",mycontext.packageName)
         if(identifiq!=0){
-            val templist = mycontext.resources.getStringArray(identifiq)
+            val templist = mycontext.resources.getTextArray(identifiq)
             view.equipmenttext.text = templist[0]
             view.equipmenttext.typeface = mycontext.resources.getFont(R.font.starjedi)
             view.details.text = templist[1]
