@@ -1,5 +1,5 @@
 package com.example.swtrial2
-//
+
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -10,13 +10,13 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.SearchView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
 import com.example.swtrial2.databinding.ActivityForcecastingBinding
 import com.example.swtrial2.spells.adapterstuff.SpellAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-
 
 class ForceCastingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityForcecastingBinding
@@ -37,6 +37,7 @@ class ForceCastingActivity : AppCompatActivity() {
     val eraselist: MutableList<String> = mutableListOf()
     private val favspelllist: MutableList<String> = mutableListOf()
     private lateinit var favSharedPreferences: SharedPreferences
+    private lateinit var trimEntext:String
     private var darkchecked=true
     private var lightchecked=true
     private var favchecked=false
@@ -53,7 +54,7 @@ class ForceCastingActivity : AppCompatActivity() {
         favSharedPreferences=getSharedPreferences("favlist", Context.MODE_PRIVATE)
 
         bigspellnames=resources.getStringArray(R.array.bigspellnames).toList()
-        levels=resources.getStringArray(R.array.levels).toList()
+        levels= listOf("0","1","2","3","4","5","6","7","8","9","empty")
         spelllist=resources.getStringArray(R.array.spelllist).toList()
         lvledspelllist=resources.getStringArray(R.array.leveledspelllist).toList()
         lvledspelllistrev=resources.getStringArray(R.array.leveledspelllistrev).toList()
@@ -77,13 +78,14 @@ class ForceCastingActivity : AppCompatActivity() {
                     spelladapter.setSpellList(currentspelllist.filter{it !in eraselist})
                 }
                 else {
-                    if(spelllist.none { it.contains(enttext.trim()) }){
+                    trimEntext= enttext.trim().replace(" ","_")
+                    if(spelllist.none { it.contains(trimEntext,true) }){
                         spelladapter.setSpellList(listOf())
                         Toast.makeText(this@ForceCastingActivity,"No such Spell found",Toast.LENGTH_SHORT)
                             .show()
                     }
                     else {
-                        templist = currentspelllist.filter{(it.contains(enttext.trim()) or (it in levels)) and (it !in eraselist)}
+                        templist = currentspelllist.filter{(it.contains(trimEntext,true) or (it in levels)) and (it !in eraselist)}
                         spelladapter.setSpellList(templist.filter {((it in levels) and (templist[templist.indexOf(it)+1] !in levels)) or (it == "empty") or (it !in levels)})
 
                     }
@@ -95,13 +97,13 @@ class ForceCastingActivity : AppCompatActivity() {
                     spelladapter.setSpellList(currentspelllist.filter{it !in eraselist})
                 }
                 else {
-                    if(spelllist.none { it.contains(enttext.trim()) }){
+                    if(spelllist.none { it.contains(trimEntext,true) }){
                         spelladapter.setSpellList(listOf())
                         Toast.makeText(this@ForceCastingActivity,"No such Spell found",Toast.LENGTH_SHORT)
                             .show()
                     }
                     else {
-                        templist = currentspelllist.filter{(it.contains(enttext.trim()) or (it in levels)) and (it !in eraselist)}
+                        templist = currentspelllist.filter{(it.contains(trimEntext,true) or (it in levels)) and (it !in eraselist)}
                         spelladapter.setSpellList(templist.filter {((it in levels) and (templist[templist.indexOf(it)+1] !in levels)) or (it == "empty") or (it !in levels)})
 
                     }
@@ -109,10 +111,17 @@ class ForceCastingActivity : AppCompatActivity() {
                 return false
             }
         })
+
         val fab: FloatingActionButton = findViewById(R.id.floatingActionButton)
         fab.setOnClickListener{
             returntotop(reclview,"smooth")
         }
+
+        onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                returntomain(null)
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -212,11 +221,13 @@ class ForceCastingActivity : AppCompatActivity() {
         }
 
     }*/
-    @Deprecated("Deprecated in Java")
+
+    /*@Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         returntomain(null)
         super.onBackPressed()
-    }
+    }*/
+
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
     }

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".SW5ECompanionApp"
-    tools:showIn="@layout/activity_hub_attempt"
+    tools:showIn="@layout/activity_hub"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -70,7 +70,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/buttonequipment"
-            app:text="EquipMENT" />
+            app:text="Empty 1" />
 
         <com.example.swtrial2.widget.ClassButton
             android:id="@+id/buttonequipment3"
@@ -81,7 +81,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/buttonequipment2"
             app:layout_constraintTop_toTopOf="@+id/buttonequipment"
-            app:text="EquipMENT" />
+            app:text="Empty 2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

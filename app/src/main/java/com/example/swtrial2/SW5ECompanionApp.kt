@@ -4,16 +4,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.example.swtrial2.databinding.ActivityHubAttemptBinding
+import com.example.swtrial2.databinding.ActivityHubBinding
 
 class SW5ECompanionApp : AppCompatActivity() {
 
-    private lateinit var binding: ActivityHubAttemptBinding
+    private lateinit var binding: ActivityHubBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityHubAttemptBinding.inflate(layoutInflater)
+        binding = ActivityHubBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
     fun portal(view: View){

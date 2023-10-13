@@ -85,13 +85,13 @@ class AllActivity : AppCompatActivity() {
                     searchedList=currentEquipmentList.filter{it !in eraseList}
                 }
                 else {
-                    if(equipmentList.none { it.contains(enttext.trim(),true) }){
+                    if(equipmentList.none {it.replace("_"," ").contains(enttext.trim(),true)}){
                         searchedList= listOf("empty")
                         Toast.makeText(this@AllActivity,"No such Equipment found",Toast.LENGTH_SHORT)
                             .show()
                     }
                     else {
-                        searchedList = currentEquipmentList.filter{ (it.contains(enttext.trim(),true) && it !in eraseList) || it=="empty"}
+                        searchedList = currentEquipmentList.filter{ (it.replace("_"," ").contains(enttext.trim(),true) && it !in eraseList) || it=="empty"}
                     }
                 }
                 equipmentAdapter.setEquipmentList(searchedList)
@@ -102,13 +102,13 @@ class AllActivity : AppCompatActivity() {
                     searchedList=currentEquipmentList.filter{it !in eraseList}
                 }
                 else {
-                    if(equipmentList.none { it.contains(enttext.trim(),true) }){
+                    if(equipmentList.none { it.replace("_"," ").contains(enttext.trim(),true) }){
                         searchedList= listOf("empty")
                         Toast.makeText(this@AllActivity,"No such Equipment found",Toast.LENGTH_SHORT)
                             .show()
                     }
                     else {
-                        searchedList = currentEquipmentList.filter{ (it.contains(enttext.trim(),true) && it !in eraseList) || it=="empty"}
+                        searchedList = currentEquipmentList.filter{ (it.replace("_"," ").contains(enttext.trim(),true) && it !in eraseList) || it=="empty"}
                     }
                 }
                 equipmentAdapter.setEquipmentList(searchedList)
@@ -533,7 +533,7 @@ class AllActivity : AppCompatActivity() {
                         }
                         item.isChecked=!item.isChecked
                     }
-                    contains("accessories",true)->{
+                    contains("Accessories",true)->{
                         menuClose = true
                         if(!item.isChecked){
                             if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
@@ -592,7 +592,6 @@ class AllActivity : AppCompatActivity() {
     }   
     private fun filterWeapons(action: String, mode: String){
         if (equipmentAttributedList.getOrPut("simple"){ mutableListOf() }.isEmpty()){
-
             equipmentAttributedList.getOrPut("simple"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("simple",true)}.keys)
             equipmentAttributedList.getOrPut("martial"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("martial",true)}.keys)
             equipmentAttributedList.getOrPut("ranged"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("blaster",true)}.keys)
@@ -612,7 +611,7 @@ class AllActivity : AppCompatActivity() {
                 eraseList.addAll(equipmentList.filter { it !in tempList })
             }
             /*Was beefy , if new code is slow will put back
-            with(filteist){
+            with(filterList){
                 if (!filterMode.contains("fav")){
                     eraseList.removeAll(
                         when{
