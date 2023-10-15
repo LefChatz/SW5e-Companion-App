@@ -21,8 +21,8 @@ class SpellButton @JvmOverloads constructor(
     init {
         texty=attributes.getText(R.styleable.SpellButton_text)
         valuey=attributes.getText(R.styleable.SpellButton_value)
-        view.findViewById<TextView>(R.id.table_spelltext).text = texty
-        view.findViewById<TextView>(R.id.table_spelltext2).text = valuey
+        view.findViewById<TextView>(R.id.table_spell_name).text = texty
+        view.findViewById<TextView>(R.id.table_spell_casting_time).text = valuey
         attributes.recycle()
     }
     fun setText(newtext: CharSequence){

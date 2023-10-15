@@ -2230,6 +2230,7 @@
     <string name="settings"><font color="#d4af37">Settings</font></string>
     <string name="title">Title</string>
     <string name="spell_name">Spell Name</string>
+    <string name="details">details</string>
 
 
 </resources>

@@ -18,8 +18,8 @@ class SpellButtonBig @JvmOverloads constructor(
     private val view: View = View.inflate(context, R.layout.spell_button_big, this)
 
     init {
-        view.findViewById<TextView>(R.id.table_spelltext).text = attributes.getText(R.styleable.SpellButton_text)
-        view.findViewById<TextView>(R.id.table_spelltext2).text = attributes.getText(R.styleable.SpellButton_value)
+        view.findViewById<TextView>(R.id.table_spell_name).text = attributes.getText(R.styleable.SpellButton_text)
+        view.findViewById<TextView>(R.id.table_spell_casting_time).text = attributes.getText(R.styleable.SpellButton_value)
     }
 
 }

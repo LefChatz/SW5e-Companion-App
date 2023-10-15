@@ -36,15 +36,15 @@ class SpellDetailsActivity : AppCompatActivity() {
         spTitle.text=details[0]
 
         val spCoord:CoordinatorLayout=findViewById(R.id.SpellDetailsCoord)
-        when(details[2]){
-            "Dark"->{spCoord.background=AppCompatResources.getDrawable(this,R.drawable.darkbg1)}
-            "Light"->{spCoord.background=AppCompatResources.getDrawable(this,R.drawable.lightbg1)}
+        when(details[3].toString()){
+            "Dark Side"->{spCoord.background=AppCompatResources.getDrawable(this,R.drawable.darkbg1)}
+            "Light Side"->{spCoord.background=AppCompatResources.getDrawable(this,R.drawable.lightbg1)}
             "Universal"->{}
             else->{spCoord.background=AppCompatResources.getDrawable(this,R.drawable.error404)}
         }
 
         val spText:TextView=findViewById(R.id.SpellDetailsText)
-        spText.text=details[4]
+        spText.text=details[5]
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
