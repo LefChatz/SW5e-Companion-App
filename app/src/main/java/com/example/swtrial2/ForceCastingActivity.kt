@@ -68,7 +68,7 @@ class ForceCastingActivity : AppCompatActivity() {
             val identifiq=resources.getIdentifier(spell,"array",packageName)
             if (identifiq!=0){
                 val tempSpelllist=resources.getStringArray(identifiq).toList()
-                spelllistio.add(Spell(spell,tempSpelllist[0],tempSpelllist[1],tempSpelllist[2],tempSpelllist[3].toInt(),tempSpelllist[4].toBoolean(),tempSpelllist[5].toBoolean()))
+                spelllistio.add(Spell(tempSpelllist[0],tempSpelllist[1],tempSpelllist[2],tempSpelllist[3],tempSpelllist[4].toInt(),tempSpelllist[5].toBoolean(),tempSpelllist[6].toBoolean()))
                 spellMap.getOrPut(spell){mutableListOf()}.addAll(resources.getStringArray(identifiq).toList().subList(3,5))
             }
             else{

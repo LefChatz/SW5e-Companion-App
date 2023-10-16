@@ -11,6 +11,8 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class SpellXmlParser {
 
@@ -22,7 +24,7 @@ public class SpellXmlParser {
         ArrayList<Spell> spelllist = new ArrayList<>();
         ArrayList<String> xmlTagStack = new ArrayList<>();
         Spell currentspell = null;
-        ArrayList<String> spelldata = new ArrayList<>();
+        ArrayList<String> spelldata = new ArrayList<>(Arrays.asList("1","2","3","4","5","6","7"));
         spelldataXmlParser.next();
         int eventType= spelldataXmlParser.getEventType();
         while(eventType != XmlPullParser.END_DOCUMENT){
@@ -32,7 +34,7 @@ public class SpellXmlParser {
                 xmlTagStack.add(tagName);
                 if(tagName.contains("spell")){
                     currentspell=null;
-                    spelldata.clear();
+                    spelldata.forEach(it-> spelldata.set(spelldata.indexOf(it),"mple"));
                 }
             }
             //End Tag
