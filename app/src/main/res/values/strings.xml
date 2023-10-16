@@ -2232,6 +2232,7 @@
     <string name="spell_name">Spell Name</string>
     <string name="details">details</string>
     <string name="spellerror404">Force power not found</string>
+    <string name="favorite_button">Favorite Spell</string>
 
 
 </resources>

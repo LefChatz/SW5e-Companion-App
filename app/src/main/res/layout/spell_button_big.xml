@@ -10,20 +10,16 @@
 
     <TextView
         android:id="@+id/table_spell_name"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:autoSizeMaxTextSize="25sp"
-        android:autoSizeMinTextSize="24sp"
-        android:autoSizeStepGranularity="1sp"
-        android:autoSizeTextType="uniform"
+        android:textSize="24sp"
         android:fontFamily="@font/starjedi"
         android:gravity="bottom"
         android:letterSpacing="0.1"
         android:textAlignment="gravity"
         android:textColor="@color/gold"
         app:layout_constraintBottom_toTopOf="@+id/table_spell_casting_time"
-        app:layout_constraintEnd_toStartOf="@+id/table_spell_fav"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="name\nname also" />
@@ -43,17 +39,18 @@
         android:layout_height="wrap_content"
         android:textAlignment="viewEnd"
         android:textColor="@color/gold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/table_spell_fav"
         tools:text="Casting Time" />
 
     <ImageButton
         android:id="@+id/table_spell_fav"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@drawable/favouritegold"
         android:layout_marginBottom="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/favorite_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

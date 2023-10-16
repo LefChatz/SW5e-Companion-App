@@ -14,6 +14,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
+import com.example.swtrial2.currentlyunused.SpellXmlParser
 import com.example.swtrial2.databinding.ActivityForcecastingBinding
 import com.example.swtrial2.spells.adapterstuff.*
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -83,8 +84,16 @@ class ForceCastingActivity : AppCompatActivity() {
         lvledspelllistrev=spelllistio.sortSpellByLevelDescending().getNameList()
         darkspells=spelllistio.filter{ it.side.contains("Dark",true) }.getNameList()
         lightspells=spelllistio.filter{ it.side.contains("Light",true) }.getNameList()
+        val xmlparser=SpellXmlParser()
+        val testspellList:MutableList<Spell>
+        testspellList=xmlparser.parse(this,R.xml.forcecasting_spells)
+        if(spelllistio.contains(testspellList[0])){
+            Toast.makeText(this,"Works?",Toast.LENGTH_LONG)
+                .show()
+        }
 
-        reclview= findViewById(R.id.reclview)
+
+        reclview = findViewById(R.id.reclview)
         adapterspelllist= mutableListOf()
         adapterspelllist.addAll(spelllist)
         spelladapter = SpellAdapter(this,adapterspelllist,bigspellnames,favspelllist)

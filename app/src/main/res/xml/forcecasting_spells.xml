@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-</resources>
+<spell>
+    <name>"affect_mind"</name>
+    <printname>Affect Mind</printname>
+    <castingtime>"1 Action</castingtime>
+    <side>"Universal"</side>
+    <level>"0"</level>
+    <concentration>"true"</concentration>
+    <prerequisite>"false"</prerequisite>
+</spell>

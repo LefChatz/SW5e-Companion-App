@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class SpellXmlParser {
 
-    public static ArrayList<Spell> parse(Activity activity, int xmlResourceId) throws XmlPullParserException, IOException{
+    public ArrayList<Spell> parse(Activity activity, int xmlResourceId) throws XmlPullParserException, IOException{
 
         Resources res = activity.getResources();
         XmlResourceParser spelldataXmlParser = res.getXml(xmlResourceId);
@@ -48,26 +48,28 @@ public class SpellXmlParser {
             else if (eventType == XmlPullParser.TEXT){
                 String currentTag = xmlTagStack.get(xmlTagStack.size()-1);
                 String text = spelldataXmlParser.getText();
-                if(currentTag.equals("name")){
-                    spelldata.set(0,text);
-                }
-                else if (currentTag.equals("printname")){
-                    spelldata.set(1,text);
-                }
-                else if (currentTag.equals("castingTime")){
-                    spelldata.set(2,text);
-                }
-                else if (currentTag.equals("side")){
-                    spelldata.set(3,text);
-                }
-                else if (currentTag.equals("level")){
-                    spelldata.set(4,text);
-                }
-                else if (currentTag.equals("concentration")){
-                    spelldata.set(5,text);
-                }
-                else if (currentTag.equals("prerequisite")){
-                    spelldata.set(6,text);
+                switch (currentTag) {
+                    case "name":
+                        spelldata.set(0, text);
+                        break;
+                    case "printname":
+                        spelldata.set(1, text);
+                        break;
+                    case "castingTime":
+                        spelldata.set(2, text);
+                        break;
+                    case "side":
+                        spelldata.set(3, text);
+                        break;
+                    case "level":
+                        spelldata.set(4, text);
+                        break;
+                    case "concentration":
+                        spelldata.set(5, text);
+                        break;
+                    case "prerequisite":
+                        spelldata.set(6, text);
+                        break;
                 }
             }
             eventType= spelldataXmlParser.next();
