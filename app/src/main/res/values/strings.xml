@@ -2231,6 +2231,7 @@
     <string name="title">Title</string>
     <string name="spell_name">Spell Name</string>
     <string name="details">details</string>
+    <string name="spellerror404">Force power not found</string>
 
 
 </resources>

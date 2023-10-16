@@ -33,7 +33,7 @@ class SpellDetailsActivity : AppCompatActivity() {
         details=resources.getTextArray(resources.getIdentifier(name,"array",packageName))
 
         val spTitle:TextView=findViewById(R.id.SpellDetailsTitle)
-        spTitle.text=details[0]
+        spTitle.text=details[1]
 
         val spCoord:CoordinatorLayout=findViewById(R.id.SpellDetailsCoord)
         when(details[3].toString()){
@@ -44,7 +44,7 @@ class SpellDetailsActivity : AppCompatActivity() {
         }
 
         val spText:TextView=findViewById(R.id.SpellDetailsText)
-        spText.text=details[5]
+        spText.text=details[8]
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

@@ -740,9 +740,9 @@ class SpellAdapter(private val mycontext: Context,private val dataset: MutableLi
         val identifiq=mycontext.resources.getIdentifier(name,"array",mycontext.packageName)
         if(identifiq!=0){
             val templist = mycontext.resources.getTextArray(identifiq)
-            view.spellname.text=templist[0]
-            view.spelldetails.text= buildSpannedString{append(templist[2]);append(" ");append(templist[3])}
-            view.castingtime.text= templist[1]
+            view.spellname.text=templist[1]
+            view.spelldetails.text= buildSpannedString{append(templist[7]);append(" ");append(templist[3])}
+            view.castingtime.text= templist[2]
             view.constlout.setOnClickListener{
                 mycontext.startActivity(Intent(mycontext, SpellDetailsActivity::class.java).putExtra(
                     SpellDetailsActivity.Spell_Name,name))
@@ -758,7 +758,7 @@ class SpellAdapter(private val mycontext: Context,private val dataset: MutableLi
             }
         }
         else{
-            view.spellname.text=mycontext.getString(R.string.eqerror404)
+            view.spellname.text=mycontext.getString(R.string.spellerror404)
             view.spelldetails.text=""
             view.castingtime.text =""
             view.imbutton.background=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegold)

@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 
+import com.example.swtrial2.spells.adapterstuff.Spell;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -28,7 +30,7 @@ public class SpellXmlParser {
             if(eventType == XmlPullParser.START_TAG){
                 String tagName = spelldataXmlParser.getName();
                 xmlTagStack.add(tagName);
-                if(tagName.equals("spell")){
+                if(tagName.contains("spell")){
                     currentspell=null;
                     spelldata.clear();
                 }
@@ -46,16 +48,16 @@ public class SpellXmlParser {
             else if (eventType == XmlPullParser.TEXT){
                 String currentTag = xmlTagStack.get(xmlTagStack.size()-1);
                 String text = spelldataXmlParser.getText();
-                if(currentTag.equals("spellname")){
+                if(currentTag.equals("name")){
                     spelldata.set(0,text);
                 }
-                else if (currentTag.equals("castingtime")){
+                else if (currentTag.equals("printname")){
                     spelldata.set(1,text);
                 }
-                else if (currentTag.equals("side")){
+                else if (currentTag.equals("castingTime")){
                     spelldata.set(2,text);
                 }
-                else if (currentTag.equals("activityname")){
+                else if (currentTag.equals("side")){
                     spelldata.set(3,text);
                 }
                 else if (currentTag.equals("level")){

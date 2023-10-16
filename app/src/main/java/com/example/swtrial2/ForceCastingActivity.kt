@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
 import com.example.swtrial2.databinding.ActivityForcecastingBinding
-import com.example.swtrial2.spells.adapterstuff.SpellAdapter
+import com.example.swtrial2.spells.adapterstuff.*
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ForceCastingActivity : AppCompatActivity() {
@@ -56,11 +56,33 @@ class ForceCastingActivity : AppCompatActivity() {
         bigspellnames=resources.getStringArray(R.array.bigspellnames).toList()
         levels= listOf("0","1","2","3","4","5","6","7","8","9","empty")
         spelllist=resources.getStringArray(R.array.spelllist).toList()
-        lvledspelllist=resources.getStringArray(R.array.leveledspelllist).toList()
+        /*lvledspelllist=resources.getStringArray(R.array.leveledspelllist).toList()
         lvledspelllistrev=resources.getStringArray(R.array.leveledspelllistrev).toList()
         darkspells=resources.getStringArray(R.array.darkspells).toList()
-        lightspells=resources.getStringArray(R.array.lightspells).toList()
+        lightspells=resources.getStringArray(R.array.lightspells).toList()*/
         favspelllist.addAll(favSharedPreferences.getStringSet("favlist", mutableSetOf())?.toList()!!)
+        val spellMap = mutableMapOf<String,MutableList<String>>()
+        val spelllistio= mutableListOf<Spell>()
+        for (spell in spelllist){
+            val identifiq=resources.getIdentifier(spell,"array",packageName)
+            if (identifiq!=0){
+                val tempSpelllist=resources.getStringArray(identifiq).toList()
+                spelllistio.add(Spell(spell,tempSpelllist[0],tempSpelllist[1],tempSpelllist[2],tempSpelllist[3].toInt(),tempSpelllist[4].toBoolean(),tempSpelllist[5].toBoolean()))
+                spellMap.getOrPut(spell){mutableListOf()}.addAll(resources.getStringArray(identifiq).toList().subList(3,5))
+            }
+            else{
+                spelllistio.add(Spell("Error Spell not found"))
+                spellMap[spell]=(mutableListOf("error:unknown force power","10"))
+            }
+        }
+        /*lvledspelllist=spellMap.toSortedMap(compareBy { spellMap.getOrDefault(it, mutableListOf("error","10"))[1].toInt() }).keys.toList()
+        darkspells=spellMap.filterValues { it[0].contains("Dark",true) }.keys.toList()
+        lightspells=spellMap.filterValues { it[0].contains("Light",true) }.keys.toList()
+        lvledspelllistrev = spellMap.toSortedMap(compareByDescending { spellMap.getOrDefault(it, mutableListOf("error","10"))[1].toInt() }).keys.toList()*/
+        lvledspelllist=spelllistio.sortSpellByLevel().getNameList()
+        lvledspelllistrev=spelllistio.sortSpellByLevelDescending().getNameList()
+        darkspells=spelllistio.filter{ it.side.contains("Dark",true) }.getNameList()
+        lightspells=spelllistio.filter{ it.side.contains("Light",true) }.getNameList()
 
         reclview= findViewById(R.id.reclview)
         adapterspelllist= mutableListOf()
@@ -139,13 +161,15 @@ class ForceCastingActivity : AppCompatActivity() {
                 returntotop(reclview,"sharp")}
             getText(R.string.sortABCup)->{
                 templist=lvledspelllist.filter{it !in eraselist}
-                spelladapter.setSpellList(templist.filter{((it in levels) and (templist[templist.indexOf(it)+1] !in levels)) or (it == "empty") or (it !in levels)})
+                /*spelladapter.setSpellList(templist.filter{((it in levels) and (templist[templist.indexOf(it)+1] !in levels)) or (it == "empty") or (it !in levels)})*/
+                spelladapter.setSpellList(lvledspelllist)
                 currentspelllist=lvledspelllist
                 item.title = getText(R.string.sortLvldown)
                 returntotop(reclview,"sharp")}
             getText(R.string.sortLvldown)->{
                 templist=lvledspelllistrev.filter{it !in eraselist}
-                spelladapter.setSpellList(templist.filter{((it in levels) and (templist[templist.indexOf(it)+1] !in levels)) or (it == "empty") or (it !in levels)})
+                /*spelladapter.setSpellList(templist.filter{((it in levels) and (templist[templist.indexOf(it)+1] !in levels)) or (it == "empty") or (it !in levels)})*/
+                spelladapter.setSpellList(lvledspelllistrev)
                 currentspelllist=lvledspelllistrev
                 item.title = getText(R.string.sortLvlup)
                 returntotop(reclview,"sharp")}
