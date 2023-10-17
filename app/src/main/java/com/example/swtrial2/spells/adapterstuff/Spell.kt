@@ -12,8 +12,8 @@ data class Spell(
     var concentration: Boolean = false,
     var prerequisite: Boolean = false,
     var isBig: Boolean = false,
-    var detailsText: CharSequence="Placeholder for the Force power's details text",
-    var levelInFull: String="10th-Level"): Parcelable {}
+    var levelInFull: String="10th-Level",
+    var detailsText: CharSequence="Placeholder for the Force power's details text"): Parcelable {}
 /*fun setName(tspellname: String){
     spellname = tspellname
 }

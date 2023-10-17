@@ -54,9 +54,7 @@ class ForceCastingActivity : AppCompatActivity() {
 
         favSharedPreferences=getSharedPreferences("favlist", Context.MODE_PRIVATE)
 
-        bigspellnames=resources.getStringArray(R.array.bigspellnames).toList()
         levels= listOf("0","1","2","3","4","5","6","7","8","9","empty")
-        spelllist=resources.getStringArray(R.array.spelllist).toList()
         /*lvledspelllist=resources.getStringArray(R.array.leveledspelllist).toList()
         lvledspelllistrev=resources.getStringArray(R.array.leveledspelllistrev).toList()
         darkspells=resources.getStringArray(R.array.darkspells).toList()
@@ -101,7 +99,7 @@ class ForceCastingActivity : AppCompatActivity() {
         adapterspelllist.addAll(xmlSpellList)
         spelladapter = SpellAdapter(this,adapterspelllist,favspelllist)
         reclview.adapter = spelladapter
-        currentspelllist=xmlSpellList
+        currentspelllist = xmlSpellList
 
         searchView = findViewById(R.id.searchview)
         searchView.isIconifiedByDefault=false
