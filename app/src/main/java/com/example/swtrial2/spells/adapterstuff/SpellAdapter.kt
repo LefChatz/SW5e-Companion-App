@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.text.buildSpannedString
@@ -19,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.swtrial2.R
 
 
-class SpellAdapter(private val mycontext: Context,private val dataset: MutableList<String>,private val bigdataset: List<String>,private val favlist: MutableList<String>) : RecyclerView.Adapter<ViewHolder>() {
+class SpellAdapter(private val mycontext: Context,private val dataset: MutableList<Spell>,private val favlist: MutableList<String>) : RecyclerView.Adapter<ViewHolder>() {
     val levels: List<Int> = listOf(0,1,2,3,4,5,6,7,8,9)
     class EmptySpellHolder(view: View) : ViewHolder(view){
         private val emptyrelout: RelativeLayout
@@ -66,38 +65,40 @@ class SpellAdapter(private val mycontext: Context,private val dataset: MutableLi
 
     }
     override fun getItemViewType(position: Int): Int {
-        return when(dataset[position]){
-            in bigdataset -> {1}
-            "empty" ->{2}
-            in levels.toString() ->{3}
-            else ->{0}
-        }
+         with(dataset[position]){
+             return when{
+                    this.isBig -> 1
+                    this.spellname=="Empty_Name" -> 2
+                    this.spellname=="Level"->3
+                    else ->{0}
+                }
+            }
 
     }
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         when(viewHolder.itemViewType){
             2->{}
-            3->{setlevel(viewHolder as LeveledDividerHolder,dataset[position].toInt())}
+            3->{setlevel(viewHolder as LeveledDividerHolder,dataset[position].level)}
             else->{spell(viewHolder as SpellHolder,dataset[position])}
         }
 
 
     }
-    fun setSpellList(updatedspelllist: List<String>){
-        val diffResult = DiffUtil.calculateDiff(EquipmentDiffUtilCallback(dataset,updatedspelllist))
+    fun setSpellList(updatedspelllist: MutableList<Spell>){
+        val diffResult = DiffUtil.calculateDiff(SpellDiffUtilCallback(dataset,updatedspelllist))
         dataset.clear()
         dataset.addAll(updatedspelllist)
         diffResult.dispatchUpdatesTo(this)
 
     }
     override fun getItemCount() = dataset.size
-    private fun updatefav(name: String, spellbutton: View){
-        if(name !in favlist){
-            favlist.add(name)
+    private fun updatefav(spell: Spell, spellbutton: View){
+        if(spell.spellname !in favlist){
+            favlist.add(spell.spellname)
             spellbutton.background=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegoldtrue)
         }
         else{
-            favlist.remove(name)
+            favlist.remove(spell.spellname)
             spellbutton.background=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegold)
         }
         with(mycontext.getSharedPreferences("favlist",Context.MODE_PRIVATE).edit()){
@@ -110,6 +111,7 @@ class SpellAdapter(private val mycontext: Context,private val dataset: MutableLi
 
 
 
+/*
     private fun textchange(view: SpellHolder, text: CharSequence, action: CharSequence, spell: String, name: String){
         view.spellname.text = text
         view.castingtime.text = action
@@ -132,11 +134,14 @@ class SpellAdapter(private val mycontext: Context,private val dataset: MutableLi
             else{
                 view.imbutton.background=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegold)
             }
-            /*view.imbutton.contentDescription=name*/
+view.imbutton.contentDescription=name
+
         }
     }
+*/
 
 
+/*
     private fun spelltest(view: SpellHolder, name: String){
         when (name) {
             "affect mind" -> {textchange(view,mycontext.getText(R.string.affect_mind_button_table),mycontext.getText(
@@ -735,35 +740,24 @@ class SpellAdapter(private val mycontext: Context,private val dataset: MutableLi
             }
         }
     }
+*/
     @SuppressLint("DiscouragedApi")
-    fun spell(view: SpellHolder, name: String){
-        val identifiq=mycontext.resources.getIdentifier(name,"array",mycontext.packageName)
-        if(identifiq!=0){
-            val templist = mycontext.resources.getTextArray(identifiq)
-            view.spellname.text=templist[1]
-            view.spelldetails.text= buildSpannedString{append(templist[7]);append(" ");append(templist[3])}
-            view.castingtime.text= templist[2]
-            view.constlout.setOnClickListener{
-                mycontext.startActivity(Intent(mycontext, SpellDetailsActivity::class.java).putExtra(
-                    SpellDetailsActivity.Spell_Name,name))
-            }
-            view.imbutton.setOnClickListener {
-                updatefav(name,view.imbutton)
-            }
-            if(name in favlist){
-                view.imbutton.background=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegoldtrue)
-            }
-            else{
-                view.imbutton.background=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegold)
-            }
+    fun spell(view: SpellHolder, spell: Spell){
+        view.spellname.text=spell.printedname
+        view.spelldetails.text= buildSpannedString{append(spell.levelInFull);append(" ");append(spell.side)}
+        view.castingtime.text= spell.castingtime
+        view.constlout.setOnClickListener{
+            mycontext.startActivity(Intent(mycontext, SpellDetailsActivity::class.java).putExtra(
+                SpellDetailsActivity.Spell_Name,spell))
+        }
+        view.imbutton.setOnClickListener {
+            updatefav(spell,view.imbutton)
+        }
+        if(spell.spellname in favlist){
+            view.imbutton.background=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegoldtrue)
         }
         else{
-            view.spellname.text=mycontext.getString(R.string.spellerror404)
-            view.spelldetails.text=""
-            view.castingtime.text =""
             view.imbutton.background=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegold)
-            view.imbutton.setOnClickListener{}
-            view.constlout.setOnClickListener{}
         }
     }
     private fun setlevel(view: LeveledDividerHolder, lvl: Int){
@@ -784,3 +778,4 @@ class SpellAdapter(private val mycontext: Context,private val dataset: MutableLi
         }
     }
 }
+

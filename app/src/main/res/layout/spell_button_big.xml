@@ -12,26 +12,26 @@
         android:id="@+id/table_spell_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:textSize="24sp"
         android:fontFamily="@font/starjedi"
         android:gravity="bottom"
         android:letterSpacing="0.1"
         android:textAlignment="gravity"
         android:textColor="@color/gold"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/table_spell_casting_time"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="name\nname also" />
+
     <TextView
         android:id="@+id/table_spell_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/table_spell_name"
-        app:layout_constraintTop_toBottomOf="@id/table_spell_name"
         android:text="@string/details"
         android:textColor="@color/gold"
-        />
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/table_spell_name"
+        app:layout_constraintTop_toBottomOf="@id/table_spell_name" />
 
     <TextView
         android:id="@+id/table_spell_casting_time"
@@ -39,14 +39,16 @@
         android:layout_height="wrap_content"
         android:textAlignment="viewEnd"
         android:textColor="@color/gold"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/table_spell_fav"
         tools:text="Casting Time" />
 
     <ImageButton
         android:id="@+id/table_spell_fav"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:background="@drawable/favouritegold"
         android:layout_marginBottom="15dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -2,6 +2,7 @@ package com.example.swtrial2.spells.adapterstuff
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
+import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
@@ -16,35 +17,41 @@ class SpellDetailsActivity : AppCompatActivity() {
         const val Spell_Name = "Spell_Name"
     }
 
-    lateinit var name: String
+    lateinit var spell: Spell
     lateinit var details: Array<CharSequence>
     lateinit var toolbar: androidx.appcompat.widget.Toolbar
 
     @SuppressLint("DiscouragedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        name = intent.getStringExtra(Spell_Name).toString()
+        spell = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getParcelableExtra("DATA", Spell::class.java).toSpell()
+        } else {
+            intent.getParcelableExtra<Spell>("DATA").toSpell()
+        }
         setContentView(R.layout.activity_spell_details)
 
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        details=resources.getTextArray(resources.getIdentifier(name,"array",packageName))
-
         val spTitle:TextView=findViewById(R.id.SpellDetailsTitle)
-        spTitle.text=details[1]
+        spTitle.text=spell.printedname
 
         val spCoord:CoordinatorLayout=findViewById(R.id.SpellDetailsCoord)
-        when(details[3].toString()){
-            "Dark Side"->{spCoord.background=AppCompatResources.getDrawable(this,R.drawable.darkbg1)}
-            "Light Side"->{spCoord.background=AppCompatResources.getDrawable(this,R.drawable.lightbg1)}
-            "Universal"->{}
-            else->{spCoord.background=AppCompatResources.getDrawable(this,R.drawable.error404)}
+
+        with(spell.side.toString()){
+            when{
+                this.contains("Dark",true)->{spCoord.background=AppCompatResources.getDrawable(this@SpellDetailsActivity,R.drawable.darkbg1)}
+                this.contains("Light",true)->{spCoord.background=AppCompatResources.getDrawable(this@SpellDetailsActivity,R.drawable.lightbg1)}
+                this.contains("Universal",true)->{}
+                else->{spCoord.background=AppCompatResources.getDrawable(this@SpellDetailsActivity,R.drawable.error404)}
+            }
+
         }
 
         val spText:TextView=findViewById(R.id.SpellDetailsText)
-        spText.text=details[8]
+        spText.text=spell.detailsText
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

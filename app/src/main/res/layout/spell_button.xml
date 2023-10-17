@@ -26,7 +26,7 @@
         android:id="@+id/table_spell_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="@id/table_spell_name"
         app:layout_constraintTop_toBottomOf="@id/table_spell_name"
         android:text="@string/details"
@@ -39,14 +39,15 @@
         android:layout_height="wrap_content"
         android:textAlignment="viewEnd"
         android:textColor="@color/gold"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/table_spell_name"
         tools:text="Casting Time" />
 
     <ImageButton
         android:id="@+id/table_spell_fav"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:background="@drawable/favouritegold"
         android:layout_marginBottom="15dp"
         app:layout_constraintBottom_toBottomOf="parent"

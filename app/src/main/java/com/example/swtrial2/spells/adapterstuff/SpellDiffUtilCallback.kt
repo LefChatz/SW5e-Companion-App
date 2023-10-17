@@ -2,7 +2,7 @@ package com.example.swtrial2.spells.adapterstuff
 
 import androidx.recyclerview.widget.DiffUtil
 
-class SpellDiffUtilCallback(private val oldlist: List<String>,private val newlist: List<String>): DiffUtil.Callback() {
+class SpellDiffUtilCallback(private val oldlist: MutableList<Spell>,private val newlist: MutableList<Spell>): DiffUtil.Callback() {
     override fun getOldListSize(): Int {
         return oldlist.size
     }
@@ -12,7 +12,7 @@ class SpellDiffUtilCallback(private val oldlist: List<String>,private val newlis
     }
 
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return oldlist[oldItemPosition]==newlist[newItemPosition]
+        return oldlist[oldItemPosition].equalsByName(newlist[newItemPosition])
     }
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
