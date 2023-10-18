@@ -13,9 +13,6 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.example.swtrial2.R
 
 class SpellDetailsActivity : AppCompatActivity() {
-    companion object {
-        const val Spell_Name = "Spell_Name"
-    }
 
     lateinit var spell: Spell
     lateinit var details: Array<CharSequence>
@@ -25,9 +22,9 @@ class SpellDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         spell = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            intent.getParcelableExtra("DATA", Spell::class.java).toSpell()
+            intent.getParcelableExtra("Spell", Spell::class.java).toSpell()
         } else {
-            intent.getParcelableExtra<Spell>("DATA").toSpell()
+            intent.getParcelableExtra<Spell>("Spell").toSpell()
         }
         setContentView(R.layout.activity_spell_details)
 
@@ -36,7 +33,7 @@ class SpellDetailsActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         val spTitle:TextView=findViewById(R.id.SpellDetailsTitle)
-        spTitle.text=spell.printedname
+        spTitle.text=spell.spellname
 
         val spCoord:CoordinatorLayout=findViewById(R.id.SpellDetailsCoord)
 
@@ -51,7 +48,9 @@ class SpellDetailsActivity : AppCompatActivity() {
         }
 
         val spText:TextView=findViewById(R.id.SpellDetailsText)
-        spText.text=spell.detailsText
+        spText.text=spell.spellname
+        spText.text=getText(resources.getIdentifier(spell.spellname,"string",packageName))
+        /*spText.text=spell.detailsText*/
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

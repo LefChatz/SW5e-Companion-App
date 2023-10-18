@@ -113,8 +113,7 @@ class SpellAdapter(private val mycontext: Context,private val dataset: MutableLi
         view.spelldetails.text= buildSpannedString{append(spell.levelInFull);append(" ");append(spell.side)}
         view.castingtime.text= spell.castingtime
         view.constlout.setOnClickListener{
-            mycontext.startActivity(Intent(mycontext, SpellDetailsActivity::class.java).putExtra(
-                SpellDetailsActivity.Spell_Name,spell))
+            mycontext.startActivity(Intent(mycontext, SpellDetailsActivity::class.java).putExtra("Spell",spell))
         }
         view.imbutton.setOnClickListener {
             updatefav(spell,view.imbutton)
