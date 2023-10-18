@@ -21,21 +21,21 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 class ForceCastingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityForcecastingBinding
     private lateinit var reclview: RecyclerView
-    lateinit var toolbar: androidx.appcompat.widget.Toolbar
+    private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     private lateinit var searchView: SearchView
     private lateinit var spelladapter: SpellAdapter
     private lateinit var adapterspelllist: MutableList<Spell>
     private lateinit var bigspellnames: List<String>
-    lateinit var levels: List<String>
-    lateinit var spelllist: List<String>
+    private lateinit var levels: List<String>
+    private lateinit var spelllist: List<String>
     private lateinit var xmlSpellList:MutableList<Spell>
     private lateinit var lvledspelllist: List<String>
     private lateinit var lvledspelllistrev: List<String>
     private lateinit var darkspells: List<Spell>
     private lateinit var lightspells: List<Spell>
-    lateinit var currentspelllist: List<Spell>
-    lateinit var templist: MutableList<Spell>
-    val eraselist: MutableList<Spell> = mutableListOf()
+    private lateinit var currentspelllist: List<Spell>
+    private lateinit var templist: MutableList<Spell>
+    private val eraselist: MutableList<Spell> = mutableListOf()
     private val favspelllist: MutableList<String> = mutableListOf()
     private lateinit var favSharedPreferences: SharedPreferences
     private lateinit var trimEntext:String
@@ -85,13 +85,13 @@ class ForceCastingActivity : AppCompatActivity() {
         darkspells=spelllistio.filter{ it.side.contains("Dark",true) }.getNameList()
         lightspells=spelllistio.filter{ it.side.contains("Light",true) }.getNameList()*/
         val xmlparser= SpellXmlParser()
-
-        xmlSpellList=xmlparser.parse(this,R.xml.forcecasting_spells)
-        spelllist=xmlSpellList.getNameList()
+        /*xmlSpellList=xmlparser.parse(this,R.xml.forcecasting_spells)*/
+        xmlSpellList=getSpells()
+        /*spelllist=xmlSpellList.getNameList()
         lvledspelllist=xmlSpellList.sortSpellByLevel().getNameList()
         lvledspelllistrev=xmlSpellList.sortSpellByLevelDescending().getNameList()
         darkspells=xmlSpellList.filter { it.side.contains("Dark",true) }
-        lightspells=xmlSpellList.filter{ it.side.contains("Light",true) }
+        lightspells=xmlSpellList.filter{ it.side.contains("Light",true) }*/
 
 
         reclview = findViewById(R.id.reclview)
@@ -236,7 +236,7 @@ class ForceCastingActivity : AppCompatActivity() {
         }
 
     }
-    fun returntomain(view: View?) {
+    private fun returntomain(view: View?) {
         startActivity(Intent(this,SW5ECompanionApp::class.java))
         with(favSharedPreferences.edit()){
             putStringSet("favlist",favspelllist.toMutableSet())
@@ -244,17 +244,15 @@ class ForceCastingActivity : AppCompatActivity() {
         }
         finish()
     }
-    /*fun addfavouritespell(spellbutton: View){
-        if(spellbutton.contentDescription.toString() !in favspelllist){
-            favspelllist.add(spellbutton.contentDescription.toString())
-            spellbutton.background=AppCompatResources.getDrawable(this,R.drawable.favouritegoldtrue)
+    private fun getSpells(): MutableList<Spell>{
+        val getSpellList = mutableListOf<Spell>()
+        val tempSpellList=resources.getTextArray(R.array.testspelllist)
+        for(i in 9..tempSpellList.size step 10){
+            print(tempSpellList[i-9].toString()+tempSpellList[i-8]+tempSpellList[i-7].toString()+tempSpellList[i-6]+tempSpellList[i-5]+tempSpellList[i-4]+tempSpellList[i-3]+tempSpellList[i-2]+tempSpellList[i-1]+tempSpellList[i])
+            getSpellList.add(Spell(tempSpellList[i-9].toString(),tempSpellList[i-8],tempSpellList[i-7].toString(),tempSpellList[i-6],tempSpellList[i-5].toString().toInt(),tempSpellList[i-4].toString().toBoolean(),tempSpellList[i-3].toString().toBoolean(),tempSpellList[i-2].toString().toBoolean(),tempSpellList[i-1].toString(),tempSpellList[i]))
         }
-        else{
-            favspelllist.remove(spellbutton.contentDescription.toString())
-            spellbutton.background=AppCompatResources.getDrawable(this,R.drawable.favouritegold)
-        }
-
-    }*/
+        return getSpellList
+    }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)

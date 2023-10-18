@@ -32,11 +32,16 @@ class SpellDetailsActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
+        //title and text assignment
         val spTitle:TextView=findViewById(R.id.SpellDetailsTitle)
-        spTitle.text=spell.spellname
+        spTitle.text=spell.printedname
 
+
+        val spText:TextView=findViewById(R.id.SpellDetailsText)
+        spText.text=spell.detailsText
+
+        //Background
         val spCoord:CoordinatorLayout=findViewById(R.id.SpellDetailsCoord)
-
         with(spell.side.toString()){
             when{
                 this.contains("Dark",true)->{spCoord.background=AppCompatResources.getDrawable(this@SpellDetailsActivity,R.drawable.darkbg1)}
@@ -47,10 +52,6 @@ class SpellDetailsActivity : AppCompatActivity() {
 
         }
 
-        val spText:TextView=findViewById(R.id.SpellDetailsText)
-        spText.text=spell.spellname
-        spText.text=getText(resources.getIdentifier(spell.spellname,"string",packageName))
-        /*spText.text=spell.detailsText*/
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

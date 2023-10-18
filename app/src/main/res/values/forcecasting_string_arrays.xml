@@ -776,81 +776,167 @@
         <item>will_of_the_force</item>
 
     </string-array>
-
+    
     <string-array name="affect_mind">
-        <item name="name">affect_mind</item>
+        <item name="spellname">affect_mind</item>
         <item name="printname"><font color="#D4af37">Affect Mind</font></item>
         <item name="castingTime">Action C</item>
         <item name="side">Universal</item>
         <item name="level">0</item>
         <item name="concentration">true</item>
         <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
         <item name="levelInFull">At-will</item>
         <item name="details_Text"><font size="18"><font face="sans-serif">At-will universal power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 30 feet\n<b>Duration:</b>Concentration, up to 1 minute\n\n"    "Choose a target within range that isn\'t hostile toward you. The target must make a Wisdom saving throw. On a failed save you have advantage on all Charisma checks directed at that target.On a successful save, the creature does not realize that you tried to use the Force to influence its mood,but it becomes immune to this power for one day. This power has no effect on droids or constructs.</font></font></item>
     </string-array>
     <string-array name="affliction">
-        <item name="name">affliction</item>
-        <item name="name"><font color="red">Affliction</font></item>
+        <item name="spellname">affliction</item>
+        <item name="printname"><font color="red">Affliction</font></item>
         <item name="casting_Time">Action C</item>
         <item name="side"><font color="red">Dark</font> side</item>
         <item name="level">2</item>
         <item name="concentration">true</item>
         <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
         <item name="levelInFull">2nd-level</item>
         <item name="details_Text"><font size="18"><font face="sans-serif">2nd-level <font color="red">Dark</font> side power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 30 feet\n<b>Duration:</b>Concentration, up to 1 minute\n\n"    "Choose a creature that you can see within range.That creature must make a Constitution saving throw.On a failed save, the target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws,and it can\'t use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature\'s abilities or items, it can\'t make more than one melee or ranged attack during its turn.If the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher,the power doesn\'t take effect until the creature\'s next turn, and the creature must use its action on that turn to complete the power. If it can\'t, the power is wasted.The creatures makes another Constitution saving throw at the end of its turn. On a successful save, the effect ends.</font></font></item>
     </string-array>
     <string-array name="animate_weapon">
-        <item name="name">animate_weapon</item>
-        <item name="name"><font color="#D4af37">Animate Weapon</font></item>
+        <item name="spellname">animate_weapon</item>
+        <item name="printname"><font color="#D4af37">Animate Weapon</font></item>
         <item name="casting_Time">Bonus action</item>
         <item name="side">Universal</item>
         <item name="level">2</item>
         <item name="concentration">false</item>
         <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
         <item name="levelInFull">2nd-level</item>
         <item name="details_Text"><font size="18"><font face="sans-serif">2nd-level universal power\n\n<b>Prerequisite:</b>Force Disarm\n<b>Casting Time:</b> 1 bonus action\n<b>Range:</b> 60 feet\n<b>Duration:</b>1 minute\n\n"    "You select a light or vibro-weapon within this power\'s range that is not worn or carried by a conscious creature other than you, and use the Force to cause it to levitate, acting as an extension of your will for the duration or until you cast this power again. When you use this power, you can cause the weapon to move up to 20 feet and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. While the weapon is animated, on each of your turns you can use a bonus action to move the weapon up to 20 feet and repeat the attack against a creature within 5 feet of it. At any time, you can end this force power to return the animated weapon to your hand. An enemy can attempt to gain control of the weapon by using its action to make a Strength (Athletics) check against your force save DC. On a success, the creature gains control of the weapon and the power ends.\n<b>"    "ForcePotency:</b>When you cast this power using a force slot of 3rd level or higher, the weapon\'s damage increases by 1d8 for every two slot levels above 2nd</font></font></item>
     </string-array>
     <string-array name="armor_of_abeloth">
-        <item name="name">armor_of_abeloth</item>
-        <item name="name"><font color="red">Armor of Abeloth</font></item>
+        <item name="spellname">armor_of_abeloth</item>
+        <item name="printname"><font color="red">Armor of Abeloth</font></item>
         <item name="casting_Time">Action</item>
         <item name="side"><font color="red">Dark</font> side</item>
         <item name="level">1</item>
         <item name="concentration">false</item>
         <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
         <item name="levelInFull">1st-level</item>
         <item name="details_Text"><font size="18"><font face="sans-serif">1st-level <font color="red">dark</font> side power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self\n<b>Duration:</b>1 hour\n\n"    "A protective force surrounds you, manifesting as shimmering light that covers you and your gear. You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 psychic damage.\n<b>"    "Force Potency:"</b>When you cast this power using a force slot of 2nd level or higher, both the temporary hit points and the psychic damage increase by 5 for each slot.</font></font></item>
     </string-array>
     <string-array name="aura_of_purity">
-        <item name="name">aura_of_purity</item>
-        <item name="name"><font color="#4be6ff">Aura of Purity</font></item>
+        <item name="spellname">aura_of_purity</item>
+        <item name="printname"><font color="#4be6ff">Aura of Purity</font></item>
         <item name="casting_Time">Action C</item>
         <item name="side"><font color="#4be6ff">Light</font> side</item>
         <item name="level">4</item>
         <item name="concentration">true</item>
         <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
         <item name="levelInFull">4th-level</item>
         <item name="details_Text"><font size="18"><font face="sans-serif">4th-level <font color="cyan">Light</font> side power\n\n<b>Prerequisite:</b> Restoration\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self (30-foot Radius)\n<b>Duration:</b>Concentration, up to 10 minutes\n\n"    "Purifying energy radiates from you in a 30-foot radius. Until the power ends, the aura moves with you, centered on you. Each nonhostile creature in the aura (including you) can\'t become diseased, has resistance to poison damage, and has advantage on saving throws against effects that cause any of the following conditions: blinded, charmed, deafened, frightened, paralyzed, poisoned, and stunned.</font></font></item>
     </string-array>
     <string-array name="aura_of_vigor">
-        <item name="name">aura_of_vigor</item>
-        <item name="name"><font color="#4be6ff">Aura of \'igor</font></item>
+        <item name="spellname">aura_of_vigor</item>
+        <item name="printname"><font color="#4be6ff">Aura of \'igor</font></item>
         <item name="casting_Time">Action C</item>
         <item name="side"><font color="#4be6ff">Light</font> side</item>
         <item name="level">3</item>
         <item name="concentration">true</item>
         <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
         <item name="levelInFull">3rd-level</item>
         <item name="details_Text"><font size="18"><font face="sans-serif">3rd-level <font color="cyan">light</font> side power\n\n<b>Prerequisite:</b>Valor\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self (30-foot Radius)\n<b>Duration:</b>Concentration, up to 1 minute\n\n"    "Envigorating energy radiates from you in a 30-foot radius. Until the power ends, the aura moves with you, centered on you. Each nonhostile creature in the aura (including you) deals an extra 1d4 damage with weapon attacks.</font></font></item>
     </string-array>
     <string-array name="improved_battle_meditation">
-        <item name="name">improved_battle_meditation</item>
-        <item name="name"><font color="#D4af37">improved battle meditation</font></item>
+        <item name="spellname">improved_battle_meditation</item>
+        <item name="printname"><font color="#D4af37">improved battle meditation</font></item>
         <item name="casting_Time">Action C</item>
         <item name="side">Universal</item>
         <item name="level">0</item>
         <item name="concentration">true</item>
         <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
+        <item name="levelInFull">At-will</item>
+        <item name="details_Text"><font size="18"><font face="sans-serif">At-will universal power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 30 feet\n<b>Duration:</b>Concentration, up to 1 minute\n\n"    "Choose a target within range that isn\'t hostile toward you. The target must make a Wisdom saving throw. On a failed save you have advantage on all Charisma checks directed at that target.On a successful save, the creature does not realize that you tried to use the Force to influence its mood,but it becomes immune to this power for one day. This power has no effect on droids or constructs.</font></font></item>
+    </string-array>
+    <string-array name="testspelllist">
+        <!--Affect Mind-->
+        <item name="spellname">affect_mind</item>
+        <item name="printname"><font color="#D4af37">Affect Mind</font></item>
+        <item name="castingTime">Action C</item>
+        <item name="side">Universal</item>
+        <item name="level">0</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
+        <item name="levelInFull">At-will</item>
+        <item name="details_Text"><font size="18"><font face="sans-serif">At-will universal power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 30 feet\n<b>Duration:</b>Concentration, up to 1 minute\n\n"    "Choose a target within range that isn\'t hostile toward you. The target must make a Wisdom saving throw. On a failed save you have advantage on all Charisma checks directed at that target.On a successful save, the creature does not realize that you tried to use the Force to influence its mood,but it becomes immune to this power for one day. This power has no effect on droids or constructs.</font></font></item>
+        <!--Affliction-->
+        <item name="spellname">affliction</item>
+        <item name="printname"><font color="red">Affliction</font></item>
+        <item name="casting_Time">Action C</item>
+        <item name="side"><font color="red">Dark</font> side</item>
+        <item name="level">2</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
+        <item name="levelInFull">2nd-level</item>
+        <item name="details_Text"><font size="18"><font face="sans-serif">2nd-level <font color="red">Dark</font> side power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 30 feet\n<b>Duration:</b>Concentration, up to 1 minute\n\n"    "Choose a creature that you can see within range.That creature must make a Constitution saving throw.On a failed save, the target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws,and it can\'t use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature\'s abilities or items, it can\'t make more than one melee or ranged attack during its turn.If the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher,the power doesn\'t take effect until the creature\'s next turn, and the creature must use its action on that turn to complete the power. If it can\'t, the power is wasted.The creatures makes another Constitution saving throw at the end of its turn. On a successful save, the effect ends.</font></font></item>
+        <!--Animate Weapon-->
+        <item name="spellname">animate_weapon</item>
+        <item name="printname"><font color="#D4af37">Animate Weapon</font></item>
+        <item name="casting_Time">Bonus action</item>
+        <item name="side">Universal</item>
+        <item name="level">2</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
+        <item name="levelInFull">2nd-level</item>
+        <item name="details_Text"><font size="18"><font face="sans-serif">2nd-level universal power\n\n<b>Prerequisite:</b>Force Disarm\n<b>Casting Time:</b> 1 bonus action\n<b>Range:</b> 60 feet\n<b>Duration:</b>1 minute\n\n"    "You select a light or vibro-weapon within this power\'s range that is not worn or carried by a conscious creature other than you, and use the Force to cause it to levitate, acting as an extension of your will for the duration or until you cast this power again. When you use this power, you can cause the weapon to move up to 20 feet and make a melee force attack against a creature within 5 feet of it. On a hit, the target takes 1d8 + your forcecasting ability modifier damage. The type is of the normal damage dealt by the weapon. While the weapon is animated, on each of your turns you can use a bonus action to move the weapon up to 20 feet and repeat the attack against a creature within 5 feet of it. At any time, you can end this force power to return the animated weapon to your hand. An enemy can attempt to gain control of the weapon by using its action to make a Strength (Athletics) check against your force save DC. On a success, the creature gains control of the weapon and the power ends.\n<b>"    "ForcePotency:</b>When you cast this power using a force slot of 3rd level or higher, the weapon\'s damage increases by 1d8 for every two slot levels above 2nd</font></font></item>
+        <!--Armor of Abeloth-->
+        <item name="spellname">armor_of_abeloth</item>
+        <item name="printname"><font color="red">Armor of Abeloth</font></item>
+        <item name="casting_Time">Action</item>
+        <item name="side"><font color="red">Dark</font> side</item>
+        <item name="level">1</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
+        <item name="levelInFull">1st-level</item>
+        <item name="details_Text"><font size="18"><font face="sans-serif">1st-level <font color="red">dark</font> side power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self\n<b>Duration:</b>1 hour\n\n"    "A protective force surrounds you, manifesting as shimmering light that covers you and your gear. You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 psychic damage.\n<b>"    "Force Potency:"</b>When you cast this power using a force slot of 2nd level or higher, both the temporary hit points and the psychic damage increase by 5 for each slot.</font></font></item>
+        <!--Aura of Purity-->
+        <item name="spellname">aura_of_purity</item>
+        <item name="printname"><font color="#4be6ff">Aura of Purity</font></item>
+        <item name="casting_Time">Action C</item>
+        <item name="side"><font color="#4be6ff">Light</font> side</item>
+        <item name="level">4</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
+        <item name="levelInFull">4th-level</item>
+        <item name="details_Text"><font size="18"><font face="sans-serif">4th-level <font color="cyan">Light</font> side power\n\n<b>Prerequisite:</b> Restoration\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self (30-foot Radius)\n<b>Duration:</b>Concentration, up to 10 minutes\n\n"    "Purifying energy radiates from you in a 30-foot radius. Until the power ends, the aura moves with you, centered on you. Each nonhostile creature in the aura (including you) can\'t become diseased, has resistance to poison damage, and has advantage on saving throws against effects that cause any of the following conditions: blinded, charmed, deafened, frightened, paralyzed, poisoned, and stunned.</font></font></item>
+        <!--Aura of Vigor-->
+        <item name="spellname">aura_of_vigor</item>
+        <item name="printname"><font color="#4be6ff">Aura of `igor</font></item>
+        <item name="casting_Time">Action C</item>
+        <item name="side"><font color="#4be6ff">Light</font> side</item>
+        <item name="level">3</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
+        <item name="levelInFull">3rd-level</item>
+        <item name="details_Text"><font size="18"><font face="sans-serif">3rd-level <font color="cyan">light</font> side power\n\n<b>Prerequisite:</b>Valor\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self (30-foot Radius)\n<b>Duration:</b>Concentration, up to 1 minute\n\n"    "Envigorating energy radiates from you in a 30-foot radius. Until the power ends, the aura moves with you, centered on you. Each nonhostile creature in the aura (including you) deals an extra 1d4 damage with weapon attacks.</font></font></item>
+        <!--improved battle meditation-->
+        <item name="spellname">improved_battle_meditation</item>
+        <item name="printname"><font color="#D4af37">improved Battle Meditation</font></item>
+        <item name="casting_Time">Action C</item>
+        <item name="side">Universal</item>
+        <item name="level">0</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">true</item>
+        <item name="isBig">true</item>
         <item name="levelInFull">At-will</item>
         <item name="details_Text"><font size="18"><font face="sans-serif">At-will universal power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 30 feet\n<b>Duration:</b>Concentration, up to 1 minute\n\n"    "Choose a target within range that isn\'t hostile toward you. The target must make a Wisdom saving throw. On a failed save you have advantage on all Charisma checks directed at that target.On a successful save, the creature does not realize that you tried to use the Force to influence its mood,but it becomes immune to this power for one day. This power has no effect on droids or constructs.</font></font></item>
     </string-array>
