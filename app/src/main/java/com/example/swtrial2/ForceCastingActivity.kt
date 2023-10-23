@@ -29,7 +29,7 @@ class ForceCastingActivity : AppCompatActivity() {
     private lateinit var lightspells: List<Spell>
     private lateinit var currentspelllist: List<Spell>
     private lateinit var templist: MutableList<Spell>
-    private lateinit var xmlSpellList:MutableList<Spell>
+    private lateinit var spellList:MutableList<Spell>
     private lateinit var adapterspelllist: MutableList<Spell>
     private val eraselist: MutableList<Spell> = mutableListOf()
     private val favspelllist: MutableList<String> = mutableListOf()
@@ -52,15 +52,15 @@ class ForceCastingActivity : AppCompatActivity() {
 
         levels= listOf("0","1","2","3","4","5","6","7","8","9","empty")
         favspelllist.addAll(favSharedPreferences.getStringSet("favlist", mutableSetOf())?.toList()!!)
-        xmlSpellList=getSpells()
+        spellList=getSpells()
 
 
         reclview = findViewById(R.id.reclview)
         adapterspelllist= mutableListOf()
-        adapterspelllist.addAll(xmlSpellList)
+        adapterspelllist.addAll(spellList)
         spelladapter = SpellAdapter(this,adapterspelllist,favspelllist)
         reclview.adapter = spelladapter
-        currentspelllist = xmlSpellList
+        currentspelllist = spellList
 
         searchView = findViewById(R.id.searchview)
         searchView.isIconifiedByDefault=false
@@ -72,7 +72,7 @@ class ForceCastingActivity : AppCompatActivity() {
                 }
                 else {
                     trimEntext= enttext.trim().replace(" ","_")
-                    if(xmlSpellList.getNameList().none { it.contains(trimEntext,true) }){
+                    if(spellList.getNameList().none { it.contains(trimEntext,true) }){
                         spelladapter.setSpellList(mutableListOf())
                         Toast.makeText(this@ForceCastingActivity,"No such Spell found",Toast.LENGTH_SHORT)
                             .show()
@@ -91,7 +91,7 @@ class ForceCastingActivity : AppCompatActivity() {
                 }
                 else {
                     trimEntext= enttext.trim().replace(" ","_")
-                    if(xmlSpellList.getNameList().none { it.contains(trimEntext,true) }){
+                    if(spellList.getNameList().none { it.contains(trimEntext,true) }){
                         spelladapter.setSpellList(mutableListOf())
                         Toast.makeText(this@ForceCastingActivity,"No such Spell found",Toast.LENGTH_SHORT)
                             .show()
@@ -127,25 +127,25 @@ class ForceCastingActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.title){
             getText(R.string.sortABCdown)->{
-                templist=xmlSpellList.sortSpellByNameDescending().filter { it !in eraselist }.toMutableList()
+                templist=spellList.sortSpellByNameDescending().filter { it !in eraselist }.toMutableList()
                 spelladapter.setSpellList(templist)
                 currentspelllist=templist
                 item.title=getText(R.string.sortABCup)
                 returntotop(reclview,"sharp")}
             getText(R.string.sortABCup)->{
-                templist=xmlSpellList.sortSpellByLevel().filter { it !in eraselist }.toMutableList()
+                templist=spellList.sortSpellByLevel().filter { it !in eraselist }.toMutableList()
                 spelladapter.setSpellList(templist)
                 currentspelllist=templist
                 item.title = getText(R.string.sortLvldown)
                 returntotop(reclview,"sharp")}
             getText(R.string.sortLvldown)->{
-                templist=xmlSpellList.sortSpellByLevelDescending().filter { it !in eraselist }.toMutableList()
+                templist=spellList.sortSpellByLevelDescending().filter { it !in eraselist }.toMutableList()
                 spelladapter.setSpellList(templist)
                 currentspelllist=templist
                 item.title = getText(R.string.sortLvlup)
                 returntotop(reclview,"sharp")}
             getText(R.string.sortLvlup)->{
-                templist=xmlSpellList.sortSpellByName().filter { it !in eraselist }.toMutableList()
+                templist=spellList.sortSpellByName().filter { it !in eraselist }.toMutableList()
                 spelladapter.setSpellList(templist)
                 currentspelllist=templist
                 item.title = getText(R.string.sortABCdown)
@@ -153,7 +153,7 @@ class ForceCastingActivity : AppCompatActivity() {
             getText(R.string.Dark)->{
                 if(item.isChecked){eraselist.addAll(darkspells)}
                 else{
-                    if(favchecked){eraselist.removeAll(xmlSpellList.filter { it.side.contains("Dark",true) and (it.spellname in favspelllist)})}
+                    if(favchecked){eraselist.removeAll(spellList.filter { it.side.contains("Dark",true) and (it.spellname in favspelllist)})}
                     else{eraselist.removeAll(darkspells)}
                 }
                 templist = currentspelllist.filter{it !in eraselist}.toMutableList()
@@ -164,7 +164,7 @@ class ForceCastingActivity : AppCompatActivity() {
             getText(R.string.Light)->{
                 if(item.isChecked){eraselist.addAll(lightspells)}
                 else{
-                    if(favchecked){eraselist.removeAll(xmlSpellList.filter { it.side.contains("Light",true) and (it.spellname in favspelllist)})}
+                    if(favchecked){eraselist.removeAll(spellList.filter { it.side.contains("Light",true) and (it.spellname in favspelllist)})}
                     else{eraselist.removeAll(lightspells)}
                 }
                 templist = currentspelllist.filter{it !in eraselist}.toMutableList()
@@ -173,12 +173,12 @@ class ForceCastingActivity : AppCompatActivity() {
             }
             getText(R.string.favorites_forcepowers)->{
                 if (item.isChecked){
-                    eraselist.removeAll(xmlSpellList.filter {(it.spellname !in favspelllist)})
+                    eraselist.removeAll(spellList.filter {(it.spellname !in favspelllist)})
                     if(!darkchecked){eraselist.addAll(darkspells)}
                     if(!lightchecked){eraselist.addAll(lightspells)}
                 }
                 else{
-                    eraselist.addAll(xmlSpellList.filter {it.spellname !in favspelllist})
+                    eraselist.addAll(spellList.filter {it.spellname !in favspelllist})
                 }
                 templist=currentspelllist.filter{it !in eraselist}.toMutableList()
                 spelladapter.setSpellList(templist)
