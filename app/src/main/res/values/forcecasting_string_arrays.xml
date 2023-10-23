@@ -777,7 +777,7 @@
 
     </string-array>
     
-    <string-array name="affect_mind">
+    <!--<string-array name="affect_mind">
         <item name="spellname">affect_mind</item>
         <item name="printname"><font color="#D4af37">Affect Mind</font></item>
         <item name="castingTime">Action C</item>
@@ -860,7 +860,7 @@
         <item name="isBig">false</item>
         <item name="levelInFull">At-will</item>
         <item name="details_Text"><font size="18"><font face="sans-serif">At-will universal power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 30 feet\n<b>Duration:</b>Concentration, up to 1 minute\n\n"    "Choose a target within range that isn\'t hostile toward you. The target must make a Wisdom saving throw. On a failed save you have advantage on all Charisma checks directed at that target.On a successful save, the creature does not realize that you tried to use the Force to influence its mood,but it becomes immune to this power for one day. This power has no effect on droids or constructs.</font></font></item>
-    </string-array>
+    </string-array>-->
     <string-array name="testspelllist">
         <!--Affect Mind-->
         <item name="spellname">affect_mind</item>

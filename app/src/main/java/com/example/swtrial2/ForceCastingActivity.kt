@@ -20,21 +20,17 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ForceCastingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityForcecastingBinding
-    private lateinit var reclview: RecyclerView
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
-    private lateinit var searchView: SearchView
     private lateinit var spelladapter: SpellAdapter
-    private lateinit var adapterspelllist: MutableList<Spell>
-    private lateinit var bigspellnames: List<String>
+    private lateinit var reclview: RecyclerView
+    private lateinit var searchView: SearchView
     private lateinit var levels: List<String>
-    private lateinit var spelllist: List<String>
-    private lateinit var xmlSpellList:MutableList<Spell>
-    private lateinit var lvledspelllist: List<String>
-    private lateinit var lvledspelllistrev: List<String>
     private lateinit var darkspells: List<Spell>
     private lateinit var lightspells: List<Spell>
     private lateinit var currentspelllist: List<Spell>
     private lateinit var templist: MutableList<Spell>
+    private lateinit var xmlSpellList:MutableList<Spell>
+    private lateinit var adapterspelllist: MutableList<Spell>
     private val eraselist: MutableList<Spell> = mutableListOf()
     private val favspelllist: MutableList<String> = mutableListOf()
     private lateinit var favSharedPreferences: SharedPreferences
@@ -55,43 +51,8 @@ class ForceCastingActivity : AppCompatActivity() {
         favSharedPreferences=getSharedPreferences("favlist", Context.MODE_PRIVATE)
 
         levels= listOf("0","1","2","3","4","5","6","7","8","9","empty")
-        /*lvledspelllist=resources.getStringArray(R.array.leveledspelllist).toList()
-        lvledspelllistrev=resources.getStringArray(R.array.leveledspelllistrev).toList()
-        darkspells=resources.getStringArray(R.array.darkspells).toList()
-        lightspells=resources.getStringArray(R.array.lightspells).toList()*/
-        favspelllist.addAll(favSharedPreferences.getStringSet("favlist", mutableSetOf())?.toList()!!)/*
-
-
-        val spellMap = mutableMapOf<String,MutableList<String>>()
-        val spelllistio= mutableListOf<Spell>()
-        for (spell in spelllist){
-            val identifiq=resources.getIdentifier(spell,"array",packageName)
-            if (identifiq!=0){
-                val tempSpelllist=resources.getStringArray(identifiq).toList()
-                spelllistio.add(Spell(tempSpelllist[0],tempSpelllist[1],tempSpelllist[2],tempSpelllist[3],tempSpelllist[4].toInt(),tempSpelllist[5].toBoolean(),tempSpelllist[6].toBoolean()))
-                spellMap.getOrPut(spell){mutableListOf()}.addAll(resources.getStringArray(identifiq).toList().subList(3,5))
-            }
-            else{
-                spelllistio.add(Spell("Error Spell not found"))
-                spellMap[spell]=(mutableListOf("error:unknown force power","10"))
-            }
-        }*/
-        /*lvledspelllist=spellMap.toSortedMap(compareBy { spellMap.getOrDefault(it, mutableListOf("error","10"))[1].toInt() }).keys.toList()
-        darkspells=spellMap.filterValues { it[0].contains("Dark",true) }.keys.toList()
-        lightspells=spellMap.filterValues { it[0].contains("Light",true) }.keys.toList()
-        lvledspelllistrev = spellMap.toSortedMap(compareByDescending { spellMap.getOrDefault(it, mutableListOf("error","10"))[1].toInt() }).keys.toList()*/
-        /*lvledspelllist=spelllistio.sortSpellByLevel().getNameList()
-        lvledspelllistrev=spelllistio.sortSpellByLevelDescending().getNameList()
-        darkspells=spelllistio.filter{ it.side.contains("Dark",true) }.getNameList()
-        lightspells=spelllistio.filter{ it.side.contains("Light",true) }.getNameList()*/
-        val xmlparser= SpellXmlParser()
-        /*xmlSpellList=xmlparser.parse(this,R.xml.forcecasting_spells)*/
+        favspelllist.addAll(favSharedPreferences.getStringSet("favlist", mutableSetOf())?.toList()!!)
         xmlSpellList=getSpells()
-        /*spelllist=xmlSpellList.getNameList()
-        lvledspelllist=xmlSpellList.sortSpellByLevel().getNameList()
-        lvledspelllistrev=xmlSpellList.sortSpellByLevelDescending().getNameList()
-        darkspells=xmlSpellList.filter { it.side.contains("Dark",true) }
-        lightspells=xmlSpellList.filter{ it.side.contains("Light",true) }*/
 
 
         reclview = findViewById(R.id.reclview)
@@ -111,7 +72,7 @@ class ForceCastingActivity : AppCompatActivity() {
                 }
                 else {
                     trimEntext= enttext.trim().replace(" ","_")
-                    if(spelllist.none { it.contains(trimEntext,true) }){
+                    if(xmlSpellList.getNameList().none { it.contains(trimEntext,true) }){
                         spelladapter.setSpellList(mutableListOf())
                         Toast.makeText(this@ForceCastingActivity,"No such Spell found",Toast.LENGTH_SHORT)
                             .show()
@@ -130,7 +91,7 @@ class ForceCastingActivity : AppCompatActivity() {
                 }
                 else {
                     trimEntext= enttext.trim().replace(" ","_")
-                    if(spelllist.none { it.contains(trimEntext,true) }){
+                    if(xmlSpellList.getNameList().none { it.contains(trimEntext,true) }){
                         spelladapter.setSpellList(mutableListOf())
                         Toast.makeText(this@ForceCastingActivity,"No such Spell found",Toast.LENGTH_SHORT)
                             .show()
