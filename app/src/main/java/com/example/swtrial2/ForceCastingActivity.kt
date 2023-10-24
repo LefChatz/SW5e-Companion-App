@@ -61,6 +61,9 @@ class ForceCastingActivity : AppCompatActivity() {
         spelladapter = SpellAdapter(this,adapterspelllist,favspelllist)
         reclview.adapter = spelladapter
         currentspelllist = spellList
+        lightspells=spellList.filter { it.side.contains("Light",true)}
+        darkspells=spellList.filter { it.side.contains("Dark",true)}
+
 
         searchView = findViewById(R.id.searchview)
         searchView.isIconifiedByDefault=false
@@ -153,8 +156,8 @@ class ForceCastingActivity : AppCompatActivity() {
             getText(R.string.Dark)->{
                 if(item.isChecked){eraselist.addAll(darkspells)}
                 else{
-                    if(favchecked){eraselist.removeAll(spellList.filter { it.side.contains("Dark",true) and (it.spellname in favspelllist)})}
-                    else{eraselist.removeAll(darkspells)}
+                    if(favchecked){eraselist.removeAll(spellList.filter { it.side.contains("Dark",true) and (it.spellname in favspelllist) and if(trimEntext.isNotBlank()){it.spellname.contains(trimEntext)}else{true}})}
+                    else{if(trimEntext.isNotBlank()){spellList.filter { it.side.contains("Dark",true) and if(trimEntext.isNotBlank()){it.spellname.contains(trimEntext)}else{true}}}else{eraselist.removeAll(darkspells)}}
                 }
                 templist = currentspelllist.filter{it !in eraselist}.toMutableList()
                 spelladapter.setSpellList(templist)
@@ -168,6 +171,7 @@ class ForceCastingActivity : AppCompatActivity() {
                     else{eraselist.removeAll(lightspells)}
                 }
                 templist = currentspelllist.filter{it !in eraselist}.toMutableList()
+                spelladapter.setSpellList(templist)
                 item.isChecked= !item.isChecked
                 lightchecked= !lightchecked
             }

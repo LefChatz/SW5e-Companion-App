@@ -110,7 +110,9 @@ class SpellAdapter(private val mycontext: Context,private val dataset: MutableLi
     @SuppressLint("DiscouragedApi")
     fun spell(view: SpellHolder, spell: Spell){
         view.spellname.text=spell.printedname
-        view.spelldetails.text= buildSpannedString{append(spell.levelInFull);append(" ");append(spell.side)}
+        view.spelldetails.text= buildSpannedString{
+            append(when(spell.level){0->"At-will";1->"1st-level";2->"2nd-level";3->"3rd-level";else->"${spell.level}th-level"})
+            append(" ");append(spell.side)}
         view.castingtime.text= spell.castingtime
         view.constlout.setOnClickListener{
             mycontext.startActivity(Intent(mycontext, SpellDetailsActivity::class.java).putExtra("Spell",spell))
