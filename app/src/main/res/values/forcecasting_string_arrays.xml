@@ -969,7 +969,40 @@
         <item name="level">1</item>
         <item name="concentration">true</item>
         <item name="prerequisite">false</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
+        <item name="levelInFull">1st-level</item>
+        <item name="details_Text"><font size="18"><font face="sans-serif">1st-level universal power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self\n<b>Duration:</b> 8 hours\n\n"    "Your attunement to the Force warns you when you are about to enter danger. Until the power ends, your base AC becomes 13 + your Dexterity modifier. This power has no effect if you are wearing armor.</font></font></item>
+        <!--improved battle meditation-->
+        <item name="spellname">improved_battle_meditation</item>
+        <item name="printname"><font color="#D4af37">improved Battle Meditation</font></item>
+        <item name="casting_Time">Action C</item>
+        <item name="side">Universal</item>
+        <item name="level">1</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">true</item>
+        <item name="levelInFull">1st-level</item>
+        <item name="details_Text"><font size="18"><font face="sans-serif">1st-level universal power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self\n<b>Duration:</b> 8 hours\n\n"    "Your attunement to the Force warns you when you are about to enter danger. Until the power ends, your base AC becomes 13 + your Dexterity modifier. This power has no effect if you are wearing armor.</font></font></item>
+        <!--improved battle meditation-->
+        <item name="spellname">improved_battle_meditation</item>
+        <item name="printname"><font color="#D4af37">improved Battle Meditation</font></item>
+        <item name="casting_Time">Action C</item>
+        <item name="side">Universal</item>
+        <item name="level">1</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">true</item>
+        <item name="levelInFull">1st-level</item>
+        <item name="details_Text"><font size="18"><font face="sans-serif">1st-level universal power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self\n<b>Duration:</b> 8 hours\n\n"    "Your attunement to the Force warns you when you are about to enter danger. Until the power ends, your base AC becomes 13 + your Dexterity modifier. This power has no effect if you are wearing armor.</font></font></item>
+        <!--improved battle meditation-->
+        <item name="spellname">improved_battle_meditation</item>
+        <item name="printname"><font color="#D4af37">improved Battle Meditation</font></item>
+        <item name="casting_Time">Action C</item>
+        <item name="side">Universal</item>
+        <item name="level">1</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">true</item>
         <item name="levelInFull">1st-level</item>
         <item name="details_Text"><font size="18"><font face="sans-serif">1st-level universal power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self\n<b>Duration:</b> 8 hours\n\n"    "Your attunement to the Force warns you when you are about to enter danger. Until the power ends, your base AC becomes 13 + your Dexterity modifier. This power has no effect if you are wearing armor.</font></font></item>
     </string-array>

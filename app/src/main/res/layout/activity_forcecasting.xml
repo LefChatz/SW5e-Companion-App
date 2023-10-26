@@ -2,25 +2,17 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/forcecastingcoord"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ForceCastingActivity"
     android:background="@drawable/neutralbg2"
-    app:layout_insetEdge="top"
     >
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
-        android:theme="@style/Theme.Swtrial2.AppBarOverlay"
-        android:background="#95000000"
-        >
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <androidx.appcompat.widget.Toolbar
+            app:layout_insetEdge="top"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/force_toolbar"
@@ -30,6 +22,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             />
         <androidx.appcompat.widget.AppCompatButton
+            app:layout_insetEdge="top"
             android:id="@+id/button2"
             android:layout_width="70sp"
             android:layout_height="0dp"
@@ -43,6 +36,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             />
         <TextView
+            app:layout_insetEdge="top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/starjedi"
@@ -55,8 +49,23 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</com.google.android.material.appbar.AppBarLayout>
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reclview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_dodgeInsetEdges="top"
+        android:paddingTop="50dp"
+        android:paddingBottom="50dp"
+        android:clipToPadding="false"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbars="vertical"
+        app:fastScrollEnabled="true"
+        app:fastScrollHorizontalThumbDrawable="@drawable/testfastscrollbar"
+        app:fastScrollHorizontalTrackDrawable="@drawable/testfastscrollbartrack"
+        app:fastScrollVerticalThumbDrawable="@drawable/testfastscrollbar"
+        app:fastScrollVerticalTrackDrawable="@drawable/testfastscrollbartrack"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
@@ -75,12 +84,6 @@
             android:searchIcon="@drawable/tiefightersearchgoldsmol"
             />
     </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-    <include
-        layout="@layout/content_scrolling"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"

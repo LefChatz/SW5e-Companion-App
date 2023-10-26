@@ -126,6 +126,7 @@ class SpellAdapter(private val mycontext: Context,private val dataset: MutableLi
         else{
             view.imbutton.background=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegold)
         }
+
     }
     private fun setlevel(view: LeveledDividerHolder, lvl: Int){
         when(lvl){
