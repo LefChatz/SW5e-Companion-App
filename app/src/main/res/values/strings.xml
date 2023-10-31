@@ -2233,6 +2233,7 @@
     <string name="details">details</string>
     <string name="spellerror404">Force power not found</string>
     <string name="favorite_button">Favorite Spell</string>
+    <string name="text">Text</string>
 
 
 </resources>

@@ -9,10 +9,12 @@
     android:background="@drawable/neutralbg2"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:translationZ="2dp"
+        android:background="#95000000"
+        android:theme="@style/Theme.Swtrial2.AppBarOverlay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <androidx.appcompat.widget.Toolbar
-            app:layout_insetEdge="top"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/force_toolbar"
@@ -22,7 +24,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             />
         <androidx.appcompat.widget.AppCompatButton
-            app:layout_insetEdge="top"
             android:id="@+id/button2"
             android:layout_width="70sp"
             android:layout_height="0dp"
@@ -36,7 +37,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             />
         <TextView
-            app:layout_insetEdge="top"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/starjedi"

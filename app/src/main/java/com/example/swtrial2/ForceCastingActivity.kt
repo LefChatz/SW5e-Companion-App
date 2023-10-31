@@ -15,7 +15,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
 import com.example.swtrial2.databinding.ActivityForcecastingBinding
-import com.example.swtrial2.spells.adapterstuff.*
+import com.example.swtrial2.spells.adapterstuff.Spell
+import com.example.swtrial2.spells.adapterstuff.SpellAdapter
+import com.example.swtrial2.spells.adapterstuff.getNameList
+import com.example.swtrial2.spells.adapterstuff.sortSpellByLevel
+import com.example.swtrial2.spells.adapterstuff.sortSpellByLevelDescending
+import com.example.swtrial2.spells.adapterstuff.sortSpellByName
+import com.example.swtrial2.spells.adapterstuff.sortSpellByNameDescending
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ForceCastingActivity : AppCompatActivity() {
@@ -28,13 +34,13 @@ class ForceCastingActivity : AppCompatActivity() {
     private lateinit var darkspells: List<Spell>
     private lateinit var lightspells: List<Spell>
     private lateinit var currentspelllist: List<Spell>
-    private lateinit var templist: MutableList<Spell>
     private lateinit var spellList:MutableList<Spell>
-    private lateinit var adapterspelllist: MutableList<Spell>
+    private var templist=mutableListOf<Spell>()
+    private var adapterspelllist=mutableListOf<Spell>()
     private val eraselist: MutableList<Spell> = mutableListOf()
     private val favspelllist: MutableList<String> = mutableListOf()
     private lateinit var favSharedPreferences: SharedPreferences
-    private lateinit var trimEntext:String
+    private  var trimEntext=""
     private var darkchecked=true
     private var lightchecked=true
     private var favchecked=false
@@ -49,7 +55,6 @@ class ForceCastingActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         favSharedPreferences=getSharedPreferences("favlist", Context.MODE_PRIVATE)
-
         levels= listOf("0","1","2","3","4","5","6","7","8","9","empty")
         favspelllist.addAll(favSharedPreferences.getStringSet("favlist", mutableSetOf())?.toList()!!)
         spellList=getSpells()
@@ -81,8 +86,7 @@ class ForceCastingActivity : AppCompatActivity() {
                             .show()
                     }
                     else {
-                        templist = currentspelllist.filter{(it.spellname.contains(trimEntext,true)) and (it !in eraselist)}.toMutableList()
-                        spelladapter.setSpellList(templist)
+                        spelladapter.setSpellList(currentspelllist.filter{(it.spellname.contains(trimEntext,true)) and (it !in eraselist)}.toMutableList())
 
                     }
                 }
@@ -100,8 +104,7 @@ class ForceCastingActivity : AppCompatActivity() {
                             .show()
                     }
                     else {
-                        templist = currentspelllist.filter{(it.spellname.contains(trimEntext,true)) and (it !in eraselist)}.toMutableList()
-                        spelladapter.setSpellList(templist)
+                        spelladapter.setSpellList(currentspelllist.filter{(it.spellname.contains(trimEntext,true)) and (it !in eraselist)}.toMutableList())
 
                     }
                 }
@@ -130,48 +133,42 @@ class ForceCastingActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.title){
             getText(R.string.sortABCdown)->{
-                templist=spellList.sortSpellByNameDescending().filter { it !in eraselist }.toMutableList()
-                spelladapter.setSpellList(templist)
+                spelladapter.setSpellList(spellList.sortSpellByNameDescending().filter { it !in eraselist }.toMutableList())
                 currentspelllist=templist
                 item.title=getText(R.string.sortABCup)
                 returntotop(reclview,"sharp")}
             getText(R.string.sortABCup)->{
-                templist=spellList.sortSpellByLevel().filter { it !in eraselist }.toMutableList()
-                spelladapter.setSpellList(templist)
+                spelladapter.setSpellList(spellList.sortSpellByLevel().filter { it !in eraselist }.toMutableList())
                 currentspelllist=templist
                 item.title = getText(R.string.sortLvldown)
                 returntotop(reclview,"sharp")}
             getText(R.string.sortLvldown)->{
-                templist=spellList.sortSpellByLevelDescending().filter { it !in eraselist }.toMutableList()
-                spelladapter.setSpellList(templist)
+                spelladapter.setSpellList(spellList.sortSpellByLevelDescending().filter { it !in eraselist }.toMutableList())
                 currentspelllist=templist
                 item.title = getText(R.string.sortLvlup)
                 returntotop(reclview,"sharp")}
             getText(R.string.sortLvlup)->{
-                templist=spellList.sortSpellByName().filter { it !in eraselist }.toMutableList()
-                spelladapter.setSpellList(templist)
+                spelladapter.setSpellList(spellList.sortSpellByName().filter { it !in eraselist }.toMutableList())
                 currentspelllist=templist
                 item.title = getText(R.string.sortABCdown)
                 returntotop(reclview,"sharp")}
             getText(R.string.Dark)->{
                 if(item.isChecked){eraselist.addAll(darkspells)}
                 else{
-                    if(favchecked){eraselist.removeAll(spellList.filter { it.side.contains("Dark",true) and (it.spellname in favspelllist) and if(trimEntext.isNotBlank()){it.spellname.contains(trimEntext)}else{true}})}
-                    else{if(trimEntext.isNotBlank()){spellList.filter { it.side.contains("Dark",true) and if(trimEntext.isNotBlank()){it.spellname.contains(trimEntext)}else{true}}}else{eraselist.removeAll(darkspells)}}
+                    if(favchecked){eraselist.removeAll(spellList.filter { (it in darkspells) and (it.spellname in favspelllist) and if(trimEntext.isNotBlank()){it.spellname.contains(trimEntext)}else{true}})}
+                    else{if(trimEntext.isNotBlank()){spellList.filter { (it in darkspells) and it.spellname.contains(trimEntext)}}else{eraselist.removeAll(darkspells)}}
                 }
-                templist = currentspelllist.filter{it !in eraselist}.toMutableList()
-                spelladapter.setSpellList(templist)
+                spelladapter.setSpellList(currentspelllist.filter{it !in eraselist}.toMutableList())
                 item.isChecked= !item.isChecked
                 darkchecked= !darkchecked
             }
             getText(R.string.Light)->{
                 if(item.isChecked){eraselist.addAll(lightspells)}
                 else{
-                    if(favchecked){eraselist.removeAll(spellList.filter { it.side.contains("Light",true) and (it.spellname in favspelllist)})}
-                    else{eraselist.removeAll(lightspells)}
+                    if(favchecked){eraselist.removeAll(spellList.filter { (it in lightspells) and (it.spellname in favspelllist) and if(trimEntext.isNotBlank()){it.spellname.contains(trimEntext)}else{true}})}
+                    else{if(trimEntext.isNotBlank()){spellList.filter { (it in lightspells) and it.spellname.contains(trimEntext)}}else{eraselist.removeAll(lightspells)}}
                 }
-                templist = currentspelllist.filter{it !in eraselist}.toMutableList()
-                spelladapter.setSpellList(templist)
+                spelladapter.setSpellList(currentspelllist.filter{it !in eraselist}.toMutableList())
                 item.isChecked= !item.isChecked
                 lightchecked= !lightchecked
             }
@@ -184,8 +181,7 @@ class ForceCastingActivity : AppCompatActivity() {
                 else{
                     eraselist.addAll(spellList.filter {it.spellname !in favspelllist})
                 }
-                templist=currentspelllist.filter{it !in eraselist}.toMutableList()
-                spelladapter.setSpellList(templist)
+                spelladapter.setSpellList(currentspelllist.filter{it !in eraselist}.toMutableList())
                 item.isChecked= !item.isChecked
                 favchecked= !favchecked
             }
@@ -212,9 +208,8 @@ class ForceCastingActivity : AppCompatActivity() {
     private fun getSpells(): MutableList<Spell>{
         val getSpellList = mutableListOf<Spell>()
         val tempSpellList=resources.getTextArray(R.array.testspelllist)
-        for(i in 9..tempSpellList.size step 10){
-            print(tempSpellList[i-9].toString()+tempSpellList[i-8]+tempSpellList[i-7].toString()+tempSpellList[i-6]+tempSpellList[i-5]+tempSpellList[i-4]+tempSpellList[i-3]+tempSpellList[i-2]+tempSpellList[i-1]+tempSpellList[i])
-            getSpellList.add(Spell(tempSpellList[i-9].toString(),tempSpellList[i-8],tempSpellList[i-7].toString(),tempSpellList[i-6],tempSpellList[i-5].toString().toInt(),tempSpellList[i-4].toString().toBoolean(),tempSpellList[i-3].toString().toBoolean(),tempSpellList[i-2].toString().toBoolean(),tempSpellList[i-1].toString(),tempSpellList[i]))
+        for(i in 8..tempSpellList.size step 9){
+            getSpellList.add(Spell(tempSpellList[i-8].toString(),tempSpellList[i-7],tempSpellList[i-6].toString(),tempSpellList[i-5],tempSpellList[i-4].toString().toInt(),tempSpellList[i-3].toString().toBoolean(),tempSpellList[i-2].toString().toBoolean(),tempSpellList[i-1].toString().toBoolean(),tempSpellList[i]))
         }
         return getSpellList
     }

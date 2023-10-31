@@ -9,7 +9,7 @@ import androidx.core.text.buildSpannedString
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserException
 import java.io.IOException
-import java.util.*
+import java.util.Arrays
 
 class SpellXmlParser {
     @Throws(XmlPullParserException::class, IOException::class)
@@ -32,7 +32,7 @@ class SpellXmlParser {
                 val tagName = spelldataXmlParser.name
                 xmlTagStack.removeAt(xmlTagStack.size - 1)
                 if (tagName == "spell") {
-                    currentspell = Spell(spelldata[0],spelldata[1],spelldata[2],spelldata[3],spelldata[4].toInt(),spelldata[5].toBoolean(),spelldata[6].toBoolean(),spelldata[7].toBoolean(),spelldata[8],spelldata[9])
+                    currentspell = Spell(spelldata[0],spelldata[1],spelldata[2],spelldata[3],spelldata[4].toInt(),spelldata[5].toBoolean(),spelldata[6].toBoolean(),spelldata[7].toBoolean(),spelldata[8])
                     val editedspell = currentspell
                     with(currentspell.side){
                         when{

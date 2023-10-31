@@ -28,7 +28,7 @@ class SpellDetailsActivity : AppCompatActivity() {
         }
         setContentView(R.layout.activity_spell_details)
 
-        toolbar = findViewById(R.id.toolbar)
+        toolbar = findViewById(R.id.force_toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
