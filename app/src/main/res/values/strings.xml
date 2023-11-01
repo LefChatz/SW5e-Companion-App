@@ -2234,6 +2234,7 @@
     <string name="spellerror404">Force power not found</string>
     <string name="favorite_button">Favorite Spell</string>
     <string name="text">Text</string>
+    <string name="forcecasting_nosuchspell">No Such Spell Found</string>
 
 
 </resources>

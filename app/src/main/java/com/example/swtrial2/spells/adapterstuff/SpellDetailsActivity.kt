@@ -5,25 +5,25 @@ import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
-import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.appcompat.widget.AppCompatButton
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.example.swtrial2.R
 
 class SpellDetailsActivity : AppCompatActivity() {
 
-    lateinit var spell: Spell
-    lateinit var details: Array<CharSequence>
-    lateinit var toolbar: androidx.appcompat.widget.Toolbar
-
+    private lateinit var spell: Spell
+    private lateinit var toolbar: androidx.appcompat.widget.Toolbar
+    private lateinit var backButton: AppCompatButton
     @SuppressLint("DiscouragedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         spell = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             intent.getParcelableExtra("Spell", Spell::class.java).toSpell()
         } else {
+            @Suppress("DEPRECATION")
             intent.getParcelableExtra<Spell>("Spell").toSpell()
         }
         setContentView(R.layout.activity_spell_details)
@@ -52,6 +52,10 @@ class SpellDetailsActivity : AppCompatActivity() {
 
         }
 
+        backButton=findViewById(R.id.forceBackButton)
+        backButton.setOnClickListener {
+            returntomain()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -60,7 +64,7 @@ class SpellDetailsActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    fun returntomain(view: View) {
+    fun returntomain() {
         finish()
     }
 

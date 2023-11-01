@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -20,10 +19,12 @@ import com.example.swtrial2.R
 
 class SpellAdapter(private val mycontext: Context,private val dataset: MutableList<Spell>,private val favlist: MutableList<String>) : RecyclerView.Adapter<ViewHolder>() {
     val levels: List<Int> = listOf(0,1,2,3,4,5,6,7,8,9)
-    class EmptySpellHolder(view: View) : ViewHolder(view){
-        private val emptyrelout: RelativeLayout
+    class NoSpellHolder(view: View) : ViewHolder(view){
+        private val noSpellText: TextView
+        init {
+            noSpellText= view.findViewById(R.id.forcecasting_nosuchspelltext)
+        }
         init{
-            emptyrelout= view.findViewById(R.id.emptyrelout)
         }
     }
     class LeveledDividerHolder(view: View) : ViewHolder(view){
@@ -54,10 +55,10 @@ class SpellAdapter(private val mycontext: Context,private val dataset: MutableLi
         return when(viewType){
             0->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.spell_button, viewGroup, false) ; SpellHolder(view) }
             1->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.spell_button_big, viewGroup, false) ; SpellHolder(view) }
-            2->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.empty_button50sp, viewGroup, false) ; EmptySpellHolder(view) }
+            2->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.forcecasting_nosuchspell_button, viewGroup, false) ; NoSpellHolder(view) }
             3->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.spell_leveldivider, viewGroup, false) ; LeveledDividerHolder(view)
             }
-            else->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.empty_button50sp, viewGroup, false) ; EmptySpellHolder(view)
+            else->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.empty_button50sp, viewGroup, false) ; NoSpellHolder(view)
             }
         }
 
@@ -68,7 +69,7 @@ class SpellAdapter(private val mycontext: Context,private val dataset: MutableLi
          with(dataset[position]){
              return when{
                     this.isBig -> 1
-                    this.spellname=="Empty_Name" -> 2
+                    this.spellname=="NoSuchSpell" -> 2
                     this.spellname=="Level"->3
                     else ->{0}
                 }

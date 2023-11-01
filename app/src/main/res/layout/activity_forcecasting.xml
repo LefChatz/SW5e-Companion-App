@@ -24,11 +24,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             />
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button2"
+            android:id="@+id/forceBackButton"
             android:layout_width="70sp"
             android:layout_height="0dp"
             android:background="#35D4af37"
-            android:onClick="returntomain"
             android:text="@string/back"
             android:textColor="@color/gold"
             android:textSize="15sp"
