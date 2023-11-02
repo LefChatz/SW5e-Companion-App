@@ -16,6 +16,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.example.swtrial2.R
 import kotlin.math.absoluteValue
@@ -25,6 +26,7 @@ class BerserkerActivity : AppCompatActivity() , GestureDetector.OnGestureListene
     private lateinit var tempbersk: View
     private lateinit var inflater: LayoutInflater
     private lateinit var ll: LinearLayoutCompat
+    private lateinit var backButton: AppCompatButton
     private lateinit var txt: TextView
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     private lateinit var scrolly: ScrollView
@@ -53,6 +55,11 @@ class BerserkerActivity : AppCompatActivity() , GestureDetector.OnGestureListene
         dummybutton = findViewById(R.id.dummybutton)
         dummybutton.setOnClickListener {
             this.openOptionsMenu()
+        }
+
+        backButton=findViewById(R.id.BackButton)
+        backButton.setOnClickListener {
+            returntomain()
         }
 
         gestdect = GestureDetector(this,this)
@@ -90,7 +97,7 @@ class BerserkerActivity : AppCompatActivity() , GestureDetector.OnGestureListene
             }
         }
     }
-    fun returntomain(view: View?){
+    private fun returntomain(){
         finish()
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -296,7 +303,7 @@ class BerserkerActivity : AppCompatActivity() , GestureDetector.OnGestureListene
     override fun onFling(e0: MotionEvent, e1: MotionEvent, vx: Float, vy: Float): Boolean {
         val diffX = e1.x - e0.x
         if(diffX.absoluteValue>(e1.y-e0.y).absoluteValue) {
-            if(dummybutton.text!="Tables"){
+            if(dummybutton.text.toString()!="Tables"){
                 return if (diffX.absoluteValue > swipethreshold && vx.absoluteValue > swipethreshold) {
                     //L to R
                     if (diffX > 0 && scrollmode!=0) {

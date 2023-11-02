@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.SearchView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -28,7 +27,7 @@ class ForceCastingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityForcecastingBinding
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     private lateinit var reclview: RecyclerView
-    private lateinit var searchView: SearchView
+    private lateinit var searchView: androidx.appcompat.widget.SearchView
     private lateinit var darkspells: List<Spell>
     private lateinit var backButton: AppCompatButton
 
@@ -72,9 +71,9 @@ class ForceCastingActivity : AppCompatActivity() {
         backButton.setOnClickListener{returntomain()}
 
         searchView = findViewById(R.id.searchview)
-        searchView.isIconifiedByDefault=false
+        searchView.setIconifiedByDefault(false)
         searchView.queryHint="Search..."
-        searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+        searchView.setOnQueryTextListener(object: androidx.appcompat.widget.SearchView.OnQueryTextListener{
             override fun onQueryTextChange(enttext: String?): Boolean {
                 returntotop(reclview,"sharp")
                 if(enttext.isNullOrBlank()){

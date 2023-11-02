@@ -13,9 +13,9 @@
     android:scrollbars="vertical"
     android:scrollbarStyle="insideOverlay"
     app:fastScrollEnabled="true"
-    app:fastScrollVerticalThumbDrawable="@drawable/testfastscrollbar"
-    app:fastScrollVerticalTrackDrawable="@drawable/testfastscrollbartrack"
-    app:fastScrollHorizontalThumbDrawable="@drawable/testfastscrollbar"
-    app:fastScrollHorizontalTrackDrawable="@drawable/testfastscrollbartrack"
+    app:fastScrollVerticalThumbDrawable="@drawable/forcecasting_scrollbar"
+    app:fastScrollVerticalTrackDrawable="@drawable/forcecasting_scrollbartrack_selector"
+    app:fastScrollHorizontalThumbDrawable="@drawable/forcecasting_scrollbar"
+    app:fastScrollHorizontalTrackDrawable="@drawable/forcecasting_scrollbartrack_selector"
     >
 </androidx.recyclerview.widget.RecyclerView>

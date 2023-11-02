@@ -12,25 +12,8 @@ data class Spell(
     var concentration: Boolean = false,
     var prerequisite: Boolean = false,
     var isBig: Boolean = false,
-    var detailsText: CharSequence="Placeholder for the Force power's details text"): Parcelable {}
-/*fun setName(tspellname: String){
-    spellname = tspellname
-}
-fun setCastingTime(tcastingtime: String){
-    castingtime=tcastingtime
-}
-fun setSide(tside: String){
-    side=tside
-}
-fun setLeveL(tLevel: Int){
-    level=tLevel
-}
-fun setConcentration(tConcentration: Boolean){
-    concentration=tConcentration
-}
-fun setPrerequisite(tPrereq: Boolean){
-    prerequisite=tPrereq
-}*/
+    var detailsText: CharSequence="Placeholder for the Force power's details text"): Parcelable
+
 fun Spell?.toSpell(): Spell{
     return this ?: Spell("Unknown Force Power")
 }

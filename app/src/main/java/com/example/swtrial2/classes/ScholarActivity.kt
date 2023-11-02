@@ -3,10 +3,21 @@ package com.example.swtrial2.classes
 import android.content.res.Configuration
 import android.graphics.Rect
 import android.os.Bundle
-import android.view.*
-import android.widget.*
+import android.view.GestureDetector
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
+import android.view.MotionEvent
+import android.view.View
+import android.widget.Button
+import android.widget.HorizontalScrollView
+import android.widget.LinearLayout
+import android.widget.ScrollView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.example.swtrial2.R
 import kotlin.math.absoluteValue
@@ -17,6 +28,7 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
     private lateinit var inflater: LayoutInflater
     private lateinit var ll: LinearLayoutCompat
     private lateinit var txt: TextView
+    private lateinit var backButton: AppCompatButton
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     private lateinit var scrolly: ScrollView
     private lateinit var temptxt: TextView
@@ -31,8 +43,11 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
     private lateinit var gestdect: GestureDetector
     private val tablist = listOf("Info","Base","Tables","Discoveries","Gambler Pursuit","Physician Pursuit","Politician Pursuit","Tactician Pursuit")
     private lateinit var hscroll: HorizontalScrollView
-    lateinit var table: View
+    private lateinit var table: View
+    private lateinit var hscrollsideefs: HorizontalScrollView
+    private lateinit var tablesidefs: View
     private var rect = Rect()
+    private var rect2 = Rect()
     val swipethreshold = 100
     private var scrollmode=0
 
@@ -46,6 +61,11 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
         dummybutton = findViewById(R.id.dummybutton)
         dummybutton.setOnClickListener {
             this.openOptionsMenu()
+        }
+
+        backButton=findViewById(R.id.BackButton)
+        backButton.setOnClickListener {
+            returntomain()
         }
 
         gestdect = GestureDetector(this,this)
@@ -84,7 +104,7 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
             }
         }
     }
-    fun returntomain(view: View?){
+    private fun returntomain(){
         finish()
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -143,7 +163,8 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
             "Tables"->{
                 table=inflater.inflate(R.layout.class_scholar_table,ll,true)
                 hscroll=table.findViewById(R.id.scholartablehscroll)
-                inflater.inflate(R.layout.class_scholar_physician_table,ll,true)
+                tablesidefs=inflater.inflate(R.layout.class_scholar_physician_table,ll,true)
+                hscrollsideefs=tablesidefs.findViewById(R.id.scholartablehscrollsidefs)
             }
             "Discoveries"->{
                 for(i in discoveriesList.indices step 2){
@@ -340,7 +361,7 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
     override fun onFling(e0: MotionEvent, e1: MotionEvent, vx: Float, vy: Float): Boolean {
         val diffX = e1.x - e0.x
         if(diffX.absoluteValue>(e1.y-e0.y).absoluteValue) {
-            if(dummybutton.text!="Tables"){
+            if(dummybutton.text.toString()!="Tables"){
                 return if (diffX.absoluteValue > swipethreshold && vx.absoluteValue > swipethreshold) {
                     //L to R
                     if (diffX > 0 && scrollmode!=0) {
@@ -357,7 +378,8 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
             }
             else{
                 hscroll.getGlobalVisibleRect(rect)
-                if(rect.contains(e0.x.toInt(),e0.y.toInt())){
+                hscrollsideefs.getGlobalVisibleRect(rect2)
+                if(rect.contains(e0.x.toInt(),e0.y.toInt()) or rect2.contains(e0.x.toInt(),e0.y.toInt())){
                     return false
                 }
                 else{

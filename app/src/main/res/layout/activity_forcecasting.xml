@@ -7,11 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".ForceCastingActivity"
     android:background="@drawable/neutralbg2"
+    style="@style/Theme.Swtrial2.AppBarOverlay"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:translationZ="2dp"
-        android:background="#95000000"
-        android:theme="@style/Theme.Swtrial2.AppBarOverlay"
+        android:background="@drawable/fade_black_appbar_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <androidx.appcompat.widget.Toolbar
@@ -59,10 +59,10 @@
         android:scrollbarStyle="insideOverlay"
         android:scrollbars="vertical"
         app:fastScrollEnabled="true"
-        app:fastScrollHorizontalThumbDrawable="@drawable/testfastscrollbar"
-        app:fastScrollHorizontalTrackDrawable="@drawable/testfastscrollbartrack"
-        app:fastScrollVerticalThumbDrawable="@drawable/testfastscrollbar"
-        app:fastScrollVerticalTrackDrawable="@drawable/testfastscrollbartrack"
+        app:fastScrollHorizontalThumbDrawable="@drawable/forcecasting_scrollbar"
+        app:fastScrollHorizontalTrackDrawable="@drawable/forcecasting_scrollbartrack_selector"
+        app:fastScrollVerticalThumbDrawable="@drawable/forcecasting_scrollbar"
+        app:fastScrollVerticalTrackDrawable="@drawable/forcecasting_scrollbartrack_selector"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -75,12 +75,12 @@
         app:layout_insetEdge="bottom"
         android:clickable="true"
         >
-        <SearchView
+        <androidx.appcompat.widget.SearchView
             android:id="@+id/searchview"
             android:layout_width="match_parent"
             android:layout_height="50sp"
             android:theme="@style/SearchViewGold"
-            android:searchIcon="@drawable/tiefightersearchgoldsmol"
+            app:searchIcon="@drawable/tiefightersearchgoldsmol"
             />
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
@@ -88,7 +88,6 @@
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
         app:backgroundTint="#90FF0000"
         app:layout_anchor="@+id/bottomNavigationView"
         app:layout_anchorGravity="top|end"

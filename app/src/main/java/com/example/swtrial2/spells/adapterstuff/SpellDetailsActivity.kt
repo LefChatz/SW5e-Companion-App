@@ -11,9 +11,10 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.AppCompatButton
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.example.swtrial2.R
+import com.example.swtrial2.databinding.ActivitySpelldetailsBinding
 
 class SpellDetailsActivity : AppCompatActivity() {
-
+    private lateinit var binding: ActivitySpelldetailsBinding
     private lateinit var spell: Spell
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     private lateinit var backButton: AppCompatButton
@@ -26,7 +27,8 @@ class SpellDetailsActivity : AppCompatActivity() {
             @Suppress("DEPRECATION")
             intent.getParcelableExtra<Spell>("Spell").toSpell()
         }
-        setContentView(R.layout.activity_spell_details)
+        binding= ActivitySpelldetailsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         toolbar = findViewById(R.id.force_toolbar)
         setSupportActionBar(toolbar)

@@ -3,10 +3,20 @@ package com.example.swtrial2.classes
 import android.content.res.Configuration
 import android.graphics.Rect
 import android.os.Bundle
-import android.view.*
-import android.widget.*
+import android.view.GestureDetector
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
+import android.view.MotionEvent
+import android.view.View
+import android.widget.Button
+import android.widget.HorizontalScrollView
+import android.widget.ScrollView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.example.swtrial2.R
 import kotlin.math.absoluteValue
@@ -17,6 +27,7 @@ class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
     private lateinit var inflater: LayoutInflater
     private lateinit var ll: LinearLayoutCompat
     private lateinit var txt: TextView
+    private lateinit var backButton: AppCompatButton
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     private lateinit var scrolly: ScrollView
     private lateinit var temptxt: TextView
@@ -44,6 +55,11 @@ class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
         dummybutton = findViewById(R.id.dummybutton)
         dummybutton.setOnClickListener {
             this.openOptionsMenu()
+        }
+
+        backButton=findViewById(R.id.BackButton)
+        backButton.setOnClickListener {
+            returntomain()
         }
 
         gestdect = GestureDetector(this,this)
@@ -81,7 +97,7 @@ class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
             }
         }
     }
-    fun returntomain(view: View?){
+    private fun returntomain(){
         finish()
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -300,7 +316,7 @@ class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
     override fun onFling(e0: MotionEvent, e1: MotionEvent, vx: Float, vy: Float): Boolean {
         val diffX = e1.x - e0.x
         if(diffX.absoluteValue>(e1.y-e0.y).absoluteValue) {
-            if(dummybutton.text!="Tables"){
+            if(dummybutton.text.toString()!="Tables"){
                 return if (diffX.absoluteValue > swipethreshold && vx.absoluteValue > swipethreshold) {
                     //L to R
                     if (diffX > 0 && scrollmode!=0) {

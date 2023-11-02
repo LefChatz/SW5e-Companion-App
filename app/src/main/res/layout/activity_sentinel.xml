@@ -8,82 +8,73 @@
     tools:context=".classes.SentinelActivity"
     android:background="@drawable/neutralbg2"
     >
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/fade_black_appbar_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
-        android:background="#99000000"
-        android:theme="@style/Theme.Swtrial2.AppBarOverlay"
-        app:layout_insetEdge="top"
+        android:translationZ="2dp"
         >
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
+            android:layout_height="50sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BackButton"
+            android:layout_width="70sp"
+            android:layout_height="0sp"
+            android:background="#35D4af37"
+            android:text="@string/back"
+            android:textColor="@color/gold"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            >
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button2"
-                android:layout_width="70sp"
-                android:layout_height="0sp"
-                android:background="#35D4af37"
-                android:onClick="returntomain"
-                android:text="@string/back"
-                android:textColor="@color/gold"
-                android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/starjedi"
-                android:text="@string/sentinel"
-                android:textColor="@color/gold"
-                android:textSize="25sp"
-                android:translationZ="90dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+            android:fontFamily="@font/starjedi"
+            android:text="@string/sentinel"
+            android:textColor="@color/gold"
+            android:textSize="25sp"
+            android:translationZ="90dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/dummybutton"
-                android:layout_width="110dp"
-                android:layout_height="0sp"
-                android:paddingEnd="25dp"
-                android:paddingStart="0dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:textAllCaps="false"
-                android:text="@string/info"
-                android:textColor="@color/gold"
-                android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dummybutton"
+            android:layout_width="110dp"
+            android:layout_height="0sp"
+            android:paddingEnd="25dp"
+            android:paddingStart="0dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:textAllCaps="false"
+            android:text="@string/info"
+            android:textColor="@color/gold"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
         android:id="@+id/sentinelscollview"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         app:layout_dodgeInsetEdges="top"
-        android:paddingBottom="50dp"
+        android:paddingVertical="50dp"
+        android:clipToPadding="false"
         >
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/sentinelll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="50sp"/>
+            android:orientation="vertical"/>
     </ScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
-        android:background="#99000000"
+        android:background="@drawable/fade_black_appbar_background"
         android:theme="@style/Theme.Swtrial2.AppBarOverlay"
         app:layout_insetEdge="top"
         >

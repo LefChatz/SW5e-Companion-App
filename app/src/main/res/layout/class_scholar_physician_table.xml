@@ -2,7 +2,8 @@
 <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="20dp">
+    android:layout_marginVertical="20dp"
+    android:id="@+id/scholartablehscrollsidefs">
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

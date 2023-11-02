@@ -211,7 +211,7 @@
         <activity
             android:name=".ClassesActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_classes"
             android:theme="@style/BlackStatusBar" />
         <activity
