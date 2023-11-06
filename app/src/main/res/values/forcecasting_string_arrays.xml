@@ -502,7 +502,287 @@
         <item name="prerequisite">true</item>
         <item name="isBig">false</item>
         <item name="details_Text">4th-level <font color="red">dark</font> side power\n\n<b>Prerequisite:</b> Drain Vitality\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 60 feet\n<b>Duration:</b> Instantaneous\n\n"    "You draw the life force from a creature you can see within range. The target must make a Constitution saving throw. The target takes 8d8 necrotic damage on a failed save, or half as much damage on a successful one. If you reduce a hostile creature to 0, you gain temporary hit points equal to half the damage dealt. This power has no effect on droids or constructs.\n<b>"    "Force Potency:</b>When you cast this power using a force slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th.</item>
-        
+        <!--Drain Vitality-->
+        <item name="spellname">drain_vitality</item>
+        <item name="printname"><font color="red">Drain `itality</font></item>
+        <item name="castingTime">Action C</item>
+        <item name="side"><font color="red">Dark</font> side</item>
+        <item name="level">2</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">2nd-level <font color="red">dark</font> side power\n\n<b>Prerequisite:</b> Sap Vitality\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 60 feet\n<b>Duration:</b>Concentration, up to 1 minute\n\n"    "You draw the willpower from a creature you can see within range. Make a ranged force attack against the target. On a hit, the target takes 2d6 necrotic damage and it deals only half damage with weapon attacks that use Strength until the power ends.\n"    "At the end of each of the target\'s turns, it can make a Constitution saving throw against the power. On a success, the power ends.\n<b>"    "Force Potency:</b>When you cast this power using a force slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.</item>
+        <!--Dun Moch-->
+        <item name="spellname">dun_moch</item>
+        <item name="printname"><font color="red">Dun Moch</font></item>
+        <item name="castingTime">Bonus action C</item>
+        <item name="side"><font color="red">Dark</font> side</item>
+        <item name="level">1</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">1st-level <font color="red">dark</font> side power\n\n<b>Casting Time:</b> 1 bonus action\n<b>Range:</b> 30 feet\n<b>Duration:</b>Concentration, up to 1 minute\n\n"    "You attempt to manipulate a creature into fighting you. One creature that you can see within range must make a Wisdom saving throw. On a failed save, the creature is drawn to you, compelled by your demands.For the duration, it has disadvantage on attack rolls against creatures other than you, and must make a Wisdom saving throw each time it attempts to move to a space that is more than 30 feet away from you; if it succeeds on this saving throw, this power doesn\'t restrict the target\'s movement for that turn.\n"    "The power ends if you attack any other creature, if you cast a power that targets a hostile creature other than the target, if a creature friendly to you damages the target or casts a harmful power on it, or if you end your turn more than 30 feet away from the target. This power has no effect on droids or constructs.</item>
+        <!--Earthquake-->
+        <item name="spellname">earthquake</item>
+        <item name="printname"><font color="#D4af37">Earthquake</font></item>
+        <item name="castingTime">Action C</item>
+        <item name="side">Universal</item>
+        <item name="level">8</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">8th-level universal power\n\n<b>Prerequisite:</b> Eruption\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 500 feet\n<b>Duration:</b> Instantaneous\n\n"    "You create a seismic disturbance at a point on the ground that you can see within range. For the duration, an intense tremor rips through the ground in a 100- foot-radius circle centered on that point and shakes creatures and structures in contact with the ground in that area.\n"    "The ground in the area becomes difficult terrain. Each creature on the ground that is concentrating must make a Constitution saving throw. On a failed save, the creature\'s concentration is broken.\n"    "When you cast this power and at the end of each turn you spend concentrating on it, each creature on the ground in the area must make a Dexterity saving throw. On a failed save, the creature is knocked prone.\n"    "This power can have additional effects depending on the terrain in the area, as determined by the GM.\n"    "<b>Fissures:</b> Fissures open throughout the power\'s area at the start of your next turn after you cast the power. A total of 1d6 such fissures open in locations chosen by the GM. Each is 1d10 x 10 feet deep, 10 feet wide, and extends from one edge of the power\'s area to the opposite side. A creature standing on a spot where a fissure opens must succeed on a Dexterity saving throw or fall in. A creature that successfully saves moves with the fissure\'s edge as it opens.A fissure that opens beneath a structure causes it to automatically collapse (see below).\n"    "<b>Structures.</b> The tremor deals 50 kinetic damage to any structure in contact with the ground in the area when you cast the power and at the start of each of your turns until the power ends. If a structure drops to 0 hit points, it collapses and potentially damages nearby creatures. A creature within half the distance of a structure\'s height must make a Dexterity saving throw. On a failed save, the creature takes 5d6 kinetic damage, is knocked prone, and is buried in the rubble, requiring a DC 20 Strength (Athletics) check as an action to escape. The GM can adjust the DC higher or lower, depending on the nature of the rubble. On a successful save, the creature takes half as much damage and doesn\'t fall prone or become buried.</item>
+        <!--Enfeeble-->
+        <item name="spellname">enfeeble</item>
+        <item name="printname"><font color="red">Enfeeble</font></item>
+        <item name="castingTime">Action</item>
+        <item name="side"><font color="red">Dark</font> side</item>
+        <item name="level">0</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">At-will <font color="red">dark</font> side power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 60 feet\n<b>Duration:</b>Instantaneous\n\n"    "Dark energy courses from your hand at a creature within range. The target must succeed on a Wisdom saving throw. If it is missing any hit points, it takes 1d12 necrotic damage. Otherwise, it takes 1d8.\n"    "The power\'s damage increases by one die when you reach 5th, 11th, and 17th level.</item>
+        <!--Eruption-->
+        <item name="spellname">eruption</item>
+        <item name="printname"><font color="#D4af37">Eruption</font></item>
+        <item name="castingTime">Action</item>
+        <item name="side">Universal</item>
+        <item name="level">6</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">6th-level universal power\n\n<b>Prerequisite:</b> Convulsion\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 120 feet\n<b>Duration:</b> Instantaneous\n\n"    "You cause up to six pillars of stone to burst from places on the ground that you can see within range. Each pillar is a cylinder that has a diameter of 5 feet and a height of up to 30 feet. The ground where a pillar appears must be wide enough for its diameter, and you can target the ground under a creature if that creature is Medium or smaller. Each pillar has AC 5 and 30 hit points. When reduced to 0 hit points, a pillar crumbles into rubble, which creates an area of difficult terrain with a 10 - foot radius that lasts until the rubble is cleared. Each 5-foot-diameter portion of the area requires at least 1 minute to clear by hand.\n"    "If a pillar is created under a creature, that creature must succeed on a Dexterity saving throw or be lifted by the pillar. A creature can choose to fail the save.\n"    "If a pillar is prevented from reaching its full height because of a ceiling or other obstacle, a creature on the pillar takes 6d6 kinetic damage and is restrained, pinched between the pillar and the obstacle. The restrained creature can use an action to make a Strength or Dexterity check (the creature\'s choice) against the power\'s save DC. On a success, the creature is no longer restrained and must either move off the pillar or fall off it.\n<b>"    "Force Potency:</b>When you cast this power using a force slot of 7th level or higher, you can create two additional pillars for each slot level above 6th.</item>
+        <!--Fear-->
+        <item name="spellname">fear</item>
+        <item name="printname"><font color="red">Fear</font></item>
+        <item name="castingTime">Action C</item>
+        <item name="side"><font color="red">Dark</font> side</item>
+        <item name="level">1</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">1st-level <font color="red">dark</font> side power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 60 feet\n<b>Duration:</b>Concentration, up to 1 minute\n\n"    "You awaken the sense of mortality in one creature you can see within range. The target must succeed on a Wisdom saving throw or become frightened for the duration. A target with 25 hit points or fewer makes the saving throw with disadvantage. A frightened creature can repeat this save at the end of each of its turns, ending this effect on a success. This power has no effect on constructs or droids.</item>
+        <!--Feedback-->
+        <item name="spellname">feedback</item>
+        <item name="printname"><font color="red">Feedback</font></item>
+        <item name="castingTime">Action</item>
+        <item name="side"><font color="red">Dark</font> side</item>
+        <item name="level">0</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">At-will <font color="red">dark</font> side power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 60 feet\n<b>Duration:</b> Instantaneous\n\n"    "You unleash a burst of psychic energy at a target within range. If the target can hear you (though it need not understand you), it must succeed on an Intelligence saving throw or take 1d4 psychic damage and have disadvantage on the next attack roll it makes before the end of its next turn.\n"    "This power\'s damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).</item>
+        <!--Force Barrier-->
+        <item name="spellname">force_barrier</item>
+        <item name="printname"><font color="#4be6ff">Force Barrier</font></item>
+        <item name="castingTime">Action</item>
+        <item name="side"><font color="#4be6ff">Light</font> side</item>
+        <item name="level">2</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">2nd-level <font color="cyan">light</font> side power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 30 feet\n<b>Duration:</b>8 hours\n\n"    "This power bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target\'s hit point maximum and current hit points increase by 5 for the duration.\n<b>"    "Force Potency:</b>When you cast this power using a force slot of 3rd level or higher, a target\'s hit points increase by an additional 5 for each slot level above 2nd.</item>
+        <!--Force Blind/Deafen-->
+        <item name="spellname">force_blind_deafen</item>
+        <item name="printname"><font color="#4be6ff">Force Blind//Deafen</font></item>
+        <item name="castingTime">Action</item>
+        <item name="side"><font color="#4be6ff">Light</font> side</item>
+        <item name="level">2</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">2nd-level <font color="cyan">light</font> side power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 30 feet\n<b>Duration:</b> 1 minute\n\n"    "You can blind or deafen a foe. Choose one creature that you can see within range to make a Constitution saving throw. If it fails, the target is either blinded or deafened (your choice) for the duration. At the end of each of its turns, the target can make a Constitution saving throw. On a success, the power ends.\n<b>"    "Force Potency:</b>When you cast this power using a force slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.</item>
+        <!--Force Blinding-->
+        <item name="spellname">force_blinding</item>
+        <item name="printname"><font color="#4be6ff">Force Blinding</font></item>
+        <item name="castingTime">Action</item>
+        <item name="side"><font color="#4be6ff">Light</font> side</item>
+        <item name="level">1</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">1st-level <font color="cyan">light</font> side power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self (15-foot cone)\n<b>Duration:</b> 1 round\n\n"    "You use the Force to emit a blinding flash of light from your hand. Roll 6d10, the total is how many hit points of creatures this power can effect. Creatures in a 15-foot cone originating from you are affected in ascending order of their current hit points (ignoring unconscious creatures and creatures that can\'t see).\n"    "Starting with the creature that has the lowest current hit points, each creature affected by this power is blinded until the power ends. Subtract each creature\'s hit points from the total before moving on to the creature with the next lowest hit points. A creature\'s hit points must be equal to or less than the remaining total for the creature to be affected.\n<b>"    "Force Potency:</b>When you cast this power using a force slot of 2nd level or higher, roll an additional 2d10 for each slot level above 1st.</item>
+        <!--Force Blur-->
+        <item name="spellname">force_blur</item>
+        <item name="printname"><font color="#D4af37">Force Blur</font></item>
+        <item name="castingTime">Action C</item>
+        <item name="side">Universal</item>
+        <item name="level">2</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">2nd-level universal power\n\n<b>Prerequisite:</b> Force Mask\n<b>Casting Time:</b> 1 action\n<b>Range: </b> Self\n<b>Duration:</b> Concentration, up to 1 minute\n\n"    "You use the Force to weave an illusion that blurs your form, shifting and wavering to all who can see you. For the duration, any creature has disadvantage on attack rolls against you. An attacker is immune to this effect if it doesn\'t rely on sight, as with blindsight, or can see through illusions, as with truesight.</item>
+        <!--Force Body-->
+        <item name="spellname">force_body</item>
+        <item name="printname"><font color="#D4af37">Force Body</font></item>
+        <item name="castingTime">Action</item>
+        <item name="side">Universal</item>
+        <item name="level">1</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">1st-level universal power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self\n<b>Duration:</b> 1 hour\n\n"    "This power enables you to use your health to fuel your force powers. For the duration, when you cast a force power, you can choose to pay up to half the cost of the force power using your hit points instead of your force points. When you do so, your maximum hit points are reduced by the same amount until you complete a long rest.\n"    "You may end this effect at any time. If you cast a force power that would reduce your hit points to 0, the power automatically fails and this effect ends.</item>
+        <!--Force Breach-->
+        <item name="spellname">force_breach</item>
+        <item name="printname"><font color="#D4af37">Force Breach</font></item>
+        <item name="castingTime">Action</item>
+        <item name="side">Universal</item>
+        <item name="level">5</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">1st-level universal power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self\n<b>Duration:</b> 1 hour\n\n"    "Choose a spot within range. All force powers of 5th level or lower in the area end. For each force power of 6th level or higher in the area, make an ability check using your forcecasting ability. The DC equals 10 + the power\'s level. On a successful check, the force power ends.\n<b>"    "Force Potency:</b>When you cast this power using a force slot of 6th level or higher, you automatically end the effects of a force power on the target if the power\'s level is equal to or less than the level of the force slot you used.</item>
+        <!--Force Camouflage-->
+        <item name="spellname">force_camouflage</item>
+        <item name="printname"><font color="#D4af37">Force Camouflage</font></item>
+        <item name="castingTime">Action C</item>
+        <item name="side">Universal</item>
+        <item name="level">2</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">2nd-level universal power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self\n<b>Duration:</b> Concentration, up to 1 hour\n\n"    "You become invisible until the power ends. Anything you are wearing or carrying is invisible as long as it is on your person. The power ends if you attack, cast a power, or otherwise take a hostile action.</item>
+        <!--Force Chain Lightning-->
+        <item name="spellname">force_chain_lightning</item>
+        <item name="printname"><font color="red">Force Chain Lightning</font></item>
+        <item name="castingTime">Action</item>
+        <item name="side"><font color="red">Dark</font> side</item>
+        <item name="level">6</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">6th-level <font color="red">dark</font> side power\n\n<b>Prerequisite:</b> Force Lightning\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 150 feet\n<b>Duration:</b> Instantaneous\n\n"    "You create a bolt of lightning that arcs toward a target of your choice that you can see within range. Three bolts then leap from that target to as many as three other targets, each of which must be within 30 feet of the first target. A target can be a creature or an object and can be targeted by only one of the bolts.\n"    "A target must make a Dexterity saving throw. The target takes 10d8 lightning damage on a failed save, or half as much damage on a successful one.\n<b>"    "Force Potency:</b>When you cast this power using a force slot of 7th level or higher, one additional bolt leaps from the first target to another target for each slot level above 6th.</item>
+        <!--Force Concealment-->
+        <item name="spellname">force_concealment</item>
+        <item name="printname"><font color="#D4af37">Force Concealment</font></item>
+        <item name="castingTime">Action</item>
+        <item name="side">Universal</item>
+        <item name="level">2</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">2nd-level universal power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Touch\n<b>Duration:</b> 24 hours\n\n"    "You shroud or alter the aura of a creature or object you touch so that Force powers reveal false information about it. The target can be a willing creature or an object that isn\'t being carried or worn by another creature.\n"    "When you cast the power, choose one or both of the following effects. The effect lasts for the duration. If you cast this power on the same creature or object every day for 30 days, placing the same effect on it each time, the effect lasts until it is dispelled.\n"    "<b>False Aura:</b>You change the way the target appears to powers and Force-based enhanced effects, such as sense force, that detects the presence of the Force. You can make a Force-based unenhanced object or creature appear enhanced and to radiate a Force aura, or a Force-based enhanced object or creature appear unenhanced and to radiate no Force aura. When you use this effect on an object, you can make the false aura apparent to any creature that handles the item.\n"    "<b>Cloak:</b>You can change the way the target\'s affinity in the Force appears to the force sight power. For example, a Sith Lord with great power in the dark side of the Force can appear instead to have very little strength in the Force, with an affinity towards the light side.</item>
+        <!--Force Confusion-->
+        <item name="spellname">force_confusion</item>
+        <item name="printname"><font color="#D4af37">Force Confusion</font></item>
+        <item name="castingTime">Action C</item>
+        <item name="side">Universal</item>
+        <item name="level">2</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">2nd-level universal power\n\n<b>Prerequisite:</b> Mind Trick\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 120 feet\n<b>Duration:</b> Concentration, up to 1 minute\n\n"    "One humanoid of your choice that you can see within range must succeed on a Wisdom saving throw or become charmed by you for the duration. The charmed target must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose.\n"    "The target can act normally on its turn if you choose no creature or if none are within its reach.\n"    "On your subsequent turns, you must use your action to maintain control over the target, or the power ends. Also, the target can make a Wisdom saving throw at the end of each of its turns. On a success, the power ends.</item>
+        <!--Force Disarm-->
+        <item name="spellname">force_disarm</item>
+        <item name="printname"><font color="#D4af37">Force Disarm</font></item>
+        <item name="castingTime">Action</item>
+        <item name="side">Universal</item>
+        <item name="level">0</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">At-will universal power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> 30 feet\n<b>Duration:</b> Instantaneous\n\n"    "You select a weapon or object being worn or carried by a Large or smaller creature within range. The creature must make a Strength or Dexterity saving throw (the creature chooses the ability to use). If the item is being carried, this save is made with advantage. On a failed save, the item is pulled directly to you. If you have a free hand, you catch the weapon. Otherwise, it lands at your feet.</item>
+        <!--Force Enlightenment-->
+        <item name="spellname">force_enlightenment</item>
+        <item name="printname"><font color="#4be6ff">Force Enlightenment</font></item>
+        <item name="castingTime">Action C</item>
+        <item name="side"><font color="#4be6ff">Light</font> side</item>
+        <item name="level">2</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">2nd-level <font color="cyan">light</font> side power\n\n<b>Prerequisite:</b> Guidance\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Touch\n<b>Duration:</b> Concentration, up to 1 hour\n\n"    "You touch a creature and enhance it with the Force. Choose one of the following effects; the target gains that effect until the power ends.\n\n•"   "<b>Strength:</b> The target has advantage on Strength checks, and his or her carrying capacity doubles.\n•"   "<b>Dexterity:</b> The target has advantage on Dexterity checks. It also doesn\'t take damage from falling 20 feet or less if it isn\'t incapacitated.\n•"   "<b>Endurance:</b> The target has advantage on Constitution checks. It also gains 2d6 temporary hit points, which are lost when the power ends.\n•"   "<b>Cunning:</b> The target has advantage on Intelligence checks.\n•"   "<b>Wisdom:</b> The target has advantage on Wisdom checks.\n•"   "<b>Splendor:</b> The target has advantage on Charisma checks.\n\n"    "This power has no effect on droids or constructs.\n<b>"    "Force Potency:</b>When you cast this power using a force slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.</item>
+        <!--Force Focus-->
+        <item name="spellname">force_focus</item>
+        <item name="printname"><font color="#4be6ff">Force Focus</font></item>
+        <item name="castingTime">Bonus action C</item>
+        <item name="side"><font color="#4be6ff">Light</font> side</item>
+        <item name="level">1</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">1st-level <font color="cyan">light</font> side power\n\n<b>Prerequisite:</b> Force Technique\n<b>Casting Time:</b> 1 bonus action\n<b>Range:</b> Self\n<b>Duration:</b>Concentration, up to 1 minute\n\n"    "You let the Force guide you, empowering your strikes. Until the power ends, your weapon attacks deal an extra 1d4 force damage on a hit.</item>
+        <!--Force Imbuement-->
+        <item name="spellname">force_imbuement</item>
+        <item name="printname"><font color="#D4af37">Force Imbuement</font></item>
+        <item name="castingTime">Bonus action</item>
+        <item name="side">Universal</item>
+        <item name="level">0</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">At-will universal power\n\n<b>Casting Time:</b> 1 bonus action\n<b>Range:</b> Touch\n<b>Duration:</b> 1 minute\n\n"    "The crystal inside of a simple lightweapon or the material of a simple vibroweapon or an improvised weapon you are holding is imbued with the power of the Force. For the duration, you can use your forcecasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon\'s damage die becomes 1d8. The weapon also becomes enhanced, if it isn\'t already, and you become proficient with it, if you aren\'t already. The power ends if you cast it again or if you let go of the weapon.</item>
+        <!--Force Immunity-->
+        <item name="spellname">force_immunity</item>
+        <item name="printname"><font color="#D4af37">Force Immunity</font></item>
+        <item name="castingTime">Action C</item>
+        <item name="side">Universal</item>
+        <item name="level">4</item>
+        <item name="concentration">true</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">4th-level universal power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self\n<b>Duration:</b> Concentration, up to 1 minute\n\n"    "An immobile, faintly shimmering barrier springs into existence around you and remains for the duration. The barrier moves with you. Any force power of 3rd level or lower cast from outside the barrier can\'t affect you, even if the power is cast using a higher level force slot. Such a power can target you, but the power has no effect on you. Similarly, the area within the barrier is excluded from the areas affected by such powers.\n<b>"    "Force Potency:</b>When you cast this power using a force slot of 5th level or higher, the barrier blocks powers of one level higher for each slot level above 4th.</item>
+        <!--Force Jump-->
+        <item name="spellname">force_jump</item>
+        <item name="printname"><font color="#D4af37">Force Jump</font></item>
+        <item name="castingTime">Action</item>
+        <item name="side">Universal</item>
+        <item name="level">1</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">1st-level universal power\n\n<b>Prerequisite:</b> Force Leap\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self\n<b>Duration:</b> Instantaneous\n\n"    "Using the Force to augment the strength in your legs, you leap up to 30 feet to an unoccupied space you can see, provided you have a direct path to the space.\n<b>"    "Force Potency:</b>When you cast this power using a force slot of 2nd level or higher, your jump distance increases by 5 feet for each slot level above 1st.</item>
+        <!--Force Leap-->
+        <item name="spellname">force_leap</item>
+        <item name="printname"><font color="#D4af37">Force Leap</font></item>
+        <item name="castingTime">Bonus action</item>
+        <item name="side">Universal</item>
+        <item name="level">0</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">false</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">At-will universal power\n\n<b>Casting Time:</b> 1 bonus action\n<b>Range:</b> Self\n<b>Duration:</b> 1 round\n\n"    "Until the end of your next turn, you can use your forcecasting ability score instead of your Strength score when you jump, and always count as having made a running start before jumping.</item>
+        <!--Force Lightning-->
+        <item name="spellname">force_lightning</item>
+        <item name="printname"><font color="red">Force Lightning</font></item>
+        <item name="castingTime">Action</item>
+        <item name="side"><font color="red">Dark</font> side</item>
+        <item name="level">3</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">3rd-level <font color="red">dark</font> side power\n\n<b>Prerequisite:</b> Shock\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self (100-foot line)\n<b>Duration:</b> Instantaneous\n\n"    "A stroke of lightning forming a line 100 feet long and 5 feet wide blasts out from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 8d6 lightning damage on a failed save, or half as much damage on a successful one.\n"    "The lightning ignites flammable objects in the area that aren\'t being worn or carried.\n<b>"    "Force Potency:</b>When you cast this power using a force slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.</item>
+        <!--Force Lightning Cone-->
+        <item name="spellname">force_lightning_cone</item>
+        <item name="printname"><font color="red">Force Lightning Cone</font></item>
+        <item name="castingTime">Action</item>
+        <item name="side"><font color="red">Dark</font> side</item>
+        <item name="level">7</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">7th-level <font color="red">dark</font> side power\n\n<b>Prerequisite:</b> Force Chain Lightning\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self (50-foot cone)\n<b>Duration:</b> Instantaneous\n\n"    "Lightning arcs from your hands. Each creature in a 60-foot cone must make a Dexterity saving throw. A creature takes 12d6 lightning damage on a failed save, or half as much on a successful one.\n<b>"    "Force Potency:</b>When you cast this power using a force slot of 8th level or higher, the damage increases by 2d6 for each slot level above 7th.</item>
+        <!--Force Link-->
+        <item name="spellname">force_link</item>
+        <item name="printname"><font color="#D4af37">Force Link</font></item>
+        <item name="castingTime">Action</item>
+        <item name="side">Universal</item>
+        <item name="level">8</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">8th-level universal power\n\n<b>Prerequisite:</b> Force Meld\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Unlimited\n<b>Duration:</b> 24 hours\n\n"    "You create a telepathic link between yourself and a willing creature with which you are familiar. Until the power ends, you and the target can instantaneously share words, images, sounds, and other sensory messages with one another through the link, and the target recognizes you as the creature it is communicating with. The power enables a creature with an Intelligence score of at least 1 to understand the meaning of your words and take in the scope of any sensory messages you send to it. This power has no effect on droids or constructs.</item>
+        <!--Force Mask-->
+        <item name="spellname">force_mask</item>
+        <item name="printname"><font color="#D4af37">Force Mask</font></item>
+        <item name="castingTime">Action</item>
+        <item name="side">Universal</item>
+        <item name="level">1</item>
+        <item name="concentration">false</item>
+        <item name="prerequisite">true</item>
+        <item name="isBig">false</item>
+        <item name="details_Text">1st-level universal power\n\n<b>Prerequisite:</b> Mind Trick\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Self\n<b>Duration:</b> 1 hour\n\n"    "Until the power ends or you use an action to dismiss it, you can disguise yourself through use of the Force in many ways. You can appear to be shorter or taller by about a foot and change the appearance of your body and weight, but you cannot change the basic structure of your body. This effect can include your clothes, weapons, and other belongings on your person.\n"    "This effect is only visual, so any sort of physical contact will only interact with the real size and shape of you. A creature that uses its action to examine you can identify this effect with a successful Intelligence (Investigation) check against your force save DC.</item>
+
     </string-array>
 
     <string-array name="bigspellnames">
@@ -515,7 +795,6 @@
         <item>improved_saber_throw</item>
         <item>master_battle_meditation</item>
         <item>master_force_immunity</item>
-        <item></item>
     </string-array>
     <string-array name="levels">
         <item>0</item>
@@ -530,7 +809,7 @@
         <item>9</item>
         <item>empty</item>
     </string-array>
-    <string-array name="spelllist">
+    <string-array name="oldspelllist">
         <item>empty</item>
         <item>affect_mind</item>
         <item>affliction</item>
