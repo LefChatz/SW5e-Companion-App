@@ -219,7 +219,7 @@ class ForceCastingActivity : AppCompatActivity() {
     }
     private fun getSpells(): MutableList<Spell>{
         val getSpellList = mutableListOf<Spell>()
-        val tempSpellList=resources.getTextArray(R.array.testspelllist)
+        val tempSpellList=resources.getTextArray(R.array.spelllist)
         for(i in 8..tempSpellList.size step 9){
             getSpellList.add(Spell(tempSpellList[i-8].toString(),tempSpellList[i-7],tempSpellList[i-6].toString(),tempSpellList[i-5],tempSpellList[i-4].toString().toInt(),tempSpellList[i-3].toString().toBoolean(),tempSpellList[i-2].toString().toBoolean(),tempSpellList[i-1].toString().toBoolean(),tempSpellList[i]))
         }
