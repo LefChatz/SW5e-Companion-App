@@ -3,11 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="@layout/species_trandoshan"
     >
+
     <ImageView
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/tusken"
-        android:contentDescription="@string/trandoshan_example"/>
+        android:layout_height="600dp"
+        android:contentDescription="@string/trandoshan_example"
+        android:src="@drawable/trandoshan" />
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

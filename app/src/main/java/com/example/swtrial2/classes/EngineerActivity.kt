@@ -51,7 +51,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_engineer)
+        setContentView(R.layout.class_engineer)
 
         toolbar=findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)

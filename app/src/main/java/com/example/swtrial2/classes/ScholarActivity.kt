@@ -53,7 +53,7 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_scholar)
+        setContentView(R.layout.class_scholar)
 
         toolbar=findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)

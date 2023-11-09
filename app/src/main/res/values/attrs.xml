@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <declare-styleable name="SpellButton">
-        <attr name="text" format="string"/>
-        <attr format="string" name="value"/>
-    </declare-styleable>
     <declare-styleable name="ClassButton">
-        <attr name="text"/>
+        <attr name="text" format="string"/>
         <attr name="background"/>
         <attr format="string" name="tooltiptext"/>
     </declare-styleable>

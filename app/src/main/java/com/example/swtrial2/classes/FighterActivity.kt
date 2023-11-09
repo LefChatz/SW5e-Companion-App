@@ -47,7 +47,7 @@ class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_fighter)
+        setContentView(R.layout.class_fighter)
 
         toolbar=findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)

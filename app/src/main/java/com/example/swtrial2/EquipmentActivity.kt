@@ -3,11 +3,9 @@ package com.example.swtrial2
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.swtrial2.classes.*
-import com.example.swtrial2.databinding.ActivityEquipmentBinding
+import com.example.swtrial2.databinding.EquipmentsBinding
 import com.example.swtrial2.equipment.AdvGearActivity
 import com.example.swtrial2.equipment.AllActivity
 import com.example.swtrial2.equipment.ArmourActivity
@@ -15,22 +13,24 @@ import com.example.swtrial2.equipment.WeaponsActivity
 
 
 class EquipmentActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityEquipmentBinding
-    private lateinit var infobutton: ImageButton
+    private lateinit var binding: EquipmentsBinding
     var mode = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityEquipmentBinding.inflate(layoutInflater)
+        binding = EquipmentsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        infobutton=findViewById(R.id.infobutton)
-        infobutton.setOnClickListener {
+        setSupportActionBar(binding.toolbar)
+
+        binding.BackButton.setOnClickListener { returntomain() }
+
+        binding.infobutton.setOnClickListener {
             if(mode==0){
                 mode=1
             }
             else{
-                Toast.makeText(this,"Already at Class info", Toast.LENGTH_SHORT)
+                Toast.makeText(this,"Already at Equipment info", Toast.LENGTH_SHORT)
                     .show()
             }
             return@setOnClickListener
@@ -48,7 +48,7 @@ class EquipmentActivity : AppCompatActivity() {
             }
         }
     }
-    fun returntomain(view: View?) {
+    private fun returntomain() {
         if(mode==0){
             startActivity(Intent(this,SW5ECompanionApp::class.java))
             finish()
@@ -59,6 +59,7 @@ class EquipmentActivity : AppCompatActivity() {
     }
     @Deprecated("Deprecated in Java", ReplaceWith("returntomain(null)"))
     override fun onBackPressed(){
-        returntomain(null)
+        returntomain()
     }
+
 }

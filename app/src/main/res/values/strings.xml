@@ -468,7 +468,7 @@
     <string name="seventh_level">7th-Level</string>
     <string name="eighth_level">8th-Level</string>
     <string name="nineth_level">9th-Level</string>
-    <string name="spells">spells</string>
+    <string name="forcepowers">forcepowers</string>
     <string name="force">FoXcE</string>
     <string name="favorites_forcepowers"><font color="#D4af37">Favorites</font></string>
 
@@ -2223,20 +2223,16 @@
     <string name="back">Back</string>
     <string name="caster_level">Caster\nLevel</string>
     <string name="slot_level">Slot\nLevel</string>
-    <string name="title_activity_spell1">SpellOneActivity</string>
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <string name="settings"><font color="#d4af37">Settings</font></string>
     <string name="title">Title</string>
-    <string name="spell_name">Spell Name</string>
+    <string name="forcepower_name">Forcepower Name</string>
     <string name="details">details</string>
-    <string name="spellerror404">Force power not found</string>
-    <string name="favorite_button">Favorite Spell</string>
+    <string name="forcepowererror404">Force power not found</string>
+    <string name="favorite_button">Favorite Forcepower</string>
     <string name="text">Text</string>
-    <string name="forcecasting_nosuchspell">No Such Spell Found</string>
+    <string name="forcecasting_nosuchforcepower">No Such Forcepower Found</string>
+    <string name="sampletext">SampleText</string>
 
 
 </resources>

@@ -47,7 +47,7 @@ class SentinelActivity : AppCompatActivity() , GestureDetector.OnGestureListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sentinel)
+        setContentView(R.layout.class_sentinel)
 
         toolbar=findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)

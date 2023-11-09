@@ -9,10 +9,11 @@
         android:id="@+id/headertext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TExtviEW "
+        android:text="@string/sampletext"
         android:textSize="25sp"
         android:textColor="@color/gold"
         android:fontFamily="@font/starjedi"
+        android:paddingHorizontal="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
@@ -25,10 +26,11 @@
         app:layout_constraintTop_toBottomOf="@id/headertext" />
 
     <TextView
+        android:paddingHorizontal="5dp"
         android:id="@+id/contenttext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="textview"
+        android:text="@string/sampletext"
         android:textSize="20sp"
         android:textColor="@color/gold"
         app:layout_constraintStart_toStartOf="parent"

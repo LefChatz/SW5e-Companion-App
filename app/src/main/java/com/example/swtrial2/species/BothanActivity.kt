@@ -56,7 +56,7 @@ class BothanActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
             tempview = inflater.inflate(R.layout.universal_textview_goldbox,ll,false)
             tempview.findViewById<TextView>(R.id.BoxText).text=getText(R.string.bothan_traitsTextBox)
             ll.addView(tempview)
-            tempview = inflater.inflate(R.layout.universal_textview_nofont,ll,false)
+            tempview = inflater.inflate(R.layout.universal_textview_nofont_gold,ll,false)
             tempview.findViewById<TextView>(R.id.textView).text=getText(R.string.bothan_traitsText2)
             ll.addView(tempview)
             dummybutton.text = getString(R.string.traits)

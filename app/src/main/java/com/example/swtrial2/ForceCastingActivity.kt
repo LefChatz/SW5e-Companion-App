@@ -14,13 +14,13 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
 import com.example.swtrial2.databinding.ActivityForcecastingBinding
-import com.example.swtrial2.spells.adapterstuff.Spell
-import com.example.swtrial2.spells.adapterstuff.SpellAdapter
-import com.example.swtrial2.spells.adapterstuff.getNameList
-import com.example.swtrial2.spells.adapterstuff.sortSpellByLevel
-import com.example.swtrial2.spells.adapterstuff.sortSpellByLevelDescending
-import com.example.swtrial2.spells.adapterstuff.sortSpellByName
-import com.example.swtrial2.spells.adapterstuff.sortSpellByNameDescending
+import com.example.swtrial2.forcecasting.ForcecastingAdapter
+import com.example.swtrial2.forcecasting.Forcepower
+import com.example.swtrial2.forcecasting.getNameList
+import com.example.swtrial2.forcecasting.sortForcepowerByLevel
+import com.example.swtrial2.forcecasting.sortForcepowerByLevelDescending
+import com.example.swtrial2.forcecasting.sortForcepowerByName
+import com.example.swtrial2.forcecasting.sortForcepowerByNameDescending
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ForceCastingActivity : AppCompatActivity() {
@@ -28,17 +28,17 @@ class ForceCastingActivity : AppCompatActivity() {
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     private lateinit var reclview: RecyclerView
     private lateinit var searchView: androidx.appcompat.widget.SearchView
-    private lateinit var darkspells: List<Spell>
+    private lateinit var darkforcepowers: List<Forcepower>
     private lateinit var backButton: AppCompatButton
 
-    private lateinit var spelladapter: SpellAdapter
-    private lateinit var lightspells: List<Spell>
-    private var spellList=mutableListOf<Spell>()
-    private var adapterSpellList=mutableListOf<Spell>()
-    private var currentspelllist=mutableListOf<Spell>()
-    private val eraselist: MutableList<Spell> = mutableListOf()
+    private lateinit var forcepoweradapter: ForcecastingAdapter
+    private lateinit var lightforcepowers: List<Forcepower>
+    private var forcepowerList=mutableListOf<Forcepower>()
+    private var adapterForcepowerList=mutableListOf<Forcepower>()
+    private var currentforcepowerlist=mutableListOf<Forcepower>()
+    private val eraselist: MutableList<Forcepower> = mutableListOf()
 
-    private val favSpellList: MutableList<String> = mutableListOf()
+    private val favForcepowerList: MutableList<String> = mutableListOf()
     private lateinit var favSharedPreferences: SharedPreferences
     private  var trimEnteredText=""
     private var darkChecked=true
@@ -55,17 +55,17 @@ class ForceCastingActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         favSharedPreferences=getSharedPreferences("favList", Context.MODE_PRIVATE)
-        favSpellList.addAll(favSharedPreferences.getStringSet("favList", mutableSetOf())?.toList()!!)
+        favForcepowerList.addAll(favSharedPreferences.getStringSet("favList", mutableSetOf())?.toList()!!)
 
-        spellList.addAll(getSpells())
+        forcepowerList.addAll(getForcepowers())
 
         reclview = findViewById(R.id.reclview)
-        adapterSpellList.addAll(spellList)
-        spelladapter = SpellAdapter(this,adapterSpellList,favSpellList)
-        reclview.adapter = spelladapter
-        currentspelllist.addAll(spellList)
-        lightspells=spellList.filter { it.side.contains("Light",true)}
-        darkspells=spellList.filter { it.side.contains("Dark",true)}
+        adapterForcepowerList.addAll(forcepowerList)
+        forcepoweradapter = ForcecastingAdapter(this,adapterForcepowerList,favForcepowerList)
+        reclview.adapter = forcepoweradapter
+        currentforcepowerlist.addAll(forcepowerList)
+        lightforcepowers=forcepowerList.filter { it.side.contains("Light",true)}
+        darkforcepowers=forcepowerList.filter { it.side.contains("Dark",true)}
 
         backButton=findViewById(R.id.forceBackButton)
         backButton.setOnClickListener{returntomain()}
@@ -77,7 +77,7 @@ class ForceCastingActivity : AppCompatActivity() {
             override fun onQueryTextChange(enttext: String?): Boolean {
                 returntotop(reclview,"sharp")
                 if(enttext.isNullOrBlank()){
-                    spelladapter.setSpellList(currentspelllist.filter{it !in eraselist}.toMutableList())
+                    forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{it !in eraselist}.toMutableList())
                     object : CountDownTimer(1000, 1001) {
                         override fun onTick(millisUntilFinished: Long) {
                         }
@@ -89,11 +89,11 @@ class ForceCastingActivity : AppCompatActivity() {
                 }
                 else {
                     trimEnteredText= enttext.trim().replace(" ","_")
-                    if(spellList.getNameList().none { it.contains(trimEnteredText,true)}){
-                        spelladapter.setSpellList(mutableListOf(Spell("NoSuchSpell")))
+                    if(forcepowerList.getNameList().none { it.contains(trimEnteredText,true)}){
+                        forcepoweradapter.setForcepowerList(mutableListOf(Forcepower("NoSuchForcepower")))
                     }
                     else {
-                        spelladapter.setSpellList(currentspelllist.filter{(it.spellname.contains(trimEnteredText,true)) and (it !in eraselist)}.toMutableList())
+                        forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{(it.forcepowername.contains(trimEnteredText,true)) and (it !in eraselist)}.toMutableList())
                     }
                 }
                 return false
@@ -101,7 +101,7 @@ class ForceCastingActivity : AppCompatActivity() {
             override fun onQueryTextSubmit(enttext: String?): Boolean {
                 returntotop(reclview,"sharp")
                 if(enttext.isNullOrBlank()){
-                    spelladapter.setSpellList(currentspelllist.filter{it !in eraselist}.toMutableList())
+                    forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{it !in eraselist}.toMutableList())
                     object : CountDownTimer(1000, 999) {
                         override fun onTick(millisUntilFinished: Long) {
                         }
@@ -113,11 +113,11 @@ class ForceCastingActivity : AppCompatActivity() {
                 }
                 else {
                     trimEnteredText= enttext.trim().replace(" ","_")
-                    if(spellList.getNameList().none { it.contains(trimEnteredText,true)}){
-                        spelladapter.setSpellList(mutableListOf(Spell("NoSuchSpell")))
+                    if(forcepowerList.getNameList().none { it.contains(trimEnteredText,true)}){
+                        forcepoweradapter.setForcepowerList(mutableListOf(Forcepower("NoSuchForcepower")))
                     }
                     else {
-                        spelladapter.setSpellList(currentspelllist.filter{(it.spellname.contains(trimEnteredText,true)) and (it !in eraselist)}.toMutableList())
+                        forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{(it.forcepowername.contains(trimEnteredText,true)) and (it !in eraselist)}.toMutableList())
                     }
                 }
                 return false
@@ -145,55 +145,55 @@ class ForceCastingActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.title){
             getText(R.string.sortABCdown)->{
-                currentspelllist=spellList.sortSpellByNameDescending().filter { it !in eraselist }.toMutableList()
-                spelladapter.setSpellList(adapterSpellList.sortSpellByNameDescending().filter { it !in eraselist }.toMutableList())
+                currentforcepowerlist=forcepowerList.sortForcepowerByNameDescending().filter { it !in eraselist }.toMutableList()
+                forcepoweradapter.setForcepowerList(adapterForcepowerList.sortForcepowerByNameDescending().filter { it !in eraselist }.toMutableList())
                 item.title=getText(R.string.sortABCup)
                 returntotop(reclview,"sharp")}
             getText(R.string.sortABCup)->{
-                currentspelllist=spellList.sortSpellByLevel().filter { it !in eraselist }.toMutableList()
-                spelladapter.setSpellList(adapterSpellList.sortSpellByLevel().filter { it !in eraselist }.toMutableList())
+                currentforcepowerlist=forcepowerList.sortForcepowerByLevel().filter { it !in eraselist }.toMutableList()
+                forcepoweradapter.setForcepowerList(adapterForcepowerList.sortForcepowerByName().sortForcepowerByLevel().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortLvldown)
                 returntotop(reclview,"sharp")}
             getText(R.string.sortLvldown)->{
-                currentspelllist=spellList.sortSpellByLevelDescending().filter { it !in eraselist }.toMutableList()
-                spelladapter.setSpellList(adapterSpellList.sortSpellByLevelDescending().filter { it !in eraselist }.toMutableList())
+                currentforcepowerlist=forcepowerList.sortForcepowerByLevelDescending().filter { it !in eraselist }.toMutableList()
+                forcepoweradapter.setForcepowerList(adapterForcepowerList.sortForcepowerByLevelDescending().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortLvlup)
                 returntotop(reclview,"sharp")}
             getText(R.string.sortLvlup)->{
-                currentspelllist=spellList.sortSpellByName().filter { it !in eraselist }.toMutableList()
-                spelladapter.setSpellList(adapterSpellList.sortSpellByName().filter { it !in eraselist }.toMutableList())
+                currentforcepowerlist=forcepowerList.sortForcepowerByName().filter { it !in eraselist }.toMutableList()
+                forcepoweradapter.setForcepowerList(adapterForcepowerList.sortForcepowerByName().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortABCdown)
                 returntotop(reclview,"sharp")}
             getText(R.string.Dark)->{
-                if(item.isChecked){eraselist.addAll(darkspells)}
+                if(item.isChecked){eraselist.addAll(darkforcepowers)}
                 else{
-                    if(favChecked){eraselist.removeAll(spellList.filter { (it in darkspells) and (it.spellname in favSpellList) and if(trimEnteredText.isNotBlank()){it.spellname.contains(trimEnteredText)}else{true}})}
-                    else{if(trimEnteredText.isNotBlank()){spellList.filter { (it in darkspells) and it.spellname.contains(trimEnteredText)}}else{eraselist.removeAll(darkspells)}}
+                    if(favChecked){eraselist.removeAll(forcepowerList.filter { (it in darkforcepowers) and (it.forcepowername in favForcepowerList) and if(trimEnteredText.isNotBlank()){it.forcepowername.contains(trimEnteredText)}else{true}})}
+                    else{if(trimEnteredText.isNotBlank()){forcepowerList.filter { (it in darkforcepowers) and it.forcepowername.contains(trimEnteredText)}}else{eraselist.removeAll(darkforcepowers)}}
                 }
-                spelladapter.setSpellList(currentspelllist.filter{it !in eraselist}.toMutableList())
+                forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{it !in eraselist}.toMutableList())
                 item.isChecked= !item.isChecked
                 darkChecked= !darkChecked
             }
             getText(R.string.Light)->{
-                if(item.isChecked){eraselist.addAll(lightspells)}
+                if(item.isChecked){eraselist.addAll(lightforcepowers)}
                 else{
-                    if(favChecked){eraselist.removeAll(spellList.filter { (it in lightspells) and (it.spellname in favSpellList) and if(trimEnteredText.isNotBlank()){it.spellname.contains(trimEnteredText)}else{true}})}
-                    else{if(trimEnteredText.isNotBlank()){spellList.filter { (it in lightspells) and it.spellname.contains(trimEnteredText)}}else{eraselist.removeAll(lightspells)}}
+                    if(favChecked){eraselist.removeAll(forcepowerList.filter { (it in lightforcepowers) and (it.forcepowername in favForcepowerList) and if(trimEnteredText.isNotBlank()){it.forcepowername.contains(trimEnteredText)}else{true}})}
+                    else{if(trimEnteredText.isNotBlank()){forcepowerList.filter { (it in lightforcepowers) and it.forcepowername.contains(trimEnteredText)}}else{eraselist.removeAll(lightforcepowers)}}
                 }
-                spelladapter.setSpellList(currentspelllist.filter{it !in eraselist}.toMutableList())
+                forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{it !in eraselist}.toMutableList())
                 item.isChecked= !item.isChecked
                 lightChecked= !lightChecked
             }
             getText(R.string.favorites_forcepowers)->{
                 if (item.isChecked){
-                    eraselist.removeAll(spellList.filter {(it.spellname !in favSpellList)})
-                    if(!darkChecked){eraselist.addAll(darkspells)}
-                    if(!lightChecked){eraselist.addAll(lightspells)}
+                    eraselist.removeAll(forcepowerList.filter {(it.forcepowername !in favForcepowerList)})
+                    if(!darkChecked){eraselist.addAll(darkforcepowers)}
+                    if(!lightChecked){eraselist.addAll(lightforcepowers)}
                 }
                 else{
-                    eraselist.addAll(spellList.filter {it.spellname !in favSpellList})
+                    eraselist.addAll(forcepowerList.filter {it.forcepowername !in favForcepowerList})
                 }
-                spelladapter.setSpellList(currentspelllist.filter{it !in eraselist}.toMutableList())
+                forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{it !in eraselist}.toMutableList())
                 item.isChecked= !item.isChecked
                 favChecked= !favChecked
             }
@@ -212,18 +212,18 @@ class ForceCastingActivity : AppCompatActivity() {
     fun returntomain() {
         startActivity(Intent(this,SW5ECompanionApp::class.java))
         with(favSharedPreferences.edit()){
-            putStringSet("favList",favSpellList.toMutableSet())
+            putStringSet("favList",favForcepowerList.toMutableSet())
             apply()
         }
         finish()
     }
-    private fun getSpells(): MutableList<Spell>{
-        val getSpellList = mutableListOf<Spell>()
-        val tempSpellList=resources.getTextArray(R.array.spelllist)
-        for(i in 8..tempSpellList.size step 9){
-            getSpellList.add(Spell(tempSpellList[i-8].toString(),tempSpellList[i-7],tempSpellList[i-6].toString(),tempSpellList[i-5],tempSpellList[i-4].toString().toInt(),tempSpellList[i-3].toString().toBoolean(),tempSpellList[i-2].toString().toBoolean(),tempSpellList[i-1].toString().toBoolean(),tempSpellList[i]))
+    private fun getForcepowers(): MutableList<Forcepower>{
+        val getForcepowerList = mutableListOf<Forcepower>()
+        val tempForcepowerList=resources.getTextArray(R.array.forcepowerlist)
+        for(i in 8..tempForcepowerList.size step 9){
+            getForcepowerList.add(Forcepower(tempForcepowerList[i-8].toString(),tempForcepowerList[i-7],tempForcepowerList[i-6].toString(),tempForcepowerList[i-5],tempForcepowerList[i-4].toString().toInt(),tempForcepowerList[i-3].toString().toBoolean(),tempForcepowerList[i-2].toString().toBoolean(),tempForcepowerList[i-1].toString().toBoolean(),tempForcepowerList[i]))
         }
-        return getSpellList
+        return getForcepowerList
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {

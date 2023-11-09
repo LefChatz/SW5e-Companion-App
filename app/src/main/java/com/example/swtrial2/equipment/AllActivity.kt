@@ -1,5 +1,6 @@
 package com.example.swtrial2.equipment
 //
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -45,13 +46,12 @@ class AllActivity : AppCompatActivity() {
     private val filterMode = mutableListOf<String>()
     private val filterList = mutableListOf<String>()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEquipmentListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        toolbar=findViewById(R.id.force_toolbar)
+        toolbar=findViewById(R.id.equipment_toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
@@ -65,10 +65,11 @@ class AllActivity : AppCompatActivity() {
         faveEquipmentList.addAll(favSharedPreferences.getStringSet("favequipmentlist", mutableSetOf())?.toList()!!)
 
         equipmentList.filter {it!="empty"}.forEach{
+            @SuppressLint("DiscouragedApi")
             equipmentAttributeMap[it]=resources.getStringArray(resources.getIdentifier(it,"array",packageName))[1]
         }
 
-        reclview= findViewById(R.id.reclview)
+        reclview= findViewById(R.id.equipmentreclview)
 
         currentEquipmentList= buildList { add("empty");addAll(equipmentList.sorted());add("empty") }
         adapterEquipmentList.addAll(currentEquipmentList)

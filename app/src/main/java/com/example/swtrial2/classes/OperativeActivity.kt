@@ -48,7 +48,7 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_operative)
+        setContentView(R.layout.class_operative)
         toolbar=findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 

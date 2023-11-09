@@ -47,7 +47,7 @@ class ScoutActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_scout)
+        setContentView(R.layout.class_scout)
 
         toolbar=findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)

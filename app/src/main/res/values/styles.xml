@@ -3,6 +3,7 @@
         <item name="android:textColor">@color/gold</item>
         <item name="android:editTextColor">@color/gold</item>
         <item name="android:textColorHint">#70D4AF37</item>
+        <item name="android:textAppearance">@style/GoldText</item>
     </style>
     <style name="BlackStatusBar" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/gold</item>

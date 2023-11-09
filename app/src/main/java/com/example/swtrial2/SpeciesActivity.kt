@@ -7,12 +7,12 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
 import android.widget.ImageButton
+import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.LinearLayoutCompat
-import androidx.core.widget.NestedScrollView
 import com.example.swtrial2.classes.*
 import com.example.swtrial2.databinding.ActivitySpeciesBinding
 import com.example.swtrial2.species.*
@@ -23,7 +23,7 @@ class SpeciesActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySpeciesBinding
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     private lateinit var infobutton: ImageButton
-    private lateinit var nscroll: NestedScrollView
+    private lateinit var scroll: ScrollView
     private lateinit var tempbersk: View
     private lateinit var inflater: LayoutInflater
     private lateinit var temptxt: TextView
@@ -39,16 +39,15 @@ class SpeciesActivity : AppCompatActivity() {
         inflater=layoutInflater
 
         mode=0
-        toolbar=findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        nscroll=findViewById(R.id.speciesnscroll)
+        scroll=binding.scrolly
         infobutton=findViewById(R.id.infobutton)
         infobutton.setOnClickListener {
             if(mode==0){
-                nscroll.removeAllViews()
-                val tempview=inflater.inflate(R.layout.content_classes_info,nscroll,false)
+                scroll.removeAllViews()
+                val tempview=inflater.inflate(R.layout.classes_info,scroll,false)
                 ll=tempview.findViewById(R.id.classesinfoll)
                 ll.removeAllViews()
 
@@ -69,13 +68,13 @@ class SpeciesActivity : AppCompatActivity() {
                 temptxt.typeface=resources.getFont(R.font.starjedi)
                 ll.addView(tempbersk)
 
-                nscroll.addView(tempview)
+                scroll.addView(tempview)
 
                 mode=1
 
             }
             else{
-                Toast.makeText(this,"Already at Class info",Toast.LENGTH_SHORT)
+                Toast.makeText(this,"Already at Species info",Toast.LENGTH_SHORT)
                     .show()
             }
         }
@@ -85,7 +84,7 @@ class SpeciesActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_species,menu)
         val drawable= AppCompatResources.getDrawable(this,R.drawable.dots3gold)
-        toolbar.overflowIcon=drawable
+        binding.toolbar.overflowIcon=drawable
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -95,44 +94,43 @@ class SpeciesActivity : AppCompatActivity() {
             finish()
         }
         else{
-            tempbersk=inflater.inflate(R.layout.content_species,nscroll,false)
-            nscroll.removeAllViews()
-            nscroll.addView(tempbersk)
+            scroll.removeAllViews()
+            scroll.addView(binding.contentcl)
             mode=0
         }
     }
     fun openspecies(view: View){
         when(view.id){
-            R.id.buttonbith->  {startActivity(Intent(this,BithActivity::class.java))}
-            R.id.buttonbothan->   {startActivity(Intent(this, BothanActivity::class.java))}
-            R.id.buttoncathar->   {startActivity(Intent(this, CatharActivity::class.java))}
-            R.id.buttoncerean->    {startActivity(Intent(this, CereanActivity::class.java))}
-            R.id.buttonchiss->   {startActivity(Intent(this, ChissActivity::class.java))}
-            R.id.buttondevaronian->       {startActivity(Intent(this,DevaronianActivity::class.java))}
-            R.id.buttondroidclass1->  {startActivity(Intent(this,DroidClass1Activity::class.java))}
-            R.id.buttondroidclass2->    {startActivity(Intent(this,DroidClass2Activity::class.java))}
-            R.id.buttondroidclass3->      {startActivity(Intent(this,DroidClass3Activity::class.java))}
-            R.id.buttondroidclass4->   {startActivity(Intent(this,DroidClass4Activity::class.java))}
-            R.id.buttondroidclass5->    {startActivity(Intent(this,DroidClass5Activity::class.java))}
-            R.id.buttonduros->  {startActivity(Intent(this, DurosActivity::class.java))}
-            R.id.buttonewok->   {startActivity(Intent(this, EwokActivity::class.java))}
-            R.id.buttongamorrean->  {startActivity(Intent(this, GamorreanActivity::class.java))}
-            R.id.buttongungan-> {startActivity(Intent(this, GunganActivity::class.java))}
-            R.id.buttonhuman->  {startActivity(Intent(this, HumanActivity::class.java))}
-            R.id.buttonithorian->   {startActivity(Intent(this, IthorianActivity::class.java))}
-            R.id.buttonjawa->   {startActivity(Intent(this, JawaActivity::class.java))}
-            R.id.buttonkel_dor->    {startActivity(Intent(this, KelDorActivity::class.java))}
-            R.id.buttonmon_calamari->{startActivity(Intent(this, MonCalamariActivity::class.java))}
-            R.id.buttonnautolan->{startActivity(Intent(this, NautolanActivity::class.java))}
-            R.id.buttonrodian->{startActivity(Intent(this, RodianActivity::class.java))}
-            R.id.buttonsith_pureblood->{startActivity(Intent(this, SithPurebloodActivity::class.java))}
-            R.id.buttontogruta->{startActivity(Intent(this, TogrutaActivity::class.java))}
-            R.id.buttontrandoshan->{startActivity(Intent(this, TrandoshanActivity::class.java))}
-            R.id.buttontusken->{startActivity(Intent(this, TuskenActivity::class.java))}
-            R.id.buttontwilek->{startActivity(Intent(this, TwilekActivity::class.java))}
-            R.id.buttonweequay->{startActivity(Intent(this, WeequayActivity::class.java))}
-            R.id.buttonwookie->{startActivity(Intent(this, WookieActivity::class.java))}
-            R.id.buttonzabrak->{startActivity(Intent(this, ZabrakActivity::class.java))}
+            R.id.bith->  {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","bith"))}
+            R.id.bothan->   {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","bothan"))}
+            R.id.cathar->   {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","cathar"))}
+            R.id.cerean->    {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","cerean"))}
+            R.id.chiss->   {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","chiss"))}
+            R.id.devaronian->       {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","devaronian"))}
+            R.id.droidclass1->  {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","droidclass1"))}
+            R.id.droidclass2->    {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","droidclass2"))}
+            R.id.droidclass3->      {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","droidclass3"))}
+            R.id.droidclass4->   {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","droidclass4"))}
+            R.id.droidclass5->    {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","droidclass5"))}
+            R.id.duros->  {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","duros"))}
+            R.id.ewok->   {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","ewok"))}
+            R.id.gamorrean->  {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","gamorrean"))}
+            R.id.gungan-> {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","gungan"))}
+            R.id.human->  {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","human"))}
+            R.id.ithorian->   {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","ithorian"))}
+            R.id.jawa->   {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","jawa"))}
+            R.id.kel_dor->    {startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","kel_dor"))}
+            R.id.mon_calamari->{startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","mon_calamari"))}
+            R.id.nautolan->{startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","nautolan"))}
+            R.id.rodian->{startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","rodian"))}
+            R.id.sith_pureblood->{startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","sith_pureblood"))}
+            R.id.togruta->{startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","togruta"))}
+            R.id.trandoshan->{startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","trandoshan"))}
+            R.id.tusken->{startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","tusken"))}
+            R.id.twilek->{startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","twilek"))}
+            R.id.weequay->{startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","weequay"))}
+            R.id.wookie->{startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","wookie"))}
+            R.id.zabrak->{startActivity(Intent(this,SpeciesDetailsActivity::class.java).putExtra("Specie","zabrak"))}
 
             else->{
                 Toast.makeText(this,"No such class",Toast.LENGTH_LONG)

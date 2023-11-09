@@ -48,7 +48,7 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_monk)
+        setContentView(R.layout.class_monk)
 
         toolbar=findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)

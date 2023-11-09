@@ -6,23 +6,30 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
-import android.widget.ImageButton
+import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.LinearLayoutCompat
-import androidx.core.widget.NestedScrollView
-import com.example.swtrial2.classes.*
-import com.example.swtrial2.databinding.ActivityClassesBinding
-import kotlin.properties.Delegates
+import com.example.swtrial2.classes.BerserkerActivity
+import com.example.swtrial2.classes.ConsularActivity
+import com.example.swtrial2.classes.EngineerActivity
+import com.example.swtrial2.classes.FighterActivity
+import com.example.swtrial2.classes.GuardianActivity
+import com.example.swtrial2.classes.MonkActivity
+import com.example.swtrial2.classes.OperativeActivity
+import com.example.swtrial2.classes.ScholarActivity
+import com.example.swtrial2.classes.ScoutActivity
+import com.example.swtrial2.classes.SentinelActivity
+import com.example.swtrial2.databinding.ClassesBinding
+import com.example.swtrial2.databinding.ClassesInfoBinding
 
 class ClassesActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityClassesBinding
-    private lateinit var toolbar: androidx.appcompat.widget.Toolbar
-    private lateinit var infobutton: ImageButton
-    private lateinit var nscroll: NestedScrollView
+    private lateinit var binding: ClassesBinding
+    private lateinit var infobinding: ClassesInfoBinding
+    private lateinit var scroll: ScrollView
     private lateinit var multiclassingList: Array<CharSequence>
     private lateinit var tempbersk: View
     private lateinit var inflater: LayoutInflater
@@ -34,30 +41,29 @@ class ClassesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityClassesBinding.inflate(layoutInflater)
+        binding = ClassesBinding.inflate(layoutInflater)
         setContentView(binding.root)
         inflater=layoutInflater
 
+
         mode=0
-        toolbar=findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-
-
         multiclassingList=resources.getTextArray(R.array.multiclassing)
-        nscroll=findViewById(R.id.classesnscroll)
-        infobutton=findViewById(R.id.infobutton)
-        infobutton.setOnClickListener {
+        scroll=binding.classesscroll
+        binding.BackButton.setOnClickListener { returntomain() }
+
+        infobinding= ClassesInfoBinding.inflate(layoutInflater,scroll,false)
+        binding.infobutton.setOnClickListener {
             if(mode==0){
-                nscroll.removeAllViews()
-                val tempview=inflater.inflate(R.layout.content_classes_info,nscroll,false)
-                ll=tempview.findViewById(R.id.classesinfoll)
+                scroll.removeAllViews()
+                scroll.fling(0)
+                scroll.scrollTo(0,0)
+                ll=infobinding.classesinfoll
                 for(i in multiclassingList.indices step 2 ){
                     txt = TextView(this)
-                    txt.setTextColor(getColor(R.color.gold))
-                    txt.typeface=resources.getFont(R.font.starjedi)
-                    txt.textSize=20F
+                    txt.setTextAppearance(R.style.GoldTextStarjedi)
 
                     tempbersk = inflater.inflate(R.layout.class_textview,ll, false)
                     temptxt=tempbersk.findViewById(R.id.contenttext)
@@ -68,20 +74,20 @@ class ClassesActivity : AppCompatActivity() {
                     }
                     ll.addView(tempbersk)
                     if(i==0){
-                        inflater.inflate(R.layout.content_classes_multiclassing_prerequisites_table,ll,true)
+                        inflater.inflate(R.layout.classes_multiclassing_prerequisites_table,ll,true)
                     }
                     if(i==8){
-                        inflater.inflate(R.layout.content_classes_multiclassing_proficiencies_table,ll,true)
+                        inflater.inflate(R.layout.classes_multiclassing_proficiencies_table,ll,true)
                         txt.text=getText(R.string.multiclassing_classfeatures)
                         ll.addView(txt)
                     }
                     if(i==(multiclassingList.lastIndex-1)){
-                        inflater.inflate(R.layout.content_classes_multiclassing_maxpowerlevel_table,ll,true)
+                        inflater.inflate(R.layout.classes_multiclassing_maxpowerlevel_table,ll,true)
                         txt.text=getText(R.string.multiclassing_highlvlcasting)
                         ll.addView(txt)
                     }
                 }
-                nscroll.addView(ll)
+                scroll.addView(ll)
                 mode=1
             }
             else{
@@ -96,19 +102,18 @@ class ClassesActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_classes,menu)
         val drawable= AppCompatResources.getDrawable(this,R.drawable.dots3gold)
-        toolbar.overflowIcon=drawable
+        binding.toolbar.overflowIcon=drawable
         return super.onCreateOptionsMenu(menu)
     }
 
-    fun returntomain(view: View?) {
+    private fun returntomain() {
         if(mode==0){
             startActivity(Intent(this,SW5ECompanionApp::class.java))
             finish()
         }
         else{
-            tempbersk=inflater.inflate(R.layout.content_classes,nscroll,false)
-            nscroll.removeAllViews()
-            nscroll.addView(tempbersk)
+            scroll.removeAllViews()
+            scroll.addView(binding.contentclassescl)
             mode=0
         }
     }
@@ -132,7 +137,7 @@ class ClassesActivity : AppCompatActivity() {
     }
     @Deprecated("Deprecated in Java", ReplaceWith("returntomain(null)"))
     override fun onBackPressed(){
-        returntomain(null)
+        returntomain()
     }
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)

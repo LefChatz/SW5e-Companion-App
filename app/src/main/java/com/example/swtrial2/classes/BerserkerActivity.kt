@@ -47,7 +47,7 @@ class BerserkerActivity : AppCompatActivity() , GestureDetector.OnGestureListene
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_berserker)
+        setContentView(R.layout.class_berserker)
 
         toolbar=findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)

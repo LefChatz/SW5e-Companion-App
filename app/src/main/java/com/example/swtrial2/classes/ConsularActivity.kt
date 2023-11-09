@@ -48,7 +48,7 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_consular)
+        setContentView(R.layout.class_consular)
 
         toolbar=findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)

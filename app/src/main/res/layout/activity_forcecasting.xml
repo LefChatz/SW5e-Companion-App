@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ForceCastingActivity"
     android:background="@drawable/neutralbg2"
-    style="@style/Theme.Swtrial2.AppBarOverlay"
+    android:theme="@style/ForcecastingTheme"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:translationZ="2dp"
@@ -38,10 +38,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/starjedi"
             android:text="@string/forcecasting"
+            android:fontFamily="@font/starjedi"
             android:textColor="@color/gold"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:translationZ="90dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,9 +52,7 @@
         android:id="@+id/reclview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_dodgeInsetEdges="top"
-        android:paddingTop="50dp"
-        android:paddingBottom="50dp"
+        android:paddingVertical="50dp"
         android:clipToPadding="false"
         android:scrollbarStyle="insideOverlay"
         android:scrollbars="vertical"
@@ -71,8 +69,8 @@
         android:layout_height="wrap_content"
         android:background="#000000"
         app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
-        android:layout_gravity="bottom"
         app:layout_insetEdge="bottom"
+        android:layout_gravity="bottom"
         android:clickable="true"
         >
         <androidx.appcompat.widget.SearchView
