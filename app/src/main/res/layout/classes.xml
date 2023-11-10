@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".ClassesActivity"
+    tools:context=".classes.ClassesActivity"
     android:background="@drawable/neutralbg2"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -65,7 +65,7 @@
         android:id="@+id/classesscroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".ClassesActivity"
+        tools:context=".classes.ClassesActivity"
         tools:showIn="@layout/classes">
 
         <androidx.constraintlayout.widget.ConstraintLayout

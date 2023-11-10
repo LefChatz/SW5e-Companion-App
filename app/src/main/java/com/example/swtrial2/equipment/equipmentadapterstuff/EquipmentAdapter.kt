@@ -51,9 +51,9 @@ class EquipmentAdapter(private val mycontext: Context, private val dataset: Muta
         return when(viewType){
             0->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.equipment_button, viewGroup, false) ; EquipmentHolder(view) }
             1->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.equipment_button_big, viewGroup, false) ; EquipmentHolder(view) }
-            2->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.empty_button50sp, viewGroup, false) ; EmptyEquipmentHolder(view) }
+            2->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.universal_empty_button50sp, viewGroup, false) ; EmptyEquipmentHolder(view) }
 
-            else->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.empty_button50sp, viewGroup, false) ; EmptyEquipmentHolder(view)
+            else->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.universal_empty_button50sp, viewGroup, false) ; EmptyEquipmentHolder(view)
             }
         }
 
@@ -114,7 +114,7 @@ class EquipmentAdapter(private val mycontext: Context, private val dataset: Muta
             view.equipmenttext.typeface = mycontext.resources.getFont(R.font.starjedi)
             view.details.text = templist[1]
             view.relout.setOnClickListener{
-                mycontext.startActivity(Intent(mycontext, EquipmentDetailsActivity::class.java).putExtra(EquipmentDetailsActivity.Equipment_Name,name))
+                mycontext.startActivity(Intent(mycontext, EquipmentDetailsActivity::class.java).putExtra("Equipment_Name",name))
             }
             view.imbutton.setOnClickListener {
                 updatefav(name,view.imbutton)

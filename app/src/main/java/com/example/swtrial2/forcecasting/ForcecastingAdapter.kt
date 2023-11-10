@@ -58,7 +58,7 @@ class ForcecastingAdapter(private val myContext: Context, private val dataset: M
             2->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.forcecasting_nosuchforcepower_button, viewGroup, false) ; NoForcepowerHolder(view) }
             3->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.forcecasting_leveldivider, viewGroup, false) ; LeveledDividerHolder(view)
             }
-            else->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.empty_button50sp, viewGroup, false) ; NoForcepowerHolder(view)
+            else->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.universal_empty_button50sp, viewGroup, false) ; NoForcepowerHolder(view)
             }
         }
 

@@ -45,127 +45,7 @@
             android:name=".equipment.WeaponsActivity"
             android:exported="false" />
         <activity
-            android:name=".EquipmentActivity"
-            android:exported="false" />
-        <activity
-            android:name=".species.BithActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.BothanActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.CatharActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.CereanActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.ChissActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.DevaronianActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.DroidClass1Activity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.DroidClass2Activity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.DroidClass3Activity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.DroidClass4Activity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.DroidClass5Activity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.DurosActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.EwokActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.GamorreanActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.GunganActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.HumanActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.IthorianActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.JawaActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.KelDorActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.MonCalamariActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.NautolanActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.RodianActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.SithPurebloodActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.TogrutaActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.TrandoshanActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.TuskenActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.TwilekActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.WeequayActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.WookieActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
-            android:exported="false" />
-        <activity
-            android:name=".species.ZabrakActivity"
-            android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
+            android:name=".equipment.EquipmentActivity"
             android:exported="false" />
         <activity
             android:name=".classes.ScoutActivity"
@@ -208,17 +88,17 @@
             android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
             android:exported="false" />
         <activity
-            android:name=".SpeciesActivity"
+            android:name=".species.SpeciesActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
             android:exported="false" />
         <activity
-            android:name=".ClassesActivity"
+            android:name=".classes.ClassesActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboard|keyboardHidden"
             android:exported="true"
             android:label="@string/title_activity_classes"
             android:theme="@style/BlackStatusBar" />
         <activity
-            android:name=".ForceCastingActivity"
+            android:name=".forcecasting.ForcecastingActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
             android:theme="@style/BlackStatusBar"

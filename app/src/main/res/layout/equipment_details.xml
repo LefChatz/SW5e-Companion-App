@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".equipment.equipmentadapterstuff.EquipmentDetailsActivity"
+    android:background="@drawable/neutralbg2">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:translationZ="2dp"
+        android:background="@drawable/fade_black_appbar_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BackButton"
+            android:layout_width="70dp"
+            android:layout_height="0sp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:text="@string/back"
+            android:textColor="@color/gold"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/starjedi"
+            android:text="@string/title"
+            android:textAlignment="gravity"
+            android:textColor="@color/gold"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="16sp"
+            android:autoSizeMaxTextSize="25sp"
+            android:autoSizeStepGranularity="2sp"
+            android:translationZ="90dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintStart_toEndOf="@+id/BackButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="329dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <ScrollView
+        android:id="@+id/EquipmentScrolly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="50dp"
+        android:clipToPadding="false"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/Attributes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/attributes"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/CostWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cost_amp_weight"
+                android:textColor="@color/gold"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Attributes"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/DamageAC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/damageac"
+                app:layout_constraintBottom_toBottomOf="@+id/CostWeight"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/goldline"
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CostWeight"
+                app:srcCompat="@drawable/goldhorizontalline" />
+
+            <TextView
+                android:id="@+id/Properties"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/properties"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/goldline"
+                android:textColor="@color/gold"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/gold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Image"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/Expansion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/expansion"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/gold"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/Image"
+                android:layout_width="240dp"
+                android:layout_height="317dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Properties"
+                app:srcCompat="@drawable/error404" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

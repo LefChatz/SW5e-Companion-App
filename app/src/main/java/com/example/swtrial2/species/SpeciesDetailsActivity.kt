@@ -3,7 +3,6 @@ package com.example.swtrial2.species
 import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.os.Bundle
-import android.util.Log
 import android.view.GestureDetector
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -44,7 +43,6 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
         tempstring="$specie traits"
         binding.Title.text=specie
 
-        Log.d("specie" , specie)
         inflater.inflate(resources.getIdentifier("species_"+specie+"_info","layout",packageName), ll, true)
     }
     @SuppressLint("DiscouragedApi")

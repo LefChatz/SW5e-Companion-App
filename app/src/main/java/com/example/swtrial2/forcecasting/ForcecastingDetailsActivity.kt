@@ -9,16 +9,13 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.appcompat.widget.AppCompatButton
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.example.swtrial2.R
-import com.example.swtrial2.databinding.ActivityForcecastingdetailsBinding
+import com.example.swtrial2.databinding.ForcecastingForcepowerDetailsBinding
 
 class ForcecastingDetailsActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityForcecastingdetailsBinding
+    private lateinit var binding: ForcecastingForcepowerDetailsBinding
     private lateinit var forcepower: Forcepower
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
-    private lateinit var backButton: AppCompatButton
     private lateinit var ll: LinearLayout
     private lateinit var txt: TextView
     @SuppressLint("DiscouragedApi")
@@ -30,34 +27,30 @@ class ForcecastingDetailsActivity : AppCompatActivity() {
             @Suppress("DEPRECATION")
             intent.getParcelableExtra<Forcepower>("Forcepower").toForcepower()
         }
-        binding= ActivityForcecastingdetailsBinding.inflate(layoutInflater)
+        binding= ForcecastingForcepowerDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        toolbar = findViewById(R.id.force_toolbar)
-        setSupportActionBar(toolbar)
+
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        ll=findViewById(R.id.ForcepowerDetailsll)
+        ll=binding.ll
 
-        //title and text assignment
-        val spTitle:TextView=findViewById(R.id.ForcepowerDetailsTitle)
-        spTitle.text=forcepower.printedname
-
-
-        val spText:TextView=findViewById(R.id.ForcepowerDetailsText)
-        spText.text=forcepower.detailsText
+        //title
+        binding.ForcepowerTitle.text=forcepower.printedname
+        binding.ForcepowerText.text=forcepower.detailsText
 
         //Background
-        val spCoord:CoordinatorLayout=findViewById(R.id.ForcepowerDetailsCoord)
-        with(forcepower.side.toString()){
-            when{
-                this.contains("Dark",true)->{spCoord.background=AppCompatResources.getDrawable(this@ForcecastingDetailsActivity,R.drawable.darkbg1)}
-                this.contains("Light",true)->{spCoord.background=AppCompatResources.getDrawable(this@ForcecastingDetailsActivity,R.drawable.lightbg1)}
-                this.contains("Universal",true)->{}
-                else->{spCoord.background=AppCompatResources.getDrawable(this@ForcecastingDetailsActivity,R.drawable.error404)}
-            }
+        binding.coord.background=AppCompatResources.getDrawable(this@ForcecastingDetailsActivity,
+            with(forcepower.side.toString()){
+                when{
+                    this.contains("Dark",true)->R.drawable.darkbg1
+                    this.contains("Light",true)->R.drawable.lightbg1
+                    this.contains("Universal",true)->R.drawable.neutralbg2
+                    else->R.drawable.error404
+        }})
 
-        }
+        //Special forcepower cases
         if (forcepower.forcepowername=="insanity"){
             layoutInflater.inflate(R.layout.forcecasting_instanity_hscroll,ll)
             txt=layoutInflater.inflate(R.layout.universal_textview_nofont_gold,ll).findViewById(R.id.textview)
@@ -69,10 +62,7 @@ class ForcecastingDetailsActivity : AppCompatActivity() {
             txt.text=resources.getText(R.string.mass_animation2)
         }
 
-        backButton=findViewById(R.id.forceBackButton)
-        backButton.setOnClickListener {
-            returntomain()
-        }
+        binding.BackButton.setOnClickListener {returntomain()}
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -81,7 +71,7 @@ class ForcecastingDetailsActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    fun returntomain() {
+    private fun returntomain() {
         finish()
     }
 

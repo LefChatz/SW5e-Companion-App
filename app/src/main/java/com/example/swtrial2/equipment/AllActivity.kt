@@ -8,23 +8,19 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.SearchView
 import android.widget.Toast
 import android.window.OnBackInvokedDispatcher
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.recyclerview.widget.RecyclerView
-import com.example.swtrial2.EquipmentActivity
 import com.example.swtrial2.R
-import com.example.swtrial2.databinding.ActivityEquipmentListBinding
+import com.example.swtrial2.databinding.EquipmentAllListBinding
 import com.example.swtrial2.equipment.equipmentadapterstuff.EquipmentAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class AllActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityEquipmentListBinding
-    private lateinit var reclview: RecyclerView
+    private lateinit var binding: EquipmentAllListBinding
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     private lateinit var searchView: SearchView
     private lateinit var equipmentAdapter: EquipmentAdapter
@@ -48,33 +44,31 @@ class AllActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityEquipmentListBinding.inflate(layoutInflater)
+        binding = EquipmentAllListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        toolbar=findViewById(R.id.equipment_toolbar)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         favSharedPreferences=getSharedPreferences("favequipmentlist", Context.MODE_PRIVATE)
+        faveEquipmentList.addAll(favSharedPreferences.getStringSet("favequipmentlist", mutableSetOf())?.toList()!!)
 
         equipmentWeapons=resources.getStringArray(R.array.equipment_weapons).toList()
         equipmentArmours=resources.getStringArray(R.array.equipment_armours).toList()
         equipmentAdvGear=resources.getStringArray(R.array.equipment_advgear).toList()
         equipmentList=resources.getStringArray(R.array.equipmentlist).toList()
         bigEquipmentList=resources.getStringArray(R.array.bigequipmentnames).toList()
-        faveEquipmentList.addAll(favSharedPreferences.getStringSet("favequipmentlist", mutableSetOf())?.toList()!!)
 
         equipmentList.filter {it!="empty"}.forEach{
             @SuppressLint("DiscouragedApi")
             equipmentAttributeMap[it]=resources.getStringArray(resources.getIdentifier(it,"array",packageName))[1]
         }
-
-        reclview= findViewById(R.id.equipmentreclview)
+        binding.BackButton.setOnClickListener { returntomain() }
 
         currentEquipmentList= buildList { add("empty");addAll(equipmentList.sorted());add("empty") }
         adapterEquipmentList.addAll(currentEquipmentList)
         equipmentAdapter = EquipmentAdapter(this,adapterEquipmentList,bigEquipmentList,faveEquipmentList)
-        reclview.adapter = equipmentAdapter
+        binding.reclview.adapter = equipmentAdapter
         searchedList=currentEquipmentList
 
         searchView = findViewById(R.id.searchview)
@@ -118,7 +112,7 @@ class AllActivity : AppCompatActivity() {
         })
         val fab: FloatingActionButton = findViewById(R.id.floatingActionButton)
         fab.setOnClickListener{
-            returntotop(reclview,"smooth")
+            returntotop("smooth")
         }
     }
 
@@ -142,12 +136,12 @@ class AllActivity : AppCompatActivity() {
                         currentEquipmentList=currentEquipmentList.reversed()
                         equipmentAdapter.setEquipmentList(currentEquipmentList.filter{it !in eraseList && it in searchedList})
                         item.title=getText(R.string.sortABCup)
-                        returntotop(reclview,"sharp")}
+                        returntotop("sharp")}
                     equals(getText(R.string.sortABCup))->{
                         currentEquipmentList=currentEquipmentList.reversed()
                         equipmentAdapter.setEquipmentList(currentEquipmentList.filter{it !in eraseList && it in searchedList})
                         item.title = getText(R.string.sortABCdown)
-                        returntotop(reclview,"sharp")}
+                        returntotop("sharp")}
 
                     contains("weapons",true) ->{
                         menuClose = true
@@ -611,44 +605,6 @@ class AllActivity : AppCompatActivity() {
                 val tempList = equipmentAttributedList.getOrDefault(fil,emptyList())
                 eraseList.addAll(equipmentList.filter { it !in tempList })
             }
-            /*Was beefy , if new code is slow will put back
-            with(filterList){
-                if (!filterMode.contains("fav")){
-                    eraseList.removeAll(
-                        when{
-                            contains(difFilter1)->{
-                                val tempList2 = equipmentAttributedList.getOrDefault(difFilter1, emptyList())
-                                equipmentList.filter {it !in tempList1 && it in tempList2}
-                            }
-                            contains(difFilter2)->{
-                                val templist2 = equipmentAttributedList.getOrDefault(difFilter2, emptyList())
-                                equipmentList.filter {it !in tempList1 && it in templist2}
-                            }
-                            else->{
-                                equipmentList.filter {it !in tempList1 && it in equipmentWeapons}
-                            }
-                        }
-                    )
-                }
-                else{
-                    eraseList.removeAll(
-                        when{
-                            contains(difFilter1)->{
-                                val tempList2 = equipmentAttributedList.getOrDefault(difFilter1, emptyList())
-                                equipmentList.filter {it !in tempList1 && it in tempList2 && it in faveEquipmentList}
-                            }
-                            contains(difFilter2)->{
-                                val templist2 = equipmentAttributedList.getOrDefault(difFilter2, emptyList())
-                                equipmentList.filter {it !in tempList1 && it in templist2 && it in faveEquipmentList}
-                            }
-                            else->{
-                                equipmentList.filter {it !in tempList1 && it in faveEquipmentList && it in equipmentWeapons}
-                            }
-                        }
-                    )
-                }
-                remove(mode)
-            }*/
         }
         equipmentAdapter.setEquipmentList(currentEquipmentList.filter { it !in eraseList && it in searchedList})
     }
@@ -864,13 +820,13 @@ class AllActivity : AppCompatActivity() {
         menuClose=false
         return super.onPrepareOptionsMenu(menu)
     }
-    private fun returntotop(view: RecyclerView,mode: String){
+    private fun returntotop(mode: String){
         when(mode){
-            "smooth"->view.smoothScrollToPosition(0)
-            "sharp"->view.scrollToPosition(0)
+            "smooth"->binding.reclview.smoothScrollToPosition(0)
+            "sharp"->binding.reclview.scrollToPosition(0)
         }
     }
-    fun returntomain(view: View?) {
+    private fun returntomain() {
         with(favSharedPreferences.edit()){
             putStringSet("favequipmentlist",faveEquipmentList.toMutableSet())
             apply()
@@ -888,7 +844,7 @@ class AllActivity : AppCompatActivity() {
         super.onPanelClosed(featureId, menu)
     }
     override fun getOnBackInvokedDispatcher(): OnBackInvokedDispatcher {
-        returntomain(null)
+        returntomain()
         return super.getOnBackInvokedDispatcher()
     }
     override fun onConfigurationChanged(newConfig: Configuration) {

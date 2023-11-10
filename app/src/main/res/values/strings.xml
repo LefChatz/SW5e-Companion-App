@@ -2233,6 +2233,11 @@
     <string name="text">Text</string>
     <string name="forcecasting_nosuchforcepower">No Such Forcepower Found</string>
     <string name="sampletext">SampleText</string>
+    <string name="attributes">Attributes</string>
+    <string name="cost_amp_weight"><![CDATA[Cost & Weight]]></string>
+    <string name="damageac">DamageAC</string>
+    <string name="properties">Properties</string>
+    <string name="expansion">Expansion</string>
 
 
 </resources>
