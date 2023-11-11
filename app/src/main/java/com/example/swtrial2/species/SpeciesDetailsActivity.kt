@@ -34,6 +34,10 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
 
         binding.Title.text=specie.replace("_"," ")
 
+        binding.BackButton.setOnClickListener { returntomain() }
+
+        binding.dummybutton.setOnClickListener { changeview() }
+
         infoidentif=resources.getIdentifier("species_"+specie+"_info","layout",packageName)
 
         if (infoidentif!=0){

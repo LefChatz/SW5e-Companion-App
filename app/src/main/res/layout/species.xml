@@ -65,405 +65,404 @@
         android:id="@+id/scrolly"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:paddingVertical="75dp"
+        android:paddingVertical="50dp"
         android:clipToPadding="false"
         >
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/contentcl"
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:orientation="vertical"
+            >
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/bith"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingEnd="5dp"
-                android:paddingStart="0dp"
-                android:onClick="openspecies"
-                android:tooltipText="Bith"
-                app:background="@drawable/bithbutton"
-                app:layout_constraintEnd_toStartOf="@+id/bothan"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:text="BiTH" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:paddingTop="25dp"
+                android:id="@+id/contentcl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/bothan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="5dp"
-                android:paddingEnd="0dp"
-                android:onClick="openspecies"
-                android:tooltipText="Bothan"
-                app:background="@drawable/bothanbutton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/bith"
-                app:layout_constraintTop_toTopOf="parent"
-                app:text="BoTHAN" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/bith"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="0dp"
+                    android:onClick="openspecies"
+                    android:tooltipText="Bith"
+                    app:background="@drawable/bithbutton"
+                    app:layout_constraintEnd_toStartOf="@+id/bothan"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:text="BiTH" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/cathar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:onClick="openspecies"
-                android:tooltipText="Cathar"
-                app:background="@drawable/catharbutton"
-                app:layout_constraintEnd_toEndOf="@+id/bith"
-                app:layout_constraintStart_toStartOf="@+id/bith"
-                app:layout_constraintTop_toBottomOf="@+id/bith"
-                app:text="cATHAX" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/bothan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="0dp"
+                    android:onClick="openspecies"
+                    android:tooltipText="Bothan"
+                    app:background="@drawable/bothanbutton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/bith"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:text="BoTHAN" />
+
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/cathar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:onClick="openspecies"
+                    android:tooltipText="Cathar"
+                    app:background="@drawable/catharbutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bith"
+                    app:layout_constraintStart_toStartOf="@+id/bith"
+                    app:layout_constraintTop_toBottomOf="@+id/bith"
+                    app:text="cATHAX" />
 
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/cerean"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="openspecies"
-                android:tooltipText="Cerean"
-                app:background="@drawable/cereanbutton"
-                app:layout_constraintEnd_toEndOf="@+id/bothan"
-                app:layout_constraintStart_toStartOf="@+id/bothan"
-                app:layout_constraintTop_toTopOf="@+id/cathar"
-                app:text="cEXEAN" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/cerean"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="openspecies"
+                    android:tooltipText="Cerean"
+                    app:background="@drawable/cereanbutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bothan"
+                    app:layout_constraintStart_toStartOf="@+id/bothan"
+                    app:layout_constraintTop_toTopOf="@+id/cathar"
+                    app:text="cEXEAN" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/chiss"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:onClick="openspecies"
-                android:tooltipText="Chiss"
-                app:background="@drawable/chissbutton"
-                app:layout_constraintEnd_toEndOf="@+id/cathar"
-                app:layout_constraintStart_toStartOf="@+id/cathar"
-                app:layout_constraintTop_toBottomOf="@+id/cerean"
-                app:text="CHiSS" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/chiss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:onClick="openspecies"
+                    android:tooltipText="Chiss"
+                    app:background="@drawable/chissbutton"
+                    app:layout_constraintEnd_toEndOf="@+id/cathar"
+                    app:layout_constraintStart_toStartOf="@+id/cathar"
+                    app:layout_constraintTop_toBottomOf="@+id/cerean"
+                    app:text="CHiSS" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/devaronian"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="openspecies"
-                android:tooltipText="Devaronian"
-                app:background="@drawable/devaronianbutton"
-                app:layout_constraintEnd_toEndOf="@+id/cerean"
-                app:layout_constraintStart_toStartOf="@+id/cerean"
-                app:layout_constraintTop_toTopOf="@+id/chiss"
-                app:text="DEvAXoNiAN" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/devaronian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="openspecies"
+                    android:tooltipText="Devaronian"
+                    app:background="@drawable/devaronianbutton"
+                    app:layout_constraintEnd_toEndOf="@+id/cerean"
+                    app:layout_constraintStart_toStartOf="@+id/cerean"
+                    app:layout_constraintTop_toTopOf="@+id/chiss"
+                    app:text="DEvAXoNiAN" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/droidclass1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:onClick="openspecies"
-                android:tooltipText="Droid Class 1"
-                app:background="@drawable/droidclass1button"
-                app:layout_constraintEnd_toEndOf="@+id/chiss"
-                app:layout_constraintStart_toStartOf="@+id/chiss"
-                app:layout_constraintTop_toBottomOf="@+id/chiss"
-                app:text="DXoiD\ncLASS 1" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/droidclass1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:onClick="openspecies"
+                    android:tooltipText="Droid Class 1"
+                    app:background="@drawable/droidclass1button"
+                    app:layout_constraintEnd_toEndOf="@+id/chiss"
+                    app:layout_constraintStart_toStartOf="@+id/chiss"
+                    app:layout_constraintTop_toBottomOf="@+id/chiss"
+                    app:text="DXoiD\ncLASS 1" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/droidclass2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="openspecies"
-                android:tooltipText="Droid Class 2"
-                app:background="@drawable/droidclass2button"
-                app:layout_constraintEnd_toEndOf="@id/devaronian"
-                app:layout_constraintStart_toStartOf="@+id/devaronian"
-                app:layout_constraintTop_toTopOf="@+id/droidclass1"
-                app:text="DXoiD\ncLASS 2" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/droidclass2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="openspecies"
+                    android:tooltipText="Droid Class 2"
+                    app:background="@drawable/droidclass2button"
+                    app:layout_constraintEnd_toEndOf="@id/devaronian"
+                    app:layout_constraintStart_toStartOf="@+id/devaronian"
+                    app:layout_constraintTop_toTopOf="@+id/droidclass1"
+                    app:text="DXoiD\ncLASS 2" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/droidclass3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:onClick="openspecies"
-                android:tooltipText="Droid Class 3"
-                app:background="@drawable/droidclass3button"
-                app:layout_constraintEnd_toEndOf="@+id/droidclass1"
-                app:layout_constraintStart_toStartOf="@+id/droidclass1"
-                app:layout_constraintTop_toBottomOf="@+id/droidclass1"
-                app:text="DXoiD\ncLASS 3" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/droidclass3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:onClick="openspecies"
+                    android:tooltipText="Droid Class 3"
+                    app:background="@drawable/droidclass3button"
+                    app:layout_constraintEnd_toEndOf="@+id/droidclass1"
+                    app:layout_constraintStart_toStartOf="@+id/droidclass1"
+                    app:layout_constraintTop_toBottomOf="@+id/droidclass1"
+                    app:text="DXoiD\ncLASS 3" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/droidclass4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="openspecies"
-                android:tooltipText="Droid Class 4"
-                app:background="@drawable/droidclass4button"
-                app:layout_constraintEnd_toEndOf="@+id/droidclass2"
-                app:layout_constraintStart_toStartOf="@+id/droidclass2"
-                app:layout_constraintTop_toTopOf="@+id/droidclass3"
-                app:text="DXoiD\ncLASS 4" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/droidclass4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="openspecies"
+                    android:tooltipText="Droid Class 4"
+                    app:background="@drawable/droidclass4button"
+                    app:layout_constraintEnd_toEndOf="@+id/droidclass2"
+                    app:layout_constraintStart_toStartOf="@+id/droidclass2"
+                    app:layout_constraintTop_toTopOf="@+id/droidclass3"
+                    app:text="DXoiD\ncLASS 4" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/droidclass5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:onClick="openspecies"
-                android:tooltipText="Droid Class 5"
-                app:background="@drawable/droidclass5button"
-                app:layout_constraintEnd_toEndOf="@+id/bith"
-                app:layout_constraintStart_toStartOf="@+id/bith"
-                app:layout_constraintTop_toBottomOf="@+id/droidclass3"
-                app:text="DXoiD\ncLASS 5" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/droidclass5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:onClick="openspecies"
+                    android:tooltipText="Droid Class 5"
+                    app:background="@drawable/droidclass5button"
+                    app:layout_constraintEnd_toEndOf="@+id/bith"
+                    app:layout_constraintStart_toStartOf="@+id/bith"
+                    app:layout_constraintTop_toBottomOf="@+id/droidclass3"
+                    app:text="DXoiD\ncLASS 5" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/duros"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="openspecies"
-                android:tooltipText="Duros"
-                app:background="@drawable/durosbutton"
-                app:layout_constraintEnd_toEndOf="@+id/bothan"
-                app:layout_constraintStart_toStartOf="@+id/bothan"
-                app:layout_constraintTop_toTopOf="@+id/droidclass5"
-                app:text="DuXoS" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/duros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="openspecies"
+                    android:tooltipText="Duros"
+                    app:background="@drawable/durosbutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bothan"
+                    app:layout_constraintStart_toStartOf="@+id/bothan"
+                    app:layout_constraintTop_toTopOf="@+id/droidclass5"
+                    app:text="DuXoS" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/ewok"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:onClick="openspecies"
-                android:tooltipText="Ewok"
-                app:background="@drawable/ewokbutton"
-                app:layout_constraintEnd_toEndOf="@+id/bith"
-                app:layout_constraintStart_toStartOf="@+id/bith"
-                app:layout_constraintTop_toBottomOf="@+id/droidclass5"
-                app:text="EWoK" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/ewok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:onClick="openspecies"
+                    android:tooltipText="Ewok"
+                    app:background="@drawable/ewokbutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bith"
+                    app:layout_constraintStart_toStartOf="@+id/bith"
+                    app:layout_constraintTop_toBottomOf="@+id/droidclass5"
+                    app:text="EWoK" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/gamorrean"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="openspecies"
-                android:tooltipText="Gamorrean"
-                app:background="@drawable/gamorreanbutton"
-                app:layout_constraintEnd_toEndOf="@+id/bothan"
-                app:layout_constraintStart_toStartOf="@+id/bothan"
-                app:layout_constraintTop_toTopOf="@+id/ewok"
-                app:text="GAMoXXEAN" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/gamorrean"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="openspecies"
+                    android:tooltipText="Gamorrean"
+                    app:background="@drawable/gamorreanbutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bothan"
+                    app:layout_constraintStart_toStartOf="@+id/bothan"
+                    app:layout_constraintTop_toTopOf="@+id/ewok"
+                    app:text="GAMoXXEAN" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/gungan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:onClick="openspecies"
-                android:tooltipText="Gungan"
-                app:background="@drawable/gunganbutton"
-                app:layout_constraintEnd_toEndOf="@+id/bith"
-                app:layout_constraintStart_toStartOf="@+id/bith"
-                app:layout_constraintTop_toBottomOf="@+id/ewok"
-                app:text="@string/gungan" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/gungan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:onClick="openspecies"
+                    android:tooltipText="Gungan"
+                    app:background="@drawable/gunganbutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bith"
+                    app:layout_constraintStart_toStartOf="@+id/bith"
+                    app:layout_constraintTop_toBottomOf="@+id/ewok"
+                    app:text="@string/gungan" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/human"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="openspecies"
-                android:tooltipText="Human"
-                app:background="@drawable/humanbutton"
-                app:layout_constraintEnd_toEndOf="@+id/bothan"
-                app:layout_constraintStart_toStartOf="@+id/bothan"
-                app:layout_constraintTop_toTopOf="@+id/gungan"
-                app:text="@string/human" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/human"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="openspecies"
+                    android:tooltipText="Human"
+                    app:background="@drawable/humanbutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bothan"
+                    app:layout_constraintStart_toStartOf="@+id/bothan"
+                    app:layout_constraintTop_toTopOf="@+id/gungan"
+                    app:text="@string/human" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/ithorian"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:onClick="openspecies"
-                android:tooltipText="Ithorian"
-                app:background="@drawable/ithorianbutton"
-                app:layout_constraintEnd_toEndOf="@+id/bith"
-                app:layout_constraintStart_toStartOf="@+id/bith"
-                app:layout_constraintTop_toBottomOf="@+id/gungan"
-                app:text="@string/ithorian" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/ithorian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:onClick="openspecies"
+                    android:tooltipText="Ithorian"
+                    app:background="@drawable/ithorianbutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bith"
+                    app:layout_constraintStart_toStartOf="@+id/bith"
+                    app:layout_constraintTop_toBottomOf="@+id/gungan"
+                    app:text="@string/ithorian" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/jawa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="openspecies"
-                android:tooltipText="Jawa"
-                app:background="@drawable/jawabutton"
-                app:layout_constraintEnd_toEndOf="@+id/bothan"
-                app:layout_constraintStart_toStartOf="@+id/bothan"
-                app:layout_constraintTop_toTopOf="@+id/ithorian"
-                app:text="@string/jawa" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/jawa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="openspecies"
+                    android:tooltipText="Jawa"
+                    app:background="@drawable/jawabutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bothan"
+                    app:layout_constraintStart_toStartOf="@+id/bothan"
+                    app:layout_constraintTop_toTopOf="@+id/ithorian"
+                    app:text="@string/jawa" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/kel_dor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:onClick="openspecies"
-                android:tooltipText="Kel Dor"
-                app:background="@drawable/keldorbutton"
-                app:layout_constraintEnd_toEndOf="@+id/bith"
-                app:layout_constraintStart_toStartOf="@+id/bith"
-                app:layout_constraintTop_toBottomOf="@+id/ithorian"
-                app:text="@string/kel_dor" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/kel_dor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:onClick="openspecies"
+                    android:tooltipText="Kel Dor"
+                    app:background="@drawable/keldorbutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bith"
+                    app:layout_constraintStart_toStartOf="@+id/bith"
+                    app:layout_constraintTop_toBottomOf="@+id/ithorian"
+                    app:text="@string/kel_dor" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/mon_calamari"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="openspecies"
-                android:tooltipText="Mon Calamari"
-                app:background="@drawable/monkalamaributton"
-                app:layout_constraintEnd_toEndOf="@+id/bothan"
-                app:layout_constraintStart_toStartOf="@+id/bothan"
-                app:layout_constraintTop_toTopOf="@+id/kel_dor"
-                app:text="@string/mon_calamari" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/mon_calamari"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="openspecies"
+                    android:tooltipText="Mon Calamari"
+                    app:background="@drawable/monkalamaributton"
+                    app:layout_constraintEnd_toEndOf="@+id/bothan"
+                    app:layout_constraintStart_toStartOf="@+id/bothan"
+                    app:layout_constraintTop_toTopOf="@+id/kel_dor"
+                    app:text="@string/mon_calamari" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/nautolan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:onClick="openspecies"
-                android:tooltipText="Nautolan"
-                app:background="@drawable/nautolanbutton"
-                app:layout_constraintEnd_toEndOf="@+id/bith"
-                app:layout_constraintStart_toStartOf="@+id/bith"
-                app:layout_constraintTop_toBottomOf="@+id/kel_dor"
-                app:text="@string/nautolan" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/nautolan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:onClick="openspecies"
+                    android:tooltipText="Nautolan"
+                    app:background="@drawable/nautolanbutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bith"
+                    app:layout_constraintStart_toStartOf="@+id/bith"
+                    app:layout_constraintTop_toBottomOf="@+id/kel_dor"
+                    app:text="@string/nautolan" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/rodian"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="openspecies"
-                android:tooltipText="Rodian"
-                app:background="@drawable/rodianbutton"
-                app:layout_constraintEnd_toEndOf="@+id/bothan"
-                app:layout_constraintStart_toStartOf="@+id/bothan"
-                app:layout_constraintTop_toTopOf="@+id/nautolan"
-                app:text="@string/rodian" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/rodian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="openspecies"
+                    android:tooltipText="Rodian"
+                    app:background="@drawable/rodianbutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bothan"
+                    app:layout_constraintStart_toStartOf="@+id/bothan"
+                    app:layout_constraintTop_toTopOf="@+id/nautolan"
+                    app:text="@string/rodian" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/sith_pureblood"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:onClick="openspecies"
-                android:tooltipText="Sith Pureblood"
-                app:background="@drawable/sithpurebloodbutton"
-                app:layout_constraintEnd_toEndOf="@+id/bith"
-                app:layout_constraintStart_toStartOf="@+id/bith"
-                app:layout_constraintTop_toBottomOf="@+id/nautolan"
-                app:text="@string/sith_pureblood" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/sith_pureblood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:onClick="openspecies"
+                    android:tooltipText="Sith Pureblood"
+                    app:background="@drawable/sithpurebloodbutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bith"
+                    app:layout_constraintStart_toStartOf="@+id/bith"
+                    app:layout_constraintTop_toBottomOf="@+id/nautolan"
+                    app:text="@string/sith_pureblood" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/togruta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="openspecies"
-                android:tooltipText="Togruta"
-                app:background="@drawable/togrutabutton"
-                app:layout_constraintEnd_toEndOf="@+id/bothan"
-                app:layout_constraintStart_toStartOf="@+id/bothan"
-                app:layout_constraintTop_toTopOf="@+id/sith_pureblood"
-                app:text="@string/togruta" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/togruta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="openspecies"
+                    android:tooltipText="Togruta"
+                    app:background="@drawable/togrutabutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bothan"
+                    app:layout_constraintStart_toStartOf="@+id/bothan"
+                    app:layout_constraintTop_toTopOf="@+id/sith_pureblood"
+                    app:text="@string/togruta" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/trandoshan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:onClick="openspecies"
-                android:tooltipText="Trandoshan"
-                app:background="@drawable/trandoshanbutton"
-                app:layout_constraintEnd_toEndOf="@+id/bith"
-                app:layout_constraintStart_toStartOf="@+id/bith"
-                app:layout_constraintTop_toBottomOf="@+id/sith_pureblood"
-                app:text="@string/trandoshan" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/trandoshan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:onClick="openspecies"
+                    android:tooltipText="Trandoshan"
+                    app:background="@drawable/trandoshanbutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bith"
+                    app:layout_constraintStart_toStartOf="@+id/bith"
+                    app:layout_constraintTop_toBottomOf="@+id/sith_pureblood"
+                    app:text="@string/trandoshan" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/tusken"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="openspecies"
-                android:tooltipText="Tusken"
-                app:background="@drawable/tuskenbutton"
-                app:layout_constraintEnd_toEndOf="@+id/bothan"
-                app:layout_constraintStart_toStartOf="@+id/bothan"
-                app:layout_constraintTop_toTopOf="@+id/trandoshan"
-                app:text="@string/tusken" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/tusken"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="openspecies"
+                    android:tooltipText="Tusken"
+                    app:background="@drawable/tuskenbutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bothan"
+                    app:layout_constraintStart_toStartOf="@+id/bothan"
+                    app:layout_constraintTop_toTopOf="@+id/trandoshan"
+                    app:text="@string/tusken" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/twilek"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:onClick="openspecies"
-                android:tooltipText="Twi'lek"
-                app:background="@drawable/twilekbutton"
-                app:layout_constraintEnd_toEndOf="@+id/bith"
-                app:layout_constraintStart_toStartOf="@+id/bith"
-                app:layout_constraintTop_toBottomOf="@+id/trandoshan"
-                app:text="@string/twilek" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/twilek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:onClick="openspecies"
+                    android:tooltipText="Twi'lek"
+                    app:background="@drawable/twilekbutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bith"
+                    app:layout_constraintStart_toStartOf="@+id/bith"
+                    app:layout_constraintTop_toBottomOf="@+id/trandoshan"
+                    app:text="@string/twilek" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/weequay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="openspecies"
-                android:tooltipText="Weequay"
-                app:background="@drawable/weequaybutton"
-                app:layout_constraintEnd_toEndOf="@+id/bothan"
-                app:layout_constraintStart_toStartOf="@+id/bothan"
-                app:layout_constraintTop_toTopOf="@+id/twilek"
-                app:text="@string/weequay" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/weequay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="openspecies"
+                    android:tooltipText="Weequay"
+                    app:background="@drawable/weequaybutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bothan"
+                    app:layout_constraintStart_toStartOf="@+id/bothan"
+                    app:layout_constraintTop_toTopOf="@+id/twilek"
+                    app:text="@string/weequay" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/wookie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:onClick="openspecies"
+                    android:tooltipText="Wookie"
+                    app:background="@drawable/wookiebutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bith"
+                    app:layout_constraintStart_toStartOf="@+id/bith"
+                    app:layout_constraintTop_toBottomOf="@+id/twilek"
+                    app:text="@string/wookie" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/wookie"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:onClick="openspecies"
-                android:tooltipText="Wookie"
-                app:background="@drawable/wookiebutton"
-                app:layout_constraintEnd_toEndOf="@+id/bith"
-                app:layout_constraintStart_toStartOf="@+id/bith"
-                app:layout_constraintTop_toBottomOf="@+id/twilek"
-                app:text="@string/wookie" />
+                <com.example.swtrial2.widget.ClassButton
+                    android:id="@+id/zabrak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="openspecies"
+                    android:tooltipText="Zabrak"
+                    app:background="@drawable/zabrakbutton"
+                    app:layout_constraintEnd_toEndOf="@+id/bothan"
+                    app:layout_constraintStart_toStartOf="@+id/bothan"
+                    app:layout_constraintTop_toTopOf="@+id/wookie"
+                    app:text="@string/zabrak" />
 
-            <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/zabrak"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="openspecies"
-                android:tooltipText="Zabrak"
-                app:background="@drawable/zabrakbutton"
-                app:layout_constraintEnd_toEndOf="@+id/bothan"
-                app:layout_constraintStart_toStartOf="@+id/bothan"
-                app:layout_constraintTop_toTopOf="@+id/wookie"
-                app:text="@string/zabrak" />
 
-            <view
-                android:id="@+id/centercl"
-                class="android.view.ViewStub"
-                android:layout_width="2dp"
-                android:layout_height="2dp"
-                android:clickable="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
     </ScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

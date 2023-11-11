@@ -6,12 +6,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
-import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.appcompat.widget.LinearLayoutCompat
 import com.example.swtrial2.R
 import com.example.swtrial2.SW5ECompanionApp
 import com.example.swtrial2.classes.*
@@ -22,11 +20,9 @@ import kotlin.properties.Delegates
 class SpeciesActivity : AppCompatActivity() {
 
     private lateinit var binding: SpeciesBinding
-    private lateinit var scroll: ScrollView
     private lateinit var tempbersk: View
     private lateinit var inflater: LayoutInflater
     private lateinit var temptxt: TextView
-    private lateinit var ll: LinearLayoutCompat
     private lateinit var txt: TextView
     private var mode by Delegates.notNull<Int>()
 
@@ -41,32 +37,32 @@ class SpeciesActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        scroll=binding.scrolly
-        binding.infobutton.setOnClickListener {
-            if(mode==0){
-                scroll.removeAllViews()
-                val tempview=inflater.inflate(R.layout.classes_info,scroll,false)
-                ll=tempview.findViewById(R.id.classesinfoll)
-                ll.removeAllViews()
+        binding.BackButton.setOnClickListener { returntomain() }
 
-                txt = TextView(this)
-                txt.setTextAppearance(R.style.GoldTextStarjedi)
+        binding.infobutton.setOnClickListener {
+            binding.scrolly.fling(0)
+            binding.scrolly.scrollTo(0,0)
+            binding.ll.removeAllViews()
+            if(mode==0){
+                txt = inflater.inflate(R.layout.universal_textview_starjedi_gold,binding.ll,false).findViewById(R.id.textview)
                 txt.text=getText(R.string.species_info1)
-                ll.addView(txt)
-                tempbersk=inflater.inflate(R.layout.class_textview,ll,false)
+                binding.ll.addView(txt)
+
+                tempbersk=inflater.inflate(R.layout.class_textview,binding.ll,false)
                 tempbersk.findViewById<TextView>(R.id.headertext).text=getText(R.string.species_info2Header)
                 tempbersk.findViewById<TextView>(R.id.contenttext).text=getText(R.string.species_info2Text)
-                ll.addView(tempbersk)
-                tempbersk=inflater.inflate(R.layout.class_textview,ll,false)
+                binding.ll.addView(tempbersk)
+
+                tempbersk=inflater.inflate(R.layout.class_textview,binding.ll,false)
                 tempbersk.findViewById<TextView>(R.id.headertext).text=getText(R.string.species_info3Header)
                 temptxt=tempbersk.findViewById(R.id.contenttext)
                 temptxt.text=getText(R.string.species_info3Text)
                 temptxt.typeface=resources.getFont(R.font.starjedi)
-                ll.addView(tempbersk)
-
-                scroll.addView(tempview)
+                binding.ll.addView(tempbersk)
 
                 mode=1
+
+
             }
             else{
                 Toast.makeText(this,"Already at Species info",Toast.LENGTH_SHORT)
@@ -89,8 +85,10 @@ class SpeciesActivity : AppCompatActivity() {
             finish()
         }
         else{
-            scroll.removeAllViews()
-            scroll.addView(binding.contentcl)
+            binding.scrolly.fling(0)
+            binding.scrolly.scrollTo(0,0)
+            binding.ll.removeAllViews()
+            binding.ll.addView(binding.contentcl)
             mode=0
         }
     }
