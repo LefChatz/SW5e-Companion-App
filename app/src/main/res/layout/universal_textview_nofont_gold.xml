@@ -3,10 +3,9 @@
     android:id="@+id/textview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="5dp"
-    android:textColor="@color/gold"
+    android:paddingHorizontal="5dp"
     android:text="@string/bothan_traitsText2"
-    android:textSize="20sp"
+    android:textAppearance="@style/GoldText"
     >
 
 </TextView>

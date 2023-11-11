@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingVertical="20dp"
+    android:paddingHorizontal="10dp"
+    android:clipToPadding="false"
     >
     <TableLayout
         android:layout_width="wrap_content"
@@ -16,7 +18,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/the_berserker"
+                android:text="@string/the_operative"
                 android:textSize="22sp"
                 android:fontFamily="@font/starjedi"
                 android:textColor="@color/gold"

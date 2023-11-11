@@ -3,13 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/class_engineer_unstable_table"
+    android:paddingHorizontal="10dp"
+    android:clipToPadding="false"
     >
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#55FFD700"
-        android:padding="20dp"
-        android:layout_marginVertical="20dp"
+        android:padding="15dp"
+        android:clipToPadding="false"
         >
         <TableRow>
             <TextView

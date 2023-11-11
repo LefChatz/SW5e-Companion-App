@@ -9,58 +9,50 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
-import android.widget.Button
 import android.widget.HorizontalScrollView
-import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.example.swtrial2.R
+import com.example.swtrial2.databinding.ClassFighterBinding
 import kotlin.math.absoluteValue
 
 class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
-    private lateinit var dummybutton: Button
     private lateinit var tempbersk: View
     private lateinit var inflater: LayoutInflater
     private lateinit var ll: LinearLayoutCompat
     private lateinit var txt: TextView
-    private lateinit var backButton: AppCompatButton
-    private lateinit var toolbar: androidx.appcompat.widget.Toolbar
-    private lateinit var scrolly: ScrollView
     private lateinit var temptxt: TextView
+    lateinit var table: View
+    lateinit var hscroll: HorizontalScrollView
+    private lateinit var binding: ClassFighterBinding
+
     private lateinit var infolist: List<CharSequence>
     private lateinit var baselist: List<CharSequence>
     private lateinit var assaultList: List<CharSequence>
     private lateinit var blademasterList: List<CharSequence>
     private lateinit var shieldList: List<CharSequence>
     private lateinit var tacticalList: List<CharSequence>
-    private lateinit var gestdect: GestureDetector
     private val tablist = listOf("Info","Base","Tables","Fighter Strategies","Assault Specialist","Blademaster Specialist","Shield Specialist","Tactical Specialist")
-    lateinit var hscroll: HorizontalScrollView
-    lateinit var table: View
+
+    private lateinit var gestdect: GestureDetector
     var rect = Rect()
     val swipethreshold = 100
     var scrollmode=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.class_fighter)
+        binding = ClassFighterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        toolbar=findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
+
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        dummybutton = findViewById(R.id.dummybutton)
-        dummybutton.setOnClickListener {
-            this.openOptionsMenu()
-        }
+        binding.dummybutton.setOnClickListener { this.openOptionsMenu() }
 
-        backButton=findViewById(R.id.BackButton)
-        backButton.setOnClickListener {
-            returntomain()
-        }
+        binding.BackButton.setOnClickListener { returntomain() }
 
         gestdect = GestureDetector(this,this)
 
@@ -71,14 +63,11 @@ class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
         shieldList = resources.getTextArray(R.array.shield_specialist).toList()
         tacticalList = resources.getTextArray(R.array.tactical_specialist).toList()
 
-        ll = findViewById(R.id.fighterll)
-        scrolly= findViewById(R.id.fighterscollview)
+        ll = binding.ll
+
         inflater = layoutInflater
 
-        txt = TextView(this)
-        txt.setTextColor(getColor(R.color.gold))
-        txt.typeface=resources.getFont(R.font.starjedi)
-        txt.textSize=20F
+        txt = inflater.inflate(R.layout.universal_textview_starjedi_gold,ll,false).findViewById(R.id.textview)
 
         for(i in infolist.indices step 2 ){
             if(i==0){
@@ -103,20 +92,20 @@ class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_fighter,menu)
         val drawable = AppCompatResources.getDrawable(this,R.drawable.downarrowgold)
-        toolbar.overflowIcon=drawable
+        binding.toolbar.overflowIcon=drawable
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        dummybutton.text=item.title
+        binding.dummybutton.text=item.title
         changeclassview()
         return super.onOptionsItemSelected(item)
     }
 
     private fun changeclassview(){
         ll.removeAllViews()
-        scrolly.scrollTo(0,0)
-        when(dummybutton.text.toString()){
+        binding.scrolly.scrollTo(0,0)
+        when(binding.dummybutton.text.toString()){
             "Info"->{
                 for(i in infolist.indices step 2 ){
                     if(i==0){
@@ -252,14 +241,14 @@ class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
         }
     }
     private fun changeview(dir: String){
-        scrolly.scrollTo(0,0)
-        scrolly.fling(0)
+        binding.scrolly.scrollTo(0,0)
+        binding.scrolly.fling(0)
         ll.removeAllViews()
         when(dir){
             "RtoL"->{
-                dummybutton.text=tablist[tablist.indexOf(dummybutton.text.toString())+1]
+                binding.dummybutton.text=tablist[tablist.indexOf(binding.dummybutton.text.toString())+1]
                 changeclassview()
-                if(dummybutton.text==tablist.last()){
+                if(binding.dummybutton.text==tablist.last()){
                     scrollmode=1
                 }
                 else{
@@ -267,9 +256,9 @@ class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
                 }
             }
             "LtoR"->{
-                dummybutton.text=tablist[tablist.indexOf(dummybutton.text.toString())-1]
+                binding.dummybutton.text=tablist[tablist.indexOf(binding.dummybutton.text.toString())-1]
                 changeclassview()
-                if(dummybutton.text==tablist.first()){
+                if(binding.dummybutton.text==tablist.first()){
                     scrollmode=0
                 }
                 else{
@@ -316,7 +305,7 @@ class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
     override fun onFling(e0: MotionEvent, e1: MotionEvent, vx: Float, vy: Float): Boolean {
         val diffX = e1.x - e0.x
         if(diffX.absoluteValue>(e1.y-e0.y).absoluteValue) {
-            if(dummybutton.text.toString()!="Tables"){
+            if(binding.dummybutton.text.toString()!="Tables"){
                 return if (diffX.absoluteValue > swipethreshold && vx.absoluteValue > swipethreshold) {
                     //L to R
                     if (diffX > 0 && scrollmode!=0) {

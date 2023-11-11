@@ -9,29 +9,29 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
-import android.widget.Button
 import android.widget.HorizontalScrollView
 import android.widget.LinearLayout
-import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.example.swtrial2.R
+import com.example.swtrial2.databinding.ClassScholarBinding
 import kotlin.math.absoluteValue
 
 class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
-    private lateinit var dummybutton: Button
     private lateinit var tempbersk: View
     private lateinit var inflater: LayoutInflater
     private lateinit var ll: LinearLayoutCompat
     private lateinit var txt: TextView
-    private lateinit var backButton: AppCompatButton
-    private lateinit var toolbar: androidx.appcompat.widget.Toolbar
-    private lateinit var scrolly: ScrollView
     private lateinit var temptxt: TextView
+    private lateinit var table: View
+    private lateinit var hscroll: HorizontalScrollView
+    private lateinit var tablesidefs: View
+    private lateinit var hscrollsideefs: HorizontalScrollView
+    private lateinit var binding: ClassScholarBinding
+
     private lateinit var infolist: List<CharSequence>
     private lateinit var baselist: List<CharSequence>
     private lateinit var gamblerList: List<CharSequence>
@@ -39,32 +39,27 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
     private lateinit var politicianList: List<CharSequence>
     private lateinit var tacticianList: List<CharSequence>
     private lateinit var discoveriesList: List<CharSequence>
+    private val tablist = listOf("Info","Base","Tables","Discoveries","Gambler Pursuit","Physician Pursuit","Politician Pursuit","Tactician Pursuit")
+
     private lateinit var classparams: LinearLayout.LayoutParams
     private lateinit var gestdect: GestureDetector
-    private val tablist = listOf("Info","Base","Tables","Discoveries","Gambler Pursuit","Physician Pursuit","Politician Pursuit","Tactician Pursuit")
-    private lateinit var hscroll: HorizontalScrollView
-    private lateinit var table: View
-    private lateinit var hscrollsideefs: HorizontalScrollView
-    private lateinit var tablesidefs: View
     private var rect = Rect()
     private var rect2 = Rect()
-    val swipethreshold = 100
+    private val swipethreshold = 100
     private var scrollmode=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.class_scholar)
+        binding =  ClassScholarBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        toolbar=findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        dummybutton = findViewById(R.id.dummybutton)
-        dummybutton.setOnClickListener {
+        binding.dummybutton.setOnClickListener {
             this.openOptionsMenu()
         }
 
-        backButton=findViewById(R.id.BackButton)
-        backButton.setOnClickListener {
+        binding.BackButton.setOnClickListener {
             returntomain()
         }
 
@@ -78,14 +73,10 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
         tacticianList = resources.getTextArray(R.array.tactician_pursuit).toList()
         discoveriesList = resources.getTextArray(R.array.discoveries).toList()
 
-        ll = findViewById(R.id.scholarll)
-        scrolly= findViewById(R.id.scholarscollview)
+        ll = binding.ll
         inflater = layoutInflater
 
-        txt = TextView(this)
-        txt.setTextColor(getColor(R.color.gold))
-        txt.typeface=resources.getFont(R.font.starjedi)
-        txt.textSize=20F
+        txt = inflater.inflate(R.layout.universal_textview_starjedi_gold,ll,false).findViewById(R.id.textview)
 
         for(i in infolist.indices step 2 ){
             if(i==0){
@@ -110,20 +101,20 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_scholar,menu)
         val drawable = AppCompatResources.getDrawable(this,R.drawable.downarrowgold)
-        toolbar.overflowIcon=drawable
+        binding.toolbar.overflowIcon=drawable
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        dummybutton.text=item.title
+        binding.dummybutton.text=item.title
         changeclassview()
         return super.onOptionsItemSelected(item)
     }
 
     private fun changeclassview(){
         ll.removeAllViews()
-        scrolly.scrollTo(0,0)
-        when(dummybutton.text.toString()){
+        binding.scrolly.scrollTo(0,0)
+        when(binding.dummybutton.text.toString()){
             "Info"->{
                 for(i in infolist.indices step 2 ){
                     if(i==0){
@@ -196,8 +187,8 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                         if(i==gamblerList.lastIndex){
                             tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
                             temptxt=tempbersk.findViewById(R.id.contenttext)
-                            tempbersk.findViewById<TextView>(R.id.headertext).text=getText(R.string.gambler_discoveriesHeader)
-                            temptxt.text=getText(R.string.gambler_discoveriesText)
+                            tempbersk.findViewById<TextView>(R.id.headertext).text=discoveriesList[2]
+                            temptxt.text=discoveriesList[3]
                             temptxt.typeface = resources.getFont(R.font.starjedi)
                             classparams = tempbersk.layoutParams as LinearLayout.LayoutParams
                             classparams.topMargin=200
@@ -224,8 +215,8 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                         if(i==physicianList.lastIndex){
                             tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
                             temptxt=tempbersk.findViewById(R.id.contenttext)
-                            tempbersk.findViewById<TextView>(R.id.headertext).text=getText(R.string.physician_discoveriesHeader)
-                            temptxt.text=getText(R.string.physician_discoveriesText)
+                            tempbersk.findViewById<TextView>(R.id.headertext).text=discoveriesList[4]
+                            temptxt.text=discoveriesList[5]
                             temptxt.typeface = resources.getFont(R.font.starjedi)
                             classparams = tempbersk.layoutParams as LinearLayout.LayoutParams
                             classparams.topMargin=200
@@ -251,8 +242,8 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                         if(i==politicianList.lastIndex){
                             tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
                             temptxt=tempbersk.findViewById(R.id.contenttext)
-                            tempbersk.findViewById<TextView>(R.id.headertext).text=getText(R.string.politician_discoveriesHeader)
-                            temptxt.text=getText(R.string.politician_discoveriesText)
+                            tempbersk.findViewById<TextView>(R.id.headertext).text=discoveriesList[6]
+                            temptxt.text=discoveriesList[7]
                             temptxt.typeface = resources.getFont(R.font.starjedi)
                             classparams = tempbersk.layoutParams as LinearLayout.LayoutParams
                             classparams.topMargin=200
@@ -277,8 +268,8 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                         if(i==tacticianList.lastIndex){
                             tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
                             temptxt=tempbersk.findViewById(R.id.contenttext)
-                            tempbersk.findViewById<TextView>(R.id.headertext).text=getText(R.string.tactician_discoveriesHeader)
-                            temptxt.text=getText(R.string.tactician_discoveriesText)
+                            tempbersk.findViewById<TextView>(R.id.headertext).text=discoveriesList[8]
+                            temptxt.text=discoveriesList[9]
                             temptxt.typeface = resources.getFont(R.font.starjedi)
                             classparams = tempbersk.layoutParams as LinearLayout.LayoutParams
                             classparams.topMargin=200
@@ -297,14 +288,14 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
         }
     }
     private fun changeview(dir: String){
-        scrolly.scrollTo(0,0)
-        scrolly.fling(0)
+        binding.scrolly.scrollTo(0,0)
+        binding.scrolly.fling(0)
         ll.removeAllViews()
         when(dir){
             "RtoL"->{
-                dummybutton.text=tablist[tablist.indexOf(dummybutton.text.toString())+1]
+                binding.dummybutton.text=tablist[tablist.indexOf(binding.dummybutton.text.toString())+1]
                 changeclassview()
-                if(dummybutton.text==tablist.last()){
+                if(binding.dummybutton.text==tablist.last()){
                     scrollmode=1
                 }
                 else{
@@ -312,9 +303,9 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                 }
             }
             "LtoR"->{
-                dummybutton.text=tablist[tablist.indexOf(dummybutton.text.toString())-1]
+                binding.dummybutton.text=tablist[tablist.indexOf(binding.dummybutton.text.toString())-1]
                 changeclassview()
-                if(dummybutton.text==tablist.first()){
+                if(binding.dummybutton.text==tablist.first()){
                     scrollmode=0
                 }
                 else{
@@ -361,7 +352,7 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
     override fun onFling(e0: MotionEvent, e1: MotionEvent, vx: Float, vy: Float): Boolean {
         val diffX = e1.x - e0.x
         if(diffX.absoluteValue>(e1.y-e0.y).absoluteValue) {
-            if(dummybutton.text.toString()!="Tables"){
+            if(binding.dummybutton.text.toString()!="Tables"){
                 return if (diffX.absoluteValue > swipethreshold && vx.absoluteValue > swipethreshold) {
                     //L to R
                     if (diffX > 0 && scrollmode!=0) {

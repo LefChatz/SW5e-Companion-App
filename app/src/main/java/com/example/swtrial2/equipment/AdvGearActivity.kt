@@ -45,7 +45,7 @@ class AdvGearActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.class_berserker)
+        /*setContentView(R.layout.class_berserker)
 
         toolbar=findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -88,9 +88,9 @@ class AdvGearActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
                 }
                 ll.addView(tempbersk)
             }
-        }
+        }*/
     }
-    fun returntomain(view: View?){
+    private fun returntomain() {
         finish()
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

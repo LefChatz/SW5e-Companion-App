@@ -5,7 +5,6 @@
     android:layout_height="wrap_content"
     android:layout_marginVertical="20dp"
     android:paddingHorizontal="10dp"
-    android:clipToPadding="false"
     tools:viewBindingIgnore="true">
 
 

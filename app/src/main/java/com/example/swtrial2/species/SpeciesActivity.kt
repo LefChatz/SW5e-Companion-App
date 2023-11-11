@@ -83,7 +83,7 @@ class SpeciesActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    fun returntomain(view: View?) {
+    private fun returntomain() {
         if(mode==0){
             startActivity(Intent(this, SW5ECompanionApp::class.java))
             finish()
@@ -101,11 +101,11 @@ class SpeciesActivity : AppCompatActivity() {
         R.id.cerean ->           "cerean"
         R.id.chiss ->            "chiss"
         R.id.devaronian ->       "devaronian"
-        R.id.droidclass1 ->      "droid_class1"
-        R.id.droidclass2 ->      "droid_class2"
-        R.id.droidclass3 ->      "droid_class3"
-        R.id.droidclass4 ->      "droid_class4"
-        R.id.droidclass5 ->      "droid_class5"
+        R.id.droidclass1 ->      "droid_class_1"
+        R.id.droidclass2 ->      "droid_class_2"
+        R.id.droidclass3 ->      "droid_class_3"
+        R.id.droidclass4 ->      "droid_class_4"
+        R.id.droidclass5 ->      "droid_class_5"
         R.id.duros ->            "duros"
         R.id.ewok ->             "ewok"
         R.id.gamorrean ->        "gamorrean"
@@ -129,7 +129,7 @@ class SpeciesActivity : AppCompatActivity() {
     }))}
     @Deprecated("Deprecated in Java")
     override fun onBackPressed(){
-        returntomain(null)
+        returntomain()
     }
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)

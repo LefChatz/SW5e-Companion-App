@@ -29,7 +29,6 @@
             android:layout_width="70dp"
             android:layout_height="0dp"
             android:background="#35D4af37"
-            android:onClick="returntomain"
             android:text="@string/back"
             android:textColor="@color/gold"
             android:textSize="15sp"
@@ -56,7 +55,6 @@
             android:paddingEnd="30dp"
             android:paddingStart="0dp"
             android:background="?android:attr/selectableItemBackground"
-            android:onClick="returntomain"
             android:textAllCaps="false"
             android:text="@string/info"
             android:textColor="@color/gold"
@@ -66,15 +64,14 @@
             app:layout_constraintTop_toTopOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
     <ScrollView
-        android:id="@+id/berserkerscollview"
+        android:id="@+id/scrolly"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:paddingBottom="50dp"
-        android:paddingTop="50dp"
+        android:paddingVertical="50dp"
         android:clipToPadding="false"
         >
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/berserkerll"
+            android:id="@+id/ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"/>

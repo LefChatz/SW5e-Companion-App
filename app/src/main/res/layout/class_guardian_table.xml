@@ -4,7 +4,9 @@
     android:id="@+id/guardiantablehscroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingVertical="20dp">
+    android:paddingVertical="20dp"
+    android:paddingHorizontal="10dp"
+    android:clipToPadding="false">
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

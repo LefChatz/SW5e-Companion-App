@@ -8,7 +8,6 @@ import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.TypefaceSpan
 import android.view.Menu
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -21,10 +20,10 @@ import com.example.swtrial2.databinding.EquipmentDetailsBinding
 
 
 class EquipmentDetailsActivity : AppCompatActivity() {
-    lateinit var binding: EquipmentDetailsBinding
-    lateinit var name:String
-    lateinit var details:Array<CharSequence>
-    lateinit var toolbar: androidx.appcompat.widget.Toolbar
+    private lateinit var binding: EquipmentDetailsBinding
+    private lateinit var name:String
+    private lateinit var details:Array<CharSequence>
+
     @SuppressLint("DiscouragedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,43 +37,36 @@ class EquipmentDetailsActivity : AppCompatActivity() {
 
         binding.BackButton.setOnClickListener { returntomain() }
 
-        val starjedi = Typeface.create(ResourcesCompat.getFont(this,R.font.starjedi),Typeface.NORMAL)
+        val starjedi: Typeface = Typeface.create(ResourcesCompat.getFont(this,R.font.starjedi),Typeface.NORMAL)
 
         details=resources.getTextArray(resources.getIdentifier(name,"array",packageName))
 
         binding.title.text=details[0]
 
-        binding.Attributes
         binding.Attributes.text=details[1]
 
         binding.CostWeight.text=details[2]
 
         binding.DamageAC.text=details[3]
 
-        val eqprops = binding.Properties
-        eqprops.text=details[4]
+        binding.Properties.text=details[4]
 
-        val eqtext = binding.Text
-        eqtext.text=details[5]
+        binding.Text.text=details[5]
 
         binding.Expansion.text=details[6]
 
         val imidentif=resources.getIdentifier("equipment$name","drawable",packageName)
-        val imview = binding.Image
+        binding.Image
         if(imidentif!=0) {
-            imview.setImageResource(imidentif)
+            binding.Image.setImageResource(imidentif)
         }
         else{
-            eqtext.updateLayoutParams<ConstraintLayout.LayoutParams> {
-                topToBottom = eqprops.id
-                leftToLeft = eqprops.id
+            binding.Text.updateLayoutParams<ConstraintLayout.LayoutParams> {
+                topToBottom = binding.Properties.id
+                leftToLeft = binding.Properties.id
                 topMargin = 10
             }
-            with(imview.parent as ViewGroup){
-                removeView(imview)
-            }
-
-
+            binding.detailsConstl.removeView(binding.Image)
         }
 
         with(binding.Attributes.text){
@@ -85,11 +77,11 @@ class EquipmentDetailsActivity : AppCompatActivity() {
                     for(i in weapproplist.indices step 2){
                         weappropmap[weapproplist[i].toString()]=weapproplist[i+1]
                     }
-                    eqtext.text= buildSpannedString{
+                    binding.Text.text= buildSpannedString{
                         append(details[5])
                         appendLine(" ")
                         weappropmap.keys.forEach{
-                            if(eqprops.text.contains(it,true)){
+                            if(binding.Properties.text.contains(it,true)){
                                 appendLine(" ")
                                 val spanit= SpannableString(it)
                                 spanit.setSpan(TypefaceSpan(starjedi),0,it.length,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
@@ -107,11 +99,11 @@ class EquipmentDetailsActivity : AppCompatActivity() {
                     for(i in armourproplist.indices step 2){
                         armourpropmap[armourproplist[i].toString()]=armourproplist[i+1]
                     }
-                    eqtext.text= buildSpannedString{
+                    binding.Text.text= buildSpannedString{
                         append(details[5])
                         appendLine(" ")
                         armourpropmap.keys.forEach{
-                            if(eqprops.text.contains(it,true)){
+                            if(binding.Properties.text.contains(it,true)){
                                 appendLine(" ")
                                 val spanit= SpannableString(it)
                                 spanit.setSpan(TypefaceSpan(starjedi),0,it.length,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)

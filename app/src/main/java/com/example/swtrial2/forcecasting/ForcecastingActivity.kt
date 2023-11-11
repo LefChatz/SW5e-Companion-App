@@ -154,31 +154,31 @@ class ForcecastingActivity : AppCompatActivity() {
             getText(R.string.Dark)->{
                 if(item.isChecked){eraselist.addAll(darkforcepowers)}
                 else{
-                    if(favChecked){eraselist.removeAll{ (it in darkforcepowers) and (it.forcepowername in favForcepowerList) and if(trimEnteredText.isNotBlank()){it.forcepowername.contains(trimEnteredText,true)}else{true}}}
-                    else{if(trimEnteredText.isNotBlank()){eraselist.removeAll{ (it in darkforcepowers) and it.forcepowername.contains(trimEnteredText)}}else{eraselist.removeAll(darkforcepowers)}}
+                    if(favChecked){eraselist.removeAll{ (it in darkforcepowers) and (it.forcepowername in favForcepowerList)}}
+                    else{eraselist.removeAll(darkforcepowers)}
                 }
-                forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{it !in eraselist}.toMutableList())
+                forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{(it !in eraselist) and if(trimEnteredText.isNotBlank()){it.forcepowername.contains(trimEnteredText,true)}else{true}}.toMutableList())
                 item.isChecked= !item.isChecked
                 darkChecked= !darkChecked
             }
             getText(R.string.Light)->{
                 if(item.isChecked){eraselist.addAll(lightforcepowers)}
                 else{
-                    if(favChecked){eraselist.removeAll(forcepowerList.filter { (it in lightforcepowers) and (it.forcepowername in favForcepowerList) and if(trimEnteredText.isNotBlank()){it.forcepowername.contains(trimEnteredText,true)}else{true}})}
-                    else{if(trimEnteredText.isNotBlank()){eraselist.removeAll { (it in lightforcepowers) and it.forcepowername.contains(trimEnteredText) }}else{eraselist.removeAll(lightforcepowers)}}
+                    if(favChecked){eraselist.removeAll{ (it in lightforcepowers) and (it.forcepowername in favForcepowerList)}}
+                    else{eraselist.removeAll(lightforcepowers)}
                 }
-                forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{it !in eraselist}.toMutableList())
+                forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{(it !in eraselist) and if(trimEnteredText.isNotBlank()){it.forcepowername.contains(trimEnteredText,true)}else{true}}.toMutableList())
                 item.isChecked= !item.isChecked
                 lightChecked= !lightChecked
             }
             getText(R.string.favorites_forcepowers)->{
                 if (item.isChecked){
-                    eraselist.removeAll{(it.forcepowername !in favForcepowerList)and(if(!darkChecked) {!it.side.contains("Dark",true)}else{true})and(if(!lightChecked) { !it.side.contains("Light",true)}else{true})and(if (trimEnteredText.isNotEmpty()){it.forcepowername.contains(trimEnteredText,true)}else{true})}
+                    eraselist.removeAll{(it.forcepowername !in favForcepowerList) and (if(!darkChecked) {!it.side.contains("Dark",true)}else{true})and(if(!lightChecked) { !it.side.contains("Light",true)}else{true})}
                 }
                 else{
                     eraselist.addAll(forcepowerList.filter {it.forcepowername !in favForcepowerList})
                 }
-                forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{it !in eraselist}.toMutableList())
+                forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{(it !in eraselist) and if(trimEnteredText.isNotBlank()){it.forcepowername.contains(trimEnteredText,true)}else{true}}.toMutableList())
                 item.isChecked= !item.isChecked
                 favChecked= !favChecked
             }

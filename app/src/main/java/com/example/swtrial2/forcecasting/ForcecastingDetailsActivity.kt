@@ -5,7 +5,6 @@ import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -15,8 +14,6 @@ import com.example.swtrial2.databinding.ForcecastingForcepowerDetailsBinding
 class ForcecastingDetailsActivity : AppCompatActivity() {
     private lateinit var binding: ForcecastingForcepowerDetailsBinding
     private lateinit var forcepower: Forcepower
-    private lateinit var toolbar: androidx.appcompat.widget.Toolbar
-    private lateinit var ll: LinearLayout
     private lateinit var txt: TextView
     @SuppressLint("DiscouragedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,8 +31,6 @@ class ForcecastingDetailsActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        ll=binding.ll
-
         //title
         binding.ForcepowerTitle.text=forcepower.printedname
         binding.ForcepowerText.text=forcepower.detailsText
@@ -52,13 +47,13 @@ class ForcecastingDetailsActivity : AppCompatActivity() {
 
         //Special forcepower cases
         if (forcepower.forcepowername=="insanity"){
-            layoutInflater.inflate(R.layout.forcecasting_instanity_hscroll,ll)
-            txt=layoutInflater.inflate(R.layout.universal_textview_nofont_gold,ll).findViewById(R.id.textview)
+            layoutInflater.inflate(R.layout.forcecasting_instanity_hscroll,binding.ll)
+            txt=layoutInflater.inflate(R.layout.universal_textview_nofont_gold,binding.ll).findViewById(R.id.textview)
             txt.text=resources.getText(R.string.insanity2)
         }
         if (forcepower.forcepowername=="mass_animation"){
-            layoutInflater.inflate(R.layout.forcecasting_mass_animation_table,ll)
-            txt=layoutInflater.inflate(R.layout.universal_textview_nofont_gold,ll).findViewById(R.id.textview)
+            layoutInflater.inflate(R.layout.forcecasting_mass_animation_table,binding.ll)
+            txt=layoutInflater.inflate(R.layout.universal_textview_nofont_gold,binding.ll).findViewById(R.id.textview)
             txt.text=resources.getText(R.string.mass_animation2)
         }
 
@@ -67,7 +62,7 @@ class ForcecastingDetailsActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_forcecasting_details, menu)
-        toolbar.overflowIcon = AppCompatResources.getDrawable(this, R.drawable.dots3gold)
+        binding.toolbar.overflowIcon = AppCompatResources.getDrawable(this, R.drawable.dots3gold)
         return super.onCreateOptionsMenu(menu)
     }
 

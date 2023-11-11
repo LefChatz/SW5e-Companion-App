@@ -10,7 +10,7 @@
 
     <TextView
         android:id="@+id/table_forcepower_name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/starjedi"
         android:gravity="bottom"
@@ -18,7 +18,9 @@
         android:textAlignment="gravity"
         android:textColor="@color/gold"
         android:textSize="24sp"
+        android:layout_marginStart="2dp"
         app:layout_constraintBottom_toTopOf="@+id/table_forcepower_casting_time"
+        app:layout_constraintEnd_toStartOf="@+id/table_forcepower_fav"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="name\nname also" />
@@ -41,7 +43,7 @@
         android:textColor="@color/gold"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/table_forcepower_fav"
         app:layout_constraintTop_toBottomOf="@+id/table_forcepower_fav"
         tools:text="Casting Time" />
 
@@ -51,6 +53,7 @@
         android:layout_height="40dp"
         android:background="@drawable/favouritegold"
         android:layout_marginBottom="15dp"
+        android:layout_marginEnd="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

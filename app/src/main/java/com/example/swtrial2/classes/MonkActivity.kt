@@ -9,59 +9,50 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
-import android.widget.Button
 import android.widget.HorizontalScrollView
 import android.widget.LinearLayout.LayoutParams
-import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.example.swtrial2.R
+import com.example.swtrial2.databinding.ClassMonkBinding
 import kotlin.math.absoluteValue
 
 class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
-    private lateinit var dummybutton: Button
     private lateinit var tempbersk: View
     private lateinit var inflater: LayoutInflater
     private lateinit var ll: LinearLayoutCompat
     private lateinit var txt: TextView
-    private lateinit var backButton: AppCompatButton
-    private lateinit var toolbar: androidx.appcompat.widget.Toolbar
-    private lateinit var scrolly: ScrollView
     private lateinit var temptxt: TextView
+    private lateinit var table: View
+    private lateinit var hscroll: HorizontalScrollView
+    private lateinit var binding: ClassMonkBinding
+
     private lateinit var infolist: List<CharSequence>
     private lateinit var baselist: List<CharSequence>
     private lateinit var crimsonList: List<CharSequence>
     private lateinit var echaniList: List<CharSequence>
     private lateinit var matukaiList: List<CharSequence>
     private lateinit var nightsisterList: List<CharSequence>
-    private lateinit var gestdect: GestureDetector
     private val tablist = listOf("Info","Base","Table","Monastic Vows","Crimson Order","Echani Order","Matukai Order","Nightsister Order")
-    private lateinit var hscroll: HorizontalScrollView
-    lateinit var table: View
+
+    private lateinit var gestdect: GestureDetector
     private var rect = Rect()
-    val swipethreshold = 100
+    private val swipethreshold = 100
     private var scrollmode=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.class_monk)
+        binding = ClassMonkBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        toolbar=findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        dummybutton = findViewById(R.id.dummybutton)
-        dummybutton.setOnClickListener {
-            this.openOptionsMenu()
-        }
+        binding.dummybutton.setOnClickListener { this.openOptionsMenu() }
 
-        backButton=findViewById(R.id.BackButton)
-        backButton.setOnClickListener {
-            returntomain()
-        }
+        binding.BackButton.setOnClickListener { returntomain() }
 
         gestdect = GestureDetector(this,this)
 
@@ -72,14 +63,11 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
         matukaiList = resources.getTextArray(R.array.matukai_order).toList()
         nightsisterList = resources.getTextArray(R.array.nightsister_order).toList()
 
-        ll = findViewById(R.id.monkll)
-        scrolly= findViewById(R.id.monkscollview)
+        ll = binding.ll
+
         inflater = layoutInflater
 
-        txt = TextView(this)
-        txt.setTextColor(getColor(R.color.gold))
-        txt.typeface=resources.getFont(R.font.starjedi)
-        txt.textSize=20F
+        txt = inflater.inflate(R.layout.universal_textview_starjedi_gold,ll,false).findViewById(R.id.textview)
 
         for(i in infolist.indices step 2 ){
             if(i==0){
@@ -104,20 +92,20 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_monk,menu)
         val drawable = AppCompatResources.getDrawable(this,R.drawable.downarrowgold)
-        toolbar.overflowIcon=drawable
+        binding.toolbar.overflowIcon=drawable
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        dummybutton.text=item.title
+        binding.dummybutton.text=item.title
         changeclassview()
         return super.onOptionsItemSelected(item)
     }
 
     private fun changeclassview(){
         ll.removeAllViews()
-        scrolly.scrollTo(0,0)
-        when(dummybutton.text.toString()){
+        binding.scrolly.scrollTo(0,0)
+        when(binding.dummybutton.text.toString()){
             "Info"->{
                 for(i in infolist.indices step 2 ){
                     if(i==0){
@@ -248,14 +236,14 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
         }
     }
     private fun changeview(dir: String){
-        scrolly.scrollTo(0,0)
-        scrolly.fling(0)
+        binding.scrolly.scrollTo(0,0)
+        binding.scrolly.fling(0)
         ll.removeAllViews()
         when(dir){
             "RtoL"->{
-                dummybutton.text=tablist[tablist.indexOf(dummybutton.text.toString())+1]
+                binding.dummybutton.text=tablist[tablist.indexOf(binding.dummybutton.text.toString())+1]
                 changeclassview()
-                if(dummybutton.text==tablist.last()){
+                if(binding.dummybutton.text==tablist.last()){
                     scrollmode=1
                 }
                 else{
@@ -263,9 +251,9 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
                 }
             }
             "LtoR"->{
-                dummybutton.text=tablist[tablist.indexOf(dummybutton.text.toString())-1]
+                binding.dummybutton.text=tablist[tablist.indexOf(binding.dummybutton.text.toString())-1]
                 changeclassview()
-                if(dummybutton.text==tablist.first()){
+                if(binding.dummybutton.text==tablist.first()){
                     scrollmode=0
                 }
                 else{
@@ -312,7 +300,7 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
     override fun onFling(e0: MotionEvent, e1: MotionEvent, vx: Float, vy: Float): Boolean {
         val diffX = e1.x - e0.x
         if(diffX.absoluteValue>(e1.y-e0.y).absoluteValue) {
-            if(dummybutton.text.toString()!="Table"){
+            if(binding.dummybutton.text.toString()!="Table"){
                 return if (diffX.absoluteValue > swipethreshold && vx.absoluteValue > swipethreshold) {
                     //L to R
                     if (diffX > 0 && scrollmode!=0) {

@@ -63,15 +63,14 @@
 
 
     <ScrollView
-        android:id="@+id/scoutscollview"
+        android:id="@+id/scrolly"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        app:layout_dodgeInsetEdges="top"
         android:paddingVertical="50dp"
         android:clipToPadding="false"
         >
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/scoutll"
+            android:id="@+id/ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"/>

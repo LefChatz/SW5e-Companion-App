@@ -62,16 +62,14 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
-        android:id="@+id/guardianscollview"
+        android:id="@+id/scrolly"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        app:layout_dodgeInsetEdges="top"
-        android:paddingBottom="50dp"
-        android:paddingTop="50dp"
+        android:paddingVertical="50dp"
         android:clipToPadding="false"
         >
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/guardianll"
+            android:id="@+id/ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"/>

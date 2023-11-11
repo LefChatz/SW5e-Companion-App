@@ -6,63 +6,62 @@ import android.os.Bundle
 import android.view.GestureDetector
 import android.view.LayoutInflater
 import android.view.MotionEvent
-import android.view.View
-import android.widget.Button
-import android.widget.ScrollView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.LinearLayoutCompat
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.example.swtrial2.R
 import com.example.swtrial2.databinding.SpeciesDetailsBinding
 import kotlin.math.absoluteValue
 
 class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
     private var mode=0
-    private val swipethreshold = 10
+    private val swipethreshold = 100
     private lateinit var binding: SpeciesDetailsBinding
     private lateinit var gestdect: GestureDetector
-    private lateinit var dummybutton: Button
     private lateinit var inflater: LayoutInflater
-    private lateinit var coordl: CoordinatorLayout
-    private lateinit var ll: LinearLayoutCompat
-    private lateinit var scrolly: ScrollView
     private lateinit var specie: String
     private lateinit var tempstring: String
+    private var infoidentif = 0
+
+    @SuppressLint("DiscouragedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         gestdect = GestureDetector(this,this)
         specie = intent.getStringExtra("Specie").toString()
         inflater=layoutInflater
+
         binding = SpeciesDetailsBinding.inflate(inflater)
         setContentView(binding.root)
 
-        ll=binding.ll
-        scrolly=binding.scrolly
-        dummybutton=binding.dummybutton
-        tempstring="$specie traits"
-        binding.Title.text=specie
+        binding.Title.text=specie.replace("_"," ")
 
-        inflater.inflate(resources.getIdentifier("species_"+specie+"_info","layout",packageName), ll, true)
+        infoidentif=resources.getIdentifier("species_"+specie+"_info","layout",packageName)
+
+        if (infoidentif!=0){
+            inflater.inflate(infoidentif, binding.ll, true)
+        }
+        else{
+            inflater.inflate(R.layout.universal_textview_nofont_gold,binding.ll,true).findViewById<TextView>(R.id.textview).text=getString(R.string.error_please_report_this)
+        }
+        tempstring=specie.replace("_"," ") + " traits"
     }
     @SuppressLint("DiscouragedApi")
     private fun changeview(){
-        scrolly.scrollTo(0,0)
-        scrolly.fling(0)
-        ll.removeAllViews()
+        binding.scrolly.scrollTo(0,0)
+        binding.scrolly.fling(0)
+        binding.ll.removeAllViews()
 
         if (mode==0) {
-            val tempview = inflater.inflate(R.layout.class_textview,ll,false)
+            val tempview = inflater.inflate(R.layout.class_textview,binding.ll,false)
             tempview.findViewById<TextView>(R.id.headertext).text=tempstring
 
             tempview.findViewById<TextView>(R.id.contenttext).text=resources.getText(resources.getIdentifier(specie+"_traitsText","string",packageName))
-            ll.addView(tempview)
-            dummybutton.text = getText(R.string.traits)
+            binding.ll.addView(tempview)
+            binding.dummybutton.text = getText(R.string.traits)
             mode=1
         } else {
 
-            inflater.inflate(resources.getIdentifier("species_"+specie+"_info","layout",packageName), ll, true)
-            dummybutton.text = getString(R.string.info)
+            inflater.inflate(resources.getIdentifier("species_"+specie+"_info","layout",packageName), binding.ll, true)
+            binding.dummybutton.text = getString(R.string.info)
             mode=0
         }
     }
@@ -116,12 +115,12 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
         return true
     }
 
-    fun returntomain(view: View?) {
+    private fun returntomain() {
         finish()
     }
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
-        returntomain(null)
+        returntomain()
         super.onBackPressed()
     }
     override fun onConfigurationChanged(newConfig: Configuration) {

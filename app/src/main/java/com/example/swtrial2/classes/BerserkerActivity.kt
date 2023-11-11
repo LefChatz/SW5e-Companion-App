@@ -9,58 +9,50 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
-import android.widget.Button
 import android.widget.HorizontalScrollView
-import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.example.swtrial2.R
+import com.example.swtrial2.databinding.ClassBerserkerBinding
 import kotlin.math.absoluteValue
 
 class BerserkerActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
-    private lateinit var dummybutton: Button
     private lateinit var tempbersk: View
     private lateinit var inflater: LayoutInflater
     private lateinit var ll: LinearLayoutCompat
-    private lateinit var backButton: AppCompatButton
     private lateinit var txt: TextView
-    private lateinit var toolbar: androidx.appcompat.widget.Toolbar
-    private lateinit var scrolly: ScrollView
     private lateinit var temptxt: TextView
+    private lateinit var table: View
+    private lateinit var hscroll: HorizontalScrollView
+    private lateinit var binding: ClassBerserkerBinding
+
     private lateinit var infolist: List<CharSequence>
     private lateinit var baselist: List<CharSequence>
     private lateinit var ballisticList: List<CharSequence>
     private lateinit var cycloneList: List<CharSequence>
     private lateinit var juggernautList: List<CharSequence>
     private lateinit var marauderList: List<CharSequence>
-    private lateinit var gestdect: GestureDetector
-    lateinit var table: View
     private val tablist = listOf("Info","Base","Tables","Instincts","Ballistic Approach","Cyclone Approach","Juggernaut Approach","Marauder Approach")
-    lateinit var hscroll: HorizontalScrollView
+
+    private lateinit var gestdect: GestureDetector
     private var rect = Rect()
-    val swipethreshold = 100
+    private val swipethreshold = 100
     private var scrollmode=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.class_berserker)
+        binding = ClassBerserkerBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        toolbar=findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        dummybutton = findViewById(R.id.dummybutton)
-        dummybutton.setOnClickListener {
-            this.openOptionsMenu()
-        }
 
-        backButton=findViewById(R.id.BackButton)
-        backButton.setOnClickListener {
-            returntomain()
-        }
+        binding.dummybutton.setOnClickListener { this.openOptionsMenu() }
+
+        binding.BackButton.setOnClickListener { returntomain() }
 
         gestdect = GestureDetector(this,this)
 
@@ -71,14 +63,10 @@ class BerserkerActivity : AppCompatActivity() , GestureDetector.OnGestureListene
         juggernautList = resources.getTextArray(R.array.juggernaut_approach).toList()
         marauderList = resources.getTextArray(R.array.marauder_approach).toList()
 
-        ll = findViewById(R.id.berserkerll)
-        scrolly= findViewById(R.id.berserkerscollview)
+        ll = binding.ll
         inflater = layoutInflater
 
-        txt = TextView(this)
-        txt.setTextColor(getColor(R.color.gold))
-        txt.typeface=resources.getFont(R.font.starjedi)
-        txt.textSize=20F
+        txt = inflater.inflate(R.layout.universal_textview_starjedi_gold,ll,false).findViewById(R.id.textview)
 
         for(i in infolist.indices step 2 ){
             if(i==0){
@@ -103,21 +91,21 @@ class BerserkerActivity : AppCompatActivity() , GestureDetector.OnGestureListene
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_berserk,menu)
         val drawable = AppCompatResources.getDrawable(this,R.drawable.downarrowgold)
-        toolbar.overflowIcon=drawable
+        binding.toolbar.overflowIcon=drawable
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        dummybutton.text=item.title
+        binding.dummybutton.text=item.title
         changeclassview()
         return super.onOptionsItemSelected(item)
     }
 
     private fun changeclassview(){
         ll.removeAllViews()
-        scrolly.scrollTo(0,0)
-        scrolly.fling(0)
-        when(dummybutton.text.toString()){
+        binding.scrolly.scrollTo(0,0)
+        binding.scrolly.fling(0)
+        when(binding.dummybutton.text.toString()){
             "Info"->{
                 for(i in infolist.indices step 2 ){
                     if(i==0){
@@ -239,14 +227,14 @@ class BerserkerActivity : AppCompatActivity() , GestureDetector.OnGestureListene
         }
     }
     private fun changeview(dir: String){
-        scrolly.scrollTo(0,0)
-        scrolly.fling(0)
+        binding.scrolly.scrollTo(0,0)
+        binding.scrolly.fling(0)
         ll.removeAllViews()
         when(dir){
             "RtoL"->{
-                dummybutton.text=tablist[tablist.indexOf(dummybutton.text.toString())+1]
+                binding.dummybutton.text=tablist[tablist.indexOf(binding.dummybutton.text.toString())+1]
                 changeclassview()
-                if(dummybutton.text==tablist.last()){
+                if(binding.dummybutton.text==tablist.last()){
                     scrollmode=1
                 }
                 else{
@@ -254,9 +242,9 @@ class BerserkerActivity : AppCompatActivity() , GestureDetector.OnGestureListene
                 }
             }
             "LtoR"->{
-                dummybutton.text=tablist[tablist.indexOf(dummybutton.text.toString())-1]
+                binding.dummybutton.text=tablist[tablist.indexOf(binding.dummybutton.text.toString())-1]
                 changeclassview()
-                if(dummybutton.text==tablist.first()){
+                if(binding.dummybutton.text==tablist.first()){
                     scrollmode=0
                 }
                 else{
@@ -303,7 +291,7 @@ class BerserkerActivity : AppCompatActivity() , GestureDetector.OnGestureListene
     override fun onFling(e0: MotionEvent, e1: MotionEvent, vx: Float, vy: Float): Boolean {
         val diffX = e1.x - e0.x
         if(diffX.absoluteValue>(e1.y-e0.y).absoluteValue) {
-            if(dummybutton.text.toString()!="Tables"){
+            if(binding.dummybutton.text.toString()!="Tables"){
                 return if (diffX.absoluteValue > swipethreshold && vx.absoluteValue > swipethreshold) {
                     //L to R
                     if (diffX > 0 && scrollmode!=0) {

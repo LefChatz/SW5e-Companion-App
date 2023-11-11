@@ -38,7 +38,6 @@
             android:layout_width="70dp"
             android:layout_height="0dp"
             android:background="#35D4af37"
-            android:onClick="returntomain"
             android:text="@string/back"
             android:textColor="@color/gold"
             android:textSize="15sp"
@@ -165,7 +164,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/chiss"
                 app:layout_constraintStart_toStartOf="@+id/chiss"
                 app:layout_constraintTop_toBottomOf="@+id/chiss"
-                app:text="DXoiD cLASS 1" />
+                app:text="DXoiD\ncLASS 1" />
 
             <com.example.swtrial2.widget.ClassButton
                 android:id="@+id/droidclass2"
@@ -177,20 +176,20 @@
                 app:layout_constraintEnd_toEndOf="@id/devaronian"
                 app:layout_constraintStart_toStartOf="@+id/devaronian"
                 app:layout_constraintTop_toTopOf="@+id/droidclass1"
-                app:text="DXoiD cLASS 2" />
+                app:text="DXoiD\ncLASS 2" />
 
             <com.example.swtrial2.widget.ClassButton
                 android:id="@+id/droidclass3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
                 android:onClick="openspecies"
                 android:tooltipText="Droid Class 3"
                 app:background="@drawable/droidclass3button"
                 app:layout_constraintEnd_toEndOf="@+id/droidclass1"
                 app:layout_constraintStart_toStartOf="@+id/droidclass1"
                 app:layout_constraintTop_toBottomOf="@+id/droidclass1"
-                app:text="DXoiD cLASS 3" />
+                app:text="DXoiD\ncLASS 3" />
 
             <com.example.swtrial2.widget.ClassButton
                 android:id="@+id/droidclass4"
@@ -202,20 +201,20 @@
                 app:layout_constraintEnd_toEndOf="@+id/droidclass2"
                 app:layout_constraintStart_toStartOf="@+id/droidclass2"
                 app:layout_constraintTop_toTopOf="@+id/droidclass3"
-                app:text="DXoiD cLASS 4" />
+                app:text="DXoiD\ncLASS 4" />
 
             <com.example.swtrial2.widget.ClassButton
                 android:id="@+id/droidclass5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
                 android:onClick="openspecies"
                 android:tooltipText="Droid Class 5"
                 app:background="@drawable/droidclass5button"
                 app:layout_constraintEnd_toEndOf="@+id/bith"
                 app:layout_constraintStart_toStartOf="@+id/bith"
                 app:layout_constraintTop_toBottomOf="@+id/droidclass3"
-                app:text="DXoiD cLASS 5" />
+                app:text="DXoiD\ncLASS 5" />
 
             <com.example.swtrial2.widget.ClassButton
                 android:id="@+id/duros"
@@ -233,7 +232,7 @@
                 android:id="@+id/ewok"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
                 android:onClick="openspecies"
                 android:tooltipText="Ewok"
                 app:background="@drawable/ewokbutton"

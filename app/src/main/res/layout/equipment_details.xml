@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="329dp" />
+            app:layout_constraintGuide_end="70dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -64,14 +64,16 @@
 
 
     <ScrollView
-        android:id="@+id/EquipmentScrolly"
+        android:id="@+id/scrolly"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingVertical="50dp"
+        android:paddingHorizontal="5dp"
         android:clipToPadding="false"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/details_constl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 

@@ -56,21 +56,23 @@
 				android:id="@+id/ForcepowerTitle"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				app:layout_dodgeInsetEdges="top"
-				android:fontFamily="@font/starjedi"
-				android:textSize="25sp"
-				android:text="@string/forcepower_name"
+				android:layout_gravity="center|top"
+				android:paddingHorizontal="10dp"
+				android:paddingTop="10dp"
+				android:paddingBottom="20dp"
 				android:textAlignment="center"
-				android:textColor="@color/gold"
-				android:layout_gravity="center|top"/>
+				android:text="@string/forcepower_name"
+				android:textAppearance="@style/GoldTextStarjedi"
+				android:textSize="24sp"
+				app:layout_dodgeInsetEdges="top"
+				/>
 			<TextView
 				android:layout_marginHorizontal="5dp"
 				android:id="@+id/ForcepowerText"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/text"
-				android:textColor="@color/gold"
-				android:textSize="18sp"
+				android:textAppearance="@style/GoldText"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toTopOf="parent" />
 		</LinearLayout>

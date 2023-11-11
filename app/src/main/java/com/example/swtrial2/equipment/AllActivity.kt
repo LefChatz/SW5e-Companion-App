@@ -21,12 +21,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class AllActivity : AppCompatActivity() {
     private lateinit var binding: EquipmentAllListBinding
-    private lateinit var toolbar: androidx.appcompat.widget.Toolbar
-    private lateinit var searchView: SearchView
     private lateinit var equipmentAdapter: EquipmentAdapter
     private lateinit var favSharedPreferences: SharedPreferences
     private lateinit var equipmentMenu:Menu
-    private var menuClose = false
+
     private var bigEquipmentList = listOf<String>()
     private var equipmentList = listOf<String>()
     private var equipmentWeapons = listOf<String>()
@@ -41,6 +39,8 @@ class AllActivity : AppCompatActivity() {
     private val equipmentAttributedList= mutableMapOf<String,MutableList<String>>()
     private val filterMode = mutableListOf<String>()
     private val filterList = mutableListOf<String>()
+
+    private var menuClose = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,10 +71,9 @@ class AllActivity : AppCompatActivity() {
         binding.reclview.adapter = equipmentAdapter
         searchedList=currentEquipmentList
 
-        searchView = findViewById(R.id.searchview)
-        searchView.isIconifiedByDefault=false
-        searchView.queryHint="Search..."
-        searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+        binding.searchview.isIconifiedByDefault=false
+        binding.searchview.queryHint="Search..."
+        binding.searchview.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
             override fun onQueryTextChange(enttext: String?): Boolean {
                 if(enttext.isNullOrBlank()){
                     searchedList=currentEquipmentList.filter{it !in eraseList}
@@ -121,7 +120,7 @@ class AllActivity : AppCompatActivity() {
         if (menu != null) {
             equipmentMenu = menu
         }
-        toolbar.overflowIcon = AppCompatResources.getDrawable(this,R.drawable.downarrowgold)
+        binding.toolbar.overflowIcon = AppCompatResources.getDrawable(this,R.drawable.downarrowgold)
         return super.onCreateOptionsMenu(menu)
     }
 

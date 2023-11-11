@@ -44,7 +44,7 @@ class ArmourActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
     private var scrollmode=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        super.onCreate(savedInstanceState)/*
         setContentView(R.layout.class_berserker)
 
         toolbar=findViewById(R.id.toolbar)
@@ -88,9 +88,9 @@ class ArmourActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
                 }
                 ll.addView(tempbersk)
             }
-        }
+        }*/
     }
-    fun returntomain(view: View?){
+    private fun returntomain() {
         finish()
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

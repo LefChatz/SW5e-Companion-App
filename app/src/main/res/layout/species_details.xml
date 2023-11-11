@@ -24,7 +24,6 @@
             android:layout_width="70sp"
             android:layout_height="0sp"
             android:background="#35D4af37"
-            android:onClick="returntomain"
             android:text="@string/back"
             android:textColor="@color/gold"
             android:textSize="15sp"
