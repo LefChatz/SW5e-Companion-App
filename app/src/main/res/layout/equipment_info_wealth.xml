@@ -1,342 +1,310 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/llWealth"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/neutralbg2"
-    >
+    android:orientation="vertical">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="5dp"
-        android:textAppearance="@style/GoldText"
-        android:text="@string/equipment_info_wealth1"/>
+        android:text="@string/equipment_info_wealth1"
+        android:textAppearance="@style/GoldText" />
 
-    <TableLayout
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#55FFD700"
-        android:layout_margin="10dp"
-        android:layout_gravity="center|top"
-        android:padding="10dp"
-        >
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/shield_specialist_techcasting"
-                android:fontFamily="@font/starjedi"
-                android:textColor="@color/gold"
-                android:layout_span="4"
-                android:textSize="20sp"
-                android:paddingVertical="5dp"
-                android:textStyle="bold"
-                />
-        </TableRow>
+        android:layout_marginTop="10dp">
 
-        <TableRow>
-        <TextView
-                android:textSize="18sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="10dp"
-                android:text="Class"
-                android:textStyle="bold"
-                android:textColor="@color/gold" />
+        <TableLayout
+            android:id="@+id/wealthtable1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/wealthtable2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:textSize="18sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="10dp"
-                android:text="Funds"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                android:textColor="@color/gold" />
+            <TableRow>
 
-            <TextView
-                android:textSize="18sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Class"
-                android:textStyle="bold"
-                android:paddingHorizontal="10dp"
-                android:textAlignment="center"
-                android:textColor="@color/gold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Class"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:textSize="18sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Funds"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:paddingHorizontal="10dp"
-                android:textColor="@color/gold" />
-        </TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="Funds"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-        <TableRow
-            android:background="#50FFD700"
-            >
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Berserker"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3"
-                android:textColor="@color/gold"
-                android:textAlignment="center"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-        </TableRow>
-        <TableRow
+            </TableRow>
+
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Berserker"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingHorizontal="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5d4x100cr"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingHorizontal="10dp"/>
+            </TableRow>
+
+            <TableRow
+                android:background="#80FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Consular"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5d4x100cr"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Engineer"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6d4x100cr"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:background="#80FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fighter"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8d4x100cr"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Guardian"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingHorizontal="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8d4x100cr"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp" />
+
+            </TableRow>
+        </TableLayout>
+        <TableLayout
+            android:id="@+id/wealthtable2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            >
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4"
-                android:textColor="@color/gold"
-                android:textAlignment="center"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-        </TableRow>
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#50FFD700"
-            >
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="5"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="5"
-                android:textColor="@color/gold"
-                android:textAlignment="center"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-        </TableRow>
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="6"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="6"
-                android:textColor="@color/gold"
-                android:textAlignment="center"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-        </TableRow>
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#50FFD700"
-            >
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="7"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="7"
-                android:textColor="@color/gold"
-                android:textAlignment="center"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-        </TableRow>
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="8"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="8"
-                android:textColor="@color/gold"
-                android:textAlignment="center"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-        </TableRow>
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#50FFD700"
-            >
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="9"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="9"
-                android:textColor="@color/gold"
-                android:textAlignment="center"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="5"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-            <TextView
-                android:textSize="17sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2"
-                android:textAlignment="center"
-                android:textColor="@color/gold"
-                />
-        </TableRow>
-    </TableLayout>
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/wealthtable1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Class"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="Funds"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Berserker"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingHorizontal="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5d4x100cr"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingHorizontal="10dp"/>
+            </TableRow>
+
+            <TableRow
+                android:background="#80FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Consular"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5d4x100cr"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Engineer"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6d4x100cr"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:background="#80FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fighter"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8d4x100cr"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Guardian"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingHorizontal="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8d4x100cr"
+                    android:textAlignment="center"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp" />
+
+            </TableRow>
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.example.swtrial2.widget.ClassTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:title="Wealth"
+        app:text="Ebola"
+        />
 </LinearLayout>

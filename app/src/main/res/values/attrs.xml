@@ -9,4 +9,8 @@
         <attr name="text"/>
         <attr name="background"/>
     </declare-styleable>
+    <declare-styleable name="ClassTextView">
+        <attr name="title" format="string"/>
+        <attr name="text"/>
+    </declare-styleable>
 </resources>
