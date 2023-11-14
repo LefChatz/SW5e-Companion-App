@@ -162,7 +162,7 @@
     <string-array name="sorted1equipmentlist" />
     <string-array name="sorted1equipmentlistrev" />
     <string-array name="filter1equipments" />
-    <string-array name="fitler2equipments" />
+    <string-array name="filter2equipments" />
     <string-array name="equipment_weapons">
         <item>wristblaster</item>
         <item>wrist_launcher</item>

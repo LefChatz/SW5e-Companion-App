@@ -1,7 +1,7 @@
 <resources>
-    
+
     <!--Forcecasting-->
-    
+
     <!--Sorts , Dark/Light-->
     <string name="sortABCdown"><font color="#D4af37">ABC <font size="21"><b>↓</b></font></font></string>
     <string name="sortABCup"><font color="#D4af37">ABC <font size="21"><b>↑</b></font></font></string>
@@ -16,7 +16,7 @@
     <string name="insanitytable1"><font size="18"><font face="sans-serif">The creature uses all its movement to move in a\nrandom direction. To determine the direction, roll a d8\nand assign a direction to each die face. The creature\ndoesn\'t take an action this turn.</font></font></string>
     <string name="insanitytable2"><font size="18"><font face="sans-serif">The creature doesn\'t move or take actions this turn.</font></font></string>
     <string name="insanitytable3"><font size="18"><font face="sans-serif">The creature uses its action to make a melee attack\nagainst a randomly determined creature within its\nreach. If there is no creature within its reach, the\ncreature does nothing this turn.</font></font></string>
-    
+
     <string name="mass_animation2"><font size="18"><font face="sans-serif"><b>"    "Force Potency:</b>If you cast this power using a force slot of 6th level or higher, you can animate two additional objects for each slot level above 5th.</font></font></string>
     <string name="mass_animationHeader1"><font size="18"><font face="sans-serif"><b>Size</b></font></font></string>
     <string name="mass_animationHeader2"><font size="18"><font face="sans-serif"><b>HP</b></font></font></string>
@@ -61,7 +61,7 @@
     <string name="favorites_forcepowers"><font color="#D4af37">Favorites</font></string>
 
     <!--Classes -->
-    
+
     <!--Berserker -->
     <string name="berserker">BEXSEXKEX</string>
     <string name="berserkerinstincts">Berserker\nInstincts</string>
@@ -93,7 +93,7 @@
     <string name="juggernaut_approach"><font color="#D4af37">Juggernaut Approach</font></string>
     <string name="marauder_approach"><font color="#D4af37">Marauder Approach</font></string>
     <string name="marauder_forcecasting">Marauder Forcecasting</string>
-    
+
     <!--Consular -->
     <string name="consular">conSuLAX</string>
     <string name="the_consular">The coNSuLAX</string>
@@ -842,6 +842,7 @@
     <string name="properties">Properties</string>
     <string name="expansion">Expansion</string>
     <string name="error_please_report_this">Error, Please report this to: #TODO</string>
+    <string name="equipment_info_wealth1"><font size="28">T</font>he marketplace of a large city teems with buyers and sellers of many sorts: Jawas peddling refurbished wares (or trying to steal from careless travelers), Ugnauts selling various technology scrap, Twi\&#39;lek armstechs and Mirialan synthweavers. In the largest cities, almost anything imaginable is offered for sale, from exotic spices and luxurious clothing to speeders and spaceships.\n"    "For an adventurer, the availability of armor, weapons, backpacks, rope, and similar goods is of paramount importance, since proper equipment can mean the difference between life and death in a stronghold or the untamed wilds. This chapter details the mundane and exotic merchandise that adventurers commonly find useful in the face of the threats that the worlds of D&amp;D present.</string>
 
 
 </resources>

@@ -14,18 +14,14 @@
 		android:theme="@style/Theme.Swtrial2.AppBarOverlay"
 		android:layout_width="match_parent"
 		android:layout_height="50dp">
+
 		<androidx.appcompat.widget.Toolbar
 			android:id="@+id/toolbar"
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent"
-			app:layout_constraintBottom_toBottomOf="parent"
-			/>
+			android:layout_height="match_parent" />
 		<androidx.appcompat.widget.AppCompatButton
 			android:id="@+id/BackButton"
-			android:layout_width="70sp"
+			android:layout_width="70dp"
 			android:layout_height="0dp"
 			android:background="#35D4af37"
 			android:text="@string/back"
@@ -35,6 +31,24 @@
 			app:layout_constraintTop_toTopOf="parent"
 			app:layout_constraintBottom_toBottomOf="parent"
 			/>
+
+		<TextView
+			android:id="@+id/title"
+			android:gravity="center"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:layout_marginEnd="70dp"
+			android:textAlignment="gravity"
+			android:text="improved battle meditation"
+			android:textAppearance="@style/GoldTextStarjedi"
+			android:autoSizeMaxTextSize="24sp"
+			android:autoSizeMinTextSize="16sp"
+			android:autoSizeTextType="uniform"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/BackButton"
+			app:layout_constraintTop_toTopOf="parent"/>
+
 	</androidx.constraintlayout.widget.ConstraintLayout>
 
 

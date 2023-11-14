@@ -13,22 +13,25 @@
         android:theme="@style/BlackStatusBar"
         tools:targetApi="31">
         <activity
+            android:name=".equipment.EquipmentInfo"
+            android:exported="false" />
+        <activity
             android:name=".SW5ECompanionApp"
             android:exported="true"
             android:theme="@style/BlackStatusBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".species.SpeciesDetailsActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".forcecasting.ForcecastingDetailsActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".equipment.equipmentadapterstuff.EquipmentDetailsActivity"
             android:exported="false" />
@@ -103,6 +106,7 @@
             android:exported="true"
             android:theme="@style/BlackStatusBar"
             android:windowSoftInputMode="adjustResize" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

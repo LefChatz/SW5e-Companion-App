@@ -5,6 +5,8 @@ import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
+import android.view.MotionEvent
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -27,6 +29,8 @@ class ForcecastingDetailsActivity : AppCompatActivity() {
         binding= ForcecastingForcepowerDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.title.text=forcepower.printedname
+        binding.title.alpha=0.0F
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
@@ -34,6 +38,16 @@ class ForcecastingDetailsActivity : AppCompatActivity() {
         //title
         binding.ForcepowerTitle.text=forcepower.printedname
         binding.ForcepowerText.text=forcepower.detailsText
+
+        binding.scrolly.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+            if (scrollY >= 120) {
+                binding.title.animate()
+                    .alpha(1F)
+                    .duration=50
+            }
+            else binding.title.animate().alpha(0.0F)
+        }
+
 
         //Background
         binding.coord.background=AppCompatResources.getDrawable(this@ForcecastingDetailsActivity,
