@@ -55,7 +55,7 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
         binding.ll.removeAllViews()
 
         if (mode==0) {
-            val tempview = inflater.inflate(R.layout.class_textview,binding.ll,false)
+            val tempview = inflater.inflate(R.layout.universal_title_goldbar_text_textview,binding.ll,false)
             tempview.findViewById<TextView>(R.id.headertext).text=tempstring
 
             tempview.findViewById<TextView>(R.id.contenttext).text=resources.getText(resources.getIdentifier(specie+"_traitsText","string",packageName))

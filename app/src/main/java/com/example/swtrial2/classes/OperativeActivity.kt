@@ -75,7 +75,7 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
                 ll.addView(txt)
             }
             else{
-                tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 temptxt=tempbersk.findViewById(R.id.contenttext)
                 tempbersk.findViewById<TextView>(R.id.headertext).text=infolist[i-1]
                 temptxt.text=infolist[i]
@@ -113,7 +113,7 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=infolist[i-1]
                         temptxt.text=infolist[i]
@@ -131,7 +131,7 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=baselist[i-1]
                         temptxt.text=baselist[i]
@@ -144,7 +144,7 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
                 hscroll=table.findViewById(R.id.operativetablehscroll)
             }
             "Operative Exploits"->{
-                tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 temptxt=tempbersk.findViewById(R.id.contenttext)
                 tempbersk.findViewById<TextView>(R.id.headertext).text=getText(R.string.operative_exploitsHeader)
                 temptxt.text=getText(R.string.operative_exploitstext)
@@ -158,7 +158,7 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=acquisitionsList[i-1]
                         temptxt.text=acquisitionsList[i]
@@ -177,7 +177,7 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=beguilerList[i-1]
                         temptxt.text=beguilerList[i]
@@ -195,7 +195,7 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=lethalityList[i-1]
                         temptxt.text=lethalityList[i]
@@ -213,7 +213,7 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=sharpshooterList[i-1]
                         temptxt.text=sharpshooterList[i]

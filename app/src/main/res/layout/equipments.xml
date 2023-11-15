@@ -87,7 +87,7 @@
             android:id="@+id/armourandshields"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:text="@string/armour"
+            app:text="@string/armor"
             app:background="@drawable/equipmentarmortasa"
             app:layout_constraintBottom_toTopOf="@+id/advgear"
             app:layout_constraintEnd_toEndOf="parent"

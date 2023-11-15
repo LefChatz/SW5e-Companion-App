@@ -3,9 +3,9 @@
     <!--Lists-->
     <string-array name="bigequipmentnames"></string-array>
     <string-array name="equipmentlist">
-        <item>assault_armour</item>
+        <item>assault_armor</item>
         <item>assault_cannon</item>
-        <item>battle_armour</item>
+        <item>battle_armor</item>
         <item>beam_rifle</item>
         <item>blaster_carbine</item>
         <item>blaster_pistol</item>
@@ -14,13 +14,13 @@
         <item>carbine_rifle</item>
         <item>chakram</item>
         <item>combat_suit</item>
-        <item>composite_armour</item>
+        <item>composite_armor</item>
         <item>cycler_rifle</item>
         <item>doubleblade</item>
         <item>doublesaber</item>
         <item>doubleshoto</item>
         <item>doublesword</item>
-        <item>fiber_armour</item>
+        <item>fiber_armor</item>
         <item>great_saber</item>
         <item>heavy_blaster_rifle</item>
         <item>heavy_bowcaster</item>
@@ -54,7 +54,7 @@
         <item>martial_lightsaber</item>
         <item>medium_physical_shield</item>
         <item>medium_shield_generator</item>
-        <item>mesh_armour</item>
+        <item>mesh_armor</item>
         <item>net</item>
         <item>pikesaber</item>
         <item>repeating_blaster</item>
@@ -84,7 +84,7 @@
         <item>vibrostaff</item>
         <item>vibrosword</item>
         <item>vibrowhip</item>
-        <item>weave_armour</item>
+        <item>weave_armor</item>
         <item>wristblaster</item>
         <item>wrist_launcher</item>
         <item>bandolier</item>
@@ -235,14 +235,14 @@
         <item>chakram</item>
         <item>assault_cannon</item>
     </string-array>
-    <string-array name="equipment_armours">
+    <string-array name="equipment_armors">
         <item>combat_suit</item>
-        <item>fiber_armour</item>
-        <item>mesh_armour</item>
-        <item>weave_armour</item>
-        <item>composite_armour</item>
-        <item>battle_armour</item>
-        <item>assault_armour</item>
+        <item>fiber_armor</item>
+        <item>mesh_armor</item>
+        <item>weave_armor</item>
+        <item>composite_armor</item>
+        <item>battle_armor</item>
+        <item>assault_armor</item>
         <item>heavy_exoskeleton</item>
         <item>light_physical_shield</item>
         <item>medium_physical_shield</item>
@@ -376,13 +376,13 @@
         <item>versatile</item>
         <item>A weapon with this property can be used with one or two hands. A damage value in parentheses appears with the property—the damage when the weapon is used with two hands to make a melee attack.</item>
     </string-array>
-    <string-array name="armour_properties">
+    <string-array name="armor_properties">
         <item>bulky</item>
-        <item>While wearing armour with this property, you have disadvantage on Dexterity (Stealth) checks that rely on sound.</item>
+        <item>While wearing armor with this property, you have disadvantage on Dexterity (Stealth) checks that rely on sound.</item>
         <item>obtrusive</item>
         <item>While wielding a shield with this property, you have disadvantage on Dexterity (Stealth) checks that rely on sight.</item>
         <item>strength</item>
-        <item>While wearing armour or wielding a shield with this property, your speed is reduced by 10 unless your Strength score meets or exceeds the strength number.</item>
+        <item>While wearing armor or wielding a shield with this property, your speed is reduced by 10 unless your Strength score meets or exceeds the strength number.</item>
     </string-array>
     <!--Equipment-->
     <!--Weapons-->
@@ -1017,77 +1017,77 @@
         <item name="Text"> </item>
         <item name="Expansion">PHB</item>
     </string-array>
-    <!--Armours and Shields-->
+    <!--Armors and Shields-->
     <string-array name="combat_suit">
         <item name="Title">Combat Suit</item>
-        <item name="Attributes">Light Armour</item>
+        <item name="Attributes">Light Armor</item>
         <item name="CostAndWeight">100 cr" "10 lb</item>
         <item name="AC">AC: 11+Dex</item>
         <item name="Properties">—</item>
-        <item name="Text">Combat suits are seen all over the galaxy, and can be found for sale by almost any merchant who dealt in weapons and armour. Many such suits are used by military organizations, such as the Galactic Republic\'s military, as well as by mercenaries, criminals, bounty hunters and even some Jedi.\n"   " The suit itself offers decent protection from most types of attacks while maintaining maximum flexibility and minimum weight. However this armour is only recommended for light skirmishes.</item>
+        <item name="Text">Combat suits are seen all over the galaxy, and can be found for sale by almost any merchant who dealt in weapons and armor. Many such suits are used by military organizations, such as the Galactic Republic\'s military, as well as by mercenaries, criminals, bounty hunters and even some Jedi.\n"   " The suit itself offers decent protection from most types of attacks while maintaining maximum flexibility and minimum weight. However this armor is only recommended for light skirmishes.</item>
         <item name="Expansion">PHB</item>
     </string-array>
-    <string-array name="fiber_armour">
-        <item name="Title">Fiber Armour</item>
-        <item name="Attributes">Light Armour</item>
+    <string-array name="fiber_armor">
+        <item name="Title">Fiber Armor</item>
+        <item name="Attributes">Light Armor</item>
         <item name="CostAndWeight">450 cr" "13 lb</item>
         <item name="AC">AC: 12+Dex</item>
         <item name="Properties">—</item>
-        <item name="Text">Fiber armour is a type of armour that offers more protection than the lighter combat suit. Fiber armour is heavier overall than combat suits, and not quite as flexible, but many consider the trade-offs worthwhile. It is a good source of defense from physical attacks and light blaster fire.</item>
+        <item name="Text">Fiber armor is a type of armor that offers more protection than the lighter combat suit. Fiber armor is heavier overall than combat suits, and not quite as flexible, but many consider the trade-offs worthwhile. It is a good source of defense from physical attacks and light blaster fire.</item>
         <item name="Expansion">PHB</item>
     </string-array>
-    <string-array name="mesh_armour">
-        <item name="Title">Mesh Armour</item>
-        <item name="Attributes">Medium Armour</item>
+    <string-array name="mesh_armor">
+        <item name="Title">Mesh Armor</item>
+        <item name="Attributes">Medium Armor</item>
         <item name="CostAndWeight">500 cr" "20 lb</item>
         <item name="AC">AC: 13+Dex(max +2)</item>
         <item name="Properties">—</item>
-        <item name="Text">Providing solid protection for a minimal cost, mesh armour is considered excellent protection for entrenched troops or guards. However, this protection comes at a cost of mobility, limiting its uses by rapidly advancing infantry. Still, it provides more mobility than battle armour.</item>
+        <item name="Text">Providing solid protection for a minimal cost, mesh armor is considered excellent protection for entrenched troops or guards. However, this protection comes at a cost of mobility, limiting its uses by rapidly advancing infantry. Still, it provides more mobility than battle armor.</item>
         <item name="Expansion">PHB</item>
     </string-array>
-    <string-array name="weave_armour">
-        <item name="Title">Weave Armour</item>
-        <item name="Attributes">Medium Armour</item>
+    <string-array name="weave_armor">
+        <item name="Title">Weave Armor</item>
+        <item name="Attributes">Medium Armor</item>
         <item name="CostAndWeight">1000 cr" "25 lb</item>
         <item name="AC">AC: 14+Dex(max +2)</item>
         <item name="Properties">—</item>
-        <item name="Text">Weave armour was constructed from a mesh of metal or composite plates and a padded jumpsuit. Variants of the armour included less plates and more padding for a lighter, though less protective armour, and heavier plating with molded pieces to fit the wearer. Though the armour was available unmodified, most users personalized their armour.</item>
+        <item name="Text">Weave armor was constructed from a mesh of metal or composite plates and a padded jumpsuit. Variants of the armor included less plates and more padding for a lighter, though less protective armor, and heavier plating with molded pieces to fit the wearer. Though the armor was available unmodified, most users personalized their armor.</item>
         <item name="Expansion">PHB</item>
     </string-array>
-    <string-array name="composite_armour">
-        <item name="Title">Composite Armour</item>
-        <item name="Attributes">Medium Armour</item>
+    <string-array name="composite_armor">
+        <item name="Title">Composite Armor</item>
+        <item name="Attributes">Medium Armor</item>
         <item name="CostAndWeight">2,500 cr" "45 lb</item>
         <item name="AC">AC: 15+Dex(max +2)</item>
         <item name="Properties">Bulky</item>
-        <item name="Text">Composite armour is a type of armoured suit that offers a good balance of mobility and protection against most types of weapons. The micro-hydraulics of this type of powered armour provide the operator with protection, but are more bulky than mesh or weave armours. This type of armour is rarely seen outside of professional mercenaries\' and soldiers\' use.</item>
+        <item name="Text">Composite armor is a type of armored suit that offers a good balance of mobility and protection against most types of weapons. The micro-hydraulics of this type of powered armor provide the operator with protection, but are more bulky than mesh or weave armors. This type of armor is rarely seen outside of professional mercenaries\' and soldiers\' use.</item>
         <item name="Expansion">PHB</item>
     </string-array>
-    <string-array name="battle_armour">
-        <item name="Title">Battle Armour</item>
-        <item name="Attributes">Heavy Armour</item>
+    <string-array name="battle_armor">
+        <item name="Title">Battle Armor</item>
+        <item name="Attributes">Heavy Armor</item>
         <item name="CostAndWeight">750 cr" "55 lb</item>
         <item name="AC">AC: 16</item>
         <item name="Properties">Bulky, Strength 13</item>
-        <item name="Text">Battle armour is an armour that reduced weight, but restricts movement. The armour is commonly used by mercenaries, bounty hunters, soldiers, and civilians that live in dangerous areas.</item>
+        <item name="Text">Battle armor is an armor that reduced weight, but restricts movement. The armor is commonly used by mercenaries, bounty hunters, soldiers, and civilians that live in dangerous areas.</item>
         <item name="Expansion">PHB</item>
     </string-array>
-    <string-array name="assault_armour">
-        <item name="Title">Assault Armour</item>
-        <item name="Attributes">Heavy Armour</item>
+    <string-array name="assault_armor">
+        <item name="Title">Assault Armor</item>
+        <item name="Attributes">Heavy Armor</item>
         <item name="CostAndWeight">2,000 cr" "60 lb</item>
         <item name="AC">AC: 17</item>
         <item name="Properties">Bulky, Strength 15</item>
-        <item name="Text">Assault armour improved on battle armour, with the benefit of micro-hydraulics that boost the efficacy of the operator. It offers better protection, but increased weight.</item>
+        <item name="Text">Assault armor improved on battle armor, with the benefit of micro-hydraulics that boost the efficacy of the operator. It offers better protection, but increased weight.</item>
         <item name="Expansion">PHB</item>
     </string-array>
     <string-array name="heavy_exoskeleton">
         <item name="Title">Heavy exoskeleton</item>
-        <item name="Attributes">Heavy Armour</item>
+        <item name="Attributes">Heavy Armor</item>
         <item name="CostAndWeight">9,000 cr" "65 lb</item>
         <item name="AC">AC: 18</item>
         <item name="Properties">Bulky, Strength 17</item>
-        <item name="Text">Heavy exoskeletons are virtually the heaviest armour acquirable during the Galactic War. It is ideal for extreme combat situations that involved direct damage and also offers a very good level of protection in sacrifice of dexterity. Some consider it claustrophobic but that was the trade-off for safety.</item>
+        <item name="Text">Heavy exoskeletons are virtually the heaviest armor acquirable during the Galactic War. It is ideal for extreme combat situations that involved direct damage and also offers a very good level of protection in sacrifice of dexterity. Some consider it claustrophobic but that was the trade-off for safety.</item>
         <item name="Expansion">PHB</item>
     </string-array>
     <string-array name="light_physical_shield">
@@ -1710,10 +1710,10 @@
         <item name="Text"> </item>
         <item name="Expansion">PHB</item>
     </string-array>
-    <!--Weapon and Armour accessories-->
+    <!--Weapon and Armor accessories-->
     <string-array name="bandolier">
         <item name="Title">bandolier</item>
-        <item name="Attributes">Armour accessory</item>
+        <item name="Attributes">Armor accessory</item>
         <item name="CostAndWeight">100 cr" "2 lb</item>
         <item name="Damage/AC"> </item>
         <item name="Properties">—</item>
@@ -1731,7 +1731,7 @@
     </string-array>
     <string-array name="friction_grip_gear">
         <item name="Title">friction-grip gear</item>
-        <item name="Attributes">Armour accessory</item>
+        <item name="Attributes">Armor accessory</item>
         <item name="CostAndWeight">2000 cr" "12 lb</item>
         <item name="Damage/AC"> </item>
         <item name="Properties">—</item>
@@ -1740,7 +1740,7 @@
     </string-array>
     <string-array name="jetpack">
         <item name="Title">jetpack</item>
-        <item name="Attributes">Armour accessory</item>
+        <item name="Attributes">Armor accessory</item>
         <item name="CostAndWeight">4500 cr" "20 lb</item>
         <item name="Damage/AC"> </item>
         <item name="Properties">—</item>
@@ -1758,7 +1758,7 @@
     </string-array>
     <string-array name="rocket_boots">
         <item name="Title">rocket boots</item>
-        <item name="Attributes">Armour accessory</item>
+        <item name="Attributes">Armor accessory</item>
         <item name="CostAndWeight">2500 cr" "3 lb</item>
         <item name="Damage/AC"> </item>
         <item name="Properties">—</item>
@@ -1767,7 +1767,7 @@
     </string-array>
     <string-array name="stealth_field_generator">
         <item name="Title">stealth field generator</item>
-        <item name="Attributes">Armour accessory</item>
+        <item name="Attributes">Armor accessory</item>
         <item name="CostAndWeight">8000 cr" "3 lb</item>
         <item name="Damage/AC"> </item>
         <item name="Properties">—</item>
@@ -1776,7 +1776,7 @@
     </string-array>
     <string-array name="tracker_utility_vest">
         <item name="Title">tracker utility vest</item>
-        <item name="Attributes">Armour accessory</item>
+        <item name="Attributes">Armor accessory</item>
         <item name="CostAndWeight">150 cr" "3 lb</item>
         <item name="Damage/AC"> </item>
         <item name="Properties">—</item>

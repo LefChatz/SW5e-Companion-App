@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llarmors_and_shields"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="5dp"
+        android:text="@string/equipment_menu_armors_and_shields"
+        android:textAppearance="@style/GoldTextStarjedi"
+        android:paddingBottom="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="5dp"
+        android:text="@string/equipment_info_armors_and_shields1"
+        android:textAppearance="@style/GoldText" />
+
+    <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:title="armor and shield proficiency"
+        app:text="@string/equipment_info_armors_and_shields2"
+        android:paddingBottom="10dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_margin="2dp"
+        android:background="@drawable/goldbox"
+        android:text="@string/equipment_info_armors_and_shields3"
+        android:textAppearance="@style/GoldText" />
+    <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:title="Armor class (Ac)"
+        app:text="@string/equipment_info_armors_and_shields4"
+        />
+    <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:title="Armor Properties"
+        app:text="@string/equipment_info_armors_and_shields5"
+        app:makeStarjedi="true"
+        />
+    <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:title="Light Armor"
+        app:text="@string/equipment_info_armors_and_shields6"
+        app:makeStarjedi="true"
+        />
+    <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:title="Medium Armor"
+        app:text="@string/equipment_info_armors_and_shields7"
+        app:makeStarjedi="true"
+        />
+
+    <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
+        android:layout_width="513dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="20dp"
+        app:makeStarjedi="true"
+        app:text="@string/equipment_info_armors_and_shields8"
+        app:title="Heavy Armor" />
+    <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:title="Shields"
+        app:text="@string/equipment_info_armors_and_shields9"
+        app:makeStarjedi="true"
+        />
+</LinearLayout>

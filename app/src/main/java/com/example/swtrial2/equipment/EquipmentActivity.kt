@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.example.swtrial2.R
 import com.example.swtrial2.SW5ECompanionApp
@@ -12,7 +13,7 @@ import com.example.swtrial2.databinding.EquipmentsBinding
 
 class EquipmentActivity : AppCompatActivity() {
     private lateinit var binding: EquipmentsBinding
-    var mode = 0
+    private var mode = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,10 +35,15 @@ class EquipmentActivity : AppCompatActivity() {
             }
             return@setOnClickListener
         }
+        onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                returntomain()
+            }
+        })
     }
     fun openequipment(view: View){
         when(view.id){
-            R.id.weapons ->{startActivity(Intent(this, WeaponsActivity::class.java))}
+            R.id.weapons ->{startActivity(Intent(this, EquipmentInfo::class.java))}
             R.id.armourandshields ->{startActivity(Intent(this, ArmourActivity::class.java))}
             R.id.advgear ->{startActivity(Intent(this, AdvGearActivity::class.java))}
             R.id.all ->{startActivity(Intent(this, AllActivity::class.java))}
@@ -56,9 +62,4 @@ class EquipmentActivity : AppCompatActivity() {
             mode=0
         }
     }
-    @Deprecated("Deprecated in Java", ReplaceWith("returntomain(null)"))
-    override fun onBackPressed(){
-        returntomain()
-    }
-
 }

@@ -48,12 +48,12 @@ class SpeciesActivity : AppCompatActivity() {
                 txt.text=getText(R.string.species_info1)
                 binding.ll.addView(txt)
 
-                tempbersk=inflater.inflate(R.layout.class_textview,binding.ll,false)
+                tempbersk=inflater.inflate(R.layout.universal_title_goldbar_text_textview,binding.ll,false)
                 tempbersk.findViewById<TextView>(R.id.headertext).text=getText(R.string.species_info2Header)
                 tempbersk.findViewById<TextView>(R.id.contenttext).text=getText(R.string.species_info2Text)
                 binding.ll.addView(tempbersk)
 
-                tempbersk=inflater.inflate(R.layout.class_textview,binding.ll,false)
+                tempbersk=inflater.inflate(R.layout.universal_title_goldbar_text_textview,binding.ll,false)
                 tempbersk.findViewById<TextView>(R.id.headertext).text=getText(R.string.species_info3Header)
                 temptxt=tempbersk.findViewById(R.id.contenttext)
                 temptxt.text=getText(R.string.species_info3Text)

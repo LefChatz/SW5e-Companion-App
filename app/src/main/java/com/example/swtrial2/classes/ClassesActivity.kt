@@ -57,7 +57,7 @@ class ClassesActivity : AppCompatActivity() {
                     txt = TextView(this)
                     txt.setTextAppearance(R.style.GoldTextStarjedi)
 
-                    tempbersk = inflater.inflate(R.layout.class_textview,ll, false)
+                    tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll, false)
                     temptxt=tempbersk.findViewById(R.id.contenttext)
                     tempbersk.findViewById<TextView>(R.id.headertext).text=multiclassingList[i]
                     temptxt.text=multiclassingList[i+1]

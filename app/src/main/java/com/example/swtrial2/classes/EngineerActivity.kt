@@ -80,7 +80,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 ll.addView(txt)
             }
             else{
-                tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 tempbersk.findViewById<TextView>(R.id.headertext).text=infolist[i-1]
                 temptxt=tempbersk.findViewById(R.id.contenttext)
                 temptxt.text=infolist[i]
@@ -118,7 +118,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=infolist[i-1]
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         temptxt.text=infolist[i]
@@ -136,7 +136,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=baselist[i-1]
                         temptxt.text=baselist[i]
@@ -154,7 +154,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 hscrollunstable=unsTable.findViewById(R.id.class_engineer_unstable_table)
             }
             "Armormech Modifications"->{
-                tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 temptxt=tempbersk.findViewById(R.id.contenttext)
                 tempbersk.findViewById<TextView>(R.id.headertext).text=getText(R.string.armormech_modificationsHeader)
                 temptxt.text=getText(R.string.armormech_modificationstext)
@@ -162,7 +162,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 ll.addView(tempbersk)
             }
             "Armstech Modifications"->{
-                tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 temptxt=tempbersk.findViewById(R.id.contenttext)
                 tempbersk.findViewById<TextView>(R.id.headertext).text=getText(R.string.armstech_modificationsHeader)
                 temptxt.text=getText(R.string.armstech_modificationstext)
@@ -170,7 +170,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 ll.addView(tempbersk)
             }
             "Gadgeteer Modifications"->{
-                tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 temptxt=tempbersk.findViewById(R.id.contenttext)
                 tempbersk.findViewById<TextView>(R.id.headertext).text=getText(R.string.gadgeteer_modificationsHeader)
                 temptxt.text=getText(R.string.gadgeteer_modificationstext)
@@ -184,7 +184,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=armormechList[i-1]
                         temptxt.text=armormechList[i]
@@ -200,7 +200,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=armstechList[i-1]
                         temptxt.text=armstechList[i]
@@ -216,7 +216,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=gadgeteerList[i-1]
                         temptxt.text=gadgeteerList[i]
@@ -235,7 +235,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=unstableList[i-1]
                         temptxt.text=unstableList[i]

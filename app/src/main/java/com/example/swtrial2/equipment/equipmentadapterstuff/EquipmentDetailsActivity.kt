@@ -93,16 +93,16 @@ class EquipmentDetailsActivity : AppCompatActivity() {
                         }
                     }
                 }
-                (contains("shield",true)||contains("armour",true))&&(!contains("accessory"))->{
-                    val armourproplist = resources.getTextArray(R.array.armour_properties)
-                    val armourpropmap = mutableMapOf<String,CharSequence>()
-                    for(i in armourproplist.indices step 2){
-                        armourpropmap[armourproplist[i].toString()]=armourproplist[i+1]
+                (contains("shield",true)||contains("armor",true))&&(!contains("accessory"))->{
+                    val armorproplist = resources.getTextArray(R.array.armor_properties)
+                    val armorpropmap = mutableMapOf<String,CharSequence>()
+                    for(i in armorproplist.indices step 2){
+                        armorpropmap[armorproplist[i].toString()]=armorproplist[i+1]
                     }
                     binding.Text.text= buildSpannedString{
                         append(details[5])
                         appendLine(" ")
-                        armourpropmap.keys.forEach{
+                        armorpropmap.keys.forEach{
                             if(binding.Properties.text.contains(it,true)){
                                 appendLine(" ")
                                 val spanit= SpannableString(it)
@@ -110,7 +110,7 @@ class EquipmentDetailsActivity : AppCompatActivity() {
                                 scale(1.1F){
                                     appendLine(spanit)
                                 }
-                                appendLine(armourpropmap[it])
+                                appendLine(armorpropmap[it])
                             }
                         }
                     }

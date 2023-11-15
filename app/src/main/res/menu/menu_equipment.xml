@@ -53,13 +53,13 @@
             />
     </group>
     <item
-        android:id="@+id/eqmenu_armours_and_shields"
+        android:id="@+id/eqmenu_armors_and_shields"
         android:orderInCategory="4"
-        android:title="@string/equipment_menu_armours_and_shields"
+        android:title="@string/equipment_menu_armors_and_shields"
         android:checkable="true"
         />
     <group
-        android:id="@+id/eqmenu_armours_group"
+        android:id="@+id/eqmenu_armors_group"
         android:visible="false"
         android:checkableBehavior="none"
         android:orderInCategory="5">
@@ -82,9 +82,9 @@
             android:checkable="true"
             />
         <item
-            android:id="@+id/eqmenu_armours"
+            android:id="@+id/eqmenu_armors"
             android:orderInCategory="5"
-            android:title="@string/equipment_menu_armours"
+            android:title="@string/equipment_menu_armors"
             android:checkable="true"
             />
         <item

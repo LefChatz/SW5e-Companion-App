@@ -84,7 +84,7 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                 ll.addView(txt)
             }
             else{
-                tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 temptxt=tempbersk.findViewById(R.id.contenttext)
                 tempbersk.findViewById<TextView>(R.id.headertext).text=infolist[i-1]
                 temptxt.text=infolist[i]
@@ -122,7 +122,7 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=infolist[i-1]
                         temptxt.text=infolist[i]
@@ -140,7 +140,7 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=baselist[i-1]
                         temptxt.text=baselist[i]
@@ -159,7 +159,7 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
             }
             "Discoveries"->{
                 for(i in discoveriesList.indices step 2){
-                    tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                    tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                     temptxt=tempbersk.findViewById(R.id.contenttext)
                     tempbersk.findViewById<TextView>(R.id.headertext).text=discoveriesList[i]
                     temptxt.text=discoveriesList[i+1]
@@ -179,13 +179,13 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=gamblerList[i-1]
                         temptxt.text=gamblerList[i]
                         ll.addView(tempbersk)
                         if(i==gamblerList.lastIndex){
-                            tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                            tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                             temptxt=tempbersk.findViewById(R.id.contenttext)
                             tempbersk.findViewById<TextView>(R.id.headertext).text=discoveriesList[2]
                             temptxt.text=discoveriesList[3]
@@ -207,13 +207,13 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=physicianList[i-1]
                         temptxt.text=physicianList[i]
                         ll.addView(tempbersk)
                         if(i==physicianList.lastIndex){
-                            tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                            tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                             temptxt=tempbersk.findViewById(R.id.contenttext)
                             tempbersk.findViewById<TextView>(R.id.headertext).text=discoveriesList[4]
                             temptxt.text=discoveriesList[5]
@@ -234,13 +234,13 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=politicianList[i-1]
                         temptxt.text=politicianList[i]
                         ll.addView(tempbersk)
                         if(i==politicianList.lastIndex){
-                            tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                            tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                             temptxt=tempbersk.findViewById(R.id.contenttext)
                             tempbersk.findViewById<TextView>(R.id.headertext).text=discoveriesList[6]
                             temptxt.text=discoveriesList[7]
@@ -260,13 +260,13 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=tacticianList[i-1]
                         temptxt.text=tacticianList[i]
                         ll.addView(tempbersk)
                         if(i==tacticianList.lastIndex){
-                            tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                            tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                             temptxt=tempbersk.findViewById(R.id.contenttext)
                             tempbersk.findViewById<TextView>(R.id.headertext).text=discoveriesList[8]
                             temptxt.text=discoveriesList[9]

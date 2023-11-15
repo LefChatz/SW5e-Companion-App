@@ -9,8 +9,9 @@
         <attr name="text"/>
         <attr name="background"/>
     </declare-styleable>
-    <declare-styleable name="ClassTextView">
+    <declare-styleable name="UniversalTitleGoldbarTextTextview">
         <attr name="title" format="string"/>
         <attr name="text"/>
+        <attr name="makeStarjedi" format="boolean" />
     </declare-styleable>
 </resources>

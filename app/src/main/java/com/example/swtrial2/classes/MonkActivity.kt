@@ -75,7 +75,7 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
                 ll.addView(txt)
             }
             else{
-                tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 temptxt=tempbersk.findViewById(R.id.contenttext)
                 tempbersk.findViewById<TextView>(R.id.headertext).text=infolist[i-1]
                 temptxt.text=infolist[i]
@@ -113,7 +113,7 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=infolist[i-1]
                         temptxt.text=infolist[i]
@@ -131,7 +131,7 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=baselist[i-1]
                         temptxt.text=baselist[i]
@@ -158,7 +158,7 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
                 hscroll=table.findViewById(R.id.monktablehscroll)
             }
             "Monastic Vows"->{
-                tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 temptxt=tempbersk.findViewById(R.id.contenttext)
                 tempbersk.findViewById<TextView>(R.id.headertext).text=getText(R.string.monastic_vowsHeader)
                 temptxt.text=getText(R.string.monastic_vowstext)
@@ -172,7 +172,7 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=crimsonList[i-1]
                         temptxt.text=crimsonList[i]
@@ -187,7 +187,7 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=echaniList[i-1]
                         temptxt.text=echaniList[i]
@@ -205,7 +205,7 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=matukaiList[i-1]
                         temptxt.text=matukaiList[i]
@@ -220,7 +220,7 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
                         ll.addView(txt)
                     }
                     else{
-                        tempbersk = inflater.inflate(R.layout.class_textview,ll,false)
+                        tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
                         tempbersk.findViewById<TextView>(R.id.headertext).text=nightsisterList[i-1]
                         temptxt.text=nightsisterList[i]

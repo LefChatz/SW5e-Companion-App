@@ -28,7 +28,7 @@ class AllActivity : AppCompatActivity() {
     private var bigEquipmentList = listOf<String>()
     private var equipmentList = listOf<String>()
     private var equipmentWeapons = listOf<String>()
-    private var equipmentArmours = listOf<String>()
+    private var equipmentArmors = listOf<String>()
     private var equipmentAdvGear = listOf<String>()
     private var currentEquipmentList = listOf<String>()
     private var searchedList = listOf<String>()
@@ -54,7 +54,7 @@ class AllActivity : AppCompatActivity() {
         faveEquipmentList.addAll(favSharedPreferences.getStringSet("favequipmentlist", mutableSetOf())?.toList()!!)
 
         equipmentWeapons=resources.getStringArray(R.array.equipment_weapons).toList()
-        equipmentArmours=resources.getStringArray(R.array.equipment_armours).toList()
+        equipmentArmors=resources.getStringArray(R.array.equipment_armors).toList()
         equipmentAdvGear=resources.getStringArray(R.array.equipment_advgear).toList()
         equipmentList=resources.getStringArray(R.array.equipmentlist).toList()
         bigEquipmentList=resources.getStringArray(R.array.bigequipmentnames).toList()
@@ -249,19 +249,19 @@ class AllActivity : AppCompatActivity() {
                         item.isChecked=!item.isChecked
                     }
 
-                    contains(getString(R.string.equipment_menu_armours_and_shields))->{
+                    contains(getString(R.string.equipment_menu_armors_and_shields))->{
                         menuClose = true
                         if(!item.isChecked){
                             filterModeClear()
-                            eraseList.addAll(equipmentList.filter { it !in equipmentArmours })
-                            equipmentMenu.setGroupVisible(R.id.eqmenu_armours_group,true)
-                            filterMode.add("armours")
+                            eraseList.addAll(equipmentList.filter { it !in equipmentArmors })
+                            equipmentMenu.setGroupVisible(R.id.eqmenu_armors_group,true)
+                            filterMode.add("armors")
                         }
                         else{
-                            equipmentMenu.setGroupVisible(R.id.eqmenu_armours_group,false)
+                            equipmentMenu.setGroupVisible(R.id.eqmenu_armors_group,false)
                             if(filterMode.contains("fav")){eraseList.removeAll(equipmentList.filter {it in faveEquipmentList})}
                             else{eraseList.removeAll(equipmentList)}
-                            filterMode.remove("armours")
+                            filterMode.remove("armors")
                             filterList.clear()
                             with(equipmentMenu.findItem(R.id.eqmenu_light)){
                                 if (isChecked){
@@ -278,7 +278,7 @@ class AllActivity : AppCompatActivity() {
                                     isChecked=false
                                 }
                             }
-                            with(equipmentMenu.findItem(R.id.eqmenu_armours)){
+                            with(equipmentMenu.findItem(R.id.eqmenu_armors)){
                                 if (isChecked){
                                     isChecked=false
                                 }
@@ -298,19 +298,19 @@ class AllActivity : AppCompatActivity() {
                             with(equipmentMenu.findItem(R.id.eqmenu_medium)){
                                 if (isChecked) {
                                     isChecked = false
-                                    filterArmours("show","medium")
+                                    filterArmors("show","medium")
                                 }
                             }
                             with(equipmentMenu.findItem(R.id.eqmenu_heavy)){
                                 if (isChecked) {
                                     isChecked = false
-                                    filterArmours("show","heavy")
+                                    filterArmors("show","heavy")
                                 }
                             }
-                            filterArmours("hide","light")
+                            filterArmors("hide","light")
                         }
                         else{
-                            filterArmours("show","light")
+                            filterArmors("show","light")
                         }
                         item.isChecked=!item.isChecked
                     }
@@ -320,19 +320,19 @@ class AllActivity : AppCompatActivity() {
                             with(equipmentMenu.findItem(R.id.eqmenu_light)){
                                 if (isChecked) {
                                     isChecked = false
-                                    filterArmours("show","light")
+                                    filterArmors("show","light")
                                 }
                             }
                             with(equipmentMenu.findItem(R.id.eqmenu_heavy)){
                                 if (isChecked) {
                                     isChecked = false
-                                    filterArmours("show","heavy")
+                                    filterArmors("show","heavy")
                                 }
                             }
-                            filterArmours("hide","medium")
+                            filterArmors("hide","medium")
                         }
                         else{
-                            filterArmours("show","medium")
+                            filterArmors("show","medium")
                         }
                         item.isChecked=!item.isChecked
                     }
@@ -342,51 +342,51 @@ class AllActivity : AppCompatActivity() {
                             with(equipmentMenu.findItem(R.id.eqmenu_light)){
                                 if (isChecked) {
                                     isChecked = false
-                                    filterArmours("show","light")
+                                    filterArmors("show","light")
                                 }
                             }
                             with(equipmentMenu.findItem(R.id.eqmenu_medium)){
                                 if (isChecked) {
                                     isChecked = false
-                                    filterArmours("show","medium")
+                                    filterArmors("show","medium")
                                 }
                             }
-                            filterArmours("hide","heavy")
+                            filterArmors("hide","heavy")
                         }
                         else{
-                            filterArmours("show","heavy")
+                            filterArmors("show","heavy")
                         }
                         item.isChecked=!item.isChecked
                     }
-                    contains("armours",true)->{
+                    contains("armors",true)->{
                         menuClose = true
                         if(!item.isChecked){
                             with(equipmentMenu.findItem(R.id.eqmenu_shields)){
                                 if (isChecked) {
                                     isChecked = false
-                                    filterArmours("show","shield")
+                                    filterArmors("show","shield")
                                 }
                             }
-                            filterArmours("hide","armour")
+                            filterArmors("hide","armor")
                         }
                         else{
-                            filterArmours("show","armour")
+                            filterArmors("show","armor")
                         }
                         item.isChecked=!item.isChecked
                     }
                     contains("shields",true)->{
                         menuClose = true
                         if(!item.isChecked){
-                            with(equipmentMenu.findItem(R.id.eqmenu_armours)){
+                            with(equipmentMenu.findItem(R.id.eqmenu_armors)){
                                 if (isChecked) {
                                     isChecked = false
-                                    filterArmours("show","armour")
+                                    filterArmors("show","armor")
                                 }
                             }
-                            filterArmours("hide","shield")
+                            filterArmors("hide","shield")
                         }
                         else{
-                            filterArmours("show","shield")
+                            filterArmors("show","shield")
                         }
                         item.isChecked=!item.isChecked
                     }
@@ -558,8 +558,8 @@ class AllActivity : AppCompatActivity() {
                                             eraseList.addAll(equipmentList.filter { it !in tempList })
                                         }
                                     }
-                                    contains("armours")->{
-                                        eraseList.removeAll{it in equipmentArmours}
+                                    contains("armors")->{
+                                        eraseList.removeAll{it in equipmentArmors}
                                         filterList.forEach{ fil ->
                                             val tempList = equipmentAttributedList.getOrDefault(fil,emptyList())
                                             eraseList.addAll(equipmentList.filter { it !in tempList })
@@ -607,13 +607,13 @@ class AllActivity : AppCompatActivity() {
         }
         equipmentAdapter.setEquipmentList(currentEquipmentList.filter { it !in eraseList && it in searchedList})
     }
-    private fun filterArmours(action: String,mode: String){
+    private fun filterArmors(action: String,mode: String){
         if (equipmentAttributedList.getOrPut("light"){ mutableListOf() }.isEmpty()){
 
             equipmentAttributedList.getOrPut("light"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("light",true)}.keys)
             equipmentAttributedList.getOrPut("medium"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("medium",true)}.keys)
             equipmentAttributedList.getOrPut("heavy"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("heavy",true)}.keys)
-            equipmentAttributedList.getOrPut("armour"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("armour",true)}.keys)
+            equipmentAttributedList.getOrPut("armor"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("armor",true)}.keys)
             equipmentAttributedList.getOrPut("shield"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("shield",true)}.keys)
         }
         val tempList1 = equipmentAttributedList[mode]!!.toList()
@@ -623,7 +623,7 @@ class AllActivity : AppCompatActivity() {
         }
         else{
             filterList.remove(mode)
-            eraseList.removeAll(equipmentArmours)
+            eraseList.removeAll(equipmentArmors)
             if (filterMode.contains("fav"))eraseList.addAll(equipmentList.filter { it !in faveEquipmentList })
             filterList.forEach { fil ->
                 val tempList = equipmentAttributedList.getOrDefault(fil,emptyList())
@@ -700,12 +700,12 @@ class AllActivity : AppCompatActivity() {
         }
     }
     private fun filterModeClear(){
-        if (filterMode.contains("armours")){
-            equipmentMenu.findItem(R.id.eqmenu_armours_and_shields).isChecked=false
-            equipmentMenu.setGroupVisible(R.id.eqmenu_armours_group,false)
+        if (filterMode.contains("armors")){
+            equipmentMenu.findItem(R.id.eqmenu_armors_and_shields).isChecked=false
+            equipmentMenu.setGroupVisible(R.id.eqmenu_armors_group,false)
             if(filterMode.contains("fav")){eraseList.removeAll(equipmentList.filter {it in faveEquipmentList})}
             else{eraseList.removeAll(equipmentList)}
-            filterMode.remove("armours")
+            filterMode.remove("armors")
             filterList.clear()
             with(equipmentMenu.findItem(R.id.eqmenu_light)){
                 if (isChecked){
@@ -722,7 +722,7 @@ class AllActivity : AppCompatActivity() {
                     isChecked=false
                 }
             }
-            with(equipmentMenu.findItem(R.id.eqmenu_armours)){
+            with(equipmentMenu.findItem(R.id.eqmenu_armors)){
                 if (isChecked){
                     isChecked=false
                 }

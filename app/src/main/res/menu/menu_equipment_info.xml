@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:title="@string/info" />
-    <item android:title="@string/base" />
+    <item android:title="@string/wealth" />
+    <item android:title="@string/equipment_menu_armors_and_shields" />
+    <item android:title="@string/weapons_menu" />
+    <item android:title="@string/adventuring_gear_menu" />
+    <item android:title="@string/tools_menu" />
+    <item android:title="@string/expenses_menu" />
     <item android:title="@string/tables" />
-    <item android:title="@string/instincts" />
-    <item android:title="@string/ballistic_approach" />
-    <item android:title="@string/cyclone_approach" />
-    <item android:title="@string/juggernaut_approach" />
-    <item android:title="@string/marauder_approach" />
 </menu>
