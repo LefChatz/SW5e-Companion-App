@@ -2,7 +2,6 @@ package com.example.swtrial2.equipment
 
 import android.content.res.Configuration
 import android.graphics.Rect
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.GestureDetector
 import android.view.Menu
@@ -10,19 +9,23 @@ import android.view.MenuItem
 import android.view.MotionEvent
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.LinearLayoutCompat
-import androidx.core.view.isGone
 import com.example.swtrial2.R
+import com.example.swtrial2.databinding.EquipmentInfoAdventuringGearBinding
 import com.example.swtrial2.databinding.EquipmentInfoArmorsAndShieldsBinding
 import com.example.swtrial2.databinding.EquipmentInfoBinding
 import com.example.swtrial2.databinding.EquipmentInfoWealthBinding
+import com.example.swtrial2.databinding.EquipmentInfoWeaponsBinding
 import kotlin.math.absoluteValue
 
 class EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
     private lateinit var binding: EquipmentInfoBinding
     private lateinit var bindingWealth: EquipmentInfoWealthBinding
-    private lateinit var bindingArmor: EquipmentInfoArmorsAndShieldsBinding
+    private lateinit var bindingArmorsAndShields: EquipmentInfoArmorsAndShieldsBinding
+    private lateinit var bindingWeapons: EquipmentInfoWeaponsBinding
+    private lateinit var bindingAdventuringGear: EquipmentInfoAdventuringGearBinding
     private lateinit var ll: LinearLayoutCompat
 
     private val tabList = listOf("Wealth","Armors & Shields","Weapons","Adventuring Gear","Tools","Expenses","Tables")
@@ -39,7 +42,7 @@ class EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
         setContentView(binding.root)
 
         bindingWealth = EquipmentInfoWealthBinding.inflate(layoutInflater,binding.scrolly,false)
-        bindingArmor = EquipmentInfoArmorsAndShieldsBinding.inflate(layoutInflater,binding.scrolly,false)
+        bindingArmorsAndShields = EquipmentInfoArmorsAndShieldsBinding.inflate(layoutInflater,binding.scrolly,false)
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
@@ -51,7 +54,11 @@ class EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
         binding.BackButton.setOnClickListener { returntomain() }
 
         ll=binding.ll
+
         binding.scrolly.removeAllViews()
+        bindingWealth.scrolly.removeAllViews()
+        bindingArmorsAndShields.scrolly.removeAllViews()
+
         binding.scrolly.addView(bindingWealth.llWealth)
 
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
@@ -84,12 +91,25 @@ class EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
         binding.scrolly.removeAllViews()
         when(binding.dummybutton.text.toString()){
             tabList[0]->{ binding.scrolly.addView(bindingWealth.llWealth);scrollmode = 0 }
-            tabList[1]->{ binding.scrolly.addView(bindingArmor.llarmorsAndShields);scrollmode = 2;if (!this::bindingArmor.isInitialized) bindingArmor = EquipmentInfoArmorsAndShieldsBinding.inflate(layoutInflater,binding.scrolly,false)}
-            tabList[2]->{ binding.scrolly.addView(bindingWealth.llWealth);scrollmode = 2;if (!this::bindingArmor.isInitialized) bindingArmor = EquipmentInfoArmorsAndShieldsBinding.inflate(layoutInflater,binding.scrolly,false) }
-            tabList[3]->{ binding.scrolly.addView(bindingWealth.llWealth);scrollmode = 2;if (!this::bindingArmor.isInitialized) bindingArmor = EquipmentInfoArmorsAndShieldsBinding.inflate(layoutInflater,binding.scrolly,false) }
-            tabList[4]->{ binding.scrolly.addView(bindingWealth.llWealth);scrollmode = 2;if (!this::bindingArmor.isInitialized) bindingArmor = EquipmentInfoArmorsAndShieldsBinding.inflate(layoutInflater,binding.scrolly,false) }
-            tabList[5]->{ binding.scrolly.addView(bindingWealth.llWealth);scrollmode = 2;if (!this::bindingArmor.isInitialized) bindingArmor = EquipmentInfoArmorsAndShieldsBinding.inflate(layoutInflater,binding.scrolly,false)}
-            tabList[6]->{ binding.scrolly.addView(bindingWealth.llWealth);scrollmode = 1 }
+            tabList[1]->{
+                binding.scrolly.addView(bindingArmorsAndShields.llArmorsAndShields);scrollmode = 2
+                if (!this::bindingWeapons.isInitialized) {bindingWeapons = EquipmentInfoWeaponsBinding.inflate(layoutInflater, binding.scrolly, false);bindingWeapons.scrolly.removeAllViews()}}
+            tabList[2]->{
+                binding.scrolly.addView(bindingWeapons.llWeapons);scrollmode = 2
+                if (!this::bindingAdventuringGear.isInitialized) {bindingAdventuringGear = EquipmentInfoAdventuringGearBinding.inflate(layoutInflater, binding.scrolly, false);bindingAdventuringGear.scrolly.removeAllViews()} }
+            tabList[3]->{
+                binding.scrolly.addView(bindingAdventuringGear.llAdventuringGear);scrollmode = 2
+                if (!this::bindingWeapons.isInitialized) {bindingWeapons = EquipmentInfoWeaponsBinding.inflate(layoutInflater, binding.scrolly, false);bindingWeapons.scrolly.removeAllViews()}
+                if (!this::bindingWealth.isInitialized) bindingWeapons = EquipmentInfoWeaponsBinding.inflate(layoutInflater,binding.scrolly,false)}
+            tabList[4]->{ binding.scrolly.addView(bindingWealth.llWealth);scrollmode = 2
+                if (!this::bindingAdventuringGear.isInitialized) {bindingAdventuringGear = EquipmentInfoAdventuringGearBinding.inflate(layoutInflater, binding.scrolly, false);bindingAdventuringGear.scrolly.removeAllViews()}
+                if (!this::bindingWeapons.isInitialized) bindingWeapons = EquipmentInfoWeaponsBinding.inflate(layoutInflater,binding.scrolly,false)}
+            tabList[5]->{
+                binding.scrolly.addView(bindingWealth.llWealth);scrollmode = 2
+                if (!this::bindingArmorsAndShields.isInitialized) bindingArmorsAndShields = EquipmentInfoArmorsAndShieldsBinding.inflate(layoutInflater,binding.scrolly,false)}
+            tabList[6]->{
+                binding.scrolly.addView(bindingWealth.llWealth);scrollmode = 1
+                if (!this::bindingWeapons.isInitialized) bindingWeapons = EquipmentInfoWeaponsBinding.inflate(layoutInflater,binding.scrolly,false)}
             else->{binding.scrolly.addView(bindingWealth.llWealth);scrollmode = 0;Toast.makeText(this,"error unknown Tab",Toast.LENGTH_LONG).show()}
         }
     }
@@ -100,14 +120,14 @@ class EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
                     binding.dummybutton.text=tabList.last()
                     changeview()
                 }
-                else binding.dummybutton.text=tabList[tabList.indexOf(binding.dummybutton.text)-1];changeview()
+                else binding.dummybutton.text=tabList[tabList.indexOf(binding.dummybutton.text.toString())-1];changeview()
             }
             "RtoL"->{
                 if (scrollmode==1){
                     binding.dummybutton.text=tabList.first()
                     changeview()
                 }
-                else binding.dummybutton.text=tabList[tabList.indexOf(binding.dummybutton.text)+1];changeview()
+                else binding.dummybutton.text=tabList[tabList.indexOf(binding.dummybutton.text.toString())+1];changeview()
             }
         }
     }
