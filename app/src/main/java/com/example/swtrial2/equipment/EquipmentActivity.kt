@@ -43,9 +43,7 @@ class EquipmentActivity : AppCompatActivity() {
     }
     fun openequipment(view: View){
         when(view.id){
-            R.id.weapons ->{startActivity(Intent(this, EquipmentInfo::class.java))}
-            R.id.armourandshields ->{startActivity(Intent(this, ArmourActivity::class.java))}
-            R.id.advgear ->{startActivity(Intent(this, AdvGearActivity::class.java))}
+            R.id.info ->{startActivity(Intent(this, EquipmentInfo::class.java))}
             R.id.all ->{startActivity(Intent(this, AllActivity::class.java))}
             else->{
                 Toast.makeText(this,"Error",Toast.LENGTH_LONG)

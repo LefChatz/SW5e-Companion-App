@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.LinearLayoutCompat
@@ -88,7 +89,11 @@ class ClassesActivity : AppCompatActivity() {
             }
             return@setOnClickListener
         }
-
+        onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                returntomain()
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -126,10 +131,6 @@ class ClassesActivity : AppCompatActivity() {
                     .show()
             }
         }
-    }
-    @Deprecated("Deprecated in Java", ReplaceWith("returntomain(null)"))
-    override fun onBackPressed(){
-        returntomain()
     }
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)

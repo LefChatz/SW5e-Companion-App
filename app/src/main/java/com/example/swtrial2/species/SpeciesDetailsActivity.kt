@@ -7,6 +7,7 @@ import android.view.GestureDetector
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.example.swtrial2.R
 import com.example.swtrial2.databinding.SpeciesDetailsBinding
@@ -47,6 +48,12 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
             inflater.inflate(R.layout.universal_textview_nofont_gold,binding.ll,true).findViewById<TextView>(R.id.textview).text=getString(R.string.error_please_report_this)
         }
         tempstring=specie.replace("_"," ") + " traits"
+
+        onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                returntomain()
+            }
+        })
     }
     @SuppressLint("DiscouragedApi")
     private fun changeview(){
@@ -94,7 +101,7 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
         return false
     }
 
-    override fun onScroll(p0: MotionEvent, p1: MotionEvent, p2: Float, p3: Float): Boolean {
+    override fun onScroll(p0: MotionEvent?, p1: MotionEvent, p2: Float, p3: Float): Boolean {
         return false
     }
 
@@ -102,17 +109,19 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
         return
     }
 
-    override fun onFling(e0: MotionEvent, e1: MotionEvent, vx: Float, vy: Float): Boolean {
-        val diffX = e1.x - e0.x
-        if(diffX.absoluteValue>(e1.y-e0.y).absoluteValue) {
-            if (diffX.absoluteValue > swipethreshold && vx.absoluteValue > swipethreshold) {
-                //L to R
-                if (diffX > 0 && mode==1) {
-                    changeview()
-                }
-                //R to L
-                else if(diffX<0 && mode==0){
-                    changeview()
+    override fun onFling(e0: MotionEvent?, e1: MotionEvent, vx: Float, vy: Float): Boolean {
+        if (e0 != null) {
+            val diffX = e1.x - e0.x
+            if(diffX.absoluteValue>(e1.y-e0.y).absoluteValue) {
+                if (diffX.absoluteValue > swipethreshold && vx.absoluteValue > swipethreshold) {
+                    //L to R
+                    if (diffX > 0 && mode==1) {
+                        changeview()
+                    }
+                    //R to L
+                    else if(diffX<0 && mode==0){
+                        changeview()
+                    }
                 }
             }
         }
@@ -121,11 +130,6 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
 
     private fun returntomain() {
         finish()
-    }
-    @Deprecated("Deprecated in Java")
-    override fun onBackPressed() {
-        returntomain()
-        super.onBackPressed()
     }
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)

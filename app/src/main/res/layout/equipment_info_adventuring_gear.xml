@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!--<TextView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="5dp"
@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="Cost"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="Weight"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -96,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="5 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -105,7 +105,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="—"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
             </TableRow>
@@ -126,7 +126,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="100 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -135,7 +135,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="0.5 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -157,7 +157,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="10 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -166,7 +166,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="1 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -188,7 +188,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="350 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -197,7 +197,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="2 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -219,7 +219,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="325 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -228,7 +228,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="2 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -249,7 +249,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="2 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -258,7 +258,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="—"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -304,7 +304,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="Cost"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -314,7 +314,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="Weight"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -337,7 +337,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="450 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -346,7 +346,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="3 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
             </TableRow>
@@ -367,7 +367,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="50 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -376,7 +376,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="0.5 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -398,7 +398,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="200 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -407,7 +407,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="1 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -429,7 +429,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="300 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -438,7 +438,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="2 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -460,7 +460,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="1000 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -469,7 +469,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="5 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -490,7 +490,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="800 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -499,7 +499,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="1 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -516,7 +516,7 @@
 
         <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="90dp"
             android:layout_marginTop="30dp"
             app:title="Data Xecording And Storage"
             app:text=""/>
@@ -546,7 +546,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="Cost"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -556,7 +556,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="Weight"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -579,7 +579,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="20 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -588,7 +588,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="0.5 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
             </TableRow>
@@ -609,7 +609,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="5 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -618,7 +618,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="—"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -640,7 +640,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="1000 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -649,7 +649,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="2 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -671,7 +671,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="100 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -680,7 +680,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="0.5 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -702,7 +702,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="1000 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -711,7 +711,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="2 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -732,7 +732,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="100 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -741,7 +741,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="1 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -762,7 +762,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="10 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -771,7 +771,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="0.5 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -792,7 +792,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="600 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -801,7 +801,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="2 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -848,7 +848,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="Cost"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -858,7 +858,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="Weight"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -881,7 +881,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="100 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -890,7 +890,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="1 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
             </TableRow>
@@ -911,7 +911,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="300 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -920,7 +920,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="1 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -942,7 +942,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="250 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -951,7 +951,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="1 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -973,7 +973,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="125 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -982,7 +982,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="1 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -1004,7 +1004,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="200 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -1013,7 +1013,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="2 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -1034,7 +1034,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="625 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -1043,7 +1043,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="2 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -1064,7 +1064,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="550 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -1073,7 +1073,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="2 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -1094,7 +1094,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="2000 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -1103,7 +1103,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="1 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -1116,7 +1116,7 @@
             android:layout_marginTop="10dp"
             android:paddingHorizontal="5dp"
             android:text="@string/equipment_info_adventuring_gear7"
-            android:textAppearance="@style/GoldTextStarjedi" />-->
+            android:textAppearance="@style/GoldTextStarjedi" />
         <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -1124,7 +1124,7 @@
             app:title="Life Support"
             app:text="" />
         <TableLayout
-            android:id="@+id/adventuring_geartable4"
+            android:id="@+id/adventuring_geartable5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:stretchColumns="0"
@@ -1148,7 +1148,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="Cost"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -1158,7 +1158,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="Weight"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -1181,7 +1181,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="600 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -1190,7 +1190,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="15 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
             </TableRow>
@@ -1210,7 +1210,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="200 cr"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -1219,7 +1219,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
                     android:text="1 lb"
-                    android:textAlignment="center"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/gold"
                     android:textSize="17sp"/>
 
@@ -1232,6 +1232,1447 @@
             android:layout_marginTop="10dp"
             android:paddingHorizontal="5dp"
             android:text="@string/equipment_info_adventuring_gear8"
+            android:textAppearance="@style/GoldTextStarjedi" />
+        <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            app:title="Medical Supplies"
+            app:text="" />
+        <TableLayout
+            android:id="@+id/adventuring_geartable6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0"
+            android:padding="10dp"
+            android:layout_margin="3dp"
+            android:background="#50FFD700">
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Item"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="Cost"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="Weight"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Antitoxkit"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="600 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="4 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Emergency battery"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="70 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="5 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trauma kit"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="50 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="3 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Medpac"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="300 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="0.5 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Poison"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="125 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="0.5 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Repair kit"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="750 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="3 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="5dp"
+            android:text="@string/equipment_info_adventuring_gear9"
+            android:textAppearance="@style/GoldTextStarjedi" />
+
+        <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            app:title="Storage"
+            app:text="" />
+        <TableLayout
+            android:id="@+id/adventuring_geartable7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0"
+            android:padding="10dp"
+            android:layout_margin="3dp"
+            android:background="#50FFD700">
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Item"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="Cost"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="Weight"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Backpack"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="50 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="5 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bottle"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="20 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="1 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Canteen"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="10 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="3 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Crate"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="20 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="70 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chest"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="50 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="25 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pitcher"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="8 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="2 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pouch"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="5 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="1 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="5dp"
+            android:text="@string/equipment_info_adventuring_gear10"
+            android:textAppearance="@style/GoldTextStarjedi" />
+
+        <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            app:title="utilities"
+            app:text="" />
+        <TableLayout
+            android:id="@+id/adventuring_geartable8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0"
+            android:padding="10dp"
+            android:layout_margin="3dp"
+            android:background="#50FFD700">
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Item"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="Cost"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="Weight"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bedroll"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="10 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="7 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blanket"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="5 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="3 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Binders"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="50 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="6 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chronometer"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="100 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="1 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fibercord cable, 50 ft (rolled)"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="20 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="2 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Field rations (one day's)"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="5 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="1 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fusion cutter"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="25 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="2 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Glowrod"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="10 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="2 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grappling hook"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="50 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="4 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Heat generator"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="400 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="4 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Homing beacon"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="450 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="1 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hydrospanner"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="10 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="2 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Macrobinoculars"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="750 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="1 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mess kit"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="20 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="1 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mirror"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="50 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="0.5 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ram, portable"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="40 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="35 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Restraining bolt"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="350 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="1 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shovel"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="7 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="5 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tent, two-person"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="20 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="5 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="5dp"
+            android:text="@string/equipment_info_adventuring_gear11"
+            android:textAppearance="@style/GoldTextStarjedi" />
+
+        <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginTop="30dp"
+            app:title="weapon and Armor Accessories "
+            app:text="" />
+        <TableLayout
+            android:id="@+id/adventuring_geartable9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0"
+            android:padding="10dp"
+            android:layout_margin="3dp"
+            android:background="#50FFD700">
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Item"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="Cost"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="Weight"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bandolier"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="100 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="2 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bipod"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="200 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="2 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Friction-grip gear"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="2,000 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="12 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jetpack"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="4,500 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="20 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Remote detonator"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="150 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="1 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rocket boots"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="2,500 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="3 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stealth field generator"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="8,000 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="3 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+            <TableRow >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tracker utility vest"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="150 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="3 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+            </TableRow>
+            <TableRow android:background="#50FFD700">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tripod"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"
+                    android:paddingStart="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="450 cr"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:text="16 lb"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gold"
+                    android:textSize="17sp"/>
+            </TableRow>
+
+        </TableLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="5dp"
+            android:text="@string/equipment_info_adventuring_gear12"
             android:textAppearance="@style/GoldTextStarjedi" />
     </LinearLayout>
 </ScrollView>

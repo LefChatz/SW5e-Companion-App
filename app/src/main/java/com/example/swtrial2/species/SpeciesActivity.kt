@@ -8,13 +8,12 @@ import android.view.Menu
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import com.example.swtrial2.R
 import com.example.swtrial2.SW5ECompanionApp
-import com.example.swtrial2.classes.*
 import com.example.swtrial2.databinding.SpeciesBinding
-import com.example.swtrial2.species.*
 import kotlin.properties.Delegates
 
 class SpeciesActivity : AppCompatActivity() {
@@ -69,7 +68,11 @@ class SpeciesActivity : AppCompatActivity() {
                     .show()
             }
         }
-
+        onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                returntomain()
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -125,10 +128,6 @@ class SpeciesActivity : AppCompatActivity() {
         R.id.zabrak ->           "zabrak"
         else->                  "error"
     }))}
-    @Deprecated("Deprecated in Java")
-    override fun onBackPressed(){
-        returntomain()
-    }
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
     }

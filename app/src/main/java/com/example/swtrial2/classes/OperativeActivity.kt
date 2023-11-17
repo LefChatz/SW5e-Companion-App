@@ -285,7 +285,7 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
         return false
     }
 
-    override fun onScroll(p0: MotionEvent, p1: MotionEvent, p2: Float, p3: Float): Boolean {
+    override fun onScroll(p0: MotionEvent?, p1: MotionEvent, p2: Float, p3: Float): Boolean {
         return false
     }
 
@@ -293,30 +293,11 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
         return
     }
 
-    override fun onFling(e0: MotionEvent, e1: MotionEvent, vx: Float, vy: Float): Boolean {
-        val diffX = e1.x - e0.x
-        if(diffX.absoluteValue>(e1.y-e0.y).absoluteValue) {
-            if(binding.dummybutton.text.toString()!="Table"){
-                return if (diffX.absoluteValue > swipethreshold && vx.absoluteValue > swipethreshold) {
-                    //L to R
-                    if (diffX > 0 && scrollmode!=0) {
-                        changeview("LtoR")
-                    }
-                    //R to L
-                    else if(diffX<0 && scrollmode!=1){
-                        changeview("RtoL")
-                    }
-                    true
-                } else{
-                    false
-                }
-            }
-            else{
-                hscroll.getGlobalVisibleRect(rect)
-                if(rect.contains(e0.x.toInt(),e0.y.toInt())){
-                    return false
-                }
-                else{
+    override fun onFling(e0: MotionEvent?, e1: MotionEvent, vx: Float, vy: Float): Boolean {
+        if (e0 != null) {
+            val diffX = e1.x - e0.x
+            if(diffX.absoluteValue>(e1.y-e0.y).absoluteValue) {
+                if(binding.dummybutton.text.toString()!="Table"){
                     return if (diffX.absoluteValue > swipethreshold && vx.absoluteValue > swipethreshold) {
                         //L to R
                         if (diffX > 0 && scrollmode!=0) {
@@ -331,11 +312,33 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
                         false
                     }
                 }
+                else{
+                    hscroll.getGlobalVisibleRect(rect)
+                    if(rect.contains(e0.x.toInt(),e0.y.toInt())){
+                        return false
+                    }
+                    else{
+                        return if (diffX.absoluteValue > swipethreshold && vx.absoluteValue > swipethreshold) {
+                            //L to R
+                            if (diffX > 0 && scrollmode!=0) {
+                                changeview("LtoR")
+                            }
+                            //R to L
+                            else if(diffX<0 && scrollmode!=1){
+                                changeview("RtoL")
+                            }
+                            true
+                        } else{
+                            false
+                        }
+                    }
+                }
+            }
+            else{
+                return false
             }
         }
-        else{
-            return false
-        }
+        else return false
     }
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)

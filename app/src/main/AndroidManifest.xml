@@ -39,15 +39,6 @@
             android:name=".equipment.AllActivity"
             android:exported="false" />
         <activity
-            android:name=".equipment.AdvGearActivity"
-            android:exported="false" />
-        <activity
-            android:name=".equipment.ArmourActivity"
-            android:exported="false" />
-        <activity
-            android:name=".equipment.WeaponsActivity"
-            android:exported="false" />
-        <activity
             android:name=".equipment.EquipmentActivity"
             android:exported="false" />
         <activity
