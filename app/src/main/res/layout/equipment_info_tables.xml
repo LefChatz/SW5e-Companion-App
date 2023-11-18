@@ -17,7 +17,7 @@
 
         <HorizontalScrollView
             android:id="@+id/hscrollArmors"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingHorizontal="5dp"
             android:clipToPadding="false">
@@ -32,7 +32,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Armor And Shields"
+                        android:text="Armors And Shields"
+                        android:textSize="26dp"
                         android:layout_span="5"
                         android:textAppearance="@style/GoldTextStarjedi" />
                 </TableRow>
@@ -831,179 +832,1771 @@
             </TableLayout>
         </HorizontalScrollView>
 
-
-
-
-        <TableLayout
-            android:id="@+id/tablestable2"
+        <HorizontalScrollView
+            android:layout_marginTop="50dp"
+            android:id="@+id/hscrollBlasters"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="5dp"
-            android:paddingEnd="0dp"
-            android:layout_marginTop="30dp">
+            android:paddingHorizontal="5dp"
+            android:clipToPadding="false">
 
-            <TableRow>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Class"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="10dp"
-                    android:text="Funds"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-            </TableRow>
-
-            <TableRow android:background="#50FFD700">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Monk"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp"
-                    android:paddingHorizontal="10dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4d4x100cr"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp"
-                    android:paddingHorizontal="10dp"/>
-            </TableRow>
-
-            <TableRow
-                android:background="#80FFD700">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Combat suit"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp"
-                    android:paddingHorizontal="10dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="100 cr"
-                    android:textAlignment="textEnd"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp"
-                    android:paddingHorizontal="10dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="11 + Dex modifier"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp"
-                    android:paddingHorizontal="10dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10.00 lb"
-                    android:textAlignment="textEnd"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp"
-                    android:paddingHorizontal="10dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="—"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp"
-                    android:paddingHorizontal="10dp" />
-
-            </TableRow>
-
-            <TableRow
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
                 android:background="#50FFD700">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Scholar"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp" />
+                <TableRow >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Weapons"
+                        android:textSize="26sp"
+                        android:layout_span="5"
+                        android:textAppearance="@style/GoldTextStarjedi" />
+                </TableRow>
+                <TableRow >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Blasters"
+                        android:layout_span="5"
+                        android:textAppearance="@style/GoldTextStarjedi" />
+                </TableRow>
+                <TableRow>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="6d4x100cr"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-            </TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="10dp"
+                        android:text="Cost"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-            <TableRow
-                android:background="#80FFD700">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Damage"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingStart="10dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Scout"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Weight"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingEnd="10dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="8d4x100cr"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="10dp"
+                        android:text="Properties"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-            </TableRow>
+                </TableRow>
 
-            <TableRow
-                android:background="#50FFD700">
+                <TableRow android:background="#50FFD700">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sentinel"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp"
-                    android:paddingHorizontal="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Simple Blasters"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:textStyle="italic"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="0dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="6d4x100cr"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp" />
+                </TableRow>
+                <TableRow >
 
-            </TableRow>
-        </TableLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Blaster carbine"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="425 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d6 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
 
-        <TableLayout
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5.5 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Power cell (range 70/280), reload 16, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+                </TableRow>
+                <TableRow android:background="#50FFD700">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Blaster pistol"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="175 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d6 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2.5 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Power cell (range 50/200), reload 16"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                </TableRow>
+                <TableRow >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bowcaster"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1,150 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d10 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="11 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Burst 4, power cell (range 50/200), reload 4, strength 13, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+                </TableRow>
+                <TableRow android:background="#50FFD700">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hold-out"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="225 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d4 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.5 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hidden, light, power cell (range 30/120), reload 8"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                </TableRow>
+                <TableRow >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ion carbine"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="600 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d4 ion"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Power cell (range 60/240), reload 12, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+                </TableRow>
+                <TableRow android:background="#50FFD700">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ion pistol"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="250 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d3 ion"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Power cell (range 40/160), reload 16"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                </TableRow>
+                <TableRow >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Light pistol"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="250 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d4 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.5 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Light, power cell (range 40/160), reload 8"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+                </TableRow>
+                <TableRow android:background="#50FFD700">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Light repeater"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="625 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d6 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Auto, power cell (range 50/200), rapid 5, reload 20, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                </TableRow>
+                <TableRow >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Light slugpistol"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="250 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d4 kinetic"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Light, reload 8, slug cartridge (range 35/140)"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+                </TableRow>
+                <TableRow android:background="#50FFD700">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Scattergun"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="625 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d6 kinetic"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Burst 2, reload 8, slug cartridge (range 30/120), strength 11"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                </TableRow>
+                <TableRow >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shotgun"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="725 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2d4 kinetic"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6.5 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Burst 2, reload 4, slug cartridge (range 30/120), strength 11, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+                </TableRow>
+                <TableRow android:background="#50FFD700">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Slugpistol"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="325 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d6 kinetic"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rapid 8, reload 16, slug cartridge (range 40/160), strength 11"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                </TableRow>
+                <TableRow >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wristblaster"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="200 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d4 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.5 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Disguised, fixed, light, power cell (range 30/120), reload 8"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+                </TableRow>
+                <TableRow android:background="#50FFD700">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wrist launcher"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="400 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="—"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fixed, reload 1, special (range 30/120)"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                </TableRow>
+                <TableRow >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Martial Blasters"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:textStyle="italic"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="0dp"/>
+
+                </TableRow>
+                <TableRow android:background="#50FFD700">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Assault cannon"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1,550 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d12 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Burst 4, power cell (range 90/360), reload 4, strength 15, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Beam rifle"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1,850 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2d6 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="16 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Penetrating 2, power cell (range 150/600), reload 2, strength 15, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                </TableRow>
+                <TableRow android:background="#50FFD700">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Blaster rifle"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="525 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d8 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7.5 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Power cell (range 105/420), reload 12, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Carbine rifle"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="925 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d8 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="8.5 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Auto, power cell (range 90/360), rapid 3, reload 12, strength 11, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                </TableRow>
+                <TableRow android:background="#50FFD700">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cycler rifle"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="825 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d8 kinetic"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7.5 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rapid 2, reload 8, slug cartridge (range 90/360), strength 11, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Heavy blaster rifle"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1,025 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2d4 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Power cell (range 100/400), rapid 2, reload 8, strength 13, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                </TableRow>
+                <TableRow android:background="#50FFD700">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Heavy bowcaster"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1,750 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d12 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15.5 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Burst 2, power cell (range 90/360), reload 4, strength 17, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Heavy carbine"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="775 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d8 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7.5 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Power cell (range 60/240), rapid 4, reload 16, strength 11, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                </TableRow>
+                <TableRow android:background="#50FFD700">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Heavy pistol"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="300 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d8 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Power cell (range 45/180), reload 16"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Heavy repeater"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1,225 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2d4 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="11 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Auto, burst 4, power cell (range 80/320), rapid 4, reload 8, strength 13, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                </TableRow>
+                <TableRow android:background="#50FFD700">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Heavy shotgun"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1,125 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2d4 kinetic"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9.5 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Burst 2, reload 8, slug cartridge (range 60/240), strength 13, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Heavy slugpistol"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="375 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d8 kinetic"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3.5 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rapid 8, reload 12, slug cartridge (range 30/120)"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                </TableRow>
+                <TableRow android:background="#50FFD700">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hunting rifle"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1,000 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d10 kinetic"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="11 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reload 4, slug cartridge (range 125/500), strength 11, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ion cannon"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3,800 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d10 ion"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="16.5 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Auto, burst 4, power cell (range 90/360), reload 4, strength 15, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                </TableRow>
+                <TableRow android:background="#50FFD700">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ion rifle"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1,150 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d6 ion"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="8 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Power cell (range 80/320), reload 8, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repeating blaster"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1,025 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d8 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Auto, burst 4, power cell (range 75/300), rapid 4, reload 8, strength 11, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                </TableRow>
+                <TableRow android:background="#50FFD700">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rotary cannon"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1,500 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d10 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12.5 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Auto, power cell (range 75/300), rapid 2, reload 8, strength 13, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Slugthrower"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="525 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d8 kinetic"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7.5 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reload 12, slug cartridge (range 105/420), two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                </TableRow>
+                <TableRow android:background="#50FFD700">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sniper rifle"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1,300 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d12 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="13.5 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Power cell (range 150/600), reload 2, strength 13, two-handed"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+                </TableRow>
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Subrepeater"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="0dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="625 cr"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1d6 energy"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4 lb"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Auto, rapid 4, light, power cell (range 30/120), reload 16, strength 11"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/gold"
+                        android:textSize="17sp"
+                        android:paddingHorizontal="10dp" />
+
+                </TableRow>
+            </TableLayout>
+        </HorizontalScrollView>
+
+        <!--<TableLayout
             android:id="@+id/tablesbyleveltable1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -1241,249 +2834,6 @@
                     android:paddingHorizontal="10dp" />
 
             </TableRow>
-        </TableLayout>
-
-        <TableLayout
-            android:id="@+id/tablesbyleveltable2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tablesbyleveltable1"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TableRow>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Level"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:paddingHorizontal="10dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="10dp"
-                    android:text="Tables"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-            </TableRow>
-
-            <TableRow android:background="#50FFD700">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="11th"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp"
-                    android:paddingHorizontal="10dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="175,000"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp"
-                    android:paddingHorizontal="10dp" />
-            </TableRow>
-
-            <TableRow android:background="#80FFD700">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="12th"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="250,000cr"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp" />
-
-            </TableRow>
-
-            <TableRow android:background="#50FFD700">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="13th"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="350,000cr"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp" />
-
-            </TableRow>
-
-            <TableRow android:background="#80FFD700">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="14th"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="500,000cr"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp" />
-
-            </TableRow>
-
-            <TableRow android:background="#50FFD700">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="15th"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp"
-                    android:paddingHorizontal="10dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="750,000cr"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp" />
-
-            </TableRow>
-
-            <TableRow android:background="#80FFD700">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="16th"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1,250,000cr"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp" />
-
-            </TableRow>
-
-            <TableRow android:background="#50FFD700">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="17th"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp"
-                    android:paddingHorizontal="10dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2,500,000cr"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp" />
-
-            </TableRow>
-
-            <TableRow android:background="#80FFD700">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="18th"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5,000,000cr"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp" />
-
-            </TableRow>
-
-            <TableRow android:background="#50FFD700">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="19th"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp"
-                    android:paddingHorizontal="10dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="7,500,000cr"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp" />
-
-            </TableRow>
-
-            <TableRow android:background="#80FFD700">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="20th"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp"
-                    android:paddingHorizontal="10dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10,000,000cr"
-                    android:textAlignment="center"
-                    android:textColor="@color/gold"
-                    android:textSize="17sp"
-                    android:paddingHorizontal="10dp" />
-
-            </TableRow>
-        </TableLayout>
-
+        </TableLayout>-->
     </LinearLayout>
 </ScrollView>
