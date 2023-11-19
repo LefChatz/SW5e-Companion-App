@@ -38,7 +38,10 @@ class EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
     private val tabList = listOf("Wealth","Armors & Shields","Weapons","Adventuring Gear","Tools","Expenses","Tables")
 
     private lateinit var gestdect: GestureDetector
-    private var rect = Rect()
+    private var rectArmors = Rect()
+    private var rectBlasters = Rect()
+    private var rectLightweapons = Rect()
+    private var rectVibroweapons = Rect()
     private val swipethreshold = 100
     private var scrollmode=0
 
@@ -209,8 +212,11 @@ class EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
                     }
                 }
                 else{
-                    bindingTables.hscrollArmors.getGlobalVisibleRect(rect)
-                    if(rect.contains(e0.x.toInt(),e0.y.toInt())){
+                    bindingTables.hscrollArmors.getGlobalVisibleRect(rectArmors)
+                    bindingTables.hscrollBlasters.getGlobalVisibleRect(rectBlasters)
+                    bindingTables.hscrollLightweapons.getGlobalVisibleRect(rectLightweapons)
+                    bindingTables.hscrollVibroweapons.getGlobalVisibleRect(rectVibroweapons)
+                    if(rectArmors.contains(e0.x.toInt(),e0.y.toInt()) or rectBlasters.contains(e0.x.toInt(),e0.y.toInt()) or rectLightweapons.contains(e0.x.toInt(),e0.y.toInt()) or rectVibroweapons.contains(e0.x.toInt(),e0.y.toInt())){
                         return false
                     }
                     else{

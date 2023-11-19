@@ -1,6 +1,5 @@
 package com.example.swtrial2.forcecasting
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -96,11 +95,11 @@ class ForcecastingAdapter(private val myContext: Context, private val dataset: M
     private fun updatefav(forcepower: Forcepower, forcepowerbutton: View){
         if(forcepower.forcepowername !in favlist){
             favlist.add(forcepower.forcepowername)
-            forcepowerbutton.background=AppCompatResources.getDrawable(myContext,R.drawable.favouritegoldtrue)
+            forcepowerbutton.foreground=AppCompatResources.getDrawable(myContext,R.drawable.favouritegoldtrue)
         }
         else{
             favlist.remove(forcepower.forcepowername)
-            forcepowerbutton.background=AppCompatResources.getDrawable(myContext,R.drawable.favouritegold)
+            forcepowerbutton.foreground=AppCompatResources.getDrawable(myContext,R.drawable.favouritegold)
         }
         with(myContext.getSharedPreferences("favlist",Context.MODE_PRIVATE).edit()){
             putStringSet("favlist",favlist.toMutableSet())
@@ -108,8 +107,7 @@ class ForcecastingAdapter(private val myContext: Context, private val dataset: M
         }
     }
 
-    @SuppressLint("DiscouragedApi")
-    fun forcepower(view: ForcepowerHolder, forcepower: Forcepower){
+    private fun forcepower(view: ForcepowerHolder, forcepower: Forcepower){
         view.forcepowername.text=forcepower.printedname
         view.forcepowerdetails.text= buildSpannedString{
             append(when(forcepower.level){0->"At-will";1->"1st-level";2->"2nd-level";3->"3rd-level";else->"${forcepower.level}th-level"})
@@ -122,10 +120,10 @@ class ForcecastingAdapter(private val myContext: Context, private val dataset: M
             updatefav(forcepower,view.imbutton)
         }
         if(forcepower.forcepowername in favlist){
-            view.imbutton.background=AppCompatResources.getDrawable(myContext,R.drawable.favouritegoldtrue)
+            view.imbutton.foreground=AppCompatResources.getDrawable(myContext,R.drawable.favouritegoldtrue)
         }
         else{
-            view.imbutton.background=AppCompatResources.getDrawable(myContext,R.drawable.favouritegold)
+            view.imbutton.foreground=AppCompatResources.getDrawable(myContext,R.drawable.favouritegold)
         }
 
     }

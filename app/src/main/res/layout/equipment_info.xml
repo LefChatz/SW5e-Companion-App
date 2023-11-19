@@ -55,7 +55,7 @@
             android:paddingStart="0dp"
             android:background="?android:attr/selectableItemBackground"
             android:textAllCaps="false"
-            android:text="@string/wealth"
+            android:text="@string/wealth_menu"
             android:textColor="@color/gold"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -1,7 +1,7 @@
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-    id ("kotlin-parcelize")
+    id 'com.android.application' version '8.1.4'
+    id 'org.jetbrains.kotlin.android' version "1.9.20"
+    id("org.jetbrains.kotlin.plugin.parcelize") version "1.9.20"
 }
 
 android {
@@ -13,7 +13,7 @@ android {
         minSdk 30
         targetSdk 34
         versionCode 1
-        versionName "1.0"
+        versionName "0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -34,7 +34,6 @@ android {
     buildFeatures {
         viewBinding true
     }
-    buildToolsVersion '33.0.2'
 }
 
 dependencies {
@@ -46,7 +45,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.7.5'
     implementation 'com.android.car.ui:car-ui-lib:2.5.1'
     implementation 'androidx.core:core-ktx:1.12.0'
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.0.0-Beta1'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.20'
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

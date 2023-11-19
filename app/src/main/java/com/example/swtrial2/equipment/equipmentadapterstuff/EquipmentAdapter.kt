@@ -92,11 +92,11 @@ class EquipmentAdapter(private val mycontext: Context, private val dataset: Muta
     private fun updatefav(name: String, equipmentbutton: View){
         if(name !in favequipmentlist){
             favequipmentlist.add(name)
-            equipmentbutton.background=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegoldtrue)
+            equipmentbutton.foreground=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegoldtrue)
         }
         else{
             favequipmentlist.remove(name)
-            equipmentbutton.background=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegold)
+            equipmentbutton.foreground=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegold)
         }
         with(mycontext.getSharedPreferences("favequipmentlist",Context.MODE_PRIVATE).edit()){
             putStringSet("favequipmentlist",favequipmentlist.toMutableSet())
@@ -120,10 +120,10 @@ class EquipmentAdapter(private val mycontext: Context, private val dataset: Muta
                 updatefav(name,view.imbutton)
             }
             if(name in favequipmentlist){
-                view.imbutton.background=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegoldtrue)
+                view.imbutton.foreground=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegoldtrue)
             }
             else{
-                view.imbutton.background=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegold)
+                view.imbutton.foreground=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegold)
             }
         }
         else{

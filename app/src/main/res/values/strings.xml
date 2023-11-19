@@ -779,7 +779,9 @@
     <string name="classes">cLASSES</string>
     <string name="species">SPEciES</string>
 
-    <!--utility stuff for Equipment-->
+    <!--Equipment-->
+
+    <!--utility stuff-->
     <string name="equipment_menu_weapon"><font color="#d4af37">Weapons</font></string>
     <string name="equipment_menu_simple"><font color="#d4af37">"     "Simple</font></string>
     <string name="equipment_menu_martial"><font color="#d4af37">"     "Martial</font></string>
@@ -809,40 +811,14 @@
     <string name="adventuring_gear">ADvENTuXiNG GEAR</string>
     <string name="all_list">" ALL LiST "</string>
     <string name="eqerror404">Equipment not found</string>
-
-    <!--Random utility stuff -->
-    <string name="title_activity_classes">ClassesActivity</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_activity_SW5ECompanionApp">SW5ECompanionApp</string>
-    <string name="app_name">Star Wars Companion App</string>
-    <string name="star_wars_companion_app">Star Wars companion App</string>
-    <string name="dummy">dummy</string>
-    <string name="fab">FAB</string>
-    <string name="menu">menu</string>
-    <string name="plus2">+2</string>
-    <string name="action_settings">Settings</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-    <string name="back">Back</string>
-    <string name="caster_level">Caster\nLevel</string>
-    <string name="slot_level">Slot\nLevel</string>
-
-    <string name="settings"><font color="#d4af37">Settings</font></string>
-    <string name="title">Title</string>
-    <string name="forcepower_name">Forcepower Name</string>
-    <string name="details">details</string>
-    <string name="forcepowererror404">Force power not found</string>
-    <string name="favorite_button">Favorite Forcepower</string>
-    <string name="text">Text</string>
-    <string name="forcecasting_nosuchforcepower">No Such Forcepower Found</string>
-    <string name="sampletext">Sample Text</string>
-    <string name="attributes">Attributes</string>
-    <string name="cost_amp_weight"><![CDATA[Cost & Weight]]></string>
-    <string name="damageac">DamageAC</string>
-    <string name="properties">Properties</string>
-    <string name="expansion">Expansion</string>
-    <string name="error_please_report_this">Error, Please report this to: <b>TODO:</b></string>
-
+    <!--Info menu-->
+    <string name="armor_menu"><font color="#d4af37">Armor</font></string>
+    <string name="weapons_menu"><font color="#d4af37">Weapons</font></string>
+    <string name="adventuring_gear_menu"><font color="#d4af37">Adventuring Gear</font></string>
+    <string name="tools_menu"><font color="#d4af37">Tools</font></string>
+    <string name="expenses_menu"><font color="#d4af37">Expenses</font></string>
+    <string name="wealth_menu"><font color="#d4af37">Wealth</font></string>
+    <!--Info Wealth-->
     <string name="equipment_info_wealth1"><font size="28">T</font>he marketplace of a large city teems with buyers and sellers of many sorts: Jawas peddling refurbished wares (or trying to steal from careless travelers), Ugnauts selling various technology scrap, Twi\'lek armstechs and Mirialan synthweavers. In the largest cities, almost anything imaginable is offered for sale, from exotic spices and luxurious clothing to speeders and spaceships.\n"    "For an adventurer, the availability of armor, weapons, backpacks, rope, and similar goods is of paramount importance, since proper equipment can mean the difference between life and death in a stronghold or the untamed wilds. This chapter details the mundane and exotic merchandise that adventurers commonly find useful in the face of the threats that the worlds of D&amp;D present.\n\n<font size="20"><b>Variant: Starting Wealth by Class</b></font></string>
     <string name="equipment_info_wealth2">Credits come in a variety of denominations: from a single chit to cards loaded with incredible value. While the Republic and Empire have their own currencies, in most worlds they can be used interchangeably.\n"    "With ten credits, a character can buy a power cell, a stylus, or a glowrod. A skilled (but not exceptional) artisan can earn ten credits a day. The credit is the standard unit of measure for wealth, even if the chit itself is not commonly used. When merchants discuss deals that involve goods or services worth hundreds or thousands of credits, the transactions don\'t usually involve the exchange of individual chits. Rather, the credit is a standard measure of value, and the actual exchange is in credit cards, letters of credit, or valuable goods.\n"    " A standard chit weighs about a third of an ounce, so fifty chits weigh a pound.</string>
     <string name="equipment_info_wealth3"><font face="sans-serif">Opportunities abound to find treasure, equipment, weapons, armor, and more in the dungeons you explore. Normally, you can sell your treasures and trinkets when you return to a town or other settlement, provided that you can find buyers and merchants interested in your loot.\n</font>
@@ -851,15 +827,7 @@
         <font size="22">\ngems, jewelry, and art objects</font> <font face="sans-serif">\nThese items retain their full value in the marketplace, and you can either trade them in for credits or use them as currency for other transactions. For exceptionally valuable treasures, the GM might require you to find a buyer in a large city or even another planet.\n</font>
         <font size="22">\ntrade goods</font> <font face="sans-serif">\nIn the Outer Rim, many people conduct transactions through barter. Like gems and art objects, trade goods —raw materials like bags of salt, livestock, and so on— retain their full value in the market and can be used as currency</font></string>
     <string name="equipment_info_wealth4">As characters progress to higher levels, there is an expectation of increased wealth, be it in the shape of coin or equipment. The below table serves as a target for how much each character should have earned at certain levels.\n <font size="20"><b>\nWealth by Level</b></font></string>
-
-
-    <string name="wealth"><font color="#d4af37">Wealth</font></string>
-    <string name="armor_menu"><font color="#d4af37">Armor</font></string>
-    <string name="weapons_menu"><font color="#d4af37">Weapons</font></string>
-    <string name="adventuring_gear_menu"><font color="#d4af37">Adventuring Gear</font></string>
-    <string name="tools_menu"><font color="#d4af37">Tools</font></string>
-    <string name="expenses_menu"><font color="#d4af37">Expenses</font></string>
-
+    <!--Info Armors and Shields-->
     <string name="equipment_info_armors_and_shields1">The different worlds of Star Wars are a vast tapestry made up of many different cultures, each with its own technology level. For this reason, adventurers have access to a variety of armor types, ranging from basic combat suits to heavy battle armor, with several other kinds of armor in between. The Armor table collects the most commonly available types of armor found in the game and separates them into three categories: light armor, medium armor, and heavy armor. Many warriors supplement their armor with a shield.\n"   " The Armor table shows the cost, weight, and other properties of the common types of armor worn in the worlds of Star Wars. </string>
     <string name="equipment_info_armors_and_shields2">Anyone can put on a suit of armor or wield a shield. Only those proficient in the armor\'s use know how to wear it effectively, however. Your class gives you proficiency with certain types of armor. If you wear armor or wield a shield that you lack proficiency with, you have disadvantage on any ability check, attack roll, or saving throw that involves Strength or Dexterity, and you can\'t force- or tech-cast.\n"   " If you have proficiency in armor, you have proficiency in the appropriate shield as well. </string>
     <string name="equipment_info_armors_and_shields4">Armor protects its wearer from attacks. The armor\n(and shield) you wear determines your armor class\n(AC).</string>
@@ -884,7 +852,7 @@
         <font size="20">\nmedium shields</font> <font face="sans-serif">\nA medium shield is a common defensive technology that protects the user from blaster fire, the elements, or other hazards. Medium shields are used in conjunction with any one-handed weapon.\n</font>
         <font size="20">\nheavy shields</font> <font face="sans-serif">\nHeavy shields are much larger and more cumbersome, but they offer more protection than their smaller counterparts. Their unwieldy size, however, requires the use of a one-handed weapon with the light property in the other hand.</font></string>
     <string name="equipment_info_armors_and_shields10" >The time it takes to don or doff armor depends on the armor\'s category. If you have help, you can reduce the time it takes to don or doff armor by half.\n"   " <b>Don:</b> This is the time it takes to put on armor or wield your shield. You benefit from the armor only if you take the full time to don the suit of armor.\n"   " <b>Doff:</b> This is the time it takes to remove armor or store your shield.</string>
-
+    <!--Info Weapons-->
     <string name="equipment_info_weapons1"><font size="26">Weapons</font><font face="sans-serif">\nYour class grants proficiency in certain weapons, reflecting both the class\'s focus and the tools you are most likely to use. Whether you favor a vibroweapon or a blaster, your weapon and your ability to wield it effectively can mean the difference between life and death while adventuring. The Weapons tables show the most common weapons used in the worlds of <i>Star Wars</i>, their price and weight, the damage they deal when they hit, and any special properties they possess. Every weapon is classified as a blaster, lightweapon, or vibroweapon. A vibroweapon or lightweapon is used to attack a target within 5 feet of you, whereas a blaster is used to attack a target at a distance. Lightweapons are generally used in melee, but due to their nature require separate proficiency.</font></string>
     <string name="equipment_info_weapons2">Your species, class, and feats can grant you proficiency with certain weapons or categories of weapons. The two categories are simple and martial. Most people can use simple weapons, which are commonly seen in the hands of the unspecialized, with proficiency. Martial weapons, such as vibroswords or sniper rifles, require more specialized training to use effectively. Most warriors use martial weapons because these weapons put their fighting style and training to best use. Proficiency with a weapon allows you to add your proficiency bonus to the attack roll for any attack you make with that weapon. If you make an attack roll using a weapon with which you lack proficiency, you do not add your proficiency bonus to the attack roll.</string>
     <string name="equipment_info_weapons3">Sometimes characters don\'t have their weapons and have to attack with whatever is close at hand. An improvised weapon includes any object you can wield in one or two hands, such as broken glass, a table leg, a frying pan, a wagon wheel, or a dead jawa.\n"   " In many cases, an improvised weapon is similar to an actual weapon and can be treated as such. At the GM\'s discretion, a character proficient with a weapon can use a similar object as if it were that weapon and use his or her proficiency bonus.\n"   " An object that bears no resemblance to a weapon deals 1d4 kinetic damage. If a character uses a ranged weapon to make a melee attack, or throws a melee weapon that does not have the thrown property, it also deals 1d4 damage. An improvised thrown weapon has a normal range of 20 feet and a long range of 60 feet.</string>
@@ -918,7 +886,7 @@
         <font size="20">\nnet</font> <font face="sans-serif">\nA Large or smaller creature hit by a net is restrained until it is freed. A net has no effect on formless or Huge or larger creatures. A creature can use its action to make a DC 13 Strength check, freeing itself or another creature within its reach on a success. The net has an AC of 10, 5 hit points, and immunity to all damage not dealt by melee weapons. Destroying the net frees the creature without harming it and immediately ends the net\'s effects. While a creature is restrained by a net, you can make no further attacks with it.\n</font>
         <font size="20">\nvibrodart</font> <font face="sans-serif">\nDue to their diminutive size, vibrodarts make ineffective melee weapons. Melee attack rolls made with them are made at disadvantage.\n</font>
         <font size="20">\nwrist launcher</font> <font face="sans-serif">\nRather than traditional power cells, the wrist launcher fires specialized projectiles in the form of darts, small missiles, or specialized canisters.</font></string>
-
+    <!--Info AdvGear-->
     <string name="equipment_info_adventuring_gear1"><font size="26">adventuring gear</font><font face="sans-serif">\nThis section describes items that have special rules or require further explanation.</font></string>
     <string name="equipment_info_adventuring_gear2"><font face="sans-serif">The starting equipment you get from your class includes a collection of useful adventuring gear, put together in a pack. The contents of these packs are listed here. If you are buying your starting equipment, you can purchase a pack for the price shown, which might be cheaper than buying the items individually.\n</font>
         <font size="20">\nburglar\'s pack</font> <font face="sans-serif">\nCosts 290 credits. Includes a backpack, two glowrods, a hydrospanner, a fusion cutter, a chronometer, a grappling hook, 5 days of field rations, and a canteen.\n</font>
@@ -993,7 +961,7 @@
         <font size="20">\nstealth field generator</font> <font face="sans-serif">\nStealth field generators are special devices typically worn on belts that function as a portable, personal cloaking device. Activating or deactivating the generator requires a bonus action and, while active, you have advantage on Dexterity (Stealth) ability checks that rely on sight. The generator lasts for 1 minute and can be recharged by a power source or replacing the power cell. This effect ends early if you make an attack or cast a force or tech power.\n</font>
         <font size="20">\ntracker utility vest</font> <font face="sans-serif">\nA utility vest is a sleeveless item of clothing that includes several evenly-distributed pockets, popular among hunters, smugglers, and adventurers. The vest is made of leathery, hide material to resist rips, corrosion and water. The wearer can carry up to 10 light items (up to 1.00 lb each) without increasing their total encumbrance.\n</font>
         <font size="20">\ntripod</font> <font face="sans-serif">\nA tripod is a device mounted to a two-handed blaster that lacks the fixed property to offer increased stability. Over the course of 1 minute, you can deploy or collapse the tripod. While deployed, you ignore the Strength requirement on the attached blaster with the strength property, and your speed is reduced to 0. Additionally, while deployed, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of the weapon.</font></string>
-
+    <!--Info Equipment Packs-->
     <string name="equipment_info_equipment_packs">"   "<font color="#d4af37">Equipment Packs</font></string>
     <string name="equipment_info_ammunition">"   "<font color="#d4af37">Ammunition</font></string>
     <string name="equipment_info_communications">"   "<font color="#d4af37">Communications</font></string>
@@ -1004,13 +972,13 @@
     <string name="equipment_info_storage">"   "<font color="#d4af37">Storage</font></string>
     <string name="equipment_info_utilities">"   "<font color="#d4af37">Utilities</font></string>
     <string name="equipment_info_weapon_and_armor_accessories">"   "<font color="#d4af37">Accessories</font></string>
-
+    <!--Info Tools-->
     <string name="equipment_info_tools"><font face="sans-serif">A tool helps you to do something you couldn\'t otherwise do, such as craft or repair an item, pick a lock, or slice into a computer. Your species, class, background, or feats give you proficiency with certain tools. Tool use is not tied to a single ability, since proficiency with a tool represents broader knowledge of its use. Like skills, proficiency with a tool allows you to add your proficiency bonus to checks you make with it. Unlike skills, you must have your tools present in order to make an ability check with them.\n"   " The table shows examples of some of the most common types of tools. Each tool falls under one of four categories: artisan\'s implements, gaming sets, musical instruments, or specialist\'s kits. Each tool requires a separate proficiency.\n</font>
         <font size="20">\nartisan\'s implements</font> <font face="sans-serif">\nArtisan\'s implements are predominantly designed for building and crafting things of permanent nature. Each set of implements focuses on a specific craft.\n"   " <b>Armormech\'s Implements:</b> Armormech\'s implements are for crafting and repairing armor and shields.\n"   " <b>Armstech\'s Implements:</b> Armstech\'s implements are for crafting and repairing blasters and vibroweapons.\n"   " <b>Artificer\'s Implements:</b> Artificer\'s implements are for creating lightweapons.\n"   " <b>Astrotech\'s Implements:</b> Astrotech\'s implements are for crafting and modifying droids.\n"   " <b>Biotech\'s Implements:</b> Biotech\'s implements are used to create cybernetic augmentations.\n"   " <b>Cybertech\'s Implements:</b> Cybertech\'s implements are used for crafting and modifying wristpads.\n"   " <b>Gadgeteer\'s Implements:</b> Gadgeteer\'s implements are used for crafting many types of adventuring gear, such as jet packs or friction-grip gear.\n"   " <b>Tinker\'s Implements:</b> Tinker\'s implements are general use tools that can craft small and versatile trinkets.\n</font>
         <font size="20">\ngaming sets</font> <font face="sans-serif">\nThis item encompasses a wide range of game pieces, including dice and/or decks of cards. A few common examples appear on the Tools table, but other kinds of gaming sets exist.\n</font>
         <font size="20">\nmusical instruments</font> <font face="sans-serif">\nSeveral of the most common types of musical instruments are shown on the table as examples. Musical instruments can often be used in place of—or in addition to—a performance.\n</font>
         <font size="20">\nspecialist\'s kits</font> <font face="sans-serif">\nLike artisan\'s implements, specialist\'s kits are need to pursue a craft or trade. Some specialist\'s kits are used to craft items that are impermanent, such as grenades, medpacs, or poisons while other tools are used to achieve a specific purpose, such as picking locks or creating a disguise. \n"   " <b>Biochemist\'s Kit:</b> Biochemist\'s kits are used to create and enhance medpacs and other healing implements. \n"   " <b>Chef\'s Kit:</b> Chef\'s kits are used to prepare food and identify food that might be spoiled or tampered with. \n"   " <b>Demolitions Kit:</b> Demolitions kits are used to create, enhance, and disarm explosives. \n"   " <b>Disguise Kit:</b> Disguise kits are used to modify a creature\'s appearance, to hide their appearance or to mimic the appearance of others. \n"   " <b>Forgery Kit:</b> Forgery kits create false document and certifications, both physical and digital. \n"   " <b>Mechanic\'s Kit:</b> Mechanic\'s kits are used to craft and repair vehicles and starships. \n"   " <b>Poisoner\'s Kit:</b> Poisoner\'s kits are designed to create and identify poisons. \n"   " <b>Security Kit:</b> Security kits are used to bypass physical locks. \n"   " <b>Slicer\'s Kit:</b> Slicer\'s kits can bypass computerized defenses and locks. \n"   " <b>Trapper\'s Kit:</b> Trapper\'s kits can create, disarm, and disassemble traps.</font></string>
-
+    <!--Info Expenses-->
     <string name="equipment_info_expenses1"><font size="26">Expenses</font><font face="sans-serif">\nWhen not descending into the depths of the earth, exploring ruins for lost treasures, or waging war against the encroaching darkness, adventurers face more mundane realities. Even in a fantastical world, people require basic necessities such as shelter, sustenance, and clothing. These things cost money, although some lifestyles cost more than others.</font></string>
     <string name="equipment_info_expenses2"><font size="20">wretched</font> <font face="sans-serif">\nYou live in inhumane conditions. With no place to call home, you shelter wherever you can, sneaking into barns, huddling in old crates, and relying on the good graces of people better off than you. A wretched lifestyle presents abundant dangers. Violence, disease, and hunger follow you wherever you go. Other wretched people covet your armor, weapons, and adventuring gear, which represent a fortune by their standards. You are beneath the notice of most people.\n</font>
         <font size="20">\nsqualid</font> <font face="sans-serif">\nYou live in a leaky stable, a mud-floored hut just outside town, or a vermin-infested boarding house in the worst part of town. You have shelter from the elements, but you live in a desperate and often violent environment, in places rife with disease, hunger, and misfortune. You are beneath the notice of most people, and you have few legal protections. Most people at this lifestyle level have suffered some terrible setback. They might be disturbed diseased.\n</font>
@@ -1022,4 +990,38 @@
     <string name="equipment_info_expenses3">The Food, Drink, and Lodging table gives prices for individual food items and a single night\'s lodging. These prices are included in your total lifestyle expenses.</string>
     <string name="equipment_info_expenses4"><font size="22"><b>Self-Sufficiency</b></font>\nThe expenses and lifestyles described in this chapter assume that you are spending your time between adventures in cities, availing yourself of whatever services you can afford— paying for food and shelter, paying townspeople to repair your equipment, and so on. Some characters, though, might prefer to spend their time away from civilization, sustaining themselves in the wild by hunting, foraging, and repairing their own gear.\n"   " Maintaining this kind of lifestyle doesn\'t require you to spend any coin, but it is time-consuming. If you spend your time between adventures practicing a profession, as described in chapter 8, you can eke out the equivalent of a poor lifestyle. Proficiency in the Survival skill lets you live at the equivalent of a comfortable lifestyle.</string>
     <string name="equipment_info_expenses5">Adventurers can pay non-player characters to assist them or act on their behalf in a variety of circumstances. Most such hirelings have fairly ordinary skills, while others are masters of a craft or art, and a few are experts with specialized adventuring skills.\n"   " Some of the most basic types of hirelings appear on the Services table. Other common hirelings include any of the wide variety of people who inhabit a typical town or city, when the adventurers pay them to perform a specific task. For example, a fighter might commission an armstech to craft a special vibroblade, while a scholar might pay a tailor to make exquisite clothing for an upcoming meeting with a senator.\n"   " Other hirelings provide more expert or dangerous services. Mercenary soldiers paid to help the adventurers take on a trandoshan army are hirelings, as are sages hired to research ancient or esoteric lore. If a high-level adventurer establishes a stronghold of some kind, he or she might hire a whole staff of servants and agents to run the place, from a castellan or steward to menial laborers to keep the facilities clean. These hirelings often enjoy a long-term contract that includes a place to live within the stronghold as part of the offered compensation.</string>
+
+    <!--Random utility stuff -->
+    <string name="title_activity_classes">ClassesActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_SW5ECompanionApp">SW5ECompanionApp</string>
+    <string name="app_name">Star Wars Companion App</string>
+    <string name="star_wars_companion_app">Star Wars companion App</string>
+    <string name="dummy">dummy</string>
+    <string name="fab">FAB</string>
+    <string name="menu">menu</string>
+    <string name="plus2">+2</string>
+    <string name="action_settings">Settings</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="back">Back</string>
+    <string name="caster_level">Caster\nLevel</string>
+    <string name="slot_level">Slot\nLevel</string>
+
+    <string name="settings"><font color="#d4af37">Settings</font></string>
+    <string name="title">Title</string>
+    <string name="forcepower_name">Forcepower Name</string>
+    <string name="details">details</string>
+    <string name="forcepowererror404">Force power not found</string>
+    <string name="favorite_button">Favorite Forcepower</string>
+    <string name="text">Text</string>
+    <string name="forcecasting_nosuchforcepower">No Such Forcepower Found</string>
+    <string name="sampletext">Sample Text</string>
+    <string name="attributes">Attributes</string>
+    <string name="cost_amp_weight"><![CDATA[Cost & Weight]]></string>
+    <string name="damageac">DamageAC</string>
+    <string name="properties">Properties</string>
+    <string name="expansion">Expansion</string>
+    <!-- TODO Error reporting medium -->
+    <string name="error_please_report_this">Error, Please report this to: <b>TODO:</b></string>
 </resources>
