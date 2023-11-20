@@ -65,7 +65,7 @@ class EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
 
         bindingWealth.scrolly.removeAllViews()
 
-        advgearmenu=PopupMenu(this,binding.fab,3)
+        advgearmenu=PopupMenu(this,binding.fab)
         menuInflater.inflate(R.menu.menu_equipment_info_advgear_scrollpoints,advgearmenu.menu)
         binding.fab.setOnClickListener {advgearmenu.show()}
         advgearmenu.setOnMenuItemClickListener {menuItem->
