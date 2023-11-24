@@ -13,9 +13,6 @@
         android:theme="@style/BlackStatusBar"
         tools:targetApi="31">
         <activity
-            android:name=".equipment.EquipmentInfo"
-            android:exported="false" />
-        <activity
             android:name=".SW5ECompanionApp"
             android:exported="true"
             android:theme="@style/BlackStatusBar">
@@ -26,6 +23,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".backgrounds.BackgroundsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".backgrounds.BackgroundsDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".equipment.EquipmentInfo"
+            android:exported="false" />
         <activity
             android:name=".species.SpeciesDetailsActivity"
             android:exported="false" />

@@ -1024,4 +1024,5 @@
     <string name="expansion">Expansion</string>
     <!-- TODO Error reporting medium -->
     <string name="error_please_report_this">Error, Please report this to: <b>TODO:</b></string>
+    <string name="backgrounds">Backgrounds</string>
 </resources>

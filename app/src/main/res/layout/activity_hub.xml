@@ -64,9 +64,9 @@
                 android:layout_height="wrap_content"
                 android:onClick="portal"
                 app:background="@drawable/forcebutton6"
-                app:layout_constraintEnd_toStartOf="@+id/buttonclasses"
+                app:layout_constraintEnd_toStartOf="@+id/buttonequipment"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/buttonequipment"
                 app:text="@string/force" />
 
             <com.example.swtrial2.widget.ClassButton
@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:onClick="portal"
                 app:background="@drawable/classbutton"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/buttonbackgrounds"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:text="@string/classes" />
@@ -87,7 +87,7 @@
                 android:onClick="portal"
                 app:background="@drawable/speciesbutton"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/buttonclasses"
+                app:layout_constraintStart_toEndOf="@+id/buttonbackgrounds"
                 app:layout_constraintTop_toTopOf="parent"
                 app:text="SPEciES" />
 
@@ -98,21 +98,21 @@
                 android:layout_marginTop="30dp"
                 android:onClick="portal"
                 app:background="@drawable/equipmentbutton2"
-                app:layout_constraintEnd_toStartOf="@+id/buttonempty1"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/buttonforce"
+                app:layout_constraintTop_toBottomOf="@+id/buttonclasses"
                 app:text="EquipMENT" />
 
             <com.example.swtrial2.widget.ClassButton
-                android:id="@+id/buttonempty1"
+                android:id="@+id/buttonbackgrounds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="portal"
                 app:background="@drawable/equipmentbutton2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/buttonequipment"
-                app:text="Empty 1" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:text="Backg/nds" />
 
             <com.example.swtrial2.widget.ClassButton
                 android:id="@+id/buttonempty2"
@@ -121,7 +121,7 @@
                 android:onClick="portal"
                 app:background="@drawable/equipmentbutton2"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/buttonempty1"
+                app:layout_constraintStart_toEndOf="@+id/buttonequipment"
                 app:layout_constraintTop_toTopOf="@+id/buttonequipment"
                 app:text="Empty 2" />
 
