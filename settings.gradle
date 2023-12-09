@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Swtrial2"
+rootProject.name = "SW5eCompanionApp"
 include ':app'
