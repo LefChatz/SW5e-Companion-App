@@ -29,7 +29,6 @@ class SW5ECompanionApp : AppCompatActivity() {
             binding.buttonforce.id->        startActivity(Intent(this, ForcecastingActivity::class.java))
             binding.buttonequipment.id->    startActivity(Intent(this, EquipmentActivity::class.java))
         }
-        finish()  
+        finish()
     }
-
 }

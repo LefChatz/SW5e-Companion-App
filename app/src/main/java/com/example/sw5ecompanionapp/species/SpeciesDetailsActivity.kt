@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.GestureDetector
 import android.view.LayoutInflater
 import android.view.MotionEvent
+import android.view.View
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,7 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
     private lateinit var inflater: LayoutInflater
     private lateinit var specie: String
     private lateinit var tempstring: String
+    private lateinit var specietext: CharSequence
     private var infoidentif = 0
 
     @SuppressLint("DiscouragedApi")
@@ -40,6 +42,7 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
         binding.dummybutton.setOnClickListener { changeview() }
 
         infoidentif=resources.getIdentifier("species_"+specie+"_info","layout",packageName)
+        specietext=resources.getText(resources.getIdentifier(specie+"_traitsText","string",packageName))
 
         if (infoidentif!=0){
             inflater.inflate(infoidentif, binding.ll, true)
@@ -64,13 +67,12 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
         if (mode==0) {
             val tempview = inflater.inflate(R.layout.universal_title_goldbar_text_textview,binding.ll,false)
             tempview.findViewById<TextView>(R.id.headertext).text=tempstring
+            tempview.findViewById<TextView>(R.id.contenttext).text=specietext
 
-            tempview.findViewById<TextView>(R.id.contenttext).text=resources.getText(resources.getIdentifier(specie+"_traitsText","string",packageName))
             binding.ll.addView(tempview)
             binding.dummybutton.text = getText(R.string.traits)
             mode=1
         } else {
-
             inflater.inflate(resources.getIdentifier("species_"+specie+"_info","layout",packageName), binding.ll, true)
             binding.dummybutton.text = getString(R.string.info)
             mode=0
