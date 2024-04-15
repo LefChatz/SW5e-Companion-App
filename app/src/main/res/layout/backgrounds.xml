@@ -74,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/agent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:text="Agent" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/bounty_hunter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:text="Bounty\nhunter" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/criminal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -116,7 +116,7 @@
                 app:text="criminal" />
 
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/entertainer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -128,7 +128,7 @@
                 app:layout_constraintTop_toTopOf="@+id/criminal"
                 app:text="Entertainer" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/force_adept"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -141,7 +141,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/entertainer"
                 app:text="Force\nAdept" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/gambler"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -153,7 +153,7 @@
                 app:layout_constraintTop_toTopOf="@+id/force_adept"
                 app:text="GambleX" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/investigator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -166,7 +166,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/force_adept"
                 app:text="investigator" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/jedi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -178,7 +178,7 @@
                 app:layout_constraintTop_toTopOf="@+id/investigator"
                 app:text="Jedi" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/mandalorian"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -191,7 +191,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/investigator"
                 app:text="Mandalorian" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/mercenary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -203,7 +203,7 @@
                 app:layout_constraintTop_toTopOf="@+id/mandalorian"
                 app:text="Mercenary" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/noble"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -216,7 +216,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/mandalorian"
                 app:text="Noble" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/nomad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -228,7 +228,7 @@
                 app:layout_constraintTop_toTopOf="@+id/noble"
                 app:text="Nomad" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/outlaw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -241,7 +241,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/noble"
                 app:text="outlaw" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/pirate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -253,7 +253,7 @@
                 app:layout_constraintTop_toTopOf="@+id/outlaw"
                 app:text="Pirate" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/scientist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -266,7 +266,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/outlaw"
                 app:text="Scientist" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/scoundrel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -278,7 +278,7 @@
                 app:layout_constraintTop_toTopOf="@+id/scientist"
                 app:text="Scoundrel" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/sith"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -291,7 +291,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/scientist"
                 app:text="Sith" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/smuggler"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -303,7 +303,7 @@
                 app:layout_constraintTop_toTopOf="@+id/sith"
                 app:text="Smuggler" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/soldier"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -316,7 +316,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/sith"
                 app:text="Soldier" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/spacer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

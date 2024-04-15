@@ -24,7 +24,7 @@
 
 
 
-        <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
+        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
@@ -220,7 +220,7 @@
             android:text="@string/equipment_info_expenses2"
             android:textAppearance="@style/GoldTextStarjedi" />
 
-        <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
+        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -808,7 +808,7 @@
             android:text="@string/equipment_info_expenses4"
             android:textAppearance="@style/GoldText" />
 
-        <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
+        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"

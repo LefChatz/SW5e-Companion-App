@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25sp">
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/buttonforce"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
                 app:layout_constraintTop_toTopOf="@+id/buttonequipment"
                 app:text="@string/force" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/buttonclasses"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:text="@string/classes" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/buttonspecies"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:text="SPEciES" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/buttonequipment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/buttonclasses"
                 app:text="EquipMENT" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/buttonbackgrounds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -114,7 +114,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:text="Backg/nds" />
 
-            <com.example.swtrial2.widget.ClassButton
+            <com.example.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/buttonempty2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

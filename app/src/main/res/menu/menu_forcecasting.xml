@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.swtrial2.forcecasting.ForcecastingActivity">
+    tools:context="com.example.sw5ecompanionapp.forcecasting.ForcecastingActivity">
     <item
         android:id="@+id/sort"
         android:orderInCategory="1"

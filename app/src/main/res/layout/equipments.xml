@@ -69,7 +69,7 @@
         tools:context=".equipment.EquipmentActivity"
         tools:showIn="@layout/equipments">
 
-        <com.example.swtrial2.widget.EquipmentButton
+        <com.example.sw5ecompanionapp.widget.EquipmentButton
             android:id="@+id/info"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
             app:layout_constraintVertical_bias="0.5"
             app:text="Equipment info" />
 
-        <com.example.swtrial2.widget.EquipmentButton
+        <com.example.sw5ecompanionapp.widget.EquipmentButton
             android:id="@+id/all"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

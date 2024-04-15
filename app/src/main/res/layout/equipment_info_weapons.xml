@@ -20,21 +20,21 @@
             android:text="@string/equipment_info_weapons1"
             android:textAppearance="@style/GoldTextStarjedi" />
 
-        <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
+        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:title="Weapon Proficiency"
             app:text="@string/equipment_info_weapons2" />
 
-        <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
+        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:title="improvised weapons"
             app:text="@string/equipment_info_weapons3" />
 
-        <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
+        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -42,7 +42,7 @@
             app:text="@string/equipment_info_weapons4"
             app:makeStarjedi="true" />
 
-        <com.example.swtrial2.widget.UniversalTitleGoldbarTextTextview
+        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
