@@ -10,8 +10,8 @@ data class Techpower(
     var level: Int=10,
     var range: String="0 feet",
     var duration: String="up to 0 minutes",
-    var source: String="FU",
     var concentration: Boolean = false,
+    var source: String="FU",
     var isBig: Boolean = false,
     var detailsText: CharSequence="Placeholder for the Tech power's details text"): Parcelable
 

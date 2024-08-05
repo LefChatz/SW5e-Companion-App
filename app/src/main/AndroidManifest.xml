@@ -36,9 +36,6 @@
             android:name=".species.SpeciesDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".forcecasting.ForcecastingDetailsActivity"
-            android:exported="false" />
-        <activity
             android:name=".equipment.equipmentadapterstuff.EquipmentDetailsActivity"
             android:exported="false" />
         <activity
@@ -103,6 +100,18 @@
             android:exported="true"
             android:theme="@style/BlackStatusBar"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".forcecasting.ForcecastingDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".techcasting.TechcastingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:theme="@style/BlackStatusBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".techcasting.TechcastingDetailsActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"

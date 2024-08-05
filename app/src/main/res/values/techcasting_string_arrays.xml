@@ -33,7 +33,7 @@
         <item name="Duration">Up to 1 round</item>
         <item name="concentration">true</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">You take a sensory snapshot of a target within range. Your tech grants you a brief insight into the target’s defenses. You have advantage on the next attack roll you make against the target before the end of your next turn.\n\n"   "This power benefits additional attacks at higher levels: two attacks at 5th level, three attacks at 11th level, and four attacks at 17th level.</item>
         <!--Combustive Shot-->
         <item name="techpowername">combustive_shot</item>
@@ -231,7 +231,7 @@
         <item name="Duration">Instantaneous</item>
         <item name="concentration">false</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">You generate a static charge that can aid or harm a creature you touch. Make a melee tech attack against the target. On a hit, the target takes 1d10 lightning damage. If the target is a living creature that has 0 hit points, it immediately gains one death saving throw success instead of taking damage.\n\n"   "This power’s damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).</item>
         <!--Minor Hologram-->
         <item name="techpowername">minor_hologram</item>
@@ -682,7 +682,7 @@
         <item name="Duration">Up to 1 hour</item>
         <item name="concentration">true</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">You gain insight into an encrypted message you are holding when you cast this power, granting you advantage on ability checks you make to decipher the document.</item>
         <!--Delayed Detonator-->
         <item name="techpowername">delayed_detonator</item>
@@ -704,7 +704,7 @@
         <item name="Duration">Up to 10 minutes</item>
         <item name="concentration">true</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">For the duration, you sense the presence of any enhancements within 30 feet of you. If you sense an enhancement in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears an enhancement.\n\n"   "The power is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.</item>
         <!--Element of Surprise-->
         <item name="techpowername">element_of_surprise</item>
@@ -715,7 +715,7 @@
         <item name="Duration">Instantaneous</item>
         <item name="concentration">false</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">you can use this power as a reaction to being damaged by a creature within 60 feet of you that you can see\n\n"   "You expel a sabotage charge at the creature that attacked you. The creature must make a Dexterity saving throw. It takes 2d10 fire damage on a failed save, or half as much damage on a successful one.\n\n"   "<b>Overcharge Tech:</b>When you cast this power using a tech slot of 2nd level or higher, the damage increases by 1d10 for each slot level above 1st.</item>
         <!--Energy Shield-->
         <item name="techpowername">energy_shield</item>
@@ -748,7 +748,7 @@
         <item name="Duration">Up to 10 minutes</item>
         <item name="concentration">true</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">This power gives you a burst of adrenaline that allows you to move at an incredible pace. When you cast this power, and then as a bonus action on each of your turns until the power ends, you can take the Dash action.</item>
         <!--Fabricate Minor Trap-->
         <item name="techpowername">fabricate_minor_trap</item>
@@ -759,7 +759,7 @@
         <item name="Duration">#TODO</item>
         <item name="concentration">false</item>
         <item name="source">EC</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">You ward a 30-foot radius sphere centered on you with a manually-operated trap. The trap is well disguised. Any creature that can’t see the area at the time the power is cast must make a Wisdom (Perception) check against your tech save DC to notice the trap before entering the area. Once after this power is cast, when a creature you can see enters or moves within the warded area, you can use your reaction to trigger the trap. The effect on the creature depends on the kind of trap you employ, which you choose when you cast this power. You can maintain a maximum number of instances of this power at once equal to your techcasting ability modifier.\n\n"   "<b>Blaster:</b> This power creates a blaster turret which fires at the target when triggered. The creature must make a Dexterity saving throw. It takes 2d10 energy damage on a failed save, or half as much on a successful one.\n\n"   "<b>Pitfall:</b> This power creates a 5-foot diameter, 15-foot deep pitfall in the ground beneath the creature when triggered, which must make a Dexterity saving throw. On a failed saving throw, the creature falls into the pitfall. On a success, the creature falls prone in a space within 5 feet of the pitfall. This pitfall cannot be created through manufactured terrain. Otherwise, the hole is well constructed and lasts even after the power’s duration. Flying creatures avoid this trap.\n\n"   "<b>Snare:</b> This power creates a snare of rope, wire, vine, or webs that entangle the creature. The creature must make a Strength saving throw. A Large or larger creature has advantage on this saving throw. On a failed save, the creature takes 1d6 kinetic damage and is restrained until the start of its next turn. On a success, the creature takes half as much damage and ends its movement.\n\n"   "<b>Overcharge Tech:</b> When you cast this power using a tech slot of 2nd level or higher, the effects increase, based on the trap.\n"   "Blaster. The damage increases by 1d10 for each slot level above 1st. If cast using a slot of 3rd level or higher, this power targets creatures in a sphere centered on the triggering creature within the warded area, the radius of which is 5 feet for every two slot levels above 1st.\n"   "Pitfall. The depth of the pitfall increases by 5 feet for each slot level above 1st. If cast using a slot of 3rd level or higher, the diameter of the pit is 5 feet wider for every two slot levels above 1st.\n"   "Snare. The damage increases by 1d6 for each slot level above 1st. If cast using a slot of 3rd level or higher, Large creatures no longer have advantage on their saving throw. This size category increases for every two slot levels above 1st.</item>
         <!--Flame Sweep-->
         <item name="techpowername">flame_sweep</item>
@@ -814,7 +814,7 @@
         <item name="Duration">1 hour</item>
         <item name="concentration">false</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">Until the power ends or you use an action to dismiss it, you can disguise yourself through the use of a hologram emitter. You can appear to be shorter or taller by about a foot and change the appearance of your body weight, but you cannot change the basic structure of your body. The hologram can include your clothes, armor, weapons, and other belongings on your person.\n\n"   "The illusion is only visual, so any sort of physical contact will only interact with the real size and shape of you. A creature can use its action to make an Intelligence (Investigation) check against your tech save DC, seeing through the hologram on a success.</item>
         <!--Homing Rockets-->
         <item name="techpowername">homing_rockets</item>
@@ -971,7 +971,6 @@
         <item name="isBig">false</item>
         <!--#TODO Make table layout, Add table programmatically-->
         <item name="details_Text">You fire an undulating, warbling bolt of energy at a creature within range. Make a ranged tech attack against the target. On a hit, the target takes 2d8 + 1d6 damage. Choose one of the d8s. The number rolled on that die determines the attacks damage type, as shown below.</item>
-        <item name="details_Text2">If you roll the same number on both d8s, the bolt leaps from the target to a different creature of your choice within 30 feet of it. Make a new attack roll against the new target, and make a new damage roll, which could cause the bolt to leap again. A creature can be targeted only once by each casting of this power.\n\n"   "<b>Overcharge Tech:</b> When you cast this power using a tech slot of 2nd level or higher, each target takes 1d6 extra damage of the type rolled for each slot level above 1st.</item>
         <!--Spot the Weakness-->
         <item name="techpowername">spot_the_weakness</item>
         <item name="printname"><font color="#D4af37">Spot the Weakness</font></item>
@@ -1058,7 +1057,7 @@
         <item name="Duration">Instantaneous</item>
         <item name="concentration">false</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">You interface a tracker droid with your tech focus, creating a permanent link.\n\n"   "Your tracker droid acts independently of you, but it always obeys your commands. In combat, it acts on your turn.\n\n"   "While your tracker droid is within 100 feet of you, you can communicate with it via your tech focus. Additionally, as an action, you can see through your droid’s vision and hear what it hears until the start of your next turn, gaining the benefits of any special senses that the droid has. During this time, you are deaf and blind with regard to your own senses.\n\n"   "You can’t maintain an interface between more than one tracker droid and your tech focus at a time.\n\n"   "Finally, when you cast a tech power with a range of touch, your tracker can deliver the power as if it had cast it. Your tracker droid must be within 100 feet of you, and it must use its reaction to deliver the power when you cast it. If the power requires an attack roll, you use your attack modifier for the roll.\n\n"   "<b>Overcharge Tech:</b> When you cast this power using a tech slot of 3rd level or higher, you can maintain a link with one more tracker droid for every two slot levels above 1st. Multiple tracker droids act on the same initiative. You can only see through one droid’s vision at a time, but you can toggle between droids as a bonus action. Each droid must still be within 100 feet of you.</item>
         <!--Tranquilizer-->
         <item name="techpowername">tranquilizer</item>
@@ -1080,7 +1079,7 @@
         <item name="Duration">1 hour</item>
         <item name="concentration">false</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">For the duration, you understand the literal meaning of any spoken registered language that you hear, as long as you have your tech focus. You also understand any written language that you see, but you must be within reach of the surface on which the words are written. It takes about 1 minute to read one page of text.\n\n"   "This power doesn’t decode secret messages in a text, nor does it interpret a glyph, such as an ancient Sith rune, that isn’t part of a written language.</item>
         <!--Voltaic Shielding-->
         <item name="techpowername">voltaic_shielding</item>
@@ -1146,7 +1145,7 @@
         <item name="Duration">Up to 1 hour</item>
         <item name="concentration">true</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">You scatter a large number of caltrops across ground in a 20-foot radius centered on a point within range. These caltrops pierce deep into the feet and boots of anyone who walks upon them. The area becomes difficult terrain for the duration. When a creature moves into or within the area, it takes 2d4 kinetic damage for every 5 feet it travels.\n\n"   "The caltrops are nearly invisible to the naked eye. Any creature that can’t see the area at the time the power is cast must make a Wisdom (Perception) check against your tech save DC to notice the caltrops before entering the area.</item>
         <!--Construct Droid-->
         <item name="techpowername">construct_droid</item>
@@ -1279,7 +1278,7 @@
         <item name="Duration">1 round</item>
         <item name="concentration">false</item>
         <item name="source">EC</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">you can use this power as a reaction when a creature you can see within range is hit by an attack or targeted by the *homing rockets* power.\n\n"   "An energy shield appears and protects the target. Until the start of the target’s next turn, the target has a +5 bonus to AC, including against the triggering attack, and the target takes no damage from homing rockets.</item>
         <!--Hold Droid-->
         <item name="techpowername">hold_droid</item>
@@ -1587,10 +1586,9 @@
         <item name="Duration">#TODO</item>
         <item name="concentration">false</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">DetYou touch one Tiny, unenhanced object that isn’t attached to another object or a surface and isn’t being carried by another creature. The target animates and gains little arms and legs, becoming a creature under your control until the power ends or the creature drops to 0 hit points. See the stat block for its statistics.ailsText</item>
         <!--#TODO Make table layout and add it programmatically-->
-        <item name="details_Text2">As a bonus action, you can nonverbally command the creature if it is within 120 feet of you. (If you control multiple creatures with this power, you can command any or all of them at the same time, issuing the same command to each one.) You decide what action the creature will take and where it will move during its next turn, or you can issue a simple, general command, such as to fetch a code cylinder, stand watch, or stack some small objects. If you issue no commands, the servant does nothing other than defend itself against hostile creatures. Once given an order, the servant continues to follow that order until its task is complete.\n\n"   "When the creature drops to 0 hit points, it reverts to its original form, and any remaining damage carries over to that form.\n\n"   "The creature is considered a valid target for the tracker droid interface power.\n\n"   "<b>Overcharge Tech:</b> When you cast this power using a tech slot of 4th level or higher, you can animate two additional objects for each slot level above 3rd</item>
         <!--Bestow Virus-->
         <item name="techpowername">bestow_virus</item>
         <item name="printname"><font color="#D4af37">Bestow virus</font></item>
@@ -1611,7 +1609,7 @@
         <item name="Duration">Up to 1 minute</item>
         <item name="concentration">true</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">Choose up to six creatures of your choice in a 40-foot cube within range. Each target must succeed on a Constitution saving throw or be affected by this power for the duration.\n\n"   "An affected target gains 1 slowed level, it takes a -2 penalty to AC and Dexterity saving throws, and it can’t use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature’s abilities or items, it can’t make more than one melee or ranged attack during its turn.\n\n"   "If the creature attempts to cast a power with a casting time of 1 action, roll a d20. On an 11 or higher, the power doesn’t take effect until the creature’s next turn, and the creature must use its action on that turn to complete the power. If it can’t, the power is wasted.\n\n"   "A creature affected by this power makes another Constitution saving throw at the end of its turn. On a successful save, the effect ends for it.</item>
         <!--Debilitating Gas-->
         <item name="techpowername">debilitating_gas</item>
@@ -1658,7 +1656,7 @@
         <item name="isBig">false</item>
         <item name="details_Text">An unenhanced weapon you touch becomes an enhanced weapon. Choose one of these damage types: acid, cold, energy, fire, ion, kinetic, or lightning. For the duration, an unenhanced weapon you touch has a +1 to attack rolls and deals an extra 1d4 damage of the chosen type. \n\n"   "<b>Overcharge Tech:</b> When you cast this power using a 5th or 6th level tech slot, the bonus to attack rolls increases to +2 and the extra damage increases to 2d4. When you use a slot of 7th level or higher, the bonus increases to +3 and the extra damage increases to 3d4.</item>
         <!--Explosion-->
-        <item name="techpowername">εxplosion</item>
+        <item name="techpowername">explosion</item>
         <item name="printname"><font color="#D4af37">Explosion</font></item>
         <item name="castingTime">Action</item>
         <item name="level">3</item>
@@ -1710,7 +1708,7 @@
         <item name="Duration">1 hour</item>
         <item name="concentration">false</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">This power grants the creature you touch the ability to understand any spoken registered language it hears. Moreover, when the target speaks, any creature that knows at least one registered language and can hear the target understands what it says.</item>
         <!--Instant Translocation-->
         <item name="techpowername">instant_translocation</item>
@@ -1732,7 +1730,7 @@
         <item name="Duration">Up to 1 minute</item>
         <item name="concentration">true</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">Up to four creatures of your choice become undetectable to electronic sensors and cameras. Anything the target is wearing or carrying is also undetectable, so long as it’s on the target’s person. The target is still visible to regular vision.</item>
         <!--Kolto Cloud-->
         <item name="techpowername">kolto_cloud</item>
@@ -1765,7 +1763,7 @@
         <item name="Duration">Up to 1 hour</item>
         <item name="concentration">true</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">For the duration, the willing creature you touch has resistance to one damage type of your choice: acid, cold, fire, lightning, or sonic.</item>
         <!--Read Memory-->
         <item name="techpowername">read_memory</item>
@@ -1831,7 +1829,7 @@
         <item name="Duration">Up to 1 minute</item>
         <item name="concentration">true</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">Kolto energy radiates from you in an aura with a 30-foot radius. Until the power ends, the aura moves with you, centered on you. You can use a bonus action to cause one creature in the aura (including you) to regain 2d6 hit points. This power has no effect on droids or constructs.</item>
         <!--Tactical Advantage-->
         <item name="techpowername">tactical_advantage</item>
@@ -1875,7 +1873,7 @@
         <item name="Duration">Up to 1 hour</item>
         <item name="concentration">true</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">you can use this power as a reaction when you are falling and within 30 feet of a solid surface.\n\n"   "If you cast this power as a reaction, your fall is stopped, and you remain aloft. For the duration, as long as you are within 30 feet of a solid surface, you have a flying speed of 40 feet. In addition, you can’t be knocked prone, and you have advantage on saving throws made against effects that would push you or pull you. When the power ends, you are gently lowered to the ground, if you are within 30 feet of it.</item>
         <!--Ballistic Shield-->
         <item name="techpowername">ballistic_shield</item>
@@ -1941,7 +1939,7 @@
         <item name="Duration">Up to 1 minute</item>
         <item name="concentration">true</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">Choose one creature you can see and one damage type: acid, cold, fire, lightning, or sonic. The target must make a Constitution saving throw. If it fails, the first time on each turn when it takes damage of the chosen type, it takes an extra 2d6 damage of it. The target also loses resistance to the type until the power ends.\n\n"   "<b>Overcharge Tech:</b> You can target one additional creature for each slot level above 4th. The creatures must be within 30 feet of each other when you target them.</item>
         <!--Fabricate-->
         <item name="techpowername">fabricate</item>
@@ -2095,7 +2093,7 @@
         <item name="Duration">Up to 1 minute</item>
         <item name="concentration">true</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">Your form shimmers in a holographic configuration, and then collapses. You teleport up to 60 feet to an unoccupied space that you can see. On each of your turns before the power ends, you can use a bonus action to teleport in this way again.</item>
         <!--Group Hologram-->
         <item name="techpowername">group_hologram</item>
@@ -2315,7 +2313,7 @@
         <item name="Duration">Until dispelled</item>
         <item name="concentration">false</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">You create an illusion of an object, a creature, or some other visible phenomenon within range that activates when a specific condition occurs. The illusion is imperceptible until then. It must be no larger than a 30-foot cube, and you decide when you cast the power how the illusion behaves and what sounds it makes. This scripted performance can last up to 5 minutes.\n\n"   "When the condition you specify occurs, the illusion springs into existence and performs in the manner you described. Once the illusion finishes performing, it disappears and remains dormant for 10 minutes. After this time, the illusion can be activated again.\n\n"   "The triggering condition can be as general or as detailed as you like, though it must be based on visual or audible conditions that occur within 30 feet of the area. For example, you could create an illusion of yourself to appear and warn off others who attempt to open a trapped door, or you could set the illusion to trigger only when a creature says the correct word or phrase.\n\n"   "Physical interaction with the image reveals it to be an illusion, because things can pass through it. A creature that uses its action to examine the image can determine that it is an illusion with a successful Intelligence (Investigation) check against your tech save DC. If a creature discerns the illusion for what it is, the creature can see through the image, and any noise it makes sounds hollow to the creature.</item>
         <!--Scrambling Barrier-->
         <item name="techpowername">scrambling_barrier</item>
@@ -2360,7 +2358,7 @@
         <item name="concentration">false</item>
         <item name="source">PHB</item>
         <item name="isBig">false</item>
-        <item name="details_Text">An immobile, invisible, cube-shaped prison composed of energy springs into existence around an area you choose within range. The prison can be a cage or a solid box as you choose.\n\n"   "A prison in the shape of a cage can be up to 20 feet on a side and is made from 1/2-inch diameter bars spaced 1/2 inch apart.\n\n"   "A prison in the shape of a box can be up to 10 feet on a side, creating a solid barrier that prevents any matter from passing through it and blocking any powers cast into or out of the area.\n\n"   "When you cast the power, any creature that is completely inside the cage’s area is trapped. Creatures only partially within the area, or those too large to fit inside the area, are pushed away from the center of the area until they are completely outside the area.\n\n"   "A creature inside the cage can’t leave it by unenhanced means. If the creature tries to teleport to leave the cage, it must first make a Charisma saving throw. On a success, the creature can use that power to exit the cage. On a failure, the creature can’t exit the cage and wastes the use of the power or effect.\n\n"   "This power can’t be dispelled.</item>
+        <item name="details_Text">An immobile, invisible, cube-shaped prison composed of energy springs into existence around an area you choose within range. The prison can be a cage or a solid box as you choose.\n\n"   "A prison in the shape of a cage can be up to 20 feet on a side and is made from ½-inch diameter bars spaced ½ inch apart.\n\n"   "A prison in the shape of a box can be up to 10 feet on a side, creating a solid barrier that prevents any matter from passing through it and blocking any powers cast into or out of the area.\n\n"   "When you cast the power, any creature that is completely inside the cage’s area is trapped. Creatures only partially within the area, or those too large to fit inside the area, are pushed away from the center of the area until they are completely outside the area.\n\n"   "A creature inside the cage can’t leave it by unenhanced means. If the creature tries to teleport to leave the cage, it must first make a Charisma saving throw. On a success, the creature can use that power to exit the cage. On a failure, the creature can’t exit the cage and wastes the use of the power or effect.\n\n"   "This power can’t be dispelled.</item>
         <!--Delayed Explosion-->
         <item name="techpowername">delayed_explosion</item>
         <item name="printname"><font color="#D4af37">Delayed Explosion</font></item>
@@ -2436,7 +2434,7 @@
         <item name="Duration">Up to 1 minute</item>
         <item name="concentration">true</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">Choose up to two willing creatures that you can see within range. Until the power ends, each targets’ speed is doubled, they gain a +2 bonus to AC, they have advantage on Dexterity saving throws, and they gain an additional action on each of their turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or the Use an Object Action.\n\n"   "When the power ends, each target can’t move or take actions until after its next turn, as a wave of lethargy sweeps over it.\n\n"   "<b>Overcharge Tech:</b> When you cast this power using a tech slot of 8th-level or higher, you can target one additional creature for each slot level above 7th.</item>
         <!--Antipathy/Sympathy-->
         <item name="techpowername">antipathy_sympathy</item>
@@ -2502,10 +2500,10 @@
         <item name="Duration">Instantaneous</item>
         <item name="concentration">false</item>
         <item name="source">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="details_Text">You generate an explosion of cryogenic energy in a 60-foot-radius sphere centered on a point you can see\n\n"   "within range. Each creature in the affected area must make a Constitution saving throw. On a failed save, the creature takes 8d6 + 20 cold damage and is restrained for 1 minute as it is encased in carbonite. On a successful save, the creature takes half damage and is restrained until the end of its next turn.\n\n"   "As an action, a restrained creature can make a Strength check against your tech save DC, ending this effect on itself on a success.\n\n"   "A creature reduced to 0 hit points by this power dies instantly, as its body shatters into frozen chunks.</item>
         <!--Greater Explosion-->
-        <item name="techpowername"gGreater_explosion</item>
+        <item name="techpowername">greater_explosion</item>
         <item name="printname"><font color="#D4af37">Greater Explosion</font></item>
         <item name="castingTime">Action</item>
         <item name="level">9</item>
@@ -2514,7 +2512,7 @@
         <item name="concentration">false</item>
         <item name="source">PHB</item>
         <item name="isBig">false</item>
-        <item name="details_Text">You expell a massive explosion at a point within range. Each creature in a 40-foot-radius sphere centered on that point must make a Dexterity saving throw. A target takes 40d6 fire damage and is knocked prone on a failed save, or half as much damage on a successful one but remain standing.\n\n"   "The fire spreads around corners. It ignites flammable objects in the area that aren’t being worn or carried.</item>
+        <item name="details_Text">You expel a massive explosion at a point within range. Each creature in a 40-foot-radius sphere centered on that point must make a Dexterity saving throw. A target takes 40d6 fire damage and is knocked prone on a failed save, or half as much damage on a successful one but remain standing.\n\n"   "The fire spreads around corners. It ignites flammable objects in the area that aren’t being worn or carried.</item>
         <!--Greater Salvo-->
         <item name="techpowername">greater_salvo</item>
         <item name="printname"><font color="#D4af37">Greater Salvo</font></item>

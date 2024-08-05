@@ -1,4 +1,4 @@
-package com.example.sw5ecompanionapp.forcecasting
+package com.example.sw5ecompanionapp.techcasting
 
 import android.content.Context
 import android.content.Intent
@@ -16,12 +16,12 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.sw5ecompanionapp.R
 
 
-class ForcecastingAdapter(private val myContext: Context, private val dataset: MutableList<Forcepower>, private val favlist: MutableList<String>) : RecyclerView.Adapter<ViewHolder>() {
+class TechcastingAdapter(private val myContext: Context, private val dataset: MutableList<Techpower>, private val favlist: MutableList<String>) : RecyclerView.Adapter<ViewHolder>() {
     val levels: List<Int> = listOf(0,1,2,3,4,5,6,7,8,9)
-    class NoForcepowerHolder(view: View) : ViewHolder(view){
-        private val noForcepowerText: TextView
+    class NoTechpowerHolder(view: View) : ViewHolder(view){
+        private val noTechpowerText: TextView
         init {
-            noForcepowerText= view.findViewById(R.id.forcecasting_nosuchforcepowertext)
+            noTechpowerText= view.findViewById(R.id.techcasting_nosuchtechpowertext)
         }
         init{
         }
@@ -32,32 +32,32 @@ class ForcecastingAdapter(private val myContext: Context, private val dataset: M
             lvldividertextview= view.findViewById(R.id.leveldividertextview)
         }
     }
-    class ForcepowerHolder(view: View) : ViewHolder(view){
-        val forcepowername: TextView
-        val forcepowerdetails: TextView
+    class TechpowerHolder(view: View) : ViewHolder(view){
+        val techpowername: TextView
+        val techpowerdetails: TextView
         val castingtime: TextView
         val constlout: ConstraintLayout
         val imbutton: ImageButton
 
         init {
 
-            imbutton = view.findViewById(R.id.table_forcepower_fav)
-            constlout = view.findViewById(R.id.table_forcepower_constlout)
-            forcepowername= view.findViewById(R.id.table_forcepower_name)
-            castingtime= view.findViewById(R.id.table_forcepower_casting_time)
-            forcepowerdetails= view.findViewById(R.id.table_forcepower_details)
+            imbutton = view.findViewById(R.id.table_techpower_fav)
+            constlout = view.findViewById(R.id.table_techpower_constlout)
+            techpowername= view.findViewById(R.id.table_techpower_name)
+            castingtime= view.findViewById(R.id.table_techpower_casting_time)
+            techpowerdetails= view.findViewById(R.id.table_techpower_details)
         }
 
     }
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val view: View
         return when(viewType){
-            0->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.forcecasting_button, viewGroup, false) ; ForcepowerHolder(view) }
-            1->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.forcecasting_button_big, viewGroup, false) ; ForcepowerHolder(view) }
-            2->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.forcecasting_nosuchforcepower_button, viewGroup, false) ; NoForcepowerHolder(view) }
-            3->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.forcecasting_leveldivider, viewGroup, false) ; LeveledDividerHolder(view)
+            0->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.techcasting_button, viewGroup, false) ; TechpowerHolder(view) }
+            1->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.techcasting_button_big, viewGroup, false) ; TechpowerHolder(view) }
+            2->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.techcasting_nosuchtechpower_button, viewGroup, false) ; NoTechpowerHolder(view) }
+            3->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.techcasting_leveldivider, viewGroup, false) ; LeveledDividerHolder(view)
             }
-            else->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.universal_empty_button50sp, viewGroup, false) ; NoForcepowerHolder(view)
+            else->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.universal_empty_button50sp, viewGroup, false) ; NoTechpowerHolder(view)
             }
         }
 
@@ -68,8 +68,8 @@ class ForcecastingAdapter(private val myContext: Context, private val dataset: M
          with(dataset[position]){
              return when{
                     this.isBig -> 1
-                    this.forcepowername=="NoSuchForcepower" -> 2
-                    this.forcepowername=="Level"->3
+                    this.techpowername=="NoSuchTechpower" -> 2
+                    this.techpowername=="Level"->3
                     else ->{0}
                 }
             }
@@ -79,27 +79,27 @@ class ForcecastingAdapter(private val myContext: Context, private val dataset: M
         when(viewHolder.itemViewType){
             2->{}
             3->{setlevel(viewHolder as LeveledDividerHolder,dataset[position].level)}
-            else->{forcepower(viewHolder as ForcepowerHolder,dataset[position])}
+            else->{techpower(viewHolder as TechpowerHolder,dataset[position])}
         }
 
 
     }
-    fun setForcepowerList(updatedforcepowerlist: MutableList<Forcepower>){
-        val diffResult = DiffUtil.calculateDiff(ForcepowerDiffUtilCallback(dataset,updatedforcepowerlist))
+    fun setTechpowerList(updatedtechpowerlist: MutableList<Techpower>){
+        val diffResult = DiffUtil.calculateDiff(TechpowerDiffUtilCallback(dataset,updatedtechpowerlist))
         dataset.clear()
-        dataset.addAll(updatedforcepowerlist)
+        dataset.addAll(updatedtechpowerlist)
         diffResult.dispatchUpdatesTo(this)
 
     }
     override fun getItemCount() = dataset.size
-    private fun updatefav(forcepower: Forcepower, forcepowerbutton: View){
-        if(forcepower.forcepowername !in favlist){
-            favlist.add(forcepower.forcepowername)
-            forcepowerbutton.foreground=AppCompatResources.getDrawable(myContext,R.drawable.favouritegoldtrue)
+    private fun updatefav(techpower: Techpower, techpowerbutton: View){
+        if(techpower.techpowername !in favlist){
+            favlist.add(techpower.techpowername)
+            techpowerbutton.foreground=AppCompatResources.getDrawable(myContext,R.drawable.favouritegoldtrue)
         }
         else{
-            favlist.remove(forcepower.forcepowername)
-            forcepowerbutton.foreground=AppCompatResources.getDrawable(myContext,R.drawable.favouritegold)
+            favlist.remove(techpower.techpowername)
+            techpowerbutton.foreground=AppCompatResources.getDrawable(myContext,R.drawable.favouritegold)
         }
         with(myContext.getSharedPreferences("favlist",Context.MODE_PRIVATE).edit()){
             putStringSet("favlist",favlist.toMutableSet())
@@ -107,19 +107,21 @@ class ForcecastingAdapter(private val myContext: Context, private val dataset: M
         }
     }
 
-    private fun forcepower(view: ForcepowerHolder, forcepower: Forcepower){
-        view.forcepowername.text=forcepower.printedname
-        view.forcepowerdetails.text= buildSpannedString{
-            append(when(forcepower.level){0->"At-will";1->"1st-level";2->"2nd-level";3->"3rd-level";else->"${forcepower.level}th-level"})
-            append(" ");append(forcepower.side)}
-        view.castingtime.text= forcepower.castingtime
+    private fun techpower(view: TechpowerHolder, techpower: Techpower){
+        view.techpowername.text=techpower.printedname
+        if (techpower.techpowername=="superior_translation_program") view.techpowername.textSize=20F
+        view.techpowerdetails.text= buildSpannedString{
+            append(when(techpower.level){0->"At-will";1->"1st-level";2->"2nd-level";3->"3rd-level";else->"${techpower.level}th-level"})
+        }
+        var temptext = techpower.castingtime + if (techpower.concentration) " C" else ""
+        view.castingtime.text= temptext
         view.constlout.setOnClickListener{
-            myContext.startActivity(Intent(myContext, ForcecastingDetailsActivity::class.java).putExtra("Forcepower",forcepower))
+            myContext.startActivity(Intent(myContext, TechcastingDetailsActivity::class.java).putExtra("Techpower",techpower))
         }
         view.imbutton.setOnClickListener {
-            updatefav(forcepower,view.imbutton)
+            updatefav(techpower,view.imbutton)
         }
-        if(forcepower.forcepowername in favlist){
+        if(techpower.techpowername in favlist){
             view.imbutton.foreground=AppCompatResources.getDrawable(myContext,R.drawable.favouritegoldtrue)
         }
         else{

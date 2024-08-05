@@ -1,8 +1,8 @@
-package com.example.sw5ecompanionapp.forcecasting
+package com.example.sw5ecompanionapp.techcasting
 
 import androidx.recyclerview.widget.DiffUtil
 
-class ForcepowerDiffUtilCallback(private val oldlist: MutableList<Forcepower>, private val newlist: MutableList<Forcepower>): DiffUtil.Callback() {
+class TechpowerDiffUtilCallback(private val oldlist: MutableList<Techpower>, private val newlist: MutableList<Techpower>): DiffUtil.Callback() {
     override fun getOldListSize(): Int {
         return oldlist.size
     }

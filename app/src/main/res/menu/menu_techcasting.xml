@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.sw5ecompanionapp.forcecasting.ForcecastingActivity">
+    <item
+        android:id="@+id/sort"
+        android:orderInCategory="1"
+        android:title="@string/sortABCdown"
+        app:showAsAction="ifRoom"
+        android:iconTintMode="add"
+        android:iconTint="@color/gold"
+        />
+    <item
+        android:id="@+id/menu_switch_Fav"
+        android:orderInCategory="3"
+        android:title="@string/favorites_forcepowers"
+        android:checkable="true"
+        android:checked="false" />
+</menu>

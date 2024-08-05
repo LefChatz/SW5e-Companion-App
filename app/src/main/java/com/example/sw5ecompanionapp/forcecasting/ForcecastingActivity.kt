@@ -31,7 +31,7 @@ class ForcecastingActivity : AppCompatActivity() {
 
     private val favForcepowerList: MutableList<String> = mutableListOf()
     private lateinit var favSharedPreferences: SharedPreferences
-    private  var trimEnteredText=""
+    private var trimEnteredText=""
     private var darkChecked=true
     private var lightChecked=true
     private var favChecked=false
@@ -44,8 +44,8 @@ class ForcecastingActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        favSharedPreferences=getSharedPreferences("favList", Context.MODE_PRIVATE)
-        favForcepowerList.addAll(favSharedPreferences.getStringSet("favList", mutableSetOf())?.toList()!!)
+        favSharedPreferences=getSharedPreferences("forcecasting", Context.MODE_PRIVATE)
+        favForcepowerList.addAll(favSharedPreferences.getStringSet("favorite_force_powers", mutableSetOf())?.toList()!!)
 
         forcepowerList.addAll(getForcepowers())
 
@@ -197,7 +197,7 @@ class ForcecastingActivity : AppCompatActivity() {
     fun returntomain() {
         startActivity(Intent(this, SW5ECompanionApp::class.java))
         with(favSharedPreferences.edit()){
-            putStringSet("favList",favForcepowerList.toMutableSet())
+            putStringSet("favorite_force_powers",favForcepowerList.toMutableSet())
             apply()
         }
         finish()

@@ -1005,6 +1005,7 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="back">Back</string>
+    <string name="source">SRC</string>
     <string name="caster_level">Caster\nLevel</string>
     <string name="slot_level">Slot\nLevel</string>
 
@@ -1023,6 +1024,14 @@
     <string name="properties">Properties</string>
     <string name="expansion">Expansion</string>
     <!-- TODO Error reporting medium -->
-    <string name="error_please_report_this">Error, Please report this to: <b>TODO:</b></string>
+    <string name="error_please_report_this">Error, Please report this to: <b>#TODO:</b></string>
     <string name="backgrounds">Backgrounds</string>
+
+    <!--Techcasting -->
+    <string name="techcasting_title">Techcasting</string>
+    <string name="techcasting_nosuchtechpower">No such Techpower found</string>
+    <string name="techcasting_techpower_name">TechPower Name</string>
+    <string name="techcasting_spectrum_bolt_details_Text2">If you roll the same number on both d8s, the bolt leaps from the target to a different creature of your choice within 30 feet of it. Make a new attack roll against the new target, and make a new damage roll, which could cause the bolt to leap again. A creature can be targeted only once by each casting of this power.\n\n"   "<b>Overcharge Tech:</b> When you cast this power using a tech slot of 2nd level or higher, each target takes 1d6 extra damage of the type rolled for each slot level above 1st.</string>
+    <string name="techcasting_autonomous_servant_details_Text2">As a bonus action, you can nonverbally command the creature if it is within 120 feet of you. (If you control multiple creatures with this power, you can command any or all of them at the same time, issuing the same command to each one.) You decide what action the creature will take and where it will move during its next turn, or you can issue a simple, general command, such as to fetch a code cylinder, stand watch, or stack some small objects. If you issue no commands, the servant does nothing other than defend itself against hostile creatures. Once given an order, the servant continues to follow that order until its task is complete.\n\n"   "When the creature drops to 0 hit points, it reverts to its original form, and any remaining damage carries over to that form.\n\n"   "The creature is considered a valid target for the tracker droid interface power.\n\n"   "<b>Overcharge Tech:</b> When you cast this power using a tech slot of 4th level or higher, you can animate two additional objects for each slot level above 3rd</string>
+
 </resources>

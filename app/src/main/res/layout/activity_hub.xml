@@ -115,7 +115,7 @@
                 app:text="Backg/nds" />
 
             <com.example.sw5ecompanionapp.widget.ClassButton
-                android:id="@+id/buttonempty2"
+                android:id="@+id/buttontech"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="portal"
@@ -123,7 +123,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/buttonequipment"
                 app:layout_constraintTop_toTopOf="@+id/buttonequipment"
-                app:text="Empty 2" />
+                app:text="Tech" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

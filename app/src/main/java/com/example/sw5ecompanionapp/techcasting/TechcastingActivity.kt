@@ -1,4 +1,4 @@
-package com.example.sw5ecompanionapp.forcecasting
+package com.example.sw5ecompanionapp.techcasting
 
 import android.content.Context
 import android.content.Intent
@@ -14,22 +14,22 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sw5ecompanionapp.R
 import com.example.sw5ecompanionapp.SW5ECompanionApp
-import com.example.sw5ecompanionapp.databinding.ForcecastingBinding
+import com.example.sw5ecompanionapp.databinding.TechcastingBinding
 
-class ForcecastingActivity : AppCompatActivity() {
-    private lateinit var binding: ForcecastingBinding
+class TechcastingActivity : AppCompatActivity() {
+    private lateinit var binding: TechcastingBinding
     private lateinit var reclview: RecyclerView
     private lateinit var searchView: androidx.appcompat.widget.SearchView
-    private lateinit var darkforcepowers: List<Forcepower>
+    private lateinit var darktechpowers: List<Techpower>
 
-    private lateinit var forcepoweradapter: ForcecastingAdapter
-    private lateinit var lightforcepowers: List<Forcepower>
-    private var forcepowerList=mutableListOf<Forcepower>()
-    private var adapterForcepowerList=mutableListOf<Forcepower>()
-    private var currentforcepowerlist=mutableListOf<Forcepower>()
-    private val eraselist: MutableList<Forcepower> = mutableListOf()
+    private lateinit var techpoweradapter: TechcastingAdapter
+    private lateinit var lighttechpowers: List<Techpower>
+    private var techpowerList=mutableListOf<Techpower>()
+    private var adapterTechpowerList=mutableListOf<Techpower>()
+    private var currenttechpowerlist=mutableListOf<Techpower>()
+    private val eraselist: MutableList<Techpower> = mutableListOf()
 
-    private val favForcepowerList: MutableList<String> = mutableListOf()
+    private val favTechpowerList: MutableList<String> = mutableListOf()
     private lateinit var favSharedPreferences: SharedPreferences
     private  var trimEnteredText=""
     private var darkChecked=true
@@ -38,24 +38,24 @@ class ForcecastingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ForcecastingBinding.inflate(layoutInflater)
+        binding = TechcastingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         favSharedPreferences=getSharedPreferences("favList", Context.MODE_PRIVATE)
-        favForcepowerList.addAll(favSharedPreferences.getStringSet("favList", mutableSetOf())?.toList()!!)
+        favTechpowerList.addAll(favSharedPreferences.getStringSet("favList", mutableSetOf())?.toList()!!)
 
-        forcepowerList.addAll(getForcepowers())
+        techpowerList.addAll(getTechpowers())
 
         reclview = binding.reclview
-        adapterForcepowerList.addAll(forcepowerList)
-        forcepoweradapter = ForcecastingAdapter(this,adapterForcepowerList,favForcepowerList)
-        reclview.adapter = forcepoweradapter
-        currentforcepowerlist.addAll(forcepowerList)
-        lightforcepowers=forcepowerList.filter { it.side.contains("Light",true)}
-        darkforcepowers=forcepowerList.filter { it.side.contains("Dark",true)}
+        adapterTechpowerList.addAll(techpowerList.sortTechpowerByName())
+        techpoweradapter = TechcastingAdapter(this,adapterTechpowerList,favTechpowerList)
+        reclview.adapter = techpoweradapter
+        currenttechpowerlist.addAll(techpowerList.sortTechpowerByName())
+        lighttechpowers=techpowerList
+        darktechpowers=techpowerList
 
         binding.BackButton.setOnClickListener{returntomain()}
 
@@ -66,7 +66,7 @@ class ForcecastingActivity : AppCompatActivity() {
             override fun onQueryTextChange(enttext: String?): Boolean {
                 returntotop(reclview,"sharp")
                 if(enttext.isNullOrBlank()){
-                    forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{it !in eraselist}.toMutableList())
+                    techpoweradapter.setTechpowerList(currenttechpowerlist.filter{it !in eraselist}.toMutableList())
                     object : CountDownTimer(1000, 1001) {
                         override fun onTick(millisUntilFinished: Long) {
                         }
@@ -78,11 +78,11 @@ class ForcecastingActivity : AppCompatActivity() {
                 }
                 else {
                     trimEnteredText= enttext.trim().replace(" ","_")
-                    if(forcepowerList.getNameList().none { it.contains(trimEnteredText,true)}){
-                        forcepoweradapter.setForcepowerList(mutableListOf(Forcepower("NoSuchForcepower")))
+                    if(techpowerList.getNameList().none { it.contains(trimEnteredText,true)}){
+                        techpoweradapter.setTechpowerList(mutableListOf(Techpower("NoSuchTechpower")))
                     }
                     else {
-                        forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{(it.forcepowername.contains(trimEnteredText,true)) and (it !in eraselist)}.toMutableList())
+                        techpoweradapter.setTechpowerList(currenttechpowerlist.filter{(it.techpowername.contains(trimEnteredText,true)) and (it !in eraselist)}.toMutableList())
                     }
                 }
                 return false
@@ -90,7 +90,7 @@ class ForcecastingActivity : AppCompatActivity() {
             override fun onQueryTextSubmit(enttext: String?): Boolean {
                 returntotop(reclview,"sharp")
                 if(enttext.isNullOrBlank()){
-                    forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{it !in eraselist}.toMutableList())
+                    techpoweradapter.setTechpowerList(currenttechpowerlist.filter{it !in eraselist}.toMutableList())
                     object : CountDownTimer(1000, 999) {
                         override fun onTick(millisUntilFinished: Long) {
                         }
@@ -102,11 +102,11 @@ class ForcecastingActivity : AppCompatActivity() {
                 }
                 else {
                     trimEnteredText= enttext.trim().replace(" ","_")
-                    if(forcepowerList.getNameList().none { it.contains(trimEnteredText,true)}){
-                        forcepoweradapter.setForcepowerList(mutableListOf(Forcepower("NoSuchForcepower")))
+                    if(techpowerList.getNameList().none { it.contains(trimEnteredText,true)}){
+                        techpoweradapter.setTechpowerList(mutableListOf(Techpower("NoSuchTechpower")))
                     }
                     else {
-                        forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{(it.forcepowername.contains(trimEnteredText,true)) and (it !in eraselist)}.toMutableList())
+                        techpoweradapter.setTechpowerList(currenttechpowerlist.filter{(it.techpowername.contains(trimEnteredText,true)) and (it !in eraselist)}.toMutableList())
                     }
                 }
                 return false
@@ -124,7 +124,7 @@ class ForcecastingActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_forcecasting,menu)
+        menuInflater.inflate(R.menu.menu_techcasting,menu)
         binding.toolbar.overflowIcon = AppCompatResources.getDrawable(this, R.drawable.downarrowgold)
         return super.onCreateOptionsMenu(menu)
     }
@@ -132,56 +132,57 @@ class ForcecastingActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.title){
             getText(R.string.sortABCdown)->{
-                currentforcepowerlist=forcepowerList.sortForcepowerByNameDescending().filter { it !in eraselist }.toMutableList()
-                forcepoweradapter.setForcepowerList(adapterForcepowerList.sortForcepowerByNameDescending().filter { it !in eraselist }.toMutableList())
+                currenttechpowerlist=techpowerList.sortTechpowerByNameDescending().filter { it !in eraselist }.toMutableList()
+                techpoweradapter.setTechpowerList(adapterTechpowerList.sortTechpowerByNameDescending().filter { it !in eraselist }.toMutableList())
                 item.title=getText(R.string.sortABCup)
                 returntotop(reclview,"sharp")}
             getText(R.string.sortABCup)->{
-                currentforcepowerlist=forcepowerList.sortForcepowerByLevel().filter { it !in eraselist }.toMutableList()
-                forcepoweradapter.setForcepowerList(adapterForcepowerList.sortForcepowerByName().sortForcepowerByLevel().filter { it !in eraselist }.toMutableList())
+                currenttechpowerlist=techpowerList.sortTechpowerByLevel().filter { it !in eraselist }.toMutableList()
+                techpoweradapter.setTechpowerList(adapterTechpowerList.sortTechpowerByName().sortTechpowerByLevel().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortLvldown)
                 returntotop(reclview,"sharp")}
             getText(R.string.sortLvldown)->{
-                currentforcepowerlist=forcepowerList.sortForcepowerByLevelDescending().filter { it !in eraselist }.toMutableList()
-                forcepoweradapter.setForcepowerList(adapterForcepowerList.sortForcepowerByLevelDescending().filter { it !in eraselist }.toMutableList())
+                currenttechpowerlist=techpowerList.sortTechpowerByLevelDescending().filter { it !in eraselist }.toMutableList()
+                techpoweradapter.setTechpowerList(adapterTechpowerList.sortTechpowerByLevelDescending().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortLvlup)
                 returntotop(reclview,"sharp")}
             getText(R.string.sortLvlup)->{
-                currentforcepowerlist=forcepowerList.sortForcepowerByName().filter { it !in eraselist }.toMutableList()
-                forcepoweradapter.setForcepowerList(adapterForcepowerList.sortForcepowerByName().filter { it !in eraselist }.toMutableList())
+                currenttechpowerlist=techpowerList.sortTechpowerByName().filter { it !in eraselist }.toMutableList()
+                techpoweradapter.setTechpowerList(adapterTechpowerList.sortTechpowerByName().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortABCdown)
                 returntotop(reclview,"sharp")}
-            getText(R.string.Dark)->{
-                if(item.isChecked){eraselist.addAll(darkforcepowers)}
-                else{
-                    if(favChecked){eraselist.removeAll{ (it in darkforcepowers) and (it.forcepowername in favForcepowerList)}}
-                    else{eraselist.removeAll(darkforcepowers)}
+
+            getText(R.string.favorites_forcepowers)->{
+                if (item.isChecked){
+                    eraselist.removeAll{(it.techpowername !in favTechpowerList)}
                 }
-                forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{(it !in eraselist) and if(trimEnteredText.isNotBlank()){it.forcepowername.contains(trimEnteredText,true)}else{true}}.toMutableList())
+                else{
+                    eraselist.addAll(techpowerList.filter {it.techpowername !in favTechpowerList})
+                }
+                techpoweradapter.setTechpowerList(currenttechpowerlist.filter{(it !in eraselist) and if(trimEnteredText.isNotBlank()){it.techpowername.contains(trimEnteredText,true)}else{true}}.toMutableList())
+                item.isChecked= !item.isChecked
+                favChecked= !favChecked
+            }
+            /*getText(R.string.Dark)->{
+                if(item.isChecked){eraselist.addAll(darktechpowers)}
+                else{
+                    if(favChecked){eraselist.removeAll{ (it in darktechpowers) and (it.techpowername in favTechpowerList)}}
+                    else{eraselist.removeAll(darktechpowers)}
+                }
+                techpoweradapter.setTechpowerList(currenttechpowerlist.filter{(it !in eraselist) and if(trimEnteredText.isNotBlank()){it.techpowername.contains(trimEnteredText,true)}else{true}}.toMutableList())
                 item.isChecked= !item.isChecked
                 darkChecked= !darkChecked
             }
             getText(R.string.Light)->{
-                if(item.isChecked){eraselist.addAll(lightforcepowers)}
+                if(item.isChecked){eraselist.addAll(lighttechpowers)}
                 else{
-                    if(favChecked){eraselist.removeAll{ (it in lightforcepowers) and (it.forcepowername in favForcepowerList)}}
-                    else{eraselist.removeAll(lightforcepowers)}
+                    if(favChecked){eraselist.removeAll{ (it in lighttechpowers) and (it.techpowername in favTechpowerList)}}
+                    else{eraselist.removeAll(lighttechpowers)}
                 }
-                forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{(it !in eraselist) and if(trimEnteredText.isNotBlank()){it.forcepowername.contains(trimEnteredText,true)}else{true}}.toMutableList())
+                techpoweradapter.setTechpowerList(currenttechpowerlist.filter{(it !in eraselist) and if(trimEnteredText.isNotBlank()){it.techpowername.contains(trimEnteredText,true)}else{true}}.toMutableList())
                 item.isChecked= !item.isChecked
                 lightChecked= !lightChecked
-            }
-            getText(R.string.favorites_forcepowers)->{
-                if (item.isChecked){
-                    eraselist.removeAll{(it.forcepowername !in favForcepowerList) and (if(!darkChecked) {!it.side.contains("Dark",true)}else{true})and(if(!lightChecked) { !it.side.contains("Light",true)}else{true})}
-                }
-                else{
-                    eraselist.addAll(forcepowerList.filter {it.forcepowername !in favForcepowerList})
-                }
-                forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{(it !in eraselist) and if(trimEnteredText.isNotBlank()){it.forcepowername.contains(trimEnteredText,true)}else{true}}.toMutableList())
-                item.isChecked= !item.isChecked
-                favChecked= !favChecked
-            }
+            }*/
         }
         return super.onOptionsItemSelected(item)
     }
@@ -197,18 +198,18 @@ class ForcecastingActivity : AppCompatActivity() {
     fun returntomain() {
         startActivity(Intent(this, SW5ECompanionApp::class.java))
         with(favSharedPreferences.edit()){
-            putStringSet("favList",favForcepowerList.toMutableSet())
+            putStringSet("favList",favTechpowerList.toMutableSet())
             apply()
         }
         finish()
     }
-    private fun getForcepowers(): MutableList<Forcepower>{
-        val getForcepowerList = mutableListOf<Forcepower>()
-        val tempForcepowerList=resources.getTextArray(R.array.forcepowerlist)
-        for(i in 8..tempForcepowerList.size step 9){
-            getForcepowerList.add(Forcepower(tempForcepowerList[i-8].toString(),tempForcepowerList[i-7],tempForcepowerList[i-6].toString(),tempForcepowerList[i-5],tempForcepowerList[i-4].toString().toInt(),tempForcepowerList[i-3].toString().toBoolean(),tempForcepowerList[i-2].toString().toBoolean(),tempForcepowerList[i-1].toString().toBoolean(),tempForcepowerList[i]))
+    private fun getTechpowers(): MutableList<Techpower>{
+        val getTechpowerList = mutableListOf<Techpower>()
+        val tempTechpowerList=resources.getTextArray(R.array.techpowerlist)
+        for(i in 9..tempTechpowerList.size step 10){
+            getTechpowerList.add(Techpower(tempTechpowerList[i-9].toString(),tempTechpowerList[i-8],tempTechpowerList[i-7].toString(),tempTechpowerList[i-6].toString().toInt(),tempTechpowerList[i-5].toString(),tempTechpowerList[i-4].toString(),tempTechpowerList[i-3].toString().toBoolean(),tempTechpowerList[i-2].toString(),tempTechpowerList[i-1].toString().toBoolean(),tempTechpowerList[i]))
         }
-        return getForcepowerList
+        return getTechpowerList
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
