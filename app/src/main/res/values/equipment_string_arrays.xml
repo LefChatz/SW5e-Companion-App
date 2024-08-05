@@ -384,6 +384,7 @@
         <item>strength</item>
         <item>While wearing armor or wielding a shield with this property, your speed is reduced by 10 unless your Strength score meets or exceeds the strength number.</item>
     </string-array>
+
     <!--Equipment-->
     <!--Weapons-->
     <string-array name="lightblade">
