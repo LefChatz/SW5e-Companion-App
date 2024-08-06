@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#55FFD700"
+        android:padding="10dp">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Servant"
+                android:fontFamily="@font/starjedi"
+                android:textColor="@color/gold"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_span="6"
+                android:paddingTop="5dp"
+                android:paddingHorizontal="5dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tiny construct,unaligned"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:layout_span="6"
+                android:paddingBottom="10dp"
+                android:paddingHorizontal="5dp" />
+        </TableRow>
+
+        <TableRow>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_span="6"
+                android:src="@drawable/goldhorizontalline" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_1"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="textStart"
+                android:layout_span="6"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_2"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="textStart"
+                android:layout_span="6"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_3"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="textStart"
+                android:layout_span="6"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
+        </TableRow>
+
+        <TableRow>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_span="6"
+                android:src="@drawable/goldhorizontalline" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_4_1"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_4_2"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_4_3"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_4_4"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_4_5"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_4_6"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
+        </TableRow>
+
+        <TableRow android:background="#50FFD700">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_5_1"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_5_2"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_5_3"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_5_4"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_5_5"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_4_6"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
+        </TableRow>
+
+        <TableRow>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_span="6"
+                android:src="@drawable/goldhorizontalline" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_6"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="textStart"
+                android:layout_span="6"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_7"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="textStart"
+                android:layout_span="6"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_8"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="textStart"
+                android:layout_span="6"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_9"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="textStart"
+                android:layout_span="6"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_10"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="textStart"
+                android:layout_span="6"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
+        </TableRow>
+
+        <TableRow>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_span="6"
+                android:src="@drawable/goldhorizontalline" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_11"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="textStart"
+                android:layout_span="6"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Actions"
+                android:fontFamily="@font/starjedi"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_span="6"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
+        </TableRow>
+
+        <TableRow>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_span="6"
+                android:src="@drawable/goldhorizontalline" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/techcasting_autonomous_servant_12"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="textStart"
+                android:layout_span="6"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
+        </TableRow>
+    </TableLayout>
+</HorizontalScrollView>

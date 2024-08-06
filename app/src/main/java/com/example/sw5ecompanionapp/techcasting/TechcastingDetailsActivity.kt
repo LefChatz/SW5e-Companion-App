@@ -62,7 +62,7 @@ class TechcastingDetailsActivity : AppCompatActivity() {
                     .alpha(1F)
                     .duration=50
             }
-            else if(binding.title.alpha==1F) binding.title.animate().alpha(0.0F)
+            else if(binding.title.alpha==1F && scrollY<120) binding.title.animate().alpha(0.0F)
         }
 
 
@@ -71,15 +71,15 @@ class TechcastingDetailsActivity : AppCompatActivity() {
 
         //Special techpower cases
         if (techpower.techpowername=="spectrum_bolt"){
-            /*layoutInflater.inflate(R.layout.techcasting_spectrum_bolt_table,binding.ll)*/
+            layoutInflater.inflate(R.layout.techcasting_spectrum_bolt_table,binding.ll)
             txt=layoutInflater.inflate(R.layout.universal_textview_nofont_gold,binding.ll).findViewById(R.id.textview)
             txt.text=resources.getText(R.string.techcasting_spectrum_bolt_details_Text2)
         }
         if (techpower.techpowername=="construct_droid"){
-            /*layoutInflater.inflate(R.layout.techcasting_construct_droid_table,binding.ll)*/
+            layoutInflater.inflate(R.layout.techcasting_construct_droid_table,binding.ll)
         }
         if (techpower.techpowername=="autonomous_servant"){
-            /*layoutInflater.inflate(R.layout.techcasting_bestow_virus_table,binding.ll)*/
+            layoutInflater.inflate(R.layout.techcasting_autonomous_servant_table,binding.ll)
             txt=layoutInflater.inflate(R.layout.universal_textview_nofont_gold,binding.ll).findViewById(R.id.textview)
             txt.text=resources.getText(R.string.techcasting_autonomous_servant_details_Text2)
         }

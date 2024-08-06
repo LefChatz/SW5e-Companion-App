@@ -558,7 +558,7 @@
         <item name="castingTime">1 minute</item>
         <item name="level">1</item>
         <item name="Range">30 feet</item>
-        <item name="Duration">#TODO</item>
+        <item name="Duration">8 hours, or until the end of your next short or long rest, whichever happens first</item>
         <item name="concentration">false</item>
         <item name="source">PHB</item>
         <item name="isBig">false</item>
@@ -756,7 +756,7 @@
         <item name="castingTime">1 minute</item>
         <item name="level">1</item>
         <item name="Range">Self (30-foot radius sphere)</item>
-        <item name="Duration">#TODO</item>
+        <item name="Duration">Until dispelled or triggered</item>
         <item name="concentration">false</item>
         <item name="source">EC</item>
         <item name="isBig">true</item>
@@ -910,7 +910,7 @@
         <item name="castingTime">1 minute</item>
         <item name="level">1</item>
         <item name="Range">Touch</item>
-        <item name="Duration">#TODO</item>
+        <item name="Duration">8 hours, or until the end of your next short or long rest, whichever happens first</item>
         <item name="concentration">false</item>
         <item name="source">PHB</item>
         <item name="isBig">false</item>
@@ -969,7 +969,6 @@
         <item name="concentration">false</item>
         <item name="source">PHB</item>
         <item name="isBig">false</item>
-        <!--#TODO Make table layout, Add table programmatically-->
         <item name="details_Text">You fire an undulating, warbling bolt of energy at a creature within range. Make a ranged tech attack against the target. On a hit, the target takes 2d8 + 1d6 damage. Choose one of the d8s. The number rolled on that die determines the attacks damage type, as shown below.</item>
         <!--Spot the Weakness-->
         <item name="techpowername">spot_the_weakness</item>
@@ -1158,7 +1157,6 @@
         <item name="source">EC</item>
         <item name="isBig">false</item>
         <item name="details_Text">You construct a droid, which is deployed in an unoccupied space that you can see within range. This droid uses the Constructed Droid stat block. When you cast the power, choose a design: Probe, Pyro, or Battle. The droid resembles a Class IV droid, and the design determines certain traits in its stat block. The droid falls to pieces and disintegrates when it drops to 0 hit points or when the power ends.\n\n"   "The droid is an ally to you and your companions. In combat, the droid shares your initiative count, but it takes its turn immediately after yours. It obeys your commands you issue through your tech focus (no action required). If you don’t issue any, it takes the Dodge action and uses its movement to avoid danger.\n\n"   "The droid is a valid target for the tracker droid interface power. If that power is cast targeting the constructed droid, it only takes 1 minute to synchronize with the droid.\n\n"   "<b>Overcharge Tech:</b> When you cast this power using a tech slot of 3rd level or higher, use the higher level wherever the power’s level appears in the stat block.</item>
-        <!--#TODO Make layout of table and add it programmatically-->
         <!--Cryogenic Volley-->
         <item name="techpowername">cryogenic_volley</item>
         <item name="printname"><font color="#D4af37">Cryogenic volley</font></item>
@@ -1176,7 +1174,7 @@
         <item name="castingTime">Action</item>
         <item name="level">2</item>
         <item name="Range">Touch</item>
-        <item name="Duration">#TODO</item>
+        <item name="Duration">8 hours, or until the end of your next short or long rest, whichever happens first</item>
         <item name="concentration">false</item>
         <item name="source">PHB</item>
         <item name="isBig">false</item>
@@ -1583,12 +1581,11 @@
         <item name="castingTime">1 minute</item>
         <item name="level">3</item>
         <item name="Range">Touch</item>
-        <item name="Duration">#TODO</item>
+        <item name="Duration">8 hours, or until the end of your next short or long rest, whichever happens first</item>
         <item name="concentration">false</item>
         <item name="source">PHB</item>
         <item name="isBig">true</item>
-        <item name="details_Text">DetYou touch one Tiny, unenhanced object that isn’t attached to another object or a surface and isn’t being carried by another creature. The target animates and gains little arms and legs, becoming a creature under your control until the power ends or the creature drops to 0 hit points. See the stat block for its statistics.ailsText</item>
-        <!--#TODO Make table layout and add it programmatically-->
+        <item name="details_Text">You touch one Tiny, unenhanced object that isn’t attached to another object or a surface and isn’t being carried by another creature. The target animates and gains little arms and legs, becoming a creature under your control until the power ends or the creature drops to 0 hit points. See the stat block for its statistics.</item>
         <!--Bestow Virus-->
         <item name="techpowername">bestow_virus</item>
         <item name="printname"><font color="#D4af37">Bestow virus</font></item>
@@ -1980,7 +1977,7 @@
         <item name="castingTime">Action</item>
         <item name="level">4</item>
         <item name="Range">Touch</item>
-        <item name="Duration">#TODO</item>
+        <item name="Duration">8 hours, or until the end of your next short or long rest, whichever happens first</item>
         <item name="concentration">false</item>
         <item name="source">PHB</item>
         <item name="isBig">false</item>
@@ -2101,7 +2098,7 @@
         <item name="castingTime">Action</item>
         <item name="level">5</item>
         <item name="Range">30 feet</item>
-        <item name="Duration">#TODO</item>
+        <item name="Duration">8 hours, or until the end of your next short or long rest, whichever happens first</item>
         <item name="concentration">false</item>
         <item name="source">PHB</item>
         <item name="isBig">false</item>
@@ -2552,7 +2549,7 @@
         <item name="castingTime">1 minute</item>
         <item name="level">9</item>
         <item name="Range">Touch</item>
-        <item name="Duration">#TODO</item>
+        <item name="Duration">8 hours, or until the end of your next short or long rest, whichever happens first</item>
         <item name="concentration">false</item>
         <item name="source">PHB</item>
         <item name="isBig">false</item>
