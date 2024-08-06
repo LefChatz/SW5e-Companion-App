@@ -33,7 +33,7 @@ class BackgroundsDetailsActivity : AppCompatActivity() {
         when(background){
             "agent"->           generateAgent(binding.ll,resources,inflater)
             "bounty_hunter"->   generateBountyHunter(binding.ll,resources,inflater)
-            "criminal"->        generateBountyHunter(binding.ll,resources,inflater)
+            "criminal"->        generateCriminal(binding.ll,resources,inflater)
             "entertainer"->     generateBountyHunter(binding.ll,resources,inflater)
             "force_adept"->     generateBountyHunter(binding.ll,resources,inflater)
             "gambler"->         generateBountyHunter(binding.ll,resources,inflater)

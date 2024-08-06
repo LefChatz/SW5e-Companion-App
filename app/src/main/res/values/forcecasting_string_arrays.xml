@@ -1511,7 +1511,7 @@
         <item name="concentration">false</item>
         <item name="prerequisite">false</item>
         <item name="isBig">false</item>
-        <item name="details_Text">At-will <font color="cyan">light</font> side power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Touch\n<b>Duration:</b> Instantaneous\n\n"    "At your touch, all curses affecting one creature or object end. If the object is a cursed enhanced item, its curse remains, but the power breaks its owner\'s attunement to the object so it can be removed or discarded.</item>
+        <item name="details_Text">At-will <font color="cyan">light</font> side power\n\n<b>Casting Time:</b> 1 action\n<b>Range:</b> Touch\n<b>Duration:</b> Instantaneous\n\n"    "You strike a creature with the righteous fury of the Force. Make a melee force attack against the target, if the attack hits, the target takes force damage depending on its alignment: a dark-aligned creature takes 1d12 force damage, a balanced or unaligned creature takes 1d10 force damage, and a light-aligned creature takes 1d8 force damage.\n\n"   "The power’s damage increases by one die when you reach 5th, 11th, and 17th level.</item>
         <!--Remove Curse-->
         <item name="forcepowername">remove_curse</item>
         <item name="printname"><font color="#4be6ff">Remove Curse</font></item>
