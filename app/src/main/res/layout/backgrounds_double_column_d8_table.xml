@@ -1,250 +1,254 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/hscroll"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#55FFD700"
-    android:layout_gravity="center|top">
+    android:layout_margin="5dp"
+    android:layout_gravity="center_horizontal">
 
-    <TableRow
-        android:paddingHorizontal="10dp"
-        android:paddingTop="5dp"
-        >
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#55FFD700">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="d8"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="10dp" />
+        <TableRow
+            android:paddingHorizontal="10dp"
+            android:paddingTop="5dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Feat"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d8"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="d8"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Feat"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Feat"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="10dp" />
-    </TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d8"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:src="@drawable/goldhorizontalline" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Feat"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
+        </TableRow>
 
-    <TableRow
-        android:paddingHorizontal="10dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:src="@drawable/goldhorizontalline" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/one"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="5dp" />
+        <TableRow android:paddingHorizontal="10dp">
 
-        <TextView
-            android:id="@+id/text_1_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Acid"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/one"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="5"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="5dp" />
+            <TextView
+                android:id="@+id/text_1_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Acid"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
 
-        <TextView
-            android:id="@+id/text_1_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ion"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="10dp" />
-    </TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
 
-    <TableRow
-        android:paddingHorizontal="10dp"
-        android:background="#50FFD700">
+            <TextView
+                android:id="@+id/text_1_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ion"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
+        </TableRow>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="5dp" />
+        <TableRow
+            android:paddingHorizontal="10dp"
+            android:background="#50FFD700">
 
-        <TextView
-            android:id="@+id/text_2_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cold"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="6"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="5dp" />
+            <TextView
+                android:id="@+id/text_2_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cold"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
 
-        <TextView
-            android:id="@+id/text_2_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lightning"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="10dp" />
-    </TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
 
-    <TableRow
-        android:paddingHorizontal="10dp">
+            <TextView
+                android:id="@+id/text_2_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lightning"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
+        </TableRow>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="5dp" />
+        <TableRow android:paddingHorizontal="10dp">
 
-        <TextView
-            android:id="@+id/text_3_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fire"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="7"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="5dp" />
+            <TextView
+                android:id="@+id/text_3_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fire"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
 
-        <TextView
-            android:id="@+id/text_3_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Poison"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="10dp" />
-    </TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
 
-    <TableRow
-        android:paddingBottom="5dp"
-        android:paddingHorizontal="10dp"
-        android:background="#50FFD700">
+            <TextView
+                android:id="@+id/text_3_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Poison"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
+        </TableRow>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="4"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="5dp" />
+        <TableRow
+            android:paddingBottom="5dp"
+            android:paddingHorizontal="10dp"
+            android:background="#50FFD700">
 
-        <TextView
-            android:id="@+id/text_4_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Energy"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="8"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="5dp" />
+            <TextView
+                android:id="@+id/text_4_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Energy"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
 
-        <TextView
-            android:id="@+id/text_4_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sonic"
-            android:textColor="@color/gold"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="10dp" />
-    </TableRow>
-</TableLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="5dp" />
+
+            <TextView
+                android:id="@+id/text_4_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sonic"
+                android:textColor="@color/gold"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp" />
+        </TableRow>
+    </TableLayout>
+</HorizontalScrollView>
