@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/starjedi"
-            android:text="@string/species"
+            android:text="@string/backgrounds"
             android:textColor="@color/gold"
             android:textSize="22sp"
             android:translationZ="90dp"
@@ -44,15 +44,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/dummybutton"
-            android:layout_width="80dp"
+        <TextView
+            android:id="@+id/SourceBook"
+            android:layout_width="wrap_content"
             android:layout_height="0sp"
             android:background="?android:attr/selectableItemBackground"
-            android:textAllCaps="false"
-            android:text="@string/info"
+            android:text="@string/source"
             android:textColor="@color/gold"
-            android:textSize="15sp"
+            android:textSize="22sp"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:layout_marginEnd="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

@@ -2,6 +2,7 @@
 <resources>
     <string-array name="agent">
         <item name="agent_type">0</item>
+        <item name="agent_sourcebook">PHB</item>
         <item name="agent_1"> Many organizations active in the galaxy aren’t bound by strictures of geography. These factions pursue their agendas without regard for political boundaries, and their members operate anywhere the organization deems necessary. These groups employ listeners, rumormongers, smugglers, mercenaries, cache-holders (people who guard caches of wealth or items for use by the faction’s operatives), haven keepers, and message drop minders, to name a few. At the core of every faction are those who don’t merely fulfill a small function for that organization, but who serve as its hands, head, and heart. As a prelude to your adventuring career (and in preparation for it), you served as an agent of a particular faction. You might have operated openly or secretly, depending on the faction and its goals, as well as how those goals mesh with your own. Becoming an adventurer doesn’t necessarily require you to relinquish membership in your faction (though you can choose to do so), and it might enhance your status in the faction.\n\n"   "<b>Skill Proficiencies</b>: Choose two from Deception, Investigation, Lore, and Persuasion\n"   "<b>Languages</b>: Two of your choice\n"   "<b>Equipment</b>: Badge or emblem of your faction, a copy of a seminal faction text (or a code-book for a covert faction), a set of common clothes, and a pouch containing 150 cr</item>
         <item name="agent_2Header">Feature: Safe Haven</item>
         <item name="agent_2Text">As a faction agent, you have access to a secret network of supporters and operatives who can provide assistance on your adventures. You know a set of secret signs and passwords you can use to identify such operatives, who can provide you with access to a hidden safe house, free room and board, or assistance in finding information. These agents never risk their lives for you or risk revealing their true identities.</item>
@@ -45,6 +46,7 @@
     </string-array>
     <string-array name="bounty_hunter">
         <item name="bounty_hunter_type">0</item>
+        <item name="bounty_hunter_sourcebook">PHB</item>
         <item name="bounty_hunter_1">Before you became an adventurer, your life was already full of conflict and excitement, because you made a living tracking down people for pay. Unlike some people who collect bounties, though, you aren’t a savage who follows quarry into or through the wilderness. You’re involved in a lucrative trade, in the place where you live, that routinely tests your skills and survival instincts. What’s more, you aren’t alone, as a bounty hunter in the wild would be: you routinely interact with both the criminal subculture and other bounty hunters, maintaining contacts in both areas to help you succeed.\n\nYou might be a cunning thief-catcher, prowling the rooftops to catch one of the myriad burglars of the city. Perhaps you are someone who has your ear to the street, aware of the doings of street gangs. You might be a “velvet mask” bounty hunter, one who blends in with high society and noble circles in order to catch the criminals that prey on the rich, whether pickpockets or con artists. As a member of an adventuring party, you might find it more difficult to pursue a personal agenda that doesn’t fit with the group’s objectives - but on the other hand, you can take down much more formidable targets with the help of your companions.\n\n"   "<b>Skill Proficiencies:</b> Choose two from Deception, Insight, Persuasion, and Stealth\n"   "<b>Tool Proficiencies:</b> Your choice of demolitions kit, security kit, or slicer\;s kit\n"   "<b>Languages:</b> One of your choice\n"   "<b>Equipment:</b> A set of clothes appropriate to your duties, a set of binders, and a pouch containing 200 cr</item>
         <item name="bounty_hunter_2Header">Feature: Ear to the ground</item>
         <item name="bounty_hunter_2Text">You are in frequent contact with people in the segment of society that your chosen quarries move through. These people might be associated with the criminal underworld, the rough-and-tumble folk of the streets, or members of high society. This connection comes in the form of a contact in any city you visit, a person who provides information about the people and places of the local area.</item>
@@ -88,6 +90,7 @@
     </string-array>
     <string-array name="criminal">
         <item name="criminal_type">1</item>
+        <item name="criminal_sourcebook">PHB</item>
         <item name="criminal_1"><font face="sans-serif">You are an experienced criminal with a history of breaking the law. You have spent a lot of time among other criminals and still have contacts within the criminal underworld. You’re far closer than most people to the world of murder, theft, and violence that pervades the underbelly of civilization, and you have survived up to this point by flouting the rules and regulations of society.\n\n"   "<b>Skill Proficiencies:</b> Choose two from Deception, Intimidation, Sleight of Hand, and Stealth\n"   "<b>Tool Proficiencies:</b> One type of gaming set, your choice of demolitions kit, security kit, or slicer\'s kit\n"   "<b>Equipment:</b> A set of common clothes with a hood, a gaming set (one of your choice), and a belt pouch containing 150 cr</font>\n\nCriminal Specialty</item>
         <item name="criminal_table_title">Criminal Specialty</item>
         <item name="criminal_2_1">Blackmailer</item>
@@ -140,6 +143,7 @@
     </string-array>
     <string-array name="entertainer">
         <item name="entertainer_type">2</item>
+        <item name="entertainer_sourcebook">PHB</item>
         <item name="entertainer_1"><font face="sans-serif">You thrive in front of an audience, knowing how to entrance them, entertain them, and even inspire them. Your poetics can stir the hearts of those who hear you, awakening grief or joy, laughter or anger. Your music raises their spirits or captures their sorrow. Your dance steps captivate, your humor cuts to the quick. Whatever techniques you use, your art is your life.\n\n"   "<b>Skill Proficiencies:</b> Choose two from Acrobatics, Insight, Performance, and Sleight of Hand\n"   "<b>Tool Proficiencies:</b> Disguise kit, one type of musical instrument\n"   "<b>Equipment:</b> A musical instrument (one of your choice), the favor of an admirer (love letter, lock of hair, or trinket), a costume, and a belt pouch containing 150 cr</font>\n\nEntertainer Routines</item>
         <item name="entertainer_table_title">Entertainer Routines</item>
         <item name="entertainer_2_1">Actor</item>
@@ -194,6 +198,7 @@
     </string-array>
     <string-array name="force_adept">
         <item name="force_adept_type">0</item>
+        <item name="force_adept_sourcebook">PHB</item>
         <item name="force_adept_1">You are keenly attuned to the flow of the mysterious energy field known as the Force. With proper training, you could learn to consciously sense and manipulate that energy further. As it is, you may appear to have heightened senses, extremely quick reflexes, an intuitive understanding of others, or an uncanny ability to persuade people to your way of thinking. Your powers may have lain dormant for a long time, perhaps you felt something inside of you but never knew what it was. Perhaps your abilities were awoken by a strong encounter with another force-sensitive with the powers of the Force, or an object associated with the Force, such as a lightsaber.\n\n"   "<b>Skill Proficiencies:</b> Choose two from Deception, Insight, Perception, and Persuasion\n"   "<b>Tool Proficiencies:</b> Two of your choice of artisan\'s implements, gaming sets, or musical instruments\n"   "<b>Equipment:</b> A set of common clothes, a sturdy knife, and a belt pouch containing 150 cr</item>
         <item name="force_adept_2Header">Feature: Guided by the Force</item>
         <item name="force_adept_2Text">When you attempt to learn a piece of knowledge, you often instinctively know where or from whom you can obtain it. Usually, this information comes from a seemingly random person, book, or data file. Your GM might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply cannot be found.</item>
@@ -237,6 +242,7 @@
     </string-array>
     <string-array name="gambler">
         <item name="gambler_type">0</item>
+        <item name="gambler_sourcebook">PHB</item>
         <item name="gambler_1">You are a skilled gambler who spends most of your time in casinos, bar rooms, and gambling dens. Are your activities legal, or do you break the law? Have you ever cheated in a game, or do you play by the rules? No matter what, your life has been one of excitement, chance, and danger.\n\n"   "<b>Skill Proficiencies:</b> Choose two from Deception, Insight, Intimidation, and Sleight of Hand\n"   "<b>Tool Proficiencies:</b> Two types of gaming sets\n"   "<b>Equipment:</b> A set of common clothes, a set of dice, a deck of playing cards, a lucky charm, and a belt pouch containing 100 cr.</item>
         <item name="gambler_2Header">Feature: let\'s make it interesting</item>
         <item name="gambler_2Text">You can convince nearly anyone to put up something they aren’t normally willing to part with (property or information) in a game of chance. Your GM might rule that they will only agree to a game of their choosing, and they may only agree if they feel the odds are in their favor.</item>
@@ -280,6 +286,7 @@
     </string-array>
     <string-array name="investigator">
         <item name="investigator_type">0</item>
+        <item name="investigator_sourcebook">PHB</item>
         <item name="investigator_1">Rarer than watch or patrol members are a community’s investigators, who are responsible for solving crimes after the fact. Though such folk are seldom found in rural areas, nearly every settlement of decent size has at least one or two watch members who have the skill to investigate crime scenes and track down criminals.\n\n"   "<b>Skill Proficiencies:</b> Choose two from Insight, Investigation, Perception, and Survival\n"   "<b>Languages:</b> Two of your choice\n"   "<b>Equipment:</b> A uniform in the style of your unit and indicative of your rank, a horn with which to summon help, a set of binders, and a pouch containing 100 cr</item>
         <item name="investigator_2Header">Feature: watcher\'s eye</item>
         <item name="investigator_2Text">Your experience in enforcing the law, and dealing with lawbreakers, gives you a feel for local laws and criminals. You can easily find the local outpost of the watch or a similar organization, and just as easily pick out the dens of criminal activity in a community, although you’re more likely to be welcome in the former locations rather than the latter.</item>
@@ -323,6 +330,7 @@
     </string-array>
     <string-array name="jedi">
         <item name="jedi_type">0</item>
+        <item name="jedi_sourcebook">PHB</item>
         <item name="jedi_1">You are a devout follower of the Jedi Order: an ancient, monastic peacekeeping organization united in its observance of the light side of the Force. A noble order of protectors noted for their ability to tap into the power of the Force, the Jedi serve as guardians of peace and justice in the Galactic Republic. You follow the Jedi Code:\n\n“<i>There is no emotion, there is peace.\nThere is no ignorance, there is knowledge.\nThere is no passion, there is serenity.\nThere is no chaos, there is harmony.\nThere is no death, there is the Force.</i>”\n\n"   "<b>Skill Proficiencies:</b> Choose two from Insight, Investigation, Lore, and Persuasion\n"   "<b>Tool Proficiencies:</b>Artificer\'s tools\n"   "<b>Languages:</b> One of your choice\n"   "<b>Equipment:</b> A copy of the Jedi code, a set of common clothes including a robe, and a belt pouch containing 150 cr</item>
         <item name="jedi_2Header">Feature: Shelter of the faithful</item>
         <item name="jedi_2Text">As a Jedi, you command the respect of those who are loyal to the Jedi Order. You and your adventuring companions can expect to receive free healing and care at any Jedi temple, and those who support your religion will support you (but only you) at a modest lifestyle.\n\n"   "You might also have ties to a specific Jedi temple and have a residence there. This could be the temple where you trained, or a temple where you have found a new home. While near your temple, you can call upon the Jedi for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple.</item>
@@ -366,6 +374,7 @@
     </string-array>
     <string-array name="mandalorian">
         <item name="mandalorian_type">1</item>
+        <item name="mandalorian_sourcebook">PHB</item>
         <item name="mandalorian_1"><font face="sans-serif">You are a child of Mandalore. As a member of the most renowned warrior culture in history, your people are known for being strong and hardy. Mandalorian culture is built around the honor and glory that come from victory in battle.\n\n"    "<b>Skill Proficiencies:</b> Choose two from Athletics, Intimidation, Piloting, and Survival\n"    "<b>Tool Proficiencies:</b> One set of artisan\'s implements\n"    "<b>Languages:</b> Mando\'a\n"    "<b>Equipment:</b> A set of traveler\'s clothes, a trophy from a previous victory, and a pouch containing 200 cr</font>\n\nMandalorian clan</item>
         <item name="mandalorian_table_title">Mandalorian clan</item>
         <item name="mandalorian_2_1">Vizsla</item>
@@ -418,6 +427,7 @@
     </string-array>
     <string-array name="mercenary">
         <item name="mercenary_type">0</item>
+        <item name="mercenary_sourcebook">PHB</item>
         <item name="mercenary_1">As a sell-sword who fought battles for coin, you’re well acquainted with risking life and limb for a chance at a share of treasure. Now, you look forward to fighting foes and reaping even greater rewards as an adventurer. Your experience makes you familiar with the ins and outs of mercenary life, and you likely have harrowing stories of events on the battlefield. You might have served with a large outfit or a smaller band of sell-swords, maybe even more than one.\n\n"   "Now you’re looking for something else, perhaps greater reward for the risks you take, or the freedom to choose your own activities. For whatever reason, you’re leaving behind the life of a soldier for hire, but your skills are undeniably suited for battle, so now you fight on in a different way.\n\n"   "<b>Skill Proficiencies:</b> Choose two from Athletics, Investigation, Persuasion, and Piloting\n"   "<b>Tool Proficiencies:</b>One type of gaming set\n"   "<b>Languages:</b> One of your choice\n"   "<b>Equipment:</b> A uniform of your company (traveler\'s clothes in quality), an insignia of your rank, a gaming set (one of your choice), and a pouch containing the remainder of your last wages (100 cr)</item>
         <item name="mercenary_2Header">Feature: Mercenary life</item>
         <item name="mercenary_2Text">You know the mercenary life as only someone who has experienced it can. You are able to identify mercenary companies by their emblems, and you know a little about any such company, including the names and reputations of its commanders and leaders, and who has hired them recently. You can find the cantinas and feasthalls where mercenaries abide in any area, as long as you speak the language, and if you spend at least an hour in such a location you can come across one of the following bits of information: a job offer, significant rumor, referral to a skilled merchant, blacksmith, etc., or a hint towards the pursuit of your current quest. Additionally, you can find mercenary work between adventures sufficient to maintain a comfortable lifestyle (see “Practicing a Profession” under “Downtime Activities” in chapter 8 of the Player’s Handbook).</item>
@@ -461,6 +471,7 @@
     </string-array>
     <string-array name="noble">
         <item name="noble_type">0</item>
+        <item name="noble_sourcebook">PHB</item>
         <item name="noble_1">You understand wealth, power, and privilege. You carry a noble title, and your family owns land, collects taxes, and wields significant political influence. You might be a pampered aristocrat unfamiliar with manual labor, a former merchant just elevated to the nobility, or an honest, hard-working landowner who cares deeply about the people who live and work on your land.\n\n"   "Work with your GM to come up with an appropriate title and determine how much authority that title carries, as well as your family and their influence on you. Is your family old and established, or was your title only recently bestowed? How much influence do they wield, how do people regard them?\n\n"   "What’s your position in the family? Are you the heir to the head of the family or the head itself? Are you far down the line of succession? How does the head of your family feel about your adventuring career? Are you in your family’s good graces?\n\n"   "Does your family have a coat of arms you might wear, a signet ring, or particular colors?\n\n"   "These details help establish your family and your title as features of the world of the campaign.\n\n"   "<b>Skill Proficiencies:</b> Choose two from Deception, Insight, Lore, and Persuasion\n"   "<b>Tool Proficiencies: </b>One type of gaming set\n"   "<b>Languages:</b> One of your choice\n"   "<b>Equipment:</b> A set of fine clothes, a signet ring, a letter of pedigree, and a purse containing 250 cr</item>
         <item name="noble_2Header">Feature: position of privilege</item>
         <item name="noble_2Text">Thanks to your noble birth, people are inclined to think the best of you. You are welcome in high society, and people assume you have the right to be wherever you are. The common folk make every effort to accommodate you and avoid your displeasure, and other people of high birth treat you as a member of the same social sphere. You can secure an audience with a local noble if you need to.</item>
@@ -504,6 +515,7 @@
     </string-array>
     <string-array name="nomad">
         <item name="nomad_type">0</item>
+        <item name="nomad_sourcebook">PHB</item>
         <item name="nomad_1">You grew up in the wilds, far from civilization and the comforts of town and technology. You’ve witnessed the migration of herds larger than forests, survived weather more extreme than any city-dweller could comprehend, and enjoyed the solitude of being the only thinking creature for miles in any direction. The wilds are in your blood, whether you were a nomad, an explorer, a recluse, a hunter-gatherer, or even a marauder. Even in places where you don’t know the specific features of the terrain, you know the ways of the wild.\n\n"   "<b>Skill Proficiencies:</b> Choose two from Animal Handling, Athletics, Medicine, and Survival\n"   "<b>Tool Proficiencies:</b> One type of musical instrument\n"   "<b>Languages:</b> One of your choice\n"   "<b>Equipment:</b> A walking stick, a hunting trap, a trophy from an animal you killed, a set of traveler\'s clothes, and a belt pouch containing 100 cr</item>
         <item name="nomad_2Header">Feature: wanderer</item>
         <item name="nomad_2Text">You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game, water, and so forth.</item>
@@ -547,6 +559,7 @@
     </string-array>
     <string-array name="outlaw">
         <item name="outlaw_type">2</item>
+        <item name="outlaw_sourcebook">PHB</item>
         <item name="outlaw_1"><font face="sans-serif">You are a notorious free adventurer who, due to unfortunate circumstances, has lost favor with the law. However, being of the common people, they protect you due to your just nature. A protector of the people, a thorn in the side of authorities.\n\n"   "<b>Skill Proficiencies:</b> Choose two from Acrobatics, Athletics, Insight, and Survival\n"   "<b>Tool Proficiencies:</b> Disguise kit\n"   "<b>Languages:</b> One of your choice\n"   "<b>Equipment:</b> A hunting trap, an iron pot, a set of traveler\'s clothes, and a pouch containing 150 cr</font>\n\nDefining Event</item>
         <item name="outlaw_table_title">Defining Event</item>
         <item name="outlaw_2_1">I stood up to a tyrant\'s agents.</item>
@@ -601,6 +614,7 @@
     </string-array>
     <string-array name="pirate">
         <item name="pirate_type">0</item>
+        <item name="pirate_sourcebook">PHB</item>
         <item name="pirate_1">You are an experienced pirate. Banditry and raiding are common in the Outer Rim, and little negative stigma is given to pirates. Those that prey on the Empire are sometimes even held in high regard as bold warriors. However, you still have contacts within the criminal underworld and you’re far closer than most people to the world of murder, theft, and violence that pervades the underbelly of civilization, and you have survived up to this point by flouting the rules and regulations of finer society.\n\n"   "<b>Skill Proficiencies:</b> Choose two from Athletics, Deception, Intimidation, and Piloting\n"   "<b>Tool Proficiencies:</b> One type of gaming set, your choice of demolitions kit, security kit, or slicer\'s kit\n"   "<b>Equipment:</b> One set of traveler\'s clothes, a gaming set you are proficient with, poorly wrought maps of Outer Rim worlds in your territory, a small piece of jewelry worth 100 cr from some exotic planet, and a pouch containing 50 cr</item>
         <item name="pirate_2Header">Feature: Galactic Scourge</item>
         <item name="pirate_2Text">You’ve been from one end of the galaxy to the other. You know the most lucrative trade routes. You have expert knowledge of the various hyperlanes. In addition to this, you know a large number of the models and designs of common space ships that are found in the galaxy. Further, the bonds you formed with your crew are strong, and you can call on their aid even if you’ve been away from their side for some time. You can expect your former comrades to offer you passage aboard ship, reasonable aid, or shelter when you are in need. Keep in mind that this bond goes both ways, and they may come to you expecting the same.</item>
@@ -644,6 +658,7 @@
     </string-array>
     <string-array name="scientist">
         <item name="scientist_type">1</item>
+        <item name="scientist_sourcebook">PHB</item>
         <item name="scientist_1"><font face="sans-serif">Nothing excites you more than pushing the boundaries of scientific knowledge. Most of your time is spent in a lab performing experiments to further your interests. Few people understand the work you do. You can solve complex problems most people can’t begin to wrap their heads around, and can solve simple problems in unexpected ways that surprise most people.\n\n"   "What is your scientific field of interest? Is it your insatiable curiousity, or a personal goal that drives you? Did you leave your lab voluntarily, or were you kicked out? One thing is for sure - there are too many interesting research ideas, and too little time.\n\n"   "<b>Skill Proficiencies:</b> Choose two from Lore, Medicine, Nature, and Technology\n"   "<b>Tool Proficiencies:</b> One of your choice\n"   "<b>Languages:</b> One of your choice\n"   "<b>Equipment:</b> A set of common clothes, a datapad, a book on your field of research, a pouch containing 100 cr</font>\n\nField of Research\n<font face="sans-serif">While scientists are widely knowledgeable, they also choose a focus for their studies. Choose an option or roll on the table below to de ne your eld of research.</font></item>
         <item name="scientist_table_title">Field of Research</item>
         <item name="scientist_2_1">Biology</item>
@@ -696,6 +711,7 @@
     </string-array>
     <string-array name="scoundrel">
         <item name="scoundrel_type">3</item>
+        <item name="scoundrel_sourcebook">PHB</item>
         <item name="scoundrel_1"><font face="sans-serif">You have always had a way with people. You can tease out their heart’s desires after a few minutes of conversation, and with a few leading questions you can read them like they were children’s books. It’s a useful talent, and one that you’re perfectly willing to use for your advantage. You know what people want and you promise to deliver, coaxing people into otherwise foolish decisions. You make the improbable sound plausible, and come ahead on every deal.\n\n"   "<b>Skill Proficiencies:</b> Choose two from Deception, Insight, Performance, and Sleight of Hand\n"   "<b>Tool Proficiencies:</b> Disguise Kit, Forgery Kit\n"   "<b>Equipment:</b> A set of fine clothes, a disguise kit, a memento of a former con, and a belt pouch containing 150 cr</font>\n\nFavorite Schemes</item>
         <item name="scoundrel_table_title">Favorite Schemes</item>
         <item name="scoundrel_2_1">I cheat at games involving chance.</item>
@@ -746,6 +762,7 @@
     </string-array>
     <string-array name="sith">
         <item name="sith_type">0</item>
+        <item name="sith_sourcebook">PHB</item>
         <item name="sith_1">You are an acolyte of the Sith Order: an ancient order of Force-wielders devoted to the dark side of the Force. Emerging as a divergent faction to the Jedi Order, the Sith are mortal enemies of the Jedi and fight against them. Driven by emotions such as hate, anger, and greed, the Sith are deceptive and ultimately obsessed with amassing power no matter the cost. You follow the Sith Code:\n\n"   "<i>“Peace is a lie. There is only passion.\nThrough passion I gain strength.\nThrough strength I gain power.\nThrough power I gain victory.\nThrough victory my chains are broken.\nThe Force shall free me.”</i>\n\n"   "<b>Skill Proficiencies:</b> Choose two from Deception, Insight, Intimidation, and Lore\n"   "<b>Tool Proficiencies:</b> Artificer\'s tools\n"   "<b>Languages:</b> One of your choice\n"   "<b>Equipment:</b> A copy of the Sith code, a set of common clothes including a robe, and a belt pouch containing 150 cr</item>
         <item name="sith_2Header">Feature: Feared</item>
         <item name="sith_2Text">As a Sith, you instill fear in those who are aware of your standing. When you are in a civilized environment, you can get away with minor criminal offenses, such as refusing to pay for food at a cantina or cutting through doors at a local shop, since most people will not report your activity to the authorities.</item>
@@ -884,6 +901,7 @@
     </string-array>
     <string-array name="spacer">
         <item name="spacer_type">1</item>
+        <item name="spacer_sourcebook">PHB</item>
         <item name="spacer_1"><font face="sans-serif">Aboard a star ship in the cold vacuum of space is where you feel most at home. You’ve spent the majority of your life travelling the stars. Life aboard ships has given you a good understanding of their inner workings. You might be especially skilled as a ship mechanic, a pilot, or support staff.\n\n"   "<b>Skill Proficiencies:</b> Choose two from Insight, Investigation, Piloting, and Technology\n"  "<b>Tool Proficiencies:</b> Your choice of chef\'s kit, mechanic\'s kit, or one type of gaming set\n"  "<b>Languages:</b> One of your choice\n"  "<b>Equipment:</b> A set of tools or a gaming set (one of your choice), a set of common clothes, a small souvenir from your travels, and a belt pouch containing 100 cr</font>\n\nSpecialty</item>
         <item name="spacer_table_title">Specialty</item>
         <item name="spacer_2_1">Pilot</item>
@@ -934,9 +952,54 @@
         <item name="spacer_10_5">I can\'t help but pocket loose coins and other trinkets I come across.</item>
         <item name="spacer_10_6">My pride will probably lead to my destruction.</item>
     </string-array>
+    <string-array name="retired_adventurer">
+        <item name="retired_adventurer_type">0</item>
+        <item name="retired_adventurer_1">“I’m getting too old for this stuff.”\n\n"   "You spent your life as an adventurer, learning the use of many skills and basic survival techniques, including how to stay alive in a hostile area. You might have been part of a famous adventuring party or a less renowned one.\n\n"   "When you choose this background, work with your GM to determine the details of your previous adventuring party, and what kind of experiences you had in your adventuring career. How famous was your previous adventuring party and how well known are you? What did you learn? What was your group’s specialty?\n\n"   "<b>Skill Proficiencies:</b> Choose two from Athletics, Insight, Lore, and Survival\n"  "<b>Tool Proficiencies:</b> One type of artisan\'s implements\n"  "<b>Languages:</b> One of your choice\n"  "<b>Equipment:</b> A grappling hook, one tool with which you are proficient, a memento of an unsuccessful expedition (map to a never found treasure, lock of hair from a fallen companion, or another trinket), and a pouch containing your last 50 cr</item>
+        <item name="retired_adventurer_2Header">Feature: Bridges not yet Burned</item>
+        <item name="retired_adventurer_2Text">Throughout your adventures you have established a multitude of contacts from all walks of life, but the intervening years have seen those relationships strained. You may use any feature of any other background, but once a particular feature is used, that feature can’t be used again until one year has passed.</item>
+        <item name="retired_adventurer_3Header">Background Feat</item>
+        <item name="retired_adventurer_3Text">As a further embodiment of the experience and training of your background, you can choose from the following feats:</item>
+        <item name="retired_adventurer_4_1">Brawny</item>
+        <item name="retired_adventurer_4_2">Empathic</item>
+        <item name="retired_adventurer_4_3">Loremaster</item>
+        <item name="retired_adventurer_4_4">Survivalist</item>
+        <item name="retired_adventurer_4_5">Crafter</item>
+        <item name="retired_adventurer_4_6">Linguist</item>
+        <item name="retired_adventurer_4_7">Athlete</item>
+        <item name="retired_adventurer_4_8">Observant</item>
+        <item name="retired_adventurer_5">Suggested characteristics\n<font face="sans-serif">The trials and triumphs of retired adventurers have left an impact, shaping their ideals, creating strong bonds, and often leaving them scarred and vulnerable to fear, shame, and hatred.</font></item>
+        <item name="retired_adventurer_6_1">I\'m always polite and respectful.</item>
+        <item name="retired_adventurer_6_2">I\'m haunted by memories of war. I can\'t get the images of violence out of my mind.</item>
+        <item name="retired_adventurer_6_3">I\'ve lost too many friends, and I\'m slow to make new ones.</item>
+        <item name="retired_adventurer_6_4">I\'m full of inspiring and cautionary tales from my adventuring experience relevant to almost every combat situation.</item>
+        <item name="retired_adventurer_6_5">I can stare down a rancor without flinching.</item>
+        <item name="retired_adventurer_6_6">I enjoy being strong and like breaking things.</item>
+        <item name="retired_adventurer_6_7">I have a crude sense of humor.</item>
+        <item name="retired_adventurer_6_8">I face problems head-on. A simple, direct solution is the best path to success.</item>
+        <item name="retired_adventurer_7_1"><b>Greater Good:</b> Our lot is to lay down our lives in defense of others. (Light)</item>
+        <item name="retired_adventurer_7_2"><b>Responsibility:</b> I do what I must and obey just authority. (Lawful)</item>
+        <item name="retired_adventurer_7_3"><b>Independence:</b> When people follow orders blindly, they embrace a kind of tyranny. (Chaotic)</item>
+        <item name="retired_adventurer_7_4"><b>Might:</b> In life as in war, the stronger force wins. (Dark)</item>
+        <item name="retired_adventurer_7_5"><b>Live and Let Live:</b> Ideals aren\'t worth killing over or going to war for. (Neutral)</item>
+        <item name="retired_adventurer_7_6"><b>Nation:</b> My city, nation, or people are all that matter. (Any)</item>
+        <item name="retired_adventurer_8_1">I would still lay down my life for the people I adventured with.</item>
+        <item name="retired_adventurer_8_2">Someone saved my life when they could have left me. To this day, I will never leave a friend behind.</item>
+        <item name="retired_adventurer_8_3">My honor is my life.</item>
+        <item name="retired_adventurer_8_4">I\'ll never forget the crushing defeat my party suffered or the enemies who dealt it.</item>
+        <item name="retired_adventurer_8_5">Those who fight beside me are those worth dying for.</item>
+        <item name="retired_adventurer_8_6">I fight for those who cannot fight for themselves.</item>
+        <item name="retired_adventurer_9_1">The monstrous enemy we faced in battle still leaves me quivering with fear.</item>
+        <item name="retired_adventurer_9_2">I have little respect for anyone who is not a proven adventurer.</item>
+        <item name="retired_adventurer_9_3">I made a terrible mistake in battle cost many lives, and I would do anything to keep that mistake secret.</item>
+        <item name="retired_adventurer_9_4">My hatred of my enemies is blind and unreasoning.</item>
+        <item name="retired_adventurer_9_5">I obey the law, even if the law causes misery.</item>
+        <item name="retired_adventurer_9_6">I\'d rather eat my armor than admit when I\'m wrong.</item>
+    </string-array>
+
 
     <string-array name="background">
         <item name="background_type">0</item>
+        <item name="background_sourcebook">EC</item>
         <item name="background_1"></item>
         <item name="background_2Header">Feature:</item>
         <item name="background_2Text"></item>
@@ -980,6 +1043,7 @@
     </string-array>
     <string-array name="background1">
         <item name="background_type">1</item>
+        <item name="background_sourcebook">EC</item>
         <item name="background_1"></item>
         <item name="background_table_title">TableTitle</item>
         <item name="background_2_1"></item>
@@ -1032,6 +1096,7 @@
     </string-array>
     <string-array name="background2">
         <item name="background_type">2</item>
+        <item name="background_sourcebook">EC</item>
         <item name="background_1"></item>
         <item name="background_table_title">TableTitle</item>
         <item name="background_2_1"></item>
@@ -1086,6 +1151,7 @@
     </string-array>
     <string-array name="background3">
         <item name="background_type">3</item>
+        <item name="background_sourcebook">EC</item>
         <item name="background_1"></item>
         <item name="background_table_title">TableTitle</item>
         <item name="background_2_1"></item>

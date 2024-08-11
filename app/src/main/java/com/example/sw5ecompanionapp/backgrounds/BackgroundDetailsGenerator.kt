@@ -31,6 +31,7 @@ fun generateDetails(background: String, ll: LinearLayoutCompat, resources: Resou
 
     val type = detailsHeap.poll()?.toString()?.toInt()
 
+    ll.findViewById<TextView>(R.id.SourceBook).text = detailsHeap.poll()
     if (type==0) {
         tempText = inflater.inflate(R.layout.universal_textview_nofont_gold,ll,false).findViewById(R.id.textview)
         tempText.text = detailsHeap.poll()
