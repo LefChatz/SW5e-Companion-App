@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources
-    >
+<resources>
     <string-array name="agent">
         <item name="agent_type">0</item>
         <item name="agent_1"> Many organizations active in the galaxy aren’t bound by strictures of geography. These factions pursue their agendas without regard for political boundaries, and their members operate anywhere the organization deems necessary. These groups employ listeners, rumormongers, smugglers, mercenaries, cache-holders (people who guard caches of wealth or items for use by the faction’s operatives), haven keepers, and message drop minders, to name a few. At the core of every faction are those who don’t merely fulfill a small function for that organization, but who serve as its hands, head, and heart. As a prelude to your adventuring career (and in preparation for it), you served as an agent of a particular faction. You might have operated openly or secretly, depending on the faction and its goals, as well as how those goals mesh with your own. Becoming an adventurer doesn’t necessarily require you to relinquish membership in your faction (though you can choose to do so), and it might enhance your status in the faction.\n\n"   "<b>Skill Proficiencies</b>: Choose two from Deception, Investigation, Lore, and Persuasion\n"   "<b>Languages</b>: Two of your choice\n"   "<b>Equipment</b>: Badge or emblem of your faction, a copy of a seminal faction text (or a code-book for a covert faction), a set of common clothes, and a pouch containing 150 cr</item>
@@ -745,8 +744,196 @@
         <item name="scoundrel_10_5">I can\'t resist swindling people who are more powerful than me.</item>
         <item name="scoundrel_10_6">I hate to admit it and will hate myself for it, but I\'ll run and preserve my own hide if the going gets tough.</item>
     </string-array>
-
-
+    <string-array name="sith">
+        <item name="sith_type">0</item>
+        <item name="sith_1">You are an acolyte of the Sith Order: an ancient order of Force-wielders devoted to the dark side of the Force. Emerging as a divergent faction to the Jedi Order, the Sith are mortal enemies of the Jedi and fight against them. Driven by emotions such as hate, anger, and greed, the Sith are deceptive and ultimately obsessed with amassing power no matter the cost. You follow the Sith Code:\n\n"   "<i>“Peace is a lie. There is only passion.\nThrough passion I gain strength.\nThrough strength I gain power.\nThrough power I gain victory.\nThrough victory my chains are broken.\nThe Force shall free me.”</i>\n\n"   "<b>Skill Proficiencies:</b> Choose two from Deception, Insight, Intimidation, and Lore\n"   "<b>Tool Proficiencies:</b> Artificer\'s tools\n"   "<b>Languages:</b> One of your choice\n"   "<b>Equipment:</b> A copy of the Sith code, a set of common clothes including a robe, and a belt pouch containing 150 cr</item>
+        <item name="sith_2Header">Feature: Feared</item>
+        <item name="sith_2Text">As a Sith, you instill fear in those who are aware of your standing. When you are in a civilized environment, you can get away with minor criminal offenses, such as refusing to pay for food at a cantina or cutting through doors at a local shop, since most people will not report your activity to the authorities.</item>
+        <item name="sith_3Header">Background Feat</item>
+        <item name="sith_3Text">As a further embodiment of the experience and training of your background, you can choose from the following feats:</item>
+        <item name="sith_4_1">Silver-Tongued</item>
+        <item name="sith_4_2">Empathic</item>
+        <item name="sith_4_3">Threatening</item>
+        <item name="sith_4_4">Loremaster</item>
+        <item name="sith_4_5">Linguist</item>
+        <item name="sith_4_6">Crafter</item>
+        <item name="sith_4_7">Formfighting Dabbler</item>
+        <item name="sith_4_8">Force-Sensitive</item>
+        <item name="sith_5">Suggested characteristics\n<font face="sans-serif">Sith are shaped by their training. They study the Sith code and use it to oppress the weak and quell resistance. Their study of the Sith code affects their mannerisms and ideals. Their flaws might be some hidden hypocrisy or heretical idea, or an ideal or bond taken to an extreme.</font></item>
+        <item name="sith_6_1">I idolize a particular Sith, and constantly refer to that person\'s deeds and example.</item>
+        <item name="sith_6_2">I seek power above all else.</item>
+        <item name="sith_6_3">I prefer using a lightsaber to solve my problems.</item>
+        <item name="sith_6_4">I have a plan for any situation.</item>
+        <item name="sith_6_5">I believe everyone is beneath me.</item>
+        <item name="sith_6_6">I prefer to let someone else do my dirty work.</item>
+        <item name="sith_6_7">Hatred and anger drive every decision I make.</item>
+        <item name="sith_6_8">Lying and scheming are second nature to me.</item>
+        <item name="sith_7_1"><b>Patience:</b> I will defeat my enemies in the end, I\'m in no rush. (Lawful)</item>
+        <item name="sith_7_2"><b>Disdain:</b> I never try to help those in need, regardless of how simple it would be. (Dark)</item>
+        <item name="sith_7_3"><b>Knowledge:</b> The path to power and self-improvement is through knowledge. (Neutral)</item>
+        <item name="sith_7_4"><b>Power:</b> I hope to one day rise to the rank of Dark Lord of the Sith. (Dark)</item>
+        <item name="sith_7_5"><b>Might:</b> If I become strong, I can take what I want,what I deserve. (Dark)</item>
+        <item name="sith_7_6"><b>Aspiration:</b> I\'ll succeed in my goals at any cost. (Any)</item>
+        <item name="sith_8_1">I would die to recover an ancient Sith relic that was lost long ago.</item>
+        <item name="sith_8_2">I care only about myself.</item>
+        <item name="sith_8_3">I owe my life to the Sith who took me in when my parents died.</item>
+        <item name="sith_8_4">My enemies will be defeated, even if it costs me my life.</item>
+        <item name="sith_8_5">Someone I love was killed. Some day soon, I\'ll have my revenge.</item>
+        <item name="sith_8_6">My loyalty to my master is unwavering.</item>
+        <item name="sith_9_1">I am too merciful, and empathize with those I shouldn\'t.</item>
+        <item name="sith_9_2">I put too much trust in those who rule over me.</item>
+        <item name="sith_9_3">I will never fully trust anyone other than myself.</item>
+        <item name="sith_9_4">I am inflexible in my thinking.</item>
+        <item name="sith_9_5">My pride will probably lead to my destruction.</item>
+        <item name="sith_9_6">Failure frightens me, and I get desperate if I think I might fail.</item>
+    </string-array>
+    <string-array name="smuggler">
+        <item name="smuggler_type">0</item>
+        <item name="smuggler_1">You have spent your life hiding in the darkness, making shady deals behind closed doors. What led you to engage in a life of crime? Do you crave the thrill of lawbreaking, or did you enter the profession to pay off a debt, risking your hide on behalf of a less than honorable noble? A smuggler is an individual trained in the art of acquisition, a professional thug who can deliver anything… for a price. Smugglers tend to be bolder criminals than most, preferring bribery or distraction over subterfuge and stealth.\n\n"   "<b>Skill Proficiencies:</b> Choose two from Deception, Piloting, Sleight of Hand, and Stealth\n"  "<b>Tool Proficiencies:</b> One type of gaming set and your choice of demolitions kit, security kit, or slicer\'s kit\n"  "<b>Equipment:</b> A fusion cutter, a set of dark common clothes including a hood, and a belt pouch containing 150 cr</item>
+        <item name="smuggler_2Header">Feature: careful selection</item>
+        <item name="smuggler_2Text">Some close brushes with the law have taught you that not every city guard can be bribed, and some people are simply too keen to miss minute discrepancies. This feature allows you to study a person and gain insight into whether or not they would accept a bribe, or to pick up on whether they are exceptionally more perceptive than you. It does not reveal how expensive a bribe may be for a given situation, however.</item>
+        <item name="smuggler_3Header">Background Feat</item>
+        <item name="smuggler_3Text">As a further embodiment of the experience and training of your background, you can choose from the following feats:</item>
+        <item name="smuggler_4_1">Silver-Tongued</item>
+        <item name="smuggler_4_2">Ace Pilot</item>
+        <item name="smuggler_4_3">Quick-Fingered</item>
+        <item name="smuggler_4_4">Stealthy</item>
+        <item name="smuggler_4_5">Competitor</item>
+        <item name="smuggler_4_6">Specialist</item>
+        <item name="smuggler_4_7">Feigned Confidence</item>
+        <item name="smuggler_4_8">Force of Personality</item>
+        <item name="smuggler_5">Suggested characteristics\n<font face="sans-serif">Smugglers might seem like villains on the surface, and many of them are nefarious to the core. But some have an abundance of endearing, if not redeeming, characteristics. There might be honor among thieves, but spies rarely show any respect for law or authority.</font></item>
+        <item name="smuggler_6_1">I am extremely sociable, especially over a mug of ale.</item>
+        <item name="smuggler_6_2">I always keep my wares close to me, you never know who might stumble across them otherwise.</item>
+        <item name="smuggler_6_3">The best way to hide is out in the open.</item>
+        <item name="smuggler_6_4">I\'m a terrible gossip.</item>
+        <item name="smuggler_6_5">Being seen with any unsavory figures is a sure way to undermine my work, which is why I work out of sight.</item>
+        <item name="smuggler_6_6">Deflecting questions has become second nature to me, so I rarely answer straight.</item>
+        <item name="smuggler_6_7">I have dozens of identities and live in constant fear of answering to the wrong name.</item>
+        <item name="smuggler_6_8">I act irrationally confident in the face of danger, nobody suspects anything when you seem like you\'re in charge.</item>
+        <item name="smuggler_7_1"><b>Morals:</b> I only smuggle things to improve the lives of the common folk. (Light)</item>
+        <item name="smuggler_7_2"><b>Ruthless:</b> I will rise to the top of the heap by any means necessary. (Dark)</item>
+        <item name="smuggler_7_3"><b>Friendship:</b> My associates are dear to me, and I want them to rise with me when I hit it big. (Lawful)</item>
+        <item name="smuggler_7_4"><b>Dauntless:</b> No border crossing or bribe is too difficult- that\'s just the coward\'s way of saying exciting! (Chaotic)</item>
+        <item name="smuggler_7_5"><b>Greater Good:</b> I work for a greater cause, and ply my trade only in service to it. (Any)</item>
+        <item name="smuggler_7_6"><b>Unperturbed:</b> I only want to make a living for myself, and smuggling is just an edge I can use to do so. (Neutral)</item>
+        <item name="smuggler_8_1">A corrupt official shut me down back in my honest days. I aim to show him a thing or two about recovery.</item>
+        <item name="smuggler_8_2">I never wanted to be a criminal, but it pays the bills.</item>
+        <item name="smuggler_8_3">A bloodthirsty pirate stole a shipment from me and killed a dear friend of mine. I will have my vengeance.</item>
+        <item name="smuggler_8_4">Someone I cared about discovered my profession and has publicly denounced me, and I am caught between protecting my reputation and restoring our relationship.</item>
+        <item name="smuggler_8_5">My love interest is someone who once stole from right under my nose- but they have no idea who I am or how much I admire them for their accomplishment.</item>
+        <item name="smuggler_8_6">My business partners are closer to me than my family.</item>
+        <item name="smuggler_9_1">"Trust nobody, not even yourself." I am plagued by paranoia.</item>
+        <item name="smuggler_9_2">I\'m so charismatic that sometimes I woo myself. Who am I, Narcissus?</item>
+        <item name="smuggler_9_3">Money is my greatest motivator. I\'ll do almost anything given enough of it, even if I\'ll regret it later.</item>
+        <item name="smuggler_9_4">I would betray anyone to save my own skin.</item>
+        <item name="smuggler_9_5">I would betray anyone to save my own skin.</item>
+        <item name="smuggler_9_6">I detach myself from the results of my actions in order to sleep better at night.</item>
+    </string-array>
+    <string-array name="soldier">
+        <item name="soldier_type">1</item>
+        <item name="soldier_1"><font face="sans-serif">War has been your life for as long as you care to remember. You trained as a youth, studied the use of weapons and armor, learned basic survival techniques, including how to stay alive on the battlefield. You might have been part of a standing national army, a mercenary company, or perhaps a member of a local militia who rose to prominence during a recent war.\n\n"   "When you choose this background, work with your GM to determine which military organization you were a part of, how far through its ranks you progressed, and what kind of experiences you had during your military career. Was it a standing army, a town guard, a village militia, or perhaps a private company.\n\n"   "<b>Skill Proficiencies:</b> Choose two from Athletics, Intimidation, Persuasion, and Piloting\n"  "<b>Tool Proficiencies:</b> One type of gaming set\n"  "<b>Languages:</b> One of your choice\n"  "<b>Equipment:</b> An insignia of rank, a trophy taken from a fallen enemy, a gaming set (one of your choice), a set of common clothes, and a belt pouch containing 100 cr</font>\n\nSpecialty</item>
+        <item name="soldier_table_title">Specialty</item>
+        <item name="soldier_2_1">Officer</item>
+        <item name="soldier_2_2">Scout</item>
+        <item name="soldier_2_3">Infantry</item>
+        <item name="soldier_2_4">Medic</item>
+        <item name="soldier_2_5">Quartermaster</item>
+        <item name="soldier_2_6">Pilot</item>
+        <item name="soldier_2_7">Artisan</item>
+        <item name="soldier_2_8">Support Staff</item>
+        <item name="soldier_3Header">Feature: Military Rank</item>
+        <item name="soldier_3Text">You have a military rank from your career as a soldier. Soldiers loyal to your former military organization still recognize your authority and influence, and they defer to you if they are of a lower rank. You can invoke your rank to exert influence over other soldiers and requisition simple equipment for temporary use. You can also usually gain access to friendly military encampments where your rank is recognized.</item>
+        <item name="soldier_4Header">Background Feat</item>
+        <item name="soldier_4Text">As a further embodiment of the experience and training of your background, you can choose from the following feats:</item>
+        <item name="soldier_5_1">Brawny</item>
+        <item name="soldier_5_2">Threatening</item>
+        <item name="soldier_5_3">Charmer</item>
+        <item name="soldier_5_4">Ace Pilot</item>
+        <item name="soldier_5_5">Competitor</item>
+        <item name="soldier_5_6">Linguist</item>
+        <item name="soldier_5_7">Weapon Expert</item>
+        <item name="soldier_5_8">Healer</item>
+        <item name="soldier_6">Suggested characteristics\n<font face="sans-serif">The horrors of war combined with the rigid discipline of military service leave their mark on all soldiers, shaping their ideals, creating strong bonds, and often leaving them scarred and mentally vulnerable.</font></item>
+        <item name="soldier_7_1">I\'m always polite and respectful.</item>
+        <item name="soldier_7_2">I\'m haunted by memories of war. I can\'t get the images of violence out of my mind.</item>
+        <item name="soldier_7_3">I\'ve lost too many friends, and I\'m slow to make new ones.</item>
+        <item name="soldier_7_4">I\'m full of inspiring and cautionary tales from my military experience relevant to almost every combat situation.</item>
+        <item name="soldier_7_5">I can stare down a hell hound without flinching.</item>
+        <item name="soldier_7_6">I enjoy being strong and like breaking things.</item>
+        <item name="soldier_7_7">I have a crude sense of humor.</item>
+        <item name="soldier_7_8">I face problems head-on. A simple, direct solution is the best path to success.</item>
+        <item name="soldier_8_1"><b>Greater Good:</b> Our lot is to lay down our lives in defense of others. (Light)</item>
+        <item name="soldier_8_2"><b>Responsibility:</b> I do what I must and obey just authority. (Lawful)</item>
+        <item name="soldier_8_3"><b>Independence:</b> When people follow orders blindly, they embrace a kind of tyranny. (Chaotic)</item>
+        <item name="soldier_8_4"><b>Might:</b> In life as in war, the stronger force wins. (Dark)</item>
+        <item name="soldier_8_5"><b>Live and Let Live:</b> Ideals aren\'t worth killing over or going to war for. (Neutral)</item>
+        <item name="soldier_8_6"><b>Nation:</b> My city, nation, or people are all that matter. (Any)</item>
+        <item name="soldier_9_1">I would still lay down my life for the people I served with.</item>
+        <item name="soldier_9_2">Someone saved my life on the battlefield. To this day, I will never leave a friend behind.</item>
+        <item name="soldier_9_3">My honor is my life.</item>
+        <item name="soldier_9_4">I\'ll never forget the crushing defeat my company suffered or the enemies who dealt it.</item>
+        <item name="soldier_9_5">Those who fight beside me are those worth dying for.</item>
+        <item name="soldier_9_6">I fight for those who cannot fight for themselves.</item>
+        <item name="soldier_10_1">The monstrous enemy we faced in battle still leaves me quivering with fear.</item>
+        <item name="soldier_10_2">I have little respect for anyone who is not a proven warrior.</item>
+        <item name="soldier_10_3">I made a terrible mistake in battle cost many lives and I would do anything to keep that mistake secret.</item>
+        <item name="soldier_10_4">My hatred of my enemies is blind and unreasoning.</item>
+        <item name="soldier_10_5">I obey the law, even if the law causes misery.</item>
+        <item name="soldier_10_6">I\'d rather eat my armor than admit when I\'m wrong.</item>
+    </string-array>
+    <string-array name="spacer">
+        <item name="spacer_type">1</item>
+        <item name="spacer_1"><font face="sans-serif">Aboard a star ship in the cold vacuum of space is where you feel most at home. You’ve spent the majority of your life travelling the stars. Life aboard ships has given you a good understanding of their inner workings. You might be especially skilled as a ship mechanic, a pilot, or support staff.\n\n"   "<b>Skill Proficiencies:</b> Choose two from Insight, Investigation, Piloting, and Technology\n"  "<b>Tool Proficiencies:</b> Your choice of chef\'s kit, mechanic\'s kit, or one type of gaming set\n"  "<b>Languages:</b> One of your choice\n"  "<b>Equipment:</b> A set of tools or a gaming set (one of your choice), a set of common clothes, a small souvenir from your travels, and a belt pouch containing 100 cr</font>\n\nSpecialty</item>
+        <item name="spacer_table_title">Specialty</item>
+        <item name="spacer_2_1">Pilot</item>
+        <item name="spacer_2_2">Mechanic</item>
+        <item name="spacer_2_3">Support Staff</item>
+        <item name="spacer_2_4">Guard</item>
+        <item name="spacer_2_5">Ship Medic</item>
+        <item name="spacer_2_6">Captain</item>
+        <item name="spacer_2_7">Communications Officer</item>
+        <item name="spacer_2_8">Ship Cook</item>
+        <item name="spacer_3Header">Feature: Well-Traveled</item>
+        <item name="spacer_3Text">As a spacer, you’ve been from one end of the galaxy to the other. You’ve traveled along many of the trade routes, and know the safest routes. You have expert knowledge of the various hyperlanes. In addition to this, you know a large number of the models and designs of common space ships that are found in the galaxy.</item>
+        <item name="spacer_4Header">Background Feat</item>
+        <item name="spacer_4Text">As a further embodiment of the experience and training of your background, you can choose from the following feats:</item>
+        <item name="spacer_5_1">Empathic</item>
+        <item name="spacer_5_2">Investigator</item>
+        <item name="spacer_5_3">Ace Pilot</item>
+        <item name="spacer_5_4">Techie</item>
+        <item name="spacer_5_5">Specialist</item>
+        <item name="spacer_5_6">Competitor</item>
+        <item name="spacer_5_7">Galvanizing Presence</item>
+        <item name="spacer_5_8">Inspiring Leader</item>
+        <item name="spacer_6">Suggested characteristics\n<font face="sans-serif">Spacers come from all walks of life, and the responsibilities of life aboard a ship make them generally reliable as well. Spending so much time on their ship shapes their outlook and forms their most important attachments.</font></item>
+        <item name="spacer_7_1">My crewmates know they can rely on me, no matter what.</item>
+        <item name="spacer_7_2">I work hard so that I can play hard when the work is done.</item>
+        <item name="spacer_7_3">I enjoy traveling into new systems and making new friends over a drink.</item>
+        <item name="spacer_7_4">I stretch the truth for the sake of a good story.</item>
+        <item name="spacer_7_5">To me, a bar brawl is a nice way to get to know a new city.</item>
+        <item name="spacer_7_6">I never pass up a friendly wager.</item>
+        <item name="spacer_7_7">The best way to get me to do something is to tell me I can\'t do it.</item>
+        <item name="spacer_7_8">I like a job well done, especially if I can convince someone else to do it.</item>
+        <item name="spacer_8_1"><b>Respect:</b> The thing that keeps a ship together is mutual respect between captain and crew. (Light)</item>
+        <item name="spacer_8_2"><b>Fairness:</b> We all do the work, so we all share in the rewards. (Lawful)</item>
+        <item name="spacer_8_3"><b>Freedom:</b> Space is freedom, the freedom to go anywhere and do anything. (Chaotic)</item>
+        <item name="spacer_8_4"><b>Mastery:</b> I\'m a predator, and the other ships we come across are my prey. (Dark)</item>
+        <item name="spacer_8_5"><b>People:</b> I\'m committed to my crewmates, not to ideals. (Neutral)</item>
+        <item name="spacer_8_6"><b>Aspiration:</b> Someday, I\'ll own my own ship and chart my own destiny. (Any)</item>
+        <item name="spacer_9_1">I\'m loyal to my captain first, everything else second.</item>
+        <item name="spacer_9_2">The ship is most important, crewmates and captains come and go.</item>
+        <item name="spacer_9_3">I\'ll always remember my first ship.</item>
+        <item name="spacer_9_4">I will become the greatest captain that ever lived.</item>
+        <item name="spacer_9_5">I was cheated out of my fair share of the profits, and I want to get my due.</item>
+        <item name="spacer_9_6">Ruthless space pirates murdered my captain and crewmates, stole all we owned, and left me to die. Vengeance will be mine.</item>
+        <item name="spacer_10_1">I follow orders, even if I think they\'re wrong.</item>
+        <item name="spacer_10_2">I\'ll say anything to avoid having to do extra work.</item>
+        <item name="spacer_10_3">Once someone questions my courage, I never back down no matter how dangerous the situation.</item>
+        <item name="spacer_10_4">Once I start drinking, it\'s hard for me to stop.</item>
+        <item name="spacer_10_5">I can\'t help but pocket loose coins and other trinkets I come across.</item>
+        <item name="spacer_10_6">My pride will probably lead to my destruction.</item>
+    </string-array>
 
     <string-array name="background">
         <item name="background_type">0</item>
