@@ -65,6 +65,22 @@ fun generateDetails(background: String, ll: LinearLayoutCompat, resources: Resou
             extraRows.findViewById<TextView>(R.id.text_row_9).text = detailsHeap.poll()
             extraRows.findViewById<TextView>(R.id.text_row_10).text = detailsHeap.poll()
         }
+        else if(type==4){
+            tempView.findViewById<TextView>(R.id.title_d).text = "d16"
+            val table = tempView.findViewById<TableLayout>(R.id.table)
+            var extraRows = inflater.inflate(R.layout.backgrounds_single_column_d8_table_2_extra_rows, table, true)
+            extraRows.findViewById<TextView>(R.id.text_row_9).text = detailsHeap.poll()
+            extraRows.findViewById<TextView>(R.id.text_row_10).text = detailsHeap.poll()
+            extraRows = inflater.inflate(R.layout.backgrounds_single_column_d8_table_2_extra_rows, table, true)
+            extraRows.findViewById<TextView>(R.id.text_row_9).text = detailsHeap.poll()
+            extraRows.findViewById<TextView>(R.id.text_row_10).text = detailsHeap.poll()
+            extraRows = inflater.inflate(R.layout.backgrounds_single_column_d8_table_2_extra_rows, table, true)
+            extraRows.findViewById<TextView>(R.id.text_row_9).text = detailsHeap.poll()
+            extraRows.findViewById<TextView>(R.id.text_row_10).text = detailsHeap.poll()
+            extraRows = inflater.inflate(R.layout.backgrounds_single_column_d8_table_2_extra_rows, table, true)
+            extraRows.findViewById<TextView>(R.id.text_row_9).text = detailsHeap.poll()
+            extraRows.findViewById<TextView>(R.id.text_row_10).text = detailsHeap.poll()
+        }
         if (tempView.findViewById<HorizontalScrollView>(R.id.hscroll).width<resources.displayMetrics.widthPixels) (tempView.findViewById<HorizontalScrollView>(R.id.hscroll).layoutParams as LinearLayoutCompat.LayoutParams).gravity=1
         ll.addView(tempView)
     }
