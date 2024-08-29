@@ -23,6 +23,7 @@ class BackgroundsActivity : AppCompatActivity() {
     private lateinit var temptxt: TextView
     private lateinit var txt: TextView
     private var mode by Delegates.notNull<Int>()
+    private lateinit var backgrounds: Array<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +35,19 @@ class BackgroundsActivity : AppCompatActivity() {
         mode=0
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
+
+        backgrounds = resources.getStringArray(R.array.backgrounds)
+
+        backgrounds.forEach {
+            val bt = inflater.inflate(R.layout.background_button,binding.ll,false)
+            val info = it.split(" ")
+            bt.findViewById<TextView>(R.id.background_name).text=info[0].replace("_"," ").replace(".","-")
+            bt.findViewById<TextView>(R.id.background_source).text=info[1]
+            bt.setOnClickListener{
+                startActivity(Intent(this, BackgroundsDetailsActivity::class.java).putExtra("Background",info[0]))
+            }
+            binding.ll.addView(bt)
+        }
 
         binding.BackButton.setOnClickListener { returntomain() }
 
@@ -67,6 +81,7 @@ class BackgroundsActivity : AppCompatActivity() {
                     .show()
             }*/
         }
+
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 returntomain()
@@ -90,33 +105,10 @@ class BackgroundsActivity : AppCompatActivity() {
             binding.scrolly.fling(0)
             binding.scrolly.scrollTo(0,0)
             binding.scrolly.removeAllViews()
-            binding.scrolly.addView(binding.contentcl)
+            binding.scrolly.addView(binding.ll)
             mode=0
         }
     }
-    fun openspecies(view: View){startActivity(Intent(this, BackgroundsDetailsActivity::class.java).putExtra("Background",when(view.id){
-        binding.agent.id->       "agent"
-        binding.bountyHunter.id->"bounty_hunter"
-        binding.criminal.id ->   "criminal"
-        binding.entertainer.id ->"entertainer"
-        binding.forceAdept.id -> "force_adept"
-        binding.gambler.id ->    "gambler"
-        binding.investigator.id->"investigator"
-        binding.jedi.id ->       "jedi"
-        binding.mandalorian.id ->"mandalorian"
-        binding.mercenary.id ->  "mercenary"
-        binding.noble.id ->      "noble"
-        binding.nomad.id ->      "nomad"
-        binding.outlaw.id ->     "outlaw"
-        binding.pirate.id ->     "pirate"
-        binding.scientist.id ->  "scientist"
-        binding.scoundrel.id ->  "scoundrel"
-        binding.sith.id ->       "sith"
-        binding.smuggler.id ->   "smuggler"
-        binding.soldier.id ->    "soldier"
-        binding.spacer.id ->     "spacer"
-        else->                   "error"
-    }))}
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
     }

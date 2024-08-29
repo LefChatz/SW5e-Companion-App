@@ -1,29 +1,42 @@
 package com.example.sw5ecompanionapp.backgrounds
 
+import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import com.example.sw5ecompanionapp.R
 import com.example.sw5ecompanionapp.databinding.BackgroundsDetailsBinding
+import java.util.LinkedList
 
 class BackgroundsDetailsActivity : AppCompatActivity() {
-    private lateinit var binding: BackgroundsDetailsBinding
-    private lateinit var inflater: LayoutInflater
-    private lateinit var background: String
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        background = intent.getStringExtra("Background").toString()
-        inflater=layoutInflater
+        val background = intent.getStringExtra("Background").toString()
+        val inflater=layoutInflater
 
-        binding = BackgroundsDetailsBinding.inflate(inflater)
+        val binding = BackgroundsDetailsBinding.inflate(inflater)
         setContentView(binding.root)
 
-        binding.Title.text=background.replace("_"," ")
+        binding.Title.text=background.replace("_"," ").replace(".","-")
 
-        generateDetails(background,binding.ll,resources,inflater,packageName)
+        @SuppressLint("DiscouragedApi")
+        val identifier = resources.getIdentifier(background,"array",packageName)
+
+        if (identifier==0) {
+            val tempText = inflater.inflate(R.layout.universal_textview_nofont_gold,binding.ll,false).findViewById<TextView>(R.id.textview)
+            tempText.text = resources.getString(R.string.error_please_report_this_to_todo)
+            binding.ll.addView(tempText)
+        }
+        else{
+            val detailsHeap = LinkedList<CharSequence>()
+            resources.getTextArray(identifier).toCollection(detailsHeap)
+
+            binding.SourceBook.text=detailsHeap.poll()
+            generateDetails(background,binding.ll,resources,inflater,packageName,detailsHeap)
+        }
 
         binding.BackButton.setOnClickListener { returntomain() }
 
@@ -32,6 +45,7 @@ class BackgroundsDetailsActivity : AppCompatActivity() {
                 returntomain()
             }
         })
+
 
     }
 

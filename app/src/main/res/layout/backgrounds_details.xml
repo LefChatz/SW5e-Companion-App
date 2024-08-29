@@ -48,7 +48,6 @@
             android:id="@+id/SourceBook"
             android:layout_width="wrap_content"
             android:layout_height="0sp"
-            android:background="?android:attr/selectableItemBackground"
             android:text="@string/source"
             android:textColor="@color/gold"
             android:textSize="22sp"
