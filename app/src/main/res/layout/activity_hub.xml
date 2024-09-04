@@ -50,8 +50,9 @@
         android:id="@+id/scrolly"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:paddingVertical="50dp"
-        android:clipToPadding="false">
+        android:paddingTop="50dp"
+        android:clipToPadding="true">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constl"
             android:layout_width="match_parent"
@@ -125,7 +126,18 @@
                 app:layout_constraintTop_toTopOf="@+id/buttonequipment"
                 app:text="Tech" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.example.sw5ecompanionapp.widget.ClassButton
+                android:id="@+id/buttonfeats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:onClick="portal"
+                app:background="@drawable/equipmentbutton2"
+                app:layout_constraintEnd_toEndOf="@+id/buttonforce"
+                app:layout_constraintStart_toStartOf="@+id/buttonforce"
+                app:layout_constraintTop_toBottomOf="@+id/buttonforce"
+                app:text="Feats" />
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -58,7 +58,7 @@
     <string name="nineth_level">9th-Level</string>
     <string name="forcepowers">forcepowers</string>
     <string name="force">FoXcE</string>
-    <string name="favorites_forcepowers"><font color="#D4af37">Favorites</font></string>
+
 
     <!--Classes -->
 
@@ -1023,9 +1023,11 @@
     <string name="damageac">DamageAC</string>
     <string name="properties">Properties</string>
     <string name="expansion">Expansion</string>
+
     <!-- TODO Error reporting medium -->
     <string name="error_please_report_this">Error, Please report this to: <b>#TODO:</b></string>
     <string name="backgrounds">Backgrounds</string>
+    <string name="error_please_report_this_to_todo">Error please report this to #TODO</string>
 
     <!--Techcasting -->
     <string name="techcasting_title">Techcasting</string>
@@ -1083,11 +1085,16 @@
     <string name="techcasting_construct_droid_15"><b> Blaster</b>: Ranged Weapon Attack: your tech attack modifier to hit, range 60/240 ft., one target. Hit: 1d6 + 3 + the power’s level energy damage</string>
     <string name="techcasting_construct_droid_16"><b> Vibroweapon (Battle Only)</b>: Melee Weapon Attack: your tech attack modifier to hit, reach 5 ft., one target. Hit: 1d12 + 3 + the power’s level kinetic damage</string>
     <string name="techcasting_construct_droid_17"><b> Flamethrower (Pyro Only)</b>: The droid shoots a stream of flame from itself in a 15-foot cone. Creatures in the cone must make a Dexterity saving throw (DC = your tech save DC). On a failure, the creature takes 1d8 fire damage + 1d8 fire damage for each power level above 2nd. On a success, the creature takes half as much damage. This cannot be used with Multiattack</string>
-    <string name="error_please_report_this_to_todo">Error please report this to #TODO</string>
+
+
     <string name="personality_trait">Personality Trait</string>
     <string name="ideal">Ideal</string>
     <string name="bond">Bond</string>
     <string name="flaw">Flaw</string>
     <string name="backgrounds_un_retired_adventurer">(un)retired Adventurer</string>
     <string name="d6">d6</string>
+    <string name="feats">Feats</string>
+
+    <string name="favorites_gold"><font color="#D4af37">Favorites</font></string>
+    <string name="no_such_feat_found">no such Feat Found</string>
 </resources>

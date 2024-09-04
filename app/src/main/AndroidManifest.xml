@@ -24,6 +24,12 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".feats.FeatsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feats.FeatsDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".backgrounds.BackgroundsActivity"
             android:exported="false" />
         <activity

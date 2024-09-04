@@ -171,7 +171,7 @@ class ForcecastingActivity : AppCompatActivity() {
                 item.isChecked= !item.isChecked
                 lightChecked= !lightChecked
             }
-            getText(R.string.favorites_forcepowers)->{
+            getText(R.string.favorites_gold)->{
                 if (item.isChecked){
                     eraselist.removeAll{(it.forcepowername !in favForcepowerList) and (if(!darkChecked) {!it.side.contains("Dark",true)}else{true})and(if(!lightChecked) { !it.side.contains("Light",true)}else{true})}
                 }

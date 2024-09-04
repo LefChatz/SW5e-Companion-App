@@ -152,7 +152,7 @@ class TechcastingActivity : AppCompatActivity() {
                 item.title = getText(R.string.sortABCdown)
                 returntotop(reclview,"sharp")}
 
-            getText(R.string.favorites_forcepowers)->{
+            getText(R.string.favorites_gold)->{
                 if (item.isChecked){
                     eraselist.removeAll{(it.techpowername !in favTechpowerList)}
                 }
