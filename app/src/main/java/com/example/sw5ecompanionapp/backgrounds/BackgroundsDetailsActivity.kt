@@ -3,7 +3,6 @@ package com.example.sw5ecompanionapp.backgrounds
 import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +20,7 @@ class BackgroundsDetailsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.Title.text=background.replace("_"," ").replace(".","-")
+        if(background=="retired_adventurer") binding.Title.text=getString(R.string.backgrounds_un_retired_adventurer)
 
         @SuppressLint("DiscouragedApi")
         val identifier = resources.getIdentifier(background,"array",packageName)
@@ -35,7 +35,7 @@ class BackgroundsDetailsActivity : AppCompatActivity() {
             resources.getTextArray(identifier).toCollection(detailsHeap)
 
             binding.SourceBook.text=detailsHeap.poll()
-            generateDetails(background,binding.ll,resources,inflater,packageName,detailsHeap)
+            generateDetails(binding.ll, resources, inflater, detailsHeap)
         }
 
         binding.BackButton.setOnClickListener { returntomain() }

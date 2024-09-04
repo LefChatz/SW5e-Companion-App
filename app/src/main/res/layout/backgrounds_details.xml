@@ -19,34 +19,35 @@
             >
         </androidx.appcompat.widget.Toolbar>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.example.sw5ecompanionapp.widget.BackButton
             android:id="@+id/BackButton"
             android:layout_width="70sp"
             android:layout_height="0sp"
-            android:background="#35D4af37"
-            android:text="@string/back"
-            android:textColor="@color/gold"
-            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0sp"
+            android:layout_height="0sp"
             android:fontFamily="@font/starjedi"
             android:text="@string/backgrounds"
             android:textColor="@color/gold"
-            android:textSize="22sp"
             android:translationZ="90dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:autoSizeMaxTextSize="22sp"
+            android:autoSizeMinTextSize="14sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/SourceBook"
+            app:layout_constraintStart_toEndOf="@+id/BackButton"
+            app:layout_constraintTop_toTopOf="parent" />
         <TextView
             android:id="@+id/SourceBook"
-            android:layout_width="wrap_content"
+            android:layout_width="60sp"
             android:layout_height="0sp"
             android:text="@string/source"
             android:textColor="@color/gold"

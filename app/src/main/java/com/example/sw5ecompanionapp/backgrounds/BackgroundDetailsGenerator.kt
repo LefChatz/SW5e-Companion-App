@@ -1,19 +1,17 @@
 package com.example.sw5ecompanionapp.backgrounds
 
 import android.content.res.Resources
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.HorizontalScrollView
 import android.widget.TableLayout
-import android.widget.TableRow
 import android.widget.TextView
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.example.sw5ecompanionapp.R
 import java.util.LinkedList
 
 
-fun generateDetails(background: String, ll: LinearLayoutCompat, resources: Resources, inflater: LayoutInflater, packageName: String, detailsHeap: LinkedList<CharSequence>){
+fun generateDetails(ll: LinearLayoutCompat, resources: Resources, inflater: LayoutInflater, detailsHeap: LinkedList<CharSequence>){
     var tempText: TextView
     var tempView: View
 
@@ -65,14 +63,11 @@ fun generateDetails(background: String, ll: LinearLayoutCompat, resources: Resou
     ll.addView(tempView)
 
     tempView = inflater.inflate(R.layout.backgrounds_double_column_d8_table, ll, false)
-    tempView.findViewById<TextView>(R.id.text_1_1).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_2_1).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_3_1).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_4_1).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_1_2).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_2_2).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_3_2).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_4_2).text = detailsHeap.poll()
+
+    // Background Feat
+    var tableTextArray= arrayOf(tempView.findViewById<TextView>(R.id.text_1_1),tempView.findViewById(R.id.text_2_1),tempView.findViewById(R.id.text_3_1),tempView.findViewById(R.id.text_4_1),tempView.findViewById(R.id.text_1_2),tempView.findViewById(R.id.text_2_2),tempView.findViewById(R.id.text_3_2),tempView.findViewById(R.id.text_4_2))
+    tableTextArray.forEach {it.text=detailsHeap.poll()}
+
     if (tempView.findViewById<HorizontalScrollView>(R.id.hscroll).width<resources.displayMetrics.widthPixels) (tempView.findViewById<HorizontalScrollView>(R.id.hscroll).layoutParams as LinearLayoutCompat.LayoutParams).gravity=1
     ll.addView(tempView)
 
@@ -80,53 +75,38 @@ fun generateDetails(background: String, ll: LinearLayoutCompat, resources: Resou
     tempText.text = detailsHeap.poll()
     ll.addView(tempText)
 
+    // Personality traits
     tempView = inflater.inflate(R.layout.backgrounds_single_column_d8_table, ll, false)
     tempView.findViewById<TextView>(R.id.title_col_2).text = resources.getString(R.string.personality_trait)
-    tempView.findViewById<TextView>(R.id.text_row_1).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_2).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_3).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_4).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_5).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_6).text = detailsHeap.poll()
+    tableTextArray = arrayOf(tempView.findViewById(R.id.text_row_1),tempView.findViewById(R.id.text_row_2),tempView.findViewById(R.id.text_row_3),tempView.findViewById(R.id.text_row_4),tempView.findViewById(R.id.text_row_5),tempView.findViewById(R.id.text_row_6))
     if (type!=3){
-        tempView.findViewById<TextView>(R.id.text_row_7).text = detailsHeap.poll()
-        tempView.findViewById<TextView>(R.id.text_row_8).text = detailsHeap.poll()
+        tableTextArray+=(arrayOf(tempView.findViewById(R.id.text_row_7),tempView.findViewById(R.id.text_row_8)))
     }
     else{
         tempView.findViewById<TableLayout>(R.id.table).removeViews(8, 2)
     }
+    tableTextArray.forEach { it.text=detailsHeap.poll() }
     ll.addView(tempView)
+
 
     tempView = inflater.inflate(R.layout.backgrounds_single_column_d8_table, ll, false)
     tempView.findViewById<TextView>(R.id.title_col_2).text = resources.getString(R.string.ideal)
-    tempView.findViewById<TextView>(R.id.text_row_1).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_2).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_3).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_4).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_5).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_6).text = detailsHeap.poll()
+    tableTextArray = arrayOf(tempView.findViewById(R.id.text_row_1),tempView.findViewById(R.id.text_row_2),tempView.findViewById(R.id.text_row_3),tempView.findViewById(R.id.text_row_4),tempView.findViewById(R.id.text_row_5),tempView.findViewById(R.id.text_row_6))
+    tableTextArray.forEach { it.text=detailsHeap.poll() }
     tempView.findViewById<TableLayout>(R.id.table).removeViews(8, 2)
     ll.addView(tempView)
 
     tempView = inflater.inflate(R.layout.backgrounds_single_column_d8_table, ll, false)
     tempView.findViewById<TextView>(R.id.title_col_2).text = resources.getString(R.string.bond)
-    tempView.findViewById<TextView>(R.id.text_row_1).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_2).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_3).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_4).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_5).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_6).text = detailsHeap.poll()
+    tableTextArray = arrayOf(tempView.findViewById(R.id.text_row_1),tempView.findViewById(R.id.text_row_2),tempView.findViewById(R.id.text_row_3),tempView.findViewById(R.id.text_row_4),tempView.findViewById(R.id.text_row_5),tempView.findViewById(R.id.text_row_6))
+    tableTextArray.forEach { it.text=detailsHeap.poll() }
     tempView.findViewById<TableLayout>(R.id.table).removeViews(8, 2)
     ll.addView(tempView)
 
     tempView = inflater.inflate(R.layout.backgrounds_single_column_d8_table, ll, false)
     tempView.findViewById<TextView>(R.id.title_col_2).text = resources.getString(R.string.flaw)
-    tempView.findViewById<TextView>(R.id.text_row_1).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_2).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_3).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_4).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_5).text = detailsHeap.poll()
-    tempView.findViewById<TextView>(R.id.text_row_6).text = detailsHeap.poll()
+    tableTextArray = arrayOf(tempView.findViewById(R.id.text_row_1),tempView.findViewById(R.id.text_row_2),tempView.findViewById(R.id.text_row_3),tempView.findViewById(R.id.text_row_4),tempView.findViewById(R.id.text_row_5),tempView.findViewById(R.id.text_row_6))
+    tableTextArray.forEach { it.text=detailsHeap.poll() }
     tempView.findViewById<TableLayout>(R.id.table).removeViews(8, 2)
     ll.addView(tempView)
 }

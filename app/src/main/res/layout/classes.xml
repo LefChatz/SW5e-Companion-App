@@ -33,14 +33,10 @@
                 />
         </androidx.appcompat.widget.Toolbar>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.example.sw5ecompanionapp.widget.BackButton
             android:id="@+id/BackButton"
             android:layout_width="70sp"
             android:layout_height="0sp"
-            android:background="#35D4af37"
-            android:text="@string/back"
-            android:textColor="@color/gold"
-            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

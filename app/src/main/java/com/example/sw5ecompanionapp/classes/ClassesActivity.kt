@@ -51,8 +51,8 @@ class ClassesActivity : AppCompatActivity() {
         binding.infobutton.setOnClickListener {
             if(mode==0){
                 scroll.removeAllViews()
-                scroll.fling(0)
                 scroll.scrollTo(0,0)
+                scroll.fling(0)
                 ll=infobinding.classesinfoll
                 for(i in multiclassingList.indices step 2 ){
                     txt = TextView(this)
@@ -96,12 +96,13 @@ class ClassesActivity : AppCompatActivity() {
         })
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    //Menu creation: Currently unnecessary
+    /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_classes,menu)
         val drawable= AppCompatResources.getDrawable(this, R.drawable.dots3gold)
         binding.toolbar.overflowIcon=drawable
         return super.onCreateOptionsMenu(menu)
-    }
+    }*/
 
     private fun returntomain() {
         if(mode==0){
@@ -110,6 +111,8 @@ class ClassesActivity : AppCompatActivity() {
         }
         else{
             scroll.removeAllViews()
+            scroll.scrollTo(0,0)
+            scroll.fling(0)
             scroll.addView(binding.contentclassescl)
             mode=0
         }

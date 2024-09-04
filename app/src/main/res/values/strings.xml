@@ -1088,4 +1088,6 @@
     <string name="ideal">Ideal</string>
     <string name="bond">Bond</string>
     <string name="flaw">Flaw</string>
+    <string name="backgrounds_un_retired_adventurer">(un)retired Adventurer</string>
+    <string name="d6">d6</string>
 </resources>

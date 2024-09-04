@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feats">
+
+    </string-array>
+
+    <string-array name="ace_pilot">
+        <item name="ASI">Int</item>
+        <item name="prerequisite"></item>
+        <item name="SRC">PHB</item>
+        <item name="text">You’re quite experienced both on land and in the air, be it from time in a navy, as a mercenary, or perhaps even piracy. You gain the following benefits:\n\n"  • "Increase your Intelligence score by 1, to a maximum of 20.\n"  • "You gain proficiency in the Piloting skill. If you are already proficient in it, you instead gain expertise in it.\n"  • "Whenever you make an Intelligence (Investigation) or Wisdom (Perception) check related to vehicles or ships, you are considered to have expertise in the Investigation or Perception skill.</item>
+    </string-array>
+
+    <string-array name="feat">
+        <item name="ASI"></item>
+        <item name="prerequisite"></item>
+        <item name="SRC"></item>
+        <item name="text"></item>
+    </string-array>
+</resources>
