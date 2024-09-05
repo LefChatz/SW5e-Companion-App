@@ -12,24 +12,76 @@
         android:iconTint="@color/gold"
         />
     <item
-        android:id="@+id/menu_switch_Dark"
+        android:id="@+id/filters"
         android:orderInCategory="2"
-        android:title="@string/Dark"
-        android:checkable="true"
-        android:checked="true"
+        android:title="@string/equipment_menu_filters"
+        android:enabled="false"
         />
     <item
-        android:id="@+id/menu_switch_Light"
-        android:orderInCategory="3"
-        android:title="@string/Light"
+        android:id="@+id/menu_switch_asi"
+        android:orderInCategory="2"
+        android:title="@string/feats_menu_ability_score"
         android:checkable="true"
-        android:checked="true" />
+        android:checked="false"
+        />
+    <group
+        android:id="@+id/featsmenu_asi_group"
+        android:visible="false"
+        android:checkableBehavior="none"
+        android:orderInCategory="3">
+        <item
+            android:id="@+id/menu_switch_Str"
+            android:orderInCategory="3"
+            android:title="@string/feats_menu_str"
+            android:checkable="true"
+            android:checked="false"
+            />
+        <item
+            android:id="@+id/menu_switch_Dex"
+            android:orderInCategory="3"
+            android:title="@string/feats_menu_dex"
+            android:checkable="true"
+            android:checked="false"
+            />
+        <item
+            android:id="@+id/menu_switch_Con"
+            android:orderInCategory="3"
+            android:title="@string/feats_menu_con"
+            android:checkable="true"
+            android:checked="false"
+            />
+        <item
+            android:id="@+id/menu_switch_Int"
+            android:orderInCategory="3"
+            android:title="@string/feats_menu_int"
+            android:checkable="true"
+            android:checked="false"
+            />
+        <item
+            android:id="@+id/menu_switch_Wis"
+            android:orderInCategory="3"
+            android:title="@string/feats_menu_wis"
+            android:checkable="true"
+            android:checked="false"
+            />
+        <item
+            android:id="@+id/menu_switch_Cha"
+            android:orderInCategory="3"
+            android:title="@string/feats_menu_cha"
+            android:checkable="true"
+            android:checked="false"
+            />
+    </group>
     <item
         android:id="@+id/menu_switch_Fav"
-        android:orderInCategory="3"
+        android:orderInCategory="4"
         android:title="@string/favorites_gold"
         android:checkable="true"
         android:checked="false" />
-
-
+    <item
+        android:id="@+id/eqmenu_ok"
+        android:orderInCategory="101"
+        android:title="@string/equipment_menu_ok"
+        android:visible="false"
+        />
 </menu>

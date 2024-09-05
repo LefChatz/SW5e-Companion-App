@@ -14,7 +14,6 @@ import com.example.sw5ecompanionapp.databinding.FeatsDetailsBinding
 class FeatsDetailsActivity : AppCompatActivity() {
     private lateinit var binding: FeatsDetailsBinding
     private lateinit var feat: Feat
-    private lateinit var txt: TextView
     @SuppressLint("DiscouragedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,13 +26,16 @@ class FeatsDetailsActivity : AppCompatActivity() {
         binding= FeatsDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.title.text=feat.featname.replace("_"," ").replace(".","-").replace("..","'")
+        binding.Title.text=feat.featname.replace("_"," ").replace("..","'").replace(".","-")
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
+        //SRC
+        binding.SourceBook.text=feat.source
         //title
-        binding.FeatText.text=feat.detailsText
+        val temptext = "ASI: " + feat.asi +if (feat.prerequisite.isNotEmpty()){ "\n\n" + "prerequisite: " + feat.prerequisite } else {""} + "\n\n" + feat.detailsText
+        binding.FeatText.text=temptext
 
         //Background
         binding.coord.background=AppCompatResources.getDrawable(this@FeatsDetailsActivity,R.drawable.neutralbg2)

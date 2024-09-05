@@ -2,7 +2,7 @@ package com.example.sw5ecompanionapp.feats
 
 import androidx.recyclerview.widget.DiffUtil
 
-class FeatDiffUtilCallback(private val oldlist: MutableList<Feat>, private val newlist: MutableList<Feat>): DiffUtil.Callback() {
+class FeatDiffUtilCallback(private val oldlist: MutableList<Feat>, private val newlist: List<Feat>): DiffUtil.Callback() {
     override fun getOldListSize(): Int {
         return oldlist.size
     }

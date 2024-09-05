@@ -36,15 +36,16 @@
         />
 
     <TextView
-        android:id="@+id/table_feat_casting_time"
+        android:id="@+id/feats_button_sourcebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="viewEnd"
         android:textColor="@color/gold"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/table_feat_fav"
+        app:layout_constraintStart_toEndOf="@+id/table_feat_name"
         app:layout_constraintTop_toBottomOf="@+id/table_feat_name"
-        tools:text="Casting Time" />
+        tools:text="SRC" />
 
     <ImageButton
         android:id="@+id/table_feat_fav"

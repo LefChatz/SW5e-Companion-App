@@ -19,7 +19,7 @@
         android:textColor="@color/gold"
         android:textSize="24sp"
         android:layout_marginStart="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/table_feat_casting_time"
+        app:layout_constraintBottom_toTopOf="@+id/feats_button_sourcebook"
         app:layout_constraintEnd_toStartOf="@+id/table_feat_fav"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@id/table_feat_name" />
 
     <TextView
-        android:id="@+id/table_feat_casting_time"
+        android:id="@+id/feats_button_sourcebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="viewEnd"
@@ -44,8 +44,9 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/table_feat_fav"
+        app:layout_constraintStart_toStartOf="@+id/table_feat_fav"
         app:layout_constraintTop_toBottomOf="@+id/table_feat_fav"
-        tools:text="Casting Time" />
+        tools:text="SRC" />
 
     <ImageButton
         android:id="@+id/table_feat_fav"

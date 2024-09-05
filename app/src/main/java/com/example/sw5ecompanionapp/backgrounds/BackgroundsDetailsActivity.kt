@@ -27,7 +27,7 @@ class BackgroundsDetailsActivity : AppCompatActivity() {
 
         if (identifier==0) {
             val tempText = inflater.inflate(R.layout.universal_textview_nofont_gold,binding.ll,false).findViewById<TextView>(R.id.textview)
-            tempText.text = resources.getString(R.string.error_please_report_this_to_todo)
+            tempText.text = resources.getString(R.string.error_please_report_this)
             binding.ll.addView(tempText)
         }
         else{

@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="@string/no_such_feat_found"
+        android:text="@string/feats_no_such_feat_found"
         android:fontFamily="@font/starjedi"
         android:textColor="@color/gold"
         android:textSize="24sp"/>

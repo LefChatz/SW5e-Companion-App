@@ -23,12 +23,7 @@ class FeatsAdapter(private val myContext: Context, private val dataset: MutableL
             noFeatText= view.findViewById(R.id.feats_nosuchfeattext)
         }
     }
-    class LeveledDividerHolder(view: View) : ViewHolder(view){
-        val lvldividertextview: TextView
-        init {
-            lvldividertextview= view.findViewById(R.id.leveldividertextview)
-        }
-    }
+
     class FeatHolder(view: View) : ViewHolder(view){
         val featname: TextView
         val featdetails: TextView
@@ -41,7 +36,7 @@ class FeatsAdapter(private val myContext: Context, private val dataset: MutableL
             imbutton = view.findViewById(R.id.table_feat_fav)
             constlout = view.findViewById(R.id.table_feat_constlout)
             featname= view.findViewById(R.id.table_feat_name)
-            sourcebook= view.findViewById(R.id.table_feat_casting_time)
+            sourcebook= view.findViewById(R.id.feats_button_sourcebook)
             featdetails= view.findViewById(R.id.table_feat_details)
         }
 
@@ -64,7 +59,6 @@ class FeatsAdapter(private val myContext: Context, private val dataset: MutableL
              return when{
                     this.isBig -> 1
                     this.featname=="NoSuchFeat" -> 2
-                    this.featname=="Level"->3
                     else ->{0}
                 }
             }
@@ -73,7 +67,7 @@ class FeatsAdapter(private val myContext: Context, private val dataset: MutableL
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         if (viewHolder.itemViewType != 2) feat(viewHolder as FeatHolder,dataset[position])
     }
-    fun setFeatList(updatedfeatlist: MutableList<Feat>){
+    fun setFeatList(updatedfeatlist: List<Feat>){
         val diffResult = DiffUtil.calculateDiff(FeatDiffUtilCallback(dataset,updatedfeatlist))
         dataset.clear()
         dataset.addAll(updatedfeatlist)
@@ -97,9 +91,9 @@ class FeatsAdapter(private val myContext: Context, private val dataset: MutableL
     }
 
     private fun feat(view: FeatHolder, feat: Feat){
-        view.featname.text=feat.featname.replace("_"," ").replace(".","-").replace("..","'")
+        view.featname.text=feat.featname.replace("_"," ").replace("..","'").replace(".","-")
 
-        val txt = "ASI: "+feat.asi + if (feat.prerequisite.isNotEmpty()) ", prereq:"+feat.prerequisite else ""
+        val txt = "ASI: " + feat.asi.replace(" or ","/") + if (feat.prerequisite.isNotEmpty()) " | pre:"+feat.prerequisite.replace("4th level","4 lvl").replace(" or ","/") else ""
         view.featdetails.text = txt
 
         view.sourcebook.text = feat.source
@@ -117,23 +111,6 @@ class FeatsAdapter(private val myContext: Context, private val dataset: MutableL
             view.imbutton.foreground=AppCompatResources.getDrawable(myContext,R.drawable.favouritegold)
         }
 
-    }
-    private fun setlevel(view: LeveledDividerHolder, lvl: Int){
-        when(lvl){
-            0->{view.lvldividertextview.text=myContext.getText(R.string.at_will)}
-            1->{view.lvldividertextview.text=myContext.getText(R.string.first_level)}
-            2->{view.lvldividertextview.text=myContext.getText(R.string.second_level)}
-            3->{view.lvldividertextview.text=myContext.getText(R.string.third_level)}
-            4->{view.lvldividertextview.text=myContext.getText(R.string.fourth_level)}
-            5->{view.lvldividertextview.text=myContext.getText(R.string.fifth_level)}
-            6->{view.lvldividertextview.text=myContext.getText(R.string.sixth_level)}
-            7->{view.lvldividertextview.text=myContext.getText(R.string.seventh_level)}
-            8->{view.lvldividertextview.text=myContext.getText(R.string.eighth_level)}
-            9->{view.lvldividertextview.text=myContext.getText(R.string.nineth_level)}
-            else->{
-
-            }
-        }
     }
 }
 

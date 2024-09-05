@@ -11,14 +11,17 @@
 	<androidx.constraintlayout.widget.ConstraintLayout
 		android:translationZ="2dp"
 		android:background="@drawable/fade_black_appbar_background"
-		android:theme="@style/Theme.Swtrial2.AppBarOverlay"
 		android:layout_width="match_parent"
-		android:layout_height="50dp">
-
+		android:layout_height="wrap_content"
+		>
 		<androidx.appcompat.widget.Toolbar
 			android:id="@+id/toolbar"
 			android:layout_width="match_parent"
-			android:layout_height="match_parent" />
+			android:layout_height="50sp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			>
+		</androidx.appcompat.widget.Toolbar>
 
 		<com.example.sw5ecompanionapp.widget.BackButton
 			android:id="@+id/BackButton"
@@ -29,22 +32,36 @@
 			app:layout_constraintTop_toTopOf="parent" />
 
 		<TextView
-			android:id="@+id/title"
+			android:id="@+id/Title"
+			android:layout_width="0sp"
+			android:layout_height="0sp"
+			android:fontFamily="@font/starjedi"
+			android:text="@string/feats_featname"
+			android:textColor="@color/gold"
+			android:translationZ="90dp"
 			android:gravity="center"
-			android:layout_width="0dp"
-			android:layout_height="0dp"
-			android:layout_marginEnd="70dp"
 			android:textAlignment="gravity"
-			android:text="Feat Name"
-			android:textAppearance="@style/GoldTextStarjedi"
 			android:autoSizeMaxTextSize="24sp"
-			android:autoSizeMinTextSize="16sp"
+			android:autoSizeMinTextSize="14sp"
+			android:autoSizeStepGranularity="1sp"
 			android:autoSizeTextType="uniform"
 			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintEnd_toStartOf="@+id/SourceBook"
 			app:layout_constraintStart_toEndOf="@+id/BackButton"
-			app:layout_constraintTop_toTopOf="parent"/>
-
+			app:layout_constraintTop_toTopOf="parent" />
+		<TextView
+			android:id="@+id/SourceBook"
+			android:layout_width="60sp"
+			android:layout_height="0sp"
+			android:text="@string/source"
+			android:textColor="@color/gold"
+			android:textSize="22sp"
+			android:textAlignment="gravity"
+			android:gravity="center"
+			android:layout_marginEnd="10dp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
 	</androidx.constraintlayout.widget.ConstraintLayout>
 
 

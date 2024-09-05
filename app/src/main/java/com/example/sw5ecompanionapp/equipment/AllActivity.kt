@@ -8,9 +8,9 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.SearchView
 import android.widget.Toast
-import android.window.OnBackInvokedDispatcher
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -41,7 +41,7 @@ class AllActivity : AppCompatActivity() {
     private val filterMode = mutableListOf<String>()
     private val filterList = mutableListOf<String>()
 
-    private var menuClose = false
+    private var keepmenu = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -138,18 +138,20 @@ class AllActivity : AppCompatActivity() {
             with(item.title){
                 when{
                     this!! == getText(R.string.sortABCdown) ->{
+                        keepmenu = false
                         currentEquipmentList=currentEquipmentList.reversed()
                         equipmentAdapter.setEquipmentList(currentEquipmentList.filter{it !in eraseList && it in searchedList})
                         item.title=getText(R.string.sortABCup)
                         returntotop("sharp")}
                     equals(getText(R.string.sortABCup))->{
+                        keepmenu = false
                         currentEquipmentList=currentEquipmentList.reversed()
                         equipmentAdapter.setEquipmentList(currentEquipmentList.filter{it !in eraseList && it in searchedList})
                         item.title = getText(R.string.sortABCdown)
                         returntotop("sharp")}
 
                     contains("weapons",true) ->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             filterModeClear()
                             eraseList.addAll(equipmentList.filter { it !in equipmentWeapons })
@@ -190,7 +192,7 @@ class AllActivity : AppCompatActivity() {
                         item.isChecked=!item.isChecked
                     }
                     contains("simple",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             with(equipmentMenu.findItem(R.id.eqmenu_martial)){
                                 if (isChecked) {
@@ -207,7 +209,7 @@ class AllActivity : AppCompatActivity() {
 
                     }
                     contains("martial",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             with(equipmentMenu.findItem(R.id.eqmenu_simple)){
                                 if (isChecked) {
@@ -223,7 +225,7 @@ class AllActivity : AppCompatActivity() {
                         item.isChecked=!item.isChecked
                     }
                     contains("melee",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             with(equipmentMenu.findItem(R.id.eqmenu_ranged)){
                                 if (isChecked) {
@@ -239,7 +241,7 @@ class AllActivity : AppCompatActivity() {
                         item.isChecked=!item.isChecked
                     }
                     contains("ranged",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             with(equipmentMenu.findItem(R.id.eqmenu_melee)){
                                 if (isChecked) {
@@ -256,7 +258,7 @@ class AllActivity : AppCompatActivity() {
                     }
 
                     contains(getString(R.string.equipment_menu_armors_and_shields))->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             filterModeClear()
                             eraseList.addAll(equipmentList.filter { it !in equipmentArmors })
@@ -299,7 +301,7 @@ class AllActivity : AppCompatActivity() {
                         item.isChecked=!item.isChecked
                     }
                     contains("light",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             with(equipmentMenu.findItem(R.id.eqmenu_medium)){
                                 if (isChecked) {
@@ -321,7 +323,7 @@ class AllActivity : AppCompatActivity() {
                         item.isChecked=!item.isChecked
                     }
                     contains("medium",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             with(equipmentMenu.findItem(R.id.eqmenu_light)){
                                 if (isChecked) {
@@ -343,7 +345,7 @@ class AllActivity : AppCompatActivity() {
                         item.isChecked=!item.isChecked
                     }
                     contains("heavy",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             with(equipmentMenu.findItem(R.id.eqmenu_light)){
                                 if (isChecked) {
@@ -365,7 +367,7 @@ class AllActivity : AppCompatActivity() {
                         item.isChecked=!item.isChecked
                     }
                     contains("armors",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             with(equipmentMenu.findItem(R.id.eqmenu_shields)){
                                 if (isChecked) {
@@ -381,7 +383,7 @@ class AllActivity : AppCompatActivity() {
                         item.isChecked=!item.isChecked
                     }
                     contains("shields",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             with(equipmentMenu.findItem(R.id.eqmenu_armors)){
                                 if (isChecked) {
@@ -398,7 +400,7 @@ class AllActivity : AppCompatActivity() {
                     }
 
                     contains("Adventuring Gear",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             filterModeClear()
                             eraseList.addAll(equipmentList.filter { it !in equipmentAdvGear })
@@ -457,7 +459,7 @@ class AllActivity : AppCompatActivity() {
                         item.isChecked=!item.isChecked
                     }
                     contains("Ammunition",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
                             filterAdvGear("hide","ammunition")
@@ -468,7 +470,7 @@ class AllActivity : AppCompatActivity() {
                         item.isChecked=!item.isChecked
                     }
                     contains("Communications",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
                             filterAdvGear("hide","communications")
@@ -479,7 +481,7 @@ class AllActivity : AppCompatActivity() {
                         item.isChecked=!item.isChecked
                     }
                     contains("Data",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
                             filterAdvGear("hide","data")
@@ -490,7 +492,7 @@ class AllActivity : AppCompatActivity() {
                         item.isChecked=!item.isChecked
                     }
                     contains("Life",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
                             filterAdvGear("hide","life_support")
@@ -501,7 +503,7 @@ class AllActivity : AppCompatActivity() {
                         item.isChecked=!item.isChecked
                     }
                     contains("Medical",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
                             filterAdvGear("hide","medical_supplies")
@@ -512,7 +514,7 @@ class AllActivity : AppCompatActivity() {
                         item.isChecked=!item.isChecked
                     }
                     contains("Storage",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
                             filterAdvGear("hide","storage")
@@ -523,7 +525,7 @@ class AllActivity : AppCompatActivity() {
                         item.isChecked=!item.isChecked
                     }
                     contains("Utilities",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
                             filterAdvGear("hide","utilities")
@@ -534,7 +536,7 @@ class AllActivity : AppCompatActivity() {
                         item.isChecked=!item.isChecked
                     }
                     contains("Accessories",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if(!item.isChecked){
                             if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
                             filterAdvGear("hide","accessories")
@@ -545,11 +547,13 @@ class AllActivity : AppCompatActivity() {
                         item.isChecked=!item.isChecked
                     }
 
-                    contains("Confirm Filters",true)->{
-                        menuClose = false
+                    contains("Confirm Filters",true)-> {
+                        keepmenu = false
+                        item.isVisible =false
                     }
+
                     contains("favorites",true)->{
-                        menuClose = true
+                        keepmenu = true
                         if (!item.isChecked){
                             eraseList.addAll(equipmentList.filter {it !in faveEquipmentList })
                             filterMode.add("fav")
@@ -588,7 +592,20 @@ class AllActivity : AppCompatActivity() {
 
             }
         }
-        return super.onOptionsItemSelected(item)
+        if (keepmenu){
+            item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW)
+            item.actionView = View(this)
+            item.setOnActionExpandListener(object : MenuItem.OnActionExpandListener {
+                override fun onMenuItemActionExpand(item: MenuItem): Boolean {
+                    return false
+                }
+
+                override fun onMenuItemActionCollapse(item: MenuItem): Boolean {
+                    return false
+                }
+            })
+        }
+        return false
     }   
     private fun filterWeapons(action: String, mode: String){
         if (equipmentAttributedList.getOrPut("simple"){ mutableListOf() }.isEmpty()){
@@ -822,7 +839,7 @@ class AllActivity : AppCompatActivity() {
     }
 
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
-        menuClose=false
+        keepmenu=false
         return super.onPrepareOptionsMenu(menu)
     }
     private fun returntotop(mode: String){
@@ -838,15 +855,6 @@ class AllActivity : AppCompatActivity() {
             apply()
         }
         finish()
-    }
-    override fun onPanelClosed(featureId: Int, menu: Menu) {
-        if (menuClose) {
-            openOptionsMenu()
-        }
-        else{
-            equipmentMenu.findItem(R.id.eqmenu_ok).isVisible=false
-        }
-        super.onPanelClosed(featureId, menu)
     }
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)

@@ -25,7 +25,10 @@
         </activity>
         <activity
             android:name=".feats.FeatsActivity"
-            android:exported="false" />
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:theme="@style/BlackStatusBar"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".feats.FeatsDetailsActivity"
             android:exported="false" />
@@ -46,7 +49,10 @@
             android:exported="false" />
         <activity
             android:name=".equipment.AllActivity"
-            android:exported="false" />
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:theme="@style/BlackStatusBar"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".equipment.EquipmentActivity"
             android:exported="false" />
