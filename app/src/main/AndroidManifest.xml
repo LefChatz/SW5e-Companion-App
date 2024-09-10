@@ -24,6 +24,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".maneuvers.ManeuversActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:theme="@style/BlackStatusBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".maneuvers.ManeuversDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".feats.FeatsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"

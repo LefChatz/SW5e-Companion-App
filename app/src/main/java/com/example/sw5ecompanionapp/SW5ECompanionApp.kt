@@ -10,6 +10,7 @@ import com.example.sw5ecompanionapp.databinding.ActivityHubBinding
 import com.example.sw5ecompanionapp.equipment.EquipmentActivity
 import com.example.sw5ecompanionapp.feats.FeatsActivity
 import com.example.sw5ecompanionapp.forcecasting.ForcecastingActivity
+import com.example.sw5ecompanionapp.maneuvers.ManeuversActivity
 import com.example.sw5ecompanionapp.species.SpeciesActivity
 import com.example.sw5ecompanionapp.techcasting.TechcastingActivity
 
@@ -32,6 +33,7 @@ class SW5ECompanionApp : AppCompatActivity() {
             binding.buttonequipment.id->    startActivity(Intent(this, EquipmentActivity::class.java))
             binding.buttontech.id->         startActivity(Intent(this, TechcastingActivity::class.java))
             binding.buttonfeats.id->        startActivity(Intent(this, FeatsActivity::class.java))
+            binding.buttonmaneuvers.id->    startActivity(Intent(this, ManeuversActivity::class.java))
         }
         finish()
     }

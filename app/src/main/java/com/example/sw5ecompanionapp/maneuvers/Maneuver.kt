@@ -5,7 +5,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Maneuver(
     var maneuvername: String="Empty_Name",
-    var asi: String="Default Name",
+    var type: String="Default Name",
     var prerequisite: String="",
     var source: String="SRC",
     var detailsText: CharSequence="Placeholder for the Maneuver's details text",

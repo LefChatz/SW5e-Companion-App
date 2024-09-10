@@ -91,9 +91,9 @@ class ManeuversAdapter(private val myContext: Context, private val dataset: Muta
     }
 
     private fun maneuver(view: ManeuverHolder, maneuver: Maneuver){
-        view.maneuvername.text=maneuver.maneuvername.replace("_"," ").replace("..","'").replace(".","-")
+        view.maneuvername.text=maneuver.maneuvername
 
-        val txt = "ASI: " + maneuver.asi.replace(" or ","/") + if (maneuver.prerequisite.isNotEmpty()) " | pre:"+maneuver.prerequisite.replace("4th level","4 lvl").replace(" or ","/") else ""
+        val txt = "Type: " + maneuver.type.replace(" or ","/") + if (maneuver.prerequisite.isNotEmpty()) " | pre: "+maneuver.prerequisite.replace(" maneuver","") else ""
         view.maneuverdetails.text = txt
 
         view.sourcebook.text = maneuver.source

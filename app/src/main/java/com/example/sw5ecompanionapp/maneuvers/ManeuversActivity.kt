@@ -33,8 +33,8 @@ class ManeuversActivity : AppCompatActivity() {
     private lateinit var favSharedPreferences: SharedPreferences
     private var trimEnteredText=""
     private var favChecked=false
-    private var asichecked = false
-    private var filterASI= mutableSetOf<String>()
+    private var typechecked = false
+    private var filterType= mutableSetOf<String>()
     private lateinit var maneuvermenu: Menu
     private var keepmenu = false
 
@@ -103,11 +103,9 @@ class ManeuversActivity : AppCompatActivity() {
                 else {
                     trimEnteredText= enttext.trim().replace(" ","_").replace("'","..").replace("-",".")
                     if(maneuverList.getNameList().none { it.contains(trimEnteredText,true)}){
-                        /*searchedlist = listOf(Maneuver("NoSuchManeuver"))*/
                         maneuveradapter.setManeuverList(listOf(Maneuver("NoSuchManeuver")))
                     }
                     else {
-                        /*searchedlist = currentmaneuverlist.filter{(it.maneuvername.contains(trimEnteredText,true)) and (it !in eraselist)}*/
                         maneuveradapter.setManeuverList(currentmaneuverlist.filter { filter(it) })
                     }
                 }
@@ -153,44 +151,44 @@ class ManeuversActivity : AppCompatActivity() {
             getText(R.string.maneuvers_menu_ability_score)->{
                 if (!item.isChecked){
                     maneuvermenu.setGroupVisible(R.id.maneuversmenu_asi_group,true)
-                    filterASI.addAll(listOf("Str","Dex","Con","Int","Wis","Cha"))
+                    filterType.addAll(listOf("Str","Dex","Con","Int","Wis","Cha"))
                     maneuvermenu.forEach { if (it.order==3) it.isChecked=true}
                 }
                 else {
-                    filterASI.clear()
+                    filterType.clear()
                     maneuvermenu.setGroupVisible(R.id.maneuversmenu_asi_group,false)
                 }
-                asichecked = !asichecked
+                typechecked = !typechecked
                 item.isChecked= !item.isChecked
             }
             getText(R.string.maneuvers_menu_str)->{
-                if (!item.isChecked) filterASI.add("Str")
-                else filterASI.remove("Str")
+                if (!item.isChecked) filterType.add("Str")
+                else filterType.remove("Str")
                 item.isChecked= !item.isChecked
             }
             getText(R.string.maneuvers_menu_dex)->{
-                if (!item.isChecked) filterASI.add("Dex")
-                else filterASI.remove("Dex")
+                if (!item.isChecked) filterType.add("Dex")
+                else filterType.remove("Dex")
                 item.isChecked= !item.isChecked
             }
             getText(R.string.maneuvers_menu_con)->{
-                if (!item.isChecked) filterASI.add("Con")
-                else filterASI.remove("Con")
+                if (!item.isChecked) filterType.add("Con")
+                else filterType.remove("Con")
                 item.isChecked= !item.isChecked
             }
             getText(R.string.maneuvers_menu_int)->{
-                if (!item.isChecked) filterASI.add("Int")
-                else filterASI.remove("Int")
+                if (!item.isChecked) filterType.add("Int")
+                else filterType.remove("Int")
                 item.isChecked= !item.isChecked
             }
             getText(R.string.maneuvers_menu_wis)->{
-                if (!item.isChecked) filterASI.add("Wis")
-                else filterASI.remove("Wis")
+                if (!item.isChecked) filterType.add("Wis")
+                else filterType.remove("Wis")
                 item.isChecked= !item.isChecked
             }
             getText(R.string.maneuvers_menu_cha)->{
-                if (!item.isChecked) filterASI.add("Cha")
-                else filterASI.remove("Cha")
+                if (!item.isChecked) filterType.add("Cha")
+                else filterType.remove("Cha")
                 item.isChecked= !item.isChecked
             }
             getText(R.string.favorites_gold)->{
@@ -224,12 +222,12 @@ class ManeuversActivity : AppCompatActivity() {
 
     private fun filter(maneuver: Maneuver): Boolean{
         if (!maneuver.maneuvername.contains(trimEnteredText)) return false
-        if (asichecked){
-            if (filterASI.isNotEmpty()) {
-                if (filterASI.none { maneuver.asi.contains(it) or maneuver.asi.contains("Any") }) return false
+        if (typechecked){
+            if (filterType.isNotEmpty()) {
+                if (filterType.none { maneuver.type.contains(it) or maneuver.type.contains("Any") }) return false
             }
             else{
-                if (maneuver.asi != "-") return false
+                if (maneuver.type != "-") return false
             }
         }
         if (favChecked && maneuver.maneuvername !in favManeuverList) return false

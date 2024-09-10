@@ -25,7 +25,7 @@ class ManeuversDetailsActivity : AppCompatActivity() {
         binding= ManeuversDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.Title.text=maneuver.maneuvername.replace("_"," ").replace("..","'").replace(".","-")
+        binding.Title.text=maneuver.maneuvername
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
@@ -33,7 +33,7 @@ class ManeuversDetailsActivity : AppCompatActivity() {
         //SRC
         binding.SourceBook.text=maneuver.source
         //title
-        val temptext = "ASI: " + maneuver.asi +if (maneuver.prerequisite.isNotEmpty()){ "\n\n" + "prerequisite: " + maneuver.prerequisite } else {""} + "\n\n" + maneuver.detailsText
+        val temptext = "Type: " + maneuver.type +if (maneuver.prerequisite.isNotEmpty()){ "\n\n" + "prerequisite: " + maneuver.prerequisite } else {""} + "\n\n" + maneuver.detailsText
         binding.ManeuverText.text=temptext
 
         //Background
