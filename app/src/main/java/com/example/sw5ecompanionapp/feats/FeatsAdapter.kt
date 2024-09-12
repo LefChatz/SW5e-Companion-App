@@ -93,7 +93,7 @@ class FeatsAdapter(private val myContext: Context, private val dataset: MutableL
     private fun feat(view: FeatHolder, feat: Feat){
         view.featname.text=feat.featname.replace("_"," ").replace("..","'").replace(".","-")
 
-        val txt = "ASI: " + feat.asi.replace(" or ","/") + if (feat.prerequisite.isNotEmpty()) " | pre:"+feat.prerequisite.replace("4th level","4 lvl").replace(" or ","/") else ""
+        val txt = "ASI: " + feat.asi.replace(" or ","/") + if (feat.prerequisite.isNotEmpty()) " | pre:"+feat.prerequisite.replace("th level"," lvl").replace(" or ","/") else ""
         view.featdetails.text = txt
 
         view.sourcebook.text = feat.source

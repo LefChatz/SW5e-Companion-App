@@ -13,6 +13,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.forEach
+import androidx.core.view.get
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sw5ecompanionapp.R
 import com.example.sw5ecompanionapp.SW5ECompanionApp
@@ -32,11 +33,14 @@ class FeatsActivity : AppCompatActivity() {
     private val favFeatList: MutableList<String> = mutableListOf()
     private lateinit var favSharedPreferences: SharedPreferences
     private var trimEnteredText=""
-    private var favChecked=false
-    private var asichecked = false
+    private var filters= mutableSetOf<String>()
     private var filterASI= mutableSetOf<String>()
+    private var filterPreq= mutableSetOf<String>()
+    private var filterlvl = 20
+    private var filterType= mutableSetOf<String>()
     private lateinit var featmenu: Menu
     private var keepmenu = false
+    private val preqCats = setOf(10,13,17,21,26,31)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -152,51 +156,110 @@ class FeatsActivity : AppCompatActivity() {
                 returntotop(reclview,"sharp")}
             getText(R.string.feats_menu_ability_score)->{
                 if (!item.isChecked){
-                    featmenu.setGroupVisible(R.id.featsmenu_asi_group,true)
+                    featmenu.setGroupVisible(R.id.feats_menu_asi_group,true)
                     filterASI.addAll(listOf("Str","Dex","Con","Int","Wis","Cha"))
+                    filters.add("ASI")
                     featmenu.forEach { if (it.order==3) it.isChecked=true}
                 }
                 else {
                     filterASI.clear()
-                    featmenu.setGroupVisible(R.id.featsmenu_asi_group,false)
+                    filters.remove("ASI")
+                    featmenu.setGroupVisible(R.id.feats_menu_asi_group,false)
                 }
-                asichecked = !asichecked
-                item.isChecked= !item.isChecked
+                item.isChecked = !item.isChecked
             }
-            getText(R.string.feats_menu_str)->{
-                if (!item.isChecked) filterASI.add("Str")
-                else filterASI.remove("Str")
-                item.isChecked= !item.isChecked
+            getText(R.string.feats_menu_str)-> changeFilter("Str",item, filterASI)
+            getText(R.string.feats_menu_dex)-> changeFilter("Dex",item, filterASI)
+            getText(R.string.feats_menu_con)-> changeFilter("Con",item, filterASI)
+            getText(R.string.feats_menu_int)-> changeFilter("Int",item, filterASI)
+            getText(R.string.feats_menu_wis)-> changeFilter("Wis",item, filterASI)
+            getText(R.string.feats_menu_cha)-> changeFilter("Cha",item, filterASI)
+            getText(R.string.favorites_gold)-> changeFilter("Fav",item, filters)
+            getText(R.string.feats_menu_preq)->{
+                if (!item.isChecked){
+                    preqCats.forEach{ featmenu[it].isVisible=true }
+                    filters.add("preq")
+                }
+                else{
+                    preqCats.forEach{with(featmenu[it]){
+                            isVisible=false
+                            isChecked=false
+                    }}
+                    featmenu.setGroupVisible(R.id.feats_menu_preq_level_group,false)
+                    featmenu.setGroupVisible(R.id.feats_menu_preq_type_group,false)
+                    featmenu.setGroupVisible(R.id.feats_menu_preq_size_group,false)
+                    featmenu.setGroupVisible(R.id.feats_menu_preq_forcecasting_group,false)
+                    featmenu.setGroupVisible(R.id.feats_menu_preq_techcasting_group,false)
+                    filterPreq.clear()
+                    filters.remove("preq")
+                }
+                item.isChecked = !item.isChecked
             }
-            getText(R.string.feats_menu_dex)->{
-                if (!item.isChecked) filterASI.add("Dex")
-                else filterASI.remove("Dex")
-                item.isChecked= !item.isChecked
+            getText(R.string.feats_menu_preq_level)->{
+                if (!item.isChecked){
+                    filterPreq.add("lvl")
+                    filterlvl=20
+                    featmenu.findItem(R.id.feats_menu_preq_level_1).isChecked=false
+                    featmenu.findItem(R.id.feats_menu_preq_level_2).isChecked=false
+                }
+                else{
+                    filterPreq.remove("lvl")
+                }
+                featmenu.setGroupVisible(R.id.feats_menu_preq_level_group,!item.isChecked)
+                item.isChecked = !item.isChecked
             }
-            getText(R.string.feats_menu_con)->{
-                if (!item.isChecked) filterASI.add("Con")
-                else filterASI.remove("Con")
-                item.isChecked= !item.isChecked
+            getText(R.string.feats_menu_preq_level_1)->{
+                if (!item.isChecked){
+                    filterlvl=4
+                    featmenu.findItem(R.id.feats_menu_preq_level_2).isChecked=false
+                }
+                else{
+                    filterlvl=20
+                }
+                item.isChecked = !item.isChecked
             }
-            getText(R.string.feats_menu_int)->{
-                if (!item.isChecked) filterASI.add("Int")
-                else filterASI.remove("Int")
-                item.isChecked= !item.isChecked
+            getText(R.string.feats_menu_preq_level_2)->{
+                if (!item.isChecked){
+                    filterlvl=12
+                    featmenu.findItem(R.id.feats_menu_preq_level_1).isChecked=false
+                }
+                else{
+                    filterlvl=20
+                }
+                item.isChecked = !item.isChecked
             }
-            getText(R.string.feats_menu_wis)->{
-                if (!item.isChecked) filterASI.add("Wis")
-                else filterASI.remove("Wis")
-                item.isChecked= !item.isChecked
+            getText(R.string.feats_menu_preq_type)->{
+                if (!item.isChecked){
+                    filterPreq.add("Type")
+                    filterType.clear()
+                    filterType.addAll(setOf("humanoid","beast","droid"))
+                    featmenu.findItem(R.id.feats_menu_preq_type_1).isChecked=true
+                    featmenu.findItem(R.id.feats_menu_preq_type_2).isChecked=true
+                    featmenu.findItem(R.id.feats_menu_preq_type_3).isChecked=true
+                }
+                else{
+                    filterPreq.remove("Type")
+                }
+                featmenu.setGroupVisible(R.id.feats_menu_preq_type_group,!item.isChecked)
+                item.isChecked = !item.isChecked
             }
-            getText(R.string.feats_menu_cha)->{
-                if (!item.isChecked) filterASI.add("Cha")
-                else filterASI.remove("Cha")
-                item.isChecked= !item.isChecked
-            }
-            getText(R.string.favorites_gold)->{
-                favChecked= !favChecked
-                item.isChecked= !item.isChecked
-            }
+            getText(R.string.feats_menu_preq_type_1)-> changeFilter("humanoid",item,filterType)
+            getText(R.string.feats_menu_preq_type_2)-> changeFilter("droid",item,filterType)
+            getText(R.string.feats_menu_preq_type_3)-> changeFilter("beast",item,filterType)
+            getText(R.string.feats_menu_preq_size)->{}
+            getText(R.string.feats_menu_preq_size_1)->{}
+            getText(R.string.feats_menu_preq_size_2)->{}
+            getText(R.string.feats_menu_preq_size_3)->{}
+            getText(R.string.feats_menu_preq_forcecasting)->{}
+            getText(R.string.feats_menu_preq_forcecasting_1)->{}
+            getText(R.string.feats_menu_preq_forcecasting_2)->{}
+            getText(R.string.feats_menu_preq_forcecasting_3)->{}
+            getText(R.string.feats_menu_preq_forcecasting_4)->{}
+            getText(R.string.feats_menu_preq_techcasting)->{}
+            getText(R.string.feats_menu_preq_techcasting_1)->{}
+            getText(R.string.feats_menu_preq_techcasting_2)->{}
+            getText(R.string.feats_menu_preq_techcasting_3)->{}
+            getText(R.string.feats_menu_preq_techcasting_4)->{}
             getText(R.string.equipment_menu_ok)->{
                 keepmenu=false
                 item.isVisible=false
@@ -224,7 +287,7 @@ class FeatsActivity : AppCompatActivity() {
 
     private fun filter(feat: Feat): Boolean{
         if (!feat.featname.contains(trimEnteredText)) return false
-        if (asichecked){
+        if (filters.contains("ASI")){
             if (filterASI.isNotEmpty()) {
                 if (filterASI.none { feat.asi.contains(it) or feat.asi.contains("Any") }) return false
             }
@@ -232,8 +295,21 @@ class FeatsActivity : AppCompatActivity() {
                 if (feat.asi != "-") return false
             }
         }
-        if (favChecked && feat.featname !in favFeatList) return false
+        if (filters.contains("preq")){
+            if (filterPreq.contains("lvl")){
+                if (feat.prerequisite.contains("level") && (filterlvl==4 || (feat.prerequisite.substringBefore("th level").last() == '2' && 12>=filterlvl))) return false
+            }
+            if(filterPreq.contains("Type")){
+                if (feat.prerequisite.contains("Type") && filterType.none { feat.prerequisite.contains(it) }) return false
+            }
+        }
+        if (filters.contains("Fav") && feat.featname !in favFeatList) return false
         return true
+    }
+    private fun changeFilter(filter: String, item: MenuItem, filterList: MutableSet<String>){
+        if (!item.isChecked) filterList.add(filter)
+        else filterList.remove(filter)
+        item.isChecked= !item.isChecked
     }
     private fun returntotop(view: RecyclerView,mode: String){
         when(mode){
@@ -258,15 +334,6 @@ class FeatsActivity : AppCompatActivity() {
         }
         return getFeatList
     }
-    /*override fun onPanelClosed(featureId: Int, menu: Menu) {
-        if (keepmenu) {
-            openOptionsMenu()
-        }
-        else{
-            featmenu.findItem(R.id.eqmenu_ok).isVisible=false
-        }
-        super.onPanelClosed(featureId, menu)
-    }*/
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
     }

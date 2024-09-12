@@ -1068,6 +1068,29 @@
     <string name="feats_menu_int"><font color="#d4af37">"       "Intelligence</font></string>
     <string name="feats_menu_wis"><font color="#d4af37">"       "Wisdom</font></string>
     <string name="feats_menu_cha"><font color="#d4af37">"       "Charisma</font></string>
+    <string name="feats_menu_preq"><font color="#D4af37">Prerequisite</font></string>
+    <string name="feats_menu_preq_level"><font color="#d4af37">"    "&lt; Level:</font></string>
+    <string name="feats_menu_preq_level_1"><font color="#d4af37">"           "4th</font></string>
+    <string name="feats_menu_preq_level_2"><font color="#d4af37">"           "12th</font></string>
+    <string name="feats_menu_preq_type"><font color="#d4af37">"    "Type:</font></string>
+    <string name="feats_menu_preq_type_1"><font color="#d4af37">"           "Humanoid</font></string>
+    <string name="feats_menu_preq_type_2"><font color="#d4af37">"           "Droid</font></string>
+    <string name="feats_menu_preq_type_3"><font color="#d4af37">"           "Beast</font></string>
+    <string name="feats_menu_preq_size"><font color="#d4af37">"    "Size:</font></string>
+    <string name="feats_menu_preq_size_1"><font color="#d4af37">"           "tiny</font></string>
+    <string name="feats_menu_preq_size_2"><font color="#d4af37">"           "small</font></string>
+    <string name="feats_menu_preq_size_3"><font color="#d4af37">"           "medium</font></string>
+    <string name="feats_menu_preq_forcecasting"><font color="#d4af37">"    "ForceCasting</font></string>
+    <string name="feats_menu_preq_forcecasting_1"><font color="#d4af37">"           "None</font></string>
+    <string name="feats_menu_preq_forcecasting_2"><font color="#d4af37">"           "2nd level</font></string>
+    <string name="feats_menu_preq_forcecasting_3"><font color="#d4af37">"           "3rd level</font></string>
+    <string name="feats_menu_preq_forcecasting_4"><font color="#d4af37">"           "4th level</font></string>
+    <string name="feats_menu_preq_techcasting"><font color="#d4af37">"    "TechCasting</font></string>
+    <string name="feats_menu_preq_techcasting_1"><font color="#d4af37">"           "None</font></string>
+    <string name="feats_menu_preq_techcasting_2"><font color="#d4af37">"           "2nd level</font></string>
+    <string name="feats_menu_preq_techcasting_3"><font color="#d4af37">"           "3rd level</font></string>
+    <string name="feats_menu_preq_techcasting_4"><font color="#d4af37">"           "4th level</font></string>
+
 
     <!--Random utility stuff -->
     <string name="title_activity_classes">ClassesActivity</string>
