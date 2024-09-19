@@ -220,6 +220,13 @@
             android:checkable="true"
             android:checked="false"
             />
+        <item
+            android:id="@+id/feats_menu_preq_forcecasting_5"
+            android:orderInCategory="4"
+            android:title="@string/feats_menu_preq_forcecasting_5"
+            android:checkable="true"
+            android:checked="false"
+            />
     </group>
 
     <item
@@ -260,6 +267,13 @@
             android:id="@+id/feats_menu_preq_techcasting_4"
             android:orderInCategory="4"
             android:title="@string/feats_menu_preq_techcasting_4"
+            android:checkable="true"
+            android:checked="false"
+            />
+        <item
+            android:id="@+id/feats_menu_preq_techcasting_5"
+            android:orderInCategory="4"
+            android:title="@string/feats_menu_preq_techcasting_5"
             android:checkable="true"
             android:checked="false"
             />

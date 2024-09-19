@@ -38,9 +38,14 @@ class FeatsActivity : AppCompatActivity() {
     private var filterPreq= mutableSetOf<String>()
     private var filterlvl = 20
     private var filterType= mutableSetOf<String>()
+    private var filterSize= mutableSetOf<String>()
+    private var filterForceLvl= 0
+    private var filterTechLvl= 0
+    private var filterForceItems = setOf<MenuItem>()
+    private var filterTechItems = setOf<MenuItem>()
     private lateinit var featmenu: Menu
     private var keepmenu = false
-    private val preqCats = setOf(10,13,17,21,26,31)
+    private val preqCats = setOf(10,13,17,21,27,33)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,10 +61,10 @@ class FeatsActivity : AppCompatActivity() {
         featList.addAll(getFeats())
 
         reclview = binding.reclview
-        adapterFeatList.addAll(featList)
+        adapterFeatList.addAll(featList.sortFeatByName())
         featadapter = FeatsAdapter(this,adapterFeatList,favFeatList)
         reclview.adapter = featadapter
-        currentfeatlist = featList
+        currentfeatlist = featList.sortFeatByName()
 
         binding.BackButton.setOnClickListener{returntomain()}
 
@@ -107,11 +112,9 @@ class FeatsActivity : AppCompatActivity() {
                 else {
                     trimEnteredText= enttext.trim().replace(" ","_").replace("'","..").replace("-",".")
                     if(featList.getNameList().none { it.contains(trimEnteredText,true)}){
-                        /*searchedlist = listOf(Feat("NoSuchFeat"))*/
                         featadapter.setFeatList(listOf(Feat("NoSuchFeat")))
                     }
                     else {
-                        /*searchedlist = currentfeatlist.filter{(it.featname.contains(trimEnteredText,true)) and (it !in eraselist)}*/
                         featadapter.setFeatList(currentfeatlist.filter { filter(it) })
                     }
                 }
@@ -135,6 +138,8 @@ class FeatsActivity : AppCompatActivity() {
         if (menu != null){
             featmenu = menu
         }
+        filterForceItems= setOf(featmenu.findItem(R.id.feats_menu_preq_forcecasting_1),featmenu.findItem(R.id.feats_menu_preq_forcecasting_2),featmenu.findItem(R.id.feats_menu_preq_forcecasting_3),featmenu.findItem(R.id.feats_menu_preq_forcecasting_4),featmenu.findItem(R.id.feats_menu_preq_forcecasting_5))
+        filterTechItems= setOf(featmenu.findItem(R.id.feats_menu_preq_techcasting_1),featmenu.findItem(R.id.feats_menu_preq_techcasting_2),featmenu.findItem(R.id.feats_menu_preq_techcasting_3),featmenu.findItem(R.id.feats_menu_preq_techcasting_4),featmenu.findItem(R.id.feats_menu_preq_techcasting_5))
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -178,6 +183,7 @@ class FeatsActivity : AppCompatActivity() {
             getText(R.string.feats_menu_preq)->{
                 if (!item.isChecked){
                     preqCats.forEach{ featmenu[it].isVisible=true }
+                    filterPreq.clear()
                     filters.add("preq")
                 }
                 else{
@@ -190,13 +196,13 @@ class FeatsActivity : AppCompatActivity() {
                     featmenu.setGroupVisible(R.id.feats_menu_preq_size_group,false)
                     featmenu.setGroupVisible(R.id.feats_menu_preq_forcecasting_group,false)
                     featmenu.setGroupVisible(R.id.feats_menu_preq_techcasting_group,false)
-                    filterPreq.clear()
                     filters.remove("preq")
                 }
                 item.isChecked = !item.isChecked
             }
             getText(R.string.feats_menu_preq_level)->{
                 if (!item.isChecked){
+
                     filterPreq.add("lvl")
                     filterlvl=20
                     featmenu.findItem(R.id.feats_menu_preq_level_1).isChecked=false
@@ -246,20 +252,158 @@ class FeatsActivity : AppCompatActivity() {
             getText(R.string.feats_menu_preq_type_1)-> changeFilter("humanoid",item,filterType)
             getText(R.string.feats_menu_preq_type_2)-> changeFilter("droid",item,filterType)
             getText(R.string.feats_menu_preq_type_3)-> changeFilter("beast",item,filterType)
-            getText(R.string.feats_menu_preq_size)->{}
-            getText(R.string.feats_menu_preq_size_1)->{}
-            getText(R.string.feats_menu_preq_size_2)->{}
-            getText(R.string.feats_menu_preq_size_3)->{}
-            getText(R.string.feats_menu_preq_forcecasting)->{}
-            getText(R.string.feats_menu_preq_forcecasting_1)->{}
-            getText(R.string.feats_menu_preq_forcecasting_2)->{}
-            getText(R.string.feats_menu_preq_forcecasting_3)->{}
-            getText(R.string.feats_menu_preq_forcecasting_4)->{}
-            getText(R.string.feats_menu_preq_techcasting)->{}
-            getText(R.string.feats_menu_preq_techcasting_1)->{}
-            getText(R.string.feats_menu_preq_techcasting_2)->{}
-            getText(R.string.feats_menu_preq_techcasting_3)->{}
-            getText(R.string.feats_menu_preq_techcasting_4)->{}
+            getText(R.string.feats_menu_preq_size)->{
+                if (!item.isChecked){
+                    filterPreq.add("Size")
+                    filterSize.clear()
+                    filterSize.addAll(setOf("tiny","small","medium"))
+                    featmenu.findItem(R.id.feats_menu_preq_size_1).isChecked=true
+                    featmenu.findItem(R.id.feats_menu_preq_size_2).isChecked=true
+                    featmenu.findItem(R.id.feats_menu_preq_size_3).isChecked=true
+                }
+                else{
+                    filterPreq.remove("Size")
+                }
+                featmenu.setGroupVisible(R.id.feats_menu_preq_size_group,!item.isChecked)
+                item.isChecked = !item.isChecked
+            }
+            getText(R.string.feats_menu_preq_size_1)->changeFilter("tiny",item,filterSize)
+            getText(R.string.feats_menu_preq_size_2)->changeFilter("small",item,filterSize)
+            getText(R.string.feats_menu_preq_size_3)->changeFilter("medium",item,filterSize)
+            getText(R.string.feats_menu_preq_forcecasting)->{
+                if (!item.isChecked){
+                    filterPreq.add("Force")
+                    filterForceLvl=4
+                    filterForceItems.forEach { it.isChecked = it.itemId == R.id.feats_menu_preq_forcecasting_5 }
+                }
+                else{
+                    filterPreq.remove("Force")
+                }
+                featmenu.setGroupVisible(R.id.feats_menu_preq_forcecasting_group,!item.isChecked)
+                item.isChecked = !item.isChecked
+            }
+            getText(R.string.feats_menu_preq_forcecasting_1)->{
+                if (!item.isChecked){
+                    filterForceLvl=-1
+                    filterForceItems.forEach { if (it.itemId!=R.id.feats_menu_preq_forcecasting_1) it.isChecked=false }
+                }
+                else{
+                    filterForceLvl=4
+                    featmenu.findItem(R.id.feats_menu_preq_forcecasting_5).isChecked=true
+                }
+                item.isChecked = !item.isChecked
+            }
+            getText(R.string.feats_menu_preq_forcecasting_2)->{
+                if (!item.isChecked){
+                    filterForceLvl=0
+                    filterForceItems.forEach { if (it.itemId!=R.id.feats_menu_preq_forcecasting_2) it.isChecked=false }
+                }
+                else{
+                    filterForceLvl=-1
+                    featmenu.findItem(R.id.feats_menu_preq_forcecasting_1).isChecked=true
+                }
+                item.isChecked = !item.isChecked
+            }
+            getText(R.string.feats_menu_preq_forcecasting_3)->{
+                if (!item.isChecked){
+                    filterForceLvl=2
+                    filterForceItems.forEach { if (it.itemId!=R.id.feats_menu_preq_forcecasting_3) it.isChecked=false }
+                }
+                else{
+                    filterForceLvl=-1
+                    featmenu.findItem(R.id.feats_menu_preq_forcecasting_1).isChecked=true
+                }
+                item.isChecked = !item.isChecked
+            }
+            getText(R.string.feats_menu_preq_forcecasting_4)->{
+                if (!item.isChecked){
+                    filterForceLvl=3
+                    filterForceItems.forEach { if (it.itemId!=R.id.feats_menu_preq_forcecasting_4) it.isChecked=false }
+                }
+                else{
+                    filterForceLvl=-1
+                    featmenu.findItem(R.id.feats_menu_preq_forcecasting_1).isChecked=true
+                }
+                item.isChecked = !item.isChecked
+            }
+            getText(R.string.feats_menu_preq_forcecasting_5)->{
+                if (!item.isChecked){
+                    filterForceLvl=4
+                    filterForceItems.forEach { if (it.itemId!=R.id.feats_menu_preq_forcecasting_5) it.isChecked=false }
+                }
+                else{
+                    filterForceLvl=-1
+                    featmenu.findItem(R.id.feats_menu_preq_forcecasting_1).isChecked=true
+                }
+                item.isChecked = !item.isChecked
+            }
+            getText(R.string.feats_menu_preq_techcasting)->{
+                if (!item.isChecked){
+                    filterPreq.add("Tech")
+                    filterTechLvl=4
+                    filterTechItems.forEach { it.isChecked = it.itemId == R.id.feats_menu_preq_techcasting_5 }
+                }
+                else{
+                    filterPreq.remove("Tech")
+                }
+                featmenu.setGroupVisible(R.id.feats_menu_preq_techcasting_group,!item.isChecked)
+                item.isChecked = !item.isChecked
+            }
+            getText(R.string.feats_menu_preq_techcasting_1)->{
+                if (!item.isChecked){
+                    filterTechLvl=-1
+                    filterTechItems.forEach { if (it.itemId!=R.id.feats_menu_preq_techcasting_1) it.isChecked=false }
+                }
+                else{
+                    filterTechLvl=4
+                    featmenu.findItem(R.id.feats_menu_preq_techcasting_5).isChecked=true
+                }
+                item.isChecked = !item.isChecked
+            }
+            getText(R.string.feats_menu_preq_techcasting_2)->{
+                if (!item.isChecked){
+                    filterTechLvl=0
+                    filterTechItems.forEach { if (it.itemId!=R.id.feats_menu_preq_techcasting_2) it.isChecked=false }
+                }
+                else{
+                    filterTechLvl=-1
+                    featmenu.findItem(R.id.feats_menu_preq_techcasting_1).isChecked=true
+                }
+                item.isChecked = !item.isChecked
+            }
+            getText(R.string.feats_menu_preq_techcasting_3)->{
+                if (!item.isChecked){
+                    filterTechLvl=2
+                    filterTechItems.forEach { if (it.itemId!=R.id.feats_menu_preq_techcasting_3) it.isChecked=false }
+                }
+                else{
+                    filterTechLvl=-1
+                    featmenu.findItem(R.id.feats_menu_preq_techcasting_1).isChecked=true
+                }
+                item.isChecked = !item.isChecked
+            }
+            getText(R.string.feats_menu_preq_techcasting_4)->{
+                if (!item.isChecked){
+                    filterTechLvl=3
+                    filterTechItems.forEach { if (it.itemId!=R.id.feats_menu_preq_techcasting_4) it.isChecked=false }
+                }
+                else{
+                    filterTechLvl=-1
+                    featmenu.findItem(R.id.feats_menu_preq_techcasting_1).isChecked=true
+                }
+                item.isChecked = !item.isChecked
+            }
+            getText(R.string.feats_menu_preq_techcasting_5)->{
+                if (!item.isChecked){
+                    filterTechLvl=4
+                    filterTechItems.forEach { if (it.itemId!=R.id.feats_menu_preq_techcasting_5) it.isChecked=false }
+                }
+                else{
+                    filterTechLvl=-1
+                    featmenu.findItem(R.id.feats_menu_preq_techcasting_1).isChecked=true
+                }
+                item.isChecked = !item.isChecked
+            }
             getText(R.string.equipment_menu_ok)->{
                 keepmenu=false
                 item.isVisible=false
@@ -301,6 +445,24 @@ class FeatsActivity : AppCompatActivity() {
             }
             if(filterPreq.contains("Type")){
                 if (feat.prerequisite.contains("Type") && filterType.none { feat.prerequisite.contains(it) }) return false
+            }
+            if(filterPreq.contains("Force")){
+                if (filterForceLvl>-1){
+                    if (!feat.prerequisite.contains("force")) return false
+                    if (feat.prerequisite.substringAfter("casting lvl ","0").first().toString().toInt()>filterForceLvl) return false
+                }
+                else {
+                    if (feat.prerequisite.contains("force")) return false
+                }
+            }
+            if(filterPreq.contains("Tech")){
+                if (filterTechLvl>-1){
+                    if (!feat.prerequisite.contains("tech")) return false
+                    if (feat.prerequisite.substringAfter("casting lvl ","0").first().toString().toInt()>filterTechLvl) return false
+                }
+                else {
+                    if (feat.prerequisite.contains("tech")) return false
+                }
             }
         }
         if (filters.contains("Fav") && feat.featname !in favFeatList) return false

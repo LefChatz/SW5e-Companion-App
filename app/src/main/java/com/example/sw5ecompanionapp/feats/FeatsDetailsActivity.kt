@@ -45,11 +45,11 @@ class FeatsDetailsActivity : AppCompatActivity() {
         binding.BackButton.setOnClickListener {returntomain()}
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_feats_details, menu)
         binding.toolbar.overflowIcon = AppCompatResources.getDrawable(this, R.drawable.dots3gold)
         return super.onCreateOptionsMenu(menu)
-    }
+    }*/
 
     private fun returntomain() {
         finish()
