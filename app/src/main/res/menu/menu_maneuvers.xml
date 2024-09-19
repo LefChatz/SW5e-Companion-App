@@ -18,62 +18,55 @@
         android:enabled="false"
         />
     <item
-        android:id="@+id/menu_switch_asi"
+        android:id="@+id/menu_maneuvers_type"
         android:orderInCategory="2"
-        android:title="@string/feats_menu_ability_score"
+        android:title="@string/maneuvers_menu_type"
         android:checkable="true"
         android:checked="false"
         />
     <group
-        android:id="@+id/maneuversmenu_asi_group"
+        android:id="@+id/maneuvers_menu_type_group"
         android:visible="false"
         android:checkableBehavior="none"
         android:orderInCategory="3">
         <item
-            android:id="@+id/menu_switch_Str"
+            android:id="@+id/menu_maneuvers_type_general"
             android:orderInCategory="3"
-            android:title="@string/feats_menu_str"
+            android:title="@string/maneuvers_menu_general"
             android:checkable="true"
             android:checked="false"
             />
         <item
-            android:id="@+id/menu_switch_Dex"
+            android:id="@+id/menu_maneuvers_type_mental"
             android:orderInCategory="3"
-            android:title="@string/feats_menu_dex"
+            android:title="@string/maneuvers_menu_mental"
             android:checkable="true"
             android:checked="false"
             />
         <item
-            android:id="@+id/menu_switch_Con"
+            android:id="@+id/menu_maneuvers_type_physical"
             android:orderInCategory="3"
-            android:title="@string/feats_menu_con"
-            android:checkable="true"
-            android:checked="false"
-            />
-        <item
-            android:id="@+id/menu_switch_Int"
-            android:orderInCategory="3"
-            android:title="@string/feats_menu_int"
-            android:checkable="true"
-            android:checked="false"
-            />
-        <item
-            android:id="@+id/menu_switch_Wis"
-            android:orderInCategory="3"
-            android:title="@string/feats_menu_wis"
-            android:checkable="true"
-            android:checked="false"
-            />
-        <item
-            android:id="@+id/menu_switch_Cha"
-            android:orderInCategory="3"
-            android:title="@string/feats_menu_cha"
+            android:title="@string/maneuvers_menu_physical"
             android:checkable="true"
             android:checked="false"
             />
     </group>
     <item
-        android:id="@+id/menu_switch_Fav"
+        android:id="@+id/menu_maneuvers_forcecasting"
+        android:orderInCategory="4"
+        android:title="@string/maneuvers_menu_forcecasting"
+        android:checkable="true"
+        android:checked="true"
+        />
+    <item
+        android:id="@+id/menu_maneuvers_techcasting"
+        android:orderInCategory="4"
+        android:title="@string/maneuvers_menu_techcasting"
+        android:checkable="true"
+        android:checked="true"
+        />
+    <item
+        android:id="@+id/menu_maneuvers_fav"
         android:orderInCategory="4"
         android:title="@string/favorites_gold"
         android:checkable="true"

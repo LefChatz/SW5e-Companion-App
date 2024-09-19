@@ -11,7 +11,7 @@
         android:iconTint="@color/gold"
         />
     <item
-        android:id="@+id/menu_switch_Fav"
+        android:id="@+id/menu_maneuvers_fav"
         android:orderInCategory="3"
         android:title="@string/favorites_gold"
         android:checkable="true"

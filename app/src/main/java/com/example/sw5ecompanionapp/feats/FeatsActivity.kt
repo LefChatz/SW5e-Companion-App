@@ -75,6 +75,7 @@ class FeatsActivity : AppCompatActivity() {
             override fun onQueryTextChange(enttext: String?): Boolean {
                 returntotop(reclview,"sharp")
                 if(enttext.isNullOrBlank()){
+                    trimEnteredText=""
                     featadapter.setFeatList(currentfeatlist.filter{filter(it)})
                     object : CountDownTimer(1000, 1001) {
                         override fun onTick(millisUntilFinished: Long) {
@@ -83,7 +84,6 @@ class FeatsActivity : AppCompatActivity() {
                             if(trimEnteredText.isBlank()){searchView.clearFocus()}
                         }
                     }.start()
-                    trimEnteredText=""
                 }
                 else {
                     trimEnteredText= enttext.trim().replace(" ","_").replace("'","..").replace("-",".")
@@ -99,6 +99,7 @@ class FeatsActivity : AppCompatActivity() {
             override fun onQueryTextSubmit(enttext: String?): Boolean {
                 returntotop(reclview,"sharp")
                 if(enttext.isNullOrBlank()){
+                    trimEnteredText=""
                     featadapter.setFeatList(currentfeatlist.filter{filter(it)})
                     object : CountDownTimer(1000, 999) {
                         override fun onTick(millisUntilFinished: Long) {
@@ -107,7 +108,6 @@ class FeatsActivity : AppCompatActivity() {
                             if(trimEnteredText.isBlank()){searchView.clearFocus()}
                         }
                     }.start()
-                    trimEnteredText=""
                 }
                 else {
                     trimEnteredText= enttext.trim().replace(" ","_").replace("'","..").replace("-",".")

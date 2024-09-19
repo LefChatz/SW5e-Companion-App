@@ -12,7 +12,6 @@ import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.core.view.forEach
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sw5ecompanionapp.R
 import com.example.sw5ecompanionapp.SW5ECompanionApp
@@ -32,9 +31,9 @@ class ManeuversActivity : AppCompatActivity() {
     private val favManeuverList: MutableList<String> = mutableListOf()
     private lateinit var favSharedPreferences: SharedPreferences
     private var trimEnteredText=""
-    private var favChecked=false
-    private var typechecked = false
+    private var filters = mutableSetOf("Force","Tech")
     private var filterType= mutableSetOf<String>()
+    private var filterTypeItems = setOf<MenuItem>()
     private lateinit var maneuvermenu: Menu
     private var keepmenu = false
 
@@ -66,6 +65,7 @@ class ManeuversActivity : AppCompatActivity() {
             override fun onQueryTextChange(enttext: String?): Boolean {
                 returntotop(reclview,"sharp")
                 if(enttext.isNullOrBlank()){
+                    trimEnteredText=""
                     maneuveradapter.setManeuverList(currentmaneuverlist.filter{filter(it)})
                     object : CountDownTimer(1000, 1001) {
                         override fun onTick(millisUntilFinished: Long) {
@@ -74,10 +74,9 @@ class ManeuversActivity : AppCompatActivity() {
                             if(trimEnteredText.isBlank()){searchView.clearFocus()}
                         }
                     }.start()
-                    trimEnteredText=""
                 }
                 else {
-                    trimEnteredText= enttext.trim().replace(" ","_").replace("'","..").replace("-",".")
+                    trimEnteredText= enttext.trim()
                     if(maneuverList.getNameList().none { it.contains(trimEnteredText,true)}){
                         maneuveradapter.setManeuverList(listOf(Maneuver("NoSuchManeuver")))
                     }
@@ -90,6 +89,7 @@ class ManeuversActivity : AppCompatActivity() {
             override fun onQueryTextSubmit(enttext: String?): Boolean {
                 returntotop(reclview,"sharp")
                 if(enttext.isNullOrBlank()){
+                    trimEnteredText=""
                     maneuveradapter.setManeuverList(currentmaneuverlist.filter{filter(it)})
                     object : CountDownTimer(1000, 999) {
                         override fun onTick(millisUntilFinished: Long) {
@@ -98,10 +98,9 @@ class ManeuversActivity : AppCompatActivity() {
                             if(trimEnteredText.isBlank()){searchView.clearFocus()}
                         }
                     }.start()
-                    trimEnteredText=""
                 }
                 else {
-                    trimEnteredText= enttext.trim().replace(" ","_").replace("'","..").replace("-",".")
+                    trimEnteredText= enttext.trim()
                     if(maneuverList.getNameList().none { it.contains(trimEnteredText,true)}){
                         maneuveradapter.setManeuverList(listOf(Maneuver("NoSuchManeuver")))
                     }
@@ -129,6 +128,7 @@ class ManeuversActivity : AppCompatActivity() {
         if (menu != null){
             maneuvermenu = menu
         }
+        filterTypeItems = setOf(maneuvermenu.findItem(R.id.menu_maneuvers_type_general),maneuvermenu.findItem(R.id.menu_maneuvers_type_mental),maneuvermenu.findItem(R.id.menu_maneuvers_type_physical))
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -148,53 +148,21 @@ class ManeuversActivity : AppCompatActivity() {
                 currentmaneuverlist=maneuverList.sortManeuverByName()
                 item.title = getText(R.string.sortABCdown)
                 returntotop(reclview,"sharp")}
-            getText(R.string.maneuvers_menu_ability_score)->{
+            getText(R.string.maneuvers_menu_type)->{
                 if (!item.isChecked){
-                    maneuvermenu.setGroupVisible(R.id.maneuversmenu_asi_group,true)
-                    filterType.addAll(listOf("Str","Dex","Con","Int","Wis","Cha"))
-                    maneuvermenu.forEach { if (it.order==3) it.isChecked=true}
-                }
-                else {
                     filterType.clear()
-                    maneuvermenu.setGroupVisible(R.id.maneuversmenu_asi_group,false)
+                    filterType.addAll(listOf("General","Mental","Physical"))
+                    filterTypeItems.forEach {it.isChecked=true}
                 }
-                typechecked = !typechecked
-                item.isChecked= !item.isChecked
+                maneuvermenu.setGroupVisible(R.id.maneuvers_menu_type_group,!item.isChecked)
+                changeFilter("Type",item,filters)
             }
-            getText(R.string.maneuvers_menu_str)->{
-                if (!item.isChecked) filterType.add("Str")
-                else filterType.remove("Str")
-                item.isChecked= !item.isChecked
-            }
-            getText(R.string.maneuvers_menu_dex)->{
-                if (!item.isChecked) filterType.add("Dex")
-                else filterType.remove("Dex")
-                item.isChecked= !item.isChecked
-            }
-            getText(R.string.maneuvers_menu_con)->{
-                if (!item.isChecked) filterType.add("Con")
-                else filterType.remove("Con")
-                item.isChecked= !item.isChecked
-            }
-            getText(R.string.maneuvers_menu_int)->{
-                if (!item.isChecked) filterType.add("Int")
-                else filterType.remove("Int")
-                item.isChecked= !item.isChecked
-            }
-            getText(R.string.maneuvers_menu_wis)->{
-                if (!item.isChecked) filterType.add("Wis")
-                else filterType.remove("Wis")
-                item.isChecked= !item.isChecked
-            }
-            getText(R.string.maneuvers_menu_cha)->{
-                if (!item.isChecked) filterType.add("Cha")
-                else filterType.remove("Cha")
-                item.isChecked= !item.isChecked
-            }
-            getText(R.string.favorites_gold)->{
-                favChecked= !favChecked
-                item.isChecked= !item.isChecked
-            }
+            getText(R.string.maneuvers_menu_general)-> changeFilter("General",item, filterType)
+            getText(R.string.maneuvers_menu_mental)-> changeFilter("Mental",item, filterType)
+            getText(R.string.maneuvers_menu_physical)-> changeFilter("Physical",item, filterType)
+            getText(R.string.maneuvers_menu_forcecasting)->changeFilter("Force",item,filters)
+            getText(R.string.maneuvers_menu_techcasting)->changeFilter("Tech",item,filters)
+            getText(R.string.favorites_gold)-> changeFilter("Fav",item, filters)
             getText(R.string.equipment_menu_ok)->{
                 keepmenu=false
                 item.isVisible=false
@@ -221,18 +189,22 @@ class ManeuversActivity : AppCompatActivity() {
 
 
     private fun filter(maneuver: Maneuver): Boolean{
-        if (!maneuver.maneuvername.contains(trimEnteredText)) return false
-        if (typechecked){
-            if (filterType.isNotEmpty()) {
-                if (filterType.none { maneuver.type.contains(it) or maneuver.type.contains("Any") }) return false
-            }
-            else{
-                if (maneuver.type != "-") return false
-            }
+        if (!maneuver.maneuvername.contains(trimEnteredText,true)) return false
+        if (filters.contains("Type")){
+            if (filterType.none {maneuver.type.contains(it)}) return false
         }
-        if (favChecked && maneuver.maneuvername !in favManeuverList) return false
+        if (filters.contains("Fav") && maneuver.maneuvername !in favManeuverList) return false
+        if (!filters.contains("Force") && maneuver.prerequisite.contains("force")) return false
+        if (!filters.contains("Tech") && maneuver.prerequisite.contains("tech")) return false
         return true
     }
+
+    private fun changeFilter(filter: String, item: MenuItem, filterList: MutableSet<String>){
+        if (!item.isChecked) filterList.add(filter)
+        else filterList.remove(filter)
+        item.isChecked= !item.isChecked
+    }
+
     private fun returntotop(view: RecyclerView,mode: String){
         when(mode){
             "smooth"->view.smoothScrollToPosition(0)

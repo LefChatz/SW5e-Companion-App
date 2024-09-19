@@ -155,7 +155,7 @@
             />
     </group>
     <item
-        android:id="@+id/menu_switch_Fav"
+        android:id="@+id/menu_maneuvers_fav"
         android:orderInCategory="100"
         android:title="@string/equipment_menu_favorites"
         android:checkable="true"

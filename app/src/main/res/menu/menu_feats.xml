@@ -18,7 +18,7 @@
         android:enabled="false"
         />
     <item
-        android:id="@+id/menu_switch_asi"
+        android:id="@+id/menu_maneuvers_type"
         android:orderInCategory="2"
         android:title="@string/feats_menu_ability_score"
         android:checkable="true"
@@ -280,7 +280,7 @@
     </group>
 
     <item
-        android:id="@+id/menu_switch_Fav"
+        android:id="@+id/menu_maneuvers_fav"
         android:orderInCategory="5"
         android:title="@string/favorites_gold"
         android:checkable="true"

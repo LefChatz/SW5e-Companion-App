@@ -1080,19 +1080,29 @@
     <string name="feats_menu_preq_size_1"><font color="#d4af37">"           "tiny</font></string>
     <string name="feats_menu_preq_size_2"><font color="#d4af37">"           "small</font></string>
     <string name="feats_menu_preq_size_3"><font color="#d4af37">"           "medium</font></string>
-    <string name="feats_menu_preq_forcecasting"><font color="#d4af37">"    "ForceCasting</font></string>
+    <string name="feats_menu_preq_forcecasting"><font color="#d4af37">"    "ForceCasting:</font></string>
     <string name="feats_menu_preq_forcecasting_1"><font color="#d4af37">"           "None</font></string>
     <string name="feats_menu_preq_forcecasting_2"><font color="#d4af37">"           "0 level</font></string>
     <string name="feats_menu_preq_forcecasting_3"><font color="#d4af37">"           "2nd level</font></string>
     <string name="feats_menu_preq_forcecasting_4"><font color="#d4af37">"           "3rd level</font></string>
     <string name="feats_menu_preq_forcecasting_5"><font color="#d4af37">"           "4th level</font></string>
-    <string name="feats_menu_preq_techcasting"><font color="#d4af37">"    "TechCasting</font></string>
+    <string name="feats_menu_preq_techcasting"><font color="#d4af37">"    "TechCasting:</font></string>
     <string name="feats_menu_preq_techcasting_1"><font color="#d4af37">"           "None</font></string>
     <string name="feats_menu_preq_techcasting_2"><font color="#d4af37">"           "0 level</font></string>
     <string name="feats_menu_preq_techcasting_3"><font color="#d4af37">"           "2nd level</font></string>
     <string name="feats_menu_preq_techcasting_4"><font color="#d4af37">"           "3rd level</font></string>
     <string name="feats_menu_preq_techcasting_5"><font color="#d4af37">"           "4th level</font></string>
 
+    <!--Maneuvers-->
+    <string name="maneuvers">Maneuvers</string>
+    <string name="maneuvers_maneuver_name">maneuever name</string>
+    <string name="maneuvers_no_such_maneuver_found">no such maneuver found</string>
+    <string name="maneuvers_menu_type" ><font color="#d4af37">Type</font></string>
+    <string name="maneuvers_menu_general" >"       "<font color="#d4af37">General</font></string>
+    <string name="maneuvers_menu_mental">"       "<font color="#d4af37">Mental</font></string>
+    <string name="maneuvers_menu_physical" >"       "<font color="#d4af37">Physical</font></string>
+    <string name="maneuvers_menu_forcecasting" ><font color="#d4af37">Forcecasting</font></string>
+    <string name="maneuvers_menu_techcasting" ><font color="#d4af37">Techcasting</font></string>
 
     <!--Random utility stuff -->
     <string name="title_activity_classes">ClassesActivity</string>
@@ -1130,15 +1140,6 @@
 
     <!-- TODO Error reporting medium -->
     <string name="error_please_report_this">Error please report this to <b>#TODO:</b></string>
-    <string name="maneuvers">Maneuvers</string>
-    <string name="maneuvers_maneuver_name">maneuever name</string>
-    <string name="maneuvers_no_such_maneuver_found">no such maneuver found</string>
-    <string name="maneuvers_menu_ability_score" />
-    <string name="maneuvers_menu_str" />
-    <string name="maneuvers_menu_dex">\n</string>
-    <string name="maneuvers_menu_con" />
-    <string name="maneuvers_menu_int">\n</string>
-    <string name="maneuvers_menu_wis" />
-    <string name="maneuvers_menu_cha" />
+
 
 </resources>
