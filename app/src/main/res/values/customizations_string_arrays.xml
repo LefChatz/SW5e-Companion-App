@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="customization_options">
+        <item>class_improvements</item>
+        <item>fighting_styles</item>
+        <item>fighting_masteries</item>
+        <item>lightsaber_forms</item>
+        <item>multiclass_improvements</item>
+        <item>splashclass_improvements</item>
+        <item>weapon_focuses</item>
+        <item>weapon_supremacies</item>
+    </string-array>
+
+</resources>
