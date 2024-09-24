@@ -55,7 +55,7 @@ class CustomizationsHubActivity : AppCompatActivity() {
         customizations.forEach { option ->
             val bt = inflater.inflate(R.layout.customizations_button,binding.ll,false)
             bt.findViewById<TextView>(R.id.customization_option).text=option.replace("_"," ")
-            bt.setOnClickListener{ startActivity(Intent(this, CustomizationsActivity::class.java).putExtra("Background",option)) }
+            bt.setOnClickListener{ startActivity(Intent(this, CustomizationsActivity::class.java).putExtra("Customization Option",option)) }
             binding.ll.addView(bt)
         }
     }

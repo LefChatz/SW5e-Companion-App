@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.sw5ecompanionapp.R
 import com.example.sw5ecompanionapp.SW5ECompanionApp
 import com.example.sw5ecompanionapp.databinding.CustomizationsBinding
@@ -20,13 +21,14 @@ class CustomizationsActivity : AppCompatActivity() {
     private lateinit var inflater: LayoutInflater
     private lateinit var tempView: View
     private var mode=0
-    private lateinit var customizations: Array<String>
-    private lateinit var customizationsInfo: LinkedList<CharSequence>
+    private var customizationOptions= mutableSetOf<CustomizationOption>()
+    private lateinit var customizationOptionInfo: LinkedList<CharSequence>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val customOption = intent.getStringExtra("Background").toString()
+        val customOption = intent.getStringExtra("Customization Option").toString()
 
         binding = CustomizationsBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -35,6 +37,7 @@ class CustomizationsActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
+        @SuppressLint("DiscouragedApi")
         val identifier = resources.getIdentifier(customOption,"array",packageName)
 
         if (identifier==0) {
@@ -45,11 +48,13 @@ class CustomizationsActivity : AppCompatActivity() {
         else{
             val detailsHeap = LinkedList<CharSequence>()
             resources.getTextArray(identifier).toCollection(detailsHeap)
+            while (detailsHeap.size>3){
+                customizationOptions.add(CustomizationOption(detailsHeap.poll()!!.toString(),detailsHeap.poll()!!.toString(),detailsHeap.poll()!!.toString(),detailsHeap.poll()!!))
+            }
+
         }
 
-        customizations = resources.getStringArray(R.array.customization_options)
-
-        customizationsInfo = LinkedList()
+        customizationOptionInfo = LinkedList()
 
         generateOptions()
 
@@ -65,10 +70,16 @@ class CustomizationsActivity : AppCompatActivity() {
     }
 
     private fun generateOptions(){
-        customizations.forEach { option ->
+        customizationOptions.forEach { option ->
             val bt = inflater.inflate(R.layout.customizations_button,binding.ll,false)
-            bt.findViewById<TextView>(R.id.customization_option).text=option.replace("_"," ")
-            bt.setOnClickListener{ startActivity(Intent(this, CustomizationsDetailsActivity::class.java).putExtra("Background",option)) }
+            val txt = bt.findViewById<TextView>(R.id.customization_option)
+            txt.text=option.name
+
+            if(option.hasPreq()) bt.findViewById<TextView>(R.id.customization_option_preq).text = option.preq
+            else (txt.layoutParams as ConstraintLayout.LayoutParams).bottomToBottom = bt.findViewById<ConstraintLayout>(R.id.button_customs_constlout).id
+
+            bt.findViewById<TextView>(R.id.customizations_button_sourcebook).text = option.source
+            bt.setOnClickListener{ startActivity(Intent(this, CustomizationsDetailsActivity::class.java).putExtra("Customization Option",option)) }
             binding.ll.addView(bt)
         }
     }

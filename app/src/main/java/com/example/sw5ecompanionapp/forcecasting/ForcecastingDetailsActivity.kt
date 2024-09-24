@@ -19,11 +19,12 @@ class ForcecastingDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         forcepower = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            intent.getParcelableExtra("Forcepower", Forcepower::class.java).toForcepower()
-        } else {
-            @Suppress("DEPRECATION")
-            intent.getParcelableExtra<Forcepower>("Forcepower").toForcepower()
-        }
+                        intent.getParcelableExtra("Forcepower", Forcepower::class.java).toForcepower()
+                    }
+                    else {
+                        @Suppress("DEPRECATION")
+                        intent.getParcelableExtra<Forcepower>("Forcepower").toForcepower()
+                    }
         binding= ForcecastingForcepowerDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

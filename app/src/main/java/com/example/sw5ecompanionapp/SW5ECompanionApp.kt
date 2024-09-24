@@ -6,6 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sw5ecompanionapp.backgrounds.BackgroundsActivity
 import com.example.sw5ecompanionapp.classes.ClassesActivity
+import com.example.sw5ecompanionapp.customization.CustomizationsHubActivity
 import com.example.sw5ecompanionapp.databinding.ActivityHubBinding
 import com.example.sw5ecompanionapp.equipment.EquipmentActivity
 import com.example.sw5ecompanionapp.feats.FeatsActivity
@@ -34,6 +35,7 @@ class SW5ECompanionApp : AppCompatActivity() {
             binding.buttontech.id->         startActivity(Intent(this, TechcastingActivity::class.java))
             binding.buttonfeats.id->        startActivity(Intent(this, FeatsActivity::class.java))
             binding.buttonmaneuvers.id->    startActivity(Intent(this, ManeuversActivity::class.java))
+            binding.buttoncustoms.id->      startActivity(Intent(this, CustomizationsHubActivity::class.java))
         }
         finish()
     }

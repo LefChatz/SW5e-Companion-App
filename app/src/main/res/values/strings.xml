@@ -1140,6 +1140,7 @@
 
     <!-- TODO Error reporting medium -->
     <string name="error_please_report_this">Error please report this to <b>#TODO:</b></string>
+    <string name="customization_option">customization option</string>
 
 
 </resources>

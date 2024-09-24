@@ -1,41 +1,37 @@
 package com.example.sw5ecompanionapp.customization
 
-import android.annotation.SuppressLint
 import android.content.res.Configuration
+import android.os.Build
 import android.os.Bundle
-import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
-import com.example.sw5ecompanionapp.R
-import com.example.sw5ecompanionapp.databinding.BackgroundsDetailsBinding
-import java.util.LinkedList
+import androidx.core.text.buildSpannedString
+import com.example.sw5ecompanionapp.databinding.CustomizationsDetailsBinding
 
 class CustomizationsDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val background = intent.getStringExtra("Background").toString()
+        val customOption = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getParcelableExtra("Customization Option", CustomizationOption::class.java)!!
+        } else {
+            @Suppress("DEPRECATION")
+            intent.getParcelableExtra("Customization Option")!!
+        }
         val inflater=layoutInflater
 
-        val binding = BackgroundsDetailsBinding.inflate(inflater)
+        val binding = CustomizationsDetailsBinding.inflate(inflater)
         setContentView(binding.root)
 
-        binding.Title.text=background.replace("_"," ").replace(".","-")
-        if(background=="retired_adventurer") binding.Title.text=getString(R.string.backgrounds_un_retired_adventurer)
+        binding.Title.text = customOption.name
 
-        @SuppressLint("DiscouragedApi")
-        val identifier = resources.getIdentifier(background,"array",packageName)
+        binding.SourceBook.text = customOption.source
 
-        if (identifier==0) {
-            val tempText = inflater.inflate(R.layout.universal_textview_nofont_gold,binding.ll,false).findViewById<TextView>(R.id.textview)
-            tempText.text = resources.getString(R.string.error_please_report_this)
-            binding.ll.addView(tempText)
+        val txt = buildSpannedString {
+            append(if (customOption.hasPreq()) "Prerequisite: "+ customOption.preq + "\n\n" else {""})
+            append(customOption.text)
         }
-        else{
-            val detailsHeap = LinkedList<CharSequence>()
-            resources.getTextArray(identifier).toCollection(detailsHeap)
 
-            binding.SourceBook.text=detailsHeap.poll()
-        }
+        binding.CustomsText.text = txt
 
         binding.BackButton.setOnClickListener { returntomain() }
 

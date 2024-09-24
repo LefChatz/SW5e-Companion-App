@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coord"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".feats.FeatsDetailsActivity"
     android:background="@drawable/neutralbg2">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:translationZ="2dp"
@@ -32,12 +36,12 @@
             android:layout_width="0sp"
             android:layout_height="0sp"
             android:fontFamily="@font/starjedi"
-            android:text="@string/backgrounds"
+            android:text="@string/customization_option"
             android:textColor="@color/gold"
             android:translationZ="90dp"
             android:gravity="center"
             android:textAlignment="gravity"
-            android:autoSizeMaxTextSize="22sp"
+            android:autoSizeMaxTextSize="24sp"
             android:autoSizeMinTextSize="14sp"
             android:autoSizeStepGranularity="1sp"
             android:autoSizeTextType="uniform"
@@ -59,17 +63,26 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     <ScrollView
         android:id="@+id/scrolly"
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:paddingVertical="50dp"
+        android:layout_height="wrap_content"
+        app:layout_dodgeInsetEdges="top"
+        android:paddingTop="50dp"
+        android:paddingBottom="100dp"
         android:clipToPadding="false"
         >
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/ll"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/CustomsText"
+            android:layout_marginHorizontal="5dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:text="@string/text"
+            android:textAppearance="@style/GoldText"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </ScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
