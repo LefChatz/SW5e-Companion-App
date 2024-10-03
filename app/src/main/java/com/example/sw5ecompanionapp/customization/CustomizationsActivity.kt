@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -14,6 +15,9 @@ import com.example.sw5ecompanionapp.R
 import com.example.sw5ecompanionapp.SW5ECompanionApp
 import com.example.sw5ecompanionapp.databinding.CustomizationsBinding
 import java.util.LinkedList
+import java.util.Timer
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
 
 class CustomizationsActivity : AppCompatActivity() {
 
@@ -60,7 +64,7 @@ class CustomizationsActivity : AppCompatActivity() {
 
         binding.BackButton.setOnClickListener { returntomain() }
 
-        binding.infobutton.setOnClickListener { generateCustomizationsInfo() }
+        binding.infobutton.setOnClickListener { if (mode == 0) generateCustomizationsInfo(customOption) }
 
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -84,18 +88,21 @@ class CustomizationsActivity : AppCompatActivity() {
         }
     }
 
-    @SuppressLint("CutPasteId")
-    private fun generateCustomizationsInfo(){
-        binding.scrolly.scrollTo(0,0)
-        binding.scrolly.fling(0)
-        /*if(mode==0){
-            binding.ll.removeAllViews()
+    @SuppressLint("DiscouragedApi")
+    private fun generateCustomizationsInfo(customOption: String){
+        val identifier = resources.getIdentifier("customization_$customOption"+"_info","string",packageName)
+        if (identifier!=0){
             mode=1
-        }
-        else{
-            Toast.makeText(this,"Already at Species info",Toast.LENGTH_SHORT)
+            Toast.makeText(this,getText(identifier),Toast.LENGTH_LONG)
                 .show()
-        }*/
+            Executors.newSingleThreadScheduledExecutor().schedule({
+                mode=0
+            }, 5, TimeUnit.SECONDS)
+        }
+        else {
+            Toast.makeText(this,"Error, Could not find Info for this part of the app. \n Please report this to #TODO",Toast.LENGTH_LONG)
+                .show()
+        }
     }
 
     //Menu creation: Currently unnecessary

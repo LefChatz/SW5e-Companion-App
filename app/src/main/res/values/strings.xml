@@ -1140,7 +1140,9 @@
 
     <!-- TODO Error reporting medium -->
     <string name="error_please_report_this">Error please report this to <b>#TODO:</b></string>
+
     <string name="customization_option">customization option</string>
+    <string name="customization_fighting_styles_info"><font color="#d4af37">Certain class features, or the Fighting Stylist feat, offer your choice of fighting style. You can’t choose a fighting style more than once, even if you later get to choose again.\n\n"   "You may choose your fighting style from the following options or roll on the table below to determine it randomly.</font></string>
 
 
 </resources>
