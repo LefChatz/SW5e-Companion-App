@@ -37,7 +37,7 @@ class ManeuversDetailsActivity : AppCompatActivity() {
         binding.ManeuverText.text=temptext
 
         //Background
-        binding.coord.background=AppCompatResources.getDrawable(this@ManeuversDetailsActivity,R.drawable.neutralbg2)
+        binding.coord.background=AppCompatResources.getDrawable(this@ManeuversDetailsActivity,R.drawable.neutralbg)
 
         //Special maneuver cases
 

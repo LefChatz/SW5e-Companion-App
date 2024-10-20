@@ -6,7 +6,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:src="@drawable/togruta2"
+        android:src="@drawable/togruta"
         android:contentDescription="@string/togruta_example"/>
     <TableLayout
         android:layout_width="match_parent"

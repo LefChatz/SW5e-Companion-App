@@ -52,9 +52,9 @@ class ForcecastingDetailsActivity : AppCompatActivity() {
         binding.coord.background=AppCompatResources.getDrawable(this@ForcecastingDetailsActivity,
             with(forcepower.side.toString()){
                 when{
-                    this.contains("Dark",true)->R.drawable.darkbg1
-                    this.contains("Light",true)->R.drawable.lightbg1
-                    this.contains("Universal",true)->R.drawable.neutralbg2
+                    this.contains("Dark",true)->R.drawable.darkbg
+                    this.contains("Light",true)->R.drawable.lightbg
+                    this.contains("Universal",true)->R.drawable.neutralbg
                     else->R.drawable.error404
         }})
 

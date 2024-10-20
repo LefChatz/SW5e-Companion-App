@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".equipment.EquipmentActivity"
-    android:background="@drawable/neutralbg2"
+    android:background="@drawable/neutralbg"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:background="@drawable/fade_black_appbar_background"
@@ -70,7 +70,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:onClick="openequipment"
-            app:background="@drawable/equipmentarmortasa"
+            app:background="@drawable/equipmentinfo"
             app:layout_constraintBottom_toTopOf="@+id/all"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

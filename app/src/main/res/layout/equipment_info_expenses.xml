@@ -7,7 +7,7 @@
     android:paddingTop="20dp"
     android:paddingBottom="50dp"
     android:clipToPadding="false"
-    android:background="@drawable/neutralbg2">
+    android:background="@drawable/neutralbg">
 
     <LinearLayout
         android:id="@+id/llExpenses"

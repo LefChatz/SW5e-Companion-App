@@ -67,7 +67,7 @@ class TechcastingDetailsActivity : AppCompatActivity() {
 
 
         //Background
-        binding.coord.background=AppCompatResources.getDrawable(this@TechcastingDetailsActivity,R.drawable.neutralbg2)
+        binding.coord.background=AppCompatResources.getDrawable(this@TechcastingDetailsActivity,R.drawable.neutralbg)
 
         //Special techpower cases
         if (techpower.techpowername=="spectrum_bolt"){

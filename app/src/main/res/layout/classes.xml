@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".classes.ClassesActivity"
-    android:background="@drawable/neutralbg2"
+    android:background="@drawable/neutralbg"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:translationZ="2dp"
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:onClick="openclass"
                 android:tooltipText="Consular"
-                app:background="@drawable/consularbutton1"
+                app:background="@drawable/consularbutton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/buttonberserker"

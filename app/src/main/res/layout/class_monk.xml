@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".classes.MonkActivity"
-    android:background="@drawable/neutralbg2"
+    android:background="@drawable/neutralbg"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:background="@drawable/fade_black_appbar_background"

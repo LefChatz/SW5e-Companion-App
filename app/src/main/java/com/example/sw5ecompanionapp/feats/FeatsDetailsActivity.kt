@@ -4,8 +4,6 @@ import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
-import android.view.Menu
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import com.example.sw5ecompanionapp.R
@@ -38,7 +36,7 @@ class FeatsDetailsActivity : AppCompatActivity() {
         binding.FeatText.text=temptext
 
         //Background
-        binding.coord.background=AppCompatResources.getDrawable(this@FeatsDetailsActivity,R.drawable.neutralbg2)
+        binding.coord.background=AppCompatResources.getDrawable(this@FeatsDetailsActivity,R.drawable.neutralbg)
 
         //Special feat cases
 

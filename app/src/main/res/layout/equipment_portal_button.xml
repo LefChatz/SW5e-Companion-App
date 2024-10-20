@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/class_button_textview"
         app:layout_constraintTop_toBottomOf="@+id/class_button_image"
-        app:srcCompat="@drawable/lightsabergoldminimal6" />
+        app:srcCompat="@drawable/lightsabergoldminimal" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -31,13 +31,13 @@
         app:layout_constraintEnd_toStartOf="@+id/class_button_textview"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/class_button_image"
-        app:srcCompat="@drawable/lightsabergoldminimal6" />
+        app:srcCompat="@drawable/lightsabergoldminimal" />
 
     <ImageView
         android:id="@+id/class_button_image"
         android:layout_width="0dp"
         android:layout_height="75dp"
-        android:background="@drawable/equipmentarmour"
+        android:background="@drawable/equipmentalltasa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

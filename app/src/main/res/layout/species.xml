@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".species.SpeciesActivity"
-    android:background="@drawable/neutralbg2"
+    android:background="@drawable/neutralbg"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:translationZ="2dp"
@@ -326,7 +326,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="openspecies"
                     android:tooltipText="Mon Calamari"
-                    app:background="@drawable/monkalamaributton"
+                    app:background="@drawable/moncalamaributton"
                     app:layout_constraintEnd_toEndOf="@+id/bothan"
                     app:layout_constraintStart_toStartOf="@+id/bothan"
                     app:layout_constraintTop_toTopOf="@+id/kel_dor"

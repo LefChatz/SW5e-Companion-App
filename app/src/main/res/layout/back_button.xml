@@ -5,6 +5,6 @@
     android:layout_height="50sp"
     android:background="?android:attr/selectableItemBackground"
     android:contentDescription="@string/back"
-    android:src="@drawable/arrowbackgoldfinal"
+    android:src="@drawable/arrowbackgold"
     android:clickable="false"
     />
