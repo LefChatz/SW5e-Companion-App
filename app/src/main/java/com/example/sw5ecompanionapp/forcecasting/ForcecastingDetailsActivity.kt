@@ -38,11 +38,14 @@ class ForcecastingDetailsActivity : AppCompatActivity() {
         binding.ForcepowerTitle.text=forcepower.printedname
         binding.ForcepowerText.text=forcepower.detailsText
 
-        binding.scrolly.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+        //v, scrollX, scrollY, oldScrollX, oldScrollY ->
+        binding.scrolly.setOnScrollChangeListener { _, _, scrollY, _, _ ->
             if (scrollY >= 120) {
-                binding.title.animate()
-                    .alpha(1F)
-                    .duration=50
+                if (binding.title.alpha==0.0F) {
+                    binding.title.animate()
+                        .alpha(1F)
+                        .duration=50
+                }
             }
             else binding.title.animate().alpha(0.0F)
         }

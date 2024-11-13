@@ -51,18 +51,23 @@ class TechcastingDetailsActivity : AppCompatActivity() {
         binding.TechpowerDetails.text= buildSpannedString {
             bold { append("Casting Time: ") };appendLine(techpower.castingtime)
             bold { append("Range: ") };appendLine(techpower.range)
-            bold { append("Duration: ") };appendLine(techpower.duration)
+            bold { append("Duration: ") };append(techpower.duration);appendLine(if(techpower.concentration){", Concentration"}else{""})
             appendLine();append("   ");append(techpower.detailsText.trim())
         }
 
         //make Title appear on the top bar when the in details title gets scrolled past the top of the screen
-        binding.scrolly.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
-            if (scrollY >= 120 && binding.title.alpha==0.0F) {
-                binding.title.animate()
-                    .alpha(1F)
-                    .duration=50
+        //v, scrollX, scrollY, oldScrollX, oldScrollY ->
+        binding.scrolly.setOnScrollChangeListener { _, _, scrollY, _, _ ->
+            if (scrollY >= 120) {
+                if (binding.title.alpha==0.0F) {
+                    binding.title.animate()
+                        .alpha(1F)
+                        .duration=50
+                }
             }
-            else if(binding.title.alpha==1F && scrollY<120) binding.title.animate().alpha(0.0F)
+            else binding.title.animate()
+                .alpha(0.0F)
+                .duration=50
         }
 
 
