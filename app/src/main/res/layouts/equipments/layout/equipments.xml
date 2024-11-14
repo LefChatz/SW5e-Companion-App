@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/equipmentcordl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".equipment.EquipmentActivity"
+    android:background="@drawable/neutralbg"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/fade_black_appbar_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+            <ImageButton
+                android:id="@+id/infobutton"
+                android:layout_width="32dp"
+                android:layout_height="match_parent"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/infogold"
+                android:contentDescription="@string/info"
+                android:layout_gravity="end"
+                />
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.example.sw5ecompanionapp.widget.BackButton
+            android:id="@+id/BackButton"
+            android:layout_width="70sp"
+            android:layout_height="0sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/starjedi"
+            android:text="@string/equipment"
+            android:textColor="@color/gold"
+            android:textSize="25sp"
+            android:translationZ="90dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentcl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="50sp"
+        android:paddingBottom="25sp"
+        tools:context=".equipment.EquipmentActivity"
+        tools:showIn="@layout/equipments">
+
+        <com.example.sw5ecompanionapp.widget.EquipmentButton
+            android:id="@+id/info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="openequipment"
+            app:background="@drawable/equipmentinfo"
+            app:layout_constraintBottom_toTopOf="@+id/all"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:text="Equipment info" />
+
+        <com.example.sw5ecompanionapp.widget.EquipmentButton
+            android:id="@+id/all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="openequipment"
+            app:background="@drawable/equipmentalltasa"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/info"
+            app:layout_constraintVertical_bias="0.5"
+            app:text="Equipment List" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

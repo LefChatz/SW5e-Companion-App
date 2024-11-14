@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/class_button_relout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground"
+    >
+    <ImageView
+        android:id="@+id/class_button_image"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/consularbutton"
+        />
+
+    <TextView
+        android:id="@+id/class_button_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100sp"
+        android:fontFamily="@font/starjedi"
+        android:gravity="bottom|center"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textColor="@color/gold"
+        android:textSize="20sp"
+        tools:text="conSuLaX"
+        />
+</RelativeLayout>

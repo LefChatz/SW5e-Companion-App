@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrolly"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="20dp"
+    android:paddingBottom="50dp">
+
+    <LinearLayout
+        android:id="@+id/llWeapons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="5dp"
+            android:text="@string/equipment_info_weapons1"
+            android:textAppearance="@style/GoldTextStarjedi" />
+
+        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:title="Weapon Proficiency"
+            app:text="@string/equipment_info_weapons2" />
+
+        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:title="improvised weapons"
+            app:text="@string/equipment_info_weapons3" />
+
+        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:title="Weapon Properties"
+            app:text="@string/equipment_info_weapons4"
+            app:makeStarjedi="true" />
+
+        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:title="Special Weapons"
+            app:text="@string/equipment_info_weapons5"
+            app:makeStarjedi="true" />
+
+    </LinearLayout>
+</ScrollView>

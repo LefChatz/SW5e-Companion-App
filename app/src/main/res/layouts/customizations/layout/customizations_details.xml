@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coord"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feats.FeatsDetailsActivity"
+    android:background="@drawable/neutralbg">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:translationZ="2dp"
+        android:background="@drawable/fade_black_appbar_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.example.sw5ecompanionapp.widget.BackButton
+            android:id="@+id/BackButton"
+            android:layout_width="70sp"
+            android:layout_height="0sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/Title"
+            android:layout_width="0sp"
+            android:layout_height="0sp"
+            android:fontFamily="@font/starjedi"
+            android:text="@string/customization_option"
+            android:textColor="@color/gold"
+            android:translationZ="90dp"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:autoSizeMaxTextSize="24sp"
+            android:autoSizeMinTextSize="14sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/SourceBook"
+            app:layout_constraintStart_toEndOf="@+id/BackButton"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/SourceBook"
+            android:layout_width="60sp"
+            android:layout_height="0sp"
+            android:text="@string/source"
+            android:textColor="@color/gold"
+            android:textSize="22sp"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:id="@+id/scrolly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_dodgeInsetEdges="top"
+        android:paddingTop="50dp"
+        android:paddingBottom="100dp"
+        android:clipToPadding="false"
+        >
+        <TextView
+            android:id="@+id/CustomsText"
+            android:layout_marginHorizontal="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text"
+            android:textAppearance="@style/GoldText"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

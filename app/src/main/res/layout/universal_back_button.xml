@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/BackButton"
+    android:layout_width="70sp"
+    android:layout_height="50sp"
+    android:background="?android:attr/selectableItemBackground"
+    android:contentDescription="@string/back"
+    android:src="@drawable/arrowbackgold"
+    android:clickable="false"
+    />

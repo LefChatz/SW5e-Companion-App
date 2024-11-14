@@ -37,7 +37,7 @@ android {
     sourceSets {
         main {
             res {
-                srcDirs 'src\\main\\res', 'src\\main\\res\\stringarrays\\string_arrays'
+                srcDirs 'src\\main\\res', 'src\\main\\res\\stringarrays\\string_arrays', 'src\\main\\res\\layouts\\backgrounds', 'src\\main\\res\\layouts\\classes', 'src\\main\\res\\layouts\\forcecasting', 'src\\main\\res\\layouts\\species', 'src\\main\\res\\layouts\\techcasting', 'src\\main\\res\\layouts\\equipments', 'src\\main\\res\\layouts\\maneuvers', 'src\\main\\res\\layouts\\feats', 'src\\main\\res\\layouts\\customizations'
             }
         }
     }
