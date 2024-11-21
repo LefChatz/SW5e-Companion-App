@@ -11,7 +11,6 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sw5ecompanionapp.R
 import com.example.sw5ecompanionapp.SW5ECompanionApp
-import com.example.sw5ecompanionapp.databinding.CustomizationsBinding
 import com.example.sw5ecompanionapp.databinding.CustomizationsHubBinding
 import java.util.LinkedList
 
@@ -21,8 +20,7 @@ class CustomizationsHubActivity : AppCompatActivity() {
     private lateinit var inflater: LayoutInflater
     private lateinit var tempView: View
     private var mode=0
-    private lateinit var customizations: Array<String>
-    private lateinit var customizationsInfo: LinkedList<CharSequence>
+    private var customizations= mutableSetOf<CustomizationOption>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,9 +32,11 @@ class CustomizationsHubActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        customizations = resources.getStringArray(R.array.customization_options)
-
-        customizationsInfo = LinkedList()
+        val customizationsHeap = LinkedList<CharSequence>()
+        resources.getStringArray(R.array.customization_options).toCollection(customizationsHeap)
+        while (customizationsHeap.size>1){
+            customizations.add(CustomizationOption(customizationsHeap.poll()!!.toString(),"","",customizationsHeap.poll()!!.toString().toBoolean(),""))
+        }
 
         generateOptions()
 
@@ -53,9 +53,9 @@ class CustomizationsHubActivity : AppCompatActivity() {
 
     private fun generateOptions(){
         customizations.forEach { option ->
-            val bt = inflater.inflate(R.layout.customizations_button,binding.ll,false)
-            bt.findViewById<TextView>(R.id.customization_option).text=option.replace("_"," ")
-            bt.setOnClickListener{ startActivity(Intent(this, CustomizationsActivity::class.java).putExtra("Customization Option",option)) }
+            val bt = inflater.inflate(if (option.isBig)R.layout.customizations_button_big else R.layout.customizations_button,binding.ll,false)
+            bt.findViewById<TextView>(R.id.customization_option).text=option.name.replace("_"," ")
+            bt.setOnClickListener{ startActivity(Intent(this, CustomizationsActivity::class.java).putExtra("Customization Option",option.name)) }
             binding.ll.addView(bt)
         }
     }

@@ -8,6 +8,7 @@ data class CustomizationOption(
     val name: String="Empty Name",
     val preq: String="",
     val source: String="SRC",
+    val isBig: Boolean=false,
     val text: CharSequence="Model text"): Parcelable
 
 fun CustomizationOption.isNotEmpty(): Boolean{
@@ -19,5 +20,5 @@ fun CustomizationOption.isEmpty(): Boolean{
 }
 
 fun CustomizationOption.hasPreq(): Boolean{
-    return this.preq!=""
+    return this.preq.trim()!=""
 }

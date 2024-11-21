@@ -12,10 +12,8 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.sw5ecompanionapp.R
-import com.example.sw5ecompanionapp.SW5ECompanionApp
 import com.example.sw5ecompanionapp.databinding.CustomizationsBinding
 import java.util.LinkedList
-import java.util.Timer
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 
@@ -26,7 +24,6 @@ class CustomizationsActivity : AppCompatActivity() {
     private lateinit var tempView: View
     private var mode=0
     private var customizationOptions= mutableSetOf<CustomizationOption>()
-    private lateinit var customizationOptionInfo: LinkedList<CharSequence>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,13 +49,10 @@ class CustomizationsActivity : AppCompatActivity() {
         else{
             val detailsHeap = LinkedList<CharSequence>()
             resources.getTextArray(identifier).toCollection(detailsHeap)
-            while (detailsHeap.size>3){
-                customizationOptions.add(CustomizationOption(detailsHeap.poll()!!.toString(),detailsHeap.poll()!!.toString(),detailsHeap.poll()!!.toString(),detailsHeap.poll()!!))
+            while (detailsHeap.size>4){
+                customizationOptions.add(CustomizationOption(detailsHeap.poll()!!.toString(),detailsHeap.poll()!!.toString(),detailsHeap.poll()!!.toString(),detailsHeap.poll()!!.toString().toBoolean(),detailsHeap.poll()!!))
             }
-
         }
-
-        customizationOptionInfo = LinkedList()
 
         generateOptions()
 
@@ -75,12 +69,14 @@ class CustomizationsActivity : AppCompatActivity() {
 
     private fun generateOptions(){
         customizationOptions.forEach { option ->
-            val bt = inflater.inflate(R.layout.customizations_button,binding.ll,false)
+            val bt = inflater.inflate(if (option.isBig)R.layout.customizations_button_big else R.layout.customizations_button,binding.ll,false)
             val txt = bt.findViewById<TextView>(R.id.customization_option)
             txt.text=option.name
 
-            if(option.hasPreq()) bt.findViewById<TextView>(R.id.customization_option_preq).text = option.preq
-            else (txt.layoutParams as ConstraintLayout.LayoutParams).bottomToBottom = bt.findViewById<ConstraintLayout>(R.id.button_customs_constlout).id
+            if(option.hasPreq()) {
+                bt.findViewById<TextView>(R.id.customization_option_preq).text = option.preq
+                (txt.layoutParams as ConstraintLayout.LayoutParams).bottomToBottom = -1
+            }
 
             bt.findViewById<TextView>(R.id.customizations_button_sourcebook).text = option.source
             bt.setOnClickListener{ startActivity(Intent(this, CustomizationsDetailsActivity::class.java).putExtra("Customization Option",option)) }
@@ -115,7 +111,6 @@ class CustomizationsActivity : AppCompatActivity() {
 
     private fun returntomain() {
         if(mode==0){
-            startActivity(Intent(this, SW5ECompanionApp::class.java))
             finish()
         }
         else{
