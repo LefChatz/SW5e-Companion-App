@@ -96,7 +96,7 @@ class CustomizationsActivity : AppCompatActivity() {
             }, 5, TimeUnit.SECONDS)
         }
         else {
-            Toast.makeText(this,"Error, Could not find Info for this part of the app. \n Please report this to #TODO",Toast.LENGTH_LONG)
+            Toast.makeText(this,"Error, Could not find Info for this part of the app. \n"+R.string.please_report_this,Toast.LENGTH_LONG)
                 .show()
         }
     }

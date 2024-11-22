@@ -64,6 +64,7 @@ class TechcastingAdapter(private val myContext: Context, private val dataset: Mu
 
 
     }
+
     override fun getItemViewType(position: Int): Int {
          with(dataset[position]){
              return when{
@@ -110,10 +111,11 @@ class TechcastingAdapter(private val myContext: Context, private val dataset: Mu
     private fun techpower(view: TechpowerHolder, techpower: Techpower){
         view.techpowername.text=techpower.printedname
         if (techpower.techpowername=="superior_translation_program") view.techpowername.textSize=20F
+        else view.techpowername.textSize=24F
         view.techpowerdetails.text= buildSpannedString{
             append(when(techpower.level){0->"At-will";1->"1st-level";2->"2nd-level";3->"3rd-level";else->"${techpower.level}th-level"})
         }
-        var temptext = techpower.castingtime + if (techpower.concentration) " C" else ""
+        val temptext = techpower.castingtime + if (techpower.concentration) " C" else ""
         view.castingtime.text= temptext
         view.constlout.setOnClickListener{
             myContext.startActivity(Intent(myContext, TechcastingDetailsActivity::class.java).putExtra("Techpower",techpower))

@@ -58,5 +58,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/favorite_button" />
+        android:contentDescription="@string/favorite_feat_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,7 @@
     <TextView
         android:id="@+id/table_techpower_name"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/starjedi"
         android:gravity="bottom"
         android:letterSpacing="0.1"
@@ -23,7 +23,7 @@
         app:layout_constraintEnd_toStartOf="@+id/table_techpower_fav"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Name Container for big powers" />
+        tools:text="Name Container for big techpowers" />
 
     <TextView
         android:id="@+id/table_techpower_details"
@@ -58,5 +58,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/favorite_button" />
+        android:contentDescription="@string/favorite_techpower_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
