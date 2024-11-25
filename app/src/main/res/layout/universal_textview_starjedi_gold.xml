@@ -7,5 +7,4 @@
     android:text="@string/sampletext"
     android:textAppearance="@style/GoldTextStarjedi"
     >
-
 </TextView>

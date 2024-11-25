@@ -124,7 +124,7 @@
         <item name="name">counterstrike Style</item>
         <item name="preq"> </item>
         <item name="sors">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="text">You are skilled at returning attacks at those who dare strike you. You gain the following benefits:\n\n" •  "When you would provoke an opportunity attack on your turn, you can use your bonus action to force the creature to make the opportunity attack, if it can.\n" •  "Creatures who make opportunity attacks against you provoke opportunity attacks from you.</item>
         <!--Customization Option-->
         <item name="name">covert Style</item>
@@ -184,7 +184,7 @@
         <item name="name">great weapon Style</item>
         <item name="preq"> </item>
         <item name="sors">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="text">You are skilled at putting the weight of a weapon to your advantage. You gain the following benefits:\n\n" •  "While you are wielding a two-handed light- or vibro-weapon with which you are proficient, your weapon damage rolls gain a minimum roll threshold, discussed in chapter 7.\n" •  "Grasping a two-handed weapon you are wielding in only one hand with your other hand no longer requires your object interaction.</item>
         <!--Customization Option-->
         <item name="name">guerrilla Style</item>
@@ -232,7 +232,7 @@
         <item name="name">Sharpshooter Style</item>
         <item name="preq"> </item>
         <item name="sors">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="text">You are skilled with firing at distant targets. You gain the following benefits:\n\n" •  "You can use your bonus action to mark a target greater than 30 feet from you that you can see. If you do so, and that target moves at least 5 feet before the start of your next turn, they provoke an opportunity attack from you, and you can make a ranged weapon attack with a blaster weapon for that opportunity attack.\n" •  "Your ranged weapon attacks reduce partial cover by one step (from three-quarters to half or half to one-quarter) against targets greater than 30 feet from you. If the target has one-quarter cover, you ignore it entirely.\n" •  "Grasping a two-handed weapon you are wielding in only one hand with your other hand no longer requires your object interaction.</item>
         <!--Customization Option-->
         <item name="name">Shield Style</item>
@@ -307,7 +307,7 @@
         <item name="name">blindfighting Mastery</item>
         <item name="preq"> </item>
         <item name="sors">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="text">You’ve mastered fighting without sight, finding a home in the darkness that your enemies fear. You gain the following benefits:\n\n" •  "Once per round, when a creature would have disadvantage on an attack roll against you due to being blinded, they must reroll one of the dice once.\n" •  "Once per round, when you would have advantage on an attack roll against a creature that is blinded, you can reroll one of the dice once.\n" •  "You gain blindsight out to a number of feet equal to 5 x your proficiency bonus. If you already have blindsight, it instead increases by a number of feet equal to 5 x your proficiency bonus.</item>
         <!--Customization Option-->
         <item name="name">brawler Mastery</item>
@@ -319,7 +319,7 @@
         <item name="name">counterstrike Mastery</item>
         <item name="preq"> </item>
         <item name="sors">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="text">You’ve mastered returning attacks at those who dare strike you, effortless turning aside their blades while striking them with your own. You gain the following benefits:\n\n" •  "Creatures have disadvantage on damage rolls from opportunity attacks they make that hit you, and you have advantage on damage roll for opportunity attacks you make that hit.\n" •  "When you roll a die to reduce the damage you take from a weapon, you have advantage on the die roll.\n" •  "Once per round, when a creature provokes an opportunity attack from you, you can choose to gain a special reaction which you can only use to make that opportunity attack. If you do so, you make the opportunity attack without the aid of your proficiency bonus.\n" •  "When you would be the target of a weapon attack, you can immediately use your reaction to make an opportunity attack against the target without your proficiency bonus. On a hit, the target suffers the attack’s normal effects, and you impose disadvantage on the triggering roll.</item>
         <!--Customization Option-->
         <item name="name">covert Mastery</item>
@@ -343,7 +343,7 @@
         <item name="name">dual wield Mastery</item>
         <item name="preq"> </item>
         <item name="sors">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="text">You’ve mastered fighting with two weapons, becoming a flurry of motion. You gain the following benefits:\n\n" •  "You can engage in Two-Weapon Fighting even when the weapons you are wielding lack the light property.\n" •  "You can reload two weapons when you would normally only be able to reload one, and reloading no longer requires a free hand, provided you are wielding separate weapons in each hand.\n" •  "Once per round, when you make an opportunity attack while wielding separate weapons in each hand, you can attack with both weapons. Make a separate attack roll with each weapon.\n" •  "When you use your bonus action to engage in Two-Weapon Fighting, you can choose to forgo one or more attacks. For each attack you forgo, you gain a +1 bonus to AC until the start of your next turn.\n" •  "When you use your bonus action to engage in Two-Weapon Fighting, you can choose to forgo your proficiency bonus. If you do so, you can make an additional attack with that weapon, also without your proficiency bonus. If you would normally make more than one attack with your bonus action, only one attack is made without your proficiency bonus.</item>
         <!--Customization Option-->
         <item name="name">duelist Mastery</item>
@@ -355,13 +355,13 @@
         <item name="name">equilibrium Mastery</item>
         <item name="preq"> </item>
         <item name="sors">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="text">You’ve mastered fighting without the confines of armor, treating combat as an elegant dance. You gain the following benefits:\n\n" •  "If you are disarmed, you can use your reaction to immediately catch the weapon.\n" •  "While you are wearing light or no armor and not wielding a shield, when a creature misses you with a weapon attack, you can use your reaction to make an unarmed strike or weapon attack against that creature without your proficiency bonus.\n" •  "While you are wearing light or no armor and not wielding a shield, when a creature hits you with a weapon attack, you can use your reaction to impose a penalty to the attack roll equal to your proficiency bonus, potentially causing the attack to miss.</item>
         <!--Customization Option-->
         <item name="name">explosives Mastery</item>
         <item name="preq"> </item>
         <item name="sors">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="text">You’ve mastered fighting with explosives, causing untold destruction. You gain the following benefits:\n\n" •  "When determining the save DC of a grenade, mine, or missile you control, you can use 8 + your proficiency bonus + your Intelligence modifier, if it would be higher than the item’s DC.\n" •  "You have advantage on saving throws against grenades, mines, and missiles you control.\n" •  "When using a grenade, mine, or missile that requires a saving throw and deals damage, you can take a penalty to the save DC equal to your proficiency bonus. If you do so, the item’s damage increases by an amount equal to your proficiency bonus.</item>
         <!--Customization Option-->
         <item name="name">formation Mastery</item>
@@ -373,13 +373,13 @@
         <item name="name">formfighting Mastery</item>
         <item name="preq"> </item>
         <item name="sors">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="text"><b>Prerequisite:</b> The ability to cast force powers\n"   "You’ve mastered the basics of the known forms of lightsaber combat, wielding your weapon with unparalleled grace. You gain the following benefits:\n\n" •  "You learn three lightsaber forms, detailed later in this chapter. If you already know at least three lightsaber forms, you instead learn seven lightsaber forms.\n" •  "Once on each of your turns, before you make a melee weapon attack, you can choose to forgo your proficiency bonus. If you do so, you can engage in one of your lightsaber forms without using your bonus action. If that form lets you make an attack, that attack is also made without your proficiency bonus.\n" •  "Once on each of your turns, before you make a melee weapon attack, you can choose to forgo your proficiency bonus. If you do so, and the attack hits, you can choose another creature within 5 feet of it. If the original attack roll would hit the second creature, it takes damage of the weapon’s type equal to twice your proficiency bonus.</item>
         <!--Customization Option-->
         <item name="name">great weapon Mastery</item>
         <item name="preq"> </item>
         <item name="sors">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="text">You’ve mastered putting the weight of a weapon to your advantage, letting its momentum empower your strikes. You gain the following benefits:\n\n" •  "On your turn, when you score a critical hit or reduce a creature to 0 hit points with a melee weapon attack, you can make one melee weapon attack as a bonus action.\n" •  "While you are wielding a two-handed light- or vibro-weapon with which you are proficient, when you miss with a melee weapon attack, you can use your bonus action to repeat the attack against the same target. Any modifications to the original attack roll, such as advantage, disadvantage, or without your proficiency bonus, also affect this attack roll. On a hit, this attack deals kinetic damage equal to your Strength modifier.\n" •  "You have advantage on ability checks and saving throws to avoid being disarmed.\n" •  "While you are wielding a two-handed light- or vibro-weapon with which you are proficient, before you make a melee weapon attack, you can choose to forgo your proficiency bonus. If the attack hits, you add twice your proficiency bonus to the attack’s damage.</item>
         <!--Customization Option-->
         <item name="name">guerrilla Mastery</item>
@@ -427,7 +427,7 @@
         <item name="name">Sharpshooter Mastery</item>
         <item name="preq"> </item>
         <item name="sors">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="text">You’ve mastered blaster weapons and can easily make shots that others find impossible. You gain the following benefits:\n\n" •  "Attacking at long range doesn’t impose disadvantage on your ranged weapon attack rolls.\n" •  "Your ranged weapon attacks reduce partial cover by one step (from three-quarters to half or half to one-quarter) against targets greater than 30 feet from you. If the target has one-quarter cover, you ignore it entirely.\n" •  "Before you make an attack against a target greater than 30 feet from you with a blaster weapon with which you are proficient, you can choose to forgo your proficiency bonus. If the attack hits, you add twice your proficiency bonus to the attack’s damage.</item>
         <!--Customization Option-->
         <item name="name">Shield Mastery</item>
@@ -457,7 +457,7 @@
         <item name="name">Superiority Mastery</item>
         <item name="preq"> </item>
         <item name="sors">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="text">You’ve mastered utilizing maneuvers to enhance your skills on the battlefield, expanded. You gain the following benefits:\n\n" •  "You learn one maneuver, detailed in Chapter 13. If you already know at least one maneuver, you instead learn three maneuvers. Your maneuver ability is Strength, Dexterity, or Constitution for physical maneuvers (your choice), your Intelligence, Wisdom, or Charisma for mental maneuvers (your choice), and an ability of your choice for general maneuvers.\n" •  "You gain one superiority die. If you already have at least one superiority die, you instead gain two additional superiority dice. Your superiority die is a d4, and it changes as you gain levels: to d6 at 5th level, to d8 at 9th level, to d10 at 13th level, and to d12 at 17th level. A superiority die is expended when you use it. You regain all of your expended superiority dice when you finish a short or long rest.\n" •  "When you use a maneuver on your turn that involves rolling a superiority die, you can use your bonus action to gain advantage on the superiority die roll.\n" •  "Choose one maneuver you know. When you would use the chosen maneuver, you can use a d4 instead of expending a superiority die. You can do so a number of times equal to your proficiency bonus. You regain all expended uses when you complete a long rest.</item>
         <!--Customization Option-->
         <item name="name">throwing Mastery</item>
@@ -469,7 +469,7 @@
         <item name="name">twin-blade Mastery</item>
         <item name="preq"> </item>
         <item name="sors">PHB</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="text">You’ve mastered fighting with double-bladed weapons, using both ends to devastating effect. You gain the following benefits:\n\n" •  "While you are wielding a double weapon with which you are proficient, whenever you roll the maximum on a weapon damage die against a creature, you gain a +1 bonus to the next attack roll you make against that creature before the end of your next turn.\n" •  "You can engage in Double-Weapon Fighting even when the weapon you are wielding lacks the light property.\n" •  "Before you make a melee weapon attack while wielding a double weapon in two hands, you can choose to forgo your proficiency bonus. If the attack hits, you add one and a half times your proficiency bonus to the attack’s damage.\n" •  "Before you make a melee weapon attack while wielding a double weapon in one hand, you can choose to forgo your proficiency bonus. If the attack hits, you add your proficiency bonus to the attack’s damage.</item>
         <!--Customization Option-->
         <item name="name">versatile Mastery</item>
@@ -745,13 +745,13 @@
         <item name="name">crushing weapon Focus</item>
         <item name="preq"> </item>
         <item name="sors">WH</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="text">You’ve focused your combat training on crushing weapons. You gain the following benefits while wielding any of these weapons, if you are proficient with it:\n\n" •  "You gain a +1 bonus to the weapon’s damage rolls.\n" •  "When you score a critical hit with the weapon, you add the attack’s governing ability modifier twice, instead of once, to the attack’s damage.\n" •  "When you take the Attack action, you can choose to forgo one or more attacks to shatter the ground. For each attack you forgo, choose a separate 5-foot square within your weapon’s reach to shatter. That square becomes difficult terrain until cleared. Each 5-foot-square portion of the area requires at least 1 minute to clear by hand. Additionally, each creature other than you in an affected square must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon). On a failed save, a creature takes damage equal to the attack’s governing ability modifier.</item>
         <!--Customization Option-->
         <item name="name">heavy weapon Focus</item>
         <item name="preq"> </item>
         <item name="sors">WH</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="text">You’ve focused your combat training on heavy weapons. You gain the following benefits while wielding any of these weapons, if you are proficient with it:\n\n" •  "You gain a +1 bonus to the weapon’s damage rolls.\n" •  "When you score a critical hit with the weapon, you add the attack’s governing ability modifier twice, instead of once, to the attack’s damage.\n" •  "When you take the Attack action, you can choose to forgo one or more attacks to suppress. For each attack you forgo, you expend ammunition equal to half your weapon’s reload number (minimum of 2) and choose a 10-foot-cube area within your weapon’s normal range. Each creature in the area that is no more than one size larger than you (your size or smaller if your weapon has the light property) must make a Wisdom saving throw (DC = 8 + your bonus to attacks with the weapon) or become frightened of you until the end of their next turn.</item>
         <!--Customization Option-->
         <item name="name">polearm Focus</item>
@@ -796,13 +796,13 @@
         <item name="name">crushing weapon Supremacy</item>
         <item name="preq"> </item>
         <item name="sors">WH</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="text">You’ve specialized your combat training with crushing weapons. You gain the following benefits while wielding any of these weapons, if you are proficient with it:\n\n" •  "You gain a +1 bonus to the weapon’s attack rolls.\n" •  "Whenever you have advantage on an attack roll and hit and the lower of the two d20 rolls would also hit (or a creature has disadvantage on a saving throw and the higher of the two d20s would also fail), and the target is no more than one size larger than you (your size or smaller if your weapon has the light property), it must succeed on a Strength saving throw (DC = 8 + your bonus to attacks with the weapon) or it is pushed 5 feet in a direction of your choice.\n" •  "Once per round, when you use your reaction to make a melee weapon attack, you have advantage on the attack roll.\n" •  "When you take the Attack action, you can choose to forgo one or more attacks to shatter the ground. For each attack you forgo, choose a separate 5-foot square within your weapon’s reach to shatter. That square becomes difficult terrain until cleared. Each 5-foot-square portion of the area requires at least 1 minute to clear by hand. Additionally, each creature other than you in an affected square must make a Dexterity saving throw (DC = 8 + your bonus to attacks with the weapon). On a failed save, a creature takes damage equal to the attack’s governing ability modifier. If you could already shatter, instead you can do so as your bonus action.</item>
         <!--Customization Option-->
         <item name="name">heavy weapon Supremacy</item>
         <item name="preq"> </item>
         <item name="sors">WH</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="text">You’ve specialized your combat training with heavy weapons. You gain the following benefits while wielding any of these weapons, if you are proficient with it:\n\n" •  "You gain a +1 bonus to the weapon’s attack rolls.\n" •  "Whenever you have advantage on an attack roll and hit and the lower of the two d20 rolls would also hit (or a creature has disadvantage on a saving throw and the higher of the two d20s would also fail), and the target is no more than one size larger than you (your size or smaller if your weapon has the light property), it must succeed on a Strength saving throw (DC = 8 + your bonus to attacks with the weapon) or it is pushed 5 feet in a direction of your choice.\n" •  "When a creature rolls a 1 on the saving throw against one of these weapons, they treat the effect’s damage as if it had rolled the maximum. If a creature would already treat the effect’s damage as if it had rolled the maximum when it rolls a 1 on this weapon’s saving throw, it instead does so on a roll of 1 or 2.\n" •  "When you take the Attack action, you can choose to forgo one or more attacks to suppress. For each attack you forgo, you expend ammunition equal to half your weapon’s reload number (minimum of 2) and choose a 10-foot-cube area within your weapon’s normal range. Each creature in the area that is no more than one size larger than you (your size or smaller if your weapon has the light property) must make a Wisdom saving throw (DC = 8 + your bonus to attacks with the weapon) or become frightened of you until the end of their next turn. If you could already suppress, instead you can do so as your bonus action.</item>
         <!--Customization Option-->
         <item name="name">polearm Supremacy</item>
@@ -826,8 +826,43 @@
         <item name="name">trip weapon Supremacy</item>
         <item name="preq"> </item>
         <item name="sors">WH</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <item name="text">You’ve specialized your combat training with trip weapons. You gain the following benefits while wielding any of these weapons, if you are proficient with it:\n\n" •  "You gain a +1 bonus to the weapon’s attack rolls.\n" •  "Whenever you have advantage on an attack roll and hit and the lower of the two d20 rolls would also hit (or a creature has disadvantage on a saving throw and the higher of the two d20s would also fail), and the target is no more than one size larger than you (your size or smaller if your weapon has the light property), it must succeed on a Strength saving throw (DC = 8 + your bonus to attacks with the weapon) or it drops an object of your choice. If you have a free hand, you catch the weapon. Otherwise, it lands at your feet.\n" •  "You have advantage on Strength (Athletics) checks and attack rolls made to trip a creature.\n" •  "When you take the Attack action, you can choose to forgo one or more attacks to interrupt. For each attack you forgo, one creature within your reach gains no benefit to armor class from its shield until the end of its next turn. If you could already interrupt, instead you can do so as your bonus action.</item>
+    </string-array>
+    <string-array name="fighting_styles_info">
+        <item name="info">Fighting Styles\n\n<font face="sans-serif">Certain class features, or the Fighting Stylist feat, offer your choice of fighting style. You can’t choose a fighting style more than once, even if you later get to choose again.\n\n"   "You may choose your fighting style from the following options or roll on the table below to determine it randomly.</font></item>
+        <item name="info_table 1">Area</item>
+        <item name="info_table 2">Assisting</item>
+        <item name="info_table 3">Berserk</item>
+        <item name="info_table 4">Blindfighting</item>
+        <item name="info_table 5">Brawler</item>
+        <item name="info_table 6">Counterstrike</item>
+        <item name="info_table 7">Covert</item>
+        <item name="info_table 8">Defense</item>
+        <item name="info_table 9">Disruption</item>
+        <item name="info_table 10">Dual Wield</item>
+        <item name="info_table 11">Duelist</item>
+        <item name="info_table 12">Equilibrium</item>
+        <item name="info_table 13">Explosives</item>
+        <item name="info_table 14">Formation</item>
+        <item name="info_table 15">Formfighting</item>
+        <item name="info_table 16">Great Weapon</item>
+        <item name="info_table 17">Guerrilla</item>
+        <item name="info_table 18">Gunning</item>
+        <item name="info_table 19">Mounted</item>
+        <item name="info_table 20">Onslaught</item>
+        <item name="info_table 21">Poisoner</item>
+        <item name="info_table 22">Secured</item>
+        <item name="info_table 23">Sentinel</item>
+        <item name="info_table 24">Sharpshooter</item>
+        <item name="info_table 25">Shield</item>
+        <item name="info_table 26">Snapshot</item>
+        <item name="info_table 27">Split</item>
+        <item name="info_table 28">Spotting</item>
+        <item name="info_table 29">Superiority</item>
+        <item name="info_table 30">Throwing</item>
+        <item name="info_table 31">Twin-Blade</item>
+        <item name="info_table 32">Versatile</item>
     </string-array>
 
     <!--Customization Option-->

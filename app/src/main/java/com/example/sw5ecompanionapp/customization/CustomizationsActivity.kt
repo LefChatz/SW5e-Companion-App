@@ -86,7 +86,24 @@ class CustomizationsActivity : AppCompatActivity() {
 
     @SuppressLint("DiscouragedApi")
     private fun generateCustomizationsInfo(customOption: String){
-        val identifier = resources.getIdentifier("customization_$customOption"+"_info","string",packageName)
+        when(customOption){
+            "fighting_styles"->{
+                mode=1
+                binding.ll.removeAllViews()
+                val infoHeap = LinkedList<CharSequence>()
+                resources.getTextArray(R.array.fighting_styles_info).toCollection(infoHeap)
+                val txt = inflater.inflate(R.layout.universal_textview_starjedi_gold,binding.ll,false)
+                txt.findViewById<TextView>(R.id.textview).text = infoHeap.poll()
+                binding.ll.addView(txt)
+            }
+            else->{
+                Toast.makeText(this,"Could not find Info for this part of the app.",Toast.LENGTH_SHORT)
+                    .show()
+                Toast.makeText(this,"send suggestions at sw5ecompanionapp@gmail.com",Toast.LENGTH_LONG)
+                    .show()
+            }
+        }
+        /*val identifier = resources.getIdentifier("customization_$customOption"+"_info","string",packageName)
         if (identifier!=0){
             mode=1
             Toast.makeText(this,getText(identifier),Toast.LENGTH_LONG)
@@ -94,11 +111,7 @@ class CustomizationsActivity : AppCompatActivity() {
             Executors.newSingleThreadScheduledExecutor().schedule({
                 mode=0
             }, 5, TimeUnit.SECONDS)
-        }
-        else {
-            Toast.makeText(this,"Error, Could not find Info for this part of the app. \n"+R.string.please_report_this,Toast.LENGTH_LONG)
-                .show()
-        }
+        }*/
     }
 
     //Menu creation: Currently unnecessary

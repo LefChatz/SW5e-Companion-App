@@ -90,7 +90,7 @@ class BackgroundsActivity : AppCompatActivity() {
                     if (i==6) {
                         repeat(2) {
                             tempView = inflater.inflate(
-                                R.layout.backgrounds_single_column_d8_table,
+                                R.layout.single_column_d8_table,
                                 binding.ll,
                                 false
                             )
@@ -104,7 +104,7 @@ class BackgroundsActivity : AppCompatActivity() {
 
                             for (j in 1..3) {
                                 val row = inflater.inflate(
-                                    R.layout.backgrounds_single_column_d8_table_extra_row_gold,
+                                    R.layout.single_column_d8_table_extra_row_gold,
                                     table,
                                     false
                                 )
