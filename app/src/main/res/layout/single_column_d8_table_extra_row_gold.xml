@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/first_row"
-    android:paddingHorizontal="10dp"
-    android:background="#50FFD700">
+    android:background="#50FFD700"
+    android:orientation="vertical"
+    android:paddingHorizontal="10dp">
 
     <TextView
         android:id="@+id/text_row_extra_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Line"
-        android:textColor="@color/gold"
-        android:textSize="20sp"
-        android:textAlignment="center"
         android:layout_gravity="center"
-        android:paddingVertical="5dp"
+        android:layout_marginEnd="10dp"
         android:paddingHorizontal="5dp"
-        android:layout_marginEnd="10dp" />
+        android:paddingVertical="5dp"
+        android:text="Line"
+        android:textAlignment="center"
+        android:textColor="@color/gold"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/text_row_extra_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:maxWidth="500dp"
-        android:text="Text"
-        android:textColor="@color/gold"
-        android:textSize="20sp"
-        android:textAlignment="textStart"
+        android:paddingHorizontal="10dp"
         android:paddingVertical="5dp"
-        android:paddingHorizontal="10dp" />
+        android:text="Text"
+        android:textAlignment="textStart"
+        android:textColor="@color/gold"
+        android:textSize="20sp" />
 </TableRow>

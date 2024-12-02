@@ -831,38 +831,23 @@
     </string-array>
     <string-array name="fighting_styles_info">
         <item name="info">Fighting Styles\n\n<font face="sans-serif">Certain class features, or the Fighting Stylist feat, offer your choice of fighting style. You can’t choose a fighting style more than once, even if you later get to choose again.\n\n"   "You may choose your fighting style from the following options or roll on the table below to determine it randomly.</font></item>
-        <item name="info_table 1">Area</item>
-        <item name="info_table 2">Assisting</item>
-        <item name="info_table 3">Berserk</item>
-        <item name="info_table 4">Blindfighting</item>
-        <item name="info_table 5">Brawler</item>
-        <item name="info_table 6">Counterstrike</item>
-        <item name="info_table 7">Covert</item>
-        <item name="info_table 8">Defense</item>
-        <item name="info_table 9">Disruption</item>
-        <item name="info_table 10">Dual Wield</item>
-        <item name="info_table 11">Duelist</item>
-        <item name="info_table 12">Equilibrium</item>
-        <item name="info_table 13">Explosives</item>
-        <item name="info_table 14">Formation</item>
-        <item name="info_table 15">Formfighting</item>
-        <item name="info_table 16">Great Weapon</item>
-        <item name="info_table 17">Guerrilla</item>
-        <item name="info_table 18">Gunning</item>
-        <item name="info_table 19">Mounted</item>
-        <item name="info_table 20">Onslaught</item>
-        <item name="info_table 21">Poisoner</item>
-        <item name="info_table 22">Secured</item>
-        <item name="info_table 23">Sentinel</item>
-        <item name="info_table 24">Sharpshooter</item>
-        <item name="info_table 25">Shield</item>
-        <item name="info_table 26">Snapshot</item>
-        <item name="info_table 27">Split</item>
-        <item name="info_table 28">Spotting</item>
-        <item name="info_table 29">Superiority</item>
-        <item name="info_table 30">Throwing</item>
-        <item name="info_table 31">Twin-Blade</item>
-        <item name="info_table 32">Versatile</item>
+        <item name="info_table_diesize">32</item>       <item name="info_table_title">Fighting Style</item>
+        <item name="info_table 1">Area</item>           <item name="info_table 17">Guerrilla</item>
+        <item name="info_table 2">Assisting</item>      <item name="info_table 18">Gunning</item>
+        <item name="info_table 3">Berserk</item>        <item name="info_table 19">Mounted</item>
+        <item name="info_table 4">Blindfighting</item>  <item name="info_table 20">Onslaught</item>
+        <item name="info_table 5">Brawler</item>        <item name="info_table 21">Poisoner</item>
+        <item name="info_table 6">Counterstrike</item>  <item name="info_table 22">Secured</item>
+        <item name="info_table 7">Covert</item>         <item name="info_table 23">Sentinel</item>
+        <item name="info_table 8">Defense</item>        <item name="info_table 24">Sharpshooter</item>
+        <item name="info_table 9">Disruption</item>     <item name="info_table 25">Shield</item>
+        <item name="info_table 10">Dual Wield</item>    <item name="info_table 26">Snapshot</item>
+        <item name="info_table 11">Duelist</item>       <item name="info_table 27">Split</item>
+        <item name="info_table 12">Equilibrium</item>   <item name="info_table 28">Spotting</item>
+        <item name="info_table 13">Explosives</item>    <item name="info_table 29">Superiority</item>
+        <item name="info_table 14">Formation</item>     <item name="info_table 30">Throwing</item>
+        <item name="info_table 15">Formfighting</item>  <item name="info_table 31">Twin-Blade</item>
+        <item name="info_table 16">Great Weapon</item>  <item name="info_table 32">Versatile</item>
     </string-array>
 
     <!--Customization Option-->

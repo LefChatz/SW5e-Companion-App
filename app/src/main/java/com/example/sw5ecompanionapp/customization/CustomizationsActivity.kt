@@ -6,6 +6,9 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.HorizontalScrollView
+import android.widget.LinearLayout
+import android.widget.TableLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
@@ -14,8 +17,6 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.sw5ecompanionapp.R
 import com.example.sw5ecompanionapp.databinding.CustomizationsBinding
 import java.util.LinkedList
-import java.util.concurrent.Executors
-import java.util.concurrent.TimeUnit
 
 class CustomizationsActivity : AppCompatActivity() {
 
@@ -90,11 +91,7 @@ class CustomizationsActivity : AppCompatActivity() {
             "fighting_styles"->{
                 mode=1
                 binding.ll.removeAllViews()
-                val infoHeap = LinkedList<CharSequence>()
-                resources.getTextArray(R.array.fighting_styles_info).toCollection(infoHeap)
-                val txt = inflater.inflate(R.layout.universal_textview_starjedi_gold,binding.ll,false)
-                txt.findViewById<TextView>(R.id.textview).text = infoHeap.poll()
-                binding.ll.addView(txt)
+                generateInfoTable(LinkedList(resources.getTextArray(R.array.fighting_styles_info).toMutableSet()))
             }
             else->{
                 Toast.makeText(this,"Could not find Info for this part of the app.",Toast.LENGTH_SHORT)
@@ -103,17 +100,33 @@ class CustomizationsActivity : AppCompatActivity() {
                     .show()
             }
         }
-        /*val identifier = resources.getIdentifier("customization_$customOption"+"_info","string",packageName)
-        if (identifier!=0){
-            mode=1
-            Toast.makeText(this,getText(identifier),Toast.LENGTH_LONG)
-                .show()
-            Executors.newSingleThreadScheduledExecutor().schedule({
-                mode=0
-            }, 5, TimeUnit.SECONDS)
-        }*/
     }
 
+    private fun generateInfoTable(infoHeap: LinkedList<CharSequence>){
+        val txt = inflater.inflate(R.layout.universal_textview_starjedi_gold,binding.ll,false)
+        txt.findViewById<TextView>(R.id.textview).text = infoHeap.poll()
+        binding.ll.addView(txt)
+        val diesize= infoHeap.poll()!!.toString().toInt()
+        val title=infoHeap.poll()
+        tempView = inflater.inflate(R.layout.two_column_d_table,binding.ll,false)
+        val table = tempView.findViewById<TableLayout>(R.id.table)
+        tempView.findViewById<TextView>(R.id.dieSize_1).text="$diesize"
+        tempView.findViewById<TextView>(R.id.dieSize_2).text="$diesize"
+        tempView.findViewById<TextView>(R.id.title_1).text=title
+        tempView.findViewById<TextView>(R.id.title_2).text=title
+        for (i in 1..diesize step 2){
+            if (infoHeap.size<2) break
+            val extraRow = inflater.inflate(R.layout.two_column_d_table_extra_row_gold,table,true)
+            extraRow.findViewById<TextView>(R.id.extra_row_dieNumber_1).text="$i"
+            extraRow.findViewById<TextView>(R.id.extra_row_value_1).text=infoHeap.poll()
+            val col2dienum=i+(diesize/2)
+            extraRow.findViewById<TextView>(R.id.extra_row_dieNumber_2).text="$col2dienum"
+            extraRow.findViewById<TextView>(R.id.extra_row_value_2).text=infoHeap.poll()
+            if (i%2==1) extraRow.background=null
+        }
+        if (tempView.findViewById<HorizontalScrollView>(R.id.hscroll).width<resources.displayMetrics.widthPixels) (tempView.findViewById<HorizontalScrollView>(R.id.hscroll).layoutParams as LinearLayout.LayoutParams).gravity=1
+        binding.ll.addView(tempView)
+    }
     //Menu creation: Currently unnecessary
     /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_species,menu)

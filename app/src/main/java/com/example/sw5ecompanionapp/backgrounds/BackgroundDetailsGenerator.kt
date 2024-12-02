@@ -62,7 +62,7 @@ fun generateDetails(ll: LinearLayoutCompat, resources: Resources, inflater: Layo
     tempView.findViewById<TextView>(R.id.contenttext).text = detailsHeap.poll()
     ll.addView(tempView)
 
-    tempView = inflater.inflate(R.layout.double_column_d8_table, ll, false)
+    tempView = inflater.inflate(R.layout.two_column_d8_table, ll, false)
 
     // Background Feat
     var tableTextArray= arrayOf(tempView.findViewById<TextView>(R.id.text_1_1),tempView.findViewById(R.id.text_2_1),tempView.findViewById(R.id.text_3_1),tempView.findViewById(R.id.text_4_1),tempView.findViewById(R.id.text_1_2),tempView.findViewById(R.id.text_2_2),tempView.findViewById(R.id.text_3_2),tempView.findViewById(R.id.text_4_2))
