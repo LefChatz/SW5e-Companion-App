@@ -59,7 +59,7 @@ class CustomizationsActivity : AppCompatActivity() {
 
         binding.BackButton.setOnClickListener { returntomain() }
 
-        binding.infobutton.setOnClickListener { if (mode == 0) generateCustomizationsInfo(customOption) }
+        binding.infobutton.setOnClickListener { if (mode == 0) generateCustomizationsInfo(customOption) else Toast.makeText(this,"to return press back",Toast.LENGTH_SHORT).show() }
 
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -110,19 +110,20 @@ class CustomizationsActivity : AppCompatActivity() {
         val title=infoHeap.poll()
         tempView = inflater.inflate(R.layout.two_column_d_table,binding.ll,false)
         val table = tempView.findViewById<TableLayout>(R.id.table)
-        tempView.findViewById<TextView>(R.id.dieSize_1).text="$diesize"
-        tempView.findViewById<TextView>(R.id.dieSize_2).text="$diesize"
+        tempView.findViewById<TextView>(R.id.dieSize_1).text="d$diesize"
+        tempView.findViewById<TextView>(R.id.dieSize_2).text="d$diesize"
         tempView.findViewById<TextView>(R.id.title_1).text=title
         tempView.findViewById<TextView>(R.id.title_2).text=title
-        for (i in 1..diesize step 2){
+        for (i in 1..diesize/2){
             if (infoHeap.size<2) break
-            val extraRow = inflater.inflate(R.layout.two_column_d_table_extra_row_gold,table,true)
+            val extraRow = inflater.inflate(R.layout.two_column_d_table_extra_row_gold,table,false)
             extraRow.findViewById<TextView>(R.id.extra_row_dieNumber_1).text="$i"
             extraRow.findViewById<TextView>(R.id.extra_row_value_1).text=infoHeap.poll()
             val col2dienum=i+(diesize/2)
             extraRow.findViewById<TextView>(R.id.extra_row_dieNumber_2).text="$col2dienum"
             extraRow.findViewById<TextView>(R.id.extra_row_value_2).text=infoHeap.poll()
             if (i%2==1) extraRow.background=null
+            table.addView(extraRow)
         }
         if (tempView.findViewById<HorizontalScrollView>(R.id.hscroll).width<resources.displayMetrics.widthPixels) (tempView.findViewById<HorizontalScrollView>(R.id.hscroll).layoutParams as LinearLayout.LayoutParams).gravity=1
         binding.ll.addView(tempView)

@@ -2,7 +2,6 @@
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/first_row"
     android:background="#50FFD700"
-    android:orientation="vertical"
     android:paddingHorizontal="10dp">
 
     <TextView
