@@ -832,23 +832,58 @@
     <string-array name="fighting_styles_info">
         <item name="info"><font size="24">Fighting Styles</font>\n\n<font face="sans-serif">Certain class features, or the Fighting Stylist feat, offer your choice of fighting style. You can’t choose a fighting style more than once, even if you later get to choose again.\n\n"   "You may choose your fighting style from the following options or roll on the table below to determine it randomly.</font></item>
         <item name="info_table_diesize">32</item>       <item name="info_table_title">Fighting Style</item>
-        <item name="info_table 1">Area</item>           <item name="info_table 17">Guerrilla</item>
-        <item name="info_table 2">Assisting</item>      <item name="info_table 18">Gunning</item>
-        <item name="info_table 3">Berserk</item>        <item name="info_table 19">Mounted</item>
-        <item name="info_table 4">Blindfighting</item>  <item name="info_table 20">Onslaught</item>
-        <item name="info_table 5">Brawler</item>        <item name="info_table 21">Poisoner</item>
-        <item name="info_table 6">Counterstrike</item>  <item name="info_table 22">Secured</item>
-        <item name="info_table 7">Covert</item>         <item name="info_table 23">Sentinel</item>
-        <item name="info_table 8">Defense</item>        <item name="info_table 24">Sharpshooter</item>
-        <item name="info_table 9">Disruption</item>     <item name="info_table 25">Shield</item>
-        <item name="info_table 10">Dual Wield</item>    <item name="info_table 26">Snapshot</item>
-        <item name="info_table 11">Duelist</item>       <item name="info_table 27">Split</item>
-        <item name="info_table 12">Equilibrium</item>   <item name="info_table 28">Spotting</item>
-        <item name="info_table 13">Explosives</item>    <item name="info_table 29">Superiority</item>
-        <item name="info_table 14">Formation</item>     <item name="info_table 30">Throwing</item>
-        <item name="info_table 15">Formfighting</item>  <item name="info_table 31">Twin-Blade</item>
-        <item name="info_table 16">Great Weapon</item>  <item name="info_table 32">Versatile</item>
+        <item name="info_table_1">Area</item>           <item name="info_table_17">Guerrilla</item>
+        <item name="info_table_2">Assisting</item>      <item name="info_table_18">Gunning</item>
+        <item name="info_table_3">Berserk</item>        <item name="info_table_19">Mounted</item>
+        <item name="info_table_4">Blindfighting</item>  <item name="info_table_20">Onslaught</item>
+        <item name="info_table_5">Brawler</item>        <item name="info_table_21">Poisoner</item>
+        <item name="info_table_6">Counterstrike</item>  <item name="info_table_22">Secured</item>
+        <item name="info_table_7">Covert</item>         <item name="info_table_23">Sentinel</item>
+        <item name="info_table_8">Defense</item>        <item name="info_table_24">Sharpshooter</item>
+        <item name="info_table_9">Disruption</item>     <item name="info_table_25">Shield</item>
+        <item name="info_table_10">Dual Wield</item>    <item name="info_table_26">Snapshot</item>
+        <item name="info_table_11">Duelist</item>       <item name="info_table_27">Split</item>
+        <item name="info_table_12">Equilibrium</item>   <item name="info_table_28">Spotting</item>
+        <item name="info_table_13">Explosives</item>    <item name="info_table_29">Superiority</item>
+        <item name="info_table_14">Formation</item>     <item name="info_table_30">Throwing</item>
+        <item name="info_table_15">Formfighting</item>  <item name="info_table_31">Twin-Blade</item>
+        <item name="info_table_16">Great Weapon</item>  <item name="info_table_32">Versatile</item>
     </string-array>
+    <string-array name="fighting_masteries_info">
+        <item name="info"><font size="24">Fighting Masteries</font>\n\n<font face="sans-serif">Certain class features, or the Fighting Master feat, offer your choice of fighting mastery. You can’t choose a fighting mastery more than once, even if you later get to choose again.\n\n"   "You may choose your fighting mastery from the following options or roll on the table below to determine it randomly.</font></item>
+        <item name="info_table_diesize">32</item>       <item name="info_table_title">Fighting Mastery</item>
+        <item name="info_table_1">Area</item>           <item name="info_table_17">Guerrilla</item>
+        <item name="info_table_2">Assisting</item>      <item name="info_table_18">Gunning</item>
+        <item name="info_table_3">Berserk</item>        <item name="info_table_19">Mounted</item>
+        <item name="info_table_4">Blindfighting</item>  <item name="info_table_20">Onslaught</item>
+        <item name="info_table_5">Brawler</item>        <item name="info_table_21">Poisoner</item>
+        <item name="info_table_6">Counterstrike</item>  <item name="info_table_22">Secured</item>
+        <item name="info_table_7">Covert</item>         <item name="info_table_23">Sentinel</item>
+        <item name="info_table_8">Defense</item>        <item name="info_table_24">Sharpshooter</item>
+        <item name="info_table_9">Disruption</item>     <item name="info_table_25">Shield</item>
+        <item name="info_table_10">Dual Wield</item>    <item name="info_table_26">Snapshot</item>
+        <item name="info_table_11">Duelist</item>       <item name="info_table_27">Split</item>
+        <item name="info_table_12">Equilibrium</item>   <item name="info_table_28">Spotting</item>
+        <item name="info_table_13">Explosives</item>    <item name="info_table_29">Superiority</item>
+        <item name="info_table_14">Formation</item>     <item name="info_table_30">Throwing</item>
+        <item name="info_table_15">Formfighting</item>  <item name="info_table_31">Twin-Blade</item>
+        <item name="info_table_16">Great Weapon</item>  <item name="info_table_32">Versatile</item>
+    </string-array>
+    <string-array name="lightsaber_forms_info">
+        <item name="info"><font size="24">Lightsaber Forms</font>\n\n<font face="sans-serif">Certain class features, Formfighting Style, or Formfighting Mastery, offer your choice of lightsaber forms. You can’t choose a lightsaber form more than once, even if you later get to choose again.\n\n"   "You may choose your lightsaber forms from the following options or roll on the table below to determine them randomly.</font></item>
+        <item name="info_table_diesize">20</item>       <item name="info_table_title">Lightsaber Form</item>
+        <item name="info_table_1">Aqinos</item>         <item name="info_table_11">Shien</item>
+        <item name="info_table_2">Ataru</item>          <item name="info_table_12">Shii-Cho</item>
+        <item name="info_table_3">3akuuni Hand</item>   <item name="info_table_13">Soresu</item>
+        <item name="info_table_4">Djem So</item>        <item name="info_table_14">Sokan</item>
+        <item name="info_table_5">Drallig</item>        <item name="info_table_15">Trakata</item>
+        <item name="info_table_6">Ishu</item>           <item name="info_table_16">Trispzest</item>
+        <item name="info_table_7">Jar\'Kai</item>       <item name="info_table_17">Twilight</item>
+        <item name="info_table_8">Juyo</item>           <item name="info_table_18">Vaapad</item>
+        <item name="info_table_9">Makashi</item>        <item name="info_table_19">Vonil</item>
+        <item name="info_table_10">Niman</item>         <item name="info_table_20">Ysannite</item>
+    </string-array>
+
 
     <!--Customization Option-->
     <!--<item name="name"></item>

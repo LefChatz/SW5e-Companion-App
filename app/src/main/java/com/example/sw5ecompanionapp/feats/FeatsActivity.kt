@@ -159,7 +159,7 @@ class FeatsActivity : AppCompatActivity() {
                 currentfeatlist=featList.sortFeatByName()
                 item.title = getText(R.string.sortABCdown)
                 returntotop(reclview,"sharp")}
-            getText(R.string.feats_menu_ability_score)->{
+            getText(R.string.ability_score)->{
                 if (!item.isChecked){
                     featmenu.setGroupVisible(R.id.feats_menu_asi_group,true)
                     filterASI.addAll(listOf("Str","Dex","Con","Int","Wis","Cha"))

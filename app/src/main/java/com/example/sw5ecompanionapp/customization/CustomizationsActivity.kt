@@ -88,11 +88,9 @@ class CustomizationsActivity : AppCompatActivity() {
     @SuppressLint("DiscouragedApi")
     private fun generateCustomizationsInfo(customOption: String){
         when(customOption){
-            "fighting_styles"->{
-                mode=1
-                binding.ll.removeAllViews()
-                generateInfoTable(LinkedList(resources.getTextArray(R.array.fighting_styles_info).toMutableSet()))
-            }
+            "fighting_styles"-> generateInfoViews(LinkedList(resources.getTextArray(R.array.fighting_styles_info).toMutableSet()))
+            "fighting_masteries"-> generateInfoViews(LinkedList(resources.getTextArray(R.array.fighting_masteries_info).toMutableSet()))
+            "lightsaber_forms"-> generateInfoViews(LinkedList(resources.getTextArray(R.array.lightsaber_forms_info).toMutableSet()))
             else->{
                 Toast.makeText(this,"Could not find Info for this part of the app.",Toast.LENGTH_SHORT)
                     .show()
@@ -102,7 +100,11 @@ class CustomizationsActivity : AppCompatActivity() {
         }
     }
 
-    private fun generateInfoTable(infoHeap: LinkedList<CharSequence>){
+    private fun generateInfoViews(infoHeap: LinkedList<CharSequence>){
+        mode=1
+        binding.ll.removeAllViews()
+        binding.scrolly.scrollTo(0,0)
+        binding.scrolly.fling(0)
         val txt = inflater.inflate(R.layout.universal_textview_starjedi_gold,binding.ll,false)
         txt.findViewById<TextView>(R.id.textview).text = infoHeap.poll()
         binding.ll.addView(txt)
@@ -110,8 +112,9 @@ class CustomizationsActivity : AppCompatActivity() {
         val title=infoHeap.poll()
         tempView = inflater.inflate(R.layout.two_column_d_table,binding.ll,false)
         val table = tempView.findViewById<TableLayout>(R.id.table)
-        tempView.findViewById<TextView>(R.id.dieSize_1).text="d$diesize"
-        tempView.findViewById<TextView>(R.id.dieSize_2).text="d$diesize"
+        val dDiesize="d$diesize"
+        tempView.findViewById<TextView>(R.id.dieSize_1).text=dDiesize
+        tempView.findViewById<TextView>(R.id.dieSize_2).text=dDiesize
         tempView.findViewById<TextView>(R.id.title_1).text=title
         tempView.findViewById<TextView>(R.id.title_2).text=title
         for (i in 1..diesize/2){

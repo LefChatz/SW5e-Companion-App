@@ -2,7 +2,11 @@ package com.example.sw5ecompanionapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sw5ecompanionapp.backgrounds.BackgroundsActivity
 import com.example.sw5ecompanionapp.classes.ClassesActivity
@@ -18,12 +22,15 @@ import com.example.sw5ecompanionapp.techcasting.TechcastingActivity
 class SW5ECompanionApp : AppCompatActivity() {
 
     private lateinit var binding: ActivityHubBinding
+    private var leave=false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityHubBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        onBackPressedDispatcher.addCallback(this,object: OnBackPressedCallback(true){override fun handleOnBackPressed(){backpressed()}})
     }
     fun portal(view: View){
         when(view.id){
@@ -38,5 +45,13 @@ class SW5ECompanionApp : AppCompatActivity() {
             binding.buttoncustoms.id->      startActivity(Intent(this, CustomizationsHubActivity::class.java))
         }
         finish()
+    }
+    private fun backpressed(){
+        if (!leave) {
+            Toast.makeText(this,"press back again to exit the app",Toast.LENGTH_SHORT).show()
+            leave=true
+            Handler(Looper.getMainLooper()).postDelayed({leave=false},3000)
+        }
+        else finish()
     }
 }
