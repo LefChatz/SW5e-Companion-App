@@ -1,10 +1,15 @@
 <resources>
 
     <!--Forcecasting-->
+    <string name="forcecasting">FoXcEcASTiNG</string>
     <string name="forcepower_name">Forcepower Name</string>
     <string name="forcepowererror404">Force power not found</string>
     <string name="favorite_forcepower_button">Favorite Forcepower</string>
     <string name="forcecasting_nosuchforcepower">No Such Forcepower Found</string>
+    <string name="force">FoXcE</string>
+    <string name="forcepowers">forcepowers</string>
+    <string name="force_points">Force\nPoints</string>
+    <string name="force_powers_known">Force Powers\nKnown</string>
 
     <!--Sorts , Dark/Light-->
     <string name="sortABCdown"><font color="#D4af37">ABC <font size="21"><b>↓</b></font></font></string>
@@ -46,6 +51,7 @@
     <string name="mass_animationtable5_2"><font size="18">80</font></string>
     <string name="mass_animationtable5_3"><font size="18">10</font></string>
     <string name="mass_animationtable5_4"><font size="18">+8 to hit, 2d12 + 4 damage</font></string>
+
     <!--utility stuff for ForceCasting-->
     <string name="one"><font size="18"><font face="sans-serif">1</font></font></string>
     <string name="twotosix"><font size="18"><font face="sans-serif">2-6</font></font></string>
@@ -60,8 +66,6 @@
     <string name="seventh_level">7th-Level</string>
     <string name="eighth_level">8th-Level</string>
     <string name="nineth_level">9th-Level</string>
-    <string name="forcepowers">forcepowers</string>
-    <string name="force">FoXcE</string>
 
 
     <!--Classes -->
@@ -481,6 +485,7 @@
     <string name="multiclassing_example"><font size="22"><b>Multiclassing Example</b></font><font face="sans-serif">\nDrew is playing a 4th-level fighter. When his character earns enough experience points to reach 5th level, Drew decides that his character will multiclass instead of continuing to progress as a fighter. Drew\'s fighter has been spending a lot of time with Rickey\'s scout, and has even been doing some jobs on the side for the Bounty Broker\'s Association as a bounty hunter. Drew decides that his character will multiclass into the operative class, and thus his character becomes a 4thlevel fighter and 1st-level operative (written as fighter 4/operative 1).\n"   " When Drew\'s character earns enough experience to reach 6th level, he can decide whether to add another fighter level (becoming a fighter 5/operative 1), another operative level (becoming a fighter 4/operative 2), or a level in a third class, perhaps dabbling in the Force thanks to a Sith holocron he acquired (becoming a fighter 4/operative 1/consular 1).</font></string>
     <string name="multiclassing_highlvlcasting"><font size="22">High Level casting</font><font face="sans-serif">\nWhen determining the number of higher level powers you can cast before needing a long rest, consult the rules for casting in the class in which you have the most levels.\n</font></string>
 
+
     <!--Species-->
     <string name="species_info1"><font size="26"><b>A</b></font><font face="sans-serif">"  "visit to any of the great cities in the worlds of Star Wars overwhelms the senses. Voices chatter in countless different languages. The smells of cooking in dozens of different cuisines mingle with the odors of crowded streets and poor sanitation. Buildings in myriad architectural styles display the diverse origins of their inhabitants.\n"   " And the people themselves-people of varying size, shape, and color, dressed in a dazzling spectrum of styles and hues-represent many different species, from diminutive bothans and stalwart cereans to majestic twi\'leks and towering wookiees, mingling among a variety of human ethnicities.\n"   " Scattered among the members of these more common species are the true exotics: a hulking besalisk here, pushing his way through the crowd, and a sly chiss there, lurking in the shadows with mischief in her eyes. A group of jawas chatters as one of them activates a clever mechanical toy that moves of its own accord. Zabraks and devaronians live and work alongside humans, without fully belonging. And there, well out of the sunlight, is a lone dros-a fugitive from the Galactic Republic, trying to make his way in a world.\n</font></string>
     <string name="species_info2Header">choosing a species</string>
@@ -736,7 +741,6 @@
     <string name="zabrak_traitsHeader">zabrak Traits</string>
     <string name="zabrak_traitsText">As a zabrak, you have the following special traits.\n"   " <b>Ability Score Increase</b>. Your Constitution score increases by 2, and your Strength or Dexterity score increases by 1.\n"   " <b>Age</b>. Zabraks reach adulthood in their late teens and live less than a century.\n"   " <b>Alignment</b>. Zabraks tend toward no particular alignment. The best and worst are found among them.\n"   " <b>Size</b>. Zabraks stand anywhere from 5 to 7 feet tall and weigh up to 300 lbs. Regardless of your position in that range, your size is Medium.\n"   " <b>Speed</b>. Your base walking speed is 30 feet.\n"   " <b>Coercive</b>. You have proficiency with Persuasion or Intimidation (your choice).\n"   " <b>Crafters</b>. You have proficiency with one set of artisan’s implements of your choice.\n"   " <b>Second Heart</b>. When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.\n"   " <b>Toughness</b>. Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.\n"   " <b>Unarmed Combatant</b>. Your unarmed strikes deal 1d4 kinetic damage and have the finesse property.\n"   " <b>Languages</b>. You can speak, read, and write Galactic Basic and Zabraki.</string>
 
-
     <!--utility stuff for Species-->
     <string name="traits">Traits</string>
     <string name="players_as_droids"><b><font size="18">PLAYERS AS DROIDS</font></b>\n"   " Work with your GM to determine if playing as a droid is appropriate for your campaign. Droids are impervious to many effects and vulnerable to others. If your GM approves this choice of species, Work with them to determine your droids designation, name, and appearance. If you want to play a different type of droid, work with your GM to find suitable traits to realize your character.</string>
@@ -762,6 +766,7 @@
     <string name="five_foot_eight">5\'8\"/1,70m</string>
     <string name="five_foot_nine">5\'9\"/1,75m</string>
     <string name="six_foot_three">6\'3\"/1,90m</string>
+
     <!--utility stuff for Tables-->
     <string name="info"><font color="#D4af37">Info</font></string>
     <string name="base"><font color="#D4af37">Base</font></string>
@@ -772,16 +777,14 @@
     <string name="table"><font color="#D4af37">Table</font></string>
     <string name="tech_powers_known">Tech Powers\nKnown</string>
     <string name="tech_points">Tech\nPoints</string>
-    <string name="force_powers_known">Force Powers\nKnown</string>
-    <string name="force_points">Force\nPoints</string>
     <string name="potent_aptitude">Potent\nAptitude</string>
     <string name="max_power_level">Max Power\nLevel</string>
 
     <!--utility stuff for Hub-->
     <string name="classbutton">cLASS</string>
-    <string name="forcecasting">FoXcEcASTiNG</string>
     <string name="classes">cLASSES</string>
     <string name="species">SPEciES</string>
+
 
     <!--Equipment-->
 
@@ -815,6 +818,7 @@
     <string name="adventuring_gear">ADvENTuXiNG GEAR</string>
     <string name="all_list">" ALL LiST "</string>
     <string name="eqerror404">Equipment not found</string>
+
     <!--Info menu-->
     <string name="armor_menu"><font color="#d4af37">Armor</font></string>
     <string name="weapons_menu"><font color="#d4af37">Weapons</font></string>
@@ -822,6 +826,7 @@
     <string name="tools_menu"><font color="#d4af37">Tools</font></string>
     <string name="expenses_menu"><font color="#d4af37">Expenses</font></string>
     <string name="wealth_menu"><font color="#d4af37">Wealth</font></string>
+
     <!--Info Wealth-->
     <string name="equipment_info_wealth1"><font size="28">T</font>he marketplace of a large city teems with buyers and sellers of many sorts: Jawas peddling refurbished wares (or trying to steal from careless travelers), Ugnauts selling various technology scrap, Twi\'lek armstechs and Mirialan synthweavers. In the largest cities, almost anything imaginable is offered for sale, from exotic spices and luxurious clothing to speeders and spaceships.\n"    "For an adventurer, the availability of armor, weapons, backpacks, rope, and similar goods is of paramount importance, since proper equipment can mean the difference between life and death in a stronghold or the untamed wilds. This chapter details the mundane and exotic merchandise that adventurers commonly find useful in the face of the threats that the worlds of D&amp;D present.\n\n<font size="20"><b>Variant: Starting Wealth by Class</b></font></string>
     <string name="equipment_info_wealth2">Credits come in a variety of denominations: from a single chit to cards loaded with incredible value. While the Republic and Empire have their own currencies, in most worlds they can be used interchangeably.\n"    "With ten credits, a character can buy a power cell, a stylus, or a glowrod. A skilled (but not exceptional) artisan can earn ten credits a day. The credit is the standard unit of measure for wealth, even if the chit itself is not commonly used. When merchants discuss deals that involve goods or services worth hundreds or thousands of credits, the transactions don\'t usually involve the exchange of individual chits. Rather, the credit is a standard measure of value, and the actual exchange is in credit cards, letters of credit, or valuable goods.\n"    " A standard chit weighs about a third of an ounce, so fifty chits weigh a pound.</string>
@@ -831,6 +836,7 @@
         <font size="22">\ngems, jewelry, and art objects</font> <font face="sans-serif">\nThese items retain their full value in the marketplace, and you can either trade them in for credits or use them as currency for other transactions. For exceptionally valuable treasures, the GM might require you to find a buyer in a large city or even another planet.\n</font>
         <font size="22">\ntrade goods</font> <font face="sans-serif">\nIn the Outer Rim, many people conduct transactions through barter. Like gems and art objects, trade goods —raw materials like bags of salt, livestock, and so on— retain their full value in the market and can be used as currency</font></string>
     <string name="equipment_info_wealth4">As characters progress to higher levels, there is an expectation of increased wealth, be it in the shape of coin or equipment. The below table serves as a target for how much each character should have earned at certain levels.\n <font size="20"><b>\nWealth by Level</b></font></string>
+
     <!--Info Armors and Shields-->
     <string name="equipment_info_armors_and_shields1">The different worlds of Star Wars are a vast tapestry made up of many different cultures, each with its own technology level. For this reason, adventurers have access to a variety of armor types, ranging from basic combat suits to heavy battle armor, with several other kinds of armor in between. The Armor table collects the most commonly available types of armor found in the game and separates them into three categories: light armor, medium armor, and heavy armor. Many warriors supplement their armor with a shield.\n"   " The Armor table shows the cost, weight, and other properties of the common types of armor worn in the worlds of Star Wars. </string>
     <string name="equipment_info_armors_and_shields2">Anyone can put on a suit of armor or wield a shield. Only those proficient in the armor\'s use know how to wear it effectively, however. Your class gives you proficiency with certain types of armor. If you wear armor or wield a shield that you lack proficiency with, you have disadvantage on any ability check, attack roll, or saving throw that involves Strength or Dexterity, and you can\'t force- or tech-cast.\n"   " If you have proficiency in armor, you have proficiency in the appropriate shield as well. </string>
@@ -965,6 +971,7 @@
         <font size="20">\nstealth field generator</font> <font face="sans-serif">\nStealth field generators are special devices typically worn on belts that function as a portable, personal cloaking device. Activating or deactivating the generator requires a bonus action and, while active, you have advantage on Dexterity (Stealth) ability checks that rely on sight. The generator lasts for 1 minute and can be recharged by a power source or replacing the power cell. This effect ends early if you make an attack or cast a force or tech power.\n</font>
         <font size="20">\ntracker utility vest</font> <font face="sans-serif">\nA utility vest is a sleeveless item of clothing that includes several evenly-distributed pockets, popular among hunters, smugglers, and adventurers. The vest is made of leathery, hide material to resist rips, corrosion and water. The wearer can carry up to 10 light items (up to 1.00 lb each) without increasing their total encumbrance.\n</font>
         <font size="20">\ntripod</font> <font face="sans-serif">\nA tripod is a device mounted to a two-handed blaster that lacks the fixed property to offer increased stability. Over the course of 1 minute, you can deploy or collapse the tripod. While deployed, you ignore the Strength requirement on the attached blaster with the strength property, and your speed is reduced to 0. Additionally, while deployed, you have a +10 bonus to ability checks and saving throws to avoid being disarmed of the weapon.</font></string>
+
     <!--Info Equipment Packs-->
     <string name="equipment_info_equipment_packs">"   "<font color="#d4af37">Equipment Packs</font></string>
     <string name="equipment_info_ammunition">"   "<font color="#d4af37">Ammunition</font></string>
@@ -976,12 +983,14 @@
     <string name="equipment_info_storage">"   "<font color="#d4af37">Storage</font></string>
     <string name="equipment_info_utilities">"   "<font color="#d4af37">Utilities</font></string>
     <string name="equipment_info_weapon_and_armor_accessories">"   "<font color="#d4af37">Accessories</font></string>
+
     <!--Info Tools-->
     <string name="equipment_info_tools"><font face="sans-serif">A tool helps you to do something you couldn\'t otherwise do, such as craft or repair an item, pick a lock, or slice into a computer. Your species, class, background, or feats give you proficiency with certain tools. Tool use is not tied to a single ability, since proficiency with a tool represents broader knowledge of its use. Like skills, proficiency with a tool allows you to add your proficiency bonus to checks you make with it. Unlike skills, you must have your tools present in order to make an ability check with them.\n"   " The table shows examples of some of the most common types of tools. Each tool falls under one of four categories: artisan\'s implements, gaming sets, musical instruments, or specialist\'s kits. Each tool requires a separate proficiency.\n</font>
         <font size="20">\nartisan\'s implements</font> <font face="sans-serif">\nArtisan\'s implements are predominantly designed for building and crafting things of permanent nature. Each set of implements focuses on a specific craft.\n"   " <b>Armormech\'s Implements:</b> Armormech\'s implements are for crafting and repairing armor and shields.\n"   " <b>Armstech\'s Implements:</b> Armstech\'s implements are for crafting and repairing blasters and vibroweapons.\n"   " <b>Artificer\'s Implements:</b> Artificer\'s implements are for creating lightweapons.\n"   " <b>Astrotech\'s Implements:</b> Astrotech\'s implements are for crafting and modifying droids.\n"   " <b>Biotech\'s Implements:</b> Biotech\'s implements are used to create cybernetic augmentations.\n"   " <b>Cybertech\'s Implements:</b> Cybertech\'s implements are used for crafting and modifying wristpads.\n"   " <b>Gadgeteer\'s Implements:</b> Gadgeteer\'s implements are used for crafting many types of adventuring gear, such as jet packs or friction-grip gear.\n"   " <b>Tinker\'s Implements:</b> Tinker\'s implements are general use tools that can craft small and versatile trinkets.\n</font>
         <font size="20">\ngaming sets</font> <font face="sans-serif">\nThis item encompasses a wide range of game pieces, including dice and/or decks of cards. A few common examples appear on the Tools table, but other kinds of gaming sets exist.\n</font>
         <font size="20">\nmusical instruments</font> <font face="sans-serif">\nSeveral of the most common types of musical instruments are shown on the table as examples. Musical instruments can often be used in place of—or in addition to—a performance.\n</font>
         <font size="20">\nspecialist\'s kits</font> <font face="sans-serif">\nLike artisan\'s implements, specialist\'s kits are need to pursue a craft or trade. Some specialist\'s kits are used to craft items that are impermanent, such as grenades, medpacs, or poisons while other tools are used to achieve a specific purpose, such as picking locks or creating a disguise. \n"   " <b>Biochemist\'s Kit:</b> Biochemist\'s kits are used to create and enhance medpacs and other healing implements. \n"   " <b>Chef\'s Kit:</b> Chef\'s kits are used to prepare food and identify food that might be spoiled or tampered with. \n"   " <b>Demolitions Kit:</b> Demolitions kits are used to create, enhance, and disarm explosives. \n"   " <b>Disguise Kit:</b> Disguise kits are used to modify a creature\'s appearance, to hide their appearance or to mimic the appearance of others. \n"   " <b>Forgery Kit:</b> Forgery kits create false document and certifications, both physical and digital. \n"   " <b>Mechanic\'s Kit:</b> Mechanic\'s kits are used to craft and repair vehicles and starships. \n"   " <b>Poisoner\'s Kit:</b> Poisoner\'s kits are designed to create and identify poisons. \n"   " <b>Security Kit:</b> Security kits are used to bypass physical locks. \n"   " <b>Slicer\'s Kit:</b> Slicer\'s kits can bypass computerized defenses and locks. \n"   " <b>Trapper\'s Kit:</b> Trapper\'s kits can create, disarm, and disassemble traps.</font></string>
+
     <!--Info Expenses-->
     <string name="equipment_info_expenses1"><font size="26">Expenses</font><font face="sans-serif">\nWhen not descending into the depths of the earth, exploring ruins for lost treasures, or waging war against the encroaching darkness, adventurers face more mundane realities. Even in a fantastical world, people require basic necessities such as shelter, sustenance, and clothing. These things cost money, although some lifestyles cost more than others.</font></string>
     <string name="equipment_info_expenses2"><font size="20">wretched</font> <font face="sans-serif">\nYou live in inhumane conditions. With no place to call home, you shelter wherever you can, sneaking into barns, huddling in old crates, and relying on the good graces of people better off than you. A wretched lifestyle presents abundant dangers. Violence, disease, and hunger follow you wherever you go. Other wretched people covet your armor, weapons, and adventuring gear, which represent a fortune by their standards. You are beneath the notice of most people.\n</font>
@@ -1068,6 +1077,8 @@
     <string name="customization_option">customization option</string>
     <string name="customization_fighting_styles_info"><font color="#d4af37">Certain class features, or the Fighting Stylist feat, offer your choice of fighting style. You can’t choose a fighting style more than once, even if you later get to choose again.\n\n"   "You may choose your fighting style from the following options or roll on the table below to determine it randomly.</font></string>
     <string name="customizations">customizationS</string>
+
+
     <!--Feats-->
     <string name="feats">Feats</string>
     <string name="feats_no_such_feat_found">no such Feat Found</string>

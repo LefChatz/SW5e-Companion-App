@@ -11,21 +11,26 @@
         android:iconTint="@color/gold"
         />
     <item
-        android:id="@+id/menu_switch_Dark"
+        android:id="@+id/menu_info"
         android:orderInCategory="2"
+        android:title="@string/info"
+        />
+    <item
+        android:id="@+id/menu_switch_Dark"
+        android:orderInCategory="3"
         android:title="@string/Dark"
         android:checkable="true"
         android:checked="true"
         />
     <item
         android:id="@+id/menu_switch_Light"
-        android:orderInCategory="3"
+        android:orderInCategory="4"
         android:title="@string/Light"
         android:checkable="true"
         android:checked="true" />
     <item
         android:id="@+id/menu_maneuvers_fav"
-        android:orderInCategory="3"
+        android:orderInCategory="5"
         android:title="@string/favorites_gold"
         android:checkable="true"
         android:checked="false" />

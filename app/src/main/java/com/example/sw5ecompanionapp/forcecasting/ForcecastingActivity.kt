@@ -6,8 +6,14 @@ import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.HorizontalScrollView
+import android.widget.LinearLayout
+import android.widget.TableLayout
+import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -15,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.sw5ecompanionapp.R
 import com.example.sw5ecompanionapp.SW5ECompanionApp
 import com.example.sw5ecompanionapp.databinding.ForcecastingBinding
+import java.util.LinkedList
 
 class ForcecastingActivity : AppCompatActivity() {
     private lateinit var binding: ForcecastingBinding
@@ -36,6 +43,10 @@ class ForcecastingActivity : AppCompatActivity() {
     private var lightChecked=true
     private var favChecked=false
 
+    private var mode = 0
+    private lateinit var ll : LinearLayout
+    private lateinit var inflater: LayoutInflater
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ForcecastingBinding.inflate(layoutInflater)
@@ -43,6 +54,9 @@ class ForcecastingActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
+        inflater=layoutInflater
+
+        ll = LinearLayout(this)
 
         favSharedPreferences=getSharedPreferences("forcecasting", Context.MODE_PRIVATE)
         favForcepowerList.addAll(favSharedPreferences.getStringSet("favorite_force_powers", mutableSetOf())?.toList()!!)
@@ -151,6 +165,20 @@ class ForcecastingActivity : AppCompatActivity() {
                 forcepoweradapter.setForcepowerList(adapterForcepowerList.sortForcepowerByName().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortABCdown)
                 returntotop(reclview,"sharp")}
+            getText(R.string.info)->{
+                if (mode==0) {
+                    mode=1
+                    binding.reclview.visibility = View.GONE
+                    generateInfo()
+                }
+                else {
+                    mode=0
+                    binding.coord.removeView(ll)
+                    binding.reclview.visibility = View.VISIBLE
+                    binding.reclview.scrollTo(0,0)
+                    binding.reclview.fling(0,0)
+                }
+            }
             getText(R.string.Dark)->{
                 if(item.isChecked){eraselist.addAll(darkforcepowers)}
                 else{
@@ -187,6 +215,36 @@ class ForcecastingActivity : AppCompatActivity() {
     }
 
 
+    private fun generateInfo(){
+
+        val txt = inflater.inflate(R.layout.universal_textview_starjedi_gold,ll,false)
+        val infoHeap = LinkedList(resources.getTextArray(R.array.fighting_styles_info).toMutableSet())
+        txt.findViewById<TextView>(R.id.textview).text = infoHeap.poll()
+        ll.addView(txt)
+        val diesize= infoHeap.poll()!!.toString().toInt()
+        val title=infoHeap.poll()
+        val tempView = inflater.inflate(R.layout.two_column_d_table,ll,false)
+        val table = tempView.findViewById<TableLayout>(R.id.table)
+        val dDiesize="d$diesize"
+        tempView.findViewById<TextView>(R.id.dieSize_1).text=dDiesize
+        tempView.findViewById<TextView>(R.id.dieSize_2).text=dDiesize
+        tempView.findViewById<TextView>(R.id.title_1).text=title
+        tempView.findViewById<TextView>(R.id.title_2).text=title
+        for (i in 1..diesize/2){
+            if (infoHeap.size<2) break
+            val extraRow = inflater.inflate(R.layout.two_column_d_table_extra_row_gold,table,false)
+            extraRow.findViewById<TextView>(R.id.extra_row_dieNumber_1).text="$i"
+            extraRow.findViewById<TextView>(R.id.extra_row_value_1).text=infoHeap.poll()
+            val col2dienum=i+(diesize/2)
+            extraRow.findViewById<TextView>(R.id.extra_row_dieNumber_2).text="$col2dienum"
+            extraRow.findViewById<TextView>(R.id.extra_row_value_2).text=infoHeap.poll()
+            if (i%2==1) extraRow.background=null
+            table.addView(extraRow)
+        }
+        if (tempView.findViewById<HorizontalScrollView>(R.id.hscroll).width<resources.displayMetrics.widthPixels) (tempView.findViewById<HorizontalScrollView>(R.id.hscroll).layoutParams as LinearLayout.LayoutParams).gravity=1
+        ll.addView(tempView)
+        binding.coord.addView(ll)
+    }
     private fun returntotop(view: RecyclerView,mode: String){
         when(mode){
             "smooth"->view.smoothScrollToPosition(0)
