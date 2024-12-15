@@ -15,7 +15,7 @@
         <item name="SRC">PHB</item>
         <item name="text">You become more nimble, gaining the following benefits:\n\n"  • "Increase your Dexterity score by 1, to a maximum of 20.\n"  • "You gain proficiency in the Acrobatics skill. If you are already proficient in it, you instead gain expertise in it.\n"  • "As a bonus action, you can make a DC 15 Dexterity (Acrobatics) check. If you succeed, difficult terrain doesn’t cost you extra movement until the end of the current turn.</item>
         <item name="isBig">false</item>
-        <!--NewFeat-->
+        <!--Actor-->
         <item name="FeatName">actor</item>
         <item name="ASI">Cha</item>
         <item name="prerequisite"> </item>
@@ -693,7 +693,7 @@
         <item name="prerequisite">force casting lvl 2</item>
         <item name="SRC">EC</item>
         <item name="text">You know one at-will force power. Additionally, you know one 3rd-level force power, which you can cast once per long rest. Your forcecasting ability is Wisdom or Charisma (depending on power alignment).</item>
-        <item name="isBig">false</item>
+        <item name="isBig">true</item>
         <!--NewFeat-->
         <item name="FeatName">improved_tech_dabbler</item>
         <item name="ASI">-</item>

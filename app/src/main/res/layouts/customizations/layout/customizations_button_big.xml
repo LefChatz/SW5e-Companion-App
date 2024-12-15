@@ -17,6 +17,7 @@
         android:textAlignment="gravity"
         android:textColor="@color/gold"
         android:textSize="24sp"
+        android:layout_marginEnd="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/customizations_button_sourcebook"
         app:layout_constraintStart_toStartOf="parent"

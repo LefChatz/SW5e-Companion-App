@@ -829,7 +829,7 @@
         <item name="details_Text">You lock on to one or more targets within range and expel a series of three small explosives. Each explosive hits a creature of your choice that you can see within range. An explosive deals 1d4 + 1 fire damage to its target. The explosives all strike simultaneously, and you can direct them to hit one creature or several.\n\n"   "<b>Overcharge Tech:</b> When you cast this power using a tech slot of 2nd level or higher, the power creates one more explosive for each slot level above 1st.</item>
         <!--Ionic Bond-->
         <item name="techpowername">ionic_bond</item>
-        <item name="printname"><font color="#D4af37">Ionic Bond</font></item>
+        <item name="printname"><font color="#D4af37">ionic Bond</font></item>
         <item name="castingTime">Bonus Action</item>
         <item name="level">1</item>
         <item name="Range">30 feet</item>
@@ -873,7 +873,7 @@
         <item name="details_Text">A creature of your choice that you can see within range regains hit points equal to 1d4 + your techcasting ability modifier. This power has no effect on droids or constructs.\n\n"   "<b>Overcharge Tech:</b>When you cast this power using a tech slot of 2nd level or higher, the healing increases by 1d4 for each slot level above 1st.</item>
         <!--Oil Slick-->
         <item name="techpowername">oil_slick</item>
-        <item name="printname"><font color="#D4af37">Oil Slick</font></item>
+        <item name="printname"><font color="#D4af37">oil Slick</font></item>
         <item name="castingTime">Action</item>
         <item name="level">1</item>
         <item name="Range">60 feet</item>
@@ -917,7 +917,7 @@
         <item name="details_Text">You touch a willing creature. For the duration, the target can add 1d8 to its Initiative checks.</item>
         <!--Repair Droid-->
         <item name="techpowername">repair_droid</item>
-        <item name="printname"><font color="#D4af37">Repair Droid</font></item>
+        <item name="printname"><font color="#D4af37">Xepair Droid</font></item>
         <item name="castingTime">Action</item>
         <item name="level">1</item>
         <item name="Range">Touch</item>
@@ -928,7 +928,7 @@
         <item name="details_Text">A droid or construct you touch regains a number of hit points equal to 1d8 + your techcasting ability modifier.\n\n"   "<b>Overcharge Tech:</b> When you cast this power using a tech slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st.</item>
         <!--Ring of Fire-->
         <item name="techpowername">ring_of_fire</item>
-        <item name="printname"><font color="#D4af37">Ring of Fire</font></item>
+        <item name="printname"><font color="#D4af37">Xing of Fire</font></item>
         <item name="castingTime">Action</item>
         <item name="level">1</item>
         <item name="Range">Self</item>
@@ -1445,7 +1445,7 @@
         <item name="details_Text">Choose an area of unenhanced flame that you can see and that fits within a 5-foot cube within range. You can extinguish the fire in that area, and you create either fireworks or smoke when you do so.\n\n"   "<b>Fireworks:</b> The target explodes with a dazzling display of colors. Each creature within 10 feet of the target must succeed on a Constitution saving throw or become blinded until the end of your next turn.\n\n"   "<b>Smoke:</b> Thick black smoke spreads out from the target in a 20-foot radius, moving around corners. The area of the smoke is heavily obscured. The smoke persists for 1 minute or until a strong wind disperses it.</item>
         <!--Release-->
         <item name="techpowername">release</item>
-        <item name="printname"><font color="#D4af37">Release</font></item>
+        <item name="printname"><font color="#D4af37">Xelease</font></item>
         <item name="castingTime">Action</item>
         <item name="level">2</item>
         <item name="Range">60 feet</item>
@@ -1764,7 +1764,7 @@
         <item name="details_Text">For the duration, the willing creature you touch has resistance to one damage type of your choice: acid, cold, fire, lightning, or sonic.</item>
         <!--Read Memory-->
         <item name="techpowername">read_memory</item>
-        <item name="printname"><font color="#D4af37">Read Memory</font></item>
+        <item name="printname"><font color="#D4af37">Xead Memory</font></item>
         <item name="castingTime">Action</item>
         <item name="level">3</item>
         <item name="Range">10 feet</item>
@@ -1775,7 +1775,7 @@
         <item name="details_Text">You read the memory of an incapacitated droid or construct within range. The target must have its memory core (and/or other appropriate components) intact.\n\n"   "Until the power ends, you can ask up to five questions. Depending on what it would know or has witnessed, the target provides visual, audio, or text-based data in response. The target can’t provide new information, and can’t speculate about future events.</item>
         <!--Remove Virus-->
         <item name="techpowername">remove_virus</item>
-        <item name="printname"><font color="#D4af37">Remove virus</font></item>
+        <item name="printname"><font color="#D4af37">Xemove virus</font></item>
         <item name="castingTime">Action</item>
         <item name="level">3</item>
         <item name="Range">Touch</item>
@@ -1984,7 +1984,7 @@
         <item name="details_Text">You touch a creature and grant it a small reserve of kolto. The first time the target would drop to 0 hit points as a result of taking damage, the target instead drops to 1 hit point, and the power ends. If the power is still in effect when the target is subjected to an effect that would kill it instantaneously without dealing damage, that effect is instead negated against the target, and the powers ends. This power has no effect on droids or constructs.</item>
         <!--Radiation-->
         <item name="techpowername">radiation</item>
-        <item name="printname"><font color="#D4af37">Radiation</font></item>
+        <item name="printname"><font color="#D4af37">Xadiation</font></item>
         <item name="castingTime">Action</item>
         <item name="level">4</item>
         <item name="Range">120 feet</item>
@@ -2160,7 +2160,7 @@
         <item name="details_Text">You emit a paralyzing dart at a creature that you can see within range. The target must succeed on a Constitution saving throw or be poisoned for the duration. While poisoned in this way, the target is paralyzed. At the end of each of its turns, the target can make another Constitution saving throw. On a success, the power ends on the target.\n\n"   "<b>Overcharge Tech:</b> When you cast this power using a tech slot of 6th level or higher, you can target one additional creature for each slot level above 5th. The creatures must be within 30 feet of each other when you target them.</item>
         <!--Reprogram Droid-->
         <item name="techpowername">reprogram_droid</item>
-        <item name="printname"><font color="#D4af37">Reprogram Droid</font></item>
+        <item name="printname"><font color="#D4af37">Xeprogram Droid</font></item>
         <item name="castingTime">1 minute</item>
         <item name="level">5</item>
         <item name="Range">60 feet</item>
@@ -2171,7 +2171,7 @@
         <item name="details_Text">You alter the protocols of a droid that you can see within range, forcing it to carry out some service or refrain from some action or course of activity as you decide. The droid must succeed on a Wisdom saving throw or become charmed by you for the duration. While the droid is charmed by you, it takes 5d10 lightning damage each time it acts in a manner directly counter to your instructions, but it can only do so once each day.\n\n"   "You can issue any command you choose, short of an activity that would result in certain death. Should you issue a suicidal command, the power ends. You can end the power early by using an action to dismiss it. The remove virus power also ends it.\n\n"   "<b>Overcharge Tech:</b> When you cast this power using a tech slot of 7th or 8th level, the duration is 1 year. When you cast this power using a tech slot of 9th level, the power lasts until it is ended by remove virus.</item>
         <!--Rewrite Memory-->
         <item name="techpowername">rewrite_memory</item>
-        <item name="printname"><font color="#D4af37">Rewrite Memory</font></item>
+        <item name="printname"><font color="#D4af37">Xewrite Memory</font></item>
         <item name="castingTime">Action</item>
         <item name="level">5</item>
         <item name="Range">30 feet</item>
