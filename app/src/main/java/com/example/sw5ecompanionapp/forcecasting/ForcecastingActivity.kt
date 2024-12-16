@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Configuration
+import android.graphics.Typeface
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.HorizontalScrollView
 import android.widget.LinearLayout
+import android.widget.ScrollView
 import android.widget.TableLayout
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
@@ -43,8 +45,9 @@ class ForcecastingActivity : AppCompatActivity() {
     private var lightChecked=true
     private var favChecked=false
 
-    private var mode = 0
-    private lateinit var ll : LinearLayout
+    private var atInfo = false
+    private lateinit var starjedi: Typeface
+    private lateinit var scrolly : ScrollView
     private lateinit var inflater: LayoutInflater
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,8 +58,7 @@ class ForcecastingActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         inflater=layoutInflater
-
-        ll = LinearLayout(this)
+        starjedi = resources.getFont(R.font.starjedi)
 
         favSharedPreferences=getSharedPreferences("forcecasting", Context.MODE_PRIVATE)
         favForcepowerList.addAll(favSharedPreferences.getStringSet("favorite_force_powers", mutableSetOf())?.toList()!!)
@@ -78,7 +80,7 @@ class ForcecastingActivity : AppCompatActivity() {
         searchView.queryHint="Search..."
         searchView.setOnQueryTextListener(object: androidx.appcompat.widget.SearchView.OnQueryTextListener{
             override fun onQueryTextChange(enttext: String?): Boolean {
-                returntotop(reclview,"sharp")
+                returntotop("sharp")
                 if(enttext.isNullOrBlank()){
                     forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{it !in eraselist}.toMutableList())
                     object : CountDownTimer(1000, 1001) {
@@ -102,7 +104,7 @@ class ForcecastingActivity : AppCompatActivity() {
                 return false
             }
             override fun onQueryTextSubmit(enttext: String?): Boolean {
-                returntotop(reclview,"sharp")
+                returntotop("sharp")
                 if(enttext.isNullOrBlank()){
                     forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{it !in eraselist}.toMutableList())
                     object : CountDownTimer(1000, 999) {
@@ -128,7 +130,7 @@ class ForcecastingActivity : AppCompatActivity() {
         })
 
 
-        binding.floatingActionButton.setOnClickListener{returntotop(reclview,"smooth")}
+        binding.floatingActionButton.setOnClickListener{returntotop("smooth")}
 
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -149,36 +151,23 @@ class ForcecastingActivity : AppCompatActivity() {
                 currentforcepowerlist=forcepowerList.sortForcepowerByNameDescending().filter { it !in eraselist }.toMutableList()
                 forcepoweradapter.setForcepowerList(adapterForcepowerList.sortForcepowerByNameDescending().filter { it !in eraselist }.toMutableList())
                 item.title=getText(R.string.sortABCup)
-                returntotop(reclview,"sharp")}
+                returntotop("sharp")}
             getText(R.string.sortABCup)->{
                 currentforcepowerlist=forcepowerList.sortForcepowerByLevel().filter { it !in eraselist }.toMutableList()
                 forcepoweradapter.setForcepowerList(adapterForcepowerList.sortForcepowerByName().sortForcepowerByLevel().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortLvldown)
-                returntotop(reclview,"sharp")}
+                returntotop("sharp")}
             getText(R.string.sortLvldown)->{
                 currentforcepowerlist=forcepowerList.sortForcepowerByLevelDescending().filter { it !in eraselist }.toMutableList()
                 forcepoweradapter.setForcepowerList(adapterForcepowerList.sortForcepowerByLevelDescending().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortLvlup)
-                returntotop(reclview,"sharp")}
+                returntotop("sharp")}
             getText(R.string.sortLvlup)->{
                 currentforcepowerlist=forcepowerList.sortForcepowerByName().filter { it !in eraselist }.toMutableList()
                 forcepoweradapter.setForcepowerList(adapterForcepowerList.sortForcepowerByName().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortABCdown)
-                returntotop(reclview,"sharp")}
-            getText(R.string.info)->{
-                if (mode==0) {
-                    mode=1
-                    binding.reclview.visibility = View.GONE
-                    generateInfo()
-                }
-                else {
-                    mode=0
-                    binding.coord.removeView(ll)
-                    binding.reclview.visibility = View.VISIBLE
-                    binding.reclview.scrollTo(0,0)
-                    binding.reclview.fling(0,0)
-                }
-            }
+                returntotop("sharp")}
+            getText(R.string.info)->handleInfoSwitch()
             getText(R.string.Dark)->{
                 if(item.isChecked){eraselist.addAll(darkforcepowers)}
                 else{
@@ -213,52 +202,69 @@ class ForcecastingActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
-
+    private fun handleInfoSwitch(){
+        if(!atInfo){
+            binding.coord.removeView(reclview)
+            searchView.visibility = View.GONE
+            generateInfo()
+        }
+        else {
+            binding.coord.removeView(scrolly)
+            binding.coord.addView(reclview)
+            searchView.visibility = View.VISIBLE
+            returntotop("sharp")
+        }
+        atInfo=!atInfo
+    }
     private fun generateInfo(){
-
+        val infoHeap = LinkedList(resources.getTextArray(R.array.forcecasting_info).toMutableSet())
+        scrolly = inflater.inflate(R.layout.universal_scrollview_with_linearlayout,binding.coord,true).findViewById(R.id.scrolly)
+        val ll = scrolly.findViewById<LinearLayout>(R.id.ll)
         val txt = inflater.inflate(R.layout.universal_textview_starjedi_gold,ll,false)
-        val infoHeap = LinkedList(resources.getTextArray(R.array.fighting_styles_info).toMutableSet())
-        txt.findViewById<TextView>(R.id.textview).text = infoHeap.poll()
+        var temptxt = txt.findViewById<TextView>(R.id.textview)
+        temptxt.text = infoHeap.poll()
+        temptxt.typeface = starjedi
+
         ll.addView(txt)
-        val diesize= infoHeap.poll()!!.toString().toInt()
-        val title=infoHeap.poll()
-        val tempView = inflater.inflate(R.layout.two_column_d_table,ll,false)
-        val table = tempView.findViewById<TableLayout>(R.id.table)
-        val dDiesize="d$diesize"
-        tempView.findViewById<TextView>(R.id.dieSize_1).text=dDiesize
-        tempView.findViewById<TextView>(R.id.dieSize_2).text=dDiesize
-        tempView.findViewById<TextView>(R.id.title_1).text=title
-        tempView.findViewById<TextView>(R.id.title_2).text=title
-        for (i in 1..diesize/2){
-            if (infoHeap.size<2) break
-            val extraRow = inflater.inflate(R.layout.two_column_d_table_extra_row_gold,table,false)
-            extraRow.findViewById<TextView>(R.id.extra_row_dieNumber_1).text="$i"
-            extraRow.findViewById<TextView>(R.id.extra_row_value_1).text=infoHeap.poll()
-            val col2dienum=i+(diesize/2)
-            extraRow.findViewById<TextView>(R.id.extra_row_dieNumber_2).text="$col2dienum"
-            extraRow.findViewById<TextView>(R.id.extra_row_value_2).text=infoHeap.poll()
+        for (i in 2..18){
+            if (i !in setOf(5,6,7)) {
+                val tempview = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
+
+                tempview.findViewById<TextView>(R.id.headertext).text=infoHeap.poll()
+                temptxt = tempview.findViewById(R.id.contenttext)
+                temptxt.text=infoHeap.poll()
+
+                if (i in setOf(8,11,13,14,15)) temptxt.typeface = starjedi
+                ll.addView(tempview)
+            }
+            else{
+                val tempview = inflater.inflate(R.layout.universal_textview_nofont_gold,ll,false)
+
+                temptxt = tempview.findViewById(R.id.textview)
+                temptxt.text = infoHeap.poll()
+                if(i != 5) temptxt.typeface = starjedi
+
+                ll.addView(tempview)
+
+                if(i == 6) ll.addView(generateTable(infoHeap,inflater.inflate(R.layout.two_column_table,ll,false).findViewById(R.id.table)))
+            }
+        }
+    }
+    private fun generateTable(infoHeap: LinkedList<CharSequence>,table: TableLayout) :TableLayout{
+        table.findViewById<TextView>(R.id.title_1).text=infoHeap.poll()
+        table.findViewById<TextView>(R.id.title_2).text=infoHeap.poll()
+        for (i in 0..9){
+            val extraRow = inflater.inflate(R.layout.two_column_table_extra_row_gold,table,false)
+            extraRow.findViewById<TextView>(R.id.extra_row_1).text=i.toString()
+            if (i==0) extraRow.findViewById<TextView>(R.id.extra_row_2).text="0"
+            else {
+                val temp = i + 1
+                extraRow.findViewById<TextView>(R.id.extra_row_2).text = temp.toString()
+            }
             if (i%2==1) extraRow.background=null
             table.addView(extraRow)
         }
-        if (tempView.findViewById<HorizontalScrollView>(R.id.hscroll).width<resources.displayMetrics.widthPixels) (tempView.findViewById<HorizontalScrollView>(R.id.hscroll).layoutParams as LinearLayout.LayoutParams).gravity=1
-        ll.addView(tempView)
-        binding.coord.addView(ll)
-    }
-    private fun returntotop(view: RecyclerView,mode: String){
-        when(mode){
-            "smooth"->view.smoothScrollToPosition(0)
-            "sharp"->view.scrollToPosition(0)
-        }
-
-    }
-    fun returntomain() {
-        startActivity(Intent(this, SW5ECompanionApp::class.java))
-        with(favSharedPreferences.edit()){
-            putStringSet("favorite_force_powers",favForcepowerList.toMutableSet())
-            apply()
-        }
-        finish()
+        return table
     }
     private fun getForcepowers(): MutableList<Forcepower>{
         val getForcepowerList = mutableListOf<Forcepower>()
@@ -268,7 +274,24 @@ class ForcecastingActivity : AppCompatActivity() {
         }
         return getForcepowerList
     }
+    private fun returntotop(mode: String){
+        when(mode){
+            "smooth"->binding.reclview.smoothScrollToPosition(0)
+            "sharp"->binding.reclview.scrollToPosition(0)
+        }
 
+    }
+    fun returntomain() {
+        if (!atInfo) {
+            startActivity(Intent(this, SW5ECompanionApp::class.java))
+            with(favSharedPreferences.edit()){
+                putStringSet("favorite_force_powers",favForcepowerList.toMutableSet())
+                apply()
+            }
+            finish()
+        }
+        else handleInfoSwitch()
+    }
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
     }
