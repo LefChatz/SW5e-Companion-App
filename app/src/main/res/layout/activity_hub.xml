@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SW5ECompanionApp"
-    android:background="@drawable/swars"
+    android:background="@drawable/neutralbg"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:translationZ="2dp"
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25sp">
 
-            <com.example.sw5ecompanionapp.widget.ClassButton
+            <com.amachewrs.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/buttonforce"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
                 app:layout_constraintTop_toTopOf="@+id/buttonequipment"
                 app:text="@string/force" />
 
-            <com.example.sw5ecompanionapp.widget.ClassButton
+            <com.amachewrs.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/buttonclasses"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:text="@string/classes" />
 
-            <com.example.sw5ecompanionapp.widget.ClassButton
+            <com.amachewrs.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/buttonspecies"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:text="SPEciES" />
 
-            <com.example.sw5ecompanionapp.widget.ClassButton
+            <com.amachewrs.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/buttonequipment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -104,7 +104,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/buttonclasses"
                 app:text="EquipMENT" />
 
-            <com.example.sw5ecompanionapp.widget.ClassButton
+            <com.amachewrs.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/buttonbackgrounds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -115,7 +115,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:text="Backg/nds" />
 
-            <com.example.sw5ecompanionapp.widget.ClassButton
+            <com.amachewrs.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/buttontech"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -126,35 +126,35 @@
                 app:layout_constraintTop_toTopOf="@+id/buttonequipment"
                 app:text="Tech" />
 
-            <com.example.sw5ecompanionapp.widget.ClassButton
+            <com.amachewrs.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/buttonfeats"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="portal"
-                app:background="@drawable/equipmentbutton"
+                app:background="@drawable/featbutton"
                 app:layout_constraintEnd_toStartOf="@+id/buttonmaneuvers"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/buttonmaneuvers"
                 app:text="Feats" />
 
-            <com.example.sw5ecompanionapp.widget.ClassButton
+            <com.amachewrs.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/buttonmaneuvers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:onClick="portal"
-                app:background="@drawable/equipmentbutton"
+                app:background="@drawable/maneuversbutton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/buttonforce"
                 app:text="Maneuvers" />
 
-            <com.example.sw5ecompanionapp.widget.ClassButton
+            <com.amachewrs.sw5ecompanionapp.widget.ClassButton
                 android:id="@+id/buttoncustoms"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="portal"
-                app:background="@drawable/equipmentbutton"
+                app:background="@drawable/customoptionsbutton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/buttonmaneuvers"
                 app:layout_constraintTop_toTopOf="@+id/buttonmaneuvers"

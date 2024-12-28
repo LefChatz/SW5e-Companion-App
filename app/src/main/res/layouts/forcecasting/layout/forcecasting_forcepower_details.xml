@@ -20,7 +20,7 @@
 			android:layout_width="match_parent"
 			android:layout_height="match_parent" />
 
-		<com.example.sw5ecompanionapp.widget.BackButton
+		<com.amachewrs.sw5ecompanionapp.widget.BackButton
 			android:id="@+id/BackButton"
 			android:layout_width="70sp"
 			android:layout_height="0sp"

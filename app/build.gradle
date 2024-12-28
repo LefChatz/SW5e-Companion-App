@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.sw5ecompanionapp'
+    namespace 'com.amachewrs.sw5ecompanionapp'
     compileSdk 34
 
     defaultConfig {
-        applicationId 'com.example.sw5ecompanionapp'
+        applicationId 'com.amachewrs.sw5ecompanionapp'
         minSdk 30
         targetSdk 34
         versionCode 1

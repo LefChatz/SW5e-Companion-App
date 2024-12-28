@@ -33,7 +33,7 @@
                 />
         </androidx.appcompat.widget.Toolbar>
 
-        <com.example.sw5ecompanionapp.widget.BackButton
+        <com.amachewrs.sw5ecompanionapp.widget.BackButton
             android:id="@+id/BackButton"
             android:layout_width="70sp"
             android:layout_height="0sp"

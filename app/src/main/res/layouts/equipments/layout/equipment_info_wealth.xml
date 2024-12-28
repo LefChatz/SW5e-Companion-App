@@ -313,14 +313,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+        <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:title="Wealth"
             app:text="@string/equipment_info_wealth2" />
 
-        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+        <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -328,7 +328,7 @@
             app:text="@string/equipment_info_wealth3"
             app:makeStarjedi="true" />
 
-        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+        <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

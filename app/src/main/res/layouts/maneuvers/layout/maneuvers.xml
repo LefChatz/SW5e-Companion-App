@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
-        <com.example.sw5ecompanionapp.widget.BackButton
+        <com.amachewrs.sw5ecompanionapp.widget.BackButton
             android:id="@+id/BackButton"
             android:layout_width="70sp"
             android:layout_height="0sp"

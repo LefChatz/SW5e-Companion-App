@@ -20,7 +20,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.example.sw5ecompanionapp.widget.BackButton
+        <com.amachewrs.sw5ecompanionapp.widget.BackButton
             android:id="@+id/BackButton"
             android:layout_width="70sp"
             android:layout_height="0sp"
@@ -138,7 +138,7 @@
                 android:id="@+id/Expansion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/expansion"
+                android:text="@string/source"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:textColor="@color/gold"

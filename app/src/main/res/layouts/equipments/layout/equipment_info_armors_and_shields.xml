@@ -30,7 +30,7 @@
             android:text="@string/equipment_info_armors_and_shields1"
             android:textAppearance="@style/GoldText" />
 
-        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+        <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -47,14 +47,14 @@
             android:text="@string/equipment_info_armors_and_shields3"
             android:textAppearance="@style/GoldText" />
 
-        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+        <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:title="Armor class (Ac)"
             app:text="@string/equipment_info_armors_and_shields4" />
 
-        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+        <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -62,7 +62,7 @@
             app:text="@string/equipment_info_armors_and_shields5"
             app:makeStarjedi="true" />
 
-        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+        <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -70,7 +70,7 @@
             app:text="@string/equipment_info_armors_and_shields6"
             app:makeStarjedi="true" />
 
-        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+        <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -78,7 +78,7 @@
             app:text="@string/equipment_info_armors_and_shields7"
             app:makeStarjedi="true" />
 
-        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+        <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -86,7 +86,7 @@
             app:text="@string/equipment_info_armors_and_shields8"
             app:title="Heavy Armor" />
 
-        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+        <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -94,14 +94,14 @@
             app:text="@string/equipment_info_armors_and_shields9"
             app:makeStarjedi="true" />
 
-        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+        <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:text="@string/equipment_info_armors_and_shields10"
             app:title="getting into and out of armor" />
 
-        <com.example.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+        <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_marginTop="20dp"

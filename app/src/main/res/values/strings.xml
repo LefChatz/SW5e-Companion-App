@@ -818,6 +818,10 @@
     <string name="adventuring_gear">ADvENTuXiNG GEAR</string>
     <string name="all_list">" ALL LiST "</string>
     <string name="eqerror404">Equipment not found</string>
+    <string name="attributes">Attributes</string>
+    <string name="cost_amp_weight"><![CDATA[Cost & Weight]]></string>
+    <string name="damageac">DamageAC</string>
+    <string name="properties">Properties</string>
 
     <!--Info menu-->
     <string name="armor_menu"><font color="#d4af37">Armor</font></string>
@@ -1009,6 +1013,7 @@
     <string name="techcasting_title">Techcasting</string>
     <string name="techcasting_nosuchtechpower">No such Techpower found</string>
     <string name="techcasting_techpower_name">TechPower Name</string>
+    <string name="favorite_techpower_button">Favorite Techpower</string>
     <string name="techcasting_spectrum_bolt_details_Text2">\n"   "If you roll the same number on both d8s, the bolt leaps from the target to a different creature of your choice within 30 feet of it. Make a new attack roll against the new target, and make a new damage roll, which could cause the bolt to leap again. A creature can be targeted only once by each casting of this power.\n\n"   "<b>Overcharge Tech:</b> When you cast this power using a tech slot of 2nd level or higher, each target takes 1d6 extra damage of the type rolled for each slot level above 1st.</string>
     <string name="techcasting_autonomous_servant_details_Text2">\n"   "As a bonus action, you can nonverbally command the creature if it is within 120 feet of you. (If you control multiple creatures with this power, you can command any or all of them at the same time, issuing the same command to each one.) You decide what action the creature will take and where it will move during its next turn, or you can issue a simple, general command, such as to fetch a code cylinder, stand watch, or stack some small objects. If you issue no commands, the servant does nothing other than defend itself against hostile creatures. Once given an order, the servant continues to follow that order until its task is complete.\n\n"   "When the creature drops to 0 hit points, it reverts to its original form, and any remaining damage carries over to that form.\n\n"   "The creature is considered a valid target for the tracker droid interface power.\n\n"   "<b>Overcharge Tech:</b> When you cast this power using a tech slot of 4th level or higher, you can animate two additional objects for each slot level above 3rd</string>
     <string name="techcasting_autonomous_servant_1"><b>• Armor Class</b>: 15 (natural armor)</string>
@@ -1083,6 +1088,7 @@
     <string name="feats">Feats</string>
     <string name="feats_no_such_feat_found">no such Feat Found</string>
     <string name="feats_featname">FeatName</string>
+    <string name="favorite_feat_button">Favorite Feat</string>
     <string name="feats_info">A feat represents a talent or an area of expertise that gives character special capabilities. It embodies training, experience, and abilities beyond what a class provides. At certain levels, your class gives you the Ability Score Improvement feature. Using the optional feats rule, you can forgo taking that feature to take a feat of your choice instead. You can take each feat only once, unless the feat’s description says otherwise.\n\n"   "You must meet any prerequisite specified in a feat to take that feat. If you ever lose a feat’s prerequisite, you can’t use that feat until you regain the prerequisite. For example, the Inspiring Leader feat requires you to have a Charisma of 13 or higher. If your Charisma is reduced below 13 somehow-perhaps by a withering curse-you can’t benefit from the Inspiring Leader feat until your Charisma is restored.</string>
     <string name="feats_menu_str"><font color="#d4af37">"       "Strength</font></string>
     <string name="feats_menu_dex"><font color="#d4af37">"       "Dexterity</font></string>
@@ -1118,6 +1124,7 @@
     <!--Maneuvers-->
     <string name="maneuvers">Maneuvers</string>
     <string name="maneuvers_maneuver_name">maneuever name</string>
+    <string name="favorite_maneuver_button">Favorite Maneuver</string>
     <string name="maneuvers_no_such_maneuver_found">no such maneuver found</string>
     <string name="maneuvers_menu_type" ><font color="#d4af37">Type</font></string>
     <string name="maneuvers_menu_general" >"       "<font color="#d4af37">General</font></string>
@@ -1125,6 +1132,10 @@
     <string name="maneuvers_menu_physical" >"       "<font color="#d4af37">Physical</font></string>
     <string name="maneuvers_menu_forcecasting" ><font color="#d4af37">Forcecasting</font></string>
     <string name="maneuvers_menu_techcasting" ><font color="#d4af37">Techcasting</font></string>
+
+    <!--Error reporting medium-->
+    <string name="error_please_report_this">Error please report this to sw5ecompanionapp@gmail.com</string>
+    <string name="please_report_this">Please report this to sw5ecompanionapp@gmail.com</string>
 
     <!--Random utility stuff -->
     <string name="title_activity_SW5ECompanionApp">SW5ECompanionApp</string>
@@ -1147,19 +1158,10 @@
     <string name="details">details</string>
     <string name="text">Text</string>
     <string name="sampletext">Sample Text</string>
-    <string name="attributes">Attributes</string>
-    <string name="cost_amp_weight"><![CDATA[Cost & Weight]]></string>
-    <string name="damageac">DamageAC</string>
-    <string name="properties">Properties</string>
-    <string name="expansion">Expansion</string>
     <string name="favorites_gold"><font color="#D4af37">Favorites</font></string>
+    <string name="casting_info"><font color="#D4af37">Casting Info</font></string>
 
-    <!--Error reporting medium-->
-    <string name="error_please_report_this">Error please report this to sw5ecompanionapp@gmail.com</string>
-    <string name="please_report_this">Please report this to sw5ecompanionapp@gmail.com</string>
-    <string name="favorite_feat_button">Favorite Feat</string>
-    <string name="favorite_maneuver_button">Favorite Maneuver</string>
-    <string name="favorite_techpower_button">Favorite Techpower</string>
+    <!--Uncategorized-->
 
 
 </resources>
