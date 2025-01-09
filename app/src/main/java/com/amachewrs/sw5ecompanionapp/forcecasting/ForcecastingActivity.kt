@@ -59,7 +59,6 @@ class ForcecastingActivity : AppCompatActivity() {
         favForcepowerList.addAll(favSharedPreferences.getStringSet("favorite_force_powers", mutableSetOf())?.toList()!!)
 
         forcepowerList.addAll(getForcepowers())
-        
         adapterForcepowerList.addAll(forcepowerList)
         forcepoweradapter = ForcecastingAdapter(this,adapterForcepowerList,favForcepowerList)
         binding.reclview.adapter = forcepoweradapter
