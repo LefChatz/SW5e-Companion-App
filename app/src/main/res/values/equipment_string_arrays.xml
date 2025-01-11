@@ -816,7 +816,7 @@
         <item name="Attributes">Simple Blaster</item>
         <item name="CostAndWeight">325 cr"  "3 lb</item>
         <item name="Damage">1d6 kinetic</item>
-        <item name="Properties">Power cell (range 70/280), reload 16, two-handed</item>
+        <item name="Properties">Rapid 8, reload 16, slug cartridge (range 40/160), strength 11</item>
         <item name="Text"> </item>
         <item name="Expansion">PHB</item>
     </string-array>
