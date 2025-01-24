@@ -42,7 +42,7 @@ class CustomizationsHubActivity : AppCompatActivity() {
 
         binding.BackButton.setOnClickListener { returntomain() }
 
-        binding.infobutton.setOnClickListener { generateCustomizationsInfo() }
+        /*binding.infobutton.setOnClickListener { generateCustomizationsInfo() }*/
 
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -61,18 +61,18 @@ class CustomizationsHubActivity : AppCompatActivity() {
     }
 
     @SuppressLint("CutPasteId")
-    private fun generateCustomizationsInfo(){
+    /*private fun generateCustomizationsInfo(){
         binding.scrolly.scrollTo(0,0)
         binding.scrolly.fling(0)
-        /*if(mode==0){
+        *//*if(mode==0){
             binding.ll.removeAllViews()
             mode=1
         }
         else{
             Toast.makeText(this,"Already at Species info",Toast.LENGTH_SHORT)
                 .show()
-        }*/
-    }
+        }*//*
+    }*/
 
     //Menu creation: Currently unnecessary
     /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {

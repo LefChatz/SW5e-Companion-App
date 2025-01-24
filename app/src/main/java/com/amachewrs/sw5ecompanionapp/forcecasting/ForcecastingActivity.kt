@@ -18,6 +18,7 @@ import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.view.forEach
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.SW5ECompanionApp
 import com.amachewrs.sw5ecompanionapp.databinding.ForcecastingBinding
@@ -35,10 +36,12 @@ class ForcecastingActivity : AppCompatActivity() {
 
     private val favForcepowerList: MutableList<String> = mutableListOf()
     private lateinit var favSharedPreferences: SharedPreferences
+
     private var trimEnteredText=""
     private var darkChecked=true
     private var lightChecked=true
     private var favChecked=false
+    private lateinit var forcemenu: Menu
 
     private var atInfo = false
     private lateinit var starjedi: Typeface
@@ -133,6 +136,9 @@ class ForcecastingActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_forcecasting,menu)
+        if (menu != null){
+            forcemenu = menu
+        }
         binding.toolbar.overflowIcon = AppCompatResources.getDrawable(this, R.drawable.downarrowgold)
         return super.onCreateOptionsMenu(menu)
     }
@@ -199,11 +205,13 @@ class ForcecastingActivity : AppCompatActivity() {
             binding.coord.removeView(binding.reclview)
             binding.searchview.visibility = View.GONE
             generateInfo()
+            forcemenu.forEach { if(it.order!=2)it.isVisible=false }
         }
         else {
             binding.coord.removeView(scrolly)
             binding.coord.addView(binding.reclview)
             binding.searchview.visibility = View.VISIBLE
+            forcemenu.forEach { it.isVisible=true }
             returntotop("sharp")
         }
         atInfo=!atInfo

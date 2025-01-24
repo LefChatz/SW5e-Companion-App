@@ -1089,7 +1089,8 @@
     <string name="feats_no_such_feat_found">no such Feat Found</string>
     <string name="feats_featname">FeatName</string>
     <string name="favorite_feat_button">Favorite Feat</string>
-    <string name="feats_info">A feat represents a talent or an area of expertise that gives character special capabilities. It embodies training, experience, and abilities beyond what a class provides. At certain levels, your class gives you the Ability Score Improvement feature. Using the optional feats rule, you can forgo taking that feature to take a feat of your choice instead. You can take each feat only once, unless the feat’s description says otherwise.\n\n"   "You must meet any prerequisite specified in a feat to take that feat. If you ever lose a feat’s prerequisite, you can’t use that feat until you regain the prerequisite. For example, the Inspiring Leader feat requires you to have a Charisma of 13 or higher. If your Charisma is reduced below 13 somehow-perhaps by a withering curse-you can’t benefit from the Inspiring Leader feat until your Charisma is restored.</string>
+    <string name="feats_info_label"><font color="#D4af37">Feat Info</font></string>
+    <string name="feats_info">\n\nA feat represents a talent or an area of expertise that gives character special capabilities. It embodies training, experience, and abilities beyond what a class provides. At certain levels, your class gives you the Ability Score Improvement feature. Using the optional feats rule, you can forgo taking that feature to take a feat of your choice instead. You can take each feat only once, unless the feat’s description says otherwise.\n\n"   "You must meet any prerequisite specified in a feat to take that feat. If you ever lose a feat\’s prerequisite, you can\’t use that feat until you regain the prerequisite. For example, the Inspiring Leader feat requires you to have a Charisma of 13 or higher. If your Charisma is reduced below 13 somehow, perhaps by a withering curse, you can\’t benefit from the Inspiring Leader feat until your Charisma is restored.</string>
     <string name="feats_menu_str"><font color="#d4af37">"       "Strength</font></string>
     <string name="feats_menu_dex"><font color="#d4af37">"       "Dexterity</font></string>
     <string name="feats_menu_con"><font color="#d4af37">"       "Constitution</font></string>
@@ -1160,6 +1161,8 @@
     <string name="sampletext">Sample Text</string>
     <string name="favorites_gold"><font color="#D4af37">Favorites</font></string>
     <string name="casting_info"><font color="#D4af37">Casting Info</font></string>
+    <string name="customizations_title">customizations</string>
+
 
     <!--Uncategorized-->
 

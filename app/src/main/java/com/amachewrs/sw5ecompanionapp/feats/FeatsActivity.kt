@@ -9,6 +9,7 @@ import android.os.CountDownTimer
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -44,8 +45,11 @@ class FeatsActivity : AppCompatActivity() {
     private var filterForceItems = setOf<MenuItem>()
     private var filterTechItems = setOf<MenuItem>()
     private lateinit var featmenu: Menu
+    private lateinit var infotext: TextView
+    private var atInfo = false
     private var keepmenu = false
-    private val preqCats = setOf(10,13,17,21,27,33)
+    private val preqCats = setOf(11,14,18,22,28,34)
+    private var menuSnapshot: MutableMap<MenuItem,Boolean> = mutableMapOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,6 +64,9 @@ class FeatsActivity : AppCompatActivity() {
 
         featList.addAll(getFeats())
 
+        infotext=layoutInflater.inflate(R.layout.universal_textview_nofont_gold,binding.coord,false).findViewById(R.id.textview)
+        infotext.text=getText(R.string.feats_info)
+
         reclview = binding.reclview
         adapterFeatList.addAll(featList.sortFeatByName())
         featadapter = FeatsAdapter(this,adapterFeatList,favFeatList)
@@ -73,7 +80,7 @@ class FeatsActivity : AppCompatActivity() {
         searchView.queryHint="Search..."
         searchView.setOnQueryTextListener(object: androidx.appcompat.widget.SearchView.OnQueryTextListener{
             override fun onQueryTextChange(enttext: String?): Boolean {
-                returntotop(reclview,"sharp")
+                returntotop("sharp")
                 if(enttext.isNullOrBlank()){
                     trimEnteredText=""
                     featadapter.setFeatList(currentfeatlist.filter{filter(it)})
@@ -97,7 +104,7 @@ class FeatsActivity : AppCompatActivity() {
                 return false
             }
             override fun onQueryTextSubmit(enttext: String?): Boolean {
-                returntotop(reclview,"sharp")
+                returntotop("sharp")
                 if(enttext.isNullOrBlank()){
                     trimEnteredText=""
                     featadapter.setFeatList(currentfeatlist.filter{filter(it)})
@@ -123,7 +130,7 @@ class FeatsActivity : AppCompatActivity() {
         })
 
 
-        binding.floatingActionButton.setOnClickListener{returntotop(reclview,"smooth")}
+        binding.floatingActionButton.setOnClickListener{returntotop("smooth")}
 
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -153,18 +160,21 @@ class FeatsActivity : AppCompatActivity() {
                 keepmenu=false
                 currentfeatlist=featList.sortFeatByNameDescending()
                 item.title=getText(R.string.sortABCup)
-                returntotop(reclview,"sharp")}
+                returntotop("sharp")}
             getText(R.string.sortABCup)->{
                 keepmenu=false
                 currentfeatlist=featList.sortFeatByName()
                 item.title = getText(R.string.sortABCdown)
-                returntotop(reclview,"sharp")}
+                returntotop("sharp")}
+            getText(R.string.feats_info_label)->{
+                handleInfoSwitch()
+                keepmenu = false }
             getText(R.string.ability_score)->{
                 if (!item.isChecked){
                     featmenu.setGroupVisible(R.id.feats_menu_asi_group,true)
                     filterASI.addAll(listOf("Str","Dex","Con","Int","Wis","Cha"))
                     filters.add("ASI")
-                    featmenu.forEach { if (it.order==3) it.isChecked=true}
+                    featmenu.forEach { if (it.order==5) it.isChecked=true}
                 }
                 else {
                     filterASI.clear()
@@ -428,7 +438,25 @@ class FeatsActivity : AppCompatActivity() {
         return false
     }
 
-
+    private fun handleInfoSwitch(){
+        if(!atInfo){
+            binding.coord.removeView(binding.reclview)
+            binding.searchview.visibility = View.GONE
+            binding.coord.addView(infotext)
+            featmenu.forEach {
+                menuSnapshot[it] = it.isVisible
+                if(it.order!=2)it.isVisible=false
+            }
+        }
+        else {
+            binding.coord.removeView(infotext)
+            binding.coord.addView(binding.reclview)
+            binding.searchview.visibility = View.VISIBLE
+            featmenu.forEach { it.isVisible = menuSnapshot[it]!! }
+            returntotop("sharp")
+        }
+        atInfo=!atInfo
+    }
     private fun filter(feat: Feat): Boolean{
         if (!feat.featname.contains(trimEnteredText)) return false
         if (filters.contains("ASI")){
@@ -473,10 +501,10 @@ class FeatsActivity : AppCompatActivity() {
         else filterList.remove(filter)
         item.isChecked= !item.isChecked
     }
-    private fun returntotop(view: RecyclerView,mode: String){
+    private fun returntotop(mode: String){
         when(mode){
-            "smooth"->view.smoothScrollToPosition(0)
-            "sharp"->view.scrollToPosition(0)
+            "smooth"->binding.reclview.smoothScrollToPosition(0)
+            "sharp"->binding.reclview.scrollToPosition(0)
         }
 
     }

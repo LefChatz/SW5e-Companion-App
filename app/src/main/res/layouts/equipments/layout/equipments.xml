@@ -21,7 +21,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             >
-            <ImageButton
+            <!--<ImageButton
                 android:id="@+id/infobutton"
                 android:layout_width="32dp"
                 android:layout_height="match_parent"
@@ -29,7 +29,7 @@
                 android:src="@drawable/infogold"
                 android:contentDescription="@string/info"
                 android:layout_gravity="end"
-                />
+                />-->
         </androidx.appcompat.widget.Toolbar>
 
         <com.amachewrs.sw5ecompanionapp.widget.BackButton

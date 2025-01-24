@@ -13,7 +13,7 @@ import com.amachewrs.sw5ecompanionapp.databinding.EquipmentsBinding
 
 class EquipmentActivity : AppCompatActivity() {
     private lateinit var binding: EquipmentsBinding
-    private var mode = 0
+    /*private var mode = 0*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,7 @@ class EquipmentActivity : AppCompatActivity() {
 
         binding.BackButton.setOnClickListener { returntomain() }
 
-        binding.infobutton.setOnClickListener {
+        /*binding.infobutton.setOnClickListener {
             if(mode==0){
                 mode=1
             }
@@ -34,7 +34,7 @@ class EquipmentActivity : AppCompatActivity() {
                     .show()
             }
             return@setOnClickListener
-        }
+        }*/
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 returntomain()
@@ -52,12 +52,13 @@ class EquipmentActivity : AppCompatActivity() {
         }
     }
     private fun returntomain() {
-        if(mode==0){
+        startActivity(Intent(this, SW5ECompanionApp::class.java))
+        /*if(mode==0){
             startActivity(Intent(this, SW5ECompanionApp::class.java))
             finish()
         }
         else{
             mode=0
-        }
+        }*/
     }
 }

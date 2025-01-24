@@ -58,6 +58,7 @@
             android:exported="false" />
         <activity
             android:name=".equipment.EquipmentInfo"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false" />
         <activity
             android:name=".species.SpeciesDetailsActivity"
