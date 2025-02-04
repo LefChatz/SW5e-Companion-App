@@ -36,7 +36,7 @@ class CustomizationsActivity : AppCompatActivity() {
         setContentView(binding.root)
         inflater=layoutInflater
 
-        binding.title.text=customOption
+        binding.title.text=customOption.replace("_"," ")
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 

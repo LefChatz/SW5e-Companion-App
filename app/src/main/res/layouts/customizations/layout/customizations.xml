@@ -15,27 +15,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            >
-            <ImageButton
-                android:id="@+id/infobutton"
-                android:layout_width="32dp"
-                android:layout_height="match_parent"
-                android:background="?android:attr/selectableItemBackground"
-                android:src="@drawable/infogold"
-                android:contentDescription="@string/info"
-                android:layout_gravity="end"
-                />
-        </androidx.appcompat.widget.Toolbar>
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/infobutton"
+            android:layout_width="70dp"
+            android:layout_height="0dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@string/info"
+            android:src="@drawable/infogold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.amachewrs.sw5ecompanionapp.widget.BackButton
             android:id="@+id/BackButton"
-            android:layout_width="70sp"
+            android:layout_width="70dp"
             android:layout_height="0sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,17 +44,21 @@
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:fontFamily="@font/starjedi"
             android:text="@string/customizations"
             android:textColor="@color/gold"
-            android:textSize="22sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="16sp"
+            android:autoSizeMaxTextSize="26sp"
+            android:autoSizeStepGranularity="1sp"
             android:translationZ="90dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/infobutton"
+            app:layout_constraintStart_toEndOf="@+id/BackButton"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

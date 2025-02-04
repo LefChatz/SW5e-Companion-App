@@ -4,7 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.MenuItem
 import android.view.View
+import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
@@ -30,6 +32,9 @@ class SW5ECompanionApp : AppCompatActivity() {
         binding = ActivityHubBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.menubutton.setOnClickListener {
+            inflateSettingsMenu(binding.menubutton)
+        }
         onBackPressedDispatcher.addCallback(this,object: OnBackPressedCallback(true){override fun handleOnBackPressed(){backpressed()}})
     }
     fun portal(view: View){
@@ -46,6 +51,25 @@ class SW5ECompanionApp : AppCompatActivity() {
         }
         finish()
     }
+    private fun inflateSettingsMenu(anchor: View){
+        val popup = PopupMenu(this,anchor)
+        popup.inflate(R.menu.menu_hub_attempt)
+
+        popup.setOnMenuItemClickListener { item: MenuItem? ->
+            when (item!!.itemId) {
+                R.id.settings -> {}
+                R.id.about -> {}
+                R.id.report_errors -> {
+                    Toast.makeText(this, R.string.error_please_report_this, Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
+            true
+        }
+
+        popup.show()
+    }
+
     private fun backpressed(){
         if (!leave) {
             Toast.makeText(this,"press back again to exit the app",Toast.LENGTH_SHORT).show()

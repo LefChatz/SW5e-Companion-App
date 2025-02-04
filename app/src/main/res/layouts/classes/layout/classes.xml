@@ -24,7 +24,7 @@
             >
             <ImageButton
                 android:id="@+id/infobutton"
-                android:layout_width="32dp"
+                android:layout_width="70dp"
                 android:layout_height="match_parent"
                 android:background="?android:attr/selectableItemBackground"
                 android:src="@drawable/infogold"
