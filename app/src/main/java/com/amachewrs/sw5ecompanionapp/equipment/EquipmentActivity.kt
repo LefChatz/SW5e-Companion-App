@@ -53,6 +53,7 @@ class EquipmentActivity : AppCompatActivity() {
     }
     private fun returntomain() {
         startActivity(Intent(this, SW5ECompanionApp::class.java))
+        finish()
         /*if(mode==0){
             startActivity(Intent(this, SW5ECompanionApp::class.java))
             finish()

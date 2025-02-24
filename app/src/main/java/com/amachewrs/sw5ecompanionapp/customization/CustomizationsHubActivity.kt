@@ -91,9 +91,7 @@ class CustomizationsHubActivity : AppCompatActivity() {
             binding.scrolly.scrollTo(0,0)
             binding.scrolly.fling(0)
             binding.ll.removeAllViews()
-
             generateOptions()
-
             mode=0
         }
     }

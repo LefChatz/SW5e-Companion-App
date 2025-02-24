@@ -7,7 +7,9 @@ import android.os.Looper
 import android.view.MenuItem
 import android.view.View
 import android.widget.PopupMenu
+import android.widget.TextView
 import android.widget.Toast
+import android.widget.Toast.*
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.amachewrs.sw5ecompanionapp.backgrounds.BackgroundsActivity
@@ -25,6 +27,7 @@ class SW5ECompanionApp : AppCompatActivity() {
 
     private lateinit var binding: ActivityHubBinding
     private var leave=false
+    private var mode=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,9 +61,11 @@ class SW5ECompanionApp : AppCompatActivity() {
         popup.setOnMenuItemClickListener { item: MenuItem? ->
             when (item!!.itemId) {
                 R.id.settings -> {}
-                R.id.about -> {}
+                R.id.about -> {
+                    handleAboutSwitch()
+                }
                 R.id.report_errors -> {
-                    Toast.makeText(this, R.string.error_please_report_this, Toast.LENGTH_SHORT)
+                    makeText(this, R.string.please_report_errors, LENGTH_SHORT)
                         .show()
                 }
             }
@@ -70,11 +75,28 @@ class SW5ECompanionApp : AppCompatActivity() {
         popup.show()
     }
 
+    private fun handleAboutSwitch(){
+        if (mode==0){
+            binding.scrolly.removeView(binding.constl)
+            val temptxt = layoutInflater.inflate(R.layout.universal_textview_nofont_gold,binding.scrolly,false).findViewById<TextView>(R.id.textview)
+            temptxt.text = resources.getText(R.string.about_text)
+            binding.scrolly.addView(temptxt)
+            mode=1
+        }
+        else{
+            binding.scrolly.removeAllViews()
+            binding.scrolly.addView(binding.constl)
+            mode=0
+        }
+    }
     private fun backpressed(){
         if (!leave) {
-            Toast.makeText(this,"press back again to exit the app",Toast.LENGTH_SHORT).show()
-            leave=true
-            Handler(Looper.getMainLooper()).postDelayed({leave=false},3000)
+            if (mode==1) handleAboutSwitch()
+            else{
+                makeText(this,"press back again to exit the app", LENGTH_SHORT).show()
+                leave=true
+                Handler(Looper.getMainLooper()).postDelayed({leave=false},3000)
+            }
         }
         else finish()
     }

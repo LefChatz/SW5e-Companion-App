@@ -1137,6 +1137,7 @@
     <!--Error reporting medium-->
     <string name="error_please_report_this">Error please report this to sw5ecompanionapp@gmail.com</string>
     <string name="please_report_this">Please report this to sw5ecompanionapp@gmail.com</string>
+    <string name="please_report_errors">Please report errors to sw5ecompanionapp@gmail.com</string>
     <string name="error_reporting_medium">sw5ecompanionapp@gmail.com</string>
 
     <!--Random utility stuff -->
@@ -1165,6 +1166,7 @@
     <string name="favorites_gold"><font color="#D4af37">Favorites</font></string>
     <string name="casting_info"><font color="#D4af37">Casting Info</font></string>
     <string name="customizations_title">customizations</string>
+    <string name="about_text">\n This application\'s goal is to enhance play of SW5e, a fan made ttrpg based on the 5th edition of D&amp;D \n We do not own or have helped in the creation of SW5e, we are simply fans of the edition, we made this application because we liked the game and we decided to make something that helps access information about the edition quickly and easily. \n\n The team consists of me, the lead developer, Lefteris, my friend who assisted in the development, Nikos and Tasa who helped with the art stuff. \nAlso want to thank some people who helped with feedback abour the app.</string>
 
 
     <!--Uncategorized-->
