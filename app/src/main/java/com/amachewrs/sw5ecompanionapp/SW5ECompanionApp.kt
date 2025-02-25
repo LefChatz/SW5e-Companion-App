@@ -1,6 +1,7 @@
 package com.amachewrs.sw5ecompanionapp
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -60,14 +61,8 @@ class SW5ECompanionApp : AppCompatActivity() {
 
         popup.setOnMenuItemClickListener { item: MenuItem? ->
             when (item!!.itemId) {
-                R.id.settings -> {}
-                R.id.about -> {
-                    handleAboutSwitch()
-                }
-                R.id.report_errors -> {
-                    makeText(this, R.string.please_report_errors, LENGTH_SHORT)
-                        .show()
-                }
+                R.id.about -> handleAboutSwitch()
+                R.id.report_errors -> startActivity(Intent(Intent.ACTION_SEND).setData(Uri.parse(resources.getString(R.string.error_open_email))))
             }
             true
         }

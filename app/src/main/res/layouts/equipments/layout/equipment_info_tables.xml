@@ -4562,6 +4562,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:clipToPadding="false"
+            android:layout_marginTop="50dp"
             android:layout_marginHorizontal="10dp"
             android:stretchColumns="0"
             android:background="#50FFD700">

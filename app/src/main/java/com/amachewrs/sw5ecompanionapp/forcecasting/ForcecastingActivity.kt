@@ -172,7 +172,7 @@ class ForcecastingActivity : AppCompatActivity() {
                     if(favChecked){eraselist.removeAll{ (it in darkforcepowers) and (it.forcepowername in favForcepowerList)}}
                     else{eraselist.removeAll(darkforcepowers)}
                 }
-                forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{(it !in eraselist) and if(trimEnteredText.isNotBlank()){it.forcepowername.contains(trimEnteredText,true)}else{true}}.toMutableList())
+                forcepoweradapter.setForcepowerList(currentforcepowerlist.filter{(it !in eraselist) and (if(trimEnteredText.isNotBlank()){it.forcepowername.contains(trimEnteredText,true)}else{true})}.toMutableList())
                 item.isChecked= !item.isChecked
                 darkChecked= !darkChecked
             }
