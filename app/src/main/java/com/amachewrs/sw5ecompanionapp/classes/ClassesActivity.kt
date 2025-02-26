@@ -93,10 +93,7 @@ class ClassesActivity : AppCompatActivity() {
     }*/
 
     private fun returntomain() {
-        if(mode==0){
-            startActivity(Intent(this, SW5ECompanionApp::class.java))
-            finish()
-        }
+        if(mode==0) finish()
         else{
             scroll.removeAllViews()
             scroll.scrollTo(0,0)

@@ -204,6 +204,7 @@ class ForcecastingActivity : AppCompatActivity() {
         if(!atInfo){
             binding.coord.removeView(binding.reclview)
             binding.searchview.visibility = View.GONE
+            binding.floatingActionButton.visibility= View.GONE
             generateInfo()
             forcemenu.forEach { if(it.order!=2)it.isVisible=false }
         }
@@ -211,6 +212,7 @@ class ForcecastingActivity : AppCompatActivity() {
             binding.coord.removeView(scrolly)
             binding.coord.addView(binding.reclview)
             binding.searchview.visibility = View.VISIBLE
+            binding.floatingActionButton.visibility= View.VISIBLE
             forcemenu.forEach { it.isVisible=true }
             returntotop("sharp")
         }
@@ -279,11 +281,9 @@ class ForcecastingActivity : AppCompatActivity() {
             "smooth"->binding.reclview.smoothScrollToPosition(0)
             "sharp"->binding.reclview.scrollToPosition(0)
         }
-
     }
     fun returntomain() {
         if (!atInfo) {
-            startActivity(Intent(this, SW5ECompanionApp::class.java))
             with(favSharedPreferences.edit()){
                 putStringSet("favorite_force_powers",favForcepowerList.toMutableSet())
                 apply()

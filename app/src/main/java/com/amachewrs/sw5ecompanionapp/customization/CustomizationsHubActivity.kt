@@ -83,10 +83,7 @@ class CustomizationsHubActivity : AppCompatActivity() {
     }*/
 
     private fun returntomain() {
-        if(mode==0){
-            startActivity(Intent(this, SW5ECompanionApp::class.java))
-            finish()
-        }
+        if(mode==0) finish()
         else{
             binding.scrolly.scrollTo(0,0)
             binding.scrolly.fling(0)

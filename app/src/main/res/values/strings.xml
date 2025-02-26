@@ -1142,9 +1142,9 @@
     <string name="error_open_email">mailto:sw5ecompanionapp@gmail.com</string>
 
     <!--Random utility stuff -->
-    <string name="title_activity_SW5ECompanionApp">SW5ECompanionApp</string>
-    <string name="app_name">Star Wars Companion App</string>
-    <string name="star_wars_companion_app">Star Wars companion App</string>
+    <string name="title_activity_SW5ECompanionApp">SW5eCompanionApp</string>
+    <string name="app_name">Star Wars 5e Companion App</string>
+    <string name="star_wars_companion_app">Star Wars 5e companion App</string>
     <string name="dummy">dummy</string>
     <string name="fab">FAB</string>
     <string name="menu">menu</string>
@@ -1167,7 +1167,7 @@
     <string name="favorites_gold"><font color="#D4af37">Favorites</font></string>
     <string name="casting_info"><font color="#D4af37">Casting Info</font></string>
     <string name="customizations_title">customizations</string>
-    <string name="about_text">\n This application\'s goal is to assist while playing SW5e, a fan made ttrpg based on the 5th edition of D&amp;D \n We do not own or have helped in the creation of SW5e, we are simply fans of the edition, we made this application because we liked the game and we decided to make something that helps access information about the edition quickly and easily. \n\nThe team consists of: \n\nLefteris, the lead developer \n\nNikos, assistant developer,forever DM and average Star Wars enjoyer \n\nTasa who helped with the art stuff. \n\nAlso thanks to all the people who helped with feedback about the app.</string>
+    <string name="about_text">\n This application\'s goal is to help players look up information about SW5e, a fan made ttrpg based on the 5th edition of D&amp;D \n We do not own or have helped in the creation of SW5e, we are simply fans of the edition, we made this application because we liked the edition and have ran a couple campaigns on it so far,plus we wanted to practice app development so we decided to make a kind of companion app about SW5e similar to the ones about regular 5e. \n\nThe team consists of: \n\nLefteris, the lead developer \n\nNikos, assistant developer,forever DM and average Star Wars enjoyer \n\nTasa who helped with the art stuff. \n\nAlso thanks to all the people who helped with feedback about the app.</string>
 
 
     <!--Uncategorized-->

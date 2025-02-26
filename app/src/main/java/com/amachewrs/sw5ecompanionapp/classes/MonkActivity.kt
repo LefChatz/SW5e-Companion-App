@@ -140,15 +140,9 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
                         }
                         ll.addView(tempbersk)
                         if(i==2){
-                            val vartxt = TextView(this)
-                            val layoutParams = LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT)
-                            layoutParams.marginStart=5
-                            vartxt.layoutParams=layoutParams
-                            vartxt.background=AppCompatResources.getDrawable(this,R.drawable.goldbox)
-                            vartxt.text=getText(R.string.variant_monk)
-                            vartxt.setTextColor(getColor(R.color.gold))
-                            vartxt.textSize=18F
-                            ll.addView(vartxt)
+                            val goldboxtext = inflater.inflate(R.layout.universal_textview_goldbox,ll,false)
+                            goldboxtext.findViewById<TextView>(R.id.BoxText).text=getText(R.string.variant_monk)
+                            ll.addView(goldboxtext)
                         }
                     }
                 }

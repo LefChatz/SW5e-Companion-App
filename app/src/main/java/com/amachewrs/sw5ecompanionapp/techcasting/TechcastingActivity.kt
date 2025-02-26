@@ -174,12 +174,14 @@ class TechcastingActivity : AppCompatActivity() {
         if(!atInfo){
             binding.coord.removeView(binding.reclview)
             binding.searchview.visibility = View.GONE
+            binding.floatingActionButton.visibility = View.GONE
             generateInfo()
         }
         else {
             binding.coord.removeView(scrolly)
             binding.coord.addView(binding.reclview)
             binding.searchview.visibility = View.VISIBLE
+            binding.floatingActionButton.visibility = View.VISIBLE
             returntotop("sharp")
         }
         atInfo=!atInfo

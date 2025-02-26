@@ -442,6 +442,7 @@ class FeatsActivity : AppCompatActivity() {
         if(!atInfo){
             binding.coord.removeView(binding.reclview)
             binding.searchview.visibility = View.GONE
+            binding.floatingActionButton.visibility = View.GONE
             binding.coord.addView(infotext)
             featmenu.forEach {
                 menuSnapshot[it] = it.isVisible
@@ -452,6 +453,7 @@ class FeatsActivity : AppCompatActivity() {
             binding.coord.removeView(infotext)
             binding.coord.addView(binding.reclview)
             binding.searchview.visibility = View.VISIBLE
+            binding.floatingActionButton.visibility = View.VISIBLE
             featmenu.forEach { it.isVisible = menuSnapshot[it]!! }
             returntotop("sharp")
         }
@@ -509,7 +511,6 @@ class FeatsActivity : AppCompatActivity() {
 
     }
     fun returntomain() {
-        startActivity(Intent(this, SW5ECompanionApp::class.java))
         with(favSharedPreferences.edit()){
             putStringSet("favorite_feats",favFeatList.toMutableSet())
             apply()

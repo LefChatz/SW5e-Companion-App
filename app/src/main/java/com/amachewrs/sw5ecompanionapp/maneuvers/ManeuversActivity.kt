@@ -213,7 +213,6 @@ class ManeuversActivity : AppCompatActivity() {
 
     }
     fun returntomain() {
-        startActivity(Intent(this, SW5ECompanionApp::class.java))
         with(favSharedPreferences.edit()){
             putStringSet("favorite_maneuvers",favManeuverList.toMutableSet())
             apply()

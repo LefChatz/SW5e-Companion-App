@@ -53,20 +53,17 @@ class SW5ECompanionApp : AppCompatActivity() {
             binding.buttonmaneuvers.id->    startActivity(Intent(this, ManeuversActivity::class.java))
             binding.buttoncustoms.id->      startActivity(Intent(this, CustomizationsHubActivity::class.java))
         }
-        finish()
     }
     private fun inflateSettingsMenu(anchor: View){
         val popup = PopupMenu(this,anchor)
         popup.inflate(R.menu.menu_hub_attempt)
-
         popup.setOnMenuItemClickListener { item: MenuItem? ->
             when (item!!.itemId) {
                 R.id.about -> handleAboutSwitch()
-                R.id.report_errors -> startActivity(Intent(Intent.ACTION_SEND).setData(Uri.parse(resources.getString(R.string.error_open_email))))
+                R.id.report_errors -> startActivity(Intent(Intent.ACTION_SENDTO).setData(Uri.parse(resources.getString(R.string.error_open_email))))
             }
             true
         }
-
         popup.show()
     }
 

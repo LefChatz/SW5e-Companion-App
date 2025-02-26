@@ -849,7 +849,6 @@ class AllActivity : AppCompatActivity() {
         }
     }
     private fun returntomain() {
-        startActivity(Intent(this, EquipmentActivity::class.java))
         with(favSharedPreferences.edit()){
             putStringSet("favequipmentlist",faveEquipmentList.toMutableSet())
             apply()
