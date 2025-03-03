@@ -17,8 +17,7 @@ import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.spells.adapterstuff.EquipmentDiffUtilCallback
 
 
-class EquipmentAdapter(private val mycontext: Context, private val dataset: MutableList<String>, private val bigdataset: List<String>, private val favequipmentlist: MutableList<String>) : RecyclerView.Adapter<ViewHolder>() {
-    val levels: List<Int> = listOf(0,1,2,3,4,5,6,7,8,9)
+class EquipmentAdapter(private val mycontext: Context, private val dataset: MutableList<Equipment> ,private val favequipmentlist: MutableList<String>) : RecyclerView.Adapter<ViewHolder>() {
     class EmptyEquipmentHolder(view: View) : ViewHolder(view){
         private val emptyrelout: RelativeLayout
         init{
@@ -62,10 +61,8 @@ class EquipmentAdapter(private val mycontext: Context, private val dataset: Muta
     }
 
     override fun getItemViewType(position: Int): Int {
-        return when(dataset[position]){
-            in bigdataset -> {1}
-            "empty" ->{2}
-            in levels.toString() ->{3}
+        return when{
+            dataset[position].isEmpty()->{2}
             else ->{0}
         }
 
@@ -75,7 +72,7 @@ class EquipmentAdapter(private val mycontext: Context, private val dataset: Muta
             1->{}
             2->{}
             3->{setlevel(viewHolder as LeveledDividerHolder,dataset[position].toInt())}
-            else->{equipment(viewHolder as EquipmentHolder,dataset[position])}
+            else->{setEquipment(viewHolder as EquipmentHolder,dataset[position])}
         }
 
 
@@ -106,34 +103,21 @@ class EquipmentAdapter(private val mycontext: Context, private val dataset: Muta
 
 
     @SuppressLint("DiscouragedApi")
-    private fun equipment(view: EquipmentHolder, name: String){
-        val identifiq=mycontext.resources.getIdentifier(name,"array",mycontext.packageName)
-        if(identifiq!=0){
-            val templist = mycontext.resources.getTextArray(identifiq)
-            view.equipmenttext.text = templist[0]
-            view.equipmenttext.typeface = mycontext.resources.getFont(R.font.starjedi)
-            view.details.text = templist[1]
-            view.relout.setOnClickListener{
-                mycontext.startActivity(Intent(mycontext, EquipmentDetailsActivity::class.java).putExtra("Equipment_Name",name))
-            }
-            view.imbutton.setOnClickListener {
-                updatefav(name,view.imbutton)
-            }
-            if(name in favequipmentlist){
-                view.imbutton.foreground=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegoldtrue)
-            }
-            else{
-                view.imbutton.foreground=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegold)
-            }
+    private fun setEquipment(view: EquipmentHolder, equipment: Equipment){
+        view.equipmenttext.text = equipment.printedname
+        view.equipmenttext.typeface = mycontext.resources.getFont(R.font.starjedi)
+        view.details.text = equipment.detailsText
+        view.relout.setOnClickListener{
+            mycontext.startActivity(Intent(mycontext, EquipmentDetailsActivity::class.java).putExtra("Equipment_Name",equipment))
+        }
+        view.imbutton.setOnClickListener {
+            updatefav(equipment.equipmentname,view.imbutton)
+        }
+        if(equipment.equipmentname in favequipmentlist){
+            view.imbutton.foreground=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegoldtrue)
         }
         else{
-            view.equipmenttext.text=mycontext.getString(R.string.eqerror404)
-            view.equipmenttext.typeface = mycontext.resources.getFont(R.font.starjedi)
-            view.equipmenttext.textSize=21F
-            view.imbutton.background=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegold)
-            view.imbutton.setOnClickListener {  }
-            view.relout.setOnClickListener{}
-            view.details.text =""
+            view.imbutton.foreground=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegold)
         }
 
     }

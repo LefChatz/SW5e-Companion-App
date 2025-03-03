@@ -225,11 +225,11 @@ class TechcastingActivity : AppCompatActivity() {
         table.findViewById<TextView>(R.id.title_2).text=infoHeap.poll()
         for (i in 0..9){
             val extraRow = inflater.inflate(R.layout.two_column_table_extra_row_gold,table,false)
-            extraRow.findViewById<TextView>(R.id.extra_row_1).text=i.toString()
+            extraRow.findViewById<TextView>(R.id.extra_row_1).text= "$i"
             if (i==0) extraRow.findViewById<TextView>(R.id.extra_row_2).text="0"
             else {
                 val temp = i + 1
-                extraRow.findViewById<TextView>(R.id.extra_row_2).text = temp.toString()
+                extraRow.findViewById<TextView>(R.id.extra_row_2).text = "$temp"
             }
             if (i%2==1) extraRow.background=null
             table.addView(extraRow)

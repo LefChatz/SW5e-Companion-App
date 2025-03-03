@@ -46,17 +46,17 @@
         android:id="@+id/reclview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:scrollbars="vertical"
+        android:paddingVertical="50dp"
+        android:clipToPadding="false"
         android:scrollbarStyle="insideOverlay"
+        android:scrollbars="vertical"
         app:fastScrollEnabled="true"
-        app:fastScrollVerticalThumbDrawable="@drawable/forcecasting_scrollbar"
-        app:fastScrollVerticalTrackDrawable="@drawable/forcecasting_scrollbartrack_selector"
         app:fastScrollHorizontalThumbDrawable="@drawable/forcecasting_scrollbar"
         app:fastScrollHorizontalTrackDrawable="@drawable/forcecasting_scrollbartrack_selector"
-        >
-    </androidx.recyclerview.widget.RecyclerView>
+        app:fastScrollVerticalThumbDrawable="@drawable/forcecasting_scrollbar"
+        app:fastScrollVerticalTrackDrawable="@drawable/forcecasting_scrollbartrack_selector"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"

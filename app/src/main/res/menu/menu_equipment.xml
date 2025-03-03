@@ -153,6 +153,12 @@
             android:title="@string/equipment_menu_accessories"
             android:checkable="true"
             />
+        <item
+            android:id="@+id/eqmenu_tools"
+            android:orderInCategory="7"
+            android:title="@string/equipment_menu_tools"
+            android:checkable="true"
+            />
     </group>
     <item
         android:id="@+id/menu_maneuvers_fav"

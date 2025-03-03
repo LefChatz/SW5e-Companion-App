@@ -16,7 +16,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentAllListBinding
+import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.Equipment
 import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.EquipmentAdapter
+import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.isEmpty
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
@@ -26,18 +28,17 @@ class AllActivity : AppCompatActivity() {
     private lateinit var favSharedPreferences: SharedPreferences
     private lateinit var equipmentMenu:Menu
 
-    private var bigEquipmentList = listOf<String>()
-    private var equipmentList = listOf<String>()
-    private var equipmentWeapons = listOf<String>()
+    private var equipmentList = mutableListOf<Equipment>()
+    /*private var equipmentWeapons = listOf<String>()
     private var equipmentArmors = listOf<String>()
-    private var equipmentAdvGear = listOf<String>()
-    private var currentEquipmentList = listOf<String>()
-    private var searchedList = listOf<String>()
-    private val eraseList = mutableListOf<String>()
+    private var equipmentAdvGear = listOf<String>()*/
+    private var currentEquipmentList = mutableListOf<Equipment>()
+    private var searchedList = mutableListOf<Equipment>()
+    private val eraseList = mutableListOf<Equipment>()
     private val faveEquipmentList = mutableListOf<String>()
-    private val adapterEquipmentList = mutableListOf<String>()
-    private val equipmentAttributeMap = mutableMapOf<String,String>()
-    private val equipmentAttributedList= mutableMapOf<String,MutableList<String>>()
+    private val adapterEquipmentList = mutableListOf<Equipment>()
+    /*private val equipmentAttributeMap = mutableMapOf<String,String>()
+    private val equipmentAttributedList= mutableMapOf<String,MutableList<String>>()*/
     private val filterMode = mutableListOf<String>()
     private val filterList = mutableListOf<String>()
 
@@ -54,19 +55,15 @@ class AllActivity : AppCompatActivity() {
         favSharedPreferences=getSharedPreferences("favequipmentlist", Context.MODE_PRIVATE)
         faveEquipmentList.addAll(favSharedPreferences.getStringSet("favequipmentlist", mutableSetOf())?.toList()!!)
 
-        equipmentWeapons=resources.getStringArray(R.array.equipment_weapons).toList()
+        /*equipmentWeapons=resources.getStringArray(R.array.equipment_weapons).toList()
         equipmentArmors=resources.getStringArray(R.array.equipment_armors).toList()
         equipmentAdvGear=resources.getStringArray(R.array.equipment_advgear).toList()
-        equipmentList=resources.getStringArray(R.array.equipmentlist).toList()
-        bigEquipmentList=resources.getStringArray(R.array.bigequipmentnames).toList()
+        bigEquipmentList=resources.getStringArray(R.array.bigequipmentnames).toList()*/
+        equipmentList=getEquipmentList()
 
-        equipmentList.filter {it!="empty"}.forEach{
-            @SuppressLint("DiscouragedApi")
-            equipmentAttributeMap[it]=resources.getStringArray(resources.getIdentifier(it,"array",packageName))[1]
-        }
         binding.BackButton.setOnClickListener { returntomain() }
 
-        currentEquipmentList= buildList { add("empty");addAll(equipmentList.sorted());add("empty") }
+        currentEquipmentList= equipmentList
         adapterEquipmentList.addAll(currentEquipmentList)
         equipmentAdapter = EquipmentAdapter(this,adapterEquipmentList,bigEquipmentList,faveEquipmentList)
         binding.reclview.adapter = equipmentAdapter
@@ -413,47 +410,7 @@ class AllActivity : AppCompatActivity() {
                             else{eraseList.removeAll(equipmentList)}
                             filterMode.remove("advgear")
                             filterList.clear()
-                            with(equipmentMenu.findItem(R.id.eqmenu_ammunition)){
-                                if (isChecked){
-                                    isChecked=false
-                                }
-                            }
-                            with(equipmentMenu.findItem(R.id.eqmenu_communications)){
-                                if (isChecked){
-                                    isChecked=false
-                                }
-                            }
-                            with(equipmentMenu.findItem(R.id.eqmenu_data)){
-                                if (isChecked){
-                                    isChecked=false
-                                }
-                            }
-                            with(equipmentMenu.findItem(R.id.eqmenu_life_support)){
-                                if (isChecked){
-                                    isChecked=false
-                                }
-                            }
-                            with(equipmentMenu.findItem(R.id.eqmenu_medical_supplies)){
-                                if (isChecked){
-                                    isChecked=false
-                                }
-                            }
-                            with(equipmentMenu.findItem(R.id.eqmenu_storage)){
-                                if (isChecked){
-                                    isChecked=false
-                                }
-                            }
-                            with(equipmentMenu.findItem(R.id.eqmenu_utilities)){
-                                if (isChecked){
-                                    isChecked=false
-                                }
-                            }
-                            with(equipmentMenu.findItem(R.id.eqmenu_accessories)){
-                                if (isChecked){
-                                    isChecked=false
-                                }
-                            }
-
+                            uncheckAdvGear()
                         }
                         equipmentAdapter.setEquipmentList(currentEquipmentList.filter { it !in eraseList && it in searchedList})
                         item.isChecked=!item.isChecked
@@ -543,6 +500,17 @@ class AllActivity : AppCompatActivity() {
                         }
                         else{
                             filterAdvGear("show","accessories")
+                        }
+                        item.isChecked=!item.isChecked
+                    }
+                    contains("Tools",true)->{
+                        keepmenu = true
+                        if(!item.isChecked){
+                            if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
+                            filterAdvGear("hide","tools")
+                        }
+                        else{
+                            filterAdvGear("show","tools")
                         }
                         item.isChecked=!item.isChecked
                     }
@@ -665,7 +633,8 @@ class AllActivity : AppCompatActivity() {
             equipmentAttributedList.getOrPut("medical_supplies"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("Medical",true)}.keys)
             equipmentAttributedList.getOrPut("storage"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("Storage")}.keys)
             equipmentAttributedList.getOrPut("utilities"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("Utility",true)}.keys)
-            equipmentAttributedList.getOrPut("accessories"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("accessory",true)}.keys)
+            equipmentAttributedList.getOrPut("accessories"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("Accessory",true)}.keys)
+            equipmentAttributedList.getOrPut("tools"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("Tool",true)}.keys)
         }
         val tempList1 = equipmentAttributedList[mode]!!.toList()
         if (action == "hide"){
@@ -717,6 +686,11 @@ class AllActivity : AppCompatActivity() {
             }
         }
         with(equipmentMenu.findItem(R.id.eqmenu_accessories)){
+            if (isChecked){
+                isChecked=false
+            }
+        }
+        with(equipmentMenu.findItem(R.id.eqmenu_tools)){
             if (isChecked){
                 isChecked=false
             }
@@ -794,48 +768,17 @@ class AllActivity : AppCompatActivity() {
             else{eraseList.removeAll(equipmentList)}
             filterMode.remove("advgear")
             filterList.clear()
-            with(equipmentMenu.findItem(R.id.eqmenu_ammunition)){
-                if (isChecked){
-                    isChecked=false
-                }
-            }
-            with(equipmentMenu.findItem(R.id.eqmenu_communications)){
-                if (isChecked){
-                    isChecked=false
-                }
-            }
-            with(equipmentMenu.findItem(R.id.eqmenu_data)){
-                if (isChecked){
-                    isChecked=false
-                }
-            }
-            with(equipmentMenu.findItem(R.id.eqmenu_life_support)){
-                if (isChecked){
-                    isChecked=false
-                }
-            }
-            with(equipmentMenu.findItem(R.id.eqmenu_medical_supplies)){
-                if (isChecked){
-                    isChecked=false
-                }
-            }
-            with(equipmentMenu.findItem(R.id.eqmenu_storage)){
-                if (isChecked){
-                    isChecked=false
-                }
-            }
-            with(equipmentMenu.findItem(R.id.eqmenu_utilities)){
-                if (isChecked){
-                    isChecked=false
-                }
-            }
-            with(equipmentMenu.findItem(R.id.eqmenu_accessories)){
-                if (isChecked){
-                    isChecked=false
-                }
-            }
+            uncheckAdvGear()
 
         }
+    }
+    private fun getEquipmentList(): MutableList<Equipment>{
+        val tempEquipmentList = mutableListOf<Equipment>()
+        val equipmentsTextArray = resources.getTextArray(R.array.newequipmentslist)
+        for (i in 8..equipmentsTextArray.size step 9){
+            tempEquipmentList.add(Equipment(equipmentsTextArray[i-8].toString(),equipmentsTextArray[i-7],equipmentsTextArray[i-6].toString(),equipmentsTextArray[i-5].toString().toInt(),equipmentsTextArray[i-4].toString().toDouble(),equipmentsTextArray[i-3].toString(),equipmentsTextArray[i-2].toString(),equipmentsTextArray[i-1],equipmentsTextArray[i].toString()))
+        }
+        return tempEquipmentList
     }
 
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {

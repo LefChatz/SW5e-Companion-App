@@ -810,6 +810,7 @@
     <string name="equipment_menu_storage"><font color="#d4af37">"     "Storage</font></string>
     <string name="equipment_menu_utilities"><font color="#d4af37">"     "Utilities</font></string>
     <string name="equipment_menu_accessories"><font color="#d4af37">"     "W&amp;A accessories</font></string>
+    <string name="equipment_menu_tools"><font color="#d4af37">"     "Tools</font></string>
     <string name="equipment_menu_ok"><font color="#d4af37">Confirm Filters</font></string>
     <string name="equipment_menu_filters">Filters:</string>
     <string name="equipment">EquiPMENT</string>
