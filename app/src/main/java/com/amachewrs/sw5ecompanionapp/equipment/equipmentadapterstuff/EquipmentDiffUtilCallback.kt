@@ -1,8 +1,9 @@
 package com.amachewrs.sw5ecompanionapp.spells.adapterstuff
 
 import androidx.recyclerview.widget.DiffUtil
+import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.Equipment
 
-class EquipmentDiffUtilCallback(private val oldlist: List<String>, private val newlist: List<String>): DiffUtil.Callback() {
+class EquipmentDiffUtilCallback(private val oldlist: List<Equipment>, private val newlist: List<Equipment>): DiffUtil.Callback() {
     override fun getOldListSize(): Int {
         return oldlist.size
     }

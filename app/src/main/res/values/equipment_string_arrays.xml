@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Lists-->
-    <string-array name="bigequipmentnames"></string-array>
     <string-array name="equipmentlist">
         <item>assault_armor</item>
         <item>assault_cannon</item>
@@ -408,7 +407,7 @@
         <item name="Title">Lightblade</item>
         <item name="Attributes">Simple Lightweapon</item>
         <item name="Cost">375</item>
-        <item name="Weight">1,5</item>
+        <item name="Weight">1.5</item>
         <item name="Damage">1d6 energy</item>
         <item name="Properties">Finesse, hidden, luminous</item>
         <item name="Text">A Jedi\'s weapon</item>
@@ -418,7 +417,7 @@
         <item name="Title">Lightsaber</item>
         <item name="Attributes">Simple Lightweapon</item>
         <item name="Cost">450</item>
-        <item name="Weight">2,25</item>
+        <item name="Weight">2.25</item>
         <item name="Damage">1d6 energy</item>
         <item name="Properties">Hidden, luminous, versatile (2d4)</item>
         <item name="Text">A Jedi\'s weapon</item>
@@ -428,7 +427,7 @@
         <item name="Title">Lightclub</item>
         <item name="Attributes">Simple Lightweapon</item>
         <item name="Cost">1300</item>
-        <item name="Weight">3,75</item>
+        <item name="Weight">3.75</item>
         <item name="Damage">1d10 energy</item>
         <item name="Properties">Dexterity 11, heavy, luminous, two-handed</item>
         <item name="Text"> </item>
@@ -448,7 +447,7 @@
         <item name="Title">Lightstaff</item>
         <item name="Attributes">Simple Lightweapon</item>
         <item name="Cost">1275</item>
-        <item name="Weight">4,25</item>
+        <item name="Weight">4.25</item>
         <item name="Damage">2d4 energy</item>
         <item name="Properties">Dexterity 11, luminous, reach, two-handed</item>
         <item name="Text"> </item>
@@ -458,7 +457,7 @@
         <item name="Title">Doublesaber</item>
         <item name="Attributes">Martial Lightweapon</item>
         <item name="Cost">725</item>
-        <item name="Weight">2,25</item>
+        <item name="Weight">2.25</item>
         <item name="Damage">1d8 energy</item>
         <item name="Properties">Double (1d8 energy), finesse, luminous</item>
         <item name="Text"> </item>
@@ -468,7 +467,7 @@
         <item name="Title">Doubleshoto</item>
         <item name="Attributes">Martial Lightweapon</item>
         <item name="Cost">700</item>
-        <item name="Weight">1,75</item>
+        <item name="Weight">1.75</item>
         <item name="Damage">1d6 energy</item>
         <item name="Properties">Double (1d6 energy), finesse, light, luminous</item>
         <item name="Text"> </item>
@@ -477,8 +476,8 @@
         <item name="Name">great_saber</item>
         <item name="Title">Great-Saber</item>
         <item name="Attributes">Martial Lightweapon</item>
-        <item name="Cost">1,725</item>
-        <item name="Weight">3,25</item>
+        <item name="Cost">1725</item>
+        <item name="Weight">3.25</item>
         <item name="Damage">2d6 energy</item>
         <item name="Properties">Dexterity 11, luminous, two-handed</item>
         <item name="Text"> </item>
@@ -487,8 +486,8 @@
         <item name="Name">lightaxe</item>
         <item name="Title">Lightaxe</item>
         <item name="Attributes">Martial Lightweapon</item>
-        <item name="Cost">1,550</item>
-        <item name="Weight">3,75</item>
+        <item name="Cost">1550</item>
+        <item name="Weight">3.75</item>
         <item name="Damage">1d12 energy</item>
         <item name="Properties">Dexterity 11, heavy, luminous, two-handed</item>
         <item name="Text"> </item>
@@ -498,7 +497,7 @@
         <item name="Title">Lightfoil</item>
         <item name="Attributes">Martial Lightweapon</item>
         <item name="Cost">475</item>
-        <item name="Weight">1,5</item>
+        <item name="Weight">1.5</item>
         <item name="Damage">1d8 energy</item>
         <item name="Properties">Finesse, hidden, luminous</item>
         <item name="Text"> </item>
@@ -508,7 +507,7 @@
         <item name="Title">Martial Lightsaber</item>
         <item name="Attributes">Martial Lightweapon</item>
         <item name="Cost">550</item>
-        <item name="Weight">2,25</item>
+        <item name="Weight">2.25</item>
         <item name="Damage">1d8 energy</item>
         <item name="Properties">Hidden, luminous, versatile (1d10)</item>
         <item name="Text"> </item>
@@ -517,8 +516,8 @@
         <item name="Name">pikesaber</item>
         <item name="Title">Pikesaber</item>
         <item name="Attributes">Martial Lightweapon</item>
-        <item name="Cost">1,675</item>
-        <item name="Weight">5,25</item>
+        <item name="Cost">1675</item>
+        <item name="Weight">5.25</item>
         <item name="Damage">1d10 energy</item>
         <item name="Properties">Dexterity 11, luminous, reach, two-handed</item>
         <item name="Text"> </item>
@@ -528,7 +527,7 @@
         <item name="Title">Saberwhip</item>
         <item name="Attributes">Martial Lightweapon</item>
         <item name="Cost">750</item>
-        <item name="Weight">3,5</item>
+        <item name="Weight">3.5</item>
         <item name="Damage">1d4 energy</item>
         <item name="Properties">Finesse, hidden, luminous, reach</item>
         <item name="Text"> </item>
@@ -547,7 +546,7 @@
         <item name="Name">splitsaber</item>
         <item name="Title">Splitsaber</item>
         <item name="Attributes">Martial Lightweapon</item>
-        <item name="Cost">1,500</item>
+        <item name="Cost">1500</item>
         <item name="Weight">3</item>
         <item name="Damage">2d4 energy</item>
         <item name="Properties">Double (2d4 energy), interlocking, luminous</item>
@@ -557,7 +556,7 @@
         <item name="Name">splitshoto</item>
         <item name="Title">Splitshoto</item>
         <item name="Attributes">Martial Lightweapon</item>
-        <item name="Cost">1,150</item>
+        <item name="Cost">1150</item>
         <item name="Weight">2</item>
         <item name="Damage">1d8 energy</item>
         <item name="Properties">Double (1d8 energy), interlocking, light, luminous</item>
@@ -578,7 +577,7 @@
         <item name="Title">vibrodagger</item>
         <item name="Attributes">Simple Vibroweapon</item>
         <item name="Cost">50</item>
-        <item name="Weight">0,5</item>
+        <item name="Weight">0.5</item>
         <item name="Damage">1d4 kinetic</item>
         <item name="Properties">Finesse, light, thrown (range 20/60)</item>
         <item name="Text"> </item>
@@ -588,7 +587,7 @@
         <item name="Title">vibrodart</item>
         <item name="Attributes">Simple Vibroweapon</item>
         <item name="Cost">5</item>
-        <item name="Weight">0,5</item>
+        <item name="Weight">0.5</item>
         <item name="Damage">1d4 kinetic</item>
         <item name="Properties">Finesse, special, thrown (range 20/60)</item>
         <item name="Text">Due to their diminutive size, vibrodarts make ineffective melee weapons. Melee attack rolls made with them are made at disadvantage.</item>
@@ -598,7 +597,7 @@
         <item name="Title">vibroknuckler</item>
         <item name="Attributes">Simple Vibroweapon</item>
         <item name="Cost">75</item>
-        <item name="Weight">1,25</item>
+        <item name="Weight">1.25</item>
         <item name="Damage">1d6 kinetic</item>
         <item name="Properties">Hidden, light</item>
         <item name="Text"> </item>
@@ -648,7 +647,7 @@
         <item name="Title">Doubleblade</item>
         <item name="Attributes">Martial Vibroweapon</item>
         <item name="Cost">400</item>
-        <item name="Weight">3,5</item>
+        <item name="Weight">3.5</item>
         <item name="Damage">1d6 kinetic</item>
         <item name="Properties">Double (1d6 kinetic), finesse, light</item>
         <item name="Text"> </item>
@@ -658,7 +657,7 @@
         <item name="Title">Doublesword</item>
         <item name="Attributes">Martial Vibroweapon</item>
         <item name="Cost">450</item>
-        <item name="Weight">5,5</item>
+        <item name="Weight">5.5</item>
         <item name="Damage">1d8 kinetic</item>
         <item name="Properties">Double (1d8 kinetic), finesse</item>
         <item name="Text"> </item>
@@ -688,7 +687,7 @@
         <item name="Title">Techblade</item>
         <item name="Attributes">Martial Vibroweapon</item>
         <item name="Cost">100</item>
-        <item name="Weight">1,5</item>
+        <item name="Weight">1.5</item>
         <item name="Damage">1d6 kinetic</item>
         <item name="Properties">Finesse, light</item>
         <item name="Text"> </item>
@@ -698,7 +697,7 @@
         <item name="Title">Techstaff</item>
         <item name="Attributes">Martial Vibroweapon</item>
         <item name="Cost">650</item>
-        <item name="Weight">5,25</item>
+        <item name="Weight">5.25</item>
         <item name="Damage">2d4 kinetic</item>
         <item name="Properties">Dexterity 11, double (2d4 kinetic), light</item>
         <item name="Text"> </item>
@@ -708,7 +707,7 @@
         <item name="Title">vibroaxe</item>
         <item name="Attributes">Martial Vibroweapon</item>
         <item name="Cost">950</item>
-        <item name="Weight">9,25</item>
+        <item name="Weight">9.25</item>
         <item name="Damage">1d12 kinetic</item>
         <item name="Properties">Dexterity 11, heavy, two-handed</item>
         <item name="Text"> </item>
@@ -728,7 +727,7 @@
         <item name="Title">vibropike</item>
         <item name="Attributes">Martial Vibroweapon</item>
         <item name="Cost">950</item>
-        <item name="Weight">9,25</item>
+        <item name="Weight">9.25</item>
         <item name="Damage">1d10 kinetic</item>
         <item name="Properties">Dexterity 11, reach, two-handed</item>
         <item name="Text"> </item>
@@ -738,7 +737,7 @@
         <item name="Title">vibrorapier</item>
         <item name="Attributes">Martial Vibroweapon</item>
         <item name="Cost">150</item>
-        <item name="Weight">3,5</item>
+        <item name="Weight">3.5</item>
         <item name="Damage">1d8 kinetic</item>
         <item name="Properties">Finesse</item>
         <item name="Text"> </item>
@@ -747,8 +746,8 @@
         <item name="Name">vibrosword</item>
         <item name="Title">vibrosword</item>
         <item name="Attributes">Martial Vibroweapon</item>
-        <item name="Cost">1,150</item>
-        <item name="Weight">9,25</item>
+        <item name="Cost">1150</item>
+        <item name="Weight">9.25</item>
         <item name="Damage">2d6 kinetic</item>
         <item name="Properties">Dexterity 11, two-handed</item>
         <item name="Text"> </item>
@@ -758,7 +757,7 @@
         <item name="Title">vibrowhip</item>
         <item name="Attributes">Martial Vibroweapon</item>
         <item name="Cost">275</item>
-        <item name="Weight">3,5</item>
+        <item name="Weight">3.5</item>
         <item name="Damage">1d4 kinetic</item>
         <item name="Properties">Finesse, reach</item>
         <item name="Text"> </item>
@@ -769,7 +768,7 @@
         <item name="Title">Blaster Carbine</item>
         <item name="Attributes">Simple Blaster</item>
         <item name="Cost">425</item>
-        <item name="Weight">5,5</item>
+        <item name="Weight">5.5</item>
         <item name="Damage">1d6 energy</item>
         <item name="Properties">Power cell (range 70/280), reload 16, two-handed</item>
         <item name="Text"> </item>
@@ -779,7 +778,7 @@
         <item name="Title">Blaster Pistol</item>
         <item name="Attributes">Simple Blaster</item>
         <item name="Cost">175</item>
-        <item name="Weight">2,5</item>
+        <item name="Weight">2.5</item>
         <item name="Damage">1d6 energy</item>
         <item name="Properties">Power cell (range 70/280), reload 16, two-handed</item>
         <item name="Text"> </item>
@@ -799,7 +798,7 @@
         <item name="Title">Hold-out</item>
         <item name="Attributes">Simple Blaster</item>
         <item name="Cost">225</item>
-        <item name="Weight">0,5</item>
+        <item name="Weight">0.5</item>
         <item name="Damage">1d4 energy</item>
         <item name="Properties">Hidden, light, power cell (range 30/120), reload 8</item>
         <item name="Text"> </item>
@@ -819,7 +818,7 @@
         <item name="Title">ion Pistol</item>
         <item name="Attributes">Simple Blaster</item>
         <item name="Cost">250</item>
-        <item name="Weight">5,5</item>
+        <item name="Weight">5.5</item>
         <item name="Damage">1d3 ion</item>
         <item name="Properties">Power cell (range 40/160), reload 16</item>
         <item name="Text"> </item>
@@ -829,7 +828,7 @@
         <item name="Title">light Pistol</item>
         <item name="Attributes">Simple Blaster</item>
         <item name="Cost">250</item>
-        <item name="Weight">0,5</item>
+        <item name="Weight">0.5</item>
         <item name="Damage">1d4 energy</item>
         <item name="Properties">Light, power cell (range 40/160), reload 8</item>
         <item name="Text"> </item>
@@ -869,7 +868,7 @@
         <item name="Title">Shotgun</item>
         <item name="Attributes">Simple Blaster</item>
         <item name="Cost">725</item>
-        <item name="Weight">6,5</item>
+        <item name="Weight">6.5</item>
         <item name="Damage">2d4 kinetic</item>
         <item name="Properties">Burst 2, reload 4, slug cartridge (range 30/120), strength 11, two-handed</item>
         <item name="Text"> </item>
@@ -889,7 +888,7 @@
         <item name="Title">Wristblaster</item>
         <item name="Attributes">Simple Blaster</item>
         <item name="Cost">200</item>
-        <item name="Weight">0,5</item>
+        <item name="Weight">0.5</item>
         <item name="Damage">1d4 energy</item>
         <item name="Properties">Disguised, fixed, light, power cell (range 30/120), reload 8</item>
         <item name="Text"> </item>
@@ -908,7 +907,7 @@
         <item name="Name">assault_cannon</item>
         <item name="Title">Assault Cannon</item>
         <item name="Attributes">Martial Blaster</item>
-        <item name="Cost">1,550</item>
+        <item name="Cost">1550</item>
         <item name="Weight">15</item>
         <item name="Damage">1d12 energy</item>
         <item name="Properties">Burst 4, power cell (range 90/360), reload 4, strength 15, two-handed </item>
@@ -918,7 +917,7 @@
         <item name="Name">beam_rifle</item>
         <item name="Title">Beam Rifle</item>
         <item name="Attributes">Martial Blaster</item>
-        <item name="Cost">1,850</item>
+        <item name="Cost">1850</item>
         <item name="Weight">16</item>
         <item name="Damage">2d6 energy</item>
         <item name="Properties">Penetrating 2, power cell (range 150/600), reload 2, strength 15, two-handed</item>
@@ -929,7 +928,7 @@
         <item name="Title">Blaster Rifle</item>
         <item name="Attributes">Martial Blaster</item>
         <item name="Cost">525</item>
-        <item name="Weight">7,5</item>
+        <item name="Weight">7.5</item>
         <item name="Damage">1d8 energy</item>
         <item name="Properties">Power cell (range 105/420), reload 12, two-handed</item>
         <item name="Text"> </item>
@@ -939,7 +938,7 @@
         <item name="Title">Carbine Rifle</item>
         <item name="Attributes">Martial Blaster</item>
         <item name="Cost">925</item>
-        <item name="Weight">8,5</item>
+        <item name="Weight">8.5</item>
         <item name="Damage">1d8 energy</item>
         <item name="Properties">Auto, power cell (range 90/360), rapid 3, reload 12, strength 11, two-handed</item>
         <item name="Text"> </item>
@@ -949,7 +948,7 @@
         <item name="Title">Cycler Rifle</item>
         <item name="Attributes">Martial Blaster</item>
         <item name="Cost">825</item>
-        <item name="Weight">7,5</item>
+        <item name="Weight">7.5</item>
         <item name="Damage">1d8 kinetic</item>
         <item name="Properties">Rapid 2, reload 8, slug cartridge (range 90/360), strength 11, two-handed</item>
         <item name="Text"> </item>
@@ -979,7 +978,7 @@
         <item name="Title">heavy Carbine</item>
         <item name="Attributes">Martial Blaster</item>
         <item name="Cost">775</item>
-        <item name="Weight">7,5</item>
+        <item name="Weight">7.5</item>
         <item name="Damage">1d8 energy</item>
         <item name="Properties">Power cell (range 60/240), rapid 4, reload 16, strength 11, two-handed</item>
         <item name="Text"> </item>
@@ -998,7 +997,7 @@
         <item name="Name">heavy_repeater</item>
         <item name="Title">heavy Repeater</item>
         <item name="Attributes">Martial Blaster</item>
-        <item name="Cost">1,225</item>
+        <item name="Cost">1225</item>
         <item name="Weight">11</item>
         <item name="Damage">2d4 energy</item>
         <item name="Properties">Auto, burst 4, power cell (range 80/320), rapid 4, reload 8, strength 13, two-handed</item>
@@ -1008,8 +1007,8 @@
         <item name="Name">heavy_shotgun</item>
         <item name="Title">heavy Shotgun</item>
         <item name="Attributes">Martial Blaster</item>
-        <item name="Cost">1,125</item>
-        <item name="Weight">9,5</item>
+        <item name="Cost">1125</item>
+        <item name="Weight">9.5</item>
         <item name="Damage">2d4 kinetic</item>
         <item name="Properties">Burst 2, reload 8, slug cartridge (range 60/240), strength 13, two-handed</item>
         <item name="Text"> </item>
@@ -1019,7 +1018,7 @@
         <item name="Title">heavy Slugpistol</item>
         <item name="Attributes">Martial Blaster</item>
         <item name="Cost">375</item>
-        <item name="Weight">3,5</item>
+        <item name="Weight">3.5</item>
         <item name="Damage">1d8 kinetic</item>
         <item name="Properties">Rapid 8, reload 12, slug cartridge (range 30/120)</item>
         <item name="Text"> </item>
@@ -1038,8 +1037,8 @@
         <item name="Name">ion_cannon</item>
         <item name="Title">ion Cannon</item>
         <item name="Attributes">Martial Blaster</item>
-        <item name="Cost">3,800</item>
-        <item name="Weight">16,5</item>
+        <item name="Cost">3800</item>
+        <item name="Weight">16.5</item>
         <item name="Damage">1d10 ion</item>
         <item name="Properties">Auto, burst 4, power cell (range 90/360), reload 4, strength 15, two-handed</item>
         <item name="Text"> </item>
@@ -1048,7 +1047,7 @@
         <item name="Name">ion_rifle</item>
         <item name="Title">ion Rifle</item>
         <item name="Attributes">Martial Blaster</item>
-        <item name="Cost">1,150</item>
+        <item name="Cost">1150</item>
         <item name="Weight">8</item>
         <item name="Damage">1d6 ion</item>
         <item name="Properties">Power cell (range 80/320), reload 8, two-handed</item>
@@ -1058,7 +1057,7 @@
         <item name="Name">repeating_blaster</item>
         <item name="Title">Repeating Blaster</item>
         <item name="Attributes">Martial Blaster</item>
-        <item name="Cost">1,025</item>
+        <item name="Cost">1025</item>
         <item name="Weight">9</item>
         <item name="Damage">1d8 energy</item>
         <item name="Properties">Auto, burst 4, power cell (range 75/300), rapid 4, reload 8, strength 11, two-handed</item>
@@ -1068,8 +1067,8 @@
         <item name="Name">rotary_cannon</item>
         <item name="Title">Rotary Cannon</item>
         <item name="Attributes">Martial Blaster</item>
-        <item name="Cost">1,500</item>
-        <item name="Weight">12,5</item>
+        <item name="Cost">1500</item>
+        <item name="Weight">12.5</item>
         <item name="Damage">1d10 energy</item>
         <item name="Properties">Auto, power cell (range 75/300), rapid 2, reload 8, strength 13, two-handed</item>
         <item name="Text"> </item>
@@ -1079,7 +1078,7 @@
         <item name="Title">Slugthrower</item>
         <item name="Attributes">Martial Blaster</item>
         <item name="Cost">525</item>
-        <item name="Weight">7,5</item>
+        <item name="Weight">7.5</item>
         <item name="Damage">1d8 kinetic</item>
         <item name="Properties">Reload 12, slug cartridge (range 105/420), two-handed</item>
         <item name="Text"> </item>
@@ -1088,8 +1087,8 @@
         <item name="Name">sniper_rifle</item>
         <item name="Title">Sniper Rifle</item>
         <item name="Attributes">Martial Blaster</item>
-        <item name="Cost">1,300</item>
-        <item name="Weight">13,5</item>
+        <item name="Cost">1300</item>
+        <item name="Weight">13.5</item>
         <item name="Damage">1d12 energy</item>
         <item name="Properties">Power cell (range 150/600), reload 2, strength 13, two-handed</item>
         <item name="Text"> </item>
@@ -1149,7 +1148,7 @@
         <item name="Name">composite_armor</item>
         <item name="Title">Composite Armor</item>
         <item name="Attributes">Medium Armor</item>
-        <item name="Cost">2,500</item>
+        <item name="Cost">2500</item>
         <item name="Weight">45</item>
         <item name="AC">AC: 15+Dex(max +2)</item>
         <item name="Properties">Bulky</item>
@@ -1169,7 +1168,7 @@
         <item name="Name">assault_armor</item>
         <item name="Title">Assault Armor</item>
         <item name="Attributes">Heavy Armor</item>
-        <item name="Cost">2,000</item>
+        <item name="Cost">2000</item>
         <item name="Weight">60</item>
         <item name="AC">AC: 17</item>
         <item name="Properties">Bulky, Strength 15</item>
@@ -1179,7 +1178,7 @@
         <item name="Name">heavy_exoskeleton</item>
         <item name="Title">Heavy exoskeleton</item>
         <item name="Attributes">Heavy Armor</item>
-        <item name="Cost">9,000</item>
+        <item name="Cost">9000</item>
         <item name="Weight">65</item>
         <item name="AC">AC: 18</item>
         <item name="Properties">Bulky, Strength 17</item>
@@ -1236,7 +1235,7 @@
         <item name="Text">A medium shield is a common defensive technology that protects the user from blaster fire, the elements, or other hazards. Medium shields are used in conjunction with any one-handed weapon.</item>
         <item name="Expansion">PHB</item>
         <!--EquipmentName-->
-    -    <item name="Name">heavy_shield_generator</item>
+        <item name="Name">heavy_shield_generator</item>
         <item name="Title">Heavy Shield Generator</item>
         <item name="Attributes">Heavy Shield</item>
         <item name="Cost">500</item>
@@ -1251,7 +1250,7 @@
         <item name="Title">Dart</item>
         <item name="Attributes">Ammunition</item>
         <item name="Cost">50</item>
-        <item name="Weight">—</item>
+        <item name="Weight">0</item>
         <item name="Damage/AC"> </item>
         <item name="Properties">—</item>
         <item name="Text">This wrist launcher ammunition deals 1d6 kinetic damage on a hit.</item>
@@ -1301,7 +1300,7 @@
         <item name="Title">slug cartridge</item>
         <item name="Attributes">Ammunition</item>
         <item name="Cost">2</item>
-        <item name="Weight">—</item>
+        <item name="Weight">0</item>
         <item name="Damage/AC"> </item>
         <item name="Properties">—</item>
         <item name="Text">Slug cartridges are ammunition for blaster weapons that deal kinetic damage. When you reload a weapon that uses cartridges, you can reload any number of cartridges up to the weapon\'s reload number as a part of the same action.</item>
@@ -1383,7 +1382,7 @@
         <item name="Title">datacard</item>
         <item name="Attributes">Data recording and storage</item>
         <item name="Cost">5</item>
-        <item name="Weight">—</item>
+        <item name="Weight">0</item>
         <item name="Damage/AC"> </item>
         <item name="Properties">—</item>
         <item name="Text">A datacard or data disk is a flat, hand-held device used in conjunction with a datapad to store information.</item>
@@ -1684,7 +1683,7 @@
     <!--Utilities-->
         <item name="Name">bedroll</item>
         <item name="Title">bedroll</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">10</item>
         <item name="Weight">7</item>
         <item name="Damage/AC"> </item>
@@ -1694,7 +1693,7 @@
         <!--EquipmentName-->
         <item name="Name">blanket</item>
         <item name="Title">blanket</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">5</item>
         <item name="Weight">3</item>
         <item name="Damage/AC"> </item>
@@ -1704,7 +1703,7 @@
         <!--EquipmentName-->
         <item name="Name">binders</item>
         <item name="Title">binders</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">50</item>
         <item name="Weight">6</item>
         <item name="Damage/AC"> </item>
@@ -1714,7 +1713,7 @@
         <!--EquipmentName-->
         <item name="Name">chronometer</item>
         <item name="Title">chronometer</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">100</item>
         <item name="Weight">1</item>
         <item name="Damage/AC"> </item>
@@ -1724,7 +1723,7 @@
         <!--EquipmentName-->
         <item name="Name">fibercord_cable</item>
         <item name="Title">fibercord cable,50ft(rolled)</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">20</item>
         <item name="Weight">2</item>
         <item name="Damage/AC"> </item>
@@ -1734,7 +1733,7 @@
         <!--EquipmentName-->
         <item name="Name">field_rations</item>
         <item name="Title">field rations (one day\'s)</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">5</item>
         <item name="Weight">1</item>
         <item name="Damage/AC"> </item>
@@ -1744,7 +1743,7 @@
         <!--EquipmentName-->
         <item name="Name">fusion_cutter</item>
         <item name="Title">fusion cutter</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">25</item>
         <item name="Weight">2</item>
         <item name="Damage/AC"> </item>
@@ -1754,7 +1753,7 @@
         <!--EquipmentName-->
         <item name="Name">glowrod</item>
         <item name="Title">glowrod</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">10</item>
         <item name="Weight">2</item>
         <item name="Damage/AC"> </item>
@@ -1764,7 +1763,7 @@
         <!--EquipmentName-->
         <item name="Name">grappling_hook</item>
         <item name="Title">grappling hook</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">50</item>
         <item name="Weight">4</item>
         <item name="Damage/AC"> </item>
@@ -1774,7 +1773,7 @@
         <!--EquipmentName-->
         <item name="Name">heat_generator</item>
         <item name="Title">heat generator</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">400</item>
         <item name="Weight">4</item>
         <item name="Damage/AC"> </item>
@@ -1784,7 +1783,7 @@
         <!--EquipmentName-->
         <item name="Name">homing_beacon</item>
         <item name="Title">homing beacon</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">450</item>
         <item name="Weight">1</item>
         <item name="Damage/AC"> </item>
@@ -1794,7 +1793,7 @@
         <!--EquipmentName-->
         <item name="Name">hydrospanner</item>
         <item name="Title">hydrospanner</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">10</item>
         <item name="Weight">2</item>
         <item name="Damage/AC"> </item>
@@ -1804,7 +1803,7 @@
         <!--EquipmentName-->
         <item name="Name">macrobinoculars</item>
         <item name="Title">macrobinoculars</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">750</item>
         <item name="Weight">1</item>
         <item name="Damage/AC"> </item>
@@ -1814,7 +1813,7 @@
         <!--EquipmentName-->
         <item name="Name">mess_kit</item>
         <item name="Title">mess kit</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">20</item>
         <item name="Weight">1</item>
         <item name="Damage/AC"> </item>
@@ -1824,7 +1823,7 @@
         <!--EquipmentName-->
         <item name="Name">mirror</item>
         <item name="Title">mirror</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">50</item>
         <item name="Weight">0.5</item>
         <item name="Damage/AC"> </item>
@@ -1834,7 +1833,7 @@
         <!--EquipmentName-->
         <item name="Name">ram_portable</item>
         <item name="Title">ram, portable</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">40</item>
         <item name="Weight">35</item>
         <item name="Damage/AC"> </item>
@@ -1844,7 +1843,7 @@
         <!--EquipmentName-->
         <item name="Name">restraining_bolt</item>
         <item name="Title">restraining bolt</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">350</item>
         <item name="Weight">1</item>
         <item name="Damage/AC"> </item>
@@ -1854,7 +1853,7 @@
         <!--EquipmentName-->
         <item name="Name">shovel</item>
         <item name="Title">shovel</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">7</item>
         <item name="Weight">5</item>
         <item name="Damage/AC"> </item>
@@ -1864,7 +1863,7 @@
         <!--EquipmentName-->
         <item name="Name">tent</item>
         <item name="Title">tent, two-person</item>
-        <item name="Attributes">utility</item>
+        <item name="Attributes">Utility</item>
         <item name="Cost">20</item>
         <item name="Weight">5</item>
         <item name="Damage/AC"> </item>

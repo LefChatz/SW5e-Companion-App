@@ -3,6 +3,7 @@ package com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff
 import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.graphics.Typeface
+import android.os.Build
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
@@ -21,13 +22,17 @@ import com.amachewrs.sw5ecompanionapp.databinding.EquipmentDetailsBinding
 
 class EquipmentDetailsActivity : AppCompatActivity() {
     private lateinit var binding: EquipmentDetailsBinding
-    private lateinit var name:String
-    private lateinit var details:Array<CharSequence>
+    private lateinit var equipment: Equipment
 
     @SuppressLint("DiscouragedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        name=intent.getStringExtra("Equipment_Name").toString()
+        equipment = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getParcelableExtra("Equipment", Equipment::class.java).toEquipment()
+        } else {
+            @Suppress("DEPRECATION")
+            intent.getParcelableExtra<Equipment>("Equipment").toEquipment()
+        }
 
         binding= EquipmentDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -39,23 +44,22 @@ class EquipmentDetailsActivity : AppCompatActivity() {
 
         val starjedi: Typeface = Typeface.create(ResourcesCompat.getFont(this,R.font.starjedi),Typeface.NORMAL)
 
-        details=resources.getTextArray(resources.getIdentifier(name,"array",packageName))
+        binding.title.text=equipment.printedname
 
-        binding.title.text=details[0]
+        binding.Attributes.text=equipment.attributes
 
-        binding.Attributes.text=details[1]
+        val temptxt = equipment.cost.toString()+" cr  "+equipment.weight+" lb"
+        binding.CostWeight.text= temptxt
 
-        binding.CostWeight.text=details[2]
+        binding.DamageAC.text=equipment.damage_ac
 
-        binding.DamageAC.text=details[3]
+        binding.Properties.text=equipment.properties
 
-        binding.Properties.text=details[4]
+        binding.Text.text=equipment.detailsText
 
-        binding.Text.text=details[5]
+        binding.Expansion.text=equipment.expansion
 
-        binding.Expansion.text=details[6]
-
-        val imidentif=resources.getIdentifier("equipment$name","drawable",packageName)
+        val imidentif=resources.getIdentifier("equipment${equipment.equipmentname}","drawable",packageName)
         binding.Image
         if(imidentif!=0) {
             binding.Image.setImageResource(imidentif)
@@ -78,7 +82,7 @@ class EquipmentDetailsActivity : AppCompatActivity() {
                         weappropmap[weapproplist[i].toString()]=weapproplist[i+1]
                     }
                     binding.Text.text= buildSpannedString{
-                        append(details[5])
+                        append(equipment.detailsText)
                         appendLine(" ")
                         weappropmap.keys.forEach{
                             if(binding.Properties.text.contains(it,true)){
@@ -100,7 +104,7 @@ class EquipmentDetailsActivity : AppCompatActivity() {
                         armorpropmap[armorproplist[i].toString()]=armorproplist[i+1]
                     }
                     binding.Text.text= buildSpannedString{
-                        append(details[5])
+                        append(equipment.detailsText)
                         appendLine(" ")
                         armorpropmap.keys.forEach{
                             if(binding.Properties.text.contains(it,true)){

@@ -1,16 +1,15 @@
+
 package com.amachewrs.sw5ecompanionapp.equipment
 //
-import android.annotation.SuppressLint
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.SearchView
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -18,31 +17,37 @@ import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentAllListBinding
 import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.Equipment
 import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.EquipmentAdapter
-import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.isEmpty
+import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.getNameList
+import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.sortEquipmentByName
+import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.sortEquipmentByNameDescending
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class AllActivity : AppCompatActivity() {
     private lateinit var binding: EquipmentAllListBinding
     private lateinit var equipmentAdapter: EquipmentAdapter
-    private lateinit var favSharedPreferences: SharedPreferences
+    private lateinit var equipmentPrefs: SharedPreferences
     private lateinit var equipmentMenu:Menu
 
     private var equipmentList = mutableListOf<Equipment>()
-    /*private var equipmentWeapons = listOf<String>()
-    private var equipmentArmors = listOf<String>()
-    private var equipmentAdvGear = listOf<String>()*/
-    private var currentEquipmentList = mutableListOf<Equipment>()
-    private var searchedList = mutableListOf<Equipment>()
-    private val eraseList = mutableListOf<Equipment>()
-    private val faveEquipmentList = mutableListOf<String>()
-    private val adapterEquipmentList = mutableListOf<Equipment>()
-    /*private val equipmentAttributeMap = mutableMapOf<String,String>()
-    private val equipmentAttributedList= mutableMapOf<String,MutableList<String>>()*/
-    private val filterMode = mutableListOf<String>()
-    private val filterList = mutableListOf<String>()
+    private val favouriteEquipmentList = mutableListOf<String>()
+    private val eqprefs = "EquipmentPrefs"
+    private val eqfavlistkey = "FavouriteEquipmentList"
 
+    private val category1Filters = listOf("Simple","Martial","Light","Medium","Heavy")
+    private val cat1="category 1"
+    private val category2Filters = listOf("Vibroweapon","Lightweapon","Blaster","Armor","Shield")
+    private val cat2="category 2"
+
+    private val filters = mapOf<String,MutableList<String>>(Pair(cat1, mutableListOf()),Pair(cat2, mutableListOf()))
+
+    private lateinit var weaponFilterMenuItems: List<MenuItem>
+    private lateinit var armorFilterMenuItems: List<MenuItem>
+    private lateinit var advGearFilterMenuItems: List<MenuItem>
+
+    private var searchedText=""
     private var keepmenu = false
+    private var favchecked = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,58 +57,65 @@ class AllActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        favSharedPreferences=getSharedPreferences("favequipmentlist", Context.MODE_PRIVATE)
-        faveEquipmentList.addAll(favSharedPreferences.getStringSet("favequipmentlist", mutableSetOf())?.toList()!!)
+        equipmentPrefs=getSharedPreferences(eqprefs, Context.MODE_PRIVATE)
+        favouriteEquipmentList.addAll(equipmentPrefs.getStringSet(eqfavlistkey, mutableSetOf())!!.toMutableList())
 
-        /*equipmentWeapons=resources.getStringArray(R.array.equipment_weapons).toList()
-        equipmentArmors=resources.getStringArray(R.array.equipment_armors).toList()
-        equipmentAdvGear=resources.getStringArray(R.array.equipment_advgear).toList()
-        bigEquipmentList=resources.getStringArray(R.array.bigequipmentnames).toList()*/
-        equipmentList=getEquipmentList()
+        equipmentList=getEquipmentList().sortEquipmentByName()
 
         binding.BackButton.setOnClickListener { returntomain() }
 
-        currentEquipmentList= equipmentList
-        adapterEquipmentList.addAll(currentEquipmentList)
-        equipmentAdapter = EquipmentAdapter(this,adapterEquipmentList,bigEquipmentList,faveEquipmentList)
+        equipmentAdapter = EquipmentAdapter(this,equipmentList,favouriteEquipmentList)
         binding.reclview.adapter = equipmentAdapter
-        searchedList=currentEquipmentList
 
         binding.searchview.isIconifiedByDefault=false
         binding.searchview.queryHint="Search..."
         binding.searchview.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
             override fun onQueryTextChange(enttext: String?): Boolean {
+                returntotop("sharp")
                 if(enttext.isNullOrBlank()){
-                    searchedList=currentEquipmentList.filter{it !in eraseList}
+                    object : CountDownTimer(1000, 1001) {
+                        override fun onTick(millisUntilFinished: Long) {
+                        }
+                        override fun onFinish() {
+                            if(searchedText.isBlank()){binding.searchview.clearFocus()}
+                        }
+                    }.start()
+                    searchedText=""
+                    updateAdapterList()
                 }
                 else {
-                    if(equipmentList.none {it.replace("_"," ").contains(enttext.trim(),true)}){
-                        searchedList= listOf("empty")
-                        Toast.makeText(this@AllActivity,"No such Equipment found",Toast.LENGTH_SHORT)
-                            .show()
+                    searchedText= enttext.trim().replace(" ","_")
+                    if(equipmentList.getNameList().none { it.contains(searchedText,true)}){
+                        equipmentAdapter.setEquipmentList(mutableListOf(Equipment("NoSuchEquipment","NoSuchEquipment")))
                     }
                     else {
-                        searchedList = currentEquipmentList.filter{ (it.replace("_"," ").contains(enttext.trim(),true) && it !in eraseList) || it=="empty"}
+                        updateAdapterList()
                     }
                 }
-                equipmentAdapter.setEquipmentList(searchedList)
                 return false
             }
             override fun onQueryTextSubmit(enttext: String?): Boolean {
+                returntotop("sharp")
                 if(enttext.isNullOrBlank()){
-                    searchedList=currentEquipmentList.filter{it !in eraseList}
+                    object : CountDownTimer(1000, 1001) {
+                        override fun onTick(millisUntilFinished: Long) {
+                        }
+                        override fun onFinish() {
+                            if(searchedText.isBlank()){binding.searchview.clearFocus()}
+                        }
+                    }.start()
+                    searchedText=""
+                    updateAdapterList()
                 }
                 else {
-                    if(equipmentList.none { it.replace("_"," ").contains(enttext.trim(),true) }){
-                        searchedList= listOf("empty")
-                        Toast.makeText(this@AllActivity,"No such Equipment found",Toast.LENGTH_SHORT)
-                            .show()
+                    searchedText= enttext.trim().replace(" ","_")
+                    if(equipmentList.getNameList().none { it.contains(searchedText,true)}){
+                        equipmentAdapter.setEquipmentList(mutableListOf(Equipment("NoSuchEquipment")))
                     }
                     else {
-                        searchedList = currentEquipmentList.filter{ (it.replace("_"," ").contains(enttext.trim(),true) && it !in eraseList) || it=="empty"}
+                        updateAdapterList()
                     }
                 }
-                equipmentAdapter.setEquipmentList(searchedList)
                 return false
             }
         })
@@ -124,6 +136,15 @@ class AllActivity : AppCompatActivity() {
             equipmentMenu = menu
         }
         binding.toolbar.overflowIcon = AppCompatResources.getDrawable(this,R.drawable.downarrowgold)
+
+        weaponFilterMenuItems = listOf(equipmentMenu.findItem(R.id.eqmenu_martial),equipmentMenu.findItem(R.id.eqmenu_simple),equipmentMenu.findItem(R.id.eqmenu_vibroweapons),equipmentMenu.findItem(R.id.eqmenu_lightweapons),equipmentMenu.findItem(R.id.eqmenu_blasters))
+        weaponFilterMenuItems.forEach {addFilter(it.title.toString().trim())}
+
+        armorFilterMenuItems = listOf(equipmentMenu.findItem(R.id.eqmenu_light),equipmentMenu.findItem(R.id.eqmenu_medium),equipmentMenu.findItem(R.id.eqmenu_heavy),equipmentMenu.findItem(R.id.eqmenu_armors),equipmentMenu.findItem(R.id.eqmenu_shields))
+        armorFilterMenuItems.forEach {addFilter(it.title.toString().trim())}
+
+        advGearFilterMenuItems = listOf(equipmentMenu.findItem(R.id.eqmenu_ammunition),equipmentMenu.findItem(R.id.eqmenu_communications),equipmentMenu.findItem(R.id.eqmenu_data),equipmentMenu.findItem(R.id.eqmenu_life_support),equipmentMenu.findItem(R.id.eqmenu_medical_supplies),equipmentMenu.findItem(R.id.eqmenu_storage),equipmentMenu.findItem(R.id.eqmenu_utilities),equipmentMenu.findItem(R.id.eqmenu_accessories),equipmentMenu.findItem(R.id.eqmenu_tools))
+        advGearFilterMenuItems.forEach {addFilter(it.title.toString().trim())}
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -132,386 +153,53 @@ class AllActivity : AppCompatActivity() {
             if(!isVisible)isVisible=true
         }
         if(!item.title.isNullOrBlank()){
-            with(item.title){
-                when{
+            keepmenu = true
+            with(item.title){ when{
                     this!! == getText(R.string.sortABCdown) ->{
                         keepmenu = false
-                        currentEquipmentList=currentEquipmentList.reversed()
-                        equipmentAdapter.setEquipmentList(currentEquipmentList.filter{it !in eraseList && it in searchedList})
+                        equipmentList=equipmentList.sortEquipmentByNameDescending()
                         item.title=getText(R.string.sortABCup)
                         returntotop("sharp")}
                     equals(getText(R.string.sortABCup))->{
                         keepmenu = false
-                        currentEquipmentList=currentEquipmentList.reversed()
-                        equipmentAdapter.setEquipmentList(currentEquipmentList.filter{it !in eraseList && it in searchedList})
+                        equipmentList=equipmentList.sortEquipmentByName()
                         item.title = getText(R.string.sortABCdown)
                         returntotop("sharp")}
-
                     contains("weapons",true) ->{
-                        keepmenu = true
                         if(!item.isChecked){
-                            filterModeClear()
-                            eraseList.addAll(equipmentList.filter { it !in equipmentWeapons })
                             equipmentMenu.setGroupVisible(R.id.eqmenu_weapons_group,true)
-                            filterMode.add("weapons")
+                            weaponFilterMenuItems.forEach {addFilter(it.title.toString().trim());it.isChecked=true}
                         }
                         else{
                             equipmentMenu.setGroupVisible(R.id.eqmenu_weapons_group,false)
-                            if(filterMode.contains("fav")){eraseList.removeAll(equipmentList.filter {it in faveEquipmentList})}
-                            else{eraseList.removeAll(equipmentList)}
-                            filterMode.remove("weapons")
-                            with(equipmentMenu.findItem(R.id.eqmenu_martial)){
-                                if (isChecked){
-                                    isChecked = false
-                                    filterList.remove("martial")
-                                }
-                            }
-                            with(equipmentMenu.findItem(R.id.eqmenu_simple)){
-                                if (isChecked){
-                                    isChecked = false
-                                    filterList.remove("simple")
-                                }
-                            }
-                            with(equipmentMenu.findItem(R.id.eqmenu_melee)){
-                                if (isChecked){
-                                    isChecked = false
-                                    filterList.remove("melee")
-                                }
-                            }
-                            with(equipmentMenu.findItem(R.id.eqmenu_ranged)){
-                                if (isChecked){
-                                    isChecked = false
-                                    filterList.remove("ranged")
-                                }
-                            }
-                        }
-                        equipmentAdapter.setEquipmentList(currentEquipmentList.filter { it !in eraseList && it in searchedList})
-                        item.isChecked=!item.isChecked
-                    }
-                    contains("simple",true)->{
-                        keepmenu = true
-                        if(!item.isChecked){
-                            with(equipmentMenu.findItem(R.id.eqmenu_martial)){
-                                if (isChecked) {
-                                    isChecked = false
-                                    filterWeapons("show","martial")
-                                }
-                            }
-                            filterWeapons("hide","simple")
-                        }
-                        else{
-                            filterWeapons("show","simple")
-                        }
-                        item.isChecked=!item.isChecked
-
-                    }
-                    contains("martial",true)->{
-                        keepmenu = true
-                        if(!item.isChecked){
-                            with(equipmentMenu.findItem(R.id.eqmenu_simple)){
-                                if (isChecked) {
-                                    isChecked = false
-                                    filterWeapons("show","simple")
-                                }
-                            }
-                            filterWeapons("hide","martial")
-                        }
-                        else{
-                            filterWeapons("show","martial")
+                            weaponFilterMenuItems.forEach {removeFilter(it.title.toString().trim());it.isChecked=false}
                         }
                         item.isChecked=!item.isChecked
                     }
-                    contains("melee",true)->{
-                        keepmenu = true
-                        if(!item.isChecked){
-                            with(equipmentMenu.findItem(R.id.eqmenu_ranged)){
-                                if (isChecked) {
-                                    isChecked = false
-                                    filterWeapons("show","ranged")
-                                }
-                            }
-                            filterWeapons("hide","melee")
-                        }
-                        else{
-                            filterWeapons("show","melee")
-                        }
-                        item.isChecked=!item.isChecked
-                    }
-                    contains("ranged",true)->{
-                        keepmenu = true
-                        if(!item.isChecked){
-                            with(equipmentMenu.findItem(R.id.eqmenu_melee)){
-                                if (isChecked) {
-                                    isChecked = false
-                                    filterWeapons("show","melee")
-                                }
-                            }
-                            filterWeapons("hide","ranged")
-                        }
-                        else{
-                            filterWeapons("show","ranged")
-                        }
-                        item.isChecked=!item.isChecked
-                    }
-
                     contains(getString(R.string.equipment_menu_armors_and_shields))->{
-                        keepmenu = true
                         if(!item.isChecked){
-                            filterModeClear()
-                            eraseList.addAll(equipmentList.filter { it !in equipmentArmors })
                             equipmentMenu.setGroupVisible(R.id.eqmenu_armors_group,true)
-                            filterMode.add("armors")
+                            armorFilterMenuItems.forEach {addFilter(it.title.toString().trim());it.isChecked=true}
                         }
                         else{
                             equipmentMenu.setGroupVisible(R.id.eqmenu_armors_group,false)
-                            if(filterMode.contains("fav")){eraseList.removeAll(equipmentList.filter {it in faveEquipmentList})}
-                            else{eraseList.removeAll(equipmentList)}
-                            filterMode.remove("armors")
-                            filterList.clear()
-                            with(equipmentMenu.findItem(R.id.eqmenu_light)){
-                                if (isChecked){
-                                    isChecked=false
-                                }
-                            }
-                            with(equipmentMenu.findItem(R.id.eqmenu_medium)){
-                                if (isChecked){
-                                    isChecked=false
-                                }
-                            }
-                            with(equipmentMenu.findItem(R.id.eqmenu_heavy)){
-                                if (isChecked){
-                                    isChecked=false
-                                }
-                            }
-                            with(equipmentMenu.findItem(R.id.eqmenu_armors)){
-                                if (isChecked){
-                                    isChecked=false
-                                }
-                            }
-                            with(equipmentMenu.findItem(R.id.eqmenu_shields)){
-                                if (isChecked){
-                                    isChecked=false
-                                }
-                            }
+                            armorFilterMenuItems.forEach {removeFilter(it.title.toString().trim());it.isChecked=false}
                         }
-                        equipmentAdapter.setEquipmentList(currentEquipmentList.filter { it !in eraseList && it in searchedList})
-                        item.isChecked=!item.isChecked
-                    }
-                    contains("light",true)->{
-                        keepmenu = true
-                        if(!item.isChecked){
-                            with(equipmentMenu.findItem(R.id.eqmenu_medium)){
-                                if (isChecked) {
-                                    isChecked = false
-                                    filterArmors("show","medium")
-                                }
-                            }
-                            with(equipmentMenu.findItem(R.id.eqmenu_heavy)){
-                                if (isChecked) {
-                                    isChecked = false
-                                    filterArmors("show","heavy")
-                                }
-                            }
-                            filterArmors("hide","light")
-                        }
-                        else{
-                            filterArmors("show","light")
-                        }
-                        item.isChecked=!item.isChecked
-                    }
-                    contains("medium",true)->{
-                        keepmenu = true
-                        if(!item.isChecked){
-                            with(equipmentMenu.findItem(R.id.eqmenu_light)){
-                                if (isChecked) {
-                                    isChecked = false
-                                    filterArmors("show","light")
-                                }
-                            }
-                            with(equipmentMenu.findItem(R.id.eqmenu_heavy)){
-                                if (isChecked) {
-                                    isChecked = false
-                                    filterArmors("show","heavy")
-                                }
-                            }
-                            filterArmors("hide","medium")
-                        }
-                        else{
-                            filterArmors("show","medium")
-                        }
-                        item.isChecked=!item.isChecked
-                    }
-                    contains("heavy",true)->{
-                        keepmenu = true
-                        if(!item.isChecked){
-                            with(equipmentMenu.findItem(R.id.eqmenu_light)){
-                                if (isChecked) {
-                                    isChecked = false
-                                    filterArmors("show","light")
-                                }
-                            }
-                            with(equipmentMenu.findItem(R.id.eqmenu_medium)){
-                                if (isChecked) {
-                                    isChecked = false
-                                    filterArmors("show","medium")
-                                }
-                            }
-                            filterArmors("hide","heavy")
-                        }
-                        else{
-                            filterArmors("show","heavy")
-                        }
-                        item.isChecked=!item.isChecked
-                    }
-                    contains("armors",true)->{
-                        keepmenu = true
-                        if(!item.isChecked){
-                            with(equipmentMenu.findItem(R.id.eqmenu_shields)){
-                                if (isChecked) {
-                                    isChecked = false
-                                    filterArmors("show","shield")
-                                }
-                            }
-                            filterArmors("hide","armor")
-                        }
-                        else{
-                            filterArmors("show","armor")
-                        }
-                        item.isChecked=!item.isChecked
-                    }
-                    contains("shields",true)->{
-                        keepmenu = true
-                        if(!item.isChecked){
-                            with(equipmentMenu.findItem(R.id.eqmenu_armors)){
-                                if (isChecked) {
-                                    isChecked = false
-                                    filterArmors("show","armor")
-                                }
-                            }
-                            filterArmors("hide","shield")
-                        }
-                        else{
-                            filterArmors("show","shield")
-                        }
+                        
                         item.isChecked=!item.isChecked
                     }
 
                     contains("Adventuring Gear",true)->{
-                        keepmenu = true
                         if(!item.isChecked){
-                            filterModeClear()
-                            eraseList.addAll(equipmentList.filter { it !in equipmentAdvGear })
                             equipmentMenu.setGroupVisible(R.id.eqmenu_advgear_group,true)
-                            filterMode.add("advgear")
+                            advGearFilterMenuItems.forEach {addFilter(it.title.toString().trim());it.isChecked=true}
+
                         }
                         else{
                             equipmentMenu.setGroupVisible(R.id.eqmenu_advgear_group,false)
-                            if(filterMode.contains("fav")){eraseList.removeAll(equipmentList.filter {it in faveEquipmentList})}
-                            else{eraseList.removeAll(equipmentList)}
-                            filterMode.remove("advgear")
-                            filterList.clear()
-                            uncheckAdvGear()
+                            advGearFilterMenuItems.forEach {removeFilter(it.title.toString().trim());it.isChecked=false}
                         }
-                        equipmentAdapter.setEquipmentList(currentEquipmentList.filter { it !in eraseList && it in searchedList})
-                        item.isChecked=!item.isChecked
-                    }
-                    contains("Ammunition",true)->{
-                        keepmenu = true
-                        if(!item.isChecked){
-                            if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
-                            filterAdvGear("hide","ammunition")
-                        }
-                        else{
-                            filterAdvGear("show","ammunition")
-                        }
-                        item.isChecked=!item.isChecked
-                    }
-                    contains("Communications",true)->{
-                        keepmenu = true
-                        if(!item.isChecked){
-                            if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
-                            filterAdvGear("hide","communications")
-                        }
-                        else{
-                            filterAdvGear("show","communications")
-                        }
-                        item.isChecked=!item.isChecked
-                    }
-                    contains("Data",true)->{
-                        keepmenu = true
-                        if(!item.isChecked){
-                            if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
-                            filterAdvGear("hide","data")
-                        }
-                        else{
-                            filterAdvGear("show","data")
-                        }
-                        item.isChecked=!item.isChecked
-                    }
-                    contains("Life",true)->{
-                        keepmenu = true
-                        if(!item.isChecked){
-                            if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
-                            filterAdvGear("hide","life_support")
-                        }
-                        else{
-                            filterAdvGear("show","life_support")
-                        }
-                        item.isChecked=!item.isChecked
-                    }
-                    contains("Medical",true)->{
-                        keepmenu = true
-                        if(!item.isChecked){
-                            if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
-                            filterAdvGear("hide","medical_supplies")
-                        }
-                        else{
-                            filterAdvGear("show","medical_supplies")
-                        }
-                        item.isChecked=!item.isChecked
-                    }
-                    contains("Storage",true)->{
-                        keepmenu = true
-                        if(!item.isChecked){
-                            if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
-                            filterAdvGear("hide","storage")
-                        }
-                        else{
-                            filterAdvGear("show","storage")
-                        }
-                        item.isChecked=!item.isChecked
-                    }
-                    contains("Utilities",true)->{
-                        keepmenu = true
-                        if(!item.isChecked){
-                            if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
-                            filterAdvGear("hide","utilities")
-                        }
-                        else{
-                            filterAdvGear("show","utilities")
-                        }
-                        item.isChecked=!item.isChecked
-                    }
-                    contains("Accessories",true)->{
-                        keepmenu = true
-                        if(!item.isChecked){
-                            if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
-                            filterAdvGear("hide","accessories")
-                        }
-                        else{
-                            filterAdvGear("show","accessories")
-                        }
-                        item.isChecked=!item.isChecked
-                    }
-                    contains("Tools",true)->{
-                        keepmenu = true
-                        if(!item.isChecked){
-                            if (filterList.isNotEmpty())filterAdvGear("show",filterList.first());uncheckAdvGear()
-                            filterAdvGear("hide","tools")
-                        }
-                        else{
-                            filterAdvGear("show","tools")
-                        }
+                        
                         item.isChecked=!item.isChecked
                     }
 
@@ -521,44 +209,16 @@ class AllActivity : AppCompatActivity() {
                     }
 
                     contains("favorites",true)->{
-                        keepmenu = true
-                        if (!item.isChecked){
-                            eraseList.addAll(equipmentList.filter {it !in faveEquipmentList })
-                            filterMode.add("fav")
-                        }
-                        else{
-                            with(filterMode){
-                                when{
-                                    contains("weapons")->{
-                                        eraseList.removeAll{it in equipmentWeapons}
-                                        filterList.forEach{ fil ->
-                                            val tempList = equipmentAttributedList.getOrDefault(fil,emptyList())
-                                            eraseList.addAll(equipmentList.filter { it !in tempList })
-                                        }
-                                    }
-                                    contains("armors")->{
-                                        eraseList.removeAll{it in equipmentArmors}
-                                        filterList.forEach{ fil ->
-                                            val tempList = equipmentAttributedList.getOrDefault(fil,emptyList())
-                                            eraseList.addAll(equipmentList.filter { it !in tempList })
-                                        }
-                                    }
-                                    contains("advgear")->{
-                                        eraseList.removeAll { it in equipmentAdvGear }
-                                        val tempList = equipmentAttributedList.getOrDefault(filterList.first(),emptyList())
-                                        eraseList.addAll(equipmentList.filter { it !in tempList })
-                                    }
-                                    else->eraseList.clear()
-                                }
-                                remove("fav")
-                            }
-                        }
-                        equipmentAdapter.setEquipmentList(currentEquipmentList.filter{it !in eraseList && it in searchedList})
+                        favchecked = !item.isChecked
                         item.isChecked= !item.isChecked
                     }
+                    else->{
+                        updateSubcategoryFilter(item)
+                        checkEmptyCategory()
+                    }
                 }
-
             }
+            updateAdapterList()
         }
         if (keepmenu){
             item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW)
@@ -574,204 +234,28 @@ class AllActivity : AppCompatActivity() {
             })
         }
         return false
-    }   
-    private fun filterWeapons(action: String, mode: String){
-        if (equipmentAttributedList.getOrPut("simple"){ mutableListOf() }.isEmpty()){
-            equipmentAttributedList.getOrPut("simple"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("simple",true)}.keys)
-            equipmentAttributedList.getOrPut("martial"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("martial",true)}.keys)
-            equipmentAttributedList.getOrPut("ranged"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("blaster",true)}.keys)
-            equipmentAttributedList.getOrPut("melee"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("weapon",true)}.keys)
-        }
-        val tempList1 = equipmentAttributedList[mode]!!.toList()
-        if(action=="hide"){
-            eraseList.addAll(equipmentList.filter {it !in tempList1})
-            filterList.add(mode)
+    }
+    private fun updateAdapterList(){
+        equipmentAdapter.setEquipmentList(equipmentList.filter{filterEquipment(it)})
+    }
+    private fun updateSubcategoryFilter(item: MenuItem){
+        if(!item.isChecked){
+            addFilter(item.title.toString().trim())
         }
         else{
-            filterList.remove(mode)
-            eraseList.removeAll(equipmentWeapons)
-            if (filterMode.contains("fav"))eraseList.addAll(equipmentList.filter { it !in faveEquipmentList })
-            filterList.forEach { fil ->
-                val tempList = equipmentAttributedList.getOrDefault(fil,emptyList())
-                eraseList.addAll(equipmentList.filter { it !in tempList })
-            }
+            removeFilter(item.title.toString().trim())
         }
-        equipmentAdapter.setEquipmentList(currentEquipmentList.filter { it !in eraseList && it in searchedList})
+        item.isChecked=!item.isChecked
     }
-    private fun filterArmors(action: String,mode: String){
-        if (equipmentAttributedList.getOrPut("light"){ mutableListOf() }.isEmpty()){
+    private fun filterEquipment(equipment: Equipment): Boolean{
+        if (favchecked && equipment.equipmentname !in favouriteEquipmentList) return false
+        if (searchedText.isNotEmpty() && !equipment.equipmentname.contains(searchedText,false)) return false
 
-            equipmentAttributedList.getOrPut("light"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("light",true)}.keys)
-            equipmentAttributedList.getOrPut("medium"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("medium",true)}.keys)
-            equipmentAttributedList.getOrPut("heavy"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("heavy",true)}.keys)
-            equipmentAttributedList.getOrPut("armor"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("armor",true)}.keys)
-            equipmentAttributedList.getOrPut("shield"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("shield",true)}.keys)
-        }
-        val tempList1 = equipmentAttributedList[mode]!!.toList()
-        if (action == "hide"){
-            eraseList.addAll(equipmentList.filter {it !in tempList1})
-            filterList.add(mode)
-        }
-        else{
-            filterList.remove(mode)
-            eraseList.removeAll(equipmentArmors)
-            if (filterMode.contains("fav"))eraseList.addAll(equipmentList.filter { it !in faveEquipmentList })
-            filterList.forEach { fil ->
-                val tempList = equipmentAttributedList.getOrDefault(fil,emptyList())
-                eraseList.addAll(equipmentList.filter { it !in tempList })
-            }
-        }
-        equipmentAdapter.setEquipmentList(currentEquipmentList.filter{it !in eraseList && it in searchedList})
-    }
-    private fun filterAdvGear(action: String,mode: String){
-        if (equipmentAttributedList.getOrPut("ammunition"){ mutableListOf() }.isEmpty()){
+        if (filters.all { list -> list.value.any {equipment.attributes.contains(it,true)}}) return true
 
-            equipmentAttributedList.getOrPut("ammunition"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("Ammunition",true)}.keys)
-            equipmentAttributedList.getOrPut("communications"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("Communications",true)}.keys)
-            equipmentAttributedList.getOrPut("data"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("Data",true)}.keys)
-            equipmentAttributedList.getOrPut("life_support"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("Life",true)}.keys)
-            equipmentAttributedList.getOrPut("medical_supplies"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("Medical",true)}.keys)
-            equipmentAttributedList.getOrPut("storage"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("Storage")}.keys)
-            equipmentAttributedList.getOrPut("utilities"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("Utility",true)}.keys)
-            equipmentAttributedList.getOrPut("accessories"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("Accessory",true)}.keys)
-            equipmentAttributedList.getOrPut("tools"){ mutableListOf() }.addAll(equipmentAttributeMap.filterValues {it.contains("Tool",true)}.keys)
-        }
-        val tempList1 = equipmentAttributedList[mode]!!.toList()
-        if (action == "hide"){
-            eraseList.addAll(equipmentList.filter {it !in tempList1})
-            filterList.add(mode)
-        }
-        else{
-            filterList.clear()
-            eraseList.removeAll(equipmentAdvGear)
-            if (filterMode.contains("fav"))eraseList.addAll(equipmentList.filter { it !in faveEquipmentList })
-        }
-        equipmentAdapter.setEquipmentList(currentEquipmentList.filter{it !in eraseList && it in searchedList})
+        return false
     }
 
-    private fun uncheckAdvGear(){
-        with(equipmentMenu.findItem(R.id.eqmenu_ammunition)){
-            if (isChecked){
-                isChecked=false
-            }
-        }
-        with(equipmentMenu.findItem(R.id.eqmenu_communications)){
-            if (isChecked){
-                isChecked=false
-            }
-        }
-        with(equipmentMenu.findItem(R.id.eqmenu_data)){
-            if (isChecked){
-                isChecked=false
-            }
-        }
-        with(equipmentMenu.findItem(R.id.eqmenu_life_support)){
-            if (isChecked){
-                isChecked=false
-            }
-        }
-        with(equipmentMenu.findItem(R.id.eqmenu_medical_supplies)){
-            if (isChecked){
-                isChecked=false
-            }
-        }
-        with(equipmentMenu.findItem(R.id.eqmenu_storage)){
-            if (isChecked){
-                isChecked=false
-            }
-        }
-        with(equipmentMenu.findItem(R.id.eqmenu_utilities)){
-            if (isChecked){
-                isChecked=false
-            }
-        }
-        with(equipmentMenu.findItem(R.id.eqmenu_accessories)){
-            if (isChecked){
-                isChecked=false
-            }
-        }
-        with(equipmentMenu.findItem(R.id.eqmenu_tools)){
-            if (isChecked){
-                isChecked=false
-            }
-        }
-    }
-    private fun filterModeClear(){
-        if (filterMode.contains("armors")){
-            equipmentMenu.findItem(R.id.eqmenu_armors_and_shields).isChecked=false
-            equipmentMenu.setGroupVisible(R.id.eqmenu_armors_group,false)
-            if(filterMode.contains("fav")){eraseList.removeAll(equipmentList.filter {it in faveEquipmentList})}
-            else{eraseList.removeAll(equipmentList)}
-            filterMode.remove("armors")
-            filterList.clear()
-            with(equipmentMenu.findItem(R.id.eqmenu_light)){
-                if (isChecked){
-                    isChecked=false
-                }
-            }
-            with(equipmentMenu.findItem(R.id.eqmenu_medium)){
-                if (isChecked){
-                    isChecked=false
-                }
-            }
-            with(equipmentMenu.findItem(R.id.eqmenu_heavy)){
-                if (isChecked){
-                    isChecked=false
-                }
-            }
-            with(equipmentMenu.findItem(R.id.eqmenu_armors)){
-                if (isChecked){
-                    isChecked=false
-                }
-            }
-            with(equipmentMenu.findItem(R.id.eqmenu_shields)){
-                if (isChecked){
-                    isChecked=false
-                }
-            }
-        }
-        if(filterMode.contains("weapons")){
-            equipmentMenu.findItem(R.id.eqmenu_weapons).isChecked=false
-            equipmentMenu.setGroupVisible(R.id.eqmenu_weapons_group,false)
-            if(filterMode.contains("fav")){eraseList.removeAll(equipmentList.filter {it in faveEquipmentList})}
-            else{eraseList.removeAll(equipmentList)}
-            filterMode.remove("weapons")
-            with(equipmentMenu.findItem(R.id.eqmenu_martial)){
-                if (isChecked){
-                    isChecked = false
-                    filterList.remove("martial")
-                }
-            }
-            with(equipmentMenu.findItem(R.id.eqmenu_simple)){
-                if (isChecked){
-                    isChecked = false
-                    filterList.remove("simple")
-                }
-            }
-            with(equipmentMenu.findItem(R.id.eqmenu_melee)){
-                if (isChecked){
-                    isChecked = false
-                    filterList.remove("melee")
-                }
-            }
-            with(equipmentMenu.findItem(R.id.eqmenu_ranged)){
-                if (isChecked){
-                    isChecked = false
-                    filterList.remove("ranged")
-                }
-            }
-        }
-        if (filterMode.contains("advgear")){
-            equipmentMenu.findItem(R.id.eqmenu_advgear).isChecked=false
-            equipmentMenu.setGroupVisible(R.id.eqmenu_advgear_group,false)
-            if(filterMode.contains("fav")){eraseList.removeAll(equipmentList.filter {it in faveEquipmentList})}
-            else{eraseList.removeAll(equipmentList)}
-            filterMode.remove("advgear")
-            filterList.clear()
-            uncheckAdvGear()
-
-        }
-    }
     private fun getEquipmentList(): MutableList<Equipment>{
         val tempEquipmentList = mutableListOf<Equipment>()
         val equipmentsTextArray = resources.getTextArray(R.array.newequipmentslist)
@@ -780,10 +264,26 @@ class AllActivity : AppCompatActivity() {
         }
         return tempEquipmentList
     }
-
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
         keepmenu=false
         return super.onPrepareOptionsMenu(menu)
+    }
+    private fun addFilter(filter: String){
+        if (filter in category1Filters) {filters[cat1]!!.add(filter);return}
+        if (filter in category2Filters) {filters[cat2]!!.add(filter);return}
+        filters[cat1]!!.add(filter)
+        filters[cat2]!!.add(filter)
+    }
+    private fun removeFilter(filter: String){
+        if (filter in category1Filters) {filters[cat1]!!.remove(filter);return}
+        if (filter in category2Filters) {filters[cat2]!!.remove(filter);return}
+        filters[cat1]!!.remove(filter)
+        filters[cat2]!!.remove(filter)
+    }
+    private fun checkEmptyCategory(){
+        if (weaponFilterMenuItems.none { it.isChecked }){equipmentMenu.setGroupVisible(R.id.eqmenu_weapons_group,false);equipmentMenu.findItem(R.id.eqmenu_weapons).isChecked=false}
+        if (armorFilterMenuItems.none { it.isChecked }){equipmentMenu.setGroupVisible(R.id.eqmenu_armors_group,false);equipmentMenu.findItem(R.id.eqmenu_armors_and_shields).isChecked=false}
+        if (advGearFilterMenuItems.none { it.isChecked }){equipmentMenu.setGroupVisible(R.id.eqmenu_advgear_group,false);equipmentMenu.findItem(R.id.eqmenu_advgear).isChecked=false}
     }
     private fun returntotop(mode: String){
         when(mode){
@@ -792,8 +292,8 @@ class AllActivity : AppCompatActivity() {
         }
     }
     private fun returntomain() {
-        with(favSharedPreferences.edit()){
-            putStringSet("favequipmentlist",faveEquipmentList.toMutableSet())
+        with(equipmentPrefs.edit()){
+            putStringSet(eqfavlistkey,favouriteEquipmentList.toSet())
             apply()
         }
         finish()

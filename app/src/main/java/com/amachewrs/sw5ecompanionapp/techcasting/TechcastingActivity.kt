@@ -33,7 +33,7 @@ class TechcastingActivity : AppCompatActivity() {
 
     private val favTechpowerList: MutableList<String> = mutableListOf()
     private lateinit var favSharedPreferences: SharedPreferences
-    private  var trimEnteredText=""
+    private var searchedText=""
     private var favChecked=false
 
     private var atInfo = false
@@ -74,18 +74,18 @@ class TechcastingActivity : AppCompatActivity() {
                         override fun onTick(millisUntilFinished: Long) {
                         }
                         override fun onFinish() {
-                            if(trimEnteredText.isBlank()){binding.searchview.clearFocus()}
+                            if(searchedText.isBlank()){binding.searchview.clearFocus()}
                         }
                     }.start()
-                    trimEnteredText=""
+                    searchedText=""
                 }
                 else {
-                    trimEnteredText= enttext.trim().replace(" ","_")
-                    if(techpowerList.getNameList().none { it.contains(trimEnteredText,true)}){
+                    searchedText= enttext.trim().replace(" ","_")
+                    if(techpowerList.getNameList().none { it.contains(searchedText,true)}){
                         techpoweradapter.setTechpowerList(mutableListOf(Techpower("NoSuchTechpower")))
                     }
                     else {
-                        techpoweradapter.setTechpowerList(currenttechpowerlist.filter{(it.techpowername.contains(trimEnteredText,true)) and (it !in eraselist)}.toMutableList())
+                        techpoweradapter.setTechpowerList(currenttechpowerlist.filter{(it.techpowername.contains(searchedText,true)) and (it !in eraselist)}.toMutableList())
                     }
                 }
                 return false
@@ -98,18 +98,18 @@ class TechcastingActivity : AppCompatActivity() {
                         override fun onTick(millisUntilFinished: Long) {
                         }
                         override fun onFinish() {
-                            if(trimEnteredText.isBlank()){binding.searchview.clearFocus()}
+                            if(searchedText.isBlank()){binding.searchview.clearFocus()}
                         }
                     }.start()
-                    trimEnteredText=""
+                    searchedText=""
                 }
                 else {
-                    trimEnteredText= enttext.trim().replace(" ","_")
-                    if(techpowerList.getNameList().none { it.contains(trimEnteredText,true)}){
+                    searchedText= enttext.trim().replace(" ","_")
+                    if(techpowerList.getNameList().none { it.contains(searchedText,true)}){
                         techpoweradapter.setTechpowerList(mutableListOf(Techpower("NoSuchTechpower")))
                     }
                     else {
-                        techpoweradapter.setTechpowerList(currenttechpowerlist.filter{(it.techpowername.contains(trimEnteredText,true)) and (it !in eraselist)}.toMutableList())
+                        techpoweradapter.setTechpowerList(currenttechpowerlist.filter{(it.techpowername.contains(searchedText,true)) and (it !in eraselist)}.toMutableList())
                     }
                 }
                 return false
@@ -163,7 +163,7 @@ class TechcastingActivity : AppCompatActivity() {
                 else{
                     eraselist.addAll(techpowerList.filter {it.techpowername !in favTechpowerList})
                 }
-                techpoweradapter.setTechpowerList(currenttechpowerlist.filter{(it !in eraselist) and if(trimEnteredText.isNotBlank()){it.techpowername.contains(trimEnteredText,true)}else{true}}.toMutableList())
+                techpoweradapter.setTechpowerList(currenttechpowerlist.filter{(it !in eraselist) and if(searchedText.isNotBlank()){it.techpowername.contains(searchedText,true)}else{true}}.toMutableList())
                 item.isChecked= !item.isChecked
                 favChecked= !favChecked
             }
@@ -246,7 +246,6 @@ class TechcastingActivity : AppCompatActivity() {
     }
     fun returntomain() {
         if (!atInfo) {
-            startActivity(Intent(this, SW5ECompanionApp::class.java))
             with(favSharedPreferences.edit()){
                 putStringSet("favList",favTechpowerList.toMutableSet())
                 apply()

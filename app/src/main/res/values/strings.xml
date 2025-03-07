@@ -792,25 +792,26 @@
     <string name="equipment_menu_weapon"><font color="#d4af37">Weapons</font></string>
     <string name="equipment_menu_simple"><font color="#d4af37">"     "Simple</font></string>
     <string name="equipment_menu_martial"><font color="#d4af37">"     "Martial</font></string>
-    <string name="equipment_menu_melee"><font color="#d4af37">"     "Melee</font></string>
-    <string name="equipment_menu_ranged"><font color="#d4af37">"     "Ranged</font></string>
+    <string name="equipment_menu_vibroweapon"><font color="#d4af37">"     "Vibroweapon</font></string>
+    <string name="equipment_menu_lightweapon"><font color="#d4af37">"     "Lightweapon</font></string>
+    <string name="equipment_menu_blaster"><font color="#d4af37">"     "Blaster</font></string>
     <string name="equipment_menu_favorites"><font color="#D4af37">Favorites</font></string>
     <string name="equipment_menu_armors_and_shields"><font color="#d4af37">Armors &amp; Shields</font></string>
     <string name="equipment_menu_light"><font color="#d4af37">"     "Light</font></string>
     <string name="equipment_menu_medium"><font color="#d4af37">"     "Medium</font></string>
     <string name="equipment_menu_heavy"><font color="#d4af37">"     "Heavy</font></string>
-    <string name="equipment_menu_armors"><font color="#d4af37">"     "Armors</font></string>
-    <string name="equipment_menu_shields"><font color="#D4af37">"     "Shields</font></string>
+    <string name="equipment_menu_armors"><font color="#d4af37">"     "Armor</font></string>
+    <string name="equipment_menu_shields"><font color="#D4af37">"     "Shield</font></string>
     <string name="equipment_menu_advgear"><font color="#d4af37">Adventuring Gear</font></string>
     <string name="equipment_menu_ammunition"><font color="#d4af37">"     "Ammunition</font></string>
     <string name="equipment_menu_communications"><font color="#d4af37">"     "Communications</font></string>
     <string name="equipment_menu_data"><font color="#d4af37">"     "Data</font></string>
     <string name="equipment_menu_life_support"><font color="#d4af37">"     "Life support</font></string>
-    <string name="equipment_menu_medical_supplies"><font color="#d4af37">"     "Medical supplies</font></string>
+    <string name="equipment_menu_medical_supplies"><font color="#d4af37">"     "Medical supply</font></string>
     <string name="equipment_menu_storage"><font color="#d4af37">"     "Storage</font></string>
-    <string name="equipment_menu_utilities"><font color="#d4af37">"     "Utilities</font></string>
-    <string name="equipment_menu_accessories"><font color="#d4af37">"     "W&amp;A accessories</font></string>
-    <string name="equipment_menu_tools"><font color="#d4af37">"     "Tools</font></string>
+    <string name="equipment_menu_utilities"><font color="#d4af37">"     "Utility</font></string>
+    <string name="equipment_menu_accessories"><font color="#d4af37">"     "Accessory</font></string>
+    <string name="equipment_menu_tools"><font color="#d4af37">"     "Tool</font></string>
     <string name="equipment_menu_ok"><font color="#d4af37">Confirm Filters</font></string>
     <string name="equipment_menu_filters">Filters:</string>
     <string name="equipment">EquiPMENT</string>

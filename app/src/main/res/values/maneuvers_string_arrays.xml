@@ -44,7 +44,7 @@
         <item name="details">When a creature makes a saving throw against a tech power you cast, you may expend a superiority die, subtracting the number rolled from their total.</item>
         <item name="isBig">true</item>
         <!--Body Over Bother-->
-        <item name="name">Body Over Bother</item>
+        <item name="name">Body over Bother</item>
         <item name="type">Physical</item>
         <item name="prerequisite"> </item>
         <item name="source">PHB</item>
