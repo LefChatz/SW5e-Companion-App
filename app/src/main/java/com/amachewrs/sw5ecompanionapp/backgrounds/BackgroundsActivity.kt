@@ -12,17 +12,15 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.amachewrs.sw5ecompanionapp.R
-import com.amachewrs.sw5ecompanionapp.SW5ECompanionApp
 import com.amachewrs.sw5ecompanionapp.databinding.BackgroundsBinding
 import java.util.LinkedList
-import kotlin.properties.Delegates
 
 class BackgroundsActivity : AppCompatActivity() {
 
     private lateinit var binding: BackgroundsBinding
     private lateinit var inflater: LayoutInflater
     private lateinit var tempView: View
-    private var mode by Delegates.notNull<Int>()
+    private var mode = 0
     private lateinit var backgrounds: Array<String>
     private lateinit var backgroundInfo: LinkedList<CharSequence>
 
