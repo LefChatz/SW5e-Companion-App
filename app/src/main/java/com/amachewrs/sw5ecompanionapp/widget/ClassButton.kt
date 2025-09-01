@@ -2,6 +2,8 @@ package com.amachewrs.sw5ecompanionapp.widget
 
 import android.content.Context
 import android.content.res.TypedArray
+import android.graphics.drawable.Drawable
+import android.media.Image
 import android.util.AttributeSet
 import android.view.View
 import android.widget.ImageView
@@ -21,5 +23,12 @@ class ClassButton @JvmOverloads constructor(
         view.findViewById<TextView>(R.id.class_button_textview).text = attributes.getText(R.styleable.ClassButton_text)
         view.findViewById<ImageView>(R.id.class_button_image).background = attributes.getDrawable(R.styleable.ClassButton_background)
         attributes.recycle()
+    }
+
+    fun setText(name: CharSequence){
+        view.findViewById<TextView>(R.id.class_button_textview).text = name
+    }
+    fun setBackgroundImage(image: Drawable?){
+        view.findViewById<ImageView>(R.id.class_button_image).background = image
     }
 }
