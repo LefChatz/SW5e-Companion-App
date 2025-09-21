@@ -64,98 +64,28 @@
         android:paddingVertical="50dp"
         android:clipToPadding="false"
         >
-
-        <TableLayout
-            android:id="@+id/ll"
+        <TableRow
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:stretchColumns="0,1"
+            android:paddingTop="25dp"
+            android:gravity="center"
             >
-            <TableRow
+            <com.amachewrs.sw5ecompanionapp.widget.ClassButton
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:paddingTop="25dp"
-                >
-                <com.amachewrs.sw5ecompanionapp.widget.ClassButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    app:background="@drawable/bithbutton"
-                    app:text="BiTH" />
+                android:layout_gravity="center_horizontal"
+                app:background="@drawable/bithbutton"
+                android:layout_marginEnd="80dp"
+                app:text="BiTH" />
 
-                <com.amachewrs.sw5ecompanionapp.widget.ClassButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    app:background="@drawable/bothanbutton"
-                    app:text="BoTHAN" />
-
-            </TableRow>
-            <TableRow
-
+            <com.amachewrs.sw5ecompanionapp.widget.ClassButton
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:paddingTop="25dp"
-                >
-                <com.amachewrs.sw5ecompanionapp.widget.ClassButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    app:background="@drawable/bithbutton"
-                    app:text="BiTH" />
+                android:layout_gravity="center_horizontal"
+                app:background="@drawable/bothanbutton"
+                app:text="BoTHAN" />
 
-                <com.amachewrs.sw5ecompanionapp.widget.ClassButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    app:background="@drawable/bothanbutton"
-                    app:text="BoTHAN" />
-
-            </TableRow>
-            <TableRow
-
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:paddingTop="25dp"
-                >
-                <com.amachewrs.sw5ecompanionapp.widget.ClassButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    app:background="@drawable/bithbutton"
-                    app:text="BiTH" />
-
-                <com.amachewrs.sw5ecompanionapp.widget.ClassButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    app:background="@drawable/bothanbutton"
-                    app:text="BoTHAN" />
-
-            </TableRow>
-            <TableRow
-
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:paddingTop="25dp"
-                >
-                <com.amachewrs.sw5ecompanionapp.widget.ClassButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    app:background="@drawable/bithbutton"
-                    app:text="BiTH" />
-
-                <com.amachewrs.sw5ecompanionapp.widget.ClassButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    app:background="@drawable/bothanbutton"
-                    app:text="BoTHAN" />
-
-            </TableRow>
-        </TableLayout>
+        </TableRow>
     </ScrollView>
 <!--
     <androidx.constraintlayout.widget.ConstraintLayout
