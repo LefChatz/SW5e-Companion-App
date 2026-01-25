@@ -8,6 +8,7 @@
     tools:context=".forcecasting.ForcecastingActivity"
     android:background="@drawable/neutralbg"
     android:theme="@style/ForcecastingTheme"
+    android:fitsSystemWindows="true"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:translationZ="2dp"

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".SW5ECompanionApp"
     android:background="@drawable/neutralbg"
+    android:fitsSystemWindows="true"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
         android:translationZ="2dp"
@@ -27,13 +28,12 @@
             />
         <ImageButton
             android:id="@+id/menubutton"
-            android:layout_width="0sp"
-            android:layout_height="50sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:background="?android:attr/selectableItemBackground"
             android:src="@drawable/menu3linesgold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/title"
             android:contentDescription="@string/menu"
             android:tooltipText="@string/menu"
             />

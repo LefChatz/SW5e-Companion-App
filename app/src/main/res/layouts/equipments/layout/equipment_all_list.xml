@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".equipment.AllActivity"
     android:background="@drawable/neutralbg"
-    >
+    android:fitsSystemWindows="true">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:background="@drawable/fade_black_appbar_background"
         android:layout_width="match_parent"

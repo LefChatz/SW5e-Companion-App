@@ -24,7 +24,8 @@ import com.amachewrs.sw5ecompanionapp.databinding.EquipmentInfoWealthBinding
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentInfoWeaponsBinding
 import kotlin.math.absoluteValue
 
-class EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
+class
+EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
     private lateinit var binding: EquipmentInfoBinding
     private lateinit var bindingWealth: EquipmentInfoWealthBinding
     private lateinit var bindingArmorsAndShields: EquipmentInfoArmorsAndShieldsBinding

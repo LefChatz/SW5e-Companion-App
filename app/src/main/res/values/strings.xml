@@ -1146,7 +1146,7 @@
     <!--Random utility stuff -->
     <string name="title_activity_SW5ECompanionApp">SW5eCompanionApp</string>
     <string name="app_name">Star Wars 5e Companion App</string>
-    <string name="star_wars_companion_app">Star Wars 5<font face="sans-serif"><b><font size="22">e</font></b></font> companion App</string>
+    <string name="star_wars_companion_app">sw5<font face="sans-serif"><b><font size="22">e</font></b></font> companion App</string>
     <string name="dummy">dummy</string>
     <string name="fab">FAB</string>
     <string name="menu">menu</string>
