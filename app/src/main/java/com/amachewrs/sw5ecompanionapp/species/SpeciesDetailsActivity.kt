@@ -2,69 +2,60 @@ package com.amachewrs.sw5ecompanionapp.species
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
-import android.os.Build
 import android.os.Bundle
 import android.view.GestureDetector
 import android.view.LayoutInflater
 import android.view.MotionEvent
-import android.view.View
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.content.res.AppCompatResources
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.SpeciesDetailsBinding
 import kotlin.math.absoluteValue
 
 class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
     private var mode=0
-    private val swipeThreshold = 100
+    private val swipethreshold = 100
     private lateinit var binding: SpeciesDetailsBinding
     private lateinit var gestdect: GestureDetector
     private lateinit var inflater: LayoutInflater
-    private lateinit var specie: Specie
+    private lateinit var specie: String
     private lateinit var tempstring: String
-    private val textViewList = mutableListOf<TextView>()
-    private lateinit var infoView: View
+    private lateinit var specietext: CharSequence
+    private var infoidentif = 0
 
     @SuppressLint("DiscouragedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         gestdect = GestureDetector(this,this)
-        specie = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            intent.getParcelableExtra("Specie", Specie::class.java).toSpecie()
-        } else {
-            @Suppress("DEPRECATION")
-            intent.getParcelableExtra<Specie>("Specie").toSpecie()
-        }
+        specie = intent.getStringExtra("Specie").toString()
         inflater=layoutInflater
 
         binding = SpeciesDetailsBinding.inflate(inflater)
         setContentView(binding.root)
 
-        binding.Title.text=specie.printname
+        binding.Title.text=specie.replace("_"," ")
 
         binding.BackButton.setOnClickListener { returntomain() }
 
         binding.dummybutton.setOnClickListener { changeview() }
 
-        infoView.findViewById<ImageView>(R.id.specie_image).setImageDrawable(AppCompatResources.getDrawable(this,specie.imageID))
+        infoidentif=resources.getIdentifier("species_"+specie+"_info","layout",packageName)
+        specietext=resources.getText(resources.getIdentifier(specie+"_traitsText","string",packageName))
 
-        infoView = inflater.inflate(R.layout.species_info_template,binding.ll,false)
-
-        val infoText = specie.infoText.split("|")
-        for (i in 1..infoText.size){
-            textViewList.add(infoView.findViewById(resources.getIdentifier("speciestext$i","id",packageName)))
-            textViewList[i-1].text=infoText[i-1]
+        if (infoidentif!=0){
+            inflater.inflate(infoidentif, binding.ll, true)
         }
+        else{
+            inflater.inflate(R.layout.universal_textview_nofont_gold,binding.ll,true).findViewById<TextView>(R.id.textview).text=getString(R.string.error_please_report_this)
+        }
+        tempstring=specie.replace("_"," ") + " traits"
 
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
-            override fun handleOnBackPressed(){
+            override fun handleOnBackPressed() {
                 returntomain()
             }
         })
-        binding.ll.addView(infoView)
     }
     @SuppressLint("DiscouragedApi")
     private fun changeview(){
@@ -73,17 +64,15 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
         binding.ll.removeAllViews()
 
         if (mode==0) {
-            binding.ll.removeView(infoView)
             val tempview = inflater.inflate(R.layout.universal_title_goldbar_text_textview,binding.ll,false)
-            tempstring="$specie.printname traits"
             tempview.findViewById<TextView>(R.id.headertext).text=tempstring
-            tempview.findViewById<TextView>(R.id.contenttext).text=specie.traitsText
+            tempview.findViewById<TextView>(R.id.contenttext).text=specietext
 
             binding.ll.addView(tempview)
             binding.dummybutton.text = getText(R.string.traits)
             mode=1
         } else {
-            binding.ll.addView(infoView)
+            inflater.inflate(resources.getIdentifier("species_"+specie+"_info","layout",packageName), binding.ll, true)
             binding.dummybutton.text = getString(R.string.info)
             mode=0
         }
@@ -125,7 +114,7 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
         if (e0 != null) {
             val diffX = e1.x - e0.x
             if(diffX.absoluteValue>(e1.y-e0.y).absoluteValue) {
-                if (diffX.absoluteValue > swipeThreshold && vx.absoluteValue > swipeThreshold) {
+                if (diffX.absoluteValue > swipethreshold && vx.absoluteValue > swipethreshold) {
                     //L to R
                     if (diffX > 0 && mode==1) {
                         changeview()
