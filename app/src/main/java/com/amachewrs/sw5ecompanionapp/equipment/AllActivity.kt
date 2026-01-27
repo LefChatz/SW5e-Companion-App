@@ -67,9 +67,9 @@ class AllActivity : AppCompatActivity() {
         equipmentAdapter = EquipmentAdapter(this,equipmentList,favouriteEquipmentList)
         binding.reclview.adapter = equipmentAdapter
 
-        binding.searchview.isIconifiedByDefault=false
+        binding.searchview.setIconifiedByDefault(false)
         binding.searchview.queryHint="Search..."
-        binding.searchview.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+        binding.searchview.setOnQueryTextListener(object: androidx.appcompat.widget.SearchView.OnQueryTextListener{
             override fun onQueryTextChange(enttext: String?): Boolean {
                 returntotop("sharp")
                 if(enttext.isNullOrBlank()){
