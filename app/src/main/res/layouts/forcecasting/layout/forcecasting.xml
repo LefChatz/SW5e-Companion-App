@@ -84,6 +84,7 @@
         android:layout_height="wrap_content"
         app:backgroundTint="#90FF0000"
         app:layout_anchor="@+id/bottomNavigationView"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
         app:layout_anchorGravity="top|end"
         app:layout_dodgeInsetEdges="bottom"
         app:srcCompat="@drawable/car_ui_recyclerview_ic_up_private"
