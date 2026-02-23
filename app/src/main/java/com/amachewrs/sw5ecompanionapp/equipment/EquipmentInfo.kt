@@ -22,6 +22,7 @@ import com.amachewrs.sw5ecompanionapp.databinding.EquipmentInfoTablesBinding
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentInfoToolsBinding
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentInfoWealthBinding
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentInfoWeaponsBinding
+import com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
 import kotlin.math.absoluteValue
 
 class
@@ -71,7 +72,7 @@ EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
         binding.fab.setOnClickListener {advgearmenu.show()}
         advgearmenu.setOnMenuItemClickListener {menuItem->
             binding.scrolly.smoothScrollTo(0,when(menuItem.title.toString().trim()){
-                "Equipment Packs"-> 300
+                "Equipment Packs"-> binding.scrolly.findViewById<UniversalTitleGoldbarTextTextview>(R.id.equipment_advgear_equipmentpacksTitle).y.toInt()
                 "Ammunition"->      4600
                 "Communications"->  9600
                 "Data"->            13850
