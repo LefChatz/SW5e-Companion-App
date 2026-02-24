@@ -23,6 +23,7 @@ import com.amachewrs.sw5ecompanionapp.forcecasting.ForcecastingActivity
 import com.amachewrs.sw5ecompanionapp.maneuvers.ManeuversActivity
 import com.amachewrs.sw5ecompanionapp.species.SpeciesActivity
 import com.amachewrs.sw5ecompanionapp.techcasting.TechcastingActivity
+import androidx.core.net.toUri
 
 class SW5ECompanionApp : AppCompatActivity() {
 
@@ -60,7 +61,7 @@ class SW5ECompanionApp : AppCompatActivity() {
         popup.setOnMenuItemClickListener { item: MenuItem? ->
             when (item!!.itemId) {
                 R.id.about -> handleAboutSwitch()
-                R.id.report_errors -> startActivity(Intent(Intent.ACTION_SENDTO).setData(Uri.parse(resources.getString(R.string.error_open_email))))
+                R.id.report_errors -> startActivity(Intent(Intent.ACTION_SENDTO).setData(resources.getString(R.string.error_open_email).toUri()))
             }
             true
         }
