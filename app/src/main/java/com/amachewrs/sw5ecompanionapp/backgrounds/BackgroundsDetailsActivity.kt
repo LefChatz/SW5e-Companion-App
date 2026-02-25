@@ -5,6 +5,7 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.BackgroundsDetailsBinding
@@ -18,6 +19,7 @@ class BackgroundsDetailsActivity : AppCompatActivity() {
 
         val binding = BackgroundsDetailsBinding.inflate(inflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
 
         binding.Title.text=background.replace("_"," ").replace(".","-")
         if(background=="retired_adventurer") binding.Title.text=getString(R.string.backgrounds_un_retired_adventurer)

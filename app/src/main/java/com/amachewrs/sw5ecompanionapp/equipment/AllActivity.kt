@@ -1,7 +1,6 @@
 
 package com.amachewrs.sw5ecompanionapp.equipment
 //
-import android.content.Context
 import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.os.Bundle
@@ -9,8 +8,8 @@ import android.os.CountDownTimer
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.SearchView
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import com.amachewrs.sw5ecompanionapp.R
@@ -21,6 +20,7 @@ import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.getNameLis
 import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.sortEquipmentByName
 import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.sortEquipmentByNameDescending
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import androidx.core.content.edit
 
 
 class AllActivity : AppCompatActivity() {
@@ -53,11 +53,12 @@ class AllActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = EquipmentAllListBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        equipmentPrefs=getSharedPreferences(eqprefs, Context.MODE_PRIVATE)
+        equipmentPrefs=getSharedPreferences(eqprefs, MODE_PRIVATE)
         favouriteEquipmentList.addAll(equipmentPrefs.getStringSet(eqfavlistkey, mutableSetOf())!!.toMutableList())
 
         equipmentList=getEquipmentList().sortEquipmentByName()
@@ -292,9 +293,8 @@ class AllActivity : AppCompatActivity() {
         }
     }
     private fun returntomain() {
-        with(equipmentPrefs.edit()){
-            putStringSet(eqfavlistkey,favouriteEquipmentList.toSet())
-            apply()
+        equipmentPrefs.edit {
+            putStringSet(eqfavlistkey, favouriteEquipmentList.toSet())
         }
         finish()
     }

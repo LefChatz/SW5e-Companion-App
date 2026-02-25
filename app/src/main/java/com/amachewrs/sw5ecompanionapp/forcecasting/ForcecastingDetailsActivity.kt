@@ -6,6 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import com.amachewrs.sw5ecompanionapp.R
@@ -27,6 +28,7 @@ class ForcecastingDetailsActivity : AppCompatActivity() {
                     }
         binding= ForcecastingForcepowerDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
 
         binding.title.text=forcepower.printedname
         binding.title.alpha=0.0F

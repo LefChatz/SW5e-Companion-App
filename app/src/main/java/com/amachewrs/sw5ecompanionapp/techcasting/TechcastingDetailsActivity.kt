@@ -6,6 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.text.bold
@@ -28,6 +29,7 @@ class TechcastingDetailsActivity : AppCompatActivity() {
         }
         binding= TechcastingTechpowerDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
 
         binding.title.text=techpower.printedname
         binding.title.alpha=0.0F

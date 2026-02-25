@@ -14,28 +14,19 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.spells.adapterstuff.EquipmentDiffUtilCallback
+import androidx.core.content.edit
+
 class EquipmentAdapter(private val mycontext: Context, private val dataset: MutableList<Equipment> ,private val favequipmentlist: MutableList<String>) : RecyclerView.Adapter<ViewHolder>() {
     private val currentList = dataset.toMutableList()
 
     class EmptyEquipmentHolder(view: View) : ViewHolder(view){
-        private val emptyrelout: RelativeLayout
-        init{
-            emptyrelout= view.findViewById(R.id.emptyrelout)
-        }
+        private val emptyrelout: RelativeLayout = view.findViewById(R.id.emptyrelout)
     }
     class EquipmentHolder(view: View) : ViewHolder(view){
-        val equipmenttext: TextView
-        val details: TextView
-        val relout: RelativeLayout
-        val imbutton: ImageButton
-
-        init {
-
-            imbutton = view.findViewById(R.id.equipment_fav)
-            relout = view.findViewById(R.id.relayout)
-            equipmenttext= view.findViewById(R.id.table_equipmenttext)
-            details= view.findViewById(R.id.table_equipmenttext2)
-        }
+        val equipmenttext: TextView = view.findViewById(R.id.table_equipmenttext)
+        val details: TextView = view.findViewById(R.id.table_equipmenttext2)
+        val relout: RelativeLayout = view.findViewById(R.id.relayout)
+        val imbutton: ImageButton = view.findViewById(R.id.equipment_fav)
 
     }
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
@@ -77,9 +68,8 @@ class EquipmentAdapter(private val mycontext: Context, private val dataset: Muta
             favequipmentlist.remove(name)
             equipmentbutton.foreground=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegold)
         }
-        with(mycontext.getSharedPreferences("favequipmentlist",Context.MODE_PRIVATE).edit()){
-            putStringSet("favequipmentlist",favequipmentlist.toMutableSet())
-            apply()
+        mycontext.getSharedPreferences("favequipmentlist", Context.MODE_PRIVATE).edit {
+            putStringSet("favequipmentlist", favequipmentlist.toMutableSet())
         }
     }
     private fun setEquipment(view: EquipmentHolder, equipment: Equipment){

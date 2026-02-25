@@ -1,9 +1,8 @@
 package com.amachewrs.sw5ecompanionapp.techcasting
 
-import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Configuration
+import android.graphics.Paint
 import android.graphics.Typeface
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -11,15 +10,14 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.ScrollView
 import android.widget.TableLayout
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.content.edit
 import com.amachewrs.sw5ecompanionapp.R
-import com.amachewrs.sw5ecompanionapp.SW5ECompanionApp
 import com.amachewrs.sw5ecompanionapp.databinding.TechcastingBinding
 import java.util.LinkedList
 
@@ -37,21 +35,22 @@ class TechcastingActivity : AppCompatActivity() {
     private var favChecked=false
 
     private var atInfo = false
+    private var infoGenerated = false
     private lateinit var starjedi: Typeface
-    private lateinit var scrolly : ScrollView
     private lateinit var inflater: LayoutInflater
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = TechcastingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         inflater = layoutInflater
         starjedi = resources.getFont(R.font.starjedi)
 
-        favSharedPreferences=getSharedPreferences("favList", Context.MODE_PRIVATE)
+        favSharedPreferences=getSharedPreferences("favList", MODE_PRIVATE)
         favTechpowerList.addAll(favSharedPreferences.getStringSet("favList", mutableSetOf())?.toList()!!)
 
         techpowerList.addAll(getTechpowers())
@@ -172,24 +171,25 @@ class TechcastingActivity : AppCompatActivity() {
     }
     private fun handleInfoSwitch(){
         if(!atInfo){
-            binding.coord.removeView(binding.reclview)
-            binding.searchview.visibility = View.GONE
+            binding.reclview.visibility = View.GONE
+            binding.bottomNavigationView.visibility = View.GONE
             binding.floatingActionButton.visibility = View.GONE
-            generateInfo()
+            binding.scrolly.visibility = View.VISIBLE
+            if (!infoGenerated) generateInfo()
         }
         else {
-            binding.coord.removeView(scrolly)
-            binding.coord.addView(binding.reclview)
-            binding.searchview.visibility = View.VISIBLE
+            binding.scrolly.visibility = View.GONE
+            binding.reclview.visibility = View.VISIBLE
+            binding.bottomNavigationView.visibility = View.VISIBLE
             binding.floatingActionButton.visibility = View.VISIBLE
-            returntotop("sharp")
         }
+        returntotop("sharp")
         atInfo=!atInfo
     }
     private fun generateInfo(){
         val infoHeap = LinkedList(resources.getTextArray(R.array.casting_info).toMutableSet())
-        scrolly = inflater.inflate(R.layout.universal_scrollview_with_linearlayout,binding.coord,true).findViewById(R.id.scrolly)
-        val ll = scrolly.findViewById<LinearLayout>(R.id.ll)
+
+        val ll = binding.ll
         val txt = inflater.inflate(R.layout.universal_textview_starjedi_gold,ll,false)
         var temptxt = txt.findViewById<TextView>(R.id.textview)
         temptxt.text = infoHeap.poll()
@@ -219,6 +219,7 @@ class TechcastingActivity : AppCompatActivity() {
                 if(i == 6) ll.addView(generateTable(infoHeap,inflater.inflate(R.layout.two_column_table,ll,false).findViewById(R.id.table)))
             }
         }
+        infoGenerated = true
     }
     private fun generateTable(infoHeap: LinkedList<CharSequence>, table: TableLayout) : TableLayout {
         table.findViewById<TextView>(R.id.title_1).text=infoHeap.poll()
@@ -246,9 +247,8 @@ class TechcastingActivity : AppCompatActivity() {
     }
     fun returntomain() {
         if (!atInfo) {
-            with(favSharedPreferences.edit()){
-                putStringSet("favList",favTechpowerList.toMutableSet())
-                apply()
+            favSharedPreferences.edit {
+                putStringSet("favList", favTechpowerList.toMutableSet())
             }
             finish()
         }
@@ -257,8 +257,16 @@ class TechcastingActivity : AppCompatActivity() {
     private fun getTechpowers(): MutableList<Techpower>{
         val getTechpowerList = mutableListOf<Techpower>()
         val tempTechpowerList=resources.getTextArray(R.array.techpowerlist)
+
+        val starPaint = Paint()
+        starPaint.textSize = 24F
+        starPaint.typeface = starjedi
+        starPaint.letterSpacing = 0.1F
+
         for(i in 9..tempTechpowerList.size step 10){
-            getTechpowerList.add(Techpower(tempTechpowerList[i-9].toString(),tempTechpowerList[i-8],tempTechpowerList[i-7].toString(),tempTechpowerList[i-6].toString().toInt(),tempTechpowerList[i-5].toString(),tempTechpowerList[i-4].toString(),tempTechpowerList[i-3].toString().toBoolean(),tempTechpowerList[i-2].toString(),tempTechpowerList[i-1].toString().toBoolean(),tempTechpowerList[i]))
+            val isbig = if (starPaint.measureText(tempTechpowerList[i-9] as String?) > (windowManager.currentWindowMetrics.bounds.width() - 705)) true else false
+            getTechpowerList.add(Techpower(tempTechpowerList[i-9].toString(),tempTechpowerList[i-8],tempTechpowerList[i-7].toString(),tempTechpowerList[i-6].toString().toInt(),tempTechpowerList[i-5].toString(),tempTechpowerList[i-4].toString(),tempTechpowerList[i-3].toString().toBoolean(),tempTechpowerList[i-2].toString(),isbig,tempTechpowerList[i]))
+
         }
         return getTechpowerList
     }

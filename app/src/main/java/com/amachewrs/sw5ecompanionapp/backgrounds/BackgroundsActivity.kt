@@ -10,6 +10,7 @@ import android.widget.TableLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.BackgroundsBinding
@@ -29,6 +30,7 @@ class BackgroundsActivity : AppCompatActivity() {
 
         binding = BackgroundsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
         inflater=layoutInflater
 
         mode=0

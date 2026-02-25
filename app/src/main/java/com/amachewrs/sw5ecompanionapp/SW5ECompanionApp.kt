@@ -1,7 +1,6 @@
 package com.amachewrs.sw5ecompanionapp
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -9,10 +8,12 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.PopupMenu
 import android.widget.TextView
-import android.widget.Toast
-import android.widget.Toast.*
+import android.widget.Toast.LENGTH_SHORT
+import android.widget.Toast.makeText
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import com.amachewrs.sw5ecompanionapp.backgrounds.BackgroundsActivity
 import com.amachewrs.sw5ecompanionapp.classes.ClassesActivity
 import com.amachewrs.sw5ecompanionapp.customization.CustomizationsHubActivity
@@ -23,7 +24,6 @@ import com.amachewrs.sw5ecompanionapp.forcecasting.ForcecastingActivity
 import com.amachewrs.sw5ecompanionapp.maneuvers.ManeuversActivity
 import com.amachewrs.sw5ecompanionapp.species.SpeciesActivity
 import com.amachewrs.sw5ecompanionapp.techcasting.TechcastingActivity
-import androidx.core.net.toUri
 
 class SW5ECompanionApp : AppCompatActivity() {
 
@@ -33,7 +33,9 @@ class SW5ECompanionApp : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
 
+        this.setTheme(R.style.Base_ThemeOverlay_AppCompat_Dark_NoActionBar)
         binding = ActivityHubBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

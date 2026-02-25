@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".feats.FeatsActivity"
     android:background="@drawable/neutralbg"
-    android:theme="@style/ForcecastingTheme"
+    android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
     >
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,6 +16,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:translationZ="2dp"
             android:background="@drawable/fade_black_appbar_background"
+            android:theme="@style/Theme.Swtrial2.AppBarOverlay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <androidx.appcompat.widget.Toolbar

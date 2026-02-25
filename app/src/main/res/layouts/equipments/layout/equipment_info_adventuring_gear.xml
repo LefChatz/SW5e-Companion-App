@@ -8,6 +8,7 @@
     android:paddingBottom="50dp"
     android:clipToPadding="false"
     android:background="@drawable/neutralbg"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
     >
 
     <LinearLayout
@@ -33,6 +34,7 @@
             app:makeStarjedi="true"/>
 
         <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+            android:id="@+id/equipment_advgear_ammunitionTitle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
@@ -275,6 +277,7 @@
             android:textAppearance="@style/GoldTextStarjedi" />
 
         <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+            android:id="@+id/equipment_advgear_communicationsTitle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
@@ -516,6 +519,7 @@
             android:textAppearance="@style/GoldTextStarjedi" />
 
         <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+            android:id="@+id/equipment_advgear_dataTitle"
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:layout_marginTop="30dp"
@@ -818,6 +822,7 @@
             android:textAppearance="@style/GoldTextStarjedi" />
 
         <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+            android:id="@+id/equipment_advgear_explosivesTitle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
@@ -1119,6 +1124,7 @@
             android:text="@string/equipment_info_adventuring_gear7"
             android:textAppearance="@style/GoldTextStarjedi" />
         <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+            android:id="@+id/equipment_advgear_lifeSupportTitle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
@@ -1235,6 +1241,7 @@
             android:text="@string/equipment_info_adventuring_gear8"
             android:textAppearance="@style/GoldTextStarjedi" />
         <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+            android:id="@+id/equipment_advgear_medicalSuppliesTitle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
@@ -1470,6 +1477,7 @@
             android:textAppearance="@style/GoldTextStarjedi" />
 
         <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+            android:id="@+id/equipment_advgear_storageTitle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
@@ -1734,6 +1742,7 @@
             android:textAppearance="@style/GoldTextStarjedi" />
 
         <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+            android:id="@+id/equipment_advgear_utilitiesTitle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
@@ -2353,6 +2362,7 @@
             android:textAppearance="@style/GoldTextStarjedi" />
 
         <com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
+            android:id="@+id/equipment_advgear_accessoriesTitle"
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:layout_marginTop="30dp"

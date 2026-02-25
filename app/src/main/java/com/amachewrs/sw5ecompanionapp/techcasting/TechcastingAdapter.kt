@@ -9,6 +9,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.edit
 import androidx.core.text.buildSpannedString
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -19,34 +20,17 @@ import com.amachewrs.sw5ecompanionapp.R
 class TechcastingAdapter(private val myContext: Context, private val dataset: MutableList<Techpower>, private val favlist: MutableList<String>) : RecyclerView.Adapter<ViewHolder>() {
     val levels: List<Int> = listOf(0,1,2,3,4,5,6,7,8,9)
     class NoTechpowerHolder(view: View) : ViewHolder(view){
-        private val noTechpowerText: TextView
-        init {
-            noTechpowerText= view.findViewById(R.id.techcasting_nosuchtechpowertext)
-        }
-        init{
-        }
+        /*private val noTechpowerText: TextView = view.findViewById(R.id.techcasting_nosuchtechpowertext)*/
     }
     class LeveledDividerHolder(view: View) : ViewHolder(view){
-        val lvldividertextview: TextView
-        init {
-            lvldividertextview= view.findViewById(R.id.leveldividertextview)
-        }
+        val lvldividertextview: TextView = view.findViewById(R.id.leveldividertextview)
     }
     class TechpowerHolder(view: View) : ViewHolder(view){
-        val techpowername: TextView
-        val techpowerdetails: TextView
-        val castingtime: TextView
-        val constlout: ConstraintLayout
-        val imbutton: ImageButton
-
-        init {
-
-            imbutton = view.findViewById(R.id.table_techpower_fav)
-            constlout = view.findViewById(R.id.table_techpower_constlout)
-            techpowername= view.findViewById(R.id.table_techpower_name)
-            castingtime= view.findViewById(R.id.table_techpower_casting_time)
-            techpowerdetails= view.findViewById(R.id.table_techpower_details)
-        }
+        val techpowername: TextView = view.findViewById(R.id.table_techpower_name)
+        val techpowerdetails: TextView = view.findViewById(R.id.table_techpower_details)
+        val castingtime: TextView = view.findViewById(R.id.table_techpower_casting_time)
+        val constlout: ConstraintLayout = view.findViewById(R.id.table_techpower_constlout)
+        val imbutton: ImageButton = view.findViewById(R.id.table_techpower_fav)
 
     }
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
@@ -102,16 +86,13 @@ class TechcastingAdapter(private val myContext: Context, private val dataset: Mu
             favlist.remove(techpower.techpowername)
             techpowerbutton.foreground=AppCompatResources.getDrawable(myContext,R.drawable.favouritegold)
         }
-        with(myContext.getSharedPreferences("favlist",Context.MODE_PRIVATE).edit()){
-            putStringSet("favlist",favlist.toMutableSet())
-            apply()
+        myContext.getSharedPreferences("favlist", Context.MODE_PRIVATE).edit {
+            putStringSet("favlist", favlist.toMutableSet())
         }
     }
 
     private fun techpower(view: TechpowerHolder, techpower: Techpower){
         view.techpowername.text=techpower.printedname
-        if (techpower.techpowername in listOf("superior_translation_program","greater_translation_program") ) view.techpowername.textSize=22F
-        else view.techpowername.textSize=24F
         view.techpowerdetails.text= buildSpannedString{
             append(when(techpower.level){0->"At-will";1->"1st-level";2->"2nd-level";3->"3rd-level";else->"${techpower.level}th-level"})
         }
@@ -143,9 +124,7 @@ class TechcastingAdapter(private val myContext: Context, private val dataset: Mu
             7->{view.lvldividertextview.text=myContext.getText(R.string.seventh_level)}
             8->{view.lvldividertextview.text=myContext.getText(R.string.eighth_level)}
             9->{view.lvldividertextview.text=myContext.getText(R.string.nineth_level)}
-            else->{
-
-            }
+            else->{}
         }
     }
 }

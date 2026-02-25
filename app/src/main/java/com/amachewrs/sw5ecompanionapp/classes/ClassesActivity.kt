@@ -9,6 +9,7 @@ import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.LinearLayoutCompat
 import com.amachewrs.sw5ecompanionapp.R
@@ -34,6 +35,7 @@ class ClassesActivity : AppCompatActivity() {
 
         binding = ClassesBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
         inflater=layoutInflater
 
 

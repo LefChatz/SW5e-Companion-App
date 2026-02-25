@@ -8,9 +8,9 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.amachewrs.sw5ecompanionapp.R
-import com.amachewrs.sw5ecompanionapp.SW5ECompanionApp
 import com.amachewrs.sw5ecompanionapp.databinding.SpeciesBinding
 import kotlin.properties.Delegates
 
@@ -28,6 +28,7 @@ class SpeciesActivity : AppCompatActivity() {
 
         binding = SpeciesBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
         inflater=layoutInflater
 
         mode=0

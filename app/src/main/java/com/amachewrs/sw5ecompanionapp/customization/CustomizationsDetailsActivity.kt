@@ -4,6 +4,7 @@ import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.buildSpannedString
 import com.amachewrs.sw5ecompanionapp.databinding.CustomizationsDetailsBinding
@@ -21,6 +22,7 @@ class CustomizationsDetailsActivity : AppCompatActivity() {
 
         val binding = CustomizationsDetailsBinding.inflate(inflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
 
         binding.Title.text = customOption.name
 

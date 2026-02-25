@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.SpeciesDetailsBinding
@@ -33,6 +34,7 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
 
         binding = SpeciesDetailsBinding.inflate(inflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
 
         binding.Title.text=specie.replace("_"," ")
 

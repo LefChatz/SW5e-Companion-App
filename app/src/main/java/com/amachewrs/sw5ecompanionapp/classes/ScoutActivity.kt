@@ -12,6 +12,7 @@ import android.view.View
 import android.widget.HorizontalScrollView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.LinearLayoutCompat
@@ -46,6 +47,7 @@ class ScoutActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
         super.onCreate(savedInstanceState)
         binding = ClassScoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)

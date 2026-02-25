@@ -53,6 +53,7 @@ EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
         binding= EquipmentInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        this.setTheme(R.style.Base_ThemeOverlay_AppCompat_Dark_NoActionBar)
         bindingWealth = EquipmentInfoWealthBinding.inflate(layoutInflater,binding.scrolly,false)
 
         setSupportActionBar(binding.toolbar)
@@ -71,19 +72,19 @@ EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
         menuInflater.inflate(R.menu.menu_equipment_info_advgear_scrollpoints,advgearmenu.menu)
         binding.fab.setOnClickListener {advgearmenu.show()}
         advgearmenu.setOnMenuItemClickListener {menuItem->
-            binding.scrolly.smoothScrollTo(0,when(menuItem.title.toString().trim()){
-                "Equipment Packs"-> binding.scrolly.findViewById<UniversalTitleGoldbarTextTextview>(R.id.equipment_advgear_equipmentpacksTitle).y.toInt()
-                "Ammunition"->      4600
-                "Communications"->  9600
-                "Data"->            13850
-                "Explosives"->      18300
-                "Life Support"->    28050
-                "Medical Supplies"->30300
-                "Storage"->         35640
-                "Utilities"->       38320
-                "Accessories"->     47750
-                else->              0
-            })
+            binding.scrolly.smoothScrollTo(0,binding.scrolly.findViewById<UniversalTitleGoldbarTextTextview>(when(menuItem.title.toString().trim()){
+                    "Equipment Packs" ->R.id.equipment_advgear_equipmentpacksTitle
+                    "Ammunition"->      R.id.equipment_advgear_ammunitionTitle
+                    "Communications"->  R.id.equipment_advgear_communicationsTitle
+                    "Data"->            R.id.equipment_advgear_dataTitle
+                    "Explosives"->      R.id.equipment_advgear_explosivesTitle
+                    "Life Support"->    R.id.equipment_advgear_lifeSupportTitle
+                    "Medical Supplies"->R.id.equipment_advgear_medicalSuppliesTitle
+                    "Storage"->         R.id.equipment_advgear_storageTitle
+                    "Utilities"->       R.id.equipment_advgear_utilitiesTitle
+                    "Accessories"->     R.id.equipment_advgear_accessoriesTitle
+                    else -> 0
+                }).y.toInt())
             false
         }
 

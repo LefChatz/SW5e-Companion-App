@@ -5,6 +5,7 @@ import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import com.amachewrs.sw5ecompanionapp.R
@@ -24,6 +25,7 @@ class ManeuversDetailsActivity : AppCompatActivity() {
         }
         binding= ManeuversDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
 
         binding.Title.text=maneuver.maneuvername
 

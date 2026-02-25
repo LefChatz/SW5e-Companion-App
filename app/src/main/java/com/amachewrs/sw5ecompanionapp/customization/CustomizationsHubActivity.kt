@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.SW5ECompanionApp
@@ -27,6 +28,7 @@ class CustomizationsHubActivity : AppCompatActivity() {
 
         binding = CustomizationsHubBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
         inflater=layoutInflater
 
         setSupportActionBar(binding.toolbar)

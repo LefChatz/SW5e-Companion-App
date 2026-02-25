@@ -1,9 +1,8 @@
 package com.amachewrs.sw5ecompanionapp.forcecasting
 
-import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Configuration
+import android.graphics.Paint
 import android.graphics.Typeface
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -11,16 +10,15 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.ScrollView
 import android.widget.TableLayout
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.content.edit
 import androidx.core.view.forEach
 import com.amachewrs.sw5ecompanionapp.R
-import com.amachewrs.sw5ecompanionapp.SW5ECompanionApp
 import com.amachewrs.sw5ecompanionapp.databinding.ForcecastingBinding
 import java.util.LinkedList
 
@@ -44,21 +42,23 @@ class ForcecastingActivity : AppCompatActivity() {
     private lateinit var forcemenu: Menu
 
     private var atInfo = false
+    private var infoGenerated = false
     private lateinit var starjedi: Typeface
-    private lateinit var scrolly : ScrollView
     private lateinit var inflater: LayoutInflater
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ForcecastingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
+
         inflater=layoutInflater
         starjedi = resources.getFont(R.font.starjedi)
 
-        favSharedPreferences=getSharedPreferences("forcecasting", Context.MODE_PRIVATE)
+        favSharedPreferences=getSharedPreferences("forcecasting", MODE_PRIVATE)
         favForcepowerList.addAll(favSharedPreferences.getStringSet("favorite_force_powers", mutableSetOf())?.toList()!!)
 
         forcepowerList.addAll(getForcepowers())
@@ -202,26 +202,27 @@ class ForcecastingActivity : AppCompatActivity() {
     }
     private fun handleInfoSwitch(){
         if(!atInfo){
-            binding.coord.removeView(binding.reclview)
-            binding.searchview.visibility = View.GONE
-            binding.floatingActionButton.visibility= View.GONE
-            generateInfo()
+            binding.reclview.visibility = View.GONE
+            binding.bottomNavigationView.visibility = View.GONE
+            binding.floatingActionButton.visibility = View.GONE
+            binding.scrolly.visibility = View.VISIBLE
             forcemenu.forEach { if(it.order!=2)it.isVisible=false }
+            if (!infoGenerated) generateInfo()
         }
         else {
-            binding.coord.removeView(scrolly)
-            binding.coord.addView(binding.reclview)
-            binding.searchview.visibility = View.VISIBLE
-            binding.floatingActionButton.visibility= View.VISIBLE
+            binding.scrolly.visibility = View.GONE
+            binding.reclview.visibility = View.VISIBLE
+            binding.bottomNavigationView.visibility = View.VISIBLE
+            binding.floatingActionButton.visibility = View.VISIBLE
             forcemenu.forEach { it.isVisible=true }
-            returntotop("sharp")
         }
+        returntotop("sharp")
         atInfo=!atInfo
     }
     private fun generateInfo(){
         val infoHeap = LinkedList(resources.getTextArray(R.array.casting_info).toMutableSet())
-        scrolly = inflater.inflate(R.layout.universal_scrollview_with_linearlayout,binding.coord,true).findViewById(R.id.scrolly)
-        val ll = scrolly.findViewById<LinearLayout>(R.id.ll)
+
+        val ll = binding.ll
         val txt = inflater.inflate(R.layout.universal_textview_starjedi_gold,ll,false)
         var temptxt = txt.findViewById<TextView>(R.id.textview)
         temptxt.text = infoHeap.poll()
@@ -250,6 +251,7 @@ class ForcecastingActivity : AppCompatActivity() {
 
                 if(i == 6) ll.addView(generateTable(infoHeap,inflater.inflate(R.layout.two_column_table,ll,false).findViewById(R.id.table)))
             }
+            infoGenerated = true
         }
     }
     private fun generateTable(infoHeap: LinkedList<CharSequence>,table: TableLayout) :TableLayout{
@@ -271,9 +273,17 @@ class ForcecastingActivity : AppCompatActivity() {
     private fun getForcepowers(): MutableList<Forcepower>{
         val getForcepowerList = mutableListOf<Forcepower>()
         val tempForcepowerList=resources.getTextArray(R.array.forcepowerlist)
+
+        val starPaint = Paint()
+        starPaint.textSize = 24F
+        starPaint.typeface = starjedi
+        starPaint.letterSpacing = 0.1F
+
         for(i in 8..tempForcepowerList.size step 9){
-            getForcepowerList.add(Forcepower(tempForcepowerList[i-8].toString(),tempForcepowerList[i-7],tempForcepowerList[i-6].toString(),tempForcepowerList[i-5],tempForcepowerList[i-4].toString().toInt(),tempForcepowerList[i-3].toString().toBoolean(),tempForcepowerList[i-2].toString().toBoolean(),tempForcepowerList[i-1].toString().toBoolean(),tempForcepowerList[i]))
+            val isbig = if (starPaint.measureText(tempForcepowerList[i-8] as String?) > (windowManager.currentWindowMetrics.bounds.width() - 705)) true else false
+            getForcepowerList.add(Forcepower(tempForcepowerList[i-8].toString(),tempForcepowerList[i-7],tempForcepowerList[i-6].toString(),tempForcepowerList[i-5],tempForcepowerList[i-4].toString().toInt(),tempForcepowerList[i-3].toString().toBoolean(),tempForcepowerList[i-2].toString().toBoolean(),isbig,tempForcepowerList[i]))
         }
+
         return getForcepowerList
     }
     private fun returntotop(mode: String){
@@ -284,9 +294,8 @@ class ForcecastingActivity : AppCompatActivity() {
     }
     fun returntomain() {
         if (!atInfo) {
-            with(favSharedPreferences.edit()){
-                putStringSet("favorite_force_powers",favForcepowerList.toMutableSet())
-                apply()
+            favSharedPreferences.edit {
+                putStringSet("favorite_force_powers", favForcepowerList.toMutableSet())
             }
             finish()
         }

@@ -12,6 +12,7 @@ import android.view.View
 import android.widget.HorizontalScrollView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.LinearLayoutCompat
@@ -47,8 +48,9 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
         super.onCreate(savedInstanceState)
         binding = ClassOperativeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(binding.toolbar)
+        enableEdgeToEdge()
 
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         binding.dummybutton.setOnClickListener { this.openOptionsMenu() }
 

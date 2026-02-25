@@ -12,6 +12,7 @@ import android.widget.TableLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.amachewrs.sw5ecompanionapp.R
@@ -34,6 +35,7 @@ class CustomizationsActivity : AppCompatActivity() {
 
         binding = CustomizationsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
         inflater=layoutInflater
 
         binding.title.text=customOption.replace("_"," ")
