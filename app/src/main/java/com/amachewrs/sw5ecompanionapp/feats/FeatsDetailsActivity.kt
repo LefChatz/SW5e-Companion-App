@@ -4,8 +4,12 @@ import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.FeatsDetailsBinding
 
@@ -15,14 +19,15 @@ class FeatsDetailsActivity : AppCompatActivity() {
     @SuppressLint("DiscouragedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        feat = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            intent.getParcelableExtra("Feat", Feat::class.java).toFeat()
-        } else {
-            @Suppress("DEPRECATION")
-            intent.getParcelableExtra<Feat>("Feat").toFeat()
-        }
+
         binding= FeatsDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
+            cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
+            WindowInsetsCompat.CONSUMED }
+
+        feat = getFeat()
 
         binding.Title.text=feat.featname.replace("_"," ").replace("..","'").replace(".","-")
 
@@ -31,6 +36,7 @@ class FeatsDetailsActivity : AppCompatActivity() {
 
         //SRC
         binding.SourceBook.text=feat.source
+
         //title
         val temptext = "ASI: " + feat.asi +if (feat.prerequisite.isNotEmpty()){ "\n\n" + "prerequisite: " + feat.prerequisite } else {""} + "\n\n" + feat.detailsText
         binding.FeatText.text=temptext
@@ -38,7 +44,7 @@ class FeatsDetailsActivity : AppCompatActivity() {
         //Background
         binding.coord.background=AppCompatResources.getDrawable(this@FeatsDetailsActivity,R.drawable.neutralbg)
 
-        //Special feat cases
+        //no special feat cases
 
         binding.BackButton.setOnClickListener {returntomain()}
     }
@@ -48,6 +54,12 @@ class FeatsDetailsActivity : AppCompatActivity() {
         binding.toolbar.overflowIcon = AppCompatResources.getDrawable(this, R.drawable.dots3gold)
         return super.onCreateOptionsMenu(menu)
     }*/
+
+    @Suppress("DEPRECATION")
+    private fun getFeat(): Feat{
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) intent.getParcelableExtra("Feat", Feat::class.java).toFeat()
+        else intent.getParcelableExtra<Feat>("Feat").toFeat()
+    }
 
     private fun returntomain() {
         finish()

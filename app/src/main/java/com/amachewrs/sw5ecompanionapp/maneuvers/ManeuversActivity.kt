@@ -1,9 +1,8 @@
 package com.amachewrs.sw5ecompanionapp.maneuvers
 
-import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Configuration
+import android.graphics.Paint
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.Menu
@@ -13,16 +12,16 @@ import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.recyclerview.widget.RecyclerView
+import androidx.core.content.edit
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
-import com.amachewrs.sw5ecompanionapp.SW5ECompanionApp
 import com.amachewrs.sw5ecompanionapp.databinding.ManeuversBinding
 
 
 class ManeuversActivity : AppCompatActivity() {
     private lateinit var binding: ManeuversBinding
-    private lateinit var reclview: RecyclerView
-    private lateinit var searchView: androidx.appcompat.widget.SearchView
 
     private lateinit var maneuveradapter: ManeuversAdapter
     private var maneuverList=mutableListOf<Maneuver>()
@@ -43,29 +42,32 @@ class ManeuversActivity : AppCompatActivity() {
         binding = ManeuversBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
+            cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
+            binding.bottomNavigationView.updatePadding(0,0,0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom)
+            WindowInsetsCompat.CONSUMED
+        }
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        favSharedPreferences=getSharedPreferences("maneuvers", Context.MODE_PRIVATE)
+        favSharedPreferences=getSharedPreferences("maneuvers", MODE_PRIVATE)
         favManeuverList.addAll(favSharedPreferences.getStringSet("favorite_maneuvers", mutableSetOf())?.toList()!!)
 
         maneuverList.addAll(getManeuvers())
 
-        reclview = binding.reclview
         adapterManeuverList.addAll(maneuverList)
         maneuveradapter = ManeuversAdapter(this,adapterManeuverList,favManeuverList)
-        reclview.adapter = maneuveradapter
+        binding.reclview.adapter = maneuveradapter
         currentmaneuverlist = maneuverList
 
         binding.BackButton.setOnClickListener{returntomain()}
 
-        searchView = binding.searchview
-        searchView.setIconifiedByDefault(false)
-        searchView.queryHint="Search..."
-        searchView.setOnQueryTextListener(object: androidx.appcompat.widget.SearchView.OnQueryTextListener{
+        binding.searchview.setIconifiedByDefault(false)
+        binding.searchview.queryHint="Search..."
+        binding.searchview.setOnQueryTextListener(object: androidx.appcompat.widget.SearchView.OnQueryTextListener{
             override fun onQueryTextChange(enttext: String?): Boolean {
-                returntotop(reclview,"sharp")
+                returntotop("sharp")
                 if(enttext.isNullOrBlank()){
                     trimEnteredText=""
                     maneuveradapter.setManeuverList(currentmaneuverlist.filter{filter(it)})
@@ -73,7 +75,7 @@ class ManeuversActivity : AppCompatActivity() {
                         override fun onTick(millisUntilFinished: Long) {
                         }
                         override fun onFinish() {
-                            if(trimEnteredText.isBlank()){searchView.clearFocus()}
+                            if(trimEnteredText.isBlank()){binding.searchview.clearFocus()}
                         }
                     }.start()
                 }
@@ -89,7 +91,7 @@ class ManeuversActivity : AppCompatActivity() {
                 return false
             }
             override fun onQueryTextSubmit(enttext: String?): Boolean {
-                returntotop(reclview,"sharp")
+                returntotop("sharp")
                 if(enttext.isNullOrBlank()){
                     trimEnteredText=""
                     maneuveradapter.setManeuverList(currentmaneuverlist.filter{filter(it)})
@@ -97,7 +99,7 @@ class ManeuversActivity : AppCompatActivity() {
                         override fun onTick(millisUntilFinished: Long) {
                         }
                         override fun onFinish() {
-                            if(trimEnteredText.isBlank()){searchView.clearFocus()}
+                            if(trimEnteredText.isBlank()){binding.searchview.clearFocus()}
                         }
                     }.start()
                 }
@@ -115,7 +117,7 @@ class ManeuversActivity : AppCompatActivity() {
         })
 
 
-        binding.floatingActionButton.setOnClickListener{returntotop(reclview,"smooth")}
+        binding.floatingActionButton.setOnClickListener{returntotop("smooth")}
 
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -135,21 +137,18 @@ class ManeuversActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        with(maneuvermenu.findItem(R.id.eqmenu_ok)){
-            if(!isVisible)isVisible=true
-        }
         keepmenu=true
         when(item.title){
             getText(R.string.sortABCdown)->{
                 keepmenu=false
                 currentmaneuverlist=maneuverList.sortManeuverByNameDescending()
                 item.title=getText(R.string.sortABCup)
-                returntotop(reclview,"sharp")}
+                returntotop("sharp")}
             getText(R.string.sortABCup)->{
                 keepmenu=false
                 currentmaneuverlist=maneuverList.sortManeuverByName()
                 item.title = getText(R.string.sortABCdown)
-                returntotop(reclview,"sharp")}
+                returntotop("sharp")}
             getText(R.string.maneuvers_menu_type)->{
                 if (!item.isChecked){
                     filterType.clear()
@@ -185,6 +184,9 @@ class ManeuversActivity : AppCompatActivity() {
                     return false
                 }
             })
+            with(maneuvermenu.findItem(R.id.eqmenu_ok)){
+                if(!isVisible)isVisible=true
+            }
         }
         return false
     }
@@ -207,37 +209,36 @@ class ManeuversActivity : AppCompatActivity() {
         item.isChecked= !item.isChecked
     }
 
-    private fun returntotop(view: RecyclerView,mode: String){
+    private fun returntotop(mode: String){
         when(mode){
-            "smooth"->view.smoothScrollToPosition(0)
-            "sharp"->view.scrollToPosition(0)
+            "smooth"->binding.reclview.smoothScrollToPosition(0)
+            "sharp"->binding.reclview.scrollToPosition(0)
         }
 
     }
     fun returntomain() {
-        with(favSharedPreferences.edit()){
-            putStringSet("favorite_maneuvers",favManeuverList.toMutableSet())
-            apply()
+        favSharedPreferences.edit {
+            putStringSet("favorite_maneuvers", favManeuverList.toMutableSet())
         }
         finish()
     }
     private fun getManeuvers(): MutableList<Maneuver>{
         val getManeuverList = mutableListOf<Maneuver>()
-        val tempManeuverList=resources.getTextArray(R.array.maneuvers)
-        for(i in 5..tempManeuverList.size step 6){
-            getManeuverList.add(Maneuver(tempManeuverList[i-5].toString(),tempManeuverList[i-4].toString(),tempManeuverList[i-3].toString(),tempManeuverList[i-2].toString(),tempManeuverList[i-1],tempManeuverList[i].toString().toBoolean()))
+        val maneuverTextArray=resources.getTextArray(R.array.maneuvers)
+
+        val starPaint = Paint()
+        starPaint.textSize = 24F
+        starPaint.typeface = resources.getFont(R.font.starjedi)
+        starPaint.letterSpacing = 0.1F
+
+        for(i in 5..maneuverTextArray.size step 6){
+            val isbig = starPaint.measureText(maneuverTextArray[i-5] as String?) > (windowManager.currentWindowMetrics.bounds.width() - 705)
+            getManeuverList.add(Maneuver(maneuverTextArray[i-5].toString(),maneuverTextArray[i-4].toString(),maneuverTextArray[i-3].toString(),maneuverTextArray[i-2].toString(),maneuverTextArray[i-1],isbig))
         }
+
         return getManeuverList
     }
-    /*override fun onPanelClosed(maneuverureId: Int, menu: Menu) {
-        if (keepmenu) {
-            openOptionsMenu()
-        }
-        else{
-            maneuvermenu.findItem(R.id.eqmenu_ok).isVisible=false
-        }
-        super.onPanelClosed(maneuverureId, menu)
-    }*/
+
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
     }

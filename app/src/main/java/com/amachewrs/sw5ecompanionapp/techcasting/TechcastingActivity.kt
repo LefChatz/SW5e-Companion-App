@@ -17,6 +17,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.edit
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.forEach
+import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.TechcastingBinding
 import java.util.LinkedList
@@ -36,6 +40,7 @@ class TechcastingActivity : AppCompatActivity() {
 
     private var atInfo = false
     private var infoGenerated = false
+    private lateinit var techmenu: Menu
     private lateinit var starjedi: Typeface
     private lateinit var inflater: LayoutInflater
 
@@ -44,14 +49,19 @@ class TechcastingActivity : AppCompatActivity() {
         binding = TechcastingBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
+            cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
+            binding.bottomNavigationView.updatePadding(0,0,0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom)
+            WindowInsetsCompat.CONSUMED
+        }
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         inflater = layoutInflater
         starjedi = resources.getFont(R.font.starjedi)
 
-        favSharedPreferences=getSharedPreferences("favList", MODE_PRIVATE)
-        favTechpowerList.addAll(favSharedPreferences.getStringSet("favList", mutableSetOf())?.toList()!!)
+        favSharedPreferences=getSharedPreferences("techcasting", MODE_PRIVATE)
+        favTechpowerList.addAll(favSharedPreferences.getStringSet("favorite_tech_powers", mutableSetOf())?.toList()!!)
 
         techpowerList.addAll(getTechpowers())
 
@@ -127,6 +137,9 @@ class TechcastingActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_techcasting,menu)
+        if (menu != null){
+            techmenu = menu
+        }
         binding.toolbar.overflowIcon = AppCompatResources.getDrawable(this, R.drawable.downarrowgold)
         return super.onCreateOptionsMenu(menu)
     }
@@ -134,34 +147,31 @@ class TechcastingActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.title){
             getText(R.string.sortABCdown)->{
-                currenttechpowerlist=techpowerList.sortTechpowerByNameDescending().filter { it !in eraselist }.toMutableList()
+                currenttechpowerlist=techpowerList.sortTechpowerByNameDescending()
                 techpoweradapter.setTechpowerList(adapterTechpowerList.sortTechpowerByNameDescending().filter { it !in eraselist }.toMutableList())
                 item.title=getText(R.string.sortABCup)
                 returntotop("sharp")}
             getText(R.string.sortABCup)->{
-                currenttechpowerlist=techpowerList.sortTechpowerByLevel().filter { it !in eraselist }.toMutableList()
+                currenttechpowerlist=techpowerList.sortTechpowerByLevel()
                 techpoweradapter.setTechpowerList(adapterTechpowerList.sortTechpowerByName().sortTechpowerByLevel().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortLvldown)
                 returntotop("sharp")}
             getText(R.string.sortLvldown)->{
-                currenttechpowerlist=techpowerList.sortTechpowerByLevelDescending().filter { it !in eraselist }.toMutableList()
+                currenttechpowerlist=techpowerList.sortTechpowerByLevelDescending()
                 techpoweradapter.setTechpowerList(adapterTechpowerList.sortTechpowerByLevelDescending().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortLvlup)
                 returntotop("sharp")}
             getText(R.string.sortLvlup)->{
-                currenttechpowerlist=techpowerList.sortTechpowerByName().filter { it !in eraselist }.toMutableList()
+                currenttechpowerlist=techpowerList.sortTechpowerByName()
                 techpoweradapter.setTechpowerList(adapterTechpowerList.sortTechpowerByName().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortABCdown)
                 returntotop("sharp")}
-            getText(R.string.casting_info)->handleInfoSwitch()
-
+            getText(R.string.casting_info) ->handleInfoSwitch()
+            getText(R.string.back_gold) ->handleInfoSwitch()
             getText(R.string.favorites_gold)->{
-                if (item.isChecked){
-                    eraselist.removeAll{(it.techpowername !in favTechpowerList)}
-                }
-                else{
-                    eraselist.addAll(techpowerList.filter {it.techpowername !in favTechpowerList})
-                }
+                if (item.isChecked) eraselist.removeAll{(it.techpowername !in favTechpowerList)}
+                else eraselist.addAll(techpowerList.filter {it.techpowername !in favTechpowerList})
+
                 techpoweradapter.setTechpowerList(currenttechpowerlist.filter{(it !in eraselist) and if(searchedText.isNotBlank()){it.techpowername.contains(searchedText,true)}else{true}}.toMutableList())
                 item.isChecked= !item.isChecked
                 favChecked= !favChecked
@@ -176,14 +186,17 @@ class TechcastingActivity : AppCompatActivity() {
             binding.floatingActionButton.visibility = View.GONE
             binding.scrolly.visibility = View.VISIBLE
             if (!infoGenerated) generateInfo()
+            binding.scrolly.scrollTo(0,0)
+            techmenu.forEach { if(it.order!=2)it.isVisible=false else it.title = resources.getText(R.string.back_gold) }
         }
         else {
             binding.scrolly.visibility = View.GONE
             binding.reclview.visibility = View.VISIBLE
             binding.bottomNavigationView.visibility = View.VISIBLE
             binding.floatingActionButton.visibility = View.VISIBLE
+            techmenu.forEach { if(it.order!=2)it.isVisible=true else it.title = resources.getText(R.string.casting_info) }
+            returntotop("sharp")
         }
-        returntotop("sharp")
         atInfo=!atInfo
     }
     private fun generateInfo(){
@@ -243,12 +256,11 @@ class TechcastingActivity : AppCompatActivity() {
             "smooth"->binding.reclview.smoothScrollToPosition(0)
             "sharp"->binding.reclview.scrollToPosition(0)
         }
-
     }
     fun returntomain() {
         if (!atInfo) {
             favSharedPreferences.edit {
-                putStringSet("favList", favTechpowerList.toMutableSet())
+                putStringSet("favorite_tech_powers", favTechpowerList.toMutableSet())
             }
             finish()
         }
@@ -256,16 +268,16 @@ class TechcastingActivity : AppCompatActivity() {
     }
     private fun getTechpowers(): MutableList<Techpower>{
         val getTechpowerList = mutableListOf<Techpower>()
-        val tempTechpowerList=resources.getTextArray(R.array.techpowerlist)
+        val techpowerTextArray=resources.getTextArray(R.array.techpowerlist)
 
         val starPaint = Paint()
         starPaint.textSize = 24F
         starPaint.typeface = starjedi
         starPaint.letterSpacing = 0.1F
 
-        for(i in 9..tempTechpowerList.size step 10){
-            val isbig = if (starPaint.measureText(tempTechpowerList[i-9] as String?) > (windowManager.currentWindowMetrics.bounds.width() - 705)) true else false
-            getTechpowerList.add(Techpower(tempTechpowerList[i-9].toString(),tempTechpowerList[i-8],tempTechpowerList[i-7].toString(),tempTechpowerList[i-6].toString().toInt(),tempTechpowerList[i-5].toString(),tempTechpowerList[i-4].toString(),tempTechpowerList[i-3].toString().toBoolean(),tempTechpowerList[i-2].toString(),isbig,tempTechpowerList[i]))
+        for(i in 9..techpowerTextArray.size step 10){
+            val isbig = starPaint.measureText(techpowerTextArray[i-9] as String?) > (windowManager.currentWindowMetrics.bounds.width() - 705)
+            getTechpowerList.add(Techpower(techpowerTextArray[i-9].toString(),techpowerTextArray[i-8],techpowerTextArray[i-7].toString(),techpowerTextArray[i-6].toString().toInt(),techpowerTextArray[i-5].toString(),techpowerTextArray[i-4].toString(),techpowerTextArray[i-3].toString().toBoolean(),techpowerTextArray[i-2].toString(),isbig,techpowerTextArray[i]))
 
         }
         return getTechpowerList

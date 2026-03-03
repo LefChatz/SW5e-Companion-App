@@ -22,11 +22,11 @@
         android:autoSizeMinTextSize="16sp"
         android:autoSizeTextType="uniform"
         android:autoSizeStepGranularity="1dp"
+        tools:text="Name Container for big techpowers"
         app:layout_constraintBottom_toBottomOf="@+id/table_techpower_fav"
         app:layout_constraintEnd_toStartOf="@+id/table_techpower_fav"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Name Container for big techpowers" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/table_techpower_details"
@@ -45,10 +45,10 @@
         android:textAlignment="viewEnd"
         android:textColor="@color/gold"
         android:textSize="14sp"
+        tools:text="Casting Time"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/table_techpower_fav"
-        app:layout_constraintTop_toBottomOf="@+id/table_techpower_fav"
-        tools:text="Casting Time" />
+        app:layout_constraintTop_toBottomOf="@+id/table_techpower_fav" />
 
     <ImageButton
         android:id="@+id/table_techpower_fav"

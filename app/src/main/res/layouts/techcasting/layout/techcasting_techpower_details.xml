@@ -7,14 +7,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".techcasting.TechcastingDetailsActivity"
-    android:background="@drawable/neutralbg"
-	android:fitsSystemWindows="true">
+	android:theme="@style/Theme.Swtrial2.AppBarOverlay"
+    android:background="@drawable/neutralbg">
+
 	<androidx.constraintlayout.widget.ConstraintLayout
-		android:translationZ="2dp"
-		android:background="@drawable/fade_black_appbar_background"
-		android:theme="@style/Theme.Swtrial2.AppBarOverlay"
 		android:layout_width="match_parent"
-		android:layout_height="50dp">
+		android:layout_height="50dp"
+		android:translationZ="2dp"
+		android:background="@drawable/fade_black_appbar_background">
 
 		<androidx.appcompat.widget.Toolbar
 			android:id="@+id/toolbar"
@@ -23,28 +23,25 @@
 
 		<com.amachewrs.sw5ecompanionapp.widget.BackButton
 			android:id="@+id/BackButton"
-			android:layout_width="70sp"
-			android:layout_height="0sp"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent" />
+			android:layout_width="70dp"
+			android:layout_height="match_parent"
+			app:layout_constraintStart_toStartOf="parent" />
 
 		<TextView
 			android:id="@+id/title"
-			android:gravity="center"
 			android:layout_width="0dp"
-			android:layout_height="0dp"
-			android:layout_marginEnd="70dp"
-			android:textAlignment="gravity"
-			android:text="@string/techcasting_techpower_name"
-			android:textAppearance="@style/GoldTextStarjedi"
+			android:layout_height="match_parent"
+			android:layout_marginHorizontal="70dp"
 			android:autoSizeMaxTextSize="24sp"
 			android:autoSizeMinTextSize="16sp"
 			android:autoSizeTextType="uniform"
-			app:layout_constraintBottom_toBottomOf="parent"
+			android:autoSizeStepGranularity="1sp"
+			android:text="improved tech techitation"
+			android:textAlignment="center"
+			android:gravity="center"
+			android:textAppearance="@style/GoldTextStarjedi"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toEndOf="@+id/BackButton"
-			app:layout_constraintTop_toTopOf="parent"/>
+			app:layout_constraintStart_toStartOf="parent" />
 
 	</androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -52,51 +49,51 @@
     <ScrollView
         android:id="@+id/scrolly"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-		app:layout_dodgeInsetEdges="top"
+        android:layout_height="match_parent"
 		android:paddingTop="50dp"
 		android:paddingBottom="100dp"
-		android:clipToPadding="false"
-        >
+		android:clipToPadding="false">
+
 		<LinearLayout
 			android:id="@+id/ll"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="vertical">
+
 			<TextView
 				android:id="@+id/TechpowerTitle"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_gravity="center|top"
 				android:paddingHorizontal="10dp"
-				android:paddingTop="10dp"
 				android:paddingBottom="20dp"
 				android:textAlignment="center"
 				android:text="@string/techcasting_techpower_name"
 				android:textAppearance="@style/GoldTextStarjedi"
-				android:textSize="24sp"
-				app:layout_dodgeInsetEdges="top"
-				/>
+				android:textSize="24sp" />
+
 			<TextView
 				android:id="@+id/TechpowerLevel"
-				android:layout_marginHorizontal="5dp"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:layout_marginHorizontal="5dp"
 				android:text="@string/level"
 				android:textAppearance="@style/GoldText" />
+
 			<TextView
 				android:id="@+id/TechpowerSource"
-				android:layout_marginHorizontal="5dp"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:layout_marginHorizontal="5dp"
 				android:layout_gravity="end"
 				android:text="@string/source"
 				android:textAppearance="@style/GoldText" />
+
 			<TextView
 				android:id="@+id/TechpowerDetails"
-				android:layout_marginHorizontal="5dp"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:layout_marginHorizontal="5dp"
 				android:text="@string/text"
 				android:textAppearance="@style/GoldText" />
 		</LinearLayout>

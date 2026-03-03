@@ -1,9 +1,8 @@
 package com.amachewrs.sw5ecompanionapp.feats
 
-import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Configuration
+import android.graphics.Paint
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.Menu
@@ -18,8 +17,11 @@ import androidx.core.view.forEach
 import androidx.core.view.get
 import androidx.recyclerview.widget.RecyclerView
 import com.amachewrs.sw5ecompanionapp.R
-import com.amachewrs.sw5ecompanionapp.SW5ECompanionApp
 import com.amachewrs.sw5ecompanionapp.databinding.FeatsBinding
+import androidx.core.content.edit
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 
 
 class FeatsActivity : AppCompatActivity() {
@@ -49,7 +51,7 @@ class FeatsActivity : AppCompatActivity() {
     private lateinit var infotext: TextView
     private var atInfo = false
     private var keepmenu = false
-    private val preqCats = setOf(11,14,18,22,28,34)
+    private val prereqCats = setOf(11,14,18,22,28)
     private var menuSnapshot: MutableMap<MenuItem,Boolean> = mutableMapOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,17 +59,25 @@ class FeatsActivity : AppCompatActivity() {
         binding = FeatsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
+            cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
+            binding.bottomNavigationView.updatePadding(0,0,0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom)
+            WindowInsetsCompat.CONSUMED
+        }
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        favSharedPreferences=getSharedPreferences("feats", Context.MODE_PRIVATE)
+        favSharedPreferences=getSharedPreferences("feats", MODE_PRIVATE)
         favFeatList.addAll(favSharedPreferences.getStringSet("favorite_feats", mutableSetOf())?.toList()!!)
 
         featList.addAll(getFeats())
 
         infotext=layoutInflater.inflate(R.layout.universal_textview_nofont_gold,binding.coord,false).findViewById(R.id.textview)
         infotext.text=getText(R.string.feats_info)
+        infotext.visibility = View.GONE
+        infotext.updatePadding(0,10)
+        binding.coord.addView(infotext)
 
         reclview = binding.reclview
         adapterFeatList.addAll(featList.sortFeatByName())
@@ -153,9 +163,7 @@ class FeatsActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        with(featmenu.findItem(R.id.eqmenu_ok)){
-            if(!isVisible)isVisible=true
-        }
+
         keepmenu=true
         when(item.title){
             getText(R.string.sortABCdown)->{
@@ -169,6 +177,9 @@ class FeatsActivity : AppCompatActivity() {
                 item.title = getText(R.string.sortABCdown)
                 returntotop("sharp")}
             getText(R.string.feats_info_label)->{
+                handleInfoSwitch()
+                keepmenu = false }
+            getText(R.string.back_gold)->{
                 handleInfoSwitch()
                 keepmenu = false }
             getText(R.string.ability_score)->{
@@ -194,12 +205,12 @@ class FeatsActivity : AppCompatActivity() {
             getText(R.string.favorites_gold)-> changeFilter("Fav",item, filters)
             getText(R.string.feats_menu_preq)->{
                 if (!item.isChecked){
-                    preqCats.forEach{ featmenu[it].isVisible=true }
+                    prereqCats.forEach{ featmenu[it].isVisible=true }
                     filterPreq.clear()
                     filters.add("preq")
                 }
                 else{
-                    preqCats.forEach{with(featmenu[it]){
+                    prereqCats.forEach{with(featmenu[it]){
                             isVisible=false
                             isChecked=false
                     }}
@@ -436,27 +447,30 @@ class FeatsActivity : AppCompatActivity() {
                     return false
                 }
             })
+            with(featmenu.findItem(R.id.eqmenu_ok)){
+                if(!isVisible)isVisible=true
+            }
         }
         return false
     }
 
     private fun handleInfoSwitch(){
         if(!atInfo){
-            binding.coord.removeView(binding.reclview)
-            binding.searchview.visibility = View.GONE
+            binding.reclview.visibility = View.GONE
+            binding.bottomNavigationView.visibility = View.GONE
             binding.floatingActionButton.visibility = View.GONE
-            binding.coord.addView(infotext)
+            infotext.visibility = View.VISIBLE
             featmenu.forEach {
                 menuSnapshot[it] = it.isVisible
-                if(it.order!=2)it.isVisible=false
+                if(it.order!=2)it.isVisible=false else it.title = resources.getText(R.string.back_gold)
             }
         }
         else {
-            binding.coord.removeView(infotext)
-            binding.coord.addView(binding.reclview)
-            binding.searchview.visibility = View.VISIBLE
+            binding.reclview.visibility = View.VISIBLE
+            binding.bottomNavigationView.visibility = View.VISIBLE
             binding.floatingActionButton.visibility = View.VISIBLE
-            featmenu.forEach { it.isVisible = menuSnapshot[it]!! }
+            infotext.visibility = View.GONE
+            featmenu.forEach { if(it.order!=2) it.isVisible= menuSnapshot[it]!! else it.title = resources.getText(R.string.feats_info_label)}
             returntotop("sharp")
         }
         atInfo=!atInfo
@@ -513,17 +527,26 @@ class FeatsActivity : AppCompatActivity() {
 
     }
     fun returntomain() {
-        with(favSharedPreferences.edit()){
-            putStringSet("favorite_feats",favFeatList.toMutableSet())
-            apply()
+        if (!atInfo){
+            favSharedPreferences.edit {
+                putStringSet("favorite_feats", favFeatList.toMutableSet())
+            }
+            finish()
         }
-        finish()
+        else handleInfoSwitch()
     }
     private fun getFeats(): MutableList<Feat>{
         val getFeatList = mutableListOf<Feat>()
-        val tempFeatList=resources.getTextArray(R.array.feats)
-        for(i in 5..tempFeatList.size step 6){
-            getFeatList.add(Feat(tempFeatList[i-5].toString(),tempFeatList[i-4].toString(),tempFeatList[i-3].toString(),tempFeatList[i-2].toString(),tempFeatList[i-1],tempFeatList[i].toString().toBoolean()))
+        val featTextArray=resources.getTextArray(R.array.feats)
+
+        val starPaint = Paint()
+        starPaint.textSize = 24F
+        starPaint.typeface = resources.getFont(R.font.starjedi)
+        starPaint.letterSpacing = 0.1F
+
+        for(i in 5..featTextArray.size step 6){
+            val isbig = starPaint.measureText(featTextArray[i-5] as String?) > (windowManager.currentWindowMetrics.bounds.width() - 705)
+            getFeatList.add(Feat(featTextArray[i-5].toString(),featTextArray[i-4].toString(),featTextArray[i-3].toString(),featTextArray[i-2].toString(),featTextArray[i-1],isbig))
         }
         return getFeatList
     }

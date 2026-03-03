@@ -17,7 +17,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.edit
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.forEach
+import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.ForcecastingBinding
 import java.util.LinkedList
@@ -52,10 +55,16 @@ class ForcecastingActivity : AppCompatActivity() {
         setContentView(binding.root)
         enableEdgeToEdge()
 
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
+            cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
+            binding.bottomNavigationView.updatePadding(0,0,0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom)
+            WindowInsetsCompat.CONSUMED
+        }
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        inflater=layoutInflater
+        inflater = layoutInflater
         starjedi = resources.getFont(R.font.starjedi)
 
         favSharedPreferences=getSharedPreferences("forcecasting", MODE_PRIVATE)
@@ -146,22 +155,22 @@ class ForcecastingActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.title){
             getText(R.string.sortABCdown)->{
-                currentforcepowerlist=forcepowerList.sortForcepowerByNameDescending().filter { it !in eraselist }.toMutableList()
+                currentforcepowerlist=forcepowerList.sortForcepowerByNameDescending()
                 forcepoweradapter.setForcepowerList(adapterForcepowerList.sortForcepowerByNameDescending().filter { it !in eraselist }.toMutableList())
                 item.title=getText(R.string.sortABCup)
                 returntotop("sharp")}
             getText(R.string.sortABCup)->{
-                currentforcepowerlist=forcepowerList.sortForcepowerByLevel().filter { it !in eraselist }.toMutableList()
+                currentforcepowerlist=forcepowerList.sortForcepowerByLevel()
                 forcepoweradapter.setForcepowerList(adapterForcepowerList.sortForcepowerByName().sortForcepowerByLevel().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortLvldown)
                 returntotop("sharp")}
             getText(R.string.sortLvldown)->{
-                currentforcepowerlist=forcepowerList.sortForcepowerByLevelDescending().filter { it !in eraselist }.toMutableList()
+                currentforcepowerlist=forcepowerList.sortForcepowerByLevelDescending()
                 forcepoweradapter.setForcepowerList(adapterForcepowerList.sortForcepowerByLevelDescending().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortLvlup)
                 returntotop("sharp")}
             getText(R.string.sortLvlup)->{
-                currentforcepowerlist=forcepowerList.sortForcepowerByName().filter { it !in eraselist }.toMutableList()
+                currentforcepowerlist=forcepowerList.sortForcepowerByName()
                 forcepoweradapter.setForcepowerList(adapterForcepowerList.sortForcepowerByName().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortABCdown)
                 returntotop("sharp")}
@@ -206,7 +215,8 @@ class ForcecastingActivity : AppCompatActivity() {
             binding.bottomNavigationView.visibility = View.GONE
             binding.floatingActionButton.visibility = View.GONE
             binding.scrolly.visibility = View.VISIBLE
-            forcemenu.forEach { if(it.order!=2)it.isVisible=false }
+            forcemenu.forEach { if(it.order!=2)it.isVisible=false else it.title = resources.getText(R.string.back_gold) }
+            binding.scrolly.scrollTo(0,0)
             if (!infoGenerated) generateInfo()
         }
         else {
@@ -214,7 +224,7 @@ class ForcecastingActivity : AppCompatActivity() {
             binding.reclview.visibility = View.VISIBLE
             binding.bottomNavigationView.visibility = View.VISIBLE
             binding.floatingActionButton.visibility = View.VISIBLE
-            forcemenu.forEach { it.isVisible=true }
+            forcemenu.forEach { if(it.order!=2)it.isVisible=true else it.title = resources.getText(R.string.casting_info) }
         }
         returntotop("sharp")
         atInfo=!atInfo
@@ -280,7 +290,7 @@ class ForcecastingActivity : AppCompatActivity() {
         starPaint.letterSpacing = 0.1F
 
         for(i in 8..tempForcepowerList.size step 9){
-            val isbig = if (starPaint.measureText(tempForcepowerList[i-8] as String?) > (windowManager.currentWindowMetrics.bounds.width() - 705)) true else false
+            val isbig = starPaint.measureText(tempForcepowerList[i-8] as String?) > (windowManager.currentWindowMetrics.bounds.width() - 705)
             getForcepowerList.add(Forcepower(tempForcepowerList[i-8].toString(),tempForcepowerList[i-7],tempForcepowerList[i-6].toString(),tempForcepowerList[i-5],tempForcepowerList[i-4].toString().toInt(),tempForcepowerList[i-3].toString().toBoolean(),tempForcepowerList[i-2].toString().toBoolean(),isbig,tempForcepowerList[i]))
         }
 

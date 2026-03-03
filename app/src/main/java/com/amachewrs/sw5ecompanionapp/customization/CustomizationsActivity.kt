@@ -3,20 +3,28 @@ package com.amachewrs.sw5ecompanionapp.customization
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.res.Configuration
+import android.graphics.Paint
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.FrameLayout
 import android.widget.HorizontalScrollView
 import android.widget.LinearLayout
 import android.widget.TableLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.CustomizationsBinding
+import com.google.android.material.snackbar.Snackbar
 import java.util.LinkedList
 
 class CustomizationsActivity : AppCompatActivity() {
@@ -24,7 +32,10 @@ class CustomizationsActivity : AppCompatActivity() {
     private lateinit var binding: CustomizationsBinding
     private lateinit var inflater: LayoutInflater
     private lateinit var tempView: View
-    private var mode=0
+    private val optionSet= mutableSetOf<View>()
+    private val infoSet= mutableSetOf<View>()
+    private var infoGenerated= false
+    private var atInfo= false
     private var customizationOptions= mutableSetOf<CustomizationOption>()
 
 
@@ -35,7 +46,15 @@ class CustomizationsActivity : AppCompatActivity() {
 
         binding = CustomizationsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        this.setTheme(R.style.Base_ThemeOverlay_AppCompat_Dark_NoActionBar)
+
         enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
+            cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
+            WindowInsetsCompat.CONSUMED
+        }
+
         inflater=layoutInflater
 
         binding.title.text=customOption.replace("_"," ")
@@ -62,7 +81,7 @@ class CustomizationsActivity : AppCompatActivity() {
 
         binding.BackButton.setOnClickListener { returntomain() }
 
-        binding.infobutton.setOnClickListener { if (mode == 0) generateCustomizationsInfo(customOption) else Toast.makeText(this,"to return press back",Toast.LENGTH_SHORT).show() }
+        binding.infobutton.setOnClickListener { checkInfoExists(customOption) }
 
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -72,8 +91,15 @@ class CustomizationsActivity : AppCompatActivity() {
     }
 
     private fun generateOptions(){
+
+        val starPaint = Paint()
+        starPaint.textSize = 24F
+        starPaint.typeface = resources.getFont(R.font.starjedi)
+        starPaint.letterSpacing = 0.1F
+
         customizationOptions.forEach { option ->
-            val bt = inflater.inflate(if (option.isBig)R.layout.customizations_button_big else R.layout.customizations_button,binding.ll,false)
+
+            val bt = inflater.inflate(if (starPaint.measureText(option.name) > (windowManager.currentWindowMetrics.bounds.width() - 705)) R.layout.customizations_button_big else R.layout.customizations_button,binding.ll,false)
             val txt = bt.findViewById<TextView>(R.id.customization_option)
             txt.text=option.name
 
@@ -84,33 +110,37 @@ class CustomizationsActivity : AppCompatActivity() {
 
             bt.findViewById<TextView>(R.id.customizations_button_sourcebook).text = option.source
             bt.setOnClickListener{ startActivity(Intent(this, CustomizationsDetailsActivity::class.java).putExtra("Customization Option",option)) }
+            optionSet.add(bt)
             binding.ll.addView(bt)
         }
     }
 
-    @SuppressLint("DiscouragedApi")
-    private fun generateCustomizationsInfo(customOption: String){
+    private fun checkInfoExists(customOption: String){
         when(customOption){
-            "fighting_styles"-> generateInfoViews(LinkedList(resources.getTextArray(R.array.fighting_styles_info).toMutableSet()))
-            "fighting_masteries"-> generateInfoViews(LinkedList(resources.getTextArray(R.array.fighting_masteries_info).toMutableSet()))
-            "lightsaber_forms"-> generateInfoViews(LinkedList(resources.getTextArray(R.array.lightsaber_forms_info).toMutableSet()))
-            else->{
-                Toast.makeText(this,"Could not find Info for this part of the app.",Toast.LENGTH_SHORT)
-                    .show()
-                Toast.makeText(this,"send suggestions at sw5ecompanionapp@gmail.com",Toast.LENGTH_LONG)
-                    .show()
-            }
+            "fighting_styles"-> switchToInfo(LinkedList(resources.getTextArray(R.array.fighting_styles_info).toMutableSet()))
+            "fighting_masteries"-> switchToInfo(LinkedList(resources.getTextArray(R.array.fighting_masteries_info).toMutableSet()))
+            "lightsaber_forms"-> switchToInfo(LinkedList(resources.getTextArray(R.array.lightsaber_forms_info).toMutableSet()))
+            else -> showSnackBar("Could not find Info for this part of the app\nsend suggestions at sw5ecompanionapp@gmail.com")
         }
     }
 
-    private fun generateInfoViews(infoHeap: LinkedList<CharSequence>){
-        mode=1
-        binding.ll.removeAllViews()
+    private fun switchToInfo(infoHeap: LinkedList<CharSequence>){
+        if (!atInfo) {
+            optionSet.forEach{it.visibility= View.GONE }
+            if (!infoGenerated) generateInfo(infoHeap)
+            else infoSet.forEach { it.visibility= View.VISIBLE }
+            atInfo=true
+        }
+        else showSnackBar("to return press back")
+    }
+
+    private fun generateInfo(infoHeap: LinkedList<CharSequence>){
         binding.scrolly.scrollTo(0,0)
         binding.scrolly.fling(0)
         val txt = inflater.inflate(R.layout.universal_textview_starjedi_gold,binding.ll,false)
         txt.findViewById<TextView>(R.id.textview).text = infoHeap.poll()
         binding.ll.addView(txt)
+        infoSet.add(txt)
         val diesize= infoHeap.poll()!!.toString().toInt()
         val title=infoHeap.poll()
         tempView = inflater.inflate(R.layout.two_column_d_table,binding.ll,false)
@@ -133,7 +163,9 @@ class CustomizationsActivity : AppCompatActivity() {
         }
         if (tempView.findViewById<HorizontalScrollView>(R.id.hscroll).width<resources.displayMetrics.widthPixels) (tempView.findViewById<HorizontalScrollView>(R.id.hscroll).layoutParams as LinearLayout.LayoutParams).gravity=1
         binding.ll.addView(tempView)
+        infoSet.add(tempView)
     }
+
     //Menu creation: Currently unnecessary
     /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_species,menu)
@@ -142,16 +174,30 @@ class CustomizationsActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }*/
 
+    private fun showSnackBar(text: String){
+        val snackBar = Snackbar.make(binding.coord,text, Snackbar.LENGTH_SHORT)
+            .setTextColor(getColor(R.color.gold))
+
+        snackBar.view.background = AppCompatResources.getDrawable(this,R.drawable.snackbar_background)
+
+        val params = snackBar.view.layoutParams as (CoordinatorLayout.LayoutParams)
+        params.width= CoordinatorLayout.LayoutParams.WRAP_CONTENT
+        params.setMargins(60,0,70,60)
+        params.gravity = Gravity.BOTTOM or Gravity.CENTER
+
+        snackBar.view.layoutParams = params
+
+        snackBar.show()
+        //UsE sNaCkBaR iNsTeAd
+    }
     private fun returntomain() {
-        if(mode==0){
-            finish()
-        }
+        if(!atInfo) finish()
         else{
             binding.scrolly.scrollTo(0,0)
             binding.scrolly.fling(0)
-            binding.ll.removeAllViews()
-            generateOptions()
-            mode=0
+            optionSet.forEach { it.visibility= View.VISIBLE }
+            infoSet.forEach { it.visibility= View.GONE }
+            atInfo=false
         }
     }
     override fun onConfigurationChanged(newConfig: Configuration) {

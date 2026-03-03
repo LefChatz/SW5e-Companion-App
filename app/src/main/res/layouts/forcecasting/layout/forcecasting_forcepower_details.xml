@@ -7,85 +7,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".forcecasting.ForcecastingDetailsActivity"
-    android:background="@drawable/neutralbg"
-	android:fitsSystemWindows="true">
-	<androidx.constraintlayout.widget.ConstraintLayout
-		android:translationZ="2dp"
-		android:background="@drawable/fade_black_appbar_background"
-		android:theme="@style/Theme.Swtrial2.AppBarOverlay"
+	android:theme="@style/Theme.Swtrial2.AppBarOverlay"
+    android:background="@drawable/neutralbg">
+
+	<RelativeLayout
+		android:id="@+id/rl"
 		android:layout_width="match_parent"
-		android:layout_height="50dp">
+		android:layout_height="match_parent">
 
-		<androidx.appcompat.widget.Toolbar
-			android:id="@+id/toolbar"
+		<androidx.constraintlayout.widget.ConstraintLayout
 			android:layout_width="match_parent"
-			android:layout_height="match_parent" />
+			android:layout_height="50dp"
+			android:translationZ="2dp"
+			android:background="@drawable/fade_black_appbar_background">
 
-		<com.amachewrs.sw5ecompanionapp.widget.BackButton
-			android:id="@+id/BackButton"
-			android:layout_width="70sp"
-			android:layout_height="0sp"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent" />
+			<androidx.appcompat.widget.Toolbar
+				android:id="@+id/toolbar"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent" />
 
-		<TextView
-			android:id="@+id/title"
-			android:gravity="center"
-			android:layout_width="0dp"
-			android:layout_height="0dp"
-			android:layout_marginEnd="70dp"
-			android:textAlignment="gravity"
-			android:text="improved battle meditation"
-			android:textAppearance="@style/GoldTextStarjedi"
-			android:autoSizeMaxTextSize="24sp"
-			android:autoSizeMinTextSize="16sp"
-			android:autoSizeTextType="uniform"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toEndOf="@+id/BackButton"
-			app:layout_constraintTop_toTopOf="parent"/>
-
-	</androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <ScrollView
-        android:id="@+id/scrolly"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-		app:layout_dodgeInsetEdges="top"
-		android:paddingTop="50dp"
-		android:paddingBottom="100dp"
-		android:clipToPadding="false"
-        >
-		<LinearLayout
-			android:id="@+id/ll"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:orientation="vertical">
-			<TextView
-				android:id="@+id/ForcepowerTitle"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_gravity="center|top"
-				android:paddingHorizontal="10dp"
-				android:paddingTop="10dp"
-				android:paddingBottom="20dp"
-				android:textAlignment="center"
-				android:text="@string/forcepower_name"
-				android:textAppearance="@style/GoldTextStarjedi"
-				android:textSize="24sp"
-				app:layout_dodgeInsetEdges="top"
-				/>
-			<TextView
-				android:layout_marginHorizontal="5dp"
-				android:id="@+id/ForcepowerText"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/text"
-				android:textAppearance="@style/GoldText"
+			<com.amachewrs.sw5ecompanionapp.widget.BackButton
+				android:id="@+id/BackButton"
+				android:layout_width="70dp"
+				android:layout_height="match_parent"
+				app:layout_constraintBottom_toBottomOf="parent"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toTopOf="parent" />
-		</LinearLayout>
-	</ScrollView>
+
+			<TextView
+				android:id="@+id/title"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_marginHorizontal="70dp"
+				android:autoSizeMaxTextSize="24sp"
+				android:autoSizeMinTextSize="16sp"
+				android:autoSizeTextType="uniform"
+				android:autoSizeStepGranularity="1sp"
+				android:text="improved battle meditation"
+				android:textAlignment="center"
+				android:textAppearance="@style/GoldTextStarjedi"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+		<ScrollView
+			android:id="@+id/scrolly"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingTop="50dp"
+			android:paddingBottom="100dp"
+			android:clipToPadding="false">
+
+			<LinearLayout
+				android:id="@+id/ll"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+
+				<TextView
+					android:id="@+id/ForcepowerTitle"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center|top"
+					android:paddingHorizontal="10dp"
+					android:paddingBottom="20dp"
+					android:textAlignment="center"
+					android:text="@string/forcepower_name"
+					android:textAppearance="@style/GoldTextStarjedi"
+					android:textSize="24sp"/>
+
+				<TextView
+					android:id="@+id/ForcepowerText"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginHorizontal="5dp"
+					android:text="@string/text"
+					android:textAppearance="@style/GoldText"/>
+			</LinearLayout>
+		</ScrollView>
+	</RelativeLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
