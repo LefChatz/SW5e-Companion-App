@@ -2,56 +2,46 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/equipmentcordl"
+    android:id="@+id/coord"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     tools:context=".equipment.EquipmentActivity"
     android:background="@drawable/neutralbg"
-    >
+    android:theme="@style/Theme.Swtrial2.AppBarOverlay">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:background="@drawable/fade_black_appbar_background"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="50dp">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="50sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            >
-            <!--<ImageButton
-                android:id="@+id/infobutton"
-                android:layout_width="32dp"
-                android:layout_height="match_parent"
-                android:background="?android:attr/selectableItemBackground"
-                android:src="@drawable/infogold"
-                android:contentDescription="@string/info"
-                android:layout_gravity="end"
-                />-->
-        </androidx.appcompat.widget.Toolbar>
+            android:layout_height="match_parent"/>
 
         <com.amachewrs.sw5ecompanionapp.widget.BackButton
             android:id="@+id/BackButton"
-            android:layout_width="70sp"
-            android:layout_height="0sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:fontFamily="@font/starjedi"
-            android:text="@string/equipment"
             android:textColor="@color/gold"
-            android:textSize="25sp"
-            android:translationZ="90dp"
+            android:autoSizeMaxTextSize="26sp"
+            android:autoSizeMinTextSize="16sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeStepGranularity="1dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:translationZ="3dp"
+            android:paddingTop="5dp"
+            android:layout_marginHorizontal="70dp"
+            android:text="Equipment HuB"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -60,10 +50,8 @@
         android:id="@+id/contentcl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="50sp"
-        android:paddingBottom="25sp"
-        tools:context=".equipment.EquipmentActivity"
-        tools:showIn="@layout/equipments">
+        android:paddingTop="50dp"
+        android:paddingBottom="25dp">
 
         <com.amachewrs.sw5ecompanionapp.widget.EquipmentButton
             android:id="@+id/info"

@@ -24,6 +24,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.CustomizationsBinding
+import com.amachewrs.sw5ecompanionapp.utility.Utilities.Companion.showSnackBar
 import com.google.android.material.snackbar.Snackbar
 import java.util.LinkedList
 
@@ -46,8 +47,6 @@ class CustomizationsActivity : AppCompatActivity() {
 
         binding = CustomizationsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        this.setTheme(R.style.Base_ThemeOverlay_AppCompat_Dark_NoActionBar)
 
         enableEdgeToEdge()
         ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
@@ -99,7 +98,7 @@ class CustomizationsActivity : AppCompatActivity() {
 
         customizationOptions.forEach { option ->
 
-            val bt = inflater.inflate(if (starPaint.measureText(option.name) > (windowManager.currentWindowMetrics.bounds.width() - 705)) R.layout.customizations_button_big else R.layout.customizations_button,binding.ll,false)
+            val bt = inflater.inflate(if (starPaint.measureText(option.name) > (windowManager.currentWindowMetrics.bounds.width() - 710)) R.layout.customizations_button_big else R.layout.customizations_button,binding.ll,false)
             val txt = bt.findViewById<TextView>(R.id.customization_option)
             txt.text=option.name
 
@@ -120,7 +119,7 @@ class CustomizationsActivity : AppCompatActivity() {
             "fighting_styles"-> switchToInfo(LinkedList(resources.getTextArray(R.array.fighting_styles_info).toMutableSet()))
             "fighting_masteries"-> switchToInfo(LinkedList(resources.getTextArray(R.array.fighting_masteries_info).toMutableSet()))
             "lightsaber_forms"-> switchToInfo(LinkedList(resources.getTextArray(R.array.lightsaber_forms_info).toMutableSet()))
-            else -> showSnackBar("Could not find Info for this part of the app\nsend suggestions at sw5ecompanionapp@gmail.com")
+            else -> showSnackBar("Could not find Info for this part of the app\nsuggestions at sw5ecompanionapp@gmail.com",binding.coord,this)
         }
     }
 
@@ -131,7 +130,7 @@ class CustomizationsActivity : AppCompatActivity() {
             else infoSet.forEach { it.visibility= View.VISIBLE }
             atInfo=true
         }
-        else showSnackBar("to return press back")
+        else showSnackBar("to return press back",binding.coord,this)
     }
 
     private fun generateInfo(infoHeap: LinkedList<CharSequence>){
@@ -174,22 +173,6 @@ class CustomizationsActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }*/
 
-    private fun showSnackBar(text: String){
-        val snackBar = Snackbar.make(binding.coord,text, Snackbar.LENGTH_SHORT)
-            .setTextColor(getColor(R.color.gold))
-
-        snackBar.view.background = AppCompatResources.getDrawable(this,R.drawable.snackbar_background)
-
-        val params = snackBar.view.layoutParams as (CoordinatorLayout.LayoutParams)
-        params.width= CoordinatorLayout.LayoutParams.WRAP_CONTENT
-        params.setMargins(60,0,70,60)
-        params.gravity = Gravity.BOTTOM or Gravity.CENTER
-
-        snackBar.view.layoutParams = params
-
-        snackBar.show()
-        //UsE sNaCkBaR iNsTeAd
-    }
     private fun returntomain() {
         if(!atInfo) finish()
         else{

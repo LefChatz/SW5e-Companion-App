@@ -16,7 +16,10 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.text.buildSpannedString
 import androidx.core.text.scale
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateLayoutParams
+import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentDetailsBinding
 
@@ -28,16 +31,15 @@ class EquipmentDetailsActivity : AppCompatActivity() {
     @SuppressLint("DiscouragedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        equipment = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            intent.getParcelableExtra("Equipment", Equipment::class.java).toEquipment()
-        } else {
-            @Suppress("DEPRECATION")
-            intent.getParcelableExtra<Equipment>("Equipment").toEquipment()
-        }
 
         binding= EquipmentDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
+            cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
+            WindowInsetsCompat.CONSUMED }
+
+        equipment = getEquipment()
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
@@ -125,6 +127,11 @@ class EquipmentDetailsActivity : AppCompatActivity() {
             }
         }
 
+    }
+    @Suppress("DEPRECATION")
+    fun getEquipment(): Equipment{
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) intent.getParcelableExtra("Equipment", Equipment::class.java).toEquipment()
+        else intent.getParcelableExtra<Equipment>("Equipment").toEquipment()
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_equipment_details,menu)

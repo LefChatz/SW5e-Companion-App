@@ -57,6 +57,7 @@ class TechcastingActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
+
         inflater = layoutInflater
         starjedi = resources.getFont(R.font.starjedi)
 

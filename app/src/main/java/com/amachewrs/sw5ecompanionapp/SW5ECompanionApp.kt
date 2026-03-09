@@ -8,8 +8,6 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.PopupMenu
 import android.widget.TextView
-import android.widget.Toast.LENGTH_SHORT
-import android.widget.Toast.makeText
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -24,12 +22,14 @@ import com.amachewrs.sw5ecompanionapp.forcecasting.ForcecastingActivity
 import com.amachewrs.sw5ecompanionapp.maneuvers.ManeuversActivity
 import com.amachewrs.sw5ecompanionapp.species.SpeciesActivity
 import com.amachewrs.sw5ecompanionapp.techcasting.TechcastingActivity
+import com.amachewrs.sw5ecompanionapp.utility.Utilities.Companion.showSnackBar
 
 class SW5ECompanionApp : AppCompatActivity() {
 
     private lateinit var binding: ActivityHubBinding
     private var leave=false
     private var mode=0
+    private var atAbout= false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +42,7 @@ class SW5ECompanionApp : AppCompatActivity() {
         binding.menubutton.setOnClickListener {
             inflateSettingsMenu(binding.menubutton)
         }
-        onBackPressedDispatcher.addCallback(this,object: OnBackPressedCallback(true){override fun handleOnBackPressed(){backpressed()}})
+        onBackPressedDispatcher.addCallback(this,object: OnBackPressedCallback(true){override fun handleOnBackPressed(){backPressed()}})
     }
     fun portal(view: View){
         when(view.id){
@@ -71,24 +71,23 @@ class SW5ECompanionApp : AppCompatActivity() {
     }
 
     private fun handleAboutSwitch(){
-        if (mode==0){
+        if (!atAbout){
             binding.scrolly.removeView(binding.constl)
             val temptxt = layoutInflater.inflate(R.layout.universal_textview_nofont_gold,binding.scrolly,false).findViewById<TextView>(R.id.textview)
             temptxt.text = resources.getText(R.string.about_text)
             binding.scrolly.addView(temptxt)
-            mode=1
         }
         else{
             binding.scrolly.removeAllViews()
             binding.scrolly.addView(binding.constl)
-            mode=0
         }
+        atAbout=!atAbout
     }
-    private fun backpressed(){
+    private fun backPressed(){
         if (!leave) {
-            if (mode==1) handleAboutSwitch()
+            if (atAbout) handleAboutSwitch()
             else{
-                makeText(this,"press back again to exit the app", LENGTH_SHORT).show()
+                showSnackBar("press back again to exit the app",binding.scrolly,this)
                 leave=true
                 Handler(Looper.getMainLooper()).postDelayed({leave=false},3000)
             }

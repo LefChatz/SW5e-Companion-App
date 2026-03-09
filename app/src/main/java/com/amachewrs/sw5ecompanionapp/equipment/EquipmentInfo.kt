@@ -9,10 +9,13 @@ import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
 import android.widget.PopupMenu
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentInfoAdventuringGearBinding
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentInfoArmorsAndShieldsBinding
@@ -22,11 +25,11 @@ import com.amachewrs.sw5ecompanionapp.databinding.EquipmentInfoTablesBinding
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentInfoToolsBinding
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentInfoWealthBinding
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentInfoWeaponsBinding
+import com.amachewrs.sw5ecompanionapp.utility.Utilities.Companion.showSnackBar
 import com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
 import kotlin.math.absoluteValue
 
-class
-EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
+class EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
     private lateinit var binding: EquipmentInfoBinding
     private lateinit var bindingWealth: EquipmentInfoWealthBinding
     private lateinit var bindingArmorsAndShields: EquipmentInfoArmorsAndShieldsBinding
@@ -52,8 +55,13 @@ EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
         super.onCreate(savedInstanceState)
         binding= EquipmentInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
+            cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
+            WindowInsetsCompat.CONSUMED }
 
         this.setTheme(R.style.Base_ThemeOverlay_AppCompat_Dark_NoActionBar)
+
         bindingWealth = EquipmentInfoWealthBinding.inflate(layoutInflater,binding.scrolly,false)
 
         setSupportActionBar(binding.toolbar)
@@ -69,6 +77,7 @@ EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
         bindingWealth.scrolly.removeAllViews()
 
         advgearmenu=PopupMenu(this,binding.fab)
+
         menuInflater.inflate(R.menu.menu_equipment_info_advgear_scrollpoints,advgearmenu.menu)
         binding.fab.setOnClickListener {advgearmenu.show()}
         advgearmenu.setOnMenuItemClickListener {menuItem->
@@ -115,6 +124,7 @@ EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
         changeview()
         return super.onOptionsItemSelected(item)
     }
+
     private fun changeview() {
         binding.fab.visibility= View.GONE
         binding.scrolly.scrollTo(0,0)
@@ -141,9 +151,10 @@ EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
                 if (!this::bindingTables.isInitialized) bindingTables = EquipmentInfoTablesBinding.inflate(layoutInflater,binding.scrolly,false);bindingTables.scrolly.removeAllViews()
                 binding.scrolly.addView(bindingTables.llTables);scrollmode = 1}
 
-            else->{binding.scrolly.addView(bindingWealth.llWealth);scrollmode = 0;Toast.makeText(this,"error unknown Tab",Toast.LENGTH_LONG).show()}
+            else->{binding.scrolly.addView(bindingWealth.llWealth);scrollmode = 0;showSnackBar("error unknown tab",binding.coord,this)}
         }
     }
+
     private fun swipeview(dir: String) {
         when(dir){
             "LtoR"->{
@@ -162,6 +173,7 @@ EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
             }
         }
     }
+
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
         super.dispatchTouchEvent(ev)
         return gestdect.onTouchEvent(ev)

@@ -4,63 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/coord"
     tools:context=".equipment.AllActivity"
-    android:background="@drawable/neutralbg">
-    <RelativeLayout
+    android:background="@drawable/neutralbg"
+    android:theme="@style/Theme.Swtrial2.AppBarOverlay">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:background="@drawable/fade_black_appbar_background"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:translationZ="2dp">
-            <androidx.appcompat.widget.Toolbar
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/toolbar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                />
-            <com.amachewrs.sw5ecompanionapp.widget.BackButton
-                android:id="@+id/BackButton"
-                android:layout_width="70sp"
-                android:layout_height="0sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/starjedi"
-                android:text="@string/equipment"
-                android:textColor="@color/gold"
-                android:textSize="22sp"
-                android:translationZ="90dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/reclview"
+        android:layout_height="50dp"
+        android:translationZ="2dp"
+        android:background="@drawable/fade_black_appbar_background">
+
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingVertical="50dp"
-            android:clipToPadding="false"
-            android:scrollbarStyle="insideOverlay"
-            android:scrollbars="vertical"
-            app:fastScrollEnabled="true"
-            app:fastScrollHorizontalThumbDrawable="@drawable/forcecasting_scrollbar"
-            app:fastScrollHorizontalTrackDrawable="@drawable/forcecasting_scrollbartrack_selector"
-            app:fastScrollVerticalThumbDrawable="@drawable/forcecasting_scrollbar"
-            app:fastScrollVerticalTrackDrawable="@drawable/forcecasting_scrollbartrack_selector"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-    </RelativeLayout>
+            android:id="@+id/toolbar"/>
+
+        <com.amachewrs.sw5ecompanionapp.widget.BackButton
+            android:id="@+id/BackButton"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/starjedi"
+            android:textColor="@color/gold"
+            android:autoSizeMaxTextSize="26sp"
+            android:autoSizeMinTextSize="16sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeStepGranularity="1dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:translationZ="3dp"
+            android:paddingTop="5dp"
+            android:layout_marginHorizontal="100dp"
+            android:text="@string/equipment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reclview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="50dp"
+        android:clipToPadding="false"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbars="none"
+        app:fastScrollEnabled="true"
+        app:fastScrollHorizontalThumbDrawable="@drawable/forcecasting_scrollbar"
+        app:fastScrollHorizontalTrackDrawable="@drawable/forcecasting_scrollbartrack_selector"
+        app:fastScrollVerticalThumbDrawable="@drawable/forcecasting_scrollbar"
+        app:fastScrollVerticalTrackDrawable="@drawable/forcecasting_scrollbartrack_selector"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <ScrollView
+        android:id="@+id/scrolly"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="50dp"
+        android:clipToPadding="false"
+        android:visibility="gone">
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -80,12 +94,10 @@
             />
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
         app:backgroundTint="#90FF0000"
         app:layout_anchor="@+id/bottomNavigationView"
         app:layout_anchorGravity="top|end"

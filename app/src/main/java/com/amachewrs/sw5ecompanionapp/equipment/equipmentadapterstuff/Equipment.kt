@@ -15,7 +15,7 @@ data class Equipment(
     var expansion: String= "PHB"): Parcelable
 
 fun Equipment?.toEquipment(): Equipment {
-    return this ?: Equipment("Unknown Force Power")
+    return this ?: Equipment("Unknown Equipment")
 }
 fun Equipment.isEmpty(): Boolean{
     return this.equipmentname=="Empty_Name"

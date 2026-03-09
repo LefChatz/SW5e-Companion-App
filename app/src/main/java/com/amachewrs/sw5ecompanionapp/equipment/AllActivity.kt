@@ -12,6 +12,10 @@ import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.content.edit
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentAllListBinding
 import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.Equipment
@@ -20,7 +24,6 @@ import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.getNameLis
 import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.sortEquipmentByName
 import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.sortEquipmentByNameDescending
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import androidx.core.content.edit
 
 
 class AllActivity : AppCompatActivity() {
@@ -31,13 +34,11 @@ class AllActivity : AppCompatActivity() {
 
     private var equipmentList = mutableListOf<Equipment>()
     private val favouriteEquipmentList = mutableListOf<String>()
-    private val eqprefs = "EquipmentPrefs"
-    private val eqfavlistkey = "FavouriteEquipmentList"
 
-    private val category1Filters = listOf("Simple","Martial","Light","Medium","Heavy")
     private val cat1="category 1"
-    private val category2Filters = listOf("Vibroweapon","Lightweapon","Blaster","Armor","Shield")
+    private val category1Filters = listOf("Simple","Martial","Light","Medium","Heavy")
     private val cat2="category 2"
+    private val category2Filters = listOf("Vibroweapon","Lightweapon","Blaster","Armor","Shield")
 
     private val filters = mapOf<String,MutableList<String>>(Pair(cat1, mutableListOf()),Pair(cat2, mutableListOf()))
 
@@ -51,17 +52,24 @@ class AllActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = EquipmentAllListBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
+            cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
+            binding.bottomNavigationView.updatePadding(0,0,0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom)
+            WindowInsetsCompat.CONSUMED
+        }
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        equipmentPrefs=getSharedPreferences(eqprefs, MODE_PRIVATE)
-        favouriteEquipmentList.addAll(equipmentPrefs.getStringSet(eqfavlistkey, mutableSetOf())!!.toMutableList())
+        equipmentPrefs=getSharedPreferences("equipment", MODE_PRIVATE)
+        favouriteEquipmentList.addAll(equipmentPrefs.getStringSet("favorite_equipments", mutableSetOf())!!.toMutableList())
 
-        equipmentList=getEquipmentList().sortEquipmentByName()
+        equipmentList=getEquipments().sortEquipmentByName()
 
         binding.BackButton.setOnClickListener { returntomain() }
 
@@ -150,9 +158,6 @@ class AllActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        with(equipmentMenu.findItem(R.id.eqmenu_ok)){
-            if(!isVisible)isVisible=true
-        }
         if(!item.title.isNullOrBlank()){
             keepmenu = true
             with(item.title){ when{
@@ -206,7 +211,7 @@ class AllActivity : AppCompatActivity() {
 
                     contains("Confirm Filters",true)-> {
                         keepmenu = false
-                        item.isVisible =false
+                        item.isVisible = false
                     }
 
                     contains("favorites",true)->{
@@ -233,6 +238,9 @@ class AllActivity : AppCompatActivity() {
                     return false
                 }
             })
+            with(equipmentMenu.findItem(R.id.eqmenu_ok)){
+                if(!isVisible)isVisible=true
+            }
         }
         return false
     }
@@ -257,13 +265,14 @@ class AllActivity : AppCompatActivity() {
         return false
     }
 
-    private fun getEquipmentList(): MutableList<Equipment>{
-        val tempEquipmentList = mutableListOf<Equipment>()
+    private fun getEquipments(): MutableList<Equipment>{
+        val getEquipmentsList = mutableListOf<Equipment>()
         val equipmentsTextArray = resources.getTextArray(R.array.newequipmentslist)
+
         for (i in 8..equipmentsTextArray.size step 9){
-            tempEquipmentList.add(Equipment(equipmentsTextArray[i-8].toString(),equipmentsTextArray[i-7],equipmentsTextArray[i-6].toString(),equipmentsTextArray[i-5].toString().toInt(),equipmentsTextArray[i-4].toString().toDouble(),equipmentsTextArray[i-3].toString(),equipmentsTextArray[i-2].toString(),equipmentsTextArray[i-1],equipmentsTextArray[i].toString()))
+            getEquipmentsList.add(Equipment(equipmentsTextArray[i-8].toString(),equipmentsTextArray[i-7],equipmentsTextArray[i-6].toString(),equipmentsTextArray[i-5].toString().toInt(),equipmentsTextArray[i-4].toString().toDouble(),equipmentsTextArray[i-3].toString(),equipmentsTextArray[i-2].toString(),equipmentsTextArray[i-1],equipmentsTextArray[i].toString()))
         }
-        return tempEquipmentList
+        return getEquipmentsList
     }
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
         keepmenu=false
@@ -294,7 +303,7 @@ class AllActivity : AppCompatActivity() {
     }
     private fun returntomain() {
         equipmentPrefs.edit {
-            putStringSet(eqfavlistkey, favouriteEquipmentList.toSet())
+            putStringSet("favorite_equipments", favouriteEquipmentList.toSet())
         }
         finish()
     }

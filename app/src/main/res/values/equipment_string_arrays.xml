@@ -2042,9 +2042,6 @@
         <item name="Properties">—</item>
         <item name="Text">Tinker\’s implements are general use tools that can craft small and versatile trinkets.</item>
         <item name="Expansion">PHB</item>
-        <!--EquipmentName-->
-        <item name="Name">eqerror404</item>
-        <item name="Title">Equipment not found</item>
         <!--EquipmentName
         <item name="Name">Title</item>
         <item name="Title">Title</item>
