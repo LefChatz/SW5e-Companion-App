@@ -2,64 +2,57 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cordl"
+    android:id="@+id/coord"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".species.SpeciesActivity"
+    tools:context=".customization.CustomizationsActivity"
     android:background="@drawable/neutralbg"
-    >
+    android:theme="@style/Theme.Swtrial2.AppBarOverlay">
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:translationZ="2dp"
-        android:background="@drawable/fade_black_appbar_background"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="50dp"
+        android:translationZ="2dp"
+        android:background="@drawable/fade_black_appbar_background">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent"
+            android:id="@+id/toolbar"/>
 
         <ImageButton
             android:id="@+id/infobutton"
             android:layout_width="70dp"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             android:background="?android:attr/selectableItemBackground"
             android:contentDescription="@string/info"
             android:src="@drawable/infogold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <com.amachewrs.sw5ecompanionapp.widget.BackButton
             android:id="@+id/BackButton"
             android:layout_width="70dp"
-            android:layout_height="0sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/title"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:fontFamily="@font/starjedi"
+            android:layout_height="match_parent"
             android:text="@string/customizations"
+            android:fontFamily="@font/starjedi"
             android:textColor="@color/gold"
-            android:autoSizeTextType="uniform"
-            android:autoSizeMinTextSize="16sp"
             android:autoSizeMaxTextSize="26sp"
-            android:autoSizeStepGranularity="1sp"
-            android:translationZ="90dp"
-            android:gravity="center"
+            android:autoSizeMinTextSize="16sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeStepGranularity="1dp"
+            android:textAlignment="center"
+            android:translationZ="3dp"
+            android:paddingTop="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/infobutton"
             app:layout_constraintStart_toEndOf="@+id/BackButton"
             app:layout_constraintTop_toTopOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
@@ -67,15 +60,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingVertical="50dp"
-        android:clipToPadding="false"
-        >
+        android:clipToPadding="false">
 
         <LinearLayout
             android:id="@+id/ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
         </LinearLayout>
     </ScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

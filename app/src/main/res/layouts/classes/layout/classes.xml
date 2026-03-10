@@ -2,26 +2,23 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/classescordl"
+    android:id="@+id/coord"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     tools:context=".classes.ClassesActivity"
     android:background="@drawable/neutralbg"
-    >
+    android:theme="@style/Theme.Swtrial2.AppBarOverlay">
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:translationZ="2dp"
-        android:background="@drawable/fade_black_appbar_background"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="50dp"
+        android:translationZ="2dp"
+        android:background="@drawable/fade_black_appbar_background">
+
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="50sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            >
+            android:layout_height="match_parent"
+            android:id="@+id/toolbar">
             <ImageButton
                 android:id="@+id/infobutton"
                 android:layout_width="70dp"
@@ -35,37 +32,39 @@
 
         <com.amachewrs.sw5ecompanionapp.widget.BackButton
             android:id="@+id/BackButton"
-            android:layout_width="70sp"
-            android:layout_height="0sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:fontFamily="@font/starjedi"
-            android:text="@string/classes"
             android:textColor="@color/gold"
-            android:textSize="22sp"
-            android:translationZ="90dp"
+            android:autoSizeMaxTextSize="26sp"
+            android:autoSizeMinTextSize="16sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeStepGranularity="1dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:translationZ="3dp"
+            android:paddingTop="5dp"
+            android:layout_marginHorizontal="70dp"
+            android:text="@string/classes"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <ScrollView
-        android:id="@+id/classesscroll"
+        android:id="@+id/scrolly"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         tools:context=".classes.ClassesActivity"
         tools:showIn="@layout/classes">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/contentclassescl"
+            android:id="@+id/contentcl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="75sp"
@@ -75,7 +74,7 @@
                 android:id="@+id/buttonberserker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="openclass"
+                android:onClick="openClass"
                 android:tooltipText="Berserker"
                 app:background="@drawable/berserkerbutton"
                 app:layout_constraintEnd_toStartOf="@+id/buttonconsular"
@@ -88,7 +87,7 @@
                 android:id="@+id/buttonconsular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="openclass"
+                android:onClick="openClass"
                 android:tooltipText="Consular"
                 app:background="@drawable/consularbutton"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +100,7 @@
                 android:id="@+id/buttonengineer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="openclass"
+                android:onClick="openClass"
                 android:tooltipText="Engineer"
                 app:background="@drawable/engineerbutton"
                 app:layout_constraintEnd_toEndOf="@+id/buttonberserker"
@@ -115,7 +114,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40sp"
-                android:onClick="openclass"
+                android:onClick="openClass"
                 android:tooltipText="Fighter"
                 app:background="@drawable/fighterbutton"
                 app:layout_constraintEnd_toEndOf="@+id/buttonconsular"
@@ -128,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40sp"
-                android:onClick="openclass"
+                android:onClick="openClass"
                 android:tooltipText="Guardian"
                 app:background="@drawable/guardianbutton"
                 app:layout_constraintEnd_toEndOf="@+id/buttonengineer"
@@ -140,7 +139,7 @@
                 android:id="@+id/buttonmonk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="openclass"
+                android:onClick="openClass"
                 android:tooltipText="Monk"
                 app:background="@drawable/monkbutton"
                 app:layout_constraintEnd_toEndOf="@+id/buttonfighter"
@@ -153,7 +152,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:onClick="openclass"
+                android:onClick="openClass"
                 android:tooltipText="Operative"
                 app:background="@drawable/operativebutton"
                 app:layout_constraintEnd_toEndOf="@+id/buttonguardian"
@@ -165,7 +164,7 @@
                 android:id="@+id/buttonscholar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="openclass"
+                android:onClick="openClass"
                 android:tooltipText="Scholar"
                 app:background="@drawable/scholarbutton"
                 app:layout_constraintEnd_toEndOf="@id/buttonmonk"
@@ -177,7 +176,7 @@
                 android:id="@+id/buttonscout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="openclass"
+                android:onClick="openClass"
                 android:tooltipText="Scout"
                 app:background="@drawable/scoutbutton"
                 app:layout_constraintEnd_toEndOf="@+id/buttonoperative"
@@ -190,23 +189,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:onClick="openclass"
+                android:onClick="openClass"
                 android:tooltipText="Sentinel"
                 app:background="@drawable/sentinelbutton"
                 app:layout_constraintEnd_toEndOf="@+id/buttonscholar"
                 app:layout_constraintStart_toStartOf="@+id/buttonscholar"
                 app:layout_constraintTop_toBottomOf="@+id/buttonscholar"
                 app:text="SENTiNEL" />
-
-            <view
-                android:id="@+id/centercl"
-                class="android.view.ViewStub"
-                android:layout_width="2dp"
-                android:layout_height="2dp"
-                android:clickable="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

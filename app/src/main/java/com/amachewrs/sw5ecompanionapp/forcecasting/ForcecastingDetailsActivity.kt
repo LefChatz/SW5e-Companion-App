@@ -1,13 +1,16 @@
 package com.amachewrs.sw5ecompanionapp.forcecasting
 
-import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.ForcecastingForcepowerDetailsBinding
 
@@ -15,18 +18,18 @@ class ForcecastingDetailsActivity : AppCompatActivity() {
     private lateinit var binding: ForcecastingForcepowerDetailsBinding
     private lateinit var forcepower: Forcepower
     private lateinit var txt: TextView
-    @SuppressLint("DiscouragedApi")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        forcepower = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                        intent.getParcelableExtra("Forcepower", Forcepower::class.java).toForcepower()
-                    }
-                    else {
-                        @Suppress("DEPRECATION")
-                        intent.getParcelableExtra<Forcepower>("Forcepower").toForcepower()
-                    }
+
         binding= ForcecastingForcepowerDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
+            cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
+            WindowInsetsCompat.CONSUMED }
+
+        forcepower = getForcePower()
 
         binding.title.text=forcepower.printedname
         binding.title.alpha=0.0F
@@ -38,6 +41,7 @@ class ForcecastingDetailsActivity : AppCompatActivity() {
         binding.ForcepowerTitle.text=forcepower.printedname
         binding.ForcepowerText.text=forcepower.detailsText
 
+        //make Title appear on the top bar when the in details title gets scrolled past the top of the screen
         //v, scrollX, scrollY, oldScrollX, oldScrollY ->
         binding.scrolly.setOnScrollChangeListener { _, _, scrollY, _, _ ->
             if (scrollY >= 120) {
@@ -52,7 +56,7 @@ class ForcecastingDetailsActivity : AppCompatActivity() {
 
 
         //Background
-        binding.coord.background=AppCompatResources.getDrawable(this@ForcecastingDetailsActivity,
+        binding.rl.background=AppCompatResources.getDrawable(this@ForcecastingDetailsActivity,
             with(forcepower.side.toString()){
                 when{
                     this.contains("Dark",true)->R.drawable.darkbg
@@ -75,7 +79,11 @@ class ForcecastingDetailsActivity : AppCompatActivity() {
 
         binding.BackButton.setOnClickListener {returntomain()}
     }
-
+    @Suppress("DEPRECATION")
+    private fun getForcePower(): Forcepower{
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) intent.getParcelableExtra("Forcepower", Forcepower::class.java).toForcepower()
+        else intent.getParcelableExtra<Forcepower>("Forcepower").toForcepower()
+    }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_forcecasting_details, menu)
         binding.toolbar.overflowIcon = AppCompatResources.getDrawable(this, R.drawable.dots3gold)

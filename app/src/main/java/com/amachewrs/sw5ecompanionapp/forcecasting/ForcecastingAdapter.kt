@@ -14,39 +14,23 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.amachewrs.sw5ecompanionapp.R
+import androidx.core.content.edit
 
 
 class ForcecastingAdapter(private val myContext: Context, private val dataset: MutableList<Forcepower>, private val favlist: MutableList<String>) : RecyclerView.Adapter<ViewHolder>() {
     val levels: List<Int> = listOf(0,1,2,3,4,5,6,7,8,9)
     class NoForcepowerHolder(view: View) : ViewHolder(view){
-        private val noForcepowerText: TextView
-        init {
-            noForcepowerText= view.findViewById(R.id.forcecasting_nosuchforcepowertext)
-        }
-        init{
-        }
+        /*private val noForcepowerText: TextView = view.findViewById(R.id.forcecasting_nosuchforcepowertext)*/
     }
     class LeveledDividerHolder(view: View) : ViewHolder(view){
-        val lvldividertextview: TextView
-        init {
-            lvldividertextview= view.findViewById(R.id.leveldividertextview)
-        }
+        val lvldividertextview: TextView = view.findViewById(R.id.leveldividertextview)
     }
     class ForcepowerHolder(view: View) : ViewHolder(view){
-        val forcepowername: TextView
-        val forcepowerdetails: TextView
-        val castingtime: TextView
-        val constlout: ConstraintLayout
-        val imbutton: ImageButton
-
-        init {
-
-            imbutton = view.findViewById(R.id.table_forcepower_fav)
-            constlout = view.findViewById(R.id.table_forcepower_constlout)
-            forcepowername= view.findViewById(R.id.table_forcepower_name)
-            castingtime= view.findViewById(R.id.table_forcepower_casting_time)
-            forcepowerdetails= view.findViewById(R.id.table_forcepower_details)
-        }
+        val forcepowername: TextView = view.findViewById(R.id.table_forcepower_name)
+        val forcepowerdetails: TextView = view.findViewById(R.id.table_forcepower_details)
+        val castingtime: TextView = view.findViewById(R.id.table_forcepower_casting_time)
+        val constlout: ConstraintLayout = view.findViewById(R.id.table_forcepower_constlout)
+        val imbutton: ImageButton = view.findViewById(R.id.table_forcepower_fav)
 
     }
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
@@ -101,9 +85,8 @@ class ForcecastingAdapter(private val myContext: Context, private val dataset: M
             favlist.remove(forcepower.forcepowername)
             forcepowerbutton.foreground=AppCompatResources.getDrawable(myContext,R.drawable.favouritegold)
         }
-        with(myContext.getSharedPreferences("favlist",Context.MODE_PRIVATE).edit()){
-            putStringSet("favlist",favlist.toMutableSet())
-            apply()
+        myContext.getSharedPreferences("favlist", Context.MODE_PRIVATE).edit {
+            putStringSet("favlist", favlist.toMutableSet())
         }
     }
 
@@ -139,9 +122,7 @@ class ForcecastingAdapter(private val myContext: Context, private val dataset: M
             7->{view.lvldividertextview.text=myContext.getText(R.string.seventh_level)}
             8->{view.lvldividertextview.text=myContext.getText(R.string.eighth_level)}
             9->{view.lvldividertextview.text=myContext.getText(R.string.nineth_level)}
-            else->{
-
-            }
+            else->{}
         }
     }
 }

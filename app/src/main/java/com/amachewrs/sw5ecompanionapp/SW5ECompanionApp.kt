@@ -1,7 +1,6 @@
 package com.amachewrs.sw5ecompanionapp
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -9,10 +8,10 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.PopupMenu
 import android.widget.TextView
-import android.widget.Toast
-import android.widget.Toast.*
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import com.amachewrs.sw5ecompanionapp.backgrounds.BackgroundsActivity
 import com.amachewrs.sw5ecompanionapp.classes.ClassesActivity
 import com.amachewrs.sw5ecompanionapp.customization.CustomizationsHubActivity
@@ -23,23 +22,43 @@ import com.amachewrs.sw5ecompanionapp.forcecasting.ForcecastingActivity
 import com.amachewrs.sw5ecompanionapp.maneuvers.ManeuversActivity
 import com.amachewrs.sw5ecompanionapp.species.SpeciesActivity
 import com.amachewrs.sw5ecompanionapp.techcasting.TechcastingActivity
+import com.amachewrs.sw5ecompanionapp.utility.Utilities.Companion.showSnackBar
 
 class SW5ECompanionApp : AppCompatActivity() {
 
     private lateinit var binding: ActivityHubBinding
+    private lateinit var aboutView: TextView
+    private lateinit var aboutItem: MenuItem
+    private lateinit var settingsMenu: PopupMenu
     private var leave=false
-    private var mode=0
+    private var atAbout= false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
 
+        this.setTheme(R.style.Base_ThemeOverlay_AppCompat_Dark_NoActionBar)
         binding = ActivityHubBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.menubutton.setOnClickListener {
-            inflateSettingsMenu(binding.menubutton)
+        settingsMenu = PopupMenu(this,binding.menubutton)
+        settingsMenu.inflate(R.menu.menu_hub_attempt)
+        settingsMenu.setOnMenuItemClickListener { item: MenuItem? ->
+            when (item!!.itemId) {
+                R.id.about -> {aboutItem=item;handleAboutSwitch()}
+                R.id.report_errors -> startActivity(Intent(Intent.ACTION_SENDTO).setData(resources.getString(R.string.error_open_email).toUri()))
+            }
+            true
         }
-        onBackPressedDispatcher.addCallback(this,object: OnBackPressedCallback(true){override fun handleOnBackPressed(){backpressed()}})
+
+        binding.menubutton.setOnClickListener {
+            settingsMenu.show()
+        }
+
+        aboutView = layoutInflater.inflate(R.layout.universal_textview_nofont_gold,binding.scrolly,false).findViewById(R.id.textview)
+        aboutView.text = resources.getText(R.string.about_text)
+
+        onBackPressedDispatcher.addCallback(this,object: OnBackPressedCallback(true){override fun handleOnBackPressed(){backPressed()}})
     }
     fun portal(view: View){
         when(view.id){
@@ -54,38 +73,25 @@ class SW5ECompanionApp : AppCompatActivity() {
             binding.buttoncustoms.id->      startActivity(Intent(this, CustomizationsHubActivity::class.java))
         }
     }
-    private fun inflateSettingsMenu(anchor: View){
-        val popup = PopupMenu(this,anchor)
-        popup.inflate(R.menu.menu_hub_attempt)
-        popup.setOnMenuItemClickListener { item: MenuItem? ->
-            when (item!!.itemId) {
-                R.id.about -> handleAboutSwitch()
-                R.id.report_errors -> startActivity(Intent(Intent.ACTION_SENDTO).setData(Uri.parse(resources.getString(R.string.error_open_email))))
-            }
-            true
-        }
-        popup.show()
-    }
 
     private fun handleAboutSwitch(){
-        if (mode==0){
+        if (!atAbout){
             binding.scrolly.removeView(binding.constl)
-            val temptxt = layoutInflater.inflate(R.layout.universal_textview_nofont_gold,binding.scrolly,false).findViewById<TextView>(R.id.textview)
-            temptxt.text = resources.getText(R.string.about_text)
-            binding.scrolly.addView(temptxt)
-            mode=1
+            binding.scrolly.addView(aboutView)
+            aboutItem.title = resources.getText(R.string.back_gold)
         }
         else{
-            binding.scrolly.removeAllViews()
+            binding.scrolly.removeView(aboutView)
             binding.scrolly.addView(binding.constl)
-            mode=0
+            aboutItem.title = resources.getText(R.string.about)
         }
+        atAbout=!atAbout
     }
-    private fun backpressed(){
+    private fun backPressed(){
         if (!leave) {
-            if (mode==1) handleAboutSwitch()
+            if (atAbout) handleAboutSwitch()
             else{
-                makeText(this,"press back again to exit the app", LENGTH_SHORT).show()
+                showSnackBar("press back again to exit the app",binding.scrolly,this)
                 leave=true
                 Handler(Looper.getMainLooper()).postDelayed({leave=false},3000)
             }

@@ -1,15 +1,18 @@
 package com.amachewrs.sw5ecompanionapp.techcasting
 
-import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.text.bold
 import androidx.core.text.buildSpannedString
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.TechcastingTechpowerDetailsBinding
 
@@ -17,17 +20,18 @@ class TechcastingDetailsActivity : AppCompatActivity() {
     private lateinit var binding: TechcastingTechpowerDetailsBinding
     private lateinit var techpower: Techpower
     private lateinit var txt: TextView
-    @SuppressLint("DiscouragedApi")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        techpower = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            intent.getParcelableExtra("Techpower", Techpower::class.java).toTechpower()
-        } else {
-            @Suppress("DEPRECATION")
-            intent.getParcelableExtra<Techpower>("Techpower").toTechpower()
-        }
+
         binding= TechcastingTechpowerDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
+            cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
+            WindowInsetsCompat.CONSUMED }
+
+        techpower = getTechPower()
 
         binding.title.text=techpower.printedname
         binding.title.alpha=0.0F
@@ -90,6 +94,12 @@ class TechcastingDetailsActivity : AppCompatActivity() {
         }
 
         binding.BackButton.setOnClickListener {returntomain()}
+    }
+
+    @Suppress("DEPRECATION")
+    private fun getTechPower(): Techpower{
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) intent.getParcelableExtra("Techpower", Techpower::class.java).toTechpower()
+        else intent.getParcelableExtra<Techpower>("Techpower").toTechpower()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

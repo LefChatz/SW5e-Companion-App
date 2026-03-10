@@ -3,62 +3,46 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coord"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".equipment.equipmentadapterstuff.EquipmentDetailsActivity"
-    android:background="@drawable/neutralbg"
-    android:fitsSystemWindows="true">
+    android:theme="@style/Theme.Swtrial2.AppBarOverlay"
+    android:background="@drawable/neutralbg">
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:translationZ="2dp"
-        android:background="@drawable/fade_black_appbar_background"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="50dp"
+        android:translationZ="2dp"
+        android:background="@drawable/fade_black_appbar_background">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="50sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent" />
 
         <com.amachewrs.sw5ecompanionapp.widget.BackButton
             android:id="@+id/BackButton"
-            android:layout_width="70sp"
-            android:layout_height="0sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:gravity="center"
             android:id="@+id/title"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:fontFamily="@font/starjedi"
-            android:text="@string/title"
-            android:textAlignment="gravity"
-            android:textColor="@color/gold"
-            android:autoSizeTextType="uniform"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="70dp"
+            android:autoSizeMaxTextSize="24sp"
             android:autoSizeMinTextSize="16sp"
-            android:autoSizeMaxTextSize="25sp"
-            android:autoSizeStepGranularity="2sp"
-            android:translationZ="90dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline4"
-            app:layout_constraintStart_toEndOf="@+id/BackButton"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="70dp" />
-
-
+            android:autoSizeTextType="uniform"
+            android:autoSizeStepGranularity="1sp"
+            android:text="improved equipment equipetation"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textAppearance="@style/GoldTextStarjedi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
     <ScrollView
         android:id="@+id/scrolly"

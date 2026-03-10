@@ -3,7 +3,6 @@
     android:id="@+id/scrolly"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingVertical="50dp"
     android:clipToPadding="false"
     >
 
@@ -11,7 +10,8 @@
         android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingVertical="50dp">
 
     </LinearLayout>
 </ScrollView>

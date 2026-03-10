@@ -11,12 +11,17 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.HorizontalScrollView
 import android.widget.TextView
-import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.LinearLayoutCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.contains
+import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.ClassConsularBinding
+import com.amachewrs.sw5ecompanionapp.utility.Utilities.Companion.showSnackBar
 import kotlin.math.absoluteValue
 
 class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
@@ -28,25 +33,29 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
     private lateinit var hscroll: HorizontalScrollView
     private lateinit var binding: ClassConsularBinding
 
-    private lateinit var infolist: List<CharSequence>
-    private lateinit var baselist: List<CharSequence>
+    private lateinit var infoList: List<CharSequence>
+    private lateinit var baseList: List<CharSequence>
     private lateinit var balanceList: List<CharSequence>
     private lateinit var lightningList: List<CharSequence>
     private lateinit var sageList: List<CharSequence>
     private lateinit var suggestionList: List<CharSequence>
-    private val tablist = listOf("Info","Base","Table","Force\nEmpowered\nCastings","Way of Balance","Way of Lightning","Way of the Sage","Way of Suggestion")
+    private val tabList = listOf("Info","Base","Table","Force\nEmpowered\nCastings","Way of\nBalance","Way of\nLightning","Way of\nthe Sage","Way of\nSuggestion")
 
     private lateinit var gestdect: GestureDetector
     private lateinit var table: View
     private var rect = Rect()
-    private val swipethreshold = 100
-    private var scrollmode=0
+    private val swipeThreshold = 100
+    private var scrollMode=0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ClassConsularBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
+            cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
+            WindowInsetsCompat.CONSUMED }
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
@@ -57,8 +66,8 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
 
         gestdect = GestureDetector(this,this)
 
-        infolist = resources.getTextArray(R.array.consularInfo).toList()
-        baselist = resources.getTextArray(R.array.consularBase).toList()
+        infoList = resources.getTextArray(R.array.consularInfo).toList()
+        baseList = resources.getTextArray(R.array.consularBase).toList()
         balanceList = resources.getTextArray(R.array.way_of_balance).toList()
         lightningList = resources.getTextArray(R.array.way_of_lightning).toList()
         sageList = resources.getTextArray(R.array.way_of_the_sage).toList()
@@ -69,16 +78,16 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
 
         txt = inflater.inflate(R.layout.universal_textview_starjedi_gold,ll,false).findViewById(R.id.textview)
 
-        for(i in infolist.indices step 2 ){
+        for(i in infoList.indices step 2 ){
             if(i==0){
-                txt.text=infolist[i]
+                txt.text=infoList[i]
                 ll.addView(txt)
             }
             else{
                 tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 temptxt=tempbersk.findViewById(R.id.contenttext)
-                tempbersk.findViewById<TextView>(R.id.headertext).text=infolist[i-1]
-                temptxt.text=infolist[i]
+                tempbersk.findViewById<TextView>(R.id.headertext).text=infoList[i-1]
+                temptxt.text=infoList[i]
                 if(i==6){
                     temptxt.typeface = resources.getFont(R.font.starjedi)
                 }
@@ -87,9 +96,7 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
         }
 
     }
-    private fun returntomain(){
-        finish()
-    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_consular,menu)
         val drawable = AppCompatResources.getDrawable(this,R.drawable.downarrowgold)
@@ -99,25 +106,26 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         binding.dummybutton.text=item.title
-        changeclassview()
+        generateView()
         return super.onOptionsItemSelected(item)
     }
 
-    private fun changeclassview(){
-        ll.removeAllViews()
+    private fun generateView(){
         binding.scrolly.scrollTo(0,0)
+        binding.scrolly.fling(0)
+        ll.removeAllViews()
         when(binding.dummybutton.text.toString()){
             "Info"->{
-                for(i in infolist.indices step 2 ){
+                for(i in infoList.indices step 2 ){
                     if(i==0){
-                        txt.text=infolist[i]
+                        txt.text=infoList[i]
                         ll.addView(txt)
                     }
                     else{
                         tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
-                        tempbersk.findViewById<TextView>(R.id.headertext).text=infolist[i-1]
-                        temptxt.text=infolist[i]
+                        tempbersk.findViewById<TextView>(R.id.headertext).text=infoList[i-1]
+                        temptxt.text=infoList[i]
                         if(i==6){
                             temptxt.typeface = resources.getFont(R.font.starjedi)
                         }
@@ -126,16 +134,16 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 }
             }
             "Base"->{
-                for(i in baselist.indices step 2 ){
+                for(i in baseList.indices step 2 ){
                     if(i==0){
-                        txt.text=baselist[i]
+                        txt.text=baseList[i]
                         ll.addView(txt)
                     }
                     else{
                         tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                         temptxt=tempbersk.findViewById(R.id.contenttext)
-                        tempbersk.findViewById<TextView>(R.id.headertext).text=baselist[i-1]
-                        temptxt.text=baselist[i]
+                        tempbersk.findViewById<TextView>(R.id.headertext).text=baseList[i-1]
+                        temptxt.text=baseList[i]
                         if((i==2) or (i==10)){
                             temptxt.typeface = resources.getFont(R.font.starjedi)
                         }
@@ -155,7 +163,7 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 temptxt.typeface = resources.getFont(R.font.starjedi)
                 ll.addView(tempbersk)
             }
-            "Way of Balance"->{
+            "Way of\nBalance"->{
                 for(i in balanceList.indices step 2 ){
                     if(i==0){
                         txt.text=balanceList[i]
@@ -170,7 +178,7 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                     }
                 }
             }
-            "Way of Lightning"->{
+            "Way of\nLightning"->{
                 for(i in lightningList.indices step 2 ){
                     if(i==0){
                         txt.text=lightningList[i]
@@ -185,7 +193,7 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                     }
                 }
             }
-            "Way of the Sage"->{
+            "Way of\nthe Sage"->{
                 for(i in sageList.indices step 2 ){
                     if(i==0){
                         txt.text=sageList[i]
@@ -200,7 +208,7 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                     }
                 }
             }
-            "Way of Suggestion"->{
+            "Way of\nSuggestion"->{
                 for(i in suggestionList.indices step 2 ){
                     if(i==0){
                         txt.text=suggestionList[i]
@@ -218,38 +226,37 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                     }
                 }
             }
-            else->{
-                Toast.makeText(this,"Error",Toast.LENGTH_LONG)
-                    .show()
-            }
+            else->{showSnackBar("Error",binding.coord,this)}
         }
     }
-    private fun changeview(dir: String){
-        binding.scrolly.scrollTo(0,0)
-        binding.scrolly.fling(0)
-        ll.removeAllViews()
+
+    private fun swipeView(dir: String){
         when(dir){
             "RtoL"->{
-                binding.dummybutton.text=tablist[tablist.indexOf(binding.dummybutton.text.toString())+1]
-                changeclassview()
-                if(binding.dummybutton.text==tablist.last()){
-                    scrollmode=1
+                binding.dummybutton.text=tabList[tabList.indexOf(binding.dummybutton.text.toString())+1]
+                generateView()
+                if(binding.dummybutton.text==tabList.last()){
+                    scrollMode=1
                 }
                 else{
-                    if(scrollmode!=2){scrollmode=2}
+                    if(scrollMode!=2){scrollMode=2}
                 }
             }
             "LtoR"->{
-                binding.dummybutton.text=tablist[tablist.indexOf(binding.dummybutton.text.toString())-1]
-                changeclassview()
-                if(binding.dummybutton.text==tablist.first()){
-                    scrollmode=0
+                binding.dummybutton.text=tabList[tabList.indexOf(binding.dummybutton.text.toString())-1]
+                generateView()
+                if(binding.dummybutton.text==tabList.first()){
+                    scrollMode=0
                 }
                 else{
-                    if(scrollmode!=2){scrollmode=2}
+                    if(scrollMode!=2){scrollMode=2}
                 }
             }
         }
+    }
+
+    private fun returntomain(){
+        finish()
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
@@ -288,50 +295,24 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
     override fun onFling(e0: MotionEvent?, e1: MotionEvent, vx: Float, vy: Float): Boolean {
         if (e0 != null) {
             val diffX = e1.x - e0.x
-            return if(diffX.absoluteValue>(e1.y-e0.y).absoluteValue) {
-                if(binding.dummybutton.text.toString()!="Table"){
-                    if (diffX.absoluteValue > swipethreshold && vx.absoluteValue > swipethreshold) {
-                        //L to R
-                        if (diffX > 0 && scrollmode!=0) {
-                            changeview("LtoR")
-                        }
-                        //R to L
-                        else if(diffX<0 && scrollmode!=1){
-                            changeview("RtoL")
-                        }
-                        true
-                    } else{
-                        false
-                    }
-                }
-                else{
+            if(diffX.absoluteValue>(e1.y-e0.y).absoluteValue) {
+                if(this::hscroll.isInitialized){
                     hscroll.getGlobalVisibleRect(rect)
-                    if(rect.contains(e0.x.toInt(),e0.y.toInt())){
-                        false
-                    }
-                    else{
-                        if (diffX.absoluteValue > swipethreshold && vx.absoluteValue > swipethreshold) {
-                            //L to R
-                            if (diffX > 0 && scrollmode!=0) {
-                                changeview("LtoR")
-                            }
-                            //R to L
-                            else if(diffX<0 && scrollmode!=1){
-                                changeview("RtoL")
-                            }
-                            true
-                        } else{
-                            false
-                        }
-                    }
+                    if(rect.contains(e0.x.toInt(),e0.y.toInt()) and ll.contains(hscroll)) return false
                 }
-            }
-            else{
-                return false
+                if (diffX.absoluteValue > swipeThreshold && vx.absoluteValue > swipeThreshold) {
+                    //L to R
+                    if (diffX>0 && scrollMode!=0) swipeView("LtoR")
+                    //R to L
+                    else if(diffX<0 && scrollMode!=1) swipeView("RtoL")
+
+                    return true
+                }
             }
         }
-        else return false
+        return false
     }
+
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
     }

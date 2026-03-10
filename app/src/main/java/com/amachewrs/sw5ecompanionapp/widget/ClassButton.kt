@@ -3,7 +3,6 @@ package com.amachewrs.sw5ecompanionapp.widget
 import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.drawable.Drawable
-import android.media.Image
 import android.util.AttributeSet
 import android.view.View
 import android.widget.ImageView
@@ -17,7 +16,7 @@ class ClassButton @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : RelativeLayout(context, attrs, defStyleAttr) {
     private val attributes: TypedArray = context.obtainStyledAttributes(attrs, R.styleable.ClassButton)
-    private val view: View = View.inflate(context, R.layout.class_button, this)
+    private val view: View = inflate(context, R.layout.class_button, this)
 
     init {
         view.findViewById<TextView>(R.id.class_button_textview).text = attributes.getText(R.styleable.ClassButton_text)

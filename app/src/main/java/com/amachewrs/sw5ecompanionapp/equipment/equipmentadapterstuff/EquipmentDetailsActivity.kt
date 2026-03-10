@@ -2,20 +2,22 @@ package com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
-import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.TypefaceSpan
 import android.view.Menu
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.content.res.ResourcesCompat
 import androidx.core.text.buildSpannedString
 import androidx.core.text.scale
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateLayoutParams
+import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentDetailsBinding
 
@@ -27,22 +29,20 @@ class EquipmentDetailsActivity : AppCompatActivity() {
     @SuppressLint("DiscouragedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        equipment = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            intent.getParcelableExtra("Equipment", Equipment::class.java).toEquipment()
-        } else {
-            @Suppress("DEPRECATION")
-            intent.getParcelableExtra<Equipment>("Equipment").toEquipment()
-        }
 
         binding= EquipmentDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
+            cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
+            WindowInsetsCompat.CONSUMED }
+
+        equipment = getEquipment()
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         binding.BackButton.setOnClickListener { returntomain() }
-
-        val starjedi: Typeface = Typeface.create(ResourcesCompat.getFont(this,R.font.starjedi),Typeface.NORMAL)
 
         binding.title.text=equipment.printedname
 
@@ -60,7 +60,7 @@ class EquipmentDetailsActivity : AppCompatActivity() {
         binding.Expansion.text=equipment.expansion
 
         val imidentif=resources.getIdentifier("equipment${equipment.equipmentname}","drawable",packageName)
-        binding.Image
+
         if(imidentif!=0) {
             binding.Image.setImageResource(imidentif)
         }
@@ -73,26 +73,45 @@ class EquipmentDetailsActivity : AppCompatActivity() {
             binding.detailsConstl.removeView(binding.Image)
         }
 
+        makeAttributesText()
+    }
+
+    @Suppress("DEPRECATION")
+    private fun getEquipment(): Equipment{
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) intent.getParcelableExtra("Equipment", Equipment::class.java).toEquipment()
+        else intent.getParcelableExtra<Equipment>("Equipment").toEquipment()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_equipment_details,menu)
+        binding.toolbar.overflowIcon=AppCompatResources.getDrawable(this,R.drawable.dots3gold)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    private fun makeAttributesText(){
+
+        val starJedi = resources.getFont(R.font.starjedi)
+
         with(binding.Attributes.text){
             when{
                 (contains("weapon",true) || contains("Blaster",true))&&(!contains("accessory"))->{
-                    val weapproplist = resources.getTextArray(R.array.weapon_properties)
-                    val weappropmap=mutableMapOf<String,CharSequence>()
-                    for(i in weapproplist.indices step 2){
-                        weappropmap[weapproplist[i].toString()]=weapproplist[i+1]
+                    val weaponPropList = resources.getTextArray(R.array.weapon_properties)
+                    val weaponPropMap = mutableMapOf<String,CharSequence>()
+                    for(i in weaponPropList.indices step 2){
+                        weaponPropMap[weaponPropList[i].toString()]=weaponPropList[i+1]
                     }
                     binding.Text.text= buildSpannedString{
                         append(equipment.detailsText)
                         appendLine(" ")
-                        weappropmap.keys.forEach{
+                        weaponPropMap.keys.forEach{
                             if(binding.Properties.text.contains(it,true)){
                                 appendLine(" ")
                                 val spanit= SpannableString(it)
-                                spanit.setSpan(TypefaceSpan(starjedi),0,it.length,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                                spanit.setSpan(TypefaceSpan(starJedi),0,it.length,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
                                 scale(1.1F){
                                     appendLine(spanit)
                                 }
-                                appendLine(weappropmap[it])
+                                appendLine(weaponPropMap[it])
                             }
                         }
                     }
@@ -110,7 +129,7 @@ class EquipmentDetailsActivity : AppCompatActivity() {
                             if(binding.Properties.text.contains(it,true)){
                                 appendLine(" ")
                                 val spanit= SpannableString(it)
-                                spanit.setSpan(TypefaceSpan(starjedi),0,it.length,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                                spanit.setSpan(TypefaceSpan(starJedi),0,it.length,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
                                 scale(1.1F){
                                     appendLine(spanit)
                                 }
@@ -122,12 +141,6 @@ class EquipmentDetailsActivity : AppCompatActivity() {
                 else->{}
             }
         }
-
-    }
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_equipment_details,menu)
-        binding.toolbar.overflowIcon=AppCompatResources.getDrawable(this,R.drawable.dots3gold)
-        return super.onCreateOptionsMenu(menu)
     }
 
     private fun returntomain() {

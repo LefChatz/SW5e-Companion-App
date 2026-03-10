@@ -1716,7 +1716,7 @@
         <item name="Duration">Instantaneous</item>
         <item name="concentration">false</item>
         <item name="source">EC</item>
-        <item name="isBig">true</item>
+        <item name="isBig">false</item>
         <item name="details_Text">you can use this power as a reaction when you are hit by an attack\n\n"   "Your form shimmers in a holographic configuration and collapses as an attack begins to hit you. You have a +5 bonus to AC against the triggering attack. As part of the same reaction, you can then teleport to an unoccupied space within 30 feet of you, and can make one weapon attack with advantage against the attacker.\n\n"   "<b>Overcharge Tech:</b> When you cast this power using a tech slot of 4th level or higher, the maximum teleport distance increases by 10 for each slot level above 3rd.</item>
         <!--Invisibility to Cameras-->
         <item name="techpowername">invisibility_to_cameras</item>

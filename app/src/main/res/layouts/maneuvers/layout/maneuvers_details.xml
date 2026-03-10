@@ -7,62 +7,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".maneuvers.ManeuversDetailsActivity"
-    android:background="@drawable/neutralbg"
-	android:fitsSystemWindows="true">
+	android:theme="@style/Theme.Swtrial2.AppBarOverlay"
+	android:background="@drawable/neutralbg">
+
 	<androidx.constraintlayout.widget.ConstraintLayout
-		android:translationZ="2dp"
-		android:background="@drawable/fade_black_appbar_background"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		>
+		android:layout_height="50dp"
+		android:translationZ="2dp"
+		android:background="@drawable/fade_black_appbar_background">
+
 		<androidx.appcompat.widget.Toolbar
 			android:id="@+id/toolbar"
 			android:layout_width="match_parent"
-			android:layout_height="50sp"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent"
-			>
-		</androidx.appcompat.widget.Toolbar>
+			android:layout_height="match_parent"/>
 
 		<com.amachewrs.sw5ecompanionapp.widget.BackButton
 			android:id="@+id/BackButton"
-			android:layout_width="70sp"
-			android:layout_height="0sp"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent" />
+			android:layout_width="70dp"
+			android:layout_height="match_parent"
+			app:layout_constraintStart_toStartOf="parent" />
 
 		<TextView
 			android:id="@+id/Title"
-			android:layout_width="0sp"
-			android:layout_height="0sp"
-			android:fontFamily="@font/starjedi"
-			android:text="@string/maneuvers_maneuver_name"
-			android:textColor="@color/gold"
-			android:translationZ="90dp"
-			android:gravity="center"
-			android:textAlignment="gravity"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_marginHorizontal="70dp"
 			android:autoSizeMaxTextSize="24sp"
-			android:autoSizeMinTextSize="14sp"
-			android:autoSizeStepGranularity="1sp"
+			android:autoSizeMinTextSize="16sp"
 			android:autoSizeTextType="uniform"
+			android:autoSizeStepGranularity="1sp"
+			android:text="improved maneuver maneuverization"
+			android:textAlignment="center"
+			android:textAppearance="@style/GoldTextStarjedi"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toStartOf="@+id/SourceBook"
 			app:layout_constraintStart_toEndOf="@+id/BackButton"
 			app:layout_constraintTop_toTopOf="parent" />
 		<TextView
 			android:id="@+id/SourceBook"
-			android:layout_width="60sp"
-			android:layout_height="0sp"
+			android:layout_width="60dp"
+			android:layout_height="match_parent"
 			android:text="@string/source"
 			android:textColor="@color/gold"
 			android:textSize="22sp"
-			android:textAlignment="gravity"
+			android:textAlignment="center"
 			android:gravity="center"
 			android:layout_marginEnd="10dp"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintTop_toTopOf="parent" />
+			app:layout_constraintEnd_toEndOf="parent"/>
 	</androidx.constraintlayout.widget.ConstraintLayout>
 
 

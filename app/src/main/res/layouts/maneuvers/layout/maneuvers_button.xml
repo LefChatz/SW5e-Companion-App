@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/table_maneuver_constlout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/table_maneuver_constlout"
     android:layout_width="match_parent"
-    android:layout_height="70sp"
+    android:layout_height="70dp"
     android:foreground="?android:attr/selectableItemBackground">
 
     <TextView
         android:id="@+id/table_maneuver_name"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="2dp"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/starjedi"
         android:letterSpacing="0.1"
         android:textAlignment="gravity"
         android:textColor="@color/gold"
-        android:textSize="24sp"
-        android:layout_marginStart="2dp"
+        android:autoSizeMaxTextSize="24sp"
+        android:autoSizeMinTextSize="16sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeStepGranularity="1dp"
         app:layout_constraintBottom_toBottomOf="@+id/table_maneuver_fav"
         app:layout_constraintEnd_toStartOf="@+id/table_maneuver_fav"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,8 +35,7 @@
         app:layout_constraintStart_toStartOf="@id/table_maneuver_name"
         app:layout_constraintTop_toBottomOf="@id/table_maneuver_name"
         android:text="@string/details"
-        android:textColor="@color/gold"
-        />
+        android:textColor="@color/gold" />
 
     <TextView
         android:id="@+id/maneuvers_button_sourcebook"

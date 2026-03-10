@@ -1,9 +1,8 @@
 package com.amachewrs.sw5ecompanionapp.feats
 
-import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Configuration
+import android.graphics.Paint
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.Menu
@@ -11,13 +10,17 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.content.edit
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.forEach
 import androidx.core.view.get
+import androidx.core.view.updatePadding
 import androidx.recyclerview.widget.RecyclerView
 import com.amachewrs.sw5ecompanionapp.R
-import com.amachewrs.sw5ecompanionapp.SW5ECompanionApp
 import com.amachewrs.sw5ecompanionapp.databinding.FeatsBinding
 
 
@@ -29,15 +32,15 @@ class FeatsActivity : AppCompatActivity() {
     private lateinit var featadapter: FeatsAdapter
     private var featList=mutableListOf<Feat>()
     private var adapterFeatList=mutableListOf<Feat>()
-    private var currentfeatlist=listOf<Feat>()
+    private var currentFeatList=listOf<Feat>()
 
     private val favFeatList: MutableList<String> = mutableListOf()
     private lateinit var favSharedPreferences: SharedPreferences
     private var trimEnteredText=""
     private var filters= mutableSetOf<String>()
     private var filterASI= mutableSetOf<String>()
-    private var filterPreq= mutableSetOf<String>()
-    private var filterlvl = 20
+    private var filterPrereq= mutableSetOf<String>()
+    private var filterLevel = 20
     private var filterType= mutableSetOf<String>()
     private var filterSize= mutableSetOf<String>()
     private var filterForceLvl= 0
@@ -47,31 +50,40 @@ class FeatsActivity : AppCompatActivity() {
     private lateinit var featmenu: Menu
     private lateinit var infotext: TextView
     private var atInfo = false
-    private var keepmenu = false
-    private val preqCats = setOf(11,14,18,22,28,34)
+    private var keepMenu = false
+    private val prereqCats = setOf(11,14,18,22,28)
     private var menuSnapshot: MutableMap<MenuItem,Boolean> = mutableMapOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = FeatsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
+            cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
+            binding.bottomNavigationView.updatePadding(0,0,0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom)
+            WindowInsetsCompat.CONSUMED
+        }
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        favSharedPreferences=getSharedPreferences("feats", Context.MODE_PRIVATE)
+        favSharedPreferences=getSharedPreferences("feats", MODE_PRIVATE)
         favFeatList.addAll(favSharedPreferences.getStringSet("favorite_feats", mutableSetOf())?.toList()!!)
 
         featList.addAll(getFeats())
 
         infotext=layoutInflater.inflate(R.layout.universal_textview_nofont_gold,binding.coord,false).findViewById(R.id.textview)
         infotext.text=getText(R.string.feats_info)
+        infotext.visibility = View.GONE
+        infotext.updatePadding(0,10)
+        binding.coord.addView(infotext)
 
         reclview = binding.reclview
         adapterFeatList.addAll(featList.sortFeatByName())
         featadapter = FeatsAdapter(this,adapterFeatList,favFeatList)
         reclview.adapter = featadapter
-        currentfeatlist = featList.sortFeatByName()
+        currentFeatList = featList.sortFeatByName()
 
         binding.BackButton.setOnClickListener{returntomain()}
 
@@ -83,7 +95,7 @@ class FeatsActivity : AppCompatActivity() {
                 returntotop("sharp")
                 if(enttext.isNullOrBlank()){
                     trimEnteredText=""
-                    featadapter.setFeatList(currentfeatlist.filter{filter(it)})
+                    featadapter.setFeatList(currentFeatList.filter{filter(it)})
                     object : CountDownTimer(1000, 1001) {
                         override fun onTick(millisUntilFinished: Long) {
                         }
@@ -98,7 +110,7 @@ class FeatsActivity : AppCompatActivity() {
                         featadapter.setFeatList(listOf(Feat("NoSuchFeat")))
                     }
                     else {
-                        featadapter.setFeatList(currentfeatlist.filter { filter(it) })
+                        featadapter.setFeatList(currentFeatList.filter { filter(it) })
                     }
                 }
                 return false
@@ -107,7 +119,7 @@ class FeatsActivity : AppCompatActivity() {
                 returntotop("sharp")
                 if(enttext.isNullOrBlank()){
                     trimEnteredText=""
-                    featadapter.setFeatList(currentfeatlist.filter{filter(it)})
+                    featadapter.setFeatList(currentFeatList.filter{filter(it)})
                     object : CountDownTimer(1000, 999) {
                         override fun onTick(millisUntilFinished: Long) {
                         }
@@ -122,7 +134,7 @@ class FeatsActivity : AppCompatActivity() {
                         featadapter.setFeatList(listOf(Feat("NoSuchFeat")))
                     }
                     else {
-                        featadapter.setFeatList(currentfeatlist.filter { filter(it) })
+                        featadapter.setFeatList(currentFeatList.filter { filter(it) })
                     }
                 }
                 return false
@@ -151,24 +163,25 @@ class FeatsActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        with(featmenu.findItem(R.id.eqmenu_ok)){
-            if(!isVisible)isVisible=true
-        }
-        keepmenu=true
+
+        keepMenu=true
         when(item.title){
             getText(R.string.sortABCdown)->{
-                keepmenu=false
-                currentfeatlist=featList.sortFeatByNameDescending()
+                keepMenu=false
+                currentFeatList=featList.sortFeatByNameDescending()
                 item.title=getText(R.string.sortABCup)
                 returntotop("sharp")}
             getText(R.string.sortABCup)->{
-                keepmenu=false
-                currentfeatlist=featList.sortFeatByName()
+                keepMenu=false
+                currentFeatList=featList.sortFeatByName()
                 item.title = getText(R.string.sortABCdown)
                 returntotop("sharp")}
             getText(R.string.feats_info_label)->{
                 handleInfoSwitch()
-                keepmenu = false }
+                keepMenu = false }
+            getText(R.string.back_gold)->{
+                handleInfoSwitch()
+                keepMenu = false }
             getText(R.string.ability_score)->{
                 if (!item.isChecked){
                     featmenu.setGroupVisible(R.id.feats_menu_asi_group,true)
@@ -192,12 +205,12 @@ class FeatsActivity : AppCompatActivity() {
             getText(R.string.favorites_gold)-> changeFilter("Fav",item, filters)
             getText(R.string.feats_menu_preq)->{
                 if (!item.isChecked){
-                    preqCats.forEach{ featmenu[it].isVisible=true }
-                    filterPreq.clear()
+                    prereqCats.forEach{ featmenu[it].isVisible=true }
+                    filterPrereq.clear()
                     filters.add("preq")
                 }
                 else{
-                    preqCats.forEach{with(featmenu[it]){
+                    prereqCats.forEach{with(featmenu[it]){
                             isVisible=false
                             isChecked=false
                     }}
@@ -213,40 +226,40 @@ class FeatsActivity : AppCompatActivity() {
             getText(R.string.feats_menu_preq_level)->{
                 if (!item.isChecked){
 
-                    filterPreq.add("lvl")
-                    filterlvl=20
+                    filterPrereq.add("lvl")
+                    filterLevel=20
                     featmenu.findItem(R.id.feats_menu_preq_level_1).isChecked=false
                     featmenu.findItem(R.id.feats_menu_preq_level_2).isChecked=false
                 }
                 else{
-                    filterPreq.remove("lvl")
+                    filterPrereq.remove("lvl")
                 }
                 featmenu.setGroupVisible(R.id.feats_menu_preq_level_group,!item.isChecked)
                 item.isChecked = !item.isChecked
             }
             getText(R.string.feats_menu_preq_level_1)->{
                 if (!item.isChecked){
-                    filterlvl=4
+                    filterLevel=4
                     featmenu.findItem(R.id.feats_menu_preq_level_2).isChecked=false
                 }
                 else{
-                    filterlvl=20
+                    filterLevel=20
                 }
                 item.isChecked = !item.isChecked
             }
             getText(R.string.feats_menu_preq_level_2)->{
                 if (!item.isChecked){
-                    filterlvl=12
+                    filterLevel=12
                     featmenu.findItem(R.id.feats_menu_preq_level_1).isChecked=false
                 }
                 else{
-                    filterlvl=20
+                    filterLevel=20
                 }
                 item.isChecked = !item.isChecked
             }
             getText(R.string.feats_menu_preq_type)->{
                 if (!item.isChecked){
-                    filterPreq.add("Type")
+                    filterPrereq.add("Type")
                     filterType.clear()
                     filterType.addAll(setOf("humanoid","beast","droid"))
                     featmenu.findItem(R.id.feats_menu_preq_type_1).isChecked=true
@@ -254,7 +267,7 @@ class FeatsActivity : AppCompatActivity() {
                     featmenu.findItem(R.id.feats_menu_preq_type_3).isChecked=true
                 }
                 else{
-                    filterPreq.remove("Type")
+                    filterPrereq.remove("Type")
                 }
                 featmenu.setGroupVisible(R.id.feats_menu_preq_type_group,!item.isChecked)
                 item.isChecked = !item.isChecked
@@ -264,7 +277,7 @@ class FeatsActivity : AppCompatActivity() {
             getText(R.string.feats_menu_preq_type_3)-> changeFilter("beast",item,filterType)
             getText(R.string.feats_menu_preq_size)->{
                 if (!item.isChecked){
-                    filterPreq.add("Size")
+                    filterPrereq.add("Size")
                     filterSize.clear()
                     filterSize.addAll(setOf("tiny","small","medium"))
                     featmenu.findItem(R.id.feats_menu_preq_size_1).isChecked=true
@@ -272,7 +285,7 @@ class FeatsActivity : AppCompatActivity() {
                     featmenu.findItem(R.id.feats_menu_preq_size_3).isChecked=true
                 }
                 else{
-                    filterPreq.remove("Size")
+                    filterPrereq.remove("Size")
                 }
                 featmenu.setGroupVisible(R.id.feats_menu_preq_size_group,!item.isChecked)
                 item.isChecked = !item.isChecked
@@ -282,12 +295,12 @@ class FeatsActivity : AppCompatActivity() {
             getText(R.string.feats_menu_preq_size_3)->changeFilter("medium",item,filterSize)
             getText(R.string.feats_menu_preq_forcecasting)->{
                 if (!item.isChecked){
-                    filterPreq.add("Force")
+                    filterPrereq.add("Force")
                     filterForceLvl=4
                     filterForceItems.forEach { it.isChecked = it.itemId == R.id.feats_menu_preq_forcecasting_5 }
                 }
                 else{
-                    filterPreq.remove("Force")
+                    filterPrereq.remove("Force")
                 }
                 featmenu.setGroupVisible(R.id.feats_menu_preq_forcecasting_group,!item.isChecked)
                 item.isChecked = !item.isChecked
@@ -349,12 +362,12 @@ class FeatsActivity : AppCompatActivity() {
             }
             getText(R.string.feats_menu_preq_techcasting)->{
                 if (!item.isChecked){
-                    filterPreq.add("Tech")
+                    filterPrereq.add("Tech")
                     filterTechLvl=4
                     filterTechItems.forEach { it.isChecked = it.itemId == R.id.feats_menu_preq_techcasting_5 }
                 }
                 else{
-                    filterPreq.remove("Tech")
+                    filterPrereq.remove("Tech")
                 }
                 featmenu.setGroupVisible(R.id.feats_menu_preq_techcasting_group,!item.isChecked)
                 item.isChecked = !item.isChecked
@@ -415,14 +428,14 @@ class FeatsActivity : AppCompatActivity() {
                 item.isChecked = !item.isChecked
             }
             getText(R.string.equipment_menu_ok)->{
-                keepmenu=false
+                keepMenu=false
                 item.isVisible=false
             }
         }
-        featadapter.setFeatList(currentfeatlist.filter {filter(it)})
+        featadapter.setFeatList(currentFeatList.filter {filter(it)})
 
         //keep menu from closing
-        if (keepmenu){
+        if (keepMenu){
             item.setShowAsAction(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW)
             item.actionView = View(this)
             item.setOnActionExpandListener(object : MenuItem.OnActionExpandListener {
@@ -434,27 +447,30 @@ class FeatsActivity : AppCompatActivity() {
                     return false
                 }
             })
+            with(featmenu.findItem(R.id.eqmenu_ok)){
+                if(!isVisible)isVisible=true
+            }
         }
         return false
     }
 
     private fun handleInfoSwitch(){
         if(!atInfo){
-            binding.coord.removeView(binding.reclview)
-            binding.searchview.visibility = View.GONE
+            binding.reclview.visibility = View.GONE
+            binding.bottomNavigationView.visibility = View.GONE
             binding.floatingActionButton.visibility = View.GONE
-            binding.coord.addView(infotext)
+            infotext.visibility = View.VISIBLE
             featmenu.forEach {
                 menuSnapshot[it] = it.isVisible
-                if(it.order!=2)it.isVisible=false
+                if(it.order!=2)it.isVisible=false else it.title = resources.getText(R.string.back_gold)
             }
         }
         else {
-            binding.coord.removeView(infotext)
-            binding.coord.addView(binding.reclview)
-            binding.searchview.visibility = View.VISIBLE
+            binding.reclview.visibility = View.VISIBLE
+            binding.bottomNavigationView.visibility = View.VISIBLE
             binding.floatingActionButton.visibility = View.VISIBLE
-            featmenu.forEach { it.isVisible = menuSnapshot[it]!! }
+            infotext.visibility = View.GONE
+            featmenu.forEach { if(it.order!=2) it.isVisible= menuSnapshot[it]!! else it.title = resources.getText(R.string.feats_info_label)}
             returntotop("sharp")
         }
         atInfo=!atInfo
@@ -470,13 +486,13 @@ class FeatsActivity : AppCompatActivity() {
             }
         }
         if (filters.contains("preq")){
-            if (filterPreq.contains("lvl")){
-                if (feat.prerequisite.contains("level") && (filterlvl==4 || (feat.prerequisite.substringBefore("th level").last() == '2' && 12>=filterlvl))) return false
+            if (filterPrereq.contains("lvl")){
+                if (feat.prerequisite.contains("level") && (filterLevel==4 || (feat.prerequisite.substringBefore("th level").last() == '2' && 12>=filterLevel))) return false
             }
-            if(filterPreq.contains("Type")){
+            if(filterPrereq.contains("Type")){
                 if (feat.prerequisite.contains("Type") && filterType.none { feat.prerequisite.contains(it) }) return false
             }
-            if(filterPreq.contains("Force")){
+            if(filterPrereq.contains("Force")){
                 if (filterForceLvl>-1){
                     if (!feat.prerequisite.contains("force")) return false
                     if (feat.prerequisite.substringAfter("casting lvl ","0").first().toString().toInt()>filterForceLvl) return false
@@ -485,7 +501,7 @@ class FeatsActivity : AppCompatActivity() {
                     if (feat.prerequisite.contains("force")) return false
                 }
             }
-            if(filterPreq.contains("Tech")){
+            if(filterPrereq.contains("Tech")){
                 if (filterTechLvl>-1){
                     if (!feat.prerequisite.contains("tech")) return false
                     if (feat.prerequisite.substringAfter("casting lvl ","0").first().toString().toInt()>filterTechLvl) return false
@@ -511,17 +527,26 @@ class FeatsActivity : AppCompatActivity() {
 
     }
     fun returntomain() {
-        with(favSharedPreferences.edit()){
-            putStringSet("favorite_feats",favFeatList.toMutableSet())
-            apply()
+        if (!atInfo){
+            favSharedPreferences.edit {
+                putStringSet("favorite_feats", favFeatList.toMutableSet())
+            }
+            finish()
         }
-        finish()
+        else handleInfoSwitch()
     }
     private fun getFeats(): MutableList<Feat>{
         val getFeatList = mutableListOf<Feat>()
-        val tempFeatList=resources.getTextArray(R.array.feats)
-        for(i in 5..tempFeatList.size step 6){
-            getFeatList.add(Feat(tempFeatList[i-5].toString(),tempFeatList[i-4].toString(),tempFeatList[i-3].toString(),tempFeatList[i-2].toString(),tempFeatList[i-1],tempFeatList[i].toString().toBoolean()))
+        val featTextArray=resources.getTextArray(R.array.feats)
+
+        val starPaint = Paint()
+        starPaint.textSize = 24F
+        starPaint.typeface = resources.getFont(R.font.starjedi)
+        starPaint.letterSpacing = 0.1F
+
+        for(i in 5..featTextArray.size step 6){
+            val isbig = starPaint.measureText(featTextArray[i-5] as String?) > (windowManager.currentWindowMetrics.bounds.width() - 705)
+            getFeatList.add(Feat(featTextArray[i-5].toString(),featTextArray[i-4].toString(),featTextArray[i-3].toString(),featTextArray[i-2].toString(),featTextArray[i-1],isbig))
         }
         return getFeatList
     }

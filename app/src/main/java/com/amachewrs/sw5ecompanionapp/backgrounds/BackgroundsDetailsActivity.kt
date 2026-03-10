@@ -5,7 +5,11 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.BackgroundsDetailsBinding
 import java.util.LinkedList
@@ -18,6 +22,10 @@ class BackgroundsDetailsActivity : AppCompatActivity() {
 
         val binding = BackgroundsDetailsBinding.inflate(inflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
+            cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
+            WindowInsetsCompat.CONSUMED }
 
         binding.Title.text=background.replace("_"," ").replace(".","-")
         if(background=="retired_adventurer") binding.Title.text=getString(R.string.backgrounds_un_retired_adventurer)

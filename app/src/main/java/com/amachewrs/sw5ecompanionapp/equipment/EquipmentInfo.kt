@@ -9,10 +9,13 @@ import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
 import android.widget.PopupMenu
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentInfoAdventuringGearBinding
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentInfoArmorsAndShieldsBinding
@@ -22,10 +25,11 @@ import com.amachewrs.sw5ecompanionapp.databinding.EquipmentInfoTablesBinding
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentInfoToolsBinding
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentInfoWealthBinding
 import com.amachewrs.sw5ecompanionapp.databinding.EquipmentInfoWeaponsBinding
+import com.amachewrs.sw5ecompanionapp.utility.Utilities.Companion.showSnackBar
+import com.amachewrs.sw5ecompanionapp.widget.UniversalTitleGoldbarTextTextview
 import kotlin.math.absoluteValue
 
-class
-EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
+class EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
     private lateinit var binding: EquipmentInfoBinding
     private lateinit var bindingWealth: EquipmentInfoWealthBinding
     private lateinit var bindingArmorsAndShields: EquipmentInfoArmorsAndShieldsBinding
@@ -36,21 +40,27 @@ EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
     private lateinit var bindingTables: EquipmentInfoTablesBinding
     private lateinit var advgearmenu: PopupMenu
 
-    private val tabList = listOf("Wealth","Armors & Shields","Weapons","Adventuring Gear","Tools","Expenses","Tables")
+    private val tabList = listOf("Wealth","Armors &\nShields","Weapons","Adventuring\nGear","Tools","Expenses","Tables")
 
     private lateinit var gestdect: GestureDetector
     private var rectArmors = Rect()
     private var rectBlasters = Rect()
     private var rectLightweapons = Rect()
     private var rectVibroweapons = Rect()
-    private val swipethreshold = 100
-    private var scrollmode=0
+    private val swipeThreshold = 100
+    private var scrollMode=0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= EquipmentInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
+            cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
+            WindowInsetsCompat.CONSUMED }
+
+        this.setTheme(R.style.Base_ThemeOverlay_AppCompat_Dark_NoActionBar)
 
         bindingWealth = EquipmentInfoWealthBinding.inflate(layoutInflater,binding.scrolly,false)
 
@@ -67,22 +77,23 @@ EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
         bindingWealth.scrolly.removeAllViews()
 
         advgearmenu=PopupMenu(this,binding.fab)
+
         menuInflater.inflate(R.menu.menu_equipment_info_advgear_scrollpoints,advgearmenu.menu)
         binding.fab.setOnClickListener {advgearmenu.show()}
         advgearmenu.setOnMenuItemClickListener {menuItem->
-            binding.scrolly.smoothScrollTo(0,when(menuItem.title.toString().trim()){
-                "Equipment Packs"-> 300
-                "Ammunition"->      4600
-                "Communications"->  9600
-                "Data"->            13850
-                "Explosives"->      18300
-                "Life Support"->    28050
-                "Medical Supplies"->30300
-                "Storage"->         35640
-                "Utilities"->       38320
-                "Accessories"->     47750
-                else->              0
-            })
+            binding.scrolly.smoothScrollTo(0,binding.scrolly.findViewById<UniversalTitleGoldbarTextTextview>(when(menuItem.title.toString().trim()){
+                    "Equipment Packs" ->R.id.equipment_advgear_equipmentpacksTitle
+                    "Ammunition"->      R.id.equipment_advgear_ammunitionTitle
+                    "Communications"->  R.id.equipment_advgear_communicationsTitle
+                    "Data"->            R.id.equipment_advgear_dataTitle
+                    "Explosives"->      R.id.equipment_advgear_explosivesTitle
+                    "Life Support"->    R.id.equipment_advgear_lifeSupportTitle
+                    "Medical Supplies"->R.id.equipment_advgear_medicalSuppliesTitle
+                    "Storage"->         R.id.equipment_advgear_storageTitle
+                    "Utilities"->       R.id.equipment_advgear_utilitiesTitle
+                    "Accessories"->     R.id.equipment_advgear_accessoriesTitle
+                    else -> 0
+                }).y.toInt())
             false
         }
 
@@ -113,46 +124,48 @@ EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
         changeview()
         return super.onOptionsItemSelected(item)
     }
+
     private fun changeview() {
         binding.fab.visibility= View.GONE
         binding.scrolly.scrollTo(0,0)
         binding.scrolly.fling(0)
         binding.scrolly.removeAllViews()
         when(binding.dummybutton.text.toString()){
-            tabList[0]->{ binding.scrolly.addView(bindingWealth.llWealth);scrollmode = 0 }
+            tabList[0]->{ binding.scrolly.addView(bindingWealth.llWealth);scrollMode = 0 }
             tabList[1]->{
                 if (!this::bindingArmorsAndShields.isInitialized) bindingArmorsAndShields = EquipmentInfoArmorsAndShieldsBinding.inflate(layoutInflater,binding.scrolly,false);bindingArmorsAndShields.scrolly.removeAllViews()
-                binding.scrolly.addView(bindingArmorsAndShields.llArmorsAndShields);scrollmode = 2}
+                binding.scrolly.addView(bindingArmorsAndShields.llArmorsAndShields);scrollMode = 2}
             tabList[2]->{
                 if (!this::bindingWeapons.isInitialized) {bindingWeapons = EquipmentInfoWeaponsBinding.inflate(layoutInflater, binding.scrolly, false);bindingWeapons.scrolly.removeAllViews()}
-                binding.scrolly.addView(bindingWeapons.llWeapons);scrollmode = 2}
+                binding.scrolly.addView(bindingWeapons.llWeapons);scrollMode = 2}
             tabList[3]->{
                 if (!this::bindingAdventuringGear.isInitialized) {bindingAdventuringGear = EquipmentInfoAdventuringGearBinding.inflate(layoutInflater, binding.scrolly, false);bindingAdventuringGear.scrolly.removeAllViews()}
-                binding.scrolly.addView(bindingAdventuringGear.llAdventuringGear);binding.fab.visibility= View.VISIBLE;scrollmode = 2}
+                binding.scrolly.addView(bindingAdventuringGear.llAdventuringGear);binding.fab.visibility= View.VISIBLE;scrollMode = 2}
             tabList[4]->{
                 if (!this::bindingTools.isInitialized) bindingTools = EquipmentInfoToolsBinding.inflate(layoutInflater,binding.scrolly,false);bindingTools.scrolly.removeAllViews()
-                binding.scrolly.addView(bindingTools.llTools);scrollmode = 2}
+                binding.scrolly.addView(bindingTools.llTools);scrollMode = 2}
             tabList[5]->{
                 if (!this::bindingExpenses.isInitialized) bindingExpenses = EquipmentInfoExpensesBinding.inflate(layoutInflater,binding.scrolly,false);bindingExpenses.scrolly.removeAllViews()
-                binding.scrolly.addView(bindingExpenses.llExpenses);scrollmode = 2}
+                binding.scrolly.addView(bindingExpenses.llExpenses);scrollMode = 2}
             tabList[6]->{
                 if (!this::bindingTables.isInitialized) bindingTables = EquipmentInfoTablesBinding.inflate(layoutInflater,binding.scrolly,false);bindingTables.scrolly.removeAllViews()
-                binding.scrolly.addView(bindingTables.llTables);scrollmode = 1}
+                binding.scrolly.addView(bindingTables.llTables);scrollMode = 1}
 
-            else->{binding.scrolly.addView(bindingWealth.llWealth);scrollmode = 0;Toast.makeText(this,"error unknown Tab",Toast.LENGTH_LONG).show()}
+            else->{binding.scrolly.addView(bindingWealth.llWealth);scrollMode = 0;showSnackBar("error unknown tab",binding.coord,this)}
         }
     }
+
     private fun swipeview(dir: String) {
         when(dir){
             "LtoR"->{
-                if (scrollmode==0){
+                if (scrollMode==0){
                     binding.dummybutton.text=tabList.last()
                     changeview()
                 }
                 else binding.dummybutton.text=tabList[tabList.indexOf(binding.dummybutton.text.toString())-1];changeview()
             }
             "RtoL"->{
-                if (scrollmode==1){
+                if (scrollMode==1){
                     binding.dummybutton.text=tabList.first()
                     changeview()
                 }
@@ -160,6 +173,7 @@ EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
             }
         }
     }
+
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
         super.dispatchTouchEvent(ev)
         return gestdect.onTouchEvent(ev)
@@ -198,7 +212,7 @@ EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
             val diffX = e1.x - e0.x
             if(diffX.absoluteValue>(e1.y-e0.y).absoluteValue) {
                 if(binding.dummybutton.text.toString()!="Tables"){
-                    return if (diffX.absoluteValue > swipethreshold && vx.absoluteValue > swipethreshold) {
+                    return if (diffX.absoluteValue > swipeThreshold && vx.absoluteValue > swipeThreshold) {
                         //L to R
                         if (diffX > 0) {
                             swipeview("LtoR")
@@ -221,7 +235,7 @@ EquipmentInfo : AppCompatActivity() , GestureDetector.OnGestureListener {
                         return false
                     }
                     else{
-                        return if (diffX.absoluteValue > swipethreshold && vx.absoluteValue > swipethreshold) {
+                        return if (diffX.absoluteValue > swipeThreshold && vx.absoluteValue > swipeThreshold) {
                             //L to R
                             if (diffX > 0) {
                                 swipeview("LtoR")

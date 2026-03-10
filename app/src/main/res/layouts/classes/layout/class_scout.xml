@@ -2,70 +2,70 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/coordlayout"
+    android:id="@+id/coord"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".classes.ScoutActivity"
-    android:background="@drawable/neutralbg"
-    android:fitsSystemWindows="true"
-    >
+    android:theme="@style/Theme.Swtrial2.AppBarOverlay"
+    android:background="@drawable/neutralbg">
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@drawable/fade_black_appbar_background"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:translationZ="2dp"
-        >
+        android:background="@drawable/fade_black_appbar_background">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="50sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            android:layout_height="match_parent" />
+
         <com.amachewrs.sw5ecompanionapp.widget.BackButton
             android:id="@+id/BackButton"
-            android:layout_width="70sp"
-            android:layout_height="0sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/starjedi"
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="110dp"
+            android:autoSizeMaxTextSize="26sp"
+            android:autoSizeMinTextSize="16sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeStepGranularity="1sp"
             android:text="@string/scout"
-            android:textColor="@color/gold"
-            android:textSize="25sp"
-            android:translationZ="90dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textAppearance="@style/GoldTextStarjedi"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/dummybutton"
             android:layout_width="110dp"
-            android:layout_height="0sp"
-            android:paddingEnd="25dp"
+            android:layout_height="match_parent"
             android:paddingStart="0dp"
+            android:paddingEnd="30dp"
             android:background="?android:attr/selectableItemBackground"
             android:textAllCaps="false"
             android:text="@string/info"
             android:textColor="@color/gold"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:autoSizeMaxTextSize="16sp"
+            android:autoSizeMinTextSize="10sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeStepGranularity="1sp"
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <ScrollView
         android:id="@+id/scrolly"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:paddingVertical="50dp"
-        android:clipToPadding="false"
-        >
+        android:clipToPadding="false">
+
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/ll"
             android:layout_width="match_parent"

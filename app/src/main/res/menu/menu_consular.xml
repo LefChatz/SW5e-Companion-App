@@ -3,9 +3,9 @@
     <item android:title="@string/info" />
     <item android:title="@string/base" />
     <item android:title="@string/table" />
+    <item android:title="@string/consular_force_empowered_castings" />
     <item android:title="@string/way_of_balance" />
     <item android:title="@string/way_of_lightning" />
     <item android:title="@string/way_of_the_sage" />
     <item android:title="@string/way_of_suggestion" />
-    <item android:title="@string/consular_force_empowered_castings" />
 </menu>
