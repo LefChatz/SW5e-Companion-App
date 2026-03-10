@@ -11,7 +11,6 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.HorizontalScrollView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -22,6 +21,7 @@ import androidx.core.view.contains
 import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.ClassFighterBinding
+import com.amachewrs.sw5ecompanionapp.utility.Utilities.Companion.showSnackBar
 import kotlin.math.absoluteValue
 
 class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
@@ -40,7 +40,7 @@ class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
     private lateinit var blademasterList: List<CharSequence>
     private lateinit var shieldList: List<CharSequence>
     private lateinit var tacticalList: List<CharSequence>
-    private val tabList = listOf("Info","Base","Tables","Fighter Strategies","Assault Specialist","Blademaster Specialist","Shield Specialist","Tactical Specialist")
+    private val tabList = listOf("Info","Base","Tables","Fighter\nStrategies","Assault\nSpecialist","Blademaster\nSpecialist","Shield\nSpecialist","Tactical\nSpecialist")
 
     private lateinit var gestdect: GestureDetector
     var rect = Rect()
@@ -155,7 +155,7 @@ class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
                 inflater.inflate(R.layout.class_fighter_shield_specialist_table,ll,true)
                 inflater.inflate(R.layout.class_fighter_tactical_specialist_table,ll,true)
             }
-            "Fighter Strategies"->{
+            "Fighter\nStrategies"->{
                 tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 temptxt=tempbersk.findViewById(R.id.contenttext)
                 tempbersk.findViewById<TextView>(R.id.headertext).text=getText(R.string.fighter_strategiesHeader)
@@ -164,7 +164,7 @@ class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
                 ll.addView(tempbersk)
             }
 
-            "Assault Specialist"->{
+            "Assault\nSpecialist"->{
                 for(i in assaultList.indices step 2 ){
                     if(i==0){
                         txt.text=assaultList[i]
@@ -180,7 +180,7 @@ class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
                 }
 
             }
-            "Blademaster Specialist"->{
+            "Blademaster\nSpecialist"->{
                 for(i in blademasterList.indices step 2 ){
                     if(i==0){
                         txt.text=blademasterList[i]
@@ -198,7 +198,7 @@ class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
                     }
                 }
             }
-            "Shield Specialist"->{
+            "Shield\nSpecialist"->{
                 for(i in shieldList.indices step 2 ){
                     if(i==0){
                         txt.text=shieldList[i]
@@ -219,7 +219,7 @@ class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
                     }
                 }
             }
-            "Tactical Specialist"->{
+            "Tactical\nSpecialist"->{
                 for(i in tacticalList.indices step 2 ){
                     if(i==0){
                         txt.text=tacticalList[i]
@@ -241,10 +241,7 @@ class FighterActivity : AppCompatActivity() , GestureDetector.OnGestureListener 
                 }
 
             }
-            else->{
-                Toast.makeText(this,"Error",Toast.LENGTH_LONG)
-                    .show()
-            }
+            else->{showSnackBar("Error",binding.coord,this)}
         }
     }
 

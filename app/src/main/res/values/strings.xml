@@ -96,19 +96,19 @@
     <string name="the_berserker">The Berserker</string>
     <string name="rages">Rages</string>
     <string name="ragedamage">Rage\nDamage</string>
-    <string name="ballistic_approach"><font color="#D4af37">Ballistic Approach</font></string>
-    <string name="cyclone_approach"><font color="#D4af37">Cyclone Approach</font></string>
-    <string name="juggernaut_approach"><font color="#D4af37">Juggernaut Approach</font></string>
-    <string name="marauder_approach"><font color="#D4af37">Marauder Approach</font></string>
+    <string name="ballistic_approach"><font color="#D4af37">Ballistic\nApproach</font></string>
+    <string name="cyclone_approach"><font color="#D4af37">Cyclone\nApproach</font></string>
+    <string name="juggernaut_approach"><font color="#D4af37">Juggernaut\nApproach</font></string>
+    <string name="marauder_approach"><font color="#D4af37">Marauder\nApproach</font></string>
     <string name="marauder_forcecasting">Marauder Forcecasting</string>
 
     <!--Consular -->
     <string name="consular">conSuLAX</string>
     <string name="the_consular">The coNSuLAX</string>
-    <string name="way_of_balance"><font color="#D4af37">Way of Balance</font></string>
-    <string name="way_of_lightning"><font color="#D4af37">Way of Lightning</font></string>
-    <string name="way_of_the_sage"><font color="#D4af37">Way of the Sage</font></string>
-    <string name="way_of_suggestion"><font color="#D4af37">Way of Suggestion</font></string>
+    <string name="way_of_balance"><font color="#D4af37">Way of\nBalance</font></string>
+    <string name="way_of_lightning"><font color="#D4af37">Way of\nLightning</font></string>
+    <string name="way_of_the_sage"><font color="#D4af37">Way of\nthe Sage</font></string>
+    <string name="way_of_suggestion"><font color="#D4af37">Way of\nSuggestion</font></string>
     <string name="consular_force_empowered_castings"><font color="#D4af37"><font size="13">Force\nEmpowered\nCastings</font></font></string>
     <string name="consular_force_empowered_castingsHeader">Force Empowered Castings</string>
     <string name="force_empowered_casting_options">Force-Empowered\nCasting Options</string>
@@ -128,8 +128,8 @@
     <!--Engineer-->
     <string name="engineer">ENGiNEEX</string>
     <string name="the_engineer">The ENGiNEEX</string>
-    <string name="armormech_engineering"><font color="#D4af37">Armormech Engineering</font></string>
-    <string name="armormech_modifications"><font color="#D4af37">Armormech Modifications</font></string>
+    <string name="armormech_engineering"><font color="#D4af37">Armormech\nEngineering</font></string>
+    <string name="armormech_modifications"><font color="#D4af37">Armormech\nModifications</font></string>
     <string name="armormech_modificationsHeader">Armormech Modifications</string>
     <string name="armormech_modificationstext"><font face="sans-serif">the modifications are presented in alphabetical order.\n</font>
             <font size="24">\nAbsorption Shield</font><font face="sans-serif">\n<b>Prerequisite:</b> Physical Shield\nYou modify your physical shield to block incoming damage. As a bonus action you can activate this ability and gain temporary hit points equal to 1d4 + Intelligence modifier, which last for one hour.\n"    "You can use this feature twice. You gain an additional use at 5th, 9th, 13th, and 17th level. You regain any expended uses when you finish a long rest.\n</font>
@@ -158,8 +158,8 @@
             <font size="24">\nShield Anchor</font><font face="sans-serif">\n<b>Prerequisite:</b> Physical Shield\nYou modify your shield to be used as a portable source of cover. As an action, you can anchor or deanchor the shield. While anchored, you gain no benefit from a shield, and it does not require the use of a hand. Instead, while anchored, a light shield provides one-quarter cover, a medium shield provides half cover, and a heavy shield provides three-quarters cover.\n</font>
             <font size="24">\nTech Blast</font><font face="sans-serif">\n<b>Prerequisite:</b> Armor\nYou modify your modified armor gauntlet with a blaster weapon with which you are proficient. The weapon uses your Intelligence modifier for its attack and damage rolls, and deals 1d8 energy damage on a hit. It has a normal range of 30 feet and a long range of 120 feet.\n</font>
             <font size="24">\nWeapon Integration Armoring</font><font face="sans-serif">\n<b>Prerequisite:</b> Armor\nYou can integrate a single weapon that weighs no more than 8 lb. into your armor. While integrated, that weapon gains the hidden property. Additionally, you have advantage on Strength saving throws to avoid being disarmed.\n</font></string>
-    <string name="armstech_engineering"><font color="#D4af37">Armstech Engineering</font></string>
-    <string name="armstech_modifications"><font color="#D4af37">Armstech Modifications</font></string>
+    <string name="armstech_engineering"><font color="#D4af37">Armstech\nEngineering</font></string>
+    <string name="armstech_modifications"><font color="#D4af37">Armstech\nModifications</font></string>
     <string name="armstech_modificationsHeader">Armstech Modifications</string>
     <string name="armstech_modificationstext"><font face="sans-serif">the modifications are presented in alphabetical order.\n</font>
         <font size="24">\nAccuracy Focus</font><font face="sans-serif">\n<b>Prerequisite:</b> 5th level, Blaster\nYou gain a +1 bonus to attack rolls made with this weapon. This bonus increases to +2 at 9th level and +3 at 13th level.\n</font>
@@ -194,8 +194,8 @@
         <font size="24">\nTracker</font><font face="sans-serif">\n<b>Prerequisite:</b> 5th level\nYou add a tracking mechanism to your modified weapon. The tracker has 3 charges. As a bonus action you can use 1 charge to cast target lock. As an action you can use 2 charges to cast detect invisibility.\n"    "The tracker regains all expended charges after a long rest.\n</font>
         <font size="24">\nTrueLight</font><font face="sans-serif">\n<b>Prerequisite:</b> 11th level, Flashlight\nYou modify your flashlight with a toggle allowing you to briefly gain enhanced sight. As a bonus action, you can activate the truesight feature of your flashlight. When toggled on, for the next minute your flashlight now automatically dispel illusions and can detect invisibility, as with truesight.\n"    "Once you\'ve used this feature, you must complete a short or long rest before you can use it again.\n</font>
         <font size="24">\nvenomous oscillator</font><font face="sans-serif">\n<b>Prerequisite:</b> 9th level, Vibroweapon\nAs a bonus action, you can coat your weapon in a thin layer of poison for 1 minute. The next time you hit with the weapon, the creature must make a Constitution saving throw against your tech save DC. On a failed save, a creature takes 1d10 poison damage and becomes poisoned for 1 minute.\n"    "Once you\'ve used this feature, you must complete a long rest before you can use it again.\n</font></string>
-    <string name="gadgeteer_engineering"><font color="#D4af37">Gadgeteer Engineering</font></string>
-    <string name="gadgeteer_modifications"><font color="#D4af37">Gadgeteer Modifications</font></string>
+    <string name="gadgeteer_engineering"><font color="#D4af37">Gadgeteer\nEngineering</font></string>
+    <string name="gadgeteer_modifications"><font color="#D4af37">Gadgeteer\nModifications</font></string>
     <string name="gadgeteer_modificationsHeader">Gadgeteer Modifications</string>
     <string name="gadgeteer_modificationstext"><font face="sans-serif">the modifications are presented in alphabetical order.\n</font>
         <font size="24">\nAdvanced Ground System</font><font face="sans-serif">\n<b>Prerequisite:</b> 13th level, Prototype Grounding System\nWhile wearing your gadgeteer harness you have immunity to lightning damage.\n</font>
@@ -230,7 +230,7 @@
         <font size="24">\nWeapon integration</font><font face="sans-serif">\nYou can integrate a single weapon that weighs no more than 8 lb. into your gadgeteer harness. While integrated, that weapon gains the hidden and fixed properties.\n</font>
         <font size="24">\nWithercasting inhibitor</font><font face="sans-serif">\n<b>Prerequisite:</b> 5th level\nYou gain a +1 bonus to the tech save DC of powers you cast that requires a Wisdom or Charisma saving throw. This bonus increases to +2 at 9th level and +3 at 13th level.\n</font>
         <font size="24">\nWrist-Mounted Grappling Hook</font><font face="sans-serif">\nYou craft a wrist-mounted grappling hook weapon attached to a tightly coiled cord. With this contraption, you can make a ranged weapon attack with a range of 30/60. On a hit, it deals 1d4 kinetic damage. This attack can target a surface, object, or creature.\n"    "A creature struck by this attack is impaled by the hook. As an action, a creature can attempt to remove the hook. Removing the hook requires a Strength check. While the hook is stuck in the target, you are connected to the target by a 60 foot cable.\n"    "While the hook is deployed, you can use your bonus action to activate the reel, pulling yourself to the location if the target is your size or larger. A creature or object smaller than you is pulled to you. Alternatively, you can opt to release the cable (no action required).\n"    "Once you\'ve used this feature, you can\'t use it again until you recover and reinsert the hook as an action.\n</font></string>
-    <string name="unstable_engineering"><font color="#D4af37">Unstable Engineering</font></string>
+    <string name="unstable_engineering"><font color="#D4af37">Unstable\nEngineering</font></string>
     <string name="unstable_engineering_surge">uNSTABLE ENGiNEERiNG SuRGE</string>
     <string name="unstable_engineering_table_1">01"   "Roll on this table at the start of each of your turns for 1\n02"   "minute ignoring this result on subsequent rolls.</string>
     <string name="unstable_engineering_table_2">03"   "For the next minute, you can see any invisible creature\n04"   "if you have line of sight to it.</string>
@@ -287,9 +287,9 @@
     <!--Fighter -->
     <string name="fighter">FiGHTEX</string>
     <string name="the_fighter">The FiGHTEX</string>
-    <string name="fighter_strategies"><font color="#D4af37">Fighter Strategies</font></string>
+    <string name="fighter_strategies"><font color="#D4af37">Fighter\nStrategies</font></string>
     <string name="strategies_known">Strategies\nKnown</string>
-    <string name="fighter_strategiesHeader">Fighter Strategies</string>
+    <string name="fighter_strategiesHeader">Fighter\nStrategies</string>
     <string name="fighter_strategiestext"><font face="sans-serif">the strategies are presented in alphabetical order.\n</font>
             <font size="24">\ncover Strategist</font><font face="sans-serif">\nYou treat partial cover as one step higher (from onequarter to half or half to three-quarters). While in cover, your attacks reduce partial cover by one step (from three-quarters to half or half to one-quarter).\n</font>
             <font size="24">\ncunning Strategist</font><font face="sans-serif">\nChoose two from the following. You can perform each of the chosen options with your bonus action, instead of your action:\n\n•"   "Applying poison\n•"   "Dash\n•"   "Disengage\n•"   "Guard\n•"   "Help\n•"   "Hide\n•"   "Search\n•"   "Throwing grenades and setting mines\n•"   "While mounted on a controlled beast, having your beast make a single melee attack against a creature within its reach\n•"   "While mounted on a vehicle, taking a vehicle action (you can\'t take the same action twice in one turn)\n</font>
@@ -299,11 +299,11 @@
             <font size="24">\nManeuver Strategist</font><font face="sans-serif">\nYou learn two additional maneuvers. When you complete a short rest, you can replace one of these maneuvers with another one. When you complete a long rest, you can replace both of these maneuvers with other ones.\n</font>
             <font size="24">\nSkilled Strategist</font><font face="sans-serif">\nYou gain proficiency in a skill and a tool, or two tools.\n</font>
             <font size="24">\nStyle Strategist</font><font face="sans-serif">\nYou adopt a second fighting style. Choose one of the fighting style options, detailed in Chapter 6. When you complete a long rest, you can change this style out for another one.\n</font></string>
-    <string name="assault_specialist"><font color="#D4af37">Assault Specialist</font></string>
-    <string name="blademaster_specialist"><font color="#D4af37">Blademaster Specialist</font></string>
-    <string name="shield_specialist"><font color="#D4af37">Shield Specialist</font></string>
+    <string name="assault_specialist"><font color="#D4af37">Assault\nSpecialist</font></string>
+    <string name="blademaster_specialist"><font color="#D4af37">Blademaster\nSpecialist</font></string>
+    <string name="shield_specialist"><font color="#D4af37">Shield\nSpecialist</font></string>
     <string name="shield_specialist_techcasting">Shield Specialist Techcasting</string>
-    <string name="tactical_specialist"><font color="#D4af37">Tactical Specialist</font></string>
+    <string name="tactical_specialist"><font color="#D4af37">Tactical\nSpecialist</font></string>
     <string name="maneuvers_known">Maneuvers\nKnown</string>
     <string name="superiority_dice_quantity">Superiority\nDice quantity</string>
     <string name="superiority_dice_size">Superiority\nDice Size</string>
@@ -313,7 +313,7 @@
     <string name="the_guardian">The GuAXDiAN</string>
     <string name="auras_known">Auras\nKnown</string>
     <string name="aura_radius">Aura\nRadius</string>
-    <string name="guardian_auras"><font color="#D4af37">Guardian Auras</font></string>
+    <string name="guardian_auras"><font color="#D4af37">Guardian\nAuras</font></string>
     <string name="guardian_aurasHeader">Guardian Auras</string>
     <string name="guardian_aurastext"><font face="sans-serif">the auras are presented in alphabetical order. If multiple guardians grant the same aura, affected creatures can only benefit from it once. You must be conscious to grant the benefits of your auras.\n</font>
             <font size="24">\nAura of the conquest</font><font face="sans-serif">\nWhenever a creature who is frightened of you starts its turn within 5 feet of you, its gains 4 slowed levels and takes psychic damage equal to half your guardian level.\n</font>
@@ -323,16 +323,16 @@
             <font size="24">\nAura of the Protection</font><font face="sans-serif">\nWhenever a creature within 5 feet of you takes damage, you can use your reaction to take that damage instead of that creature taking it. This feature doesn\'t transfer any other effects that might accompany the damage, and this damage can\'t be reduced in any way.\n</font>
             <font size="24">\nAura of the vigor</font><font face="sans-serif">\nWhenever a friendly creature starts its turn within 5 feet of you, that creature gains temporary hit points equal to your Wisdom or Charisma modifier (your choice, minimum of one).\n</font>
             <font size="24">\nAura of the warding</font><font face="sans-serif">\nYou and friendly creatures within 5 feet of you have resistance to damage from force powers.</font></string>
-    <string name="makashi_form"><font color="#D4af37">Makashi Form</font></string>
-    <string name="niman_form"><font color="#D4af37">Niman Form</font></string>
-    <string name="shien_djem_so_form"><font color="#D4af37">Shien\/Djem So Form</font></string>
-    <string name="soresu_form"><font color="#D4af37">Soresu Form</font></string>
+    <string name="makashi_form"><font color="#D4af37">Makashi\nForm</font></string>
+    <string name="niman_form"><font color="#D4af37">Niman\nForm</font></string>
+    <string name="shien_djem_so_form"><font color="#D4af37">Shien\/Djem So\nForm</font></string>
+    <string name="soresu_form"><font color="#D4af37">Soresu\nForm</font></string>
     <string name="focused_strikes">Focused\nStrikes</string>
 
     <!--Monk-->
     <string name="monk">MoNK</string>
     <string name="the_monk">the MoNK</string>
-    <string name="monastic_vows"><font color="#D4af37">Monastic Vows</font></string>
+    <string name="monastic_vows"><font color="#D4af37">Monastic\nVows</font></string>
     <string name="monastic_vows_table">Monastic\nVows</string>
     <string name="monastic_vowsHeader">Monastic vows</string>
     <string name="monastic_vowstext"><font face="sans-serif">the vows are presented in alphabetical order.\n</font>
@@ -358,10 +358,10 @@
         <font size="24">\nvow of Serenity</font><font face="sans-serif">\nYour maximum focus increases by an amount equal to half your Wisdom or Charisma modifier (your choice, minimum of +1).\n</font>
         <font size="24">\nvow of Spirit</font><font face="sans-serif">\nYou can use your choice of Wisdom or Charisma instead of Strength or Dexterity for the attack and damage rolls of your unarmed strikes and monk weapons. You must use the same modifier for both rolls.\n</font>
         <font size="24">\nvow of the versatile</font><font face="sans-serif">\nWhen you would make an unarmed strike as part of your Martial Arts bonus action attack or your Flurry of Blows, you can instead make a weapon attack with a monk weapon you are wielding, using your Martial Arts die in place of the weapon\'s damage.\n</font></string>
-    <string name="crimson_order"><font color="#D4af37">Crimson Order</font></string>
-    <string name="echani_order"><font color="#D4af37">Echani Order</font></string>
-    <string name="matukai_order"><font color="#D4af37">Matukai Order</font></string>
-    <string name="nightsister_order"><font color="#D4af37">Nightsister Order</font></string>
+    <string name="crimson_order"><font color="#D4af37">Crimson\nOrder</font></string>
+    <string name="echani_order"><font color="#D4af37">Echani\nOrder</font></string>
+    <string name="matukai_order"><font color="#D4af37">Matukai\nOrder</font></string>
+    <string name="nightsister_order"><font color="#D4af37">Nightsister\nOrder</font></string>
     <string name="variant_monk"><b> Variant:Monk With Lightweapons</b>\n If monks gain lightweapon proficiency\n consider letting them use lightweapons as monk weapons\n provided the weapon lacks the dexterity, heavy, special\n and two-handed properties.</string>
     <string name="martial_arts">Martial\nArts</string>
     <string name="focus_points">Focus\nPoints</string>
@@ -370,7 +370,7 @@
     <!--Operative-->
     <string name="operative">oPEXATivE</string>
     <string name="the_operative">the oPEXATivE</string>
-    <string name="operative_exploits"><font color="#D4af37">Operative Exploits</font></string>
+    <string name="operative_exploits"><font color="#D4af37">Operative\nExploits</font></string>
     <string name="operative_exploits_table">Operative\nExploits</string>
     <string name="operative_exploitsHeader">Operative Exploits</string>
     <string name="operative_exploitstext"><font face="sans-serif">the exploits are presented in alphabetical order.\n</font>
@@ -385,23 +385,23 @@
             <font size="24">\nSkill\'s Exploit</font><font face="sans-serif">\nYou learn an exploit that enhances your ability to apply your knowledge to combat situations. You can take this exploit multiple times.\n"   " When you take the Attack action, you can use one of your skill exploits granted by this feature. You can use these features a combined two times. You gain an additional use at 5th, 9th, 13th, and 17th level. You regain any expended uses when you finish a long rest.\n"   " Choose from the following. You must be proficient in the skill in order to take that skill\'s exploit.\n"   " <b>Aim (Stealth).</b> You attempt to line up a strike against a creature you can see that you are hidden from. Make a Dexterity (Stealth) check contested by the target\'s Wisdom (Perception) check. If your check succeeds, you gain a +10 bonus to the first attack roll you make against the target before the end of your next turn. If your check fails, you are no longer hidden from the target.\n"   " <b>Angle (Perception).</b> You attempt to predict the behavior of a humanoid you can see within 30 feet. Make a Wisdom (Perception) check contested by the target\'s Dexterity (Sleight of Hand) check. If your check succeeds, the first attack roll the target makes before the start of your next turn has disadvantage, and the first saving throw the creature makes before the start of your next turn has disadvantage. If your check fails, you can\'t use this feature on this target again for 1 hour.\n"   " <b>Battle Cry (Intimidation).</b> You attempt to demoralize one humanoid you can see within 30 feet of you that can see and hear you. Make a Charisma (Intimidation) check contested by the target\'s Wisdom (Insight) check. If your check succeeds, the target is frightened until the end of your next turn. If the target was already frightened of you, it must immediately drop whatever it is holding. On its next turn, if it is still frightened of you, it must take the Dash action and move away from you by the safest available route on its turn, unless there is nowhere to move. If your check fails, you can\'t use this feature on this target again for 1 hour.\n"   " <b>Charm (Persuasion).</b> You attempt to convince one humanoid you can see within 30 feet that can hear and understand you. Make a Charisma (Persuasion) check contested by the target\'s Wisdom (Insight) check. If you have dealt damage to the creature in the last hour, it has advantage on the check. If your check succeeds, the target is charmed by you until the start of your next turn, and it has disadvantage on the first attack roll it makes against a creature before the end of its next turn. If your check fails, you can\'t use this feature on this target again for 1 hour.\n"   " <b>Confuse Beast (Animal Handling).</b> You attempt to confuse one beast on the battlefield. Make a Wisdom (Animal Handling) check contested by the target\'s Wisdom (Insight) check. If your check succeeds, the beast cannot take actions or reactions until the end of your next turn. If your check fails, you can\'t use this feature on this target again for 1 hour.\n"   " <b>Distract (Performance).</b> You attempt to distract one beast or humanoid you can see within 30 feet of you that can see and hear you. Make a Charisma (Performance) check contested by the target\'s Wisdom (Insight) check. If your check succeeds, the next attack roll made against the target before the start of its next turn has advantage. If your check fails, you can\'t use this feature on this target again for 1 hour.\n"   " <b>Emulate Predator (Nature).</b> You attempt to emulate the sounds of a natural predator of a beast or plant you can see within 30 feet. Make an Intelligence (Nature) check contested by the target\'s Wisdom (Insight) check. If your check succeeds, the target must take the Dash action and move away from you by the safest available route on its turn, unless there is nowhere to move. If your check fails, you can\'t use this feature on this target again for 1 hour.\n"   " <b>Feint (Deception).</b> You attempt to divert the attention of a target you can see within 30 feet. Make a Charisma (Deception) check contested by the target\'s Wisdom (Insight) check. If your check succeeds, the first attack roll made against the target before the start of your next turn by someone other than you has advantage, and the target has disadvantage on the first saving throw they make against an effect caused by a creature other than you before the start of your next turn. If your check fails, the target can\'t be deceived by you in this way for 1 hour.\n"   " <b>Hacktivate (Technology).</b> You attempt to determine the weaknesses in a droid you can see within 30 feet. Make an Intelligence (Technology) check contested by the target\'s Intelligence (Technology) check. If your check succeeds, you have advantage on the next attack roll you make against the target before the end of your turn, and if you hit, you deal additional damage equal to your Intelligence modifier. If your check fails, you can\'t use this feature on this target again for 1 hour.\n"   " <b>Instruct (Investigation).</b> You attempt to find a weakness in your target. Make an Intelligence (Investigation) check contested by the target\'s Charisma (Deception) check. If your check succeeds, if a friendly creature makes an attack roll against the target and they can see and hear you, you can use your reaction to grant them advantage on the roll. If you do so, and they hit, they deal additional damage equal to your bonus to Investigation checks. This damage is the same type as the attack\'s damage. If your check fails, you can\'t use this feature on this target again for 1 hour.\n"   " <b>Intuit (Insight).</b> You attempt to determine the motivations of one humanoid you can see within 30 feet. Make a Wisdom (Insight) check contested by the target\'s Charisma (Deception) check. If your check succeeds, the target can\'t have advantage on ability checks, attack rolls, or saving throws against you until the end of your next turn. If your check fails, the target instead can\'t have disadvantage on ability checks, attack rolls, or saving throws against you until the end of your next turn.\n"   " <b>Pocket Sand (Sleight of Hand).</b> You attempt to blind one beast or humanoid you can see within 15 feet of you. Make a Dexterity (Sleight of Hand) check contested by the target\'s Wisdom (Perception) check. If your check succeeds, the target is blinded until the end of your turn. If your check fails, you can\'t use this feature on this target again for 1 hour.\n"   " <b>Precision Strike (Medicine).</b> You attempt to strike a pressure point in one humanoid within your reach. Make a Wisdom (Medicine) check contested by the target\'s Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use). If your check succeeds, they are incapacitated until the end of their next turn. If your check fails, you can\'t use this feature on this target again for 1 hour.\n"   " <b>Snare (Survival).</b> You attempt to cause a creature within 30 feet of you to stumble. Make a Wisdom (Survival) check contested by the target\'s Wisdom (Perception) check. If your check succeeds, and the target moves towards you before the start of your next turn, it gains 1 slowed level, and you can use your reaction to cause it to fall prone. If your check fails, you can\'t use this feature on this target again for 1 hour.\n"   " <b>Spin (Piloting).</b> You attempt to confound a piloted construct you can see within 30 feet. Make an Intelligence (Piloting) check contested by the target\'s Intelligence (Piloting) check. If your check succeeds, the target has disadvantage on attack rolls against you, and you have advantage on Dexterity saving throws against the target, until the start of your next turn. If your check fails, the target instead has advantage on attack rolls against you, and you have disadvantage on Dexterity saving throws against the target, until the start of your next turn.\n"   " <b>Study (Lore).</b> You attempt to anticipate your target\'s action. Make an Intelligence (Lore) check contested by the target\'s Charisma (Deception) check. If your check succeeds, you have advantage on the first ability check, attack roll or saving throw you make against that creature before the end of your next turn. Alternatively, before the end of your next turn, you can use your reaction to grant disadvantage on the first ability check, attack roll, or saving throw the target makes against you. If your check fails, you instead have disadvantage on the first ability check, attack roll or saving throw you make against that creature before the end of your next turn.\n"   " <b>Tumble (Acrobatics).</b> You attempt to make a quick tumble, immediately moving 10 feet. If you begin or end this movement within a creature\'s reach, make a Dexterity (Acrobatics) check contested by it\'s Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use). If your check succeeds, this movement does not provoke opportunity attacks from it, and you have advantage on the first attack roll you make against it before the end of your turn. If your check fails, you immediately fall prone.\n"   " <b>Wrestle (Athletics).</b> You attempt to grab and pin a creature within 5 feet of you with at least one free hand. The target must be no more than one size larger than you. Make a Strength (Athletics) check contested by the target\'s Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use). If your check succeeds, the target is both grappled and restrained by you. If the target stops being grappled, it also stops being restrained. If your check fails, you can\'t use this feature on this target again for 1 hour.\n</font>
             <font size="24">\nTechnologist\'s Exploit</font><font face="sans-serif">\nYou learn and can cast one 1st-level tech power once per long rest. Your techcasting ability is Intelligence. You require use of a wristpad for this power.\n"   " You can select this exploit multiple times. Each time you do so, you must choose a different power.\n</font>
             <font size="24">\nWeaponmaster\'s Exploit</font><font face="sans-serif">\nYou gain proficiency in three blasters or vibroweapons that lack the heavy and strength properties.\n"   " You can select this exploit multiple times. Each time you do so, you must choose different weapons.\n</font></string>
-    <string name="acquisitions_practice"><font color="#D4af37">Acquisitions Practice</font></string>
-    <string name="beguiler_practice"><font color="#D4af37">Beguiler Practice</font></string>
+    <string name="acquisitions_practice"><font color="#D4af37">Acquisitions\nPractice</font></string>
+    <string name="beguiler_practice"><font color="#D4af37">Beguiler\nPractice</font></string>
     <string name="beguiler_practice_forcecasting">Beguiler Practice ForCecasting</string>
-    <string name="lethality_practice"><font color="#D4af37">Lethality Practice</font></string>
-    <string name="sharpshooter_practice"><font color="#D4af37">Sharpshooter Practice</font></string>
+    <string name="lethality_practice"><font color="#D4af37">Lethality\nPractice</font></string>
+    <string name="sharpshooter_practice"><font color="#D4af37">Sharpshooter\nPractice</font></string>
     <string name="sneak_attack">Sneak\nAttack</string>
 
     <!--Scholar-->
     <string name="scholar">ScHoLAX</string>
     <string name="the_scholar">the ScHoLAX</string>
-    <string name="gambler_pursuit"><font color="#D4af37">Gambler Pursuit</font></string>
+    <string name="gambler_pursuit"><font color="#D4af37">Gambler\nPursuit</font></string>
     <string name="gambler_discoveries">Gambler Discoveries</string>
-    <string name="physician_pursuit"><font color="#D4af37">Physician Pursuit</font></string>
+    <string name="physician_pursuit"><font color="#D4af37">Physician\nPursuit</font></string>
     <string name="physician_discoveries">Physician Discoveries</string>
-    <string name="politician_pursuit"><font color="#D4af37">Politician Pursuit</font></string>
+    <string name="politician_pursuit"><font color="#D4af37">Politician\nPursuit</font></string>
     <string name="politician_discoveries">Politician Discoveries</string>
-    <string name="tactician_pursuit"><font color="#D4af37">Tactician Pursuit</font></string>
+    <string name="tactician_pursuit"><font color="#D4af37">Tactician\nPursuit</font></string>
     <string name="tactician_discoveries">Tactician Discoveries</string>
     <string name="discoveries"><font color="#D4af37">Discoveries</font></string>
     <string name="discoveriesHeader">Discoveries</string>
@@ -431,7 +431,7 @@
     <!--Scout-->
     <string name="scout">ScouT</string>
     <string name="the_scout">the ScouT</string>
-    <string name="scout_routines"><font color="#D4af37">Scout Routines</font></string>
+    <string name="scout_routines"><font color="#D4af37">Scout\nRoutines</font></string>
     <string name="routines_known">Routines\nKnown</string>
     <string name="routine_radius">Routine\nRadius</string>
     <string name="scout_routinesHeader">Scout Routines</string>
@@ -444,16 +444,16 @@
             <font size="24">\nSharpshooter\'s Routine</font><font face="sans-serif">\nAt the start of each of your turns, you can choose to gain a bonus to the first weapon attack roll you make before the start of your next turn equal to your Intelligence modifier. Alternatively, you can choose to allow each friendly creature within 5 feet of you to add half your Intelligence modifier to the first weapon attack roll they make before the start of your next turn.\n</font>
             <font size="24">\nStrider\'s Routine</font><font face="sans-serif">\nAt the start of each of your turns, you can choose to have each slowed level only reduce your speed by 5 feet, unless it would reduce your speed to 0 until the start of your next turn. Alternatively, you can choose to extend this benefit to allies within 5 feet of you.\n</font>
             <font size="24">\nWarden\'s Routine</font><font face="sans-serif">\nAt the start of each of your turns, you can choose to gain a crawling, climbing, and swimming speed equal to your walking speed until the start of your next turn. Alternatively, you can choose to extend this benefit to allies within 5 feet of you.\n</font></string>
-    <string name="bulwark_technique"><font color="#D4af37">Bulwark Technique</font></string>
-    <string name="hunter_technique"><font color="#D4af37">Hunter Technique</font></string>
-    <string name="slayer_technique"><font color="#D4af37">Slayer Technique</font></string>
-    <string name="stalker_technique"><font color="#D4af37">Stalker Technique</font></string>
+    <string name="bulwark_technique"><font color="#D4af37">Bulwark\nTechnique</font></string>
+    <string name="hunter_technique"><font color="#D4af37">Hunter\nTechnique</font></string>
+    <string name="slayer_technique"><font color="#D4af37">Slayer\nTechnique</font></string>
+    <string name="stalker_technique"><font color="#D4af37">Stalker\nTechnique</font></string>
     <string name="ranger_quarry">Ranger\'s\nQuarry</string>
 
     <!--Sentinel-->
     <string name="sentinel">SENTiNEL</string>
     <string name="the_sentinel">The SENTiNEL</string>
-    <string name="sentinel_ideals"><font color="#D4af37">Sentinel Ideals</font></string>
+    <string name="sentinel_ideals"><font color="#D4af37">Sentinel\nIdeals</font></string>
     <string name="ideals_known">Ideals\nKnown</string>
     <string name="ideal_manifests">Ideal\nManifests</string>
     <string name="sentinel_idealsHeader">Sentinel ideals</string>
@@ -467,10 +467,10 @@
             <font size="24">\nideal of the Titan</font><font face="sans-serif">\nYou gain proficiency in medium armor.\n"    "Additionally, as a bonus action, you can manifest this ideal in a brief surge of energy. For the next minute, you have advantage on ability checks and attack rolls that would forcefully move another creature, and the distance they would be moved increases by 5 feet.\n</font>
             <font size="24">\nideal of the Tranquil</font><font face="sans-serif">\nWhen you finish a short or long rest, you gain a number of temporary force points equal to half your Wisdom or Charisma modifier (your choice, minimum of one). When you would spend a force point while you have temporary force points, the temporary force points are spent first. All temporary force points are lost at the end of your next short or long rest.\n"    "Additionally, as an action, you can manifest this ideal in a brief surge of energy. You regain a number of force points equal to half your Wisdom or Charisma modifier (your choice, minimum of one).\n</font>
             <font size="24">\nideal of the vigorous</font><font face="sans-serif">\nWhen you roll a Hit Die to regain hit points, you may use your Wisdom or Charisma modifier in place of your Constitution modifier when determining the number of hit points you regain.\n"    "Additionally, as an action, you can manifest this ideal in a brief surge of energy. You gain a number of temporary hit points equal to half your sentinel level + your Wisdom or Charisma modifier (your choice,minimum of one).\n</font></string>
-    <string name="path_of_the_corsair"><font color="#D4af37">Path of the Corsair</font></string>
-    <string name="path_of_focus"><font color="#D4af37">Path of Focus</font></string>
-    <string name="path_of_the_forceblade"><font color="#D4af37">Path of the Forceblade</font></string>
-    <string name="path_of_shadows"><font color="#D4af37">Path of Shadows</font></string>
+    <string name="path_of_the_corsair"><font color="#D4af37">Path of\nthe Corsair</font></string>
+    <string name="path_of_the_forceblade"><font color="#D4af37">Path of\nthe Forceblade</font></string>
+    <string name="path_of_focus"><font color="#D4af37">Path of\nFocus</font></string>
+    <string name="path_of_shadows"><font color="#D4af37">Path of\nShadows</font></string>
     <string name="kinetic_combat">Kinetic\nCombat</string>
 
 
@@ -828,7 +828,8 @@
     <!--Info menu-->
     <string name="armor_menu"><font color="#d4af37">Armor</font></string>
     <string name="weapons_menu"><font color="#d4af37">Weapons</font></string>
-    <string name="adventuring_gear_menu"><font color="#d4af37">Adventuring Gear</font></string>
+    <string name="armors_and_shields_menu"><font color="#d4af37">Armors &amp;\nShields</font></string>
+    <string name="adventuring_gear_menu"><font color="#d4af37">Adventuring\nGear</font></string>
     <string name="tools_menu"><font color="#d4af37">Tools</font></string>
     <string name="expenses_menu"><font color="#d4af37">Expenses</font></string>
     <string name="wealth_menu"><font color="#d4af37">Wealth</font></string>

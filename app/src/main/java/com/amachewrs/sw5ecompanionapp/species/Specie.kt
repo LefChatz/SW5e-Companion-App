@@ -1,18 +1,24 @@
 package com.amachewrs.sw5ecompanionapp.species
+import android.annotation.SuppressLint
+import android.content.res.Resources
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Specie(
     var name: String="Empty_Name",
-    var printname: CharSequence="Empty Name",
+    var printName: CharSequence="Empty Name",
     var specieInfoType: String="normal",
     var infoText: CharSequence="Placeholder for the Specie's info",
     var traitsText: CharSequence="Placeholder for the Specie's traits",
     var imageID: Int=0,
-    var buttonimageID: Int=0,
+    var buttonImageID: Int=0,
     var isBig: Boolean = false): Parcelable
 
+@SuppressLint("DiscouragedApi")
+fun Specie.getLayoutID(resources: Resources, packageName: String): Int{
+    return resources.getIdentifier(this.name,"layout",packageName)
+}
 fun Specie?.toSpecie(): Specie {
     return this ?: Specie("Unknown Specie")
 }

@@ -11,7 +11,6 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.HorizontalScrollView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -22,6 +21,7 @@ import androidx.core.view.contains
 import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.ClassOperativeBinding
+import com.amachewrs.sw5ecompanionapp.utility.Utilities.Companion.showSnackBar
 import kotlin.math.absoluteValue
 
 class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
@@ -40,7 +40,7 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
     private lateinit var beguilerList: List<CharSequence>
     private lateinit var lethalityList: List<CharSequence>
     private lateinit var sharpshooterList: List<CharSequence>
-    private val tabList = listOf("Info","Base","Table","Operative Exploits","Acquisitions Practice","Beguiler Practice","Lethality Practice","Sharpshooter Practice")
+    private val tabList = listOf("Info","Base","Table","Operative\nExploits","Acquisitions\nPractice","Beguiler\nPractice","Lethality\nPractice","Sharpshooter\nPractice")
 
     private lateinit var gestdect: GestureDetector
     private var rect = Rect()
@@ -150,7 +150,7 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
                 table=inflater.inflate(R.layout.class_operative_table,ll,true)
                 hscroll=table.findViewById(R.id.operativetablehscroll)
             }
-            "Operative Exploits"->{
+            "Operative\nExploits"->{
                 tempView = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 temptxt=tempView.findViewById(R.id.contenttext)
                 tempView.findViewById<TextView>(R.id.headertext).text=getText(R.string.operative_exploitsHeader)
@@ -158,7 +158,7 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
                 temptxt.typeface = resources.getFont(R.font.starjedi)
                 ll.addView(tempView)
             }
-            "Acquisitions Practice"->{
+            "Acquisitions\nPractice"->{
                 for(i in acquisitionsList.indices step 2 ){
                     if(i==0){
                         txt.text=acquisitionsList[i]
@@ -177,7 +177,7 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
                 }
 
             }
-            "Beguiler Practice"->{
+            "Beguiler\nPractice"->{
                 for(i in beguilerList.indices step 2 ){
                     if(i==0){
                         txt.text=beguilerList[i]
@@ -195,7 +195,7 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
                     }
                 }
             }
-            "Lethality Practice"->{
+            "Lethality\nPractice"->{
                 for(i in lethalityList.indices step 2 ){
                     if(i==0){
                         txt.text=lethalityList[i]
@@ -213,7 +213,7 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
                     }
                 }
             }
-            "Sharpshooter Practice"->{
+            "Sharpshooter\nPractice"->{
                 for(i in sharpshooterList.indices step 2 ){
                     if(i==0){
                         txt.text=sharpshooterList[i]
@@ -232,10 +232,7 @@ class OperativeActivity : AppCompatActivity() , GestureDetector.OnGestureListene
                 }
 
             }
-            else->{
-                Toast.makeText(this,"Error",Toast.LENGTH_LONG)
-                    .show()
-            }
+            else->{showSnackBar("Error",binding.coord,this)}
         }
     }
 

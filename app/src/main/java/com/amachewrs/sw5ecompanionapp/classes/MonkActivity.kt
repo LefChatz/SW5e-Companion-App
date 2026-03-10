@@ -11,7 +11,6 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.HorizontalScrollView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -22,6 +21,7 @@ import androidx.core.view.contains
 import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.ClassMonkBinding
+import com.amachewrs.sw5ecompanionapp.utility.Utilities.Companion.showSnackBar
 import kotlin.math.absoluteValue
 
 class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
@@ -40,7 +40,7 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
     private lateinit var echaniList: List<CharSequence>
     private lateinit var matukaiList: List<CharSequence>
     private lateinit var nightsisterList: List<CharSequence>
-    private val tabList = listOf("Info","Base","Table","Monastic Vows","Crimson Order","Echani Order","Matukai Order","Nightsister Order")
+    private val tabList = listOf("Info","Base","Table","Monastic\nVows","Crimson\nOrder","Echani\nOrder","Matukai\nOrder","Nightsister\nOrder")
 
     private lateinit var gestdect: GestureDetector
     private var rect = Rect()
@@ -157,7 +157,7 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
                 table=inflater.inflate(R.layout.class_monk_table,ll,true)
                 hscroll=table.findViewById(R.id.monktablehscroll)
             }
-            "Monastic Vows"->{
+            "Monastic\nVows"->{
                 tempView = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 temptxt=tempView.findViewById(R.id.contenttext)
                 tempView.findViewById<TextView>(R.id.headertext).text=getText(R.string.monastic_vowsHeader)
@@ -165,7 +165,7 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
                 temptxt.typeface = resources.getFont(R.font.starjedi)
                 ll.addView(tempView)
             }
-            "Crimson Order"->{
+            "Crimson\nOrder"->{
                 for(i in crimsonList.indices step 2 ){
                     if(i==0){
                         txt.text=crimsonList[i]
@@ -180,7 +180,7 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
                     }
                 }
             }
-            "Echani Order"->{
+            "Echani\nOrder"->{
                 for(i in echaniList.indices step 2 ){
                     if(i==0){
                         txt.text=echaniList[i]
@@ -198,7 +198,7 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
                     }
                 }
             }
-            "Matukai Order"->{
+            "Matukai\nOrder"->{
                 for(i in matukaiList.indices step 2 ){
                     if(i==0){
                         txt.text=matukaiList[i]
@@ -213,7 +213,7 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
                     }
                 }
             }
-            "Nightsister Order"->{
+            "Nightsister\nOrder"->{
                 for(i in nightsisterList.indices step 2 ){
                     if(i==0){
                         txt.text=nightsisterList[i]
@@ -229,10 +229,7 @@ class MonkActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
                 }
 
             }
-            else->{
-                Toast.makeText(this,"Error",Toast.LENGTH_LONG)
-                    .show()
-            }
+            else->{showSnackBar("Error",binding.coord,this)}
         }
     }
 

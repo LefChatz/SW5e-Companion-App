@@ -27,8 +27,10 @@ import com.amachewrs.sw5ecompanionapp.utility.Utilities.Companion.showSnackBar
 class SW5ECompanionApp : AppCompatActivity() {
 
     private lateinit var binding: ActivityHubBinding
+    private lateinit var aboutView: TextView
+    private lateinit var aboutItem: MenuItem
+    private lateinit var settingsMenu: PopupMenu
     private var leave=false
-    private var mode=0
     private var atAbout= false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,9 +41,23 @@ class SW5ECompanionApp : AppCompatActivity() {
         binding = ActivityHubBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.menubutton.setOnClickListener {
-            inflateSettingsMenu(binding.menubutton)
+        settingsMenu = PopupMenu(this,binding.menubutton)
+        settingsMenu.inflate(R.menu.menu_hub_attempt)
+        settingsMenu.setOnMenuItemClickListener { item: MenuItem? ->
+            when (item!!.itemId) {
+                R.id.about -> {aboutItem=item;handleAboutSwitch()}
+                R.id.report_errors -> startActivity(Intent(Intent.ACTION_SENDTO).setData(resources.getString(R.string.error_open_email).toUri()))
+            }
+            true
         }
+
+        binding.menubutton.setOnClickListener {
+            settingsMenu.show()
+        }
+
+        aboutView = layoutInflater.inflate(R.layout.universal_textview_nofont_gold,binding.scrolly,false).findViewById(R.id.textview)
+        aboutView.text = resources.getText(R.string.about_text)
+
         onBackPressedDispatcher.addCallback(this,object: OnBackPressedCallback(true){override fun handleOnBackPressed(){backPressed()}})
     }
     fun portal(view: View){
@@ -57,29 +73,17 @@ class SW5ECompanionApp : AppCompatActivity() {
             binding.buttoncustoms.id->      startActivity(Intent(this, CustomizationsHubActivity::class.java))
         }
     }
-    private fun inflateSettingsMenu(anchor: View){
-        val popup = PopupMenu(this,anchor)
-        popup.inflate(R.menu.menu_hub_attempt)
-        popup.setOnMenuItemClickListener { item: MenuItem? ->
-            when (item!!.itemId) {
-                R.id.about -> handleAboutSwitch()
-                R.id.report_errors -> startActivity(Intent(Intent.ACTION_SENDTO).setData(resources.getString(R.string.error_open_email).toUri()))
-            }
-            true
-        }
-        popup.show()
-    }
 
     private fun handleAboutSwitch(){
         if (!atAbout){
             binding.scrolly.removeView(binding.constl)
-            val temptxt = layoutInflater.inflate(R.layout.universal_textview_nofont_gold,binding.scrolly,false).findViewById<TextView>(R.id.textview)
-            temptxt.text = resources.getText(R.string.about_text)
-            binding.scrolly.addView(temptxt)
+            binding.scrolly.addView(aboutView)
+            aboutItem.title = resources.getText(R.string.back_gold)
         }
         else{
-            binding.scrolly.removeAllViews()
+            binding.scrolly.removeView(aboutView)
             binding.scrolly.addView(binding.constl)
+            aboutItem.title = resources.getText(R.string.about)
         }
         atAbout=!atAbout
     }

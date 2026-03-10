@@ -11,7 +11,6 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.HorizontalScrollView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -22,6 +21,7 @@ import androidx.core.view.contains
 import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.ClassGuardianBinding
+import com.amachewrs.sw5ecompanionapp.utility.Utilities.Companion.showSnackBar
 import kotlin.math.absoluteValue
 
 class GuardianActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
@@ -40,7 +40,7 @@ class GuardianActivity : AppCompatActivity() , GestureDetector.OnGestureListener
     private lateinit var nimanList: List<CharSequence>
     private lateinit var shiendjemList: List<CharSequence>
     private lateinit var soresuList: List<CharSequence>
-    private val tabList = listOf("Info","Base","Table","Guardian Auras","Makashi Form","Niman Form","Shien/Djem So Form","Soresu Form")
+    private val tabList = listOf("Info","Base","Table","Guardian\nAuras","Makashi\nForm","Niman\nForm","Shien/Djem So\nForm","Soresu\nForm")
 
     private lateinit var gestdect: GestureDetector
     private var rect = Rect()
@@ -151,7 +151,7 @@ class GuardianActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 table=inflater.inflate(R.layout.class_guardian_table,ll,true)
                 hscroll=table.findViewById(R.id.guardiantablehscroll)
             }
-            "Guardian Auras"->{
+            "Guardian\nAuras"->{
                 tempView = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 val temptxt=tempView.findViewById<TextView>(R.id.contenttext)
                 tempView.findViewById<TextView>(R.id.headertext).text=getText(R.string.guardian_aurasHeader)
@@ -159,7 +159,7 @@ class GuardianActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 temptxt.typeface = resources.getFont(R.font.starjedi)
                 ll.addView(tempView)
             }
-            "Makashi Form"->{
+            "Makashi\nForm"->{
                 for(i in makashiList.indices step 2 ){
                     if(i==0){
                         txt.text=makashiList[i]
@@ -178,7 +178,7 @@ class GuardianActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 }
 
             }
-            "Niman Form"->{
+            "Niman\nForm"->{
                 for(i in nimanList.indices step 2 ){
                     if(i==0){
                         txt.text=nimanList[i]
@@ -196,7 +196,7 @@ class GuardianActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                     }
                 }
             }
-            "Shien/Djem So Form"->{
+            "Shien/Djem So\nForm"->{
                 for(i in shiendjemList.indices step 2 ){
                     if(i==0){
                         txt.text=shiendjemList[i]
@@ -214,7 +214,7 @@ class GuardianActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                     }
                 }
             }
-            "Soresu Form"->{
+            "Soresu\nForm"->{
                 for(i in soresuList.indices step 2 ){
                     if(i==0){
                         txt.text=soresuList[i]
@@ -233,10 +233,7 @@ class GuardianActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 }
 
             }
-            else->{
-                Toast.makeText(this,"Error",Toast.LENGTH_LONG)
-                    .show()
-            }
+            else->{showSnackBar("Error",binding.coord,this)}
         }
     }
 

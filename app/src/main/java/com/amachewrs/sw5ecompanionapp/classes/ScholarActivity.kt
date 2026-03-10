@@ -12,7 +12,6 @@ import android.view.View
 import android.widget.HorizontalScrollView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -23,6 +22,7 @@ import androidx.core.view.contains
 import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.ClassScholarBinding
+import com.amachewrs.sw5ecompanionapp.utility.Utilities.Companion.showSnackBar
 import kotlin.math.absoluteValue
 
 class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
@@ -44,7 +44,7 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
     private lateinit var politicianList: List<CharSequence>
     private lateinit var tacticianList: List<CharSequence>
     private lateinit var discoveriesList: List<CharSequence>
-    private val tabList = listOf("Info","Base","Tables","Discoveries","Gambler Pursuit","Physician Pursuit","Politician Pursuit","Tactician Pursuit")
+    private val tabList = listOf("Info","Base","Tables","Discoveries","Gambler\nPursuit","Physician\nPursuit","Politician\nPursuit","Tactician\nPursuit")
 
     private lateinit var tempParams: LinearLayout.LayoutParams
     private lateinit var gestdect: GestureDetector
@@ -175,7 +175,7 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                     ll.addView(tempView)
                 }
             }
-            "Gambler Pursuit"->{
+            "Gambler\nPursuit"->{
                 for(i in gamblerList.indices step 2 ){
                     if(i==0){
                         txt.text=gamblerList[i]
@@ -204,7 +204,7 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                 }
 
             }
-            "Physician Pursuit"->{
+            "Physician\nPursuit"->{
                 for(i in physicianList.indices step 2 ){
                     if(i==0){
                         txt.text=physicianList[i]
@@ -232,7 +232,7 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                     }
                 }
             }
-            "Politician Pursuit"->{
+            "Politician\nPursuit"->{
                 for(i in politicianList.indices step 2 ){
                     if(i==0){
                         txt.text=politicianList[i]
@@ -259,7 +259,7 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                     }
                 }
             }
-            "Tactician Pursuit"->{
+            "Tactician\nPursuit"->{
                 for(i in tacticianList.indices step 2 ){
                     if(i==0){
                         txt.text=tacticianList[i]
@@ -288,10 +288,7 @@ class ScholarActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                 }
 
             }
-            else->{
-                Toast.makeText(this,"Error",Toast.LENGTH_LONG)
-                    .show()
-            }
+            else->{showSnackBar("Error",binding.coord,this)}
         }
     }
 

@@ -11,7 +11,6 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.HorizontalScrollView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -22,6 +21,7 @@ import androidx.core.view.contains
 import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.ClassSentinelBinding
+import com.amachewrs.sw5ecompanionapp.utility.Utilities.Companion.showSnackBar
 import kotlin.math.absoluteValue
 
 class SentinelActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
@@ -40,7 +40,7 @@ class SentinelActivity : AppCompatActivity() , GestureDetector.OnGestureListener
     private lateinit var focusList: List<CharSequence>
     private lateinit var forcebladeList: List<CharSequence>
     private lateinit var shadowsList: List<CharSequence>
-    private val tabList = listOf("Info","Base","Table","Sentinel Ideals","Path of the Corsair","Path of Focus","Path of the Forceblade","Path of Shadows")
+    private val tabList = listOf("Info","Base","Table","Sentinel\nIdeals","Path of\nthe Corsair","Path of\nFocus","Path of\nthe Forceblade","Path of\nShadows")
 
     private lateinit var gestdect: GestureDetector
     private var rect = Rect()
@@ -152,7 +152,7 @@ class SentinelActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 table=inflater.inflate(R.layout.class_sentinel_table,ll,true)
                 hscroll=table.findViewById(R.id.sentineltablehscroll)
             }
-            "Sentinel Ideals"->{
+            "Sentinel\nIdeals"->{
                 tempView = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 temptxt=tempView.findViewById(R.id.contenttext)
                 tempView.findViewById<TextView>(R.id.headertext).text=getText(R.string.sentinel_idealsHeader)
@@ -160,7 +160,7 @@ class SentinelActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 temptxt.typeface = resources.getFont(R.font.starjedi)
                 ll.addView(tempView)
             }
-            "Path of the Corsair"->{
+            "Path of\nthe Corsair"->{
                 for(i in corsairList.indices step 2 ){
                     if(i==0){
                         txt.text=corsairList[i]
@@ -176,7 +176,7 @@ class SentinelActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 }
 
             }
-            "Path of Focus"->{
+            "Path of\nFocus"->{
                 for(i in focusList.indices step 2 ){
                     if(i==0){
                         txt.text=focusList[i]
@@ -191,7 +191,7 @@ class SentinelActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                     }
                 }
             }
-            "Path of the Forceblade"->{
+            "Path of\nthe Forceblade"->{
                 for(i in forcebladeList.indices step 2 ){
                     if(i==0){
                         txt.text=forcebladeList[i]
@@ -206,7 +206,7 @@ class SentinelActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                     }
                 }
             }
-            "Path of Shadows"->{
+            "Path of\nShadows"->{
                 for(i in shadowsList.indices step 2 ){
                     if(i==0){
                         txt.text=shadowsList[i]
@@ -222,10 +222,7 @@ class SentinelActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 }
 
             }
-            else->{
-                Toast.makeText(this,"Error",Toast.LENGTH_LONG)
-                    .show()
-            }
+            else->{showSnackBar("Error",binding.coord,this)}
         }
     }
 

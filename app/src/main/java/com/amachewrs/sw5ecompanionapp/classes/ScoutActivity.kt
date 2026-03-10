@@ -11,7 +11,6 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.HorizontalScrollView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -22,6 +21,7 @@ import androidx.core.view.contains
 import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.ClassScoutBinding
+import com.amachewrs.sw5ecompanionapp.utility.Utilities.Companion.showSnackBar
 import kotlin.math.absoluteValue
 
 class ScoutActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
@@ -40,7 +40,7 @@ class ScoutActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
     private lateinit var hunterList: List<CharSequence>
     private lateinit var slayerList: List<CharSequence>
     private lateinit var stalkerList: List<CharSequence>
-    private val tabList = listOf("Info","Base","Table","Scout Routines","Bulwark Technique","Hunter Technique","Slayer Technique","Stalker Technique")
+    private val tabList = listOf("Info","Base","Table","Scout\nRoutines","Bulwark\nTechnique","Hunter\nTechnique","Slayer\nTechnique","Stalker\nTechnique")
 
     private lateinit var gestdect: GestureDetector
     private var rect = Rect()
@@ -152,7 +152,7 @@ class ScoutActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                 table=inflater.inflate(R.layout.class_scout_table,ll,true)
                 hscroll=table.findViewById(R.id.scouttablehscroll)
             }
-            "Scout Routines"->{
+            "Scout\nRoutines"->{
                 tempView = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 temptxt=tempView.findViewById(R.id.contenttext)
                 tempView.findViewById<TextView>(R.id.headertext).text=getText(R.string.scout_routinesHeader)
@@ -160,7 +160,7 @@ class ScoutActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                 temptxt.typeface = resources.getFont(R.font.starjedi)
                 ll.addView(tempView)
             }
-            "Bulwark Technique"->{
+            "Bulwark\nTechnique"->{
                 for(i in bulwarkList.indices step 2 ){
                     if(i==0){
                         txt.text=bulwarkList[i]
@@ -179,7 +179,7 @@ class ScoutActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                 }
 
             }
-            "Hunter Technique"->{
+            "Hunter\nTechnique"->{
                 for(i in hunterList.indices step 2 ){
                     if(i==0){
                         txt.text=hunterList[i]
@@ -197,7 +197,7 @@ class ScoutActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                     }
                 }
             }
-            "Slayer Technique"->{
+            "Slayer\nTechnique"->{
                 for(i in slayerList.indices step 2 ){
                     if(i==0){
                         txt.text=slayerList[i]
@@ -212,7 +212,7 @@ class ScoutActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                     }
                 }
             }
-            "Stalker Technique"->{
+            "Stalker\nTechnique"->{
                 for(i in stalkerList.indices step 2 ){
                     if(i==0){
                         txt.text=stalkerList[i]
@@ -228,10 +228,7 @@ class ScoutActivity : AppCompatActivity() , GestureDetector.OnGestureListener{
                 }
 
             }
-            else->{
-                Toast.makeText(this,"Error",Toast.LENGTH_LONG)
-                    .show()
-            }
+            else->{showSnackBar("Error",binding.coord,this)}
         }
     }
 

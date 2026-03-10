@@ -175,6 +175,7 @@ class ForcecastingActivity : AppCompatActivity() {
                 item.title = getText(R.string.sortABCdown)
                 returntotop("sharp")}
             getText(R.string.casting_info)->handleInfoSwitch()
+            getText(R.string.back_gold) ->handleInfoSwitch()
             getText(R.string.Dark)->{
                 if(item.isChecked){eraselist.addAll(darkforcepowers)}
                 else{

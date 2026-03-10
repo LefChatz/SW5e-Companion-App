@@ -11,7 +11,6 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.HorizontalScrollView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -22,6 +21,7 @@ import androidx.core.view.contains
 import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.ClassConsularBinding
+import com.amachewrs.sw5ecompanionapp.utility.Utilities.Companion.showSnackBar
 import kotlin.math.absoluteValue
 
 class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
@@ -39,7 +39,7 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
     private lateinit var lightningList: List<CharSequence>
     private lateinit var sageList: List<CharSequence>
     private lateinit var suggestionList: List<CharSequence>
-    private val tabList = listOf("Info","Base","Table","Force\nEmpowered\nCastings","Way of Balance","Way of Lightning","Way of the Sage","Way of Suggestion")
+    private val tabList = listOf("Info","Base","Table","Force\nEmpowered\nCastings","Way of\nBalance","Way of\nLightning","Way of\nthe Sage","Way of\nSuggestion")
 
     private lateinit var gestdect: GestureDetector
     private lateinit var table: View
@@ -163,7 +163,7 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 temptxt.typeface = resources.getFont(R.font.starjedi)
                 ll.addView(tempbersk)
             }
-            "Way of Balance"->{
+            "Way of\nBalance"->{
                 for(i in balanceList.indices step 2 ){
                     if(i==0){
                         txt.text=balanceList[i]
@@ -178,7 +178,7 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                     }
                 }
             }
-            "Way of Lightning"->{
+            "Way of\nLightning"->{
                 for(i in lightningList.indices step 2 ){
                     if(i==0){
                         txt.text=lightningList[i]
@@ -193,7 +193,7 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                     }
                 }
             }
-            "Way of the Sage"->{
+            "Way of\nthe Sage"->{
                 for(i in sageList.indices step 2 ){
                     if(i==0){
                         txt.text=sageList[i]
@@ -208,7 +208,7 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                     }
                 }
             }
-            "Way of Suggestion"->{
+            "Way of\nSuggestion"->{
                 for(i in suggestionList.indices step 2 ){
                     if(i==0){
                         txt.text=suggestionList[i]
@@ -226,10 +226,7 @@ class ConsularActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                     }
                 }
             }
-            else->{
-                Toast.makeText(this,"Error",Toast.LENGTH_LONG)
-                    .show()
-            }
+            else->{showSnackBar("Error",binding.coord,this)}
         }
     }
 

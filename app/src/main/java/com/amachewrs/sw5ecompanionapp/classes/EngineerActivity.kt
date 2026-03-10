@@ -22,6 +22,7 @@ import androidx.core.view.contains
 import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.ClassEngineerBinding
+import com.amachewrs.sw5ecompanionapp.utility.Utilities.Companion.showSnackBar
 import kotlin.math.absoluteValue
 
 class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
@@ -42,7 +43,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
     private lateinit var armstechList: List<CharSequence>
     private lateinit var gadgeteerList: List<CharSequence>
     private lateinit var unstableList: List<CharSequence>
-    private val tabList = listOf("Info","Base","Tables","Armormech Modifications","Armstech Modifications","Gadgeteer Modifications","Armormech Engineering","Armstech Engineering","Gadgeteer Engineering","Unstable Engineering")
+    private val tabList = listOf("Info","Base","Tables","Armormech\nEngineering","Armormech\nModifications","Armstech\nEngineering","Armstech\nModifications","Gadgeteer\nEngineering","Gadgeteer\nModifications","Unstable\nEngineering")
 
     private lateinit var gestdect: GestureDetector
     private var rect = Rect()
@@ -160,7 +161,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 unsTable=inflater.inflate(R.layout.class_engineer_unstable_engineering_table,ll,true)
                 hscrollUnstable=unsTable.findViewById(R.id.class_engineer_unstable_table)
             }
-            "Armormech Modifications"->{
+            "Armormech\nModifications"->{
                 tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 temptxt=tempbersk.findViewById(R.id.contenttext)
                 tempbersk.findViewById<TextView>(R.id.headertext).text=getText(R.string.armormech_modificationsHeader)
@@ -168,7 +169,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 temptxt.typeface = resources.getFont(R.font.starjedi)
                 ll.addView(tempbersk)
             }
-            "Armstech Modifications"->{
+            "Armstech\nModifications"->{
                 tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 temptxt=tempbersk.findViewById(R.id.contenttext)
                 tempbersk.findViewById<TextView>(R.id.headertext).text=getText(R.string.armstech_modificationsHeader)
@@ -176,7 +177,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 temptxt.typeface = resources.getFont(R.font.starjedi)
                 ll.addView(tempbersk)
             }
-            "Gadgeteer Modifications"->{
+            "Gadgeteer\nModifications"->{
                 tempbersk = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
                 temptxt=tempbersk.findViewById(R.id.contenttext)
                 tempbersk.findViewById<TextView>(R.id.headertext).text=getText(R.string.gadgeteer_modificationsHeader)
@@ -184,7 +185,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 temptxt.typeface = resources.getFont(R.font.starjedi)
                 ll.addView(tempbersk)
             }
-            "Armormech Engineering"->{
+            "Armormech\nEngineering"->{
                 for(i in armormechList.indices step 2 ){
                     if(i==0){
                         txt.text=armormechList[i]
@@ -200,7 +201,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 }
 
             }
-            "Armstech Engineering"->{
+            "Armstech\nEngineering"->{
                 for(i in armstechList.indices step 2 ){
                     if(i==0){
                         txt.text=armstechList[i]
@@ -216,7 +217,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 }
 
             }
-            "Gadgeteer Engineering"->{
+            "Gadgeteer\nEngineering"->{
                 for(i in gadgeteerList.indices step 2 ){
                     if(i==0){
                         txt.text=gadgeteerList[i]
@@ -235,7 +236,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 }
 
             }
-            "Unstable Engineering"->{
+            "Unstable\nEngineering"->{
                 for(i in unstableList.indices step 2 ){
                     if(i==0){
                         txt.text=unstableList[i]
@@ -251,10 +252,7 @@ class EngineerActivity : AppCompatActivity() , GestureDetector.OnGestureListener
                 }
 
             }
-            else->{
-                Toast.makeText(this,"Error",Toast.LENGTH_LONG)
-                    .show()
-            }
+            else->{showSnackBar("Error",binding.coord,this)}
         }
     }
 
