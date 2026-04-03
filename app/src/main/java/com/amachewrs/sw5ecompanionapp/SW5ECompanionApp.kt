@@ -12,6 +12,9 @@ import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.backgrounds.BackgroundsActivity
 import com.amachewrs.sw5ecompanionapp.classes.ClassesActivity
 import com.amachewrs.sw5ecompanionapp.customization.CustomizationsHubActivity
@@ -35,10 +38,14 @@ class SW5ECompanionApp : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityHubBinding.inflate(layoutInflater)
         enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
+            cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
+            WindowInsetsCompat.CONSUMED
+        }
 
         this.setTheme(R.style.Base_ThemeOverlay_AppCompat_Dark_NoActionBar)
-        binding = ActivityHubBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         settingsMenu = PopupMenu(this,binding.menubutton)
@@ -57,21 +64,23 @@ class SW5ECompanionApp : AppCompatActivity() {
 
         aboutView = layoutInflater.inflate(R.layout.universal_textview_nofont_gold,binding.scrolly,false).findViewById(R.id.textview)
         aboutView.text = resources.getText(R.string.about_text)
+        aboutView.updatePadding(0,0,0,50)
 
         onBackPressedDispatcher.addCallback(this,object: OnBackPressedCallback(true){override fun handleOnBackPressed(){backPressed()}})
     }
     fun portal(view: View){
-        when(view.id){
-            binding.buttonclasses.id->      startActivity(Intent(this, ClassesActivity::class.java))
-            binding.buttonbackgrounds.id->  startActivity(Intent(this, BackgroundsActivity::class.java))
-            binding.buttonspecies.id->      startActivity(Intent(this, SpeciesActivity::class.java))
-            binding.buttonforce.id->        startActivity(Intent(this, ForcecastingActivity::class.java))
-            binding.buttonequipment.id->    startActivity(Intent(this, EquipmentActivity::class.java))
-            binding.buttontech.id->         startActivity(Intent(this, TechcastingActivity::class.java))
-            binding.buttonfeats.id->        startActivity(Intent(this, FeatsActivity::class.java))
-            binding.buttonmaneuvers.id->    startActivity(Intent(this, ManeuversActivity::class.java))
-            binding.buttoncustoms.id->      startActivity(Intent(this, CustomizationsHubActivity::class.java))
-        }
+        startActivity(Intent(this, when(view.id){
+            binding.buttonclasses.id->       ClassesActivity::class.java
+            binding.buttonbackgrounds.id->   BackgroundsActivity::class.java
+            binding.buttonspecies.id->       SpeciesActivity::class.java
+            binding.buttonforce.id->         ForcecastingActivity::class.java
+            binding.buttonequipment.id->     EquipmentActivity::class.java
+            binding.buttontech.id->          TechcastingActivity::class.java
+            binding.buttonfeats.id->         FeatsActivity::class.java
+            binding.buttonmaneuvers.id->     ManeuversActivity::class.java
+            binding.buttoncustoms.id->       CustomizationsHubActivity::class.java
+            else ->                          ClassesActivity::class.java
+        }))
     }
 
     private fun handleAboutSwitch(){
@@ -91,7 +100,7 @@ class SW5ECompanionApp : AppCompatActivity() {
         if (!leave) {
             if (atAbout) handleAboutSwitch()
             else{
-                showSnackBar("press back again to exit the app",binding.scrolly,this)
+                showSnackBar("press back again to exit the app",binding.coord,this)
                 leave=true
                 Handler(Looper.getMainLooper()).postDelayed({leave=false},3000)
             }

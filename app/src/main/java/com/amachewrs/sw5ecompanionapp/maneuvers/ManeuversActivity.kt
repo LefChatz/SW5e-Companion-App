@@ -232,8 +232,8 @@ class ManeuversActivity : AppCompatActivity() {
         starPaint.letterSpacing = 0.1F
 
         for(i in 5..maneuverTextArray.size step 6){
-            val isbig = starPaint.measureText(maneuverTextArray[i-5] as String?) > (windowManager.currentWindowMetrics.bounds.width() - 705)
-            getManeuverList.add(Maneuver(maneuverTextArray[i-5].toString(),maneuverTextArray[i-4].toString(),maneuverTextArray[i-3].toString(),maneuverTextArray[i-2].toString(),maneuverTextArray[i-1],isbig))
+            val isBig = resources.displayMetrics.run{starPaint.measureText(maneuverTextArray[i-5] as String?) > (widthPixels/density- 35)}
+            getManeuverList.add(Maneuver(maneuverTextArray[i-5].toString(),maneuverTextArray[i-4].toString(),maneuverTextArray[i-3].toString(),maneuverTextArray[i-2].toString(),maneuverTextArray[i-1],isBig))
         }
 
         return getManeuverList

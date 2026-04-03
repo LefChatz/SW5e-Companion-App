@@ -283,16 +283,16 @@ class ForcecastingActivity : AppCompatActivity() {
     }
     private fun getForcepowers(): MutableList<Forcepower>{
         val getForcepowerList = mutableListOf<Forcepower>()
-        val tempForcepowerList=resources.getTextArray(R.array.forcepowerlist)
+        val forcepowerTextArray=resources.getTextArray(R.array.forcepowerlist)
 
         val starPaint = Paint()
         starPaint.textSize = 24F
         starPaint.typeface = starjedi
         starPaint.letterSpacing = 0.1F
 
-        for(i in 8..tempForcepowerList.size step 9){
-            val isbig = starPaint.measureText(tempForcepowerList[i-8] as String?) > (windowManager.currentWindowMetrics.bounds.width() - 705)
-            getForcepowerList.add(Forcepower(tempForcepowerList[i-8].toString(),tempForcepowerList[i-7],tempForcepowerList[i-6].toString(),tempForcepowerList[i-5],tempForcepowerList[i-4].toString().toInt(),tempForcepowerList[i-3].toString().toBoolean(),tempForcepowerList[i-2].toString().toBoolean(),isbig,tempForcepowerList[i]))
+        for(i in 8..forcepowerTextArray.size step 9){
+            val isBig = resources.displayMetrics.run{starPaint.measureText(forcepowerTextArray[i-8] as String?) > (widthPixels/density- 35)}
+            getForcepowerList.add(Forcepower(forcepowerTextArray[i-8].toString(),forcepowerTextArray[i-7],forcepowerTextArray[i-6].toString(),forcepowerTextArray[i-5],forcepowerTextArray[i-4].toString().toInt(),forcepowerTextArray[i-3].toString().toBoolean(),forcepowerTextArray[i-2].toString().toBoolean(),isBig,forcepowerTextArray[i]))
         }
 
         return getForcepowerList

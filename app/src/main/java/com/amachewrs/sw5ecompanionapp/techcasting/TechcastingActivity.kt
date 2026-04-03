@@ -27,10 +27,10 @@ import java.util.LinkedList
 
 class TechcastingActivity : AppCompatActivity() {
     private lateinit var binding: TechcastingBinding
-    private lateinit var techpoweradapter: TechcastingAdapter
+    private lateinit var techpowerAdapter: TechcastingAdapter
     private var techpowerList=mutableListOf<Techpower>()
     private var adapterTechpowerList=mutableListOf<Techpower>()
-    private var currenttechpowerlist=mutableListOf<Techpower>()
+    private var currentTechpowerList=mutableListOf<Techpower>()
     private val eraselist: MutableList<Techpower> = mutableListOf()
 
     private val favTechpowerList: MutableList<String> = mutableListOf()
@@ -40,8 +40,8 @@ class TechcastingActivity : AppCompatActivity() {
 
     private var atInfo = false
     private var infoGenerated = false
-    private lateinit var techmenu: Menu
-    private lateinit var starjedi: Typeface
+    private lateinit var techMenu: Menu
+    private lateinit var starJedi: Typeface
     private lateinit var inflater: LayoutInflater
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,7 +59,7 @@ class TechcastingActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         inflater = layoutInflater
-        starjedi = resources.getFont(R.font.starjedi)
+        starJedi = resources.getFont(R.font.starjedi)
 
         favSharedPreferences=getSharedPreferences("techcasting", MODE_PRIVATE)
         favTechpowerList.addAll(favSharedPreferences.getStringSet("favorite_tech_powers", mutableSetOf())?.toList()!!)
@@ -67,9 +67,9 @@ class TechcastingActivity : AppCompatActivity() {
         techpowerList.addAll(getTechpowers())
 
         adapterTechpowerList.addAll(techpowerList.sortTechpowerByName())
-        techpoweradapter = TechcastingAdapter(this,adapterTechpowerList,favTechpowerList)
-        binding.reclview.adapter = techpoweradapter
-        currenttechpowerlist.addAll(techpowerList.sortTechpowerByName())
+        techpowerAdapter = TechcastingAdapter(this,adapterTechpowerList,favTechpowerList)
+        binding.reclview.adapter = techpowerAdapter
+        currentTechpowerList.addAll(techpowerList.sortTechpowerByName())
 
         binding.BackButton.setOnClickListener{returntomain()}
 
@@ -79,7 +79,7 @@ class TechcastingActivity : AppCompatActivity() {
             override fun onQueryTextChange(enttext: String?): Boolean {
                 returntotop("sharp")
                 if(enttext.isNullOrBlank()){
-                    techpoweradapter.setTechpowerList(currenttechpowerlist.filter{it !in eraselist}.toMutableList())
+                    techpowerAdapter.setTechpowerList(currentTechpowerList.filter{it !in eraselist}.toMutableList())
                     object : CountDownTimer(1000, 1001) {
                         override fun onTick(millisUntilFinished: Long) {
                         }
@@ -92,10 +92,10 @@ class TechcastingActivity : AppCompatActivity() {
                 else {
                     searchedText= enttext.trim().replace(" ","_")
                     if(techpowerList.getNameList().none { it.contains(searchedText,true)}){
-                        techpoweradapter.setTechpowerList(mutableListOf(Techpower("NoSuchTechpower")))
+                        techpowerAdapter.setTechpowerList(mutableListOf(Techpower("NoSuchTechpower")))
                     }
                     else {
-                        techpoweradapter.setTechpowerList(currenttechpowerlist.filter{(it.techpowername.contains(searchedText,true)) and (it !in eraselist)}.toMutableList())
+                        techpowerAdapter.setTechpowerList(currentTechpowerList.filter{(it.techpowername.contains(searchedText,true)) and (it !in eraselist)}.toMutableList())
                     }
                 }
                 return false
@@ -103,7 +103,7 @@ class TechcastingActivity : AppCompatActivity() {
             override fun onQueryTextSubmit(enttext: String?): Boolean {
                 returntotop("sharp")
                 if(enttext.isNullOrBlank()){
-                    techpoweradapter.setTechpowerList(currenttechpowerlist.filter{it !in eraselist}.toMutableList())
+                    techpowerAdapter.setTechpowerList(currentTechpowerList.filter{it !in eraselist}.toMutableList())
                     object : CountDownTimer(1000, 999) {
                         override fun onTick(millisUntilFinished: Long) {
                         }
@@ -116,10 +116,10 @@ class TechcastingActivity : AppCompatActivity() {
                 else {
                     searchedText= enttext.trim().replace(" ","_")
                     if(techpowerList.getNameList().none { it.contains(searchedText,true)}){
-                        techpoweradapter.setTechpowerList(mutableListOf(Techpower("NoSuchTechpower")))
+                        techpowerAdapter.setTechpowerList(mutableListOf(Techpower("NoSuchTechpower")))
                     }
                     else {
-                        techpoweradapter.setTechpowerList(currenttechpowerlist.filter{(it.techpowername.contains(searchedText,true)) and (it !in eraselist)}.toMutableList())
+                        techpowerAdapter.setTechpowerList(currentTechpowerList.filter{(it.techpowername.contains(searchedText,true)) and (it !in eraselist)}.toMutableList())
                     }
                 }
                 return false
@@ -139,7 +139,7 @@ class TechcastingActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_techcasting,menu)
         if (menu != null){
-            techmenu = menu
+            techMenu = menu
         }
         binding.toolbar.overflowIcon = AppCompatResources.getDrawable(this, R.drawable.downarrowgold)
         return super.onCreateOptionsMenu(menu)
@@ -148,23 +148,23 @@ class TechcastingActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.title){
             getText(R.string.sortABCdown)->{
-                currenttechpowerlist=techpowerList.sortTechpowerByNameDescending()
-                techpoweradapter.setTechpowerList(adapterTechpowerList.sortTechpowerByNameDescending().filter { it !in eraselist }.toMutableList())
+                currentTechpowerList=techpowerList.sortTechpowerByNameDescending()
+                techpowerAdapter.setTechpowerList(adapterTechpowerList.sortTechpowerByNameDescending().filter { it !in eraselist }.toMutableList())
                 item.title=getText(R.string.sortABCup)
                 returntotop("sharp")}
             getText(R.string.sortABCup)->{
-                currenttechpowerlist=techpowerList.sortTechpowerByLevel()
-                techpoweradapter.setTechpowerList(adapterTechpowerList.sortTechpowerByName().sortTechpowerByLevel().filter { it !in eraselist }.toMutableList())
+                currentTechpowerList=techpowerList.sortTechpowerByLevel()
+                techpowerAdapter.setTechpowerList(adapterTechpowerList.sortTechpowerByName().sortTechpowerByLevel().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortLvldown)
                 returntotop("sharp")}
             getText(R.string.sortLvldown)->{
-                currenttechpowerlist=techpowerList.sortTechpowerByLevelDescending()
-                techpoweradapter.setTechpowerList(adapterTechpowerList.sortTechpowerByLevelDescending().filter { it !in eraselist }.toMutableList())
+                currentTechpowerList=techpowerList.sortTechpowerByLevelDescending()
+                techpowerAdapter.setTechpowerList(adapterTechpowerList.sortTechpowerByLevelDescending().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortLvlup)
                 returntotop("sharp")}
             getText(R.string.sortLvlup)->{
-                currenttechpowerlist=techpowerList.sortTechpowerByName()
-                techpoweradapter.setTechpowerList(adapterTechpowerList.sortTechpowerByName().filter { it !in eraselist }.toMutableList())
+                currentTechpowerList=techpowerList.sortTechpowerByName()
+                techpowerAdapter.setTechpowerList(adapterTechpowerList.sortTechpowerByName().filter { it !in eraselist }.toMutableList())
                 item.title = getText(R.string.sortABCdown)
                 returntotop("sharp")}
             getText(R.string.casting_info) ->handleInfoSwitch()
@@ -173,7 +173,7 @@ class TechcastingActivity : AppCompatActivity() {
                 if (item.isChecked) eraselist.removeAll{(it.techpowername !in favTechpowerList)}
                 else eraselist.addAll(techpowerList.filter {it.techpowername !in favTechpowerList})
 
-                techpoweradapter.setTechpowerList(currenttechpowerlist.filter{(it !in eraselist) and if(searchedText.isNotBlank()){it.techpowername.contains(searchedText,true)}else{true}}.toMutableList())
+                techpowerAdapter.setTechpowerList(currentTechpowerList.filter{(it !in eraselist) and if(searchedText.isNotBlank()){it.techpowername.contains(searchedText,true)}else{true}}.toMutableList())
                 item.isChecked= !item.isChecked
                 favChecked= !favChecked
             }
@@ -188,14 +188,14 @@ class TechcastingActivity : AppCompatActivity() {
             binding.scrolly.visibility = View.VISIBLE
             if (!infoGenerated) generateInfo()
             binding.scrolly.scrollTo(0,0)
-            techmenu.forEach { if(it.order!=2)it.isVisible=false else it.title = resources.getText(R.string.back_gold) }
+            techMenu.forEach { if(it.order!=2)it.isVisible=false else it.title = resources.getText(R.string.back_gold) }
         }
         else {
             binding.scrolly.visibility = View.GONE
             binding.reclview.visibility = View.VISIBLE
             binding.bottomNavigationView.visibility = View.VISIBLE
             binding.floatingActionButton.visibility = View.VISIBLE
-            techmenu.forEach { if(it.order!=2)it.isVisible=true else it.title = resources.getText(R.string.casting_info) }
+            techMenu.forEach { if(it.order!=2)it.isVisible=true else it.title = resources.getText(R.string.casting_info) }
             returntotop("sharp")
         }
         atInfo=!atInfo
@@ -207,28 +207,28 @@ class TechcastingActivity : AppCompatActivity() {
         val txt = inflater.inflate(R.layout.universal_textview_starjedi_gold,ll,false)
         var temptxt = txt.findViewById<TextView>(R.id.textview)
         temptxt.text = infoHeap.poll()
-        temptxt.typeface = starjedi
+        temptxt.typeface = starJedi
 
         ll.addView(txt)
         for (i in 2..18){
             if (i !in setOf(5,6,7)) {
-                val tempview = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
+                val tempView = inflater.inflate(R.layout.universal_title_goldbar_text_textview,ll,false)
 
-                tempview.findViewById<TextView>(R.id.headertext).text=infoHeap.poll()
-                temptxt = tempview.findViewById(R.id.contenttext)
+                tempView.findViewById<TextView>(R.id.headertext).text=infoHeap.poll()
+                temptxt = tempView.findViewById(R.id.contenttext)
                 temptxt.text=infoHeap.poll()
 
-                if (i in setOf(8,11,13,14,15)) temptxt.typeface = starjedi
-                ll.addView(tempview)
+                if (i in setOf(8,11,13,14,15)) temptxt.typeface = starJedi
+                ll.addView(tempView)
             }
             else{
-                val tempview = inflater.inflate(R.layout.universal_textview_nofont_gold,ll,false)
+                val tempView = inflater.inflate(R.layout.universal_textview_nofont_gold,ll,false)
 
-                temptxt = tempview.findViewById(R.id.textview)
+                temptxt = tempView.findViewById(R.id.textview)
                 temptxt.text = infoHeap.poll()
-                if(i != 5) temptxt.typeface = starjedi
+                if(i != 5) temptxt.typeface = starJedi
 
-                ll.addView(tempview)
+                ll.addView(tempView)
 
                 if(i == 6) ll.addView(generateTable(infoHeap,inflater.inflate(R.layout.two_column_table,ll,false).findViewById(R.id.table)))
             }
@@ -273,12 +273,12 @@ class TechcastingActivity : AppCompatActivity() {
 
         val starPaint = Paint()
         starPaint.textSize = 24F
-        starPaint.typeface = starjedi
+        starPaint.typeface = starJedi
         starPaint.letterSpacing = 0.1F
 
         for(i in 9..techpowerTextArray.size step 10){
-            val isbig = starPaint.measureText(techpowerTextArray[i-9] as String?) > (windowManager.currentWindowMetrics.bounds.width() - 705)
-            getTechpowerList.add(Techpower(techpowerTextArray[i-9].toString(),techpowerTextArray[i-8],techpowerTextArray[i-7].toString(),techpowerTextArray[i-6].toString().toInt(),techpowerTextArray[i-5].toString(),techpowerTextArray[i-4].toString(),techpowerTextArray[i-3].toString().toBoolean(),techpowerTextArray[i-2].toString(),isbig,techpowerTextArray[i]))
+            val isBig = resources.displayMetrics.run{starPaint.measureText(techpowerTextArray[i-9] as String?) > (widthPixels/density- 35)}
+            getTechpowerList.add(Techpower(techpowerTextArray[i-9].toString(),techpowerTextArray[i-8],techpowerTextArray[i-7].toString(),techpowerTextArray[i-6].toString().toInt(),techpowerTextArray[i-5].toString(),techpowerTextArray[i-4].toString(),techpowerTextArray[i-3].toString().toBoolean(),techpowerTextArray[i-2].toString(),isBig,techpowerTextArray[i]))
 
         }
         return getTechpowerList
