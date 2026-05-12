@@ -24,6 +24,7 @@ import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.getNameLis
 import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.sortEquipmentByName
 import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.sortEquipmentByNameDescending
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlin.math.max
 
 
 class AllActivity : AppCompatActivity() {
@@ -59,7 +60,9 @@ class AllActivity : AppCompatActivity() {
         enableEdgeToEdge()
         ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
             cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
-            binding.bottomNavigationView.updatePadding(0,0,0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom)
+            binding.bottomNavigationView.updatePadding(0,0,0,
+                max(windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom,windowInsets.getInsets(WindowInsetsCompat.Type.ime()).bottom)
+            )
             WindowInsetsCompat.CONSUMED
         }
 
@@ -95,7 +98,7 @@ class AllActivity : AppCompatActivity() {
                 else {
                     searchedText= enttext.trim().replace(" ","_")
                     if(equipmentList.getNameList().none { it.contains(searchedText,true)}){
-                        equipmentAdapter.setEquipmentList(mutableListOf(Equipment("NoSuchEquipment","NoSuchEquipment")))
+                        equipmentAdapter.setEquipmentList(mutableListOf(Equipment("noEquipment")))
                     }
                     else {
                         updateAdapterList()
@@ -119,7 +122,7 @@ class AllActivity : AppCompatActivity() {
                 else {
                     searchedText= enttext.trim().replace(" ","_")
                     if(equipmentList.getNameList().none { it.contains(searchedText,true)}){
-                        equipmentAdapter.setEquipmentList(mutableListOf(Equipment("NoSuchEquipment")))
+                        equipmentAdapter.setEquipmentList(mutableListOf(Equipment("noEquipment")))
                     }
                     else {
                         updateAdapterList()

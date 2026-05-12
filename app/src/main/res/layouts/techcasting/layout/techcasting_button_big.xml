@@ -17,6 +17,7 @@
         android:fontFamily="@font/starjedi"
         android:letterSpacing="0.1"
         android:textAlignment="gravity"
+        android:gravity="center|start|bottom"
         android:textColor="@color/gold"
         android:autoSizeMaxTextSize="24sp"
         android:autoSizeMinTextSize="16sp"

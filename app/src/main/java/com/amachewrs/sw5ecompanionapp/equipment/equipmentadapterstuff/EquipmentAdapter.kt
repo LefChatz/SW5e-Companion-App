@@ -19,9 +19,10 @@ import androidx.core.content.edit
 class EquipmentAdapter(private val mycontext: Context, private val dataset: MutableList<Equipment> ,private val favequipmentlist: MutableList<String>) : RecyclerView.Adapter<ViewHolder>() {
     private val currentList = dataset.toMutableList()
 
-    class EmptyEquipmentHolder(view: View) : ViewHolder(view){
-        private val emptyrelout: RelativeLayout = view.findViewById(R.id.emptyrelout)
-    }
+    class EmptyEquipmentHolder(view: View) : ViewHolder(view)
+
+    class NoEquipmentHolder(view: View) : ViewHolder(view)
+
     class EquipmentHolder(view: View) : ViewHolder(view){
         val equipmenttext: TextView = view.findViewById(R.id.table_equipmenttext)
         val details: TextView = view.findViewById(R.id.table_equipmenttext2)
@@ -29,26 +30,30 @@ class EquipmentAdapter(private val mycontext: Context, private val dataset: Muta
         val imbutton: ImageButton = view.findViewById(R.id.equipment_fav)
 
     }
+
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val view: View
         return when(viewType){
             0->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.equipment_button, viewGroup, false) ; EquipmentHolder(view) }
+            2->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.equipment_no_button, viewGroup, false) ; NoEquipmentHolder(view) }
             else->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.universal_empty_button50sp, viewGroup, false) ; EmptyEquipmentHolder(view) }
         }
-
-
-
     }
 
     override fun getItemViewType(position: Int): Int {
         return when{
-            currentList[position].isEmpty()->{1}
-            else ->{0}
+            currentList[position].equipmentname=="noEquipment"->2
+            currentList[position].isEmpty()->1
+            else ->0
         }
 
     }
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        if (viewHolder.itemViewType!=1) setEquipment(viewHolder as EquipmentHolder,currentList[position])
+        when (viewHolder.itemViewType){
+            1->{}
+            2->{}
+            else->{setEquipment(viewHolder as EquipmentHolder,currentList[position])}
+        }
     }
     fun setEquipmentList(updatedequipmentlist: List<Equipment>){
         val diffResult = DiffUtil.calculateDiff(EquipmentDiffUtilCallback(currentList,updatedequipmentlist))
@@ -57,6 +62,7 @@ class EquipmentAdapter(private val mycontext: Context, private val dataset: Muta
         diffResult.dispatchUpdatesTo(this)
 
     }
+
     override fun getItemCount() = currentList.size
 
     private fun updatefav(name: String, equipmentbutton: View){
@@ -72,6 +78,7 @@ class EquipmentAdapter(private val mycontext: Context, private val dataset: Muta
             putStringSet("favequipmentlist", favequipmentlist.toMutableSet())
         }
     }
+
     private fun setEquipment(view: EquipmentHolder, equipment: Equipment){
         view.equipmenttext.text = equipment.printedname
         view.equipmenttext.typeface = mycontext.resources.getFont(R.font.starjedi)

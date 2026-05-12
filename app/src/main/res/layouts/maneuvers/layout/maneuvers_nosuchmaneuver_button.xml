@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<RelativeLayout android:id="@+id/relayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50sp"
-    android:id="@+id/emptyrelout"
-    >
+    android:layout_height="50dp">
+
     <TextView
         android:id="@+id/maneuvers_nosuchmaneuvertext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:text="@string/maneuvers_no_such_maneuver_found"
+        android:paddingHorizontal="5dp"
+        android:autoSizeMaxTextSize="22dp"
+        android:autoSizeMinTextSize="12dp"
+        android:autoSizeStepGranularity="1dp"
+        android:autoSizeTextType="uniform"
         android:fontFamily="@font/starjedi"
+        android:letterSpacing="0.1"
+        android:textAlignment="center"
         android:textColor="@color/gold"
-        android:textSize="24sp"/>
+        android:text="@string/maneuvers_no_such_maneuver_found" />
 </RelativeLayout>

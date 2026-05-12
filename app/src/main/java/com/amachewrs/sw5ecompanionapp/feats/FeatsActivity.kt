@@ -22,6 +22,7 @@ import androidx.core.view.updatePadding
 import androidx.recyclerview.widget.RecyclerView
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.FeatsBinding
+import kotlin.math.max
 
 
 class FeatsActivity : AppCompatActivity() {
@@ -61,7 +62,9 @@ class FeatsActivity : AppCompatActivity() {
         enableEdgeToEdge()
         ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
             cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
-            binding.bottomNavigationView.updatePadding(0,0,0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom)
+            binding.bottomNavigationView.updatePadding(0,0,0,
+                max(windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom,windowInsets.getInsets(WindowInsetsCompat.Type.ime()).bottom)
+            )
             WindowInsetsCompat.CONSUMED
         }
 
@@ -545,8 +548,8 @@ class FeatsActivity : AppCompatActivity() {
         starPaint.letterSpacing = 0.1F
 
         for(i in 5..featTextArray.size step 6){
-            val isbig = starPaint.measureText(featTextArray[i-5] as String?) > (windowManager.currentWindowMetrics.bounds.width() - 705)
-            getFeatList.add(Feat(featTextArray[i-5].toString(),featTextArray[i-4].toString(),featTextArray[i-3].toString(),featTextArray[i-2].toString(),featTextArray[i-1],isbig))
+            val isBig = resources.displayMetrics.run{starPaint.measureText(featTextArray[i-5] as String?) > (widthPixels/density- 35)}
+            getFeatList.add(Feat(featTextArray[i-5].toString(),featTextArray[i-4].toString(),featTextArray[i-3].toString(),featTextArray[i-2].toString(),featTextArray[i-1],isBig))
         }
         return getFeatList
     }

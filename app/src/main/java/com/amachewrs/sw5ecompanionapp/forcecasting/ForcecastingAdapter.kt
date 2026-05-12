@@ -19,30 +19,28 @@ import androidx.core.content.edit
 
 class ForcecastingAdapter(private val myContext: Context, private val dataset: MutableList<Forcepower>, private val favlist: MutableList<String>) : RecyclerView.Adapter<ViewHolder>() {
     val levels: List<Int> = listOf(0,1,2,3,4,5,6,7,8,9)
-    class NoForcepowerHolder(view: View) : ViewHolder(view){
-        /*private val noForcepowerText: TextView = view.findViewById(R.id.forcecasting_nosuchforcepowertext)*/
-    }
+    class NoForcepowerHolder(view: View) : ViewHolder(view)
+
     class LeveledDividerHolder(view: View) : ViewHolder(view){
         val lvldividertextview: TextView = view.findViewById(R.id.leveldividertextview)
     }
+
     class ForcepowerHolder(view: View) : ViewHolder(view){
         val forcepowername: TextView = view.findViewById(R.id.table_forcepower_name)
         val forcepowerdetails: TextView = view.findViewById(R.id.table_forcepower_details)
         val castingtime: TextView = view.findViewById(R.id.table_forcepower_casting_time)
         val constlout: ConstraintLayout = view.findViewById(R.id.table_forcepower_constlout)
         val imbutton: ImageButton = view.findViewById(R.id.table_forcepower_fav)
-
     }
+
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val view: View
         return when(viewType){
             0->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.forcecasting_button, viewGroup, false) ; ForcepowerHolder(view) }
             1->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.forcecasting_button_big, viewGroup, false) ; ForcepowerHolder(view) }
             2->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.forcecasting_nosuchforcepower_button, viewGroup, false) ; NoForcepowerHolder(view) }
-            3->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.forcecasting_leveldivider, viewGroup, false) ; LeveledDividerHolder(view)
-            }
-            else->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.universal_empty_button50sp, viewGroup, false) ; NoForcepowerHolder(view)
-            }
+            3->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.forcecasting_leveldivider, viewGroup, false) ; LeveledDividerHolder(view) }
+            else->{view = LayoutInflater.from(viewGroup.context).inflate(R.layout.universal_empty_button50sp, viewGroup, false) ; NoForcepowerHolder(view) }
         }
 
 
