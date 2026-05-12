@@ -24,6 +24,7 @@ import androidx.core.view.updatePadding
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.TechcastingBinding
 import java.util.LinkedList
+import kotlin.math.max
 
 class TechcastingActivity : AppCompatActivity() {
     private lateinit var binding: TechcastingBinding
@@ -51,7 +52,9 @@ class TechcastingActivity : AppCompatActivity() {
         enableEdgeToEdge()
         ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
             cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
-            binding.bottomNavigationView.updatePadding(0,0,0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom)
+            binding.bottomNavigationView.updatePadding(0,0,0,
+                max(windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom,windowInsets.getInsets(WindowInsetsCompat.Type.ime()).bottom)
+            )
             WindowInsetsCompat.CONSUMED
         }
 

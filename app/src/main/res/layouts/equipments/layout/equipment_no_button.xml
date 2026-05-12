@@ -1,10 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:id="@+id/relayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="50dp">
 
     <TextView
-        android:id="@+id/techcasting_nosuchtechpowertext"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
@@ -17,5 +17,5 @@
         android:letterSpacing="0.1"
         android:textAlignment="center"
         android:textColor="@color/gold"
-        android:text="@string/techcasting_nosuchtechpower" />
+        android:text="@string/no_such_equipment_found" />
 </RelativeLayout>
