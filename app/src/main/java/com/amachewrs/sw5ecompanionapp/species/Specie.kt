@@ -3,13 +3,14 @@ import android.annotation.SuppressLint
 import android.content.res.Resources
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
+import java.util.LinkedList
 
 @Parcelize
 data class Specie(
     var name: String="Empty_Name",
     var printName: CharSequence="Empty Name",
-    var specieInfoType: String="normal",
-    var infoText: CharSequence="Placeholder for the Specie's info",
+    var specieInfoType: Int=0,
+    var infoText: LinkedList<String> = LinkedList(mutableListOf("Placeholder for the Specie's info")),
     var traitsText: CharSequence="Placeholder for the Specie's traits",
     var imageID: Int=0,
     var buttonImageID: Int=0,
@@ -62,7 +63,6 @@ fun List<Specie>.getNameList(): List<String>{
     }
     return templist.toList()
 }
-
 fun MutableList<Specie>.getNameMutableList(): MutableList<String>{
     val templist = mutableListOf<String>()
     for(i in this){
