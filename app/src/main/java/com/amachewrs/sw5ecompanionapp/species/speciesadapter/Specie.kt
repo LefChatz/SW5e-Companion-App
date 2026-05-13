@@ -1,4 +1,4 @@
-package com.amachewrs.sw5ecompanionapp.species
+package com.amachewrs.sw5ecompanionapp.species.speciesadapter
 import android.annotation.SuppressLint
 import android.content.res.Resources
 import android.os.Parcelable
@@ -13,10 +13,12 @@ data class Specie(
     var infoText: LinkedList<String> = LinkedList(mutableListOf("Placeholder for the Specie's info")),
     var traitsText: CharSequence="Placeholder for the Specie's traits",
     var imageID: Int=0,
-    var buttonImageID: Int=0,
-    var isBig: Boolean = false): Parcelable
+    var buttonImageID: Int=0): Parcelable
 
 @SuppressLint("DiscouragedApi")
+fun Specie.isEmpty(): Boolean{
+    return name=="Empty_name"
+}
 fun Specie.getLayoutID(resources: Resources, packageName: String): Int{
     return resources.getIdentifier(this.name,"layout",packageName)
 }

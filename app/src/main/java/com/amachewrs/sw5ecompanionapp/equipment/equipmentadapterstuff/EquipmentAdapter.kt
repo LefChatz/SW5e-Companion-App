@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.amachewrs.sw5ecompanionapp.R
-import com.amachewrs.sw5ecompanionapp.spells.adapterstuff.EquipmentDiffUtilCallback
+import com.amachewrs.sw5ecompanionapp.spells.adapterstuff.SpeciesDiffUtilCallback
 import androidx.core.content.edit
 
 class EquipmentAdapter(private val mycontext: Context, private val dataset: MutableList<Equipment> ,private val favequipmentlist: MutableList<String>) : RecyclerView.Adapter<ViewHolder>() {
@@ -56,7 +56,7 @@ class EquipmentAdapter(private val mycontext: Context, private val dataset: Muta
         }
     }
     fun setEquipmentList(updatedequipmentlist: List<Equipment>){
-        val diffResult = DiffUtil.calculateDiff(EquipmentDiffUtilCallback(currentList,updatedequipmentlist))
+        val diffResult = DiffUtil.calculateDiff(SpeciesDiffUtilCallback(currentList,updatedequipmentlist))
         currentList.clear()
         currentList.addAll(updatedequipmentlist)
         diffResult.dispatchUpdatesTo(this)

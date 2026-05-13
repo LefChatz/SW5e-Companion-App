@@ -23,7 +23,6 @@ import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.EquipmentA
 import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.getNameList
 import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.sortEquipmentByName
 import com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff.sortEquipmentByNameDescending
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlin.math.max
 
 
@@ -131,10 +130,9 @@ class AllActivity : AppCompatActivity() {
                 return false
             }
         })
-        val fab: FloatingActionButton = findViewById(R.id.floatingActionButton)
-        fab.setOnClickListener{
-            returntotop("smooth")
-        }
+
+        binding.floatingActionButton.setOnClickListener{ returntotop("smooth") }
+
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 returntomain()
@@ -247,9 +245,11 @@ class AllActivity : AppCompatActivity() {
         }
         return false
     }
+
     private fun updateAdapterList(){
         equipmentAdapter.setEquipmentList(equipmentList.filter{filterEquipment(it)})
     }
+
     private fun updateSubcategoryFilter(item: MenuItem){
         if(!item.isChecked){
             addFilter(item.title.toString().trim())
@@ -259,6 +259,7 @@ class AllActivity : AppCompatActivity() {
         }
         item.isChecked=!item.isChecked
     }
+
     private fun filterEquipment(equipment: Equipment): Boolean{
         if (favchecked && equipment.equipmentname !in favouriteEquipmentList) return false
         if (searchedText.isNotEmpty() && !equipment.equipmentname.contains(searchedText,false)) return false
@@ -277,39 +278,44 @@ class AllActivity : AppCompatActivity() {
         }
         return getEquipmentsList
     }
+
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
         keepmenu=false
         return super.onPrepareOptionsMenu(menu)
     }
+
     private fun addFilter(filter: String){
         if (filter in category1Filters) {filters[cat1]!!.add(filter);return}
         if (filter in category2Filters) {filters[cat2]!!.add(filter);return}
         filters[cat1]!!.add(filter)
         filters[cat2]!!.add(filter)
     }
+
     private fun removeFilter(filter: String){
         if (filter in category1Filters) {filters[cat1]!!.remove(filter);return}
         if (filter in category2Filters) {filters[cat2]!!.remove(filter);return}
         filters[cat1]!!.remove(filter)
         filters[cat2]!!.remove(filter)
     }
+
     private fun checkEmptyCategory(){
         if (weaponFilterMenuItems.none { it.isChecked }){equipmentMenu.setGroupVisible(R.id.eqmenu_weapons_group,false);equipmentMenu.findItem(R.id.eqmenu_weapons).isChecked=false}
         if (armorFilterMenuItems.none { it.isChecked }){equipmentMenu.setGroupVisible(R.id.eqmenu_armors_group,false);equipmentMenu.findItem(R.id.eqmenu_armors_and_shields).isChecked=false}
         if (advGearFilterMenuItems.none { it.isChecked }){equipmentMenu.setGroupVisible(R.id.eqmenu_advgear_group,false);equipmentMenu.findItem(R.id.eqmenu_advgear).isChecked=false}
     }
+
     private fun returntotop(mode: String){
         when(mode){
             "smooth"->binding.reclview.smoothScrollToPosition(0)
             "sharp"->binding.reclview.scrollToPosition(0)
         }
     }
+
     private fun returntomain() {
-        equipmentPrefs.edit {
-            putStringSet("favorite_equipments", favouriteEquipmentList.toSet())
-        }
+        equipmentPrefs.edit { putStringSet("favorite_equipments", favouriteEquipmentList.toSet()) }
         finish()
     }
+
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
     }
