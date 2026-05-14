@@ -37,7 +37,7 @@ class ForcecastingActivity : AppCompatActivity() {
     private val eraselist: MutableList<Forcepower> = mutableListOf()
 
     private val favForcepowerList: MutableList<String> = mutableListOf()
-    private lateinit var favSharedPreferences: SharedPreferences
+    private lateinit var forceCastingSharedPrefs: SharedPreferences
 
     private var trimEnteredText=""
     private var darkChecked=true
@@ -69,8 +69,8 @@ class ForcecastingActivity : AppCompatActivity() {
         inflater = layoutInflater
         starjedi = resources.getFont(R.font.starjedi)
 
-        favSharedPreferences=getSharedPreferences("forcecasting", MODE_PRIVATE)
-        favForcepowerList.addAll(favSharedPreferences.getStringSet("favorite_force_powers", mutableSetOf())?.toList()!!)
+        forceCastingSharedPrefs=getSharedPreferences("forcecasting", MODE_PRIVATE)
+        favForcepowerList.addAll(forceCastingSharedPrefs.getStringSet("favorite_force_powers", mutableSetOf())?.toList()!!)
 
         forcepowerList.addAll(getForcepowers())
         adapterForcepowerList.addAll(forcepowerList)
@@ -307,7 +307,7 @@ class ForcecastingActivity : AppCompatActivity() {
     }
     fun returntomain() {
         if (!atInfo) {
-            favSharedPreferences.edit {
+            forceCastingSharedPrefs.edit {
                 putStringSet("favorite_force_powers", favForcepowerList.toMutableSet())
             }
             finish()

@@ -2,10 +2,32 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.amachewrs.sw5ecompanionapp.classes.ClassesActivity">
+    tools:context="com.amachewrs.sw5ecompanionapp.forcecasting.ForcecastingActivity">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:id="@+id/menu_sort"
+        android:orderInCategory="1"
+        android:title="@string/sortABCdown"
+        app:showAsAction="ifRoom"
+        android:iconTintMode="add"
+        android:iconTint="@color/gold"
+        />
+    <item
+        android:id="@+id/menu_info"
+        android:orderInCategory="2"
+        android:title="@string/species_info"
+        />
+    <item
+        android:id="@+id/menu_switch_expansion"
+        android:orderInCategory="4"
+        android:title="@string/ec"
+        android:checkable="true"
+        android:checked="true" />
+    <item
+        android:id="@+id/menu_fav"
+        android:orderInCategory="5"
+        android:title="@string/favorites_gold"
+        android:checkable="true"
+        android:checked="false" />
+
+
 </menu>

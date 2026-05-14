@@ -25,7 +25,8 @@ class SpeciesAdapter(private val mycontext: Context, private val dataset: Mutabl
     class NoSpecieHolder(view: View) : ViewHolder(view)
 
     class SpecieHolder(view: View) : ViewHolder(view){
-        val specietext: TextView = view.findViewById(R.id.table_specietext)
+        val buttonName: TextView = view.findViewById(R.id.table_specietext)
+        val buttonExpansion: TextView = view.findViewById(R.id.table_specieExpansion)
         val relout: RelativeLayout = view.findViewById(R.id.relayout)
         val imbutton: ImageButton = view.findViewById(R.id.specie_fav)
 
@@ -43,7 +44,6 @@ class SpeciesAdapter(private val mycontext: Context, private val dataset: Mutabl
     override fun getItemViewType(position: Int): Int {
         return when{
             currentList[position].name=="noSpecie"->2
-            currentList[position].isEmpty()->1
             else ->0
         }
 
@@ -55,10 +55,10 @@ class SpeciesAdapter(private val mycontext: Context, private val dataset: Mutabl
             else->{setSpecie(viewHolder as SpecieHolder,currentList[position])}
         }
     }
-    fun setSpecieList(updatedspecielist: List<Specie>){
-        val diffResult = DiffUtil.calculateDiff(SpeciesDiffUtilCallback(currentList,updatedspecielist))
+    fun setSpeciesList(updatedSpecieList: List<Specie>){
+        val diffResult = DiffUtil.calculateDiff(SpeciesDiffUtilCallback(currentList,updatedSpecieList))
         currentList.clear()
-        currentList.addAll(updatedspecielist)
+        currentList.addAll(updatedSpecieList)
         diffResult.dispatchUpdatesTo(this)
 
     }
@@ -80,7 +80,8 @@ class SpeciesAdapter(private val mycontext: Context, private val dataset: Mutabl
     }
 
     private fun setSpecie(view: SpecieHolder, specie: Specie){
-        view.specietext.text=specie.printName
+        view.buttonName.text = specie.printName
+        view.buttonExpansion.text = specie.expansion
         view.relout.setOnClickListener{
             mycontext.startActivity(Intent(mycontext, SpeciesDetailsActivity::class.java).putExtra("Specie",specie))
         }

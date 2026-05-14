@@ -30,30 +30,32 @@
             android:id="@+id/Title"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="70dp"
             android:autoSizeMaxTextSize="24sp"
             android:autoSizeMinTextSize="16sp"
-            android:autoSizeTextType="uniform"
             android:autoSizeStepGranularity="1sp"
-            android:text="@string/species"
-            android:textAlignment="center"
+            android:autoSizeTextType="uniform"
             android:gravity="center"
+            android:textAlignment="center"
+            android:letterSpacing="0.1"
+            android:text="@string/species"
             android:textAppearance="@style/GoldTextStarjedi"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/dummybutton"
+            app:layout_constraintStart_toEndOf="@+id/BackButton" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/dummybutton"
-            android:layout_width="80dp"
-            android:layout_height="0sp"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
             android:background="?android:attr/selectableItemBackground"
-            android:textAllCaps="false"
             android:text="@string/info"
-            android:textColor="@color/gold"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textAppearance="@style/GoldText"
+            android:autoSizeMaxTextSize="22sp"
+            android:autoSizeMinTextSize="16sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:gravity="center"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
     <ScrollView
         android:id="@+id/scrolly"
@@ -63,10 +65,5 @@
         android:paddingHorizontal="5dp"
         android:clipToPadding="false"
         >
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/ll"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"/>
     </ScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

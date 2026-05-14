@@ -1175,6 +1175,10 @@
     <string name="no_such_equipment_found">No Such Equipment Found</string>
     <string name="no_such_species_found">no such Species found</string>
     <string name="species_fav_contentdescription">Add or Remove species as a favourite</string>
+    <string name="species_info"><font color="#D4af37">Species Info</font></string>
+    <string name="ec"><font color="#D4af37">EC</font></string>
+    <string name="species_printname_traits">%1$s traits</string>
+    <string name="phb">phb</string>
 
 
     <!--Uncategorized-->

@@ -1,19 +1,25 @@
 package com.amachewrs.sw5ecompanionapp.species.speciesadapter
 import android.annotation.SuppressLint
 import android.content.res.Resources
+import android.graphics.Canvas
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.ShapeDrawable
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
+import kotlinx.parcelize.RawValue
 import java.util.LinkedList
 
 @Parcelize
+
 data class Specie(
     var name: String="Empty_Name",
     var printName: CharSequence="Empty Name",
+    var expansion: String="PHB",
     var specieInfoType: Int=0,
-    var infoText: LinkedList<String> = LinkedList(mutableListOf("Placeholder for the Specie's info")),
+    var infoTextHeap: LinkedList<String> = LinkedList(mutableListOf("Placeholder for the Specie's info")),
     var traitsText: CharSequence="Placeholder for the Specie's traits",
-    var imageID: Int=0,
-    var buttonImageID: Int=0): Parcelable
+    var imageID: String="error404",
+    var buttonImageID: String="error404"): Parcelable
 
 @SuppressLint("DiscouragedApi")
 fun Specie.isEmpty(): Boolean{
