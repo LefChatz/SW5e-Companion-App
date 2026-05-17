@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/specie_image"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="600dp"
         android:src="@drawable/error404"
         android:contentDescription="@string/bith_example" />
 
