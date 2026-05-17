@@ -12,7 +12,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.core.content.res.getDrawableOrThrow
+import androidx.core.content.edit
 import androidx.core.content.res.getIntOrThrow
 import androidx.core.content.res.getStringOrThrow
 import androidx.core.view.ViewCompat
@@ -38,9 +38,9 @@ class SpeciesActivity : AppCompatActivity() {
     private lateinit var speciesMenu:Menu
 
     private var speciesList = mutableListOf<Specie>()
-    private val favouriteSpeciesList = mutableListOf<String>()
+    private val favSpecieList = mutableListOf<String>()
     private lateinit var tempView: View
-    private lateinit var temptxt: TextView
+    private lateinit var tempTxt: TextView
     private lateinit var txt: TextView
 
     private var favChecked = false
@@ -66,10 +66,10 @@ class SpeciesActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         speciesPrefs = getSharedPreferences("species", MODE_PRIVATE)
-        favouriteSpeciesList.addAll(speciesPrefs.getStringSet("favorite_speciess", mutableSetOf())!!.toMutableList())
+        favSpecieList.addAll(speciesPrefs.getStringSet("favSpecieList", mutableSetOf())!!.toMutableList())
         
         speciesList = getSpecies()
-        speciesAdapter = SpeciesAdapter(this,speciesList, favouriteSpeciesList)
+        speciesAdapter = SpeciesAdapter(this,speciesList, favSpecieList)
         binding.reclview.adapter=speciesAdapter
         
         binding.BackButton.setOnClickListener { returnToMain() }
@@ -130,7 +130,6 @@ class SpeciesActivity : AppCompatActivity() {
                 return false
             }
         })
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -201,9 +200,9 @@ class SpeciesActivity : AppCompatActivity() {
 
         tempView=layoutInflater.inflate(R.layout.universal_title_goldbar_text_textview,binding.scrolly,false)
         tempView.findViewById<TextView>(R.id.headertext).text=getText(R.string.species_info3Header)
-        temptxt=tempView.findViewById(R.id.contenttext)
-        temptxt.text=getText(R.string.species_info3Text)
-        temptxt.typeface=resources.getFont(R.font.starjedi)
+        tempTxt=tempView.findViewById(R.id.contenttext)
+        tempTxt.text=getText(R.string.species_info3Text)
+        tempTxt.typeface=resources.getFont(R.font.starjedi)
         binding.ll.addView(tempView)
     }
 
@@ -212,7 +211,7 @@ class SpeciesActivity : AppCompatActivity() {
     }
 
     private fun filterSpecies(specie: Specie): Boolean{
-        if (favChecked && specie.name !in favouriteSpeciesList) return false
+        if (favChecked && specie.name !in favSpecieList) return false
         if (searchedText.isNotEmpty() && !specie.name.contains(searchedText,false)) return false
         if (ecChecked && specie.expansion == "EC") return false
 
@@ -227,7 +226,10 @@ class SpeciesActivity : AppCompatActivity() {
     }
 
     private fun returnToMain(){
-        if(!atInfo) finish()
+        if(!atInfo) {
+            speciesPrefs.edit { putStringSet("favSpecieList", favSpecieList.toSet()) }
+            finish()
+        }
         else handleInfoSwitch()
     }
 

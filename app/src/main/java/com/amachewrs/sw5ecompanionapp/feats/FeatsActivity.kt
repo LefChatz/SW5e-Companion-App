@@ -19,7 +19,6 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.forEach
 import androidx.core.view.get
 import androidx.core.view.updatePadding
-import androidx.recyclerview.widget.RecyclerView
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.FeatsBinding
 import kotlin.math.max
@@ -27,10 +26,9 @@ import kotlin.math.max
 
 class FeatsActivity : AppCompatActivity() {
     private lateinit var binding: FeatsBinding
-    private lateinit var reclview: RecyclerView
     private lateinit var searchView: androidx.appcompat.widget.SearchView
 
-    private lateinit var featadapter: FeatsAdapter
+    private lateinit var featAdapter: FeatsAdapter
     private var featList=mutableListOf<Feat>()
     private var adapterFeatList=mutableListOf<Feat>()
     private var currentFeatList=listOf<Feat>()
@@ -48,7 +46,7 @@ class FeatsActivity : AppCompatActivity() {
     private var filterTechLvl= 0
     private var filterForceItems = setOf<MenuItem>()
     private var filterTechItems = setOf<MenuItem>()
-    private lateinit var featmenu: Menu
+    private lateinit var featMenu: Menu
     private lateinit var infotext: TextView
     private var atInfo = false
     private var keepMenu = false
@@ -60,6 +58,7 @@ class FeatsActivity : AppCompatActivity() {
         binding = FeatsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
+        
         ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
             cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
             binding.bottomNavigationView.updatePadding(0,0,0,
@@ -82,23 +81,22 @@ class FeatsActivity : AppCompatActivity() {
         infotext.updatePadding(0,10)
         binding.coord.addView(infotext)
 
-        reclview = binding.reclview
         adapterFeatList.addAll(featList.sortFeatByName())
-        featadapter = FeatsAdapter(this,adapterFeatList,favFeatList)
-        reclview.adapter = featadapter
+        featAdapter = FeatsAdapter(this,adapterFeatList,favFeatList)
+        binding.reclview.adapter = featAdapter
         currentFeatList = featList.sortFeatByName()
 
-        binding.BackButton.setOnClickListener{returntomain()}
+        binding.BackButton.setOnClickListener{returnToMain()}
 
         searchView = binding.searchview
         searchView.setIconifiedByDefault(false)
         searchView.queryHint="Search..."
         searchView.setOnQueryTextListener(object: androidx.appcompat.widget.SearchView.OnQueryTextListener{
             override fun onQueryTextChange(enttext: String?): Boolean {
-                returntotop("sharp")
+                returnToTop("sharp")
                 if(enttext.isNullOrBlank()){
                     trimEnteredText=""
-                    featadapter.setFeatList(currentFeatList.filter{filter(it)})
+                    featAdapter.setFeatList(currentFeatList.filter{filter(it)})
                     object : CountDownTimer(1000, 1001) {
                         override fun onTick(millisUntilFinished: Long) {
                         }
@@ -110,19 +108,19 @@ class FeatsActivity : AppCompatActivity() {
                 else {
                     trimEnteredText= enttext.trim().replace(" ","_").replace("'","..").replace("-",".")
                     if(featList.getNameList().none { it.contains(trimEnteredText,true)}){
-                        featadapter.setFeatList(listOf(Feat("NoSuchFeat")))
+                        featAdapter.setFeatList(listOf(Feat("NoSuchFeat")))
                     }
                     else {
-                        featadapter.setFeatList(currentFeatList.filter { filter(it) })
+                        featAdapter.setFeatList(currentFeatList.filter { filter(it) })
                     }
                 }
                 return false
             }
             override fun onQueryTextSubmit(enttext: String?): Boolean {
-                returntotop("sharp")
+                returnToTop("sharp")
                 if(enttext.isNullOrBlank()){
                     trimEnteredText=""
-                    featadapter.setFeatList(currentFeatList.filter{filter(it)})
+                    featAdapter.setFeatList(currentFeatList.filter{filter(it)})
                     object : CountDownTimer(1000, 999) {
                         override fun onTick(millisUntilFinished: Long) {
                         }
@@ -134,10 +132,10 @@ class FeatsActivity : AppCompatActivity() {
                 else {
                     trimEnteredText= enttext.trim().replace(" ","_").replace("'","..").replace("-",".")
                     if(featList.getNameList().none { it.contains(trimEnteredText,true)}){
-                        featadapter.setFeatList(listOf(Feat("NoSuchFeat")))
+                        featAdapter.setFeatList(listOf(Feat("NoSuchFeat")))
                     }
                     else {
-                        featadapter.setFeatList(currentFeatList.filter { filter(it) })
+                        featAdapter.setFeatList(currentFeatList.filter { filter(it) })
                     }
                 }
                 return false
@@ -145,11 +143,11 @@ class FeatsActivity : AppCompatActivity() {
         })
 
 
-        binding.floatingActionButton.setOnClickListener{returntotop("smooth")}
+        binding.floatingActionButton.setOnClickListener{returnToTop("smooth")}
 
         onBackPressedDispatcher.addCallback(this, object: OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                returntomain()
+                returnToMain()
             }
         })
     }
@@ -158,10 +156,10 @@ class FeatsActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_feats,menu)
         binding.toolbar.overflowIcon = AppCompatResources.getDrawable(this, R.drawable.downarrowgold)
         if (menu != null){
-            featmenu = menu
+            featMenu = menu
         }
-        filterForceItems= setOf(featmenu.findItem(R.id.feats_menu_preq_forcecasting_1),featmenu.findItem(R.id.feats_menu_preq_forcecasting_2),featmenu.findItem(R.id.feats_menu_preq_forcecasting_3),featmenu.findItem(R.id.feats_menu_preq_forcecasting_4),featmenu.findItem(R.id.feats_menu_preq_forcecasting_5))
-        filterTechItems= setOf(featmenu.findItem(R.id.feats_menu_preq_techcasting_1),featmenu.findItem(R.id.feats_menu_preq_techcasting_2),featmenu.findItem(R.id.feats_menu_preq_techcasting_3),featmenu.findItem(R.id.feats_menu_preq_techcasting_4),featmenu.findItem(R.id.feats_menu_preq_techcasting_5))
+        filterForceItems= setOf(featMenu.findItem(R.id.feats_menu_preq_forcecasting_1),featMenu.findItem(R.id.feats_menu_preq_forcecasting_2),featMenu.findItem(R.id.feats_menu_preq_forcecasting_3),featMenu.findItem(R.id.feats_menu_preq_forcecasting_4),featMenu.findItem(R.id.feats_menu_preq_forcecasting_5))
+        filterTechItems= setOf(featMenu.findItem(R.id.feats_menu_preq_techcasting_1),featMenu.findItem(R.id.feats_menu_preq_techcasting_2),featMenu.findItem(R.id.feats_menu_preq_techcasting_3),featMenu.findItem(R.id.feats_menu_preq_techcasting_4),featMenu.findItem(R.id.feats_menu_preq_techcasting_5))
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -173,12 +171,12 @@ class FeatsActivity : AppCompatActivity() {
                 keepMenu=false
                 currentFeatList=featList.sortFeatByNameDescending()
                 item.title=getText(R.string.sortABCup)
-                returntotop("sharp")}
+                returnToTop("sharp")}
             getText(R.string.sortABCup)->{
                 keepMenu=false
                 currentFeatList=featList.sortFeatByName()
                 item.title = getText(R.string.sortABCdown)
-                returntotop("sharp")}
+                returnToTop("sharp")}
             getText(R.string.feats_info_label)->{
                 handleInfoSwitch()
                 keepMenu = false }
@@ -187,15 +185,15 @@ class FeatsActivity : AppCompatActivity() {
                 keepMenu = false }
             getText(R.string.ability_score)->{
                 if (!item.isChecked){
-                    featmenu.setGroupVisible(R.id.feats_menu_asi_group,true)
+                    featMenu.setGroupVisible(R.id.feats_menu_asi_group,true)
                     filterASI.addAll(listOf("Str","Dex","Con","Int","Wis","Cha"))
                     filters.add("ASI")
-                    featmenu.forEach { if (it.order==5) it.isChecked=true}
+                    featMenu.forEach { if (it.order==5) it.isChecked=true}
                 }
                 else {
                     filterASI.clear()
                     filters.remove("ASI")
-                    featmenu.setGroupVisible(R.id.feats_menu_asi_group,false)
+                    featMenu.setGroupVisible(R.id.feats_menu_asi_group,false)
                 }
                 item.isChecked = !item.isChecked
             }
@@ -208,21 +206,21 @@ class FeatsActivity : AppCompatActivity() {
             getText(R.string.favorites_gold)-> changeFilter("Fav",item, filters)
             getText(R.string.feats_menu_preq)->{
                 if (!item.isChecked){
-                    prereqCats.forEach{ featmenu[it].isVisible=true }
+                    prereqCats.forEach{ featMenu[it].isVisible=true }
                     filterPrereq.clear()
-                    filters.add("preq")
+                    filters.add("prereq")
                 }
                 else{
-                    prereqCats.forEach{with(featmenu[it]){
+                    prereqCats.forEach{with(featMenu[it]){
                             isVisible=false
                             isChecked=false
                     }}
-                    featmenu.setGroupVisible(R.id.feats_menu_preq_level_group,false)
-                    featmenu.setGroupVisible(R.id.feats_menu_preq_type_group,false)
-                    featmenu.setGroupVisible(R.id.feats_menu_preq_size_group,false)
-                    featmenu.setGroupVisible(R.id.feats_menu_preq_forcecasting_group,false)
-                    featmenu.setGroupVisible(R.id.feats_menu_preq_techcasting_group,false)
-                    filters.remove("preq")
+                    featMenu.setGroupVisible(R.id.feats_menu_preq_level_group,false)
+                    featMenu.setGroupVisible(R.id.feats_menu_preq_type_group,false)
+                    featMenu.setGroupVisible(R.id.feats_menu_preq_size_group,false)
+                    featMenu.setGroupVisible(R.id.feats_menu_preq_forcecasting_group,false)
+                    featMenu.setGroupVisible(R.id.feats_menu_preq_techcasting_group,false)
+                    filters.remove("prereq")
                 }
                 item.isChecked = !item.isChecked
             }
@@ -231,19 +229,19 @@ class FeatsActivity : AppCompatActivity() {
 
                     filterPrereq.add("lvl")
                     filterLevel=20
-                    featmenu.findItem(R.id.feats_menu_preq_level_1).isChecked=false
-                    featmenu.findItem(R.id.feats_menu_preq_level_2).isChecked=false
+                    featMenu.findItem(R.id.feats_menu_preq_level_1).isChecked=false
+                    featMenu.findItem(R.id.feats_menu_preq_level_2).isChecked=false
                 }
                 else{
                     filterPrereq.remove("lvl")
                 }
-                featmenu.setGroupVisible(R.id.feats_menu_preq_level_group,!item.isChecked)
+                featMenu.setGroupVisible(R.id.feats_menu_preq_level_group,!item.isChecked)
                 item.isChecked = !item.isChecked
             }
             getText(R.string.feats_menu_preq_level_1)->{
                 if (!item.isChecked){
                     filterLevel=4
-                    featmenu.findItem(R.id.feats_menu_preq_level_2).isChecked=false
+                    featMenu.findItem(R.id.feats_menu_preq_level_2).isChecked=false
                 }
                 else{
                     filterLevel=20
@@ -253,7 +251,7 @@ class FeatsActivity : AppCompatActivity() {
             getText(R.string.feats_menu_preq_level_2)->{
                 if (!item.isChecked){
                     filterLevel=12
-                    featmenu.findItem(R.id.feats_menu_preq_level_1).isChecked=false
+                    featMenu.findItem(R.id.feats_menu_preq_level_1).isChecked=false
                 }
                 else{
                     filterLevel=20
@@ -265,14 +263,14 @@ class FeatsActivity : AppCompatActivity() {
                     filterPrereq.add("Type")
                     filterType.clear()
                     filterType.addAll(setOf("humanoid","beast","droid"))
-                    featmenu.findItem(R.id.feats_menu_preq_type_1).isChecked=true
-                    featmenu.findItem(R.id.feats_menu_preq_type_2).isChecked=true
-                    featmenu.findItem(R.id.feats_menu_preq_type_3).isChecked=true
+                    featMenu.findItem(R.id.feats_menu_preq_type_1).isChecked=true
+                    featMenu.findItem(R.id.feats_menu_preq_type_2).isChecked=true
+                    featMenu.findItem(R.id.feats_menu_preq_type_3).isChecked=true
                 }
                 else{
                     filterPrereq.remove("Type")
                 }
-                featmenu.setGroupVisible(R.id.feats_menu_preq_type_group,!item.isChecked)
+                featMenu.setGroupVisible(R.id.feats_menu_preq_type_group,!item.isChecked)
                 item.isChecked = !item.isChecked
             }
             getText(R.string.feats_menu_preq_type_1)-> changeFilter("humanoid",item,filterType)
@@ -283,14 +281,14 @@ class FeatsActivity : AppCompatActivity() {
                     filterPrereq.add("Size")
                     filterSize.clear()
                     filterSize.addAll(setOf("tiny","small","medium"))
-                    featmenu.findItem(R.id.feats_menu_preq_size_1).isChecked=true
-                    featmenu.findItem(R.id.feats_menu_preq_size_2).isChecked=true
-                    featmenu.findItem(R.id.feats_menu_preq_size_3).isChecked=true
+                    featMenu.findItem(R.id.feats_menu_preq_size_1).isChecked=true
+                    featMenu.findItem(R.id.feats_menu_preq_size_2).isChecked=true
+                    featMenu.findItem(R.id.feats_menu_preq_size_3).isChecked=true
                 }
                 else{
                     filterPrereq.remove("Size")
                 }
-                featmenu.setGroupVisible(R.id.feats_menu_preq_size_group,!item.isChecked)
+                featMenu.setGroupVisible(R.id.feats_menu_preq_size_group,!item.isChecked)
                 item.isChecked = !item.isChecked
             }
             getText(R.string.feats_menu_preq_size_1)->changeFilter("tiny",item,filterSize)
@@ -305,7 +303,7 @@ class FeatsActivity : AppCompatActivity() {
                 else{
                     filterPrereq.remove("Force")
                 }
-                featmenu.setGroupVisible(R.id.feats_menu_preq_forcecasting_group,!item.isChecked)
+                featMenu.setGroupVisible(R.id.feats_menu_preq_forcecasting_group,!item.isChecked)
                 item.isChecked = !item.isChecked
             }
             getText(R.string.feats_menu_preq_forcecasting_1)->{
@@ -315,7 +313,7 @@ class FeatsActivity : AppCompatActivity() {
                 }
                 else{
                     filterForceLvl=4
-                    featmenu.findItem(R.id.feats_menu_preq_forcecasting_5).isChecked=true
+                    featMenu.findItem(R.id.feats_menu_preq_forcecasting_5).isChecked=true
                 }
                 item.isChecked = !item.isChecked
             }
@@ -326,7 +324,7 @@ class FeatsActivity : AppCompatActivity() {
                 }
                 else{
                     filterForceLvl=-1
-                    featmenu.findItem(R.id.feats_menu_preq_forcecasting_1).isChecked=true
+                    featMenu.findItem(R.id.feats_menu_preq_forcecasting_1).isChecked=true
                 }
                 item.isChecked = !item.isChecked
             }
@@ -337,7 +335,7 @@ class FeatsActivity : AppCompatActivity() {
                 }
                 else{
                     filterForceLvl=-1
-                    featmenu.findItem(R.id.feats_menu_preq_forcecasting_1).isChecked=true
+                    featMenu.findItem(R.id.feats_menu_preq_forcecasting_1).isChecked=true
                 }
                 item.isChecked = !item.isChecked
             }
@@ -348,7 +346,7 @@ class FeatsActivity : AppCompatActivity() {
                 }
                 else{
                     filterForceLvl=-1
-                    featmenu.findItem(R.id.feats_menu_preq_forcecasting_1).isChecked=true
+                    featMenu.findItem(R.id.feats_menu_preq_forcecasting_1).isChecked=true
                 }
                 item.isChecked = !item.isChecked
             }
@@ -359,7 +357,7 @@ class FeatsActivity : AppCompatActivity() {
                 }
                 else{
                     filterForceLvl=-1
-                    featmenu.findItem(R.id.feats_menu_preq_forcecasting_1).isChecked=true
+                    featMenu.findItem(R.id.feats_menu_preq_forcecasting_1).isChecked=true
                 }
                 item.isChecked = !item.isChecked
             }
@@ -372,7 +370,7 @@ class FeatsActivity : AppCompatActivity() {
                 else{
                     filterPrereq.remove("Tech")
                 }
-                featmenu.setGroupVisible(R.id.feats_menu_preq_techcasting_group,!item.isChecked)
+                featMenu.setGroupVisible(R.id.feats_menu_preq_techcasting_group,!item.isChecked)
                 item.isChecked = !item.isChecked
             }
             getText(R.string.feats_menu_preq_techcasting_1)->{
@@ -382,7 +380,7 @@ class FeatsActivity : AppCompatActivity() {
                 }
                 else{
                     filterTechLvl=4
-                    featmenu.findItem(R.id.feats_menu_preq_techcasting_5).isChecked=true
+                    featMenu.findItem(R.id.feats_menu_preq_techcasting_5).isChecked=true
                 }
                 item.isChecked = !item.isChecked
             }
@@ -393,7 +391,7 @@ class FeatsActivity : AppCompatActivity() {
                 }
                 else{
                     filterTechLvl=-1
-                    featmenu.findItem(R.id.feats_menu_preq_techcasting_1).isChecked=true
+                    featMenu.findItem(R.id.feats_menu_preq_techcasting_1).isChecked=true
                 }
                 item.isChecked = !item.isChecked
             }
@@ -404,7 +402,7 @@ class FeatsActivity : AppCompatActivity() {
                 }
                 else{
                     filterTechLvl=-1
-                    featmenu.findItem(R.id.feats_menu_preq_techcasting_1).isChecked=true
+                    featMenu.findItem(R.id.feats_menu_preq_techcasting_1).isChecked=true
                 }
                 item.isChecked = !item.isChecked
             }
@@ -415,7 +413,7 @@ class FeatsActivity : AppCompatActivity() {
                 }
                 else{
                     filterTechLvl=-1
-                    featmenu.findItem(R.id.feats_menu_preq_techcasting_1).isChecked=true
+                    featMenu.findItem(R.id.feats_menu_preq_techcasting_1).isChecked=true
                 }
                 item.isChecked = !item.isChecked
             }
@@ -426,7 +424,7 @@ class FeatsActivity : AppCompatActivity() {
                 }
                 else{
                     filterTechLvl=-1
-                    featmenu.findItem(R.id.feats_menu_preq_techcasting_1).isChecked=true
+                    featMenu.findItem(R.id.feats_menu_preq_techcasting_1).isChecked=true
                 }
                 item.isChecked = !item.isChecked
             }
@@ -435,7 +433,7 @@ class FeatsActivity : AppCompatActivity() {
                 item.isVisible=false
             }
         }
-        featadapter.setFeatList(currentFeatList.filter {filter(it)})
+        featAdapter.setFeatList(currentFeatList.filter {filter(it)})
 
         //keep menu from closing
         if (keepMenu){
@@ -450,7 +448,7 @@ class FeatsActivity : AppCompatActivity() {
                     return false
                 }
             })
-            with(featmenu.findItem(R.id.eqmenu_ok)){
+            with(featMenu.findItem(R.id.eqmenu_ok)){
                 if(!isVisible)isVisible=true
             }
         }
@@ -463,7 +461,7 @@ class FeatsActivity : AppCompatActivity() {
             binding.bottomNavigationView.visibility = View.GONE
             binding.floatingActionButton.visibility = View.GONE
             infotext.visibility = View.VISIBLE
-            featmenu.forEach {
+            featMenu.forEach {
                 menuSnapshot[it] = it.isVisible
                 if(it.order!=2)it.isVisible=false else it.title = resources.getText(R.string.back_gold)
             }
@@ -473,11 +471,12 @@ class FeatsActivity : AppCompatActivity() {
             binding.bottomNavigationView.visibility = View.VISIBLE
             binding.floatingActionButton.visibility = View.VISIBLE
             infotext.visibility = View.GONE
-            featmenu.forEach { if(it.order!=2) it.isVisible= menuSnapshot[it]!! else it.title = resources.getText(R.string.feats_info_label)}
-            returntotop("sharp")
+            featMenu.forEach { if(it.order!=2) it.isVisible= menuSnapshot[it]!! else it.title = resources.getText(R.string.feats_info_label)}
+            returnToTop("sharp")
         }
         atInfo=!atInfo
     }
+
     private fun filter(feat: Feat): Boolean{
         if (!feat.featname.contains(trimEnteredText)) return false
         if (filters.contains("ASI")){
@@ -488,7 +487,7 @@ class FeatsActivity : AppCompatActivity() {
                 if (feat.asi != "-") return false
             }
         }
-        if (filters.contains("preq")){
+        if (filters.contains("prereq")){
             if (filterPrereq.contains("lvl")){
                 if (feat.prerequisite.contains("level") && (filterLevel==4 || (feat.prerequisite.substringBefore("th level").last() == '2' && 12>=filterLevel))) return false
             }
@@ -522,18 +521,16 @@ class FeatsActivity : AppCompatActivity() {
         else filterList.remove(filter)
         item.isChecked= !item.isChecked
     }
-    private fun returntotop(mode: String){
+    private fun returnToTop(mode: String){
         when(mode){
             "smooth"->binding.reclview.smoothScrollToPosition(0)
             "sharp"->binding.reclview.scrollToPosition(0)
         }
 
     }
-    fun returntomain() {
+    fun returnToMain() {
         if (!atInfo){
-            favSharedPreferences.edit {
-                putStringSet("favorite_feats", favFeatList.toMutableSet())
-            }
+            favSharedPreferences.edit { putStringSet("favorite_feats", favFeatList.toMutableSet()) }
             finish()
         }
         else handleInfoSwitch()

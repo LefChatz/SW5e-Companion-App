@@ -44,14 +44,14 @@ class EquipmentDetailsActivity : AppCompatActivity() {
 
         binding.BackButton.setOnClickListener { returntomain() }
 
-        binding.title.text=equipment.printedname
+        binding.title.text=equipment.printedName
 
         binding.Attributes.text=equipment.attributes
 
         val temptxt = equipment.cost.toString()+" cr  "+equipment.weight+" lb"
         binding.CostWeight.text= temptxt
 
-        binding.DamageAC.text=equipment.damage_ac
+        binding.DamageAC.text=equipment.damageAc
 
         binding.Properties.text=equipment.properties
 
@@ -59,7 +59,7 @@ class EquipmentDetailsActivity : AppCompatActivity() {
 
         binding.Expansion.text=equipment.expansion
 
-        val imidentif=resources.getIdentifier("equipment${equipment.equipmentname}","drawable",packageName)
+        val imidentif=resources.getIdentifier("equipment${equipment.equipmentName}","drawable",packageName)
 
         if(imidentif!=0) {
             binding.Image.setImageResource(imidentif)

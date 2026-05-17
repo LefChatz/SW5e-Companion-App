@@ -261,8 +261,8 @@ class AllActivity : AppCompatActivity() {
     }
 
     private fun filterEquipment(equipment: Equipment): Boolean{
-        if (favchecked && equipment.equipmentname !in favouriteEquipmentList) return false
-        if (searchedText.isNotEmpty() && !equipment.equipmentname.contains(searchedText,false)) return false
+        if (favchecked && equipment.equipmentName !in favouriteEquipmentList) return false
+        if (searchedText.isNotEmpty() && !equipment.equipmentName.contains(searchedText,false)) return false
 
         if (filters.all { list -> list.value.any {equipment.attributes.contains(it,true)}}) return true
 

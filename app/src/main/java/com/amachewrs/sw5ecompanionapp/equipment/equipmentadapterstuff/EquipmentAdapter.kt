@@ -14,9 +14,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.spells.adapterstuff.EquipmentDiffUtilCallback
-import androidx.core.content.edit
 
-class EquipmentAdapter(private val mycontext: Context, private val dataset: MutableList<Equipment> ,private val favequipmentlist: MutableList<String>) : RecyclerView.Adapter<ViewHolder>() {
+class EquipmentAdapter(private val myContext: Context, dataset: MutableList<Equipment>, private val favEquipmentList: MutableList<String>) : RecyclerView.Adapter<ViewHolder>() {
     private val currentList = dataset.toMutableList()
 
     class EmptyEquipmentHolder(view: View) : ViewHolder(view)
@@ -24,10 +23,10 @@ class EquipmentAdapter(private val mycontext: Context, private val dataset: Muta
     class NoEquipmentHolder(view: View) : ViewHolder(view)
 
     class EquipmentHolder(view: View) : ViewHolder(view){
-        val equipmenttext: TextView = view.findViewById(R.id.table_equipmenttext)
+        val equipmentText: TextView = view.findViewById(R.id.table_equipmenttext)
         val details: TextView = view.findViewById(R.id.table_equipmenttext2)
-        val relout: RelativeLayout = view.findViewById(R.id.relayout)
-        val imbutton: ImageButton = view.findViewById(R.id.equipment_fav)
+        val reLayout: RelativeLayout = view.findViewById(R.id.relayout)
+        val favButton: ImageButton = view.findViewById(R.id.equipment_fav)
 
     }
 
@@ -42,7 +41,7 @@ class EquipmentAdapter(private val mycontext: Context, private val dataset: Muta
 
     override fun getItemViewType(position: Int): Int {
         return when{
-            currentList[position].equipmentname=="noEquipment"->2
+            currentList[position].equipmentName=="noEquipment"->2
             currentList[position].isEmpty()->1
             else ->0
         }
@@ -55,45 +54,42 @@ class EquipmentAdapter(private val mycontext: Context, private val dataset: Muta
             else->{setEquipment(viewHolder as EquipmentHolder,currentList[position])}
         }
     }
-    fun setEquipmentList(updatedequipmentlist: List<Equipment>){
-        val diffResult = DiffUtil.calculateDiff(EquipmentDiffUtilCallback(currentList,updatedequipmentlist))
+    fun setEquipmentList(updatedEquipmentList: List<Equipment>){
+        val diffResult = DiffUtil.calculateDiff(EquipmentDiffUtilCallback(currentList,updatedEquipmentList))
         currentList.clear()
-        currentList.addAll(updatedequipmentlist)
+        currentList.addAll(updatedEquipmentList)
         diffResult.dispatchUpdatesTo(this)
 
     }
 
     override fun getItemCount() = currentList.size
 
-    private fun updatefav(name: String, equipmentbutton: View){
-        if(name !in favequipmentlist){
-            favequipmentlist.add(name)
-            equipmentbutton.foreground=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegoldtrue)
+    private fun updateFav(name: String, equipmentButton: View){
+        if(name !in favEquipmentList){
+            favEquipmentList.add(name)
+            equipmentButton.foreground=AppCompatResources.getDrawable(myContext,R.drawable.favouritegoldtrue)
         }
         else{
-            favequipmentlist.remove(name)
-            equipmentbutton.foreground=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegold)
-        }
-        mycontext.getSharedPreferences("favequipmentlist", Context.MODE_PRIVATE).edit {
-            putStringSet("favequipmentlist", favequipmentlist.toMutableSet())
+            favEquipmentList.remove(name)
+            equipmentButton.foreground=AppCompatResources.getDrawable(myContext,R.drawable.favouritegold)
         }
     }
 
     private fun setEquipment(view: EquipmentHolder, equipment: Equipment){
-        view.equipmenttext.text = equipment.printedname
-        view.equipmenttext.typeface = mycontext.resources.getFont(R.font.starjedi)
+        view.equipmentText.text = equipment.printedName
+        view.equipmentText.typeface = myContext.resources.getFont(R.font.starjedi)
         view.details.text = equipment.attributes
-        view.relout.setOnClickListener{
-            mycontext.startActivity(Intent(mycontext, EquipmentDetailsActivity::class.java).putExtra("Equipment",equipment))
+        view.reLayout.setOnClickListener{
+            myContext.startActivity(Intent(myContext, EquipmentDetailsActivity::class.java).putExtra("Equipment",equipment))
         }
-        view.imbutton.setOnClickListener {
-            updatefav(equipment.equipmentname,view.imbutton)
+        view.favButton.setOnClickListener {
+            updateFav(equipment.equipmentName,view.favButton)
         }
-        if(equipment.equipmentname in favequipmentlist){
-            view.imbutton.foreground=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegoldtrue)
+        if(equipment.equipmentName in favEquipmentList){
+            view.favButton.foreground=AppCompatResources.getDrawable(myContext,R.drawable.favouritegoldtrue)
         }
         else{
-            view.imbutton.foreground=AppCompatResources.getDrawable(mycontext,R.drawable.favouritegold)
+            view.favButton.foreground=AppCompatResources.getDrawable(myContext,R.drawable.favouritegold)
         }
 
     }

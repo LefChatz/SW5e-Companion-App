@@ -3,18 +3,24 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="60dp"
     android:foreground="?android:attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/table_specieimage"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:src="@drawable/bithbutton"/>
 
     <TextView
         android:id="@+id/table_specietext"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="4dp"
         android:layout_marginEnd="1dp"
         android:layout_toStartOf="@+id/table_specieExpansion"
+        android:layout_toEndOf="@+id/table_specieimage"
         android:autoSizeMaxTextSize="18dp"
         android:autoSizeMinTextSize="12dp"
         android:autoSizeStepGranularity="1dp"

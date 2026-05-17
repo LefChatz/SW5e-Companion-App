@@ -1,15 +1,17 @@
+@file:Suppress("unused")
+
 package com.amachewrs.sw5ecompanionapp.equipment.equipmentadapterstuff
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Equipment(
-    var equipmentname: String="Empty_Name",
-    var printedname: CharSequence="Default Name",
+    var equipmentName: String="Empty_Name",
+    var printedName: CharSequence="Default Name",
     var attributes: String="",
     var cost: Int=0,
     var weight: Double=0.0,
-    var damage_ac: String = "",
+    var damageAc: String = "",
     var properties: String = "",
     var detailsText: CharSequence="Placeholder for the Equipment's details text",
     var expansion: String= "PHB"): Parcelable
@@ -18,52 +20,52 @@ fun Equipment?.toEquipment(): Equipment {
     return this ?: Equipment("Unknown Equipment")
 }
 fun Equipment.isEmpty(): Boolean{
-    return this.equipmentname=="Empty_Name"
+    return this.equipmentName=="Empty_Name"
 }
 fun Equipment.equalsByName(equipment: Equipment): Boolean{
-    return this.equipmentname == equipment.equipmentname
+    return this.equipmentName == equipment.equipmentName
 }
 fun MutableList<Equipment>.sortEquipmentByNameDescending(): MutableList<Equipment>{
-    return this.sortedByDescending { it.equipmentname }.toMutableList()
+    return this.sortedByDescending { it.equipmentName }.toMutableList()
 }
 fun MutableList<Equipment>.sortEquipmentByName(): MutableList<Equipment>{
-    return this.sortedBy{ it.equipmentname }.toMutableList()
+    return this.sortedBy{ it.equipmentName }.toMutableList()
 }
 fun MutableList<Equipment>.indexOfEquipmentByName(name: String): Int {
-    return this.indexOf(find{ it.equipmentname == name })
+    return this.indexOf(find{ it.equipmentName == name })
 }
 fun MutableList<Equipment>.getEquipmentByName(name: String): Equipment?{
-    return find {it.equipmentname==name}
+    return find {it.equipmentName==name}
 }
 fun MutableList<Equipment>.getEquipmentByNameOrDefault(name: String): Equipment {
-    return if(find {it.equipmentname==name}!=null){find{it.equipmentname==name}!!}else{
+    return if(find {it.equipmentName==name}!=null){find{it.equipmentName==name}!!}else{
         Equipment("Error equipment not found")
     }
 }
-fun MutableList<Equipment>.getEquipmentByNameOrPut(name: String, newequipment: Equipment): Equipment {
-    return if(find {it.equipmentname==name}!=null){find{it.equipmentname==name}!!}else{this.add(newequipment);newequipment}
+fun MutableList<Equipment>.getEquipmentByNameOrPut(name: String, newEquipment: Equipment): Equipment {
+    return if(find {it.equipmentName==name}!=null){find{it.equipmentName==name}!!}else{this.add(newEquipment);newEquipment}
 }
-@JvmName("MutableListequipmentNameList")
+@JvmName("MutableListEquipmentNameList")
 fun MutableList<Equipment>.getNameList(): List<String>{
-    val templist = mutableListOf<String>()
+    val tempList = mutableListOf<String>()
     for(i in this){
-        templist.add(i.equipmentname)
+        tempList.add(i.equipmentName)
     }
-    return templist.toList()
+    return tempList.toList()
 }
-@JvmName("ListequipmentNameList")
+@JvmName("ListEquipmentNameList")
 fun List<Equipment>.getNameList(): List<String>{
-    val templist = mutableListOf<String>()
+    val tempList = mutableListOf<String>()
     forEach{
-        templist.add(it.equipmentname)
+        tempList.add(it.equipmentName)
     }
-    return templist.toList()
+    return tempList.toList()
 }
 
 fun MutableList<Equipment>.getNameMutableList(): MutableList<String>{
-    val templist = mutableListOf<String>()
+    val tempList = mutableListOf<String>()
     for(i in this){
-        templist.add(i.equipmentname)
+        tempList.add(i.equipmentName)
     }
-    return templist
+    return tempList
 }

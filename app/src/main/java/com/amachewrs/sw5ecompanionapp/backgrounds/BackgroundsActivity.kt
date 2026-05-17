@@ -37,6 +37,7 @@ class BackgroundsActivity : AppCompatActivity() {
         binding = BackgroundsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
+
         ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
             cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
             WindowInsetsCompat.CONSUMED }

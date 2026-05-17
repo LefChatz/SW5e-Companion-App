@@ -1,12 +1,10 @@
+@file:Suppress("unused")
+
 package com.amachewrs.sw5ecompanionapp.species.speciesadapter
 import android.annotation.SuppressLint
 import android.content.res.Resources
-import android.graphics.Canvas
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.ShapeDrawable
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
-import kotlinx.parcelize.RawValue
 import java.util.LinkedList
 
 @Parcelize
@@ -21,14 +19,18 @@ data class Specie(
     var imageID: String="error404",
     var buttonImageID: String="error404"): Parcelable
 
-@SuppressLint("DiscouragedApi")
 fun Specie.isEmpty(): Boolean{
     return name=="Empty_name"
 }
-fun Specie.getLayoutID(resources: Resources, packageName: String): Int{
-    return resources.getIdentifier(this.name,"layout",packageName)
+@SuppressLint("DiscouragedApi")
+fun Specie.getImageID(resources: Resources, packageName: String): Int{
+    return resources.getIdentifier(this.imageID,"drawable",packageName)
 }
-fun Specie?.toSpecie(): Specie {
+@SuppressLint("DiscouragedApi")
+fun Specie.getButtonImageID(resources: Resources, packageName: String): Int{
+    return resources.getIdentifier(this.buttonImageID,"drawable",packageName)
+}
+fun Specie?.ensureNotEmpty(): Specie {
     return this ?: Specie("Unknown Specie")
 }
 
@@ -57,24 +59,24 @@ fun MutableList<Specie>.getSpecieByNameOrPut(name: String, newSpecie: Specie): S
 }
 @JvmName("MutableListSpecieNameList")
 fun MutableList<Specie>.getNameList(): List<String>{
-    val templist = mutableListOf<String>()
+    val tempList = mutableListOf<String>()
     for(i in this){
-        templist.add(i.name)
+        tempList.add(i.name)
     }
-    return templist.toList()
+    return tempList.toList()
 }
 @JvmName("ListSpecieNameList")
 fun List<Specie>.getNameList(): List<String>{
-    val templist = mutableListOf<String>()
+    val tempList = mutableListOf<String>()
     forEach{
-        templist.add(it.name)
+        tempList.add(it.name)
     }
-    return templist.toList()
+    return tempList.toList()
 }
 fun MutableList<Specie>.getNameMutableList(): MutableList<String>{
-    val templist = mutableListOf<String>()
+    val tempList = mutableListOf<String>()
     for(i in this){
-        templist.add(i.name)
+        tempList.add(i.name)
     }
-    return templist
+    return tempList
 }

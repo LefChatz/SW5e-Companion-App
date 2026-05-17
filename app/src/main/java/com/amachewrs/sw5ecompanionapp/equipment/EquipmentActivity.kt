@@ -23,6 +23,7 @@ class EquipmentActivity : AppCompatActivity() {
         binding = EquipmentsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
+
         ViewCompat.setOnApplyWindowInsetsListener(binding.coord){ cl,windowInsets ->
             cl.updatePadding(0,windowInsets.getInsets(WindowInsetsCompat.Type.systemBars()).top)
             WindowInsetsCompat.CONSUMED }

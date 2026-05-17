@@ -1,6 +1,5 @@
 package com.amachewrs.sw5ecompanionapp.species
 
-import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
@@ -11,7 +10,6 @@ import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
@@ -19,13 +17,14 @@ import com.amachewrs.sw5ecompanionapp.R
 import com.amachewrs.sw5ecompanionapp.databinding.SpeciesDetailsBinding
 import com.amachewrs.sw5ecompanionapp.databinding.SpeciesInfoTemplateBinding
 import com.amachewrs.sw5ecompanionapp.species.speciesadapter.Specie
-import com.amachewrs.sw5ecompanionapp.species.speciesadapter.toSpecie
+import com.amachewrs.sw5ecompanionapp.species.speciesadapter.getImageID
+import com.amachewrs.sw5ecompanionapp.species.speciesadapter.ensureNotEmpty
 import kotlin.math.absoluteValue
 
 class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureListener {
     private lateinit var binding: SpeciesDetailsBinding
     private lateinit var infoBinding: SpeciesInfoTemplateBinding
-    private lateinit var gestdect: GestureDetector
+    private lateinit var gestureDetector: GestureDetector
     private lateinit var specie: Specie
     private lateinit var specieInfoView: View
     private lateinit var specieTraitsView: View
@@ -34,7 +33,7 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        gestdect = GestureDetector(this,this)
+        gestureDetector = GestureDetector(this,this)
         specie = getSpecie()
 
         binding = SpeciesDetailsBinding.inflate(layoutInflater)
@@ -69,14 +68,13 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
 
     @Suppress("DEPRECATION")
     private fun getSpecie(): Specie{
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) intent.getParcelableExtra("Specie", Specie::class.java).toSpecie()
-        else intent.getParcelableExtra<Specie>("Specie").toSpecie()
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) intent.getParcelableExtra("Specie", Specie::class.java).ensureNotEmpty()
+        else intent.getParcelableExtra<Specie>("Specie").ensureNotEmpty()
     }
 
-    @SuppressLint("DiscouragedApi")
     private fun setInfoView(){
         //Image
-        infoBinding.specieImage.setImageResource(resources.getIdentifier(specie.imageID,"drawable",packageName))
+        infoBinding.specieImage.setImageResource(specie.getImageID(resources,packageName))
         //Table title
         infoBinding.speciesTableTitle.text = specie.printName
         //Table and Texts
@@ -103,11 +101,11 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
 
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
         super.dispatchTouchEvent(ev)
-        return gestdect.onTouchEvent(ev)
+        return gestureDetector.onTouchEvent(ev)
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        return if (gestdect.onTouchEvent(event)) {
+        return if (gestureDetector.onTouchEvent(event)) {
             true
         } else {
             super.onTouchEvent(event)

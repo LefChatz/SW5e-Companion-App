@@ -24,9 +24,9 @@
         <item name="printName">Print Name</item>
         <item name="expansion">PHB</item>
         <item name="infoType">0</item>
-        <item name="info">text1|text2|text3|text4|text5|text6|text7|text8|text9|text10|text11|text12|text13|text14|text15|text16|text17</item>
+        <item name="info">text1|text2|text3|text4|text5|text6|text7|text8|text9|text10|text11|text12|text13|text14|text15|text16</item>
         <item name="traits">traits</item>
-        <item name="image">@drawable/error404</item>
-        <item name="buttonImage">@drawable/error404</item>-->
+        <item name="image">name</item>
+        <item name="buttonImage">namebuttonnew</item>-->
     </string-array>
 </resources>
