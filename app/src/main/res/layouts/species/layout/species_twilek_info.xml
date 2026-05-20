@@ -6,7 +6,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="600dp"
-        android:src="@drawable/twilek"
+        android:src="@drawable/twi_lek"
         android:contentDescription="@string/twilek_example"/>
     <TableLayout
         android:layout_width="match_parent"

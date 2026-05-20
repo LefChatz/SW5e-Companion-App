@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="600dp"
         android:src="@drawable/error404"
-        android:contentDescription="@string/bith_example" />
+        android:contentDescription="Specie example" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
             android:id="@+id/species_table_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bith"
+            android:text="Specie"
             android:textColor="@color/gold"
             android:fontFamily="@font/starjedi"
             android:textSize="27sp" />
@@ -290,7 +290,7 @@
         android:id="@+id/species_text11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bith_info1"
+        android:text="Specie Info 1"
         android:textColor="@color/gold"
         android:textSize="20sp" />
 
@@ -311,7 +311,7 @@
         android:id="@+id/species_text12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bith_info2"
+        android:text="Specie info 2"
         android:textColor="@color/gold"
         android:textSize="20sp" />
 
@@ -332,7 +332,7 @@
         android:id="@+id/species_text13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bith_info3"
+        android:text="Specie info 3"
         android:textColor="@color/gold"
         android:textSize="20sp" />
 

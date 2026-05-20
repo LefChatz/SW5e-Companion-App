@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingHorizontal="5dp"
-    android:text="@string/bothan_traitsText2"
+    android:text="Universal textview no font gold"
     android:textAppearance="@style/GoldText"
     >
 
