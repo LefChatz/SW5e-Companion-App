@@ -21,11 +21,11 @@ class FeatsAdapter(private val myContext: Context, private val dataset: MutableL
     class NoFeatHolder(view: View) : ViewHolder(view)
 
     class FeatHolder(view: View) : ViewHolder(view){
-        val featName: TextView = view.findViewById(R.id.table_feat_fav)
-        val featDetails: TextView = view.findViewById(R.id.table_feat_constlout)
-        val sourcebook: TextView = view.findViewById(R.id.table_feat_name)
-        val conLayout: ConstraintLayout = view.findViewById(R.id.feats_button_sourcebook)
-        val favButton: ImageButton = view.findViewById(R.id.table_feat_details)
+        val featName: TextView = view.findViewById(R.id.table_feat_name)
+        val featDetails: TextView = view.findViewById(R.id.table_feat_details)
+        val sourcebook: TextView = view.findViewById(R.id.feats_button_sourcebook)
+        val conLayout: ConstraintLayout = view.findViewById(R.id.table_feat_constlout)
+        val favButton: ImageButton = view.findViewById(R.id.table_feat_fav)
     }
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val view: View
