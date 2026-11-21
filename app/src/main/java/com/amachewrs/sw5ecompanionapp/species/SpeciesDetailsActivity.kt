@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
@@ -78,8 +79,28 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
         //Table title
         infoBinding.speciesTableTitle.text = specie.printName
         //Table and Texts
-        val tableTextArray = arrayOf(infoBinding.speciesText1,infoBinding.speciesText2,infoBinding.speciesText3,infoBinding.speciesText4,infoBinding.speciesText5,infoBinding.speciesText6,infoBinding.speciesText7,infoBinding.speciesText8,infoBinding.speciesText9,infoBinding.speciesText10,infoBinding.speciesText11,infoBinding.speciesText12,infoBinding.speciesText13,infoBinding.speciesText14,infoBinding.speciesText15,infoBinding.speciesText16)
-        for (i in 0..<specie.infoTextHeap.size){
+        var tableTextArray = arrayOf(infoBinding.speciesSkinColour,infoBinding.speciesHairColour,infoBinding.speciesEyeColour,infoBinding.speciesDistinctions,infoBinding.speciesHeight,infoBinding.speciesHeightPlus,infoBinding.speciesWeight,infoBinding.speciesWeightPlus,infoBinding.speciesHomeworld,infoBinding.speciesLanguage,infoBinding.speciesBioAndApp,infoBinding.speciesSocAndCul,infoBinding.speciesNamesInfo,infoBinding.speciesMaleNames,infoBinding.speciesFemaleNames,infoBinding.speciesSurnames)
+
+        when (specie.specieInfoType){
+            1->{infoBinding.speciesNameTable.removeViews(1,2)
+                infoBinding.speciesMaleNamesHeader.text = getString(R.string.species_names)}
+
+            2->{infoBinding.speciesNameTable.removeViews(1,2)
+                infoBinding.speciesMaleNamesHeader.text = getString(R.string.species_droid_designations)
+                infoBinding.speciesSocAndCulHeader.text = getString(R.string.species_droid_utility)
+                infoBinding.speciesBioAndAppHeader.text = getString(R.string.species_droid_appearance)
+                infoBinding.speciesHomeworldHeader.text = getString(R.string.species_droid_manufacturer)
+                infoBinding.speciesSkinColourHeader.text = getString(R.string.species_droid_colour_scheme)
+                infoBinding.speciesTable.removeViews(5,2)
+                tableTextArray = tableTextArray.subtract(setOf(infoBinding.speciesHairColour,infoBinding.speciesEyeColour)).toTypedArray()}
+
+            3->{infoBinding.speciesNameTable.removeViews(2,1)}
+
+            4->{infoBinding.speciesNameTable.removeViews(2,1)
+                infoBinding.speciesHomeworldHeader.text = infoBinding.speciesLanguageHeader.text
+                (infoBinding.speciesLanguageRow.parent as ViewGroup).removeView(infoBinding.speciesLanguageRow)}
+        }
+        for (i in specie.infoTextHeap.indices){
             tableTextArray[i].text=specie.infoTextHeap.pop()
         }
         binding.scrolly.addView(specieInfoView)
@@ -105,11 +126,7 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        return if (gestureDetector.onTouchEvent(event)) {
-            true
-        } else {
-            super.onTouchEvent(event)
-        }
+        return gestureDetector.onTouchEvent(event) || super.onTouchEvent(event)
     }
 
     override fun onDown(p0: MotionEvent): Boolean {

@@ -65,5 +65,6 @@
         android:paddingHorizontal="5dp"
         android:clipToPadding="false"
         >
+        <!--<include layout="@layout/species_info_template"/>-->
     </ScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

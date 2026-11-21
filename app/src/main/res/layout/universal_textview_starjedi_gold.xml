@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingHorizontal="5dp"
-    android:text="@string/sampletext"
+    android:text="@string/sample_text"
     android:textAppearance="@style/GoldTextStarjedi"
     >
 </TextView>

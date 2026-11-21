@@ -13,6 +13,7 @@
         android:contentDescription="Specie example" />
 
     <TableLayout
+        android:id="@+id/species_table"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/species_table_background"
@@ -50,9 +51,10 @@
         <TableRow android:background="#50D4AF37">
 
             <TextView
+                android:id="@+id/species_skin_colour_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Skin Color:"
+                android:text="Skin Colour:"
                 android:textColor="@color/gold"
                 android:textSize="20sp"
                 android:paddingEnd="20dp"
@@ -60,10 +62,10 @@
                 android:layout_gravity="center_vertical" />
 
             <TextView
-                android:id="@+id/species_text1"
+                android:id="@+id/species_skin_colour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Green, pink, white or yellow"
+                android:text="skin colour"
                 android:textColor="@color/gold"
                 android:textSize="20sp"
                 android:layout_span="2" />
@@ -74,7 +76,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hair Color:"
+                android:text="Hair Colour:"
                 android:textColor="@color/gold"
                 android:textSize="20sp"
                 android:paddingEnd="20dp"
@@ -82,10 +84,10 @@
                 android:layout_gravity="center_vertical" />
 
             <TextView
-                android:id="@+id/species_text2"
+                android:id="@+id/species_hair_colour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="None"
+                android:text="hair colour"
                 android:textColor="@color/gold"
                 android:textSize="20sp" />
         </TableRow>
@@ -95,7 +97,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Eye Color:"
+                android:text="Eye Colour:"
                 android:textColor="@color/gold"
                 android:textSize="20sp"
                 android:paddingEnd="20dp"
@@ -103,10 +105,10 @@
                 android:layout_gravity="center_vertical" />
 
             <TextView
-                android:id="@+id/species_text3"
+                android:id="@+id/species_eye_colour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Black"
+                android:text="eye colour"
                 android:textColor="@color/gold"
                 android:textSize="20sp" />
         </TableRow>
@@ -124,10 +126,10 @@
                 android:layout_gravity="center_vertical" />
 
             <TextView
-                android:id="@+id/species_text4"
+                android:id="@+id/species_distinctions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Large cranium,acute senses of smell and hearing"
+                android:text="distinctions"
                 android:textColor="@color/gold"
                 android:textSize="20sp"
                 android:layout_span="2" />
@@ -158,10 +160,10 @@
                 android:textStyle="italic" />
 
             <TextView
-                android:id="@+id/species_text5"
+                android:id="@+id/species_height"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/four_foot_nine"
+                android:text="height"
                 android:textColor="@color/gold"
                 android:textSize="20sp"
                 android:paddingStart="10dp"
@@ -169,10 +171,10 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/species_text6"
+                android:id="@+id/species_height_plus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/plus2d6inches"
+                android:text="height_plus"
                 android:textColor="@color/gold"
                 android:textSize="20sp"
                 android:textAlignment="center" />
@@ -191,10 +193,10 @@
                 android:textStyle="italic" />
 
             <TextView
-                android:id="@+id/species_text7"
+                android:id="@+id/species_weight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="100lb/45kg"
+                android:text="weight"
                 android:textColor="@color/gold"
                 android:textSize="20sp"
                 android:paddingStart="10dp"
@@ -202,10 +204,10 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/species_text8"
+                android:id="@+id/species_weight_plus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="x(2d4)lb"
+                android:text="weight_plus"
                 android:textColor="@color/gold"
                 android:textSize="20sp"
                 android:textAlignment="center" />
@@ -224,9 +226,11 @@
             android:textSize="18sp"
             android:fontFamily="@font/starjedi" />
 
-        <TableRow android:background="#50D4AF37">
+        <TableRow android:background="#50D4AF37"
+            android:id="@+id/species_homeworld_row">
 
             <TextView
+                android:id="@+id/species_homeworld_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Homeworld:"
@@ -236,19 +240,21 @@
                 android:textStyle="italic" />
 
             <TextView
-                android:id="@+id/species_text9"
+                android:id="@+id/species_homeworld"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Clak'dor VII"
+                android:text="homeworld"
                 android:textColor="@color/gold"
                 android:textSize="20sp"
-                android:paddingStart="80dp" />
+                android:paddingStart="50dp" />
 
         </TableRow>
 
-        <TableRow android:paddingBottom="20dp">
+        <TableRow android:paddingBottom="20dp"
+            android:id="@+id/species_language_row">
 
             <TextView
+                android:id="@+id/species_language_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Language:"
@@ -258,13 +264,14 @@
                 android:textStyle="italic" />
 
             <TextView
-                android:id="@+id/species_text10"
+                android:id="@+id/species_language"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bith"
+                android:text="language"
                 android:textColor="@color/gold"
                 android:textSize="20sp"
-                android:paddingStart="80dp" />
+                android:paddingStart="50dp"
+                />
         </TableRow>
 
         <ImageView
@@ -274,6 +281,7 @@
     </TableLayout>
 
     <TextView
+        android:id="@+id/species_bio_and_app_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Biology and appearance"
@@ -287,7 +295,7 @@
         android:src="@drawable/goldhorizontalline" />
 
     <TextView
-        android:id="@+id/species_text11"
+        android:id="@+id/species_bio_and_app"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Specie Info 1"
@@ -295,6 +303,7 @@
         android:textSize="20sp" />
 
     <TextView
+        android:id="@+id/species_soc_and_cul_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Society and culture"
@@ -308,7 +317,7 @@
         android:src="@drawable/goldhorizontalline" />
 
     <TextView
-        android:id="@+id/species_text12"
+        android:id="@+id/species_soc_and_cul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Specie info 2"
@@ -329,7 +338,7 @@
         android:src="@drawable/goldhorizontalline" />
 
     <TextView
-        android:id="@+id/species_text13"
+        android:id="@+id/species_names_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Specie info 3"
@@ -337,32 +346,37 @@
         android:textSize="20sp" />
 
     <TableLayout
+        android:id="@+id/species_name_table"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:shrinkColumns="1"
         android:layout_marginStart="20dp">
 
-        <TableRow>
+        <TableRow
+            android:id="@+id/species_male_name_row">
 
             <TextView
+                android:id="@+id/species_male_names_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Male Names:"
                 android:textColor="@color/gold"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:paddingEnd="20dp" />
+                android:paddingEnd="20dp"
+                android:layout_gravity="center_vertical"/>
 
             <TextView
-                android:id="@+id/species_text14"
+                android:id="@+id/species_male_names"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fedu, Jenkiss, Kabadons, Ph'teumkiass"
+                android:text="Male Name, Also Male name, Another male name, The most male name"
                 android:textColor="@color/gold"
                 android:textSize="20sp" />
         </TableRow>
 
-        <TableRow>
+        <TableRow
+            >
 
             <TextView
                 android:layout_width="wrap_content"
@@ -374,15 +388,16 @@
                 android:paddingEnd="20dp" />
 
             <TextView
-                android:id="@+id/species_text15"
+                android:id="@+id/species_female_names"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Duhia,F'hubama, R'hothal, Thidius"
+                android:text="Female Name, one more female name, still female name, so female name"
                 android:textColor="@color/gold"
                 android:textSize="20sp" />
         </TableRow>
 
-        <TableRow>
+        <TableRow
+            android:id="@+id/species_surname_row">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -394,10 +409,10 @@
                 android:paddingEnd="20dp" />
 
             <TextView
-                android:id="@+id/species_text16"
+                android:id="@+id/species_surnames"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="D'intes, Hern, K'sarorn, Nimum, Rumo"
+                android:text="Surname, sir Name,sher neim?, the last surname"
                 android:textColor="@color/gold"
                 android:textSize="20sp" />
         </TableRow>
