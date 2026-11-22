@@ -22,7 +22,7 @@
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="5dp"
-        android:background="@drawable/goldhorizontalline"
+        android:background="@drawable/gold_horizontal_line"
         app:layout_constraintTop_toBottomOf="@id/headertext" />
 
     <TextView

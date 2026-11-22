@@ -64,6 +64,7 @@
         android:paddingVertical="50dp"
         android:paddingHorizontal="5dp"
         android:clipToPadding="false"
+        android:scrollbars="none"
         >
         <!--<include layout="@layout/species_info_template"/>-->
     </ScrollView>

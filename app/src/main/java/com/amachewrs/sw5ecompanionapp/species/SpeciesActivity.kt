@@ -236,17 +236,17 @@ class SpeciesActivity : AppCompatActivity() {
     private fun getSpecies(): MutableList<Specie>{
         val getSpeciesList = mutableListOf<Specie>()
         val speciesArray = resources.obtainTypedArray(R.array.species_list)
-        for (i in 7..speciesArray.length() step 8){
+        for (i in 6..speciesArray.length() step 7){
             getSpeciesList.add(
                 Specie(
-                    speciesArray.getStringOrThrow(i-7),
-                    speciesArray.getText(i - 6),
-                    speciesArray.getStringOrThrow(i - 5),
-                    speciesArray.getIntOrThrow(i - 4),
-                    LinkedList(speciesArray.getText(i-3).split("|")),
-                    speciesArray.getText(i - 2),
-                    speciesArray.getStringOrThrow(i-1),
-                    speciesArray.getStringOrThrow(i)
+                    speciesArray.getStringOrThrow(i-6),
+                    speciesArray.getText(i - 5),
+                    speciesArray.getStringOrThrow(i - 4),
+                    speciesArray.getIntOrThrow(i - 3),
+                    LinkedList(speciesArray.getText(i-2).split("|")),
+                    speciesArray.getText(i - 1),
+                    speciesArray.getStringOrThrow(i),
+                    "${speciesArray.getStringOrThrow(i)}button"
                 )
             )
         }

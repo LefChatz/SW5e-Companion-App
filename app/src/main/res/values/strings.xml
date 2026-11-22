@@ -522,6 +522,6 @@
     <string name="species_droid_designations"><font color="#D4af37"><b>Designations (Names)</b></font></string>
     <string name="species_droid_utility">utility</string>
     <string name="species_droid_appearance">appearance</string>
-    <string name="species_droid_manufacturer">manufacturer</string>
-    <string name="species_droid_colour_scheme">Colour Scheme</string>
+    <string name="species_droid_manufacturer">manufacturer:</string>
+    <string name="species_droid_colour_scheme">Colour Scheme:</string>
 </resources>

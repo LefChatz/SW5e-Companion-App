@@ -96,7 +96,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/CostWeight"
-                app:srcCompat="@drawable/goldhorizontalline" />
+                app:srcCompat="@drawable/gold_horizontal_line" />
 
             <TextView
                 android:id="@+id/Properties"

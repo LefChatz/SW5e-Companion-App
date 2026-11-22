@@ -98,6 +98,7 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
 
             4->{infoBinding.speciesNameTable.removeViews(2,1)
                 infoBinding.speciesHomeworldHeader.text = infoBinding.speciesLanguageHeader.text
+                tableTextArray = tableTextArray.subtract(setOf(infoBinding.speciesLanguage)).toTypedArray()
                 (infoBinding.speciesLanguageRow.parent as ViewGroup).removeView(infoBinding.speciesLanguageRow)}
         }
         for (i in specie.infoTextHeap.indices){
@@ -105,6 +106,7 @@ class SpeciesDetailsActivity : AppCompatActivity() , GestureDetector.OnGestureLi
         }
         binding.scrolly.addView(specieInfoView)
     }
+
     private fun changeView(){
         binding.scrolly.scrollTo(0,0)
         binding.scrolly.fling(0)

@@ -17,7 +17,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="5dp"
-        android:src="@drawable/goldhorizontalline"
+        android:src="@drawable/gold_horizontal_line"
         />
     <TextView
         android:layout_width="wrap_content"

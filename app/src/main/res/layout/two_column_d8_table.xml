@@ -64,7 +64,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:src="@drawable/goldhorizontalline" />
+            android:src="@drawable/gold_horizontal_line" />
 
         <TableRow android:paddingHorizontal="10dp">
 

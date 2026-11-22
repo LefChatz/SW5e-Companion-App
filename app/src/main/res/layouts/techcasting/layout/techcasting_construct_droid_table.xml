@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
                 android:layout_span="6"
-                android:src="@drawable/goldhorizontalline" />
+                android:src="@drawable/gold_horizontal_line" />
         </TableRow>
 
         <TableRow>
@@ -95,7 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
                 android:layout_span="6"
-                android:src="@drawable/goldhorizontalline" />
+                android:src="@drawable/gold_horizontal_line" />
         </TableRow>
 
         <TableRow>
@@ -229,7 +229,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
                 android:layout_span="6"
-                android:src="@drawable/goldhorizontalline" />
+                android:src="@drawable/gold_horizontal_line" />
         </TableRow>
 
         <TableRow>
@@ -319,7 +319,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
                 android:layout_span="6"
-                android:src="@drawable/goldhorizontalline" />
+                android:src="@drawable/gold_horizontal_line" />
         </TableRow>
         <TableRow>
 
@@ -368,7 +368,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_span="6"
-                android:src="@drawable/goldhorizontalline" />
+                android:src="@drawable/gold_horizontal_line" />
         </TableRow>
         <TableRow>
 
